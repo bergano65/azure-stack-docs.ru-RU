@@ -3,24 +3,24 @@ title: Удаление поставщика ресурсов MySQL в Azure Sta
 description: Сведения об удалении поставщика ресурсов MySQL из развертывания Azure Stack.
 services: azure-stack
 documentationCenter: ''
-author: WenJason
-manager: digimobile
+author: jeffgilb
+manager: femila
 editor: ''
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 11/20/2018
-ms.date: 12/31/2018
-ms.author: v-jay
+ms.date: 05/06/2019
+ms.author: jeffgilb
 ms.reviewer: quying
-ms.openlocfilehash: 41b89e5239d72954de7202b87aaf02a2bdf90fd1
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 11/20/2018
+ms.openlocfilehash: 69624d94be7742256b1adf6ed22100a6d3b826d8
+ms.sourcegitcommit: ccd86bd0862c45de1f6a4993f783ea2e186c187a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307076"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65172328"
 ---
 # <a name="remove-the-mysql-resource-provider"></a>Удаление поставщика ресурсов MySQL
 
@@ -60,5 +60,3 @@ ms.locfileid: "64307076"
 ## <a name="next-steps"></a>Дополнительная информация
 
 [Предложение служб приложений как PaaS](azure-stack-app-service-overview.md)
-
-<!-- Update_Description: wording update -->
