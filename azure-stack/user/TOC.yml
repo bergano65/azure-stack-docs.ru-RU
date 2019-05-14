@@ -1,0 +1,259 @@
+- name: Документация пользователя по Azure Stack
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Основные рекомендации
+      href: azure-stack-considerations.md
+- name: Быстрое начало работы
+  expanded: true
+  items:
+    - name: Создание виртуальной машины Windows с помощью портала
+      href: azure-stack-quick-windows-portal.md
+    - name: Создание виртуальной машины Windows с помощью PowerShell
+      href: azure-stack-quick-create-vm-windows-powershell.md
+    - name: Создание виртуальной машины Windows с помощью CLI
+      href: azure-stack-quick-create-vm-windows-cli.md
+    - name: Создание виртуальной машины Linux с помощью портала
+      href: azure-stack-quick-linux-portal.md
+    - name: Создание виртуальной машины Linux с помощью PowerShell
+      href: azure-stack-quick-create-vm-linux-powershell.md
+    - name: Создание виртуальной машины Linux с помощью CLI
+      href: azure-stack-quick-create-vm-linux-cli.md
+- name: Учебники
+  items:
+    - name: Стандартные задачи
+      items:
+        - name: Подписка на предложение
+          href: azure-stack-subscribe-services.md
+        - name: Создание виртуальной машины на основе шаблона
+          href: azure-stack-create-vm-template.md
+    - name: Гибридные облачные приложения
+      href: azure-stack-hybrid-cloud-patterns.md
+      items:
+        - name: Развертывание приложений в Azure и Azure Stack
+          href: azure-stack-solution-pipeline.md
+        - name: Настройка удостоверения гибридного облака
+          href: azure-stack-solution-hybrid-identity.md
+        - name: Настройка подключения гибридного облака
+          href: azure-stack-solution-hybrid-connectivity.md
+        - name: Создание решения для аналитики промежуточных данных
+          href: azure-stack-solution-staged-data-analytics.md
+        - name: Создание решений для масштабирования в нескольких облаках в Azure
+          href: azure-stack-solution-cloud-burst.md
+        - name: Создание решения для географически распределенного приложения
+          href: azure-stack-solution-geo-distributed.md
+        - name: Развертывание гибридного облачного решения
+          href: azure-stack-solution-hybrid-cloud.md
+- name: Практические руководства
+  items:
+    - name: Использование портала Azure Stack
+      href: azure-stack-use-portal.md
+    - name: Подключение с помощью PowerShell
+      href: azure-stack-powershell-configure-user.md
+    - name: Использование API Azure Stack
+      href: azure-stack-rest-api-use.md
+    - name: Безопасность и соответствие требованиям
+      items:
+        - name: Использование контроля доступа на основе ролей
+          href: azure-stack-manage-permissions.md
+        - name: Использование субъектов-служб
+          href: Azure-stack-create-service-principals.md
+    - name: Использование служб
+      items:
+        - name: Службы вычислений
+          items:
+            - name: Обзор
+              href: azure-stack-compute-overview.md
+            - name: Рекомендации по работе с виртуальными машинами
+              href: azure-stack-vm-considerations.md
+            - name: Размеры виртуальной машины
+              href: azure-stack-vm-sizes.md
+            - name: Управление дисками виртуальной машины
+              href: azure-stack-manage-vm-disks.md
+            - name: Рекомендации по использованию Управляемых дисков
+              href: azure-stack-managed-disk-considerations.md
+            - name: Защита виртуальных машин
+              href: azure-stack-manage-vm-protect.md
+            - name: Обновление и администрирование виртуальной машины
+              href: vm-update-management.md
+            - name: Рекомендации по работе с виртуальными машинами SQL Server
+              href: azure-stack-sql-server-vm-considerations.md
+        - name: Хранилище
+          items:
+            - name: Обзор
+              href: azure-stack-storage-overview.md
+            - name: Рекомендации по работе с хранилищем
+              href: azure-stack-acs-differences.md
+            - name: Средства для разработки хранилища
+              href: azure-stack-storage-dev.md
+            - name: Средства для передачи данных
+              href: azure-stack-storage-transfer.md
+            - name: Подключение обозревателя хранилищ
+              href: azure-stack-storage-connect-se.md
+        - name: Сеть
+          items:
+            - name: Обзор
+              href: azure-stack-network-overview.md
+            - name: Рекомендации по работе с сетями
+              href: azure-stack-network-differences.md
+            - name: VPN-шлюзы
+              items:
+                - name: Подключение с помощью виртуальной частной сети
+                  href: azure-stack-connect-vpn.md
+                - name: Сведения о VPN-шлюзах
+                  href: azure-stack-vpn-gateway-about-vpn-gateways.md
+                - name: Настройка политик подключений IPsec/IKE
+                  href: azure-stack-vpn-s2s.md
+                - name: Параметры VPN-шлюза
+                  href: azure-stack-vpn-gateway-settings.md
+            - name: iDNS для Azure Stack
+              href: azure-stack-understanding-dns.md
+            - name: DNS в Azure Stack
+              href: azure-stack-dns.md
+        - name: Key Vault
+          items:
+            - name: Обзор
+              href: azure-stack-key-vault-intro.md
+            - name: Управление с помощью портала
+              href: azure-stack-key-vault-manage-portal.md
+            - name: Управление с помощью PowerShell
+              href: azure-stack-key-vault-manage-powershell.md
+            - name: Создание виртуальной машины с помощью секрета
+              href: azure-stack-key-vault-deploy-vm-with-secret.md
+            - name: Создание виртуальной машины с помощью сертификата
+              href: azure-stack-key-vault-push-secret-into-vm.md
+            - name: Хранение учетных данных в Key Vault
+              href: azure-stack-key-vault-store-credentials.md
+            - name: Пример приложения для Key Vault
+              href: azure-stack-key-vault-sample-app.md
+        - name: Azure Monitor
+          href: azure-stack-metrics-azure-data.md
+          items:
+            - name: Поддерживаемые метрики
+              href: azure-stack-metrics-supported.md
+            - name: Использование данных мониторинга Azure
+              href: azure-stack-metrics-monitor.md
+        - name: Шаблоны решений
+          items:
+            - name: Развертывание Ethereum
+              href: azure-stack-ethereum.md
+            - name: Развертывание кластера Service Fabric
+              href: azure-stack-solution-template-service-fabric-cluster.md
+            - name: Развертывание кластера Kubernetes
+              href: azure-stack-solution-template-kubernetes-deploy.md
+              items:
+                - name: "Развертывание Kubernetes с помощью Azure\_AD"
+                  href: azure-stack-solution-template-kubernetes-azuread.md
+                - name: "Развертывание Kubernetes с помощью AD\_FS"
+                  href: azure-stack-solution-template-kubernetes-adfs.md
+                - name: Включение панели мониторинга Kubernetes
+                  href: azure-stack-solution-template-kubernetes-dashboard.md
+                - name: Устранение неполадок кластера Kubernetes
+                  href: azure-stack-solution-template-kubernetes-trouble.md
+            - name: Развертывание Cognitive Services
+              href: azure-stack-solution-template-cognitive-services.md
+    - name: Создание приложений
+      items:
+        - name: Разработка для Azure Stack
+          href: azure-stack-developer.md
+        - name: Настройка среды разработки
+          href: azure-stack-dev-start.md
+          items:
+            - name: Обзор PowerShell для Azure Stack
+              href: azure-stack-powershell-overview.md
+            - name: Установка PowerShell для Azure Stack
+              href: /azure-stack/operator/azure-stack-powershell-install?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
+              maintainContext: true
+            - name: Подключение с помощью PowerShell
+              href: azure-stack-powershell-configure-user.md
+            - name: Скачивание средств Azure Stack
+              href: /azure-stack/operator/azure-stack-powershell-download?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
+              maintainContext: true
+            - name: Использование Docker для запуска PowerShell
+              href: azure-stack-powershell-user-docker.md
+            - name: Установка Visual Studio
+              href: azure-stack-install-visual-studio.md
+            - name: Использование открытого ключа SSH
+              href: azure-stack-dev-start-howto-ssh-public-key.md
+            - name: Развертывание виртуальной машины Linux для веб-приложения
+              href: azure-stack-dev-start-howto-deploy-linux.md
+            - name: Использование профилей версии API
+              href: azure-stack-version-profiles.md
+              items:
+                - name: .NET
+                  href: azure-stack-version-profiles-net.md
+                - name: Java
+                  href: azure-stack-version-profiles-java.md
+                - name: Инфраструктура CLI Azure
+                  href: azure-stack-version-profiles-azurecli2.md
+                - name: Go
+                  href: azure-stack-version-profiles-go.md
+                - name: Ruby
+                  href: azure-stack-version-profiles-ruby.md
+                - name: Python
+                  href: azure-stack-version-profiles-python.md
+                - name: 'API поставщика ресурсов, поддерживаемые в профилях'
+                  href: azure-stack-profiles-azure-resource-manager-versions.md
+        - name: Распространенные сценарии развертывания для Azure Stack
+          href: azure-stack-dev-start-deploy-app.md
+          items:
+            - name: 'Развертывание приложения .Net Core (C#) на виртуальной машине'
+              href: azure-stack-dev-start-howto-vm-dotnet.md
+            - name: Развертывание приложения Java на виртуальной машине
+              href: azure-stack-dev-start-howto-vm-java.md
+            - name: Развертывание приложения Go на виртуальной машине
+              href: azure-stack-dev-start-howto-vm-go.md
+            - name: Развертывание приложения Ruby на виртуальной машине
+              href: azure-stack-dev-start-howto-vm-ruby.md
+            - name: Развертывание приложения Python на виртуальной машине
+              href: azure-stack-dev-start-howto-vm-python.md
+            - name: Развертывание приложения NodeJS на виртуальной машине
+              href: azure-stack-dev-start-howto-vm-nodejs.md
+        - name: Использование модуля политики Azure Stack
+          href: azure-stack-policy-module.md
+        - name: Использование шаблонов
+          items:
+            - name: Обзор шаблонов
+              href: azure-stack-arm-templates.md
+            - name: Рекомендации по использованию шаблонов
+              href: azure-stack-develop-templates.md
+            - name: Проверка шаблонов
+              href: azure-stack-validate-templates.md
+            - name: Развертывание с помощью портала
+              href: azure-stack-deploy-template-portal.md
+            - name: Развертывание с помощью PowerShell
+              href: azure-stack-deploy-template-powershell.md
+            - name: Развертывание с помощью интерфейса командной строки
+              href: azure-stack-deploy-template-command-line.md
+            - name: Развертывание с помощью Visual Studio
+              href: azure-stack-deploy-template-visual-studio.md
+    - name: Включение поставщика облачных служб
+      href: azure-stack-csp-enable-billing-usage-tracking.md
+- name: Справочные материалы
+  items:
+    - name: PowerShell для Azure Stack
+      href: /powershell/azure/azure-stack/overview?view=azurestackps-1.3.0
+    - name: Обозреватель REST API Azure Stack
+      href: /rest/api/
+    - name: Azure Stack CLI
+      href: /cli/azure/reference-index?view=azure-cli-2017-03-09-profile
+- name: Сопутствующие материалы
+  items:
+    - name: Документация оператора по Azure Stack
+      href: /azure-stack/operator/
+    - name: Документация ASDK
+      href: /azure-stack/asdk/
+- name: Ресурсы
+  items:
+    - name: План выхода продуктов Azure Stack
+      href: 'https://azure.microsoft.com/roadmap/?tag=azure-stack'
+    - name: Форум MSDN по Azure Stack
+      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStack'
+    - name: Отзывы о документации по Azure Stack
+      href: 'https://feedback.azure.com/forums/344565-azure-stack?category_id=160275'
+    - name: Сведения о ценах
+      href: 'https://azure.microsoft.com/overview/azure-stack/how-to-buy/'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/azure-stack'
+    - name: Обучение и сертификация
+      href: /azure-stack/operator/azure-stack-train-and-cert
