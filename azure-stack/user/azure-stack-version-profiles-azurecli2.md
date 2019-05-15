@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/07/2019
+ms.date: 05/08/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 02/28/2019
-ms.openlocfilehash: a0f01a70be83a556dfa0f8839711c2de1e7c688e
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 05/08/2019
+ms.openlocfilehash: 69eb6e676fb8c134e0184d4df7df95ba0c75e854
+ms.sourcegitcommit: 879165a66ff80f1463b6bb46e2245684224a9b92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311366"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65473882"
 ---
 # <a name="use-api-version-profiles-with-azure-cli-in-azure-stack"></a>Использование профилей версий API и Azure CLI в Azure Stack
 
@@ -81,69 +81,20 @@ ms.locfileid: "64311366"
 
 ### <a name="install-or-upgrade-cli"></a>Установка или обновление CLI
 
-Войдите на рабочую станцию разработки и установите CLI. Для работы с Azure Stack требуется Azure CLI версии 2.0 или выше. Для последней версии профилей API требуется текущая версия CLI.  Вы можете установить CLI, выполнив действия, описанные в статье [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli). Чтобы проверить успешность установки, откройте окно терминала или командной строки и выполните следующую команду.
+Войдите на рабочую станцию разработки и установите CLI. Для работы с Azure Stack требуется Azure CLI версии 2.0 или выше. Для последней версии профилей API требуется текущая версия CLI.  Вы можете установить CLI, выполнив действия, описанные в статье [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli). 
 
-```shell
-az --version
-```
+1. Чтобы проверить успешность установки, откройте окно терминала или командной строки и выполните следующую команду.
 
-Отобразятся номера версий Azure CLI и зависимых библиотек, установленных на этом компьютере.
-
-### <a name="install-python-on-windows"></a>Установка Python в Windows
-
-1. Установите [Python 3 в вашей системе](https://www.python.org/downloads/).
-
-2. Обновите PIP. PIP — это диспетчер пакетов для Python. Откройте командную строку или строку PowerShell с повышенными правами и введите следующую команду:
-
-    ```powershell  
-    python -m pip install --upgrade pip
+    ```shell
+    az --version
     ```
 
-3. Установите модуль **certifi**. [Certifi](https://pypi.org/project/certifi/) — это модуль и коллекция корневых сертификатов для проверки надежности SSL-сертификатов при аутентификации узлов TLS. Откройте командную строку или строку PowerShell с повышенными правами и введите следующую команду:
+    Отобразятся номера версий Azure CLI и зависимых библиотек, установленных на этом компьютере.
 
-    ```powershell
-    pip install certifi
-    ```
+    ![Использование Azure CLI в расположении Python в Azure Stack](media/azure-stack-version-profiles-azurecli2/cli-python-location.png)
 
-### <a name="install-python-on-linux"></a>Установка Python в Linux
+2. Запишите расположение Python в интерфейсе командной строки. Если вы используете пакет ASDK, это расположение потребуется для добавления сертификата.
 
-1. В образе Ubuntu 16.04 по умолчанию установлены Python 2.7 и Python 3.5. Версию Python 3 можно проверить, выполнив следующую команду:
-
-    ```bash  
-    python3 --version
-    ```
-
-2. Обновите PIP. PIP — это диспетчер пакетов для Python. Откройте командную строку или строку PowerShell с повышенными правами и введите следующую команду:
-
-    ```bash  
-    sudo -H pip3 install --upgrade pip
-    ```
-
-3. Установите модуль **certifi**. [Certifi](https://pypi.org/project/certifi/) — это коллекция корневых сертификатов для проверки надежности SSL-сертификатов при проверке подлинности узлов TLS. Откройте командную строку или строку PowerShell с повышенными правами и введите следующую команду:
-
-    ```bash
-    pip3 install certifi
-    ```
-
-### <a name="install-python-on-macos"></a>Установка Python в macOS
-
-1. Установите [Python 3 в вашей системе](https://www.python.org/downloads/). Для выпусков Python 3.7 Python.org предоставляет два варианта двоичного установщика для скачивания. Вариантом по умолчанию является 64-разрядный, который работает в macOS 10.9 (Mavericks) и более поздних системах. Проверьте версию Python, открыв терминал и введя следующую команду:
-
-    ```bash  
-    python3 --version
-    ```
-
-2. Обновите PIP. PIP — это диспетчер пакетов для Python. Откройте командную строку или строку PowerShell с повышенными правами и введите следующую команду:
-
-    ```bash  
-    sudo -H pip3 install --upgrade pip
-    ```
-
-3. Установите модуль **certifi**. [Certifi](https://pypi.org/project/certifi/) — это модуль и коллекция корневых сертификатов для проверки надежности SSL-сертификатов при аутентификации узлов TLS. Откройте командную строку или строку PowerShell с повышенными правами и введите следующую команду:
-
-    ```bash
-    pip3 install certifi
-    ```
 
 ## <a name="windows-azure-ad"></a>Windows (Azure AD)
 
@@ -153,15 +104,20 @@ az --version
 
 Если вы используете ASDK, потребуется обеспечить доверие корневому сертификату ЦС на удаленном компьютере. Этого не требуется делать с интегрированными системами.
 
-Чтобы настроить доверие для корневого сертификата ЦС Azure Stack, добавьте его после существующего сертификата Python.
+Чтобы настроить доверие для корневого сертификата ЦС Azure Stack, добавьте его после существующего сертификата Python для версии Python, установленной вместе с Azure CLI. Вы можете выполнять собственный экземпляр Python. Azure CLI содержит свою версию Python.
 
-1. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Откройте командную строку или строку PowerShell с повышенными правами и введите следующую команду:
+1. Найдите расположение сертификата на своем компьютере.  Для этого выполните команду `az --version`.
+
+2. Перейдите к папке, содержащей ваше приложение Python с поддержкой интерфейса командной строки. Требуется запустить именно эту версию Python. Если вы настроили для Python системную переменную PATH, то при выполнении Python запустится ваша собственная версия Python. Вместо этого необходимо запустить версию, используемую интерфейсом командной строки, и добавить свой сертификат в эту версию. Например, ваше приложение Python с поддержкой интерфейса командной строки может располагаться здесь: `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\`.
+
+    Используйте следующие команды:
 
     ```powershell  
-      python -c "import certifi; print(certifi.where())"
+    cd "c:\pathtoyourcliversionofpython"
+    .\python -c "import certifi; print(certifi.where())"
     ```
 
-    Запомните расположение сертификата. Например, `~/lib/python3.5/site-packages/certifi/cacert.pem`. Конкретный путь зависит от ОС и установленной версии Python.
+    Запомните расположение сертификата. Например, `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\lib\site-packages\certifi\cacert.pem`. Конкретный путь будет зависеть от операционной системы и установки интерфейса командной строки.
 
 2. Чтобы настроить доверие для корневого сертификата ЦС Azure Stack, добавьте его после существующего сертификата Python.
 
@@ -212,7 +168,7 @@ az --version
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
     | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в Пакете средств разработки Azure Stack (ASDK): `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
     | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать соответствующую конечную точку.  |
-    | Суффикс KeyVault | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать конечную точку.  |
+    | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать конечную точку.  |
     | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. Дополнительные сведения см. в статье [Использование профилей версий API и Azure CLI в Azure Stack](#set-up-the-virtual-machine-aliases-endpoint). |
 
     ```azurecli  
@@ -228,7 +184,7 @@ az --version
 1. Укажите в конфигурации среды версию API-интерфейса, специально предназначенную для Azure Stack. Чтобы изменить эту конфигурацию, выполните следующую команду:
 
     ```azurecli
-    az cloud update --profile 2018-03-01-hybrid
+    az cloud update --profile 2019-03-01-hybrid
    ```
 
     >[!NOTE]  
@@ -332,7 +288,7 @@ az group create -n MyResourceGroup -l local
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
     | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в Пакете средств разработки Azure Stack (ASDK): `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
     | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать соответствующую конечную точку.  |
-    | Суффикс KeyVault | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать конечную точку.  |
+    | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать конечную точку.  |
     | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. Дополнительные сведения см. в статье [Использование профилей версий API и Azure CLI в Azure Stack](#set-up-the-virtual-machine-aliases-endpoint). |
 
     ```azurecli  
@@ -408,7 +364,7 @@ az group create -n MyResourceGroup -l local
 
 Чтобы настроить доверие для корневого сертификата ЦС Azure Stack, добавьте его после существующего сертификата Python.
 
-1. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Вам потребуется установить [pip и модуль certifi](#install-python-on-linux). Вы можете использовать следующие команды Python из командной строки Bash:
+1. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Вам потребуется установить pip и модуль certifi. Вы можете использовать следующие команды Python из командной строки Bash:
 
     ```bash  
     python3 -c "import certifi; print(certifi.where())"
@@ -448,7 +404,7 @@ az group create -n MyResourceGroup -l local
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
     | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в Пакете средств разработки Azure Stack (ASDK): `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
     | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать соответствующую конечную точку.  |
-    | Суффикс KeyVault | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать конечную точку.  |
+    | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать конечную точку.  |
     | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. Дополнительные сведения см. в статье [Использование профилей версий API и Azure CLI в Azure Stack](#set-up-the-virtual-machine-aliases-endpoint). |
 
     ```azurecli  
@@ -519,7 +475,7 @@ az group create -n MyResourceGroup -l local
 
 Чтобы настроить доверие для корневого сертификата ЦС Azure Stack, добавьте его после существующего сертификата Python.
 
-1. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Вам потребуется установить [pip и модуль certifi](#install-python-on-linux). Вы можете использовать следующие команды Python из командной строки Bash:
+1. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Вам потребуется установить pip и модуль certifi. Вы можете использовать следующие команды Python из командной строки Bash:
 
     ```bash  
     python3 -c "import certifi; print(certifi.where())"
@@ -559,7 +515,7 @@ az group create -n MyResourceGroup -l local
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
     | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в Пакете средств разработки Azure Stack (ASDK): `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
     | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать соответствующую конечную точку.  |
-    | Суффикс KeyVault | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать конечную точку.  |
+    | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать конечную точку.  |
     | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. Дополнительные сведения см. в статье [Использование профилей версий API и Azure CLI в Azure Stack](#set-up-the-virtual-machine-aliases-endpoint). |
 
     ```azurecli  
