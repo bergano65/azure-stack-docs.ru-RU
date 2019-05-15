@@ -3,7 +3,7 @@ title: Использование баз данных MySQL в Azure Stack | Д�
 description: Узнайте, как развернуть базы данных MySQL в качестве службы для Azure Stack, и изучите простую процедуру развертывания адаптера поставщика ресурсов MySQL Server.
 services: azure-stack
 documentationCenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/29/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 03/18/2019
-ms.openlocfilehash: 9b2fb5f6ae1fef29801f7decc6adfbd7e68abd0c
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 197c5002378be8229a6ec60fc0f3d7659b7c56b9
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64308300"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618158"
 ---
 # <a name="deploy-the-mysql-resource-provider-on-azure-stack"></a>Развертывание поставщика ресурсов MySQL в Azure Stack
 

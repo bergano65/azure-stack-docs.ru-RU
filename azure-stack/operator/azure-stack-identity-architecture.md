@@ -3,26 +3,25 @@ title: Архитектура удостоверений Azure Stack | Доку�
 description: Сведения об архитектуре удостоверений, которые можно использовать с Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: PatAltimore
+manager: femila
 editor: ''
 ms.assetid: ''
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
-origin.date: 02/11/2019
-ms.date: 03/04/2019
-ms.author: v-jay
+ms.topic: conceptual
+ms.date: 05/09/2019
+ms.author: patricka
 ms.reviewer: fiseraci
-ms.lastreviewed: 02/11/2019
-ms.openlocfilehash: 9ae8a55d04c34ec65d964927fd25c3bc01adeae4
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 05/09/2019
+ms.openlocfilehash: e09451c1bf49a2de075388f555cb7b80e70db63f
+ms.sourcegitcommit: 426380a3a27954cd609ba52d1066d9d69f5267fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310028"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65532311"
 ---
 # <a name="identity-architecture-for-azure-stack"></a>Архитектура удостоверений Azure Stack
 
@@ -42,7 +41,7 @@ ms.locfileid: "64310028"
 |Поддержка таких средств, как Azure CLI, Visual Studio и PowerShell  |Yes |Yes|
 |Создание субъектов-служб с помощью портала Azure     |Yes |Нет |
 |Создание субъектов-служб с помощью сертификатов      |Yes |Yes|
-|Создание субъектов-служб с помощью секретов (ключей)    |Yes |Нет |
+|Создание субъектов-служб с помощью секретов (ключей)    |Yes |Yes|
 |Приложения могут использовать службу Graph           |Yes |Нет |
 |Приложения могут использовать поставщика удостоверений для входа в систему |Yes |Да. Требуется, чтобы приложения создавали федерацию с локальными экземплярами федерации Active Directory (AD FS). |
 
@@ -101,4 +100,3 @@ ms.locfileid: "64310028"
 ## <a name="next-steps"></a>Дополнительная информация
 - [Общие сведения об удостоверениях Azure Stack](azure-stack-identity-overview.md)   
 - [Интеграция центра обработки данных Azure Stack: идентификация](azure-stack-integrate-identity.md)
-<!-- Update_Description: link update -->

@@ -6,14 +6,14 @@ metadata:
   title: Документация по пакету средств разработки Azure Stack. Руководства и справочники по API
   description: 'Сведения о том, как развернуть и использовать пакет средств разработки Azure Stack.'
   services: azure-stack
-  author: jeffgilb
+  author: mattbriggs
   manager: femila
   ms.service: azure-stack
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
   ms.date: 04/13/2018
-  ms.author: jeffgilb
+  ms.author: mabrigg
 abstract:
   description: 'Пакет средств разработки Azure Stack (ASDK) — это развертывание Azure Stack с использованием одного узла, которое можно скачать и применять бесплатно. Пакет ASDK предоставляет среду, в которой можно оценить возможности Azure Stack и разрабатывать современные приложения с помощью API-интерфейсов и средств, совместимых с Azure, в непроизводственной среде. <br/><br/>Если вы оператор Azure Stack, который управляет инфраструктурой интегрированных систем и предлагает службы, ознакомьтесь с нашей <a href="/azure-stack/operator">документацией для операторов</a>.<br/><br/>Если вы используете службы и создаете приложения для Azure Stack, ознакомьтесь с нашей <a href="/azure-stack/user">пользовательской документацией</a>.'
 sections:

@@ -3,7 +3,7 @@ title: Использование баз данных SQL в Azure Stack | До�
 description: Узнайте, как развернуть базы данных SQL в качестве службы для Azure Stack, и изучите простую процедуру развертывания адаптера поставщика ресурсов SQL Server.
 services: azure-stack
 documentationCenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/29/2019
 ms.lastreviewed: 03/18/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: jiahan
-ms.openlocfilehash: ee64106c97a07e1b3ceb84c4ca932b19bc6d83b8
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 7cc05316222f7652e8c5eecbad6a02eee901e697
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307616"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65617966"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack"></a>Развертывание поставщика ресурсов SQL Server в Azure Stack
 

@@ -3,7 +3,7 @@ title: Предоставление высокодоступных баз дан
 description: Узнайте, как создать компьютер для размещения поставщика ресурсов SQL Server и высокодоступные базы данных SQL AlwaysOn с помощью Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: quying
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: 466f5c487dc9ea11b9a925fc89796d8550742c65
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: cf957fd69cf581d1ca63d1331f8ea407b24394ad
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63448140"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65617728"
 ---
 # <a name="tutorial-offer-highly-available-sql-databases"></a>Руководство по Предоставление высокодоступных баз данных SQL
 

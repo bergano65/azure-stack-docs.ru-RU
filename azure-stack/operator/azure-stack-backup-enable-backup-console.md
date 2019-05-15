@@ -3,7 +3,7 @@ title: Включение резервного копирования для Azu
 description: Включение службы резервного копирования инфраструктуры с помощью портала администрирования для восстановления Azure Stack в случае сбоя.
 services: azure-stack
 documentationcenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: 56C948E7-4523-43B9-A236-1EF906A0304F
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/08/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: hectorl
 ms.lastreviewed: 03/14/2019
-ms.openlocfilehash: 829516e145e56ca9e0409494052f64f5cc059fc8
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: adda9ec9052c11e412c7bd251482e1e3a5c09223
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64309416"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618176"
 ---
 # <a name="enable-backup-for-azure-stack-from-the-administration-portal"></a>Включение резервного копирования для Azure Stack на портале администрирования
 Включите службу "Резервное копирование инфраструктуры" с помощью портала администрирования, чтобы разрешить Azure Stack создавать резервные копии инфраструктуры. Партнер по оборудованию сможет использовать эти резервные копии для восстановления среды с помощью облачного восстановления в случае [неустранимого сбоя](./azure-stack-backup-recover-data.md). Облачное восстановление предназначено для того, чтобы операторы и пользователи смогли входить на портал по завершении восстановления. При этом восстанавливаются подписки пользователей, в том числе права доступа на основе ролей и роли, исходные планы, предложения и ранее определенные квоты вычислительных ресурсов, ресурсов хранилища, сетевых ресурсов и секреты Key Vault.

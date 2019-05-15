@@ -3,8 +3,8 @@ title: Обеспечение доступности баз данных SQL д�
 description: Учебное пособие по установке поставщика ресурсов SQL Server и созданию предложений, позволяющих пользователям Azure Stack создавать базы данных SQL.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 editor: ''
 ms.assetid: ''
 ms.service: azure-stack
@@ -12,18 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-origin.date: 02/12/2019
-ms.date: 04/29/2019
-ms.author: v-jay
+ms.date: 02/12/2019
+ms.author: mabrigg
 ms.reviewer: quying
 ms.lastreviewed: 11/05/2018
 ms.custom: mvc
-ms.openlocfilehash: 26ab5b0528f54a351c7168269cb1cfb4b1e13f9e
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: e65bebf5b6126455ef1294fabeb1450f91689d5d
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63447390"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618384"
 ---
 # <a name="tutorial-make-sql-databases-available-to-your-azure-stack-users"></a>Руководство. Обеспечение доступности баз данных SQL для пользователей Azure Stack
 
@@ -89,5 +88,3 @@ ms.locfileid: "63447390"
 
 > [!div class="nextstepaction"]
 > [Обеспечение доступности веб-приложений, мобильных приложений и приложений API для пользователей Azure Stack]( azure-stack-tutorial-app-service.md)
-
-<!-- Update_Description: wording update -->

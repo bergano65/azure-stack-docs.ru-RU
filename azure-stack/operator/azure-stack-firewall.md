@@ -3,8 +3,8 @@ title: Планирование брандмауэра Azure Stack для инт
 description: Приведены рекомендации по брандмауэру Azure для подключенных к Azure развернутым службам с несколькими узлами Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 editor: ''
 ms.assetid: ''
 ms.service: azure-stack
@@ -12,17 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 02/12/2019
-ms.date: 03/04/2019
-ms.author: v-jay
+ms.date: 02/12/2019
+ms.author: mabrigg
 ms.reviewer: wfayed
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 023201d221ee5d7ec884c6a760407e8da8340d3f
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: a98f89866fd7679a0d6ce7c6ecb40d7e8e8b51e7
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64309992"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618686"
 ---
 # <a name="azure-stack-firewall-integration"></a>Интеграция брандмауэра Azure Stack
 Мы рекомендуем использовать для защиты Azure Stack аппаратный брандмауэр. Брандмауэры могут помочь в защите от распределенных атак, например отказ в обслуживании (DDOS), обнаружение вторжений и проверка содержимого. Тем не менее они могут ограничивать пропускную способность для служб хранилища Azure, например для больших двоичных объектов, таблиц и очередей.

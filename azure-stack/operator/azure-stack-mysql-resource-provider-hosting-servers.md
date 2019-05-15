@@ -3,25 +3,24 @@ title: Серверы размещения MySQL в Azure Stack | Докумен
 description: Добавление экземпляров MySQL для подготовки через поставщик ресурсов адаптера MySQL
 services: azure-stack
 documentationCenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 editor: ''
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 03/26/2019
-ms.date: 04/29/2019
-ms.author: v-jay
+ms.date: 03/26/2019
+ms.author: mabrigg
 ms.reviewer: quying
 ms.lastreviewed: 02/28/2019
-ms.openlocfilehash: b563bc542c970fa71b9718ac070e2258abb80930
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 00469e3dedca4609b26e1d4e967837ff0925cb9c
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64308204"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618577"
 ---
 # <a name="add-hosting-servers-for-the-mysql-resource-provider"></a>Добавление серверов размещения для поставщика ресурсов MySQL
 
@@ -108,5 +107,3 @@ ms.locfileid: "64308204"
 ## <a name="next-steps"></a>Дополнительная информация
 
 [Создание базы данных MySQL](azure-stack-mysql-resource-provider-databases.md)
-
-<!-- Update_Description: wording update -->

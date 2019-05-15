@@ -3,7 +3,7 @@ title: Повторное развертывание Пакета средств
 description: Из этой статьи вы узнаете, как выполнить повторную установку ASDK.
 services: azure-stack
 documentationcenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.custom: ''
 ms.date: 02/12/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: misainat
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: 2ebb7c702eeb2c7f04f61f6bbc79aa0edaf8a860
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 0658943a36673df4658b6f1951ed7992996aba41
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307472"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65617475"
 ---
 # <a name="redeploy-the-asdk"></a>Повторное развертывание ASDK
 Из этой статьи вы узнаете, как выполнить повторное развертывание Пакета средств разработки Azure Stack (ASDK) в нерабочей среде. Так как обновление ASDK не поддерживается, чтобы перейти на новую версию необходимо его повторное развертывание. Кроме того, ASDK можно повторно развернуть в любой момент, когда понадобится начать работу с начала.

@@ -3,7 +3,7 @@ title: Обновление и администрирование виртуал
 description: Узнайте, как использовать решения Azure Monitor для виртуальных машин, "Управление обновлениями", "Отслеживание изменений" и инвентаризации в службе автоматизации Azure для управления виртуальными машинами Windows и Linux, развернутыми в Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
-ms.author: jeffgilb
+ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 03/20/2019
-ms.openlocfilehash: cb8258c0f837d0e70ba87a26246f055b0efe5c00
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 6726e8ff261565691e2e9e3c01827e8e056db139
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311516"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618824"
 ---
 # <a name="azure-stack-vm-update-and-management"></a>Обновление и администрирование виртуальной машины Azure Stack
 Для управления виртуальными машинами Windows и Linux, развернутыми с помощью Azure Stack, можно использовать следующие функции решения службы автоматизации Azure.

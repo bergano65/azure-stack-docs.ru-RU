@@ -3,25 +3,24 @@ title: Использование баз данных, предоставлен�
 description: Создание баз данных MySQL, подготовленных с помощью поставщика ресурсов адаптера MySQL, и управление ими
 services: azure-stack
 documentationCenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 editor: ''
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 02/12/2019
-ms.date: 03/04/2019
-ms.author: v-jay
+ms.date: 02/12/2019
+ms.author: mabrigg
 ms.reviewer: quying
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 6eaba728b794c0102ec4e28791b218efa28b51b5
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 4cf406461c7a231617d40c50d2b5491bb4427b63
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64309392"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618640"
 ---
 # <a name="create-mysql-databases"></a>Создание баз данных MySQL
 Пользователь Azure Stack с подпиской на предложение, включающее службу базы данных MySQL, может создавать и администрировать самостоятельно обслуживаемые базы данных MySQL на портале для пользователей.
@@ -68,5 +67,3 @@ ms.locfileid: "64309392"
 ## <a name="next-steps"></a>Дополнительная информация
 
 [Обновление поставщика ресурсов MySQL](azure-stack-mysql-resource-provider-update.md)
-
-<!-- Update_Description: wording update -->
