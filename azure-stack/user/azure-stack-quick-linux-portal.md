@@ -7,17 +7,17 @@ author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.topic: quickstart
-ms.date: 03/11/2019
+ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.custom: mvc
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 37ff24258b12c9b042c7b0dc5a113a62d1d1ec60
-ms.sourcegitcommit: 41927cb812e6a705d8e414c5f605654da1fc6952
+ms.openlocfilehash: 2c0997599b8da1f77f61e0953eb56f834f718efb
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/25/2019
-ms.locfileid: "64477349"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782835"
 ---
 # <a name="quickstart-create-a-linux-server-virtual-machine-with-the-azure-stack-portal"></a>Краткое руководство. Создание виртуальной машины для сервера Linux с помощью портала Azure Stack
 
@@ -49,7 +49,7 @@ ms.locfileid: "64477349"
 
 Чтобы выполнить все инструкции, приведенные в этой статье, вам понадобится пара ключей SSH. Если у вас уже есть пара ключей SSH, вы можете пропустить этот шаг.
 
-1. Перейдите в папку установки PuTTY (по умолчанию это ```C:\Program Files\PuTTY```) и запустите команду ```puttygen.exe```.
+1. Перейдите в папку установки PuTTY (по умолчанию это `C:\Program Files\PuTTY`) и запустите команду `puttygen.exe`.
 2. В окне генератора ключей PuTTY выберите для параметра **Type of key to generate** (Тип создаваемого ключа) значение **RSA**, а для **Number of bits in a generated key** (Количество битов в создаваемом ключе) — значение **2048**. Когда все будет готово, щелкните **Generate** (Создать).
 
    ![Настройка генератора ключей PuTTY](media/azure-stack-quick-linux-portal/Putty01.PNG)
@@ -106,7 +106,7 @@ ms.locfileid: "64477349"
    ![Подключение к виртуальной машине](media/azure-stack-quick-linux-portal/putty03.PNG)
 
 4. Прокрутите окно **Category** (Категория) вверх и выберите элемент **Session** (Сеанс).
-5. В поле **Host Name (or IP address)** (Имя узла или IP-адрес) вставьте строку подключения, предоставленную на портале Azure. В нашем примере строка имеет вид ```asadmin@192.168.102.34```.
+5. В поле **Host Name (or IP address)** (Имя узла или IP-адрес) вставьте строку подключения, предоставленную на портале Azure. В нашем примере строка имеет вид `asadmin@192.168.102.34`.
 
    ![Строка подключения в окне конфигурации PuTTY](media/azure-stack-quick-linux-portal/Putty04.PNG)
 
@@ -145,7 +145,7 @@ sudo apt-get -y install nginx
 
 Теперь на виртуальной машине установлен сервер NGINX и открыт порт 80, и вы можете обращаться к веб-серверу через общедоступный IP-адрес этой виртуальной машины. (общедоступный IP-адрес отображается на странице обзора виртуальной машины).
 
-Откройте окно браузера и перейдите по адресу ```http://<public IP address>```.
+Откройте окно браузера и перейдите по адресу `http://<public IP address>`.
 
 ![Страница приветствия веб-сервера NGINX](media/azure-stack-quick-linux-portal/linux-05.PNG)
 

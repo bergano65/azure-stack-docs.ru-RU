@@ -10,16 +10,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/26/2018
+ms.date: 05/26/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 01/19/2019
-ms.openlocfilehash: b5a72619bf8bbe21ef6c0238a26f3de2a559935d
-ms.sourcegitcommit: 24d5c16132d4c40a760ad6f631739af86188a09f
+ms.lastreviewed: 05/26/2019
+ms.openlocfilehash: 33fc05de4bf0107c8090badb77872082790aa087
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64910049"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782559"
 ---
 # <a name="use-api-version-profiles-with-go-in-azure-stack"></a>Использование профилей версий API и Go в Azure Stack
 
@@ -126,7 +126,7 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2017-03-09/compute/mgmt/compu
 
 Полный пример создания виртуальной сети в Azure Stack с использованием профиля пакета SDK для Go см. [здесь](#example).
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Аутентификация
 
 Чтобы получить свойство **авторизации** из Azure Active Directory с помощью пакета SDK для Go, установите модули **Go-AutoRest**. Эти модули должны быть уже установлены с установкой "Пакет SDK для Go". В противном случае установите [пакет проверки подлинности с сайта GitHub](https://github.com/Azure/go-autorest/tree/master/autorest/adal).
 

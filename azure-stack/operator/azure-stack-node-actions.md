@@ -3,25 +3,24 @@ title: Действия с узлами единицы масштабирова�
 description: Узнайте, как просмотреть состояние узла и выполнить действия включения и отключения питания, выключения и возобновления в интегрированной системе Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 editor: ''
 ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-origin.date: 01/22/2019
-ms.date: 03/04/2019
-ms.author: v-jay
+ms.date: 05/16/2019
+ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/22/2019
-ms.openlocfilehash: cd7e66961a0b9a80150a3d3e132efd29485cdb66
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: fa0292419a228fcf9bbfef2bbfc2503f4ba5a702
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307868"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782340"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack"></a>Действия с узлами единицы масштабирования в Azure Stack
 
@@ -86,7 +85,7 @@ ms.locfileid: "64307868"
 
 Чтобы выполнить действие остановки, откройте командную строку PowerShell с повышенными привилегиями и выполните следующий командлет.
 
-```PowerShell  
+```powershell  
   Stop-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
@@ -100,7 +99,7 @@ ms.locfileid: "64307868"
  
 Чтобы выполнить действие запуска, откройте командную строку PowerShell с повышенными привилегиями и выполните следующий командлет.
 
-```PowerShell  
+```powershell  
   Start-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
@@ -119,7 +118,7 @@ ms.locfileid: "64307868"
 
 Чтобы выполнить действие очистки, откройте командную строку PowerShell с повышенными привилегиями и выполните следующий командлет.
 
-```PowerShell  
+```powershell  
   Disable-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
@@ -131,7 +130,7 @@ ms.locfileid: "64307868"
 
 Чтобы выполнить действие возобновления, откройте командную строку PowerShell с повышенными привилегиями и выполните следующий командлет.
 
-```PowerShell  
+```powershell  
   Enable-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```
 
@@ -150,7 +149,7 @@ ms.locfileid: "64307868"
 
 Чтобы выполнить действие восстановления, откройте командную строку PowerShell с повышенными привилегиями и выполните следующий командлет.
 
-  ```PowerShell
+  ```powershell
   Repair-AzsScaleUnitNode -Location <RegionName> -Name <NodeName> -BMCIPv4Address <BMCIPv4Address>
   ```
 
@@ -164,7 +163,7 @@ ms.locfileid: "64307868"
 
 Чтобы выполнить действие выключения, откройте командную строку PowerShell с повышенными привилегиями и выполните следующий командлет.
 
-  ```PowerShell
+  ```powershell
   Stop-AzsScaleUnitNode -Location <RegionName> -Name <NodeName> -Shutdown
   ```
 
