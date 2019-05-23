@@ -17,12 +17,12 @@ ms.author: mabrigg
 ms.reviewer: prchint
 ms.lastreviewed: 04/03/2019
 ms.custom: ''
-ms.openlocfilehash: f20dd8499abf4d8c7fd2097d47e655790c19d33d
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 907a10caa2a23b58d0c63ee1abb7f4e4a074d1a1
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64983997"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618924"
 ---
 # <a name="azure-stack-compute-capacity-planning"></a>Планирование вычислительной емкости для Azure Stack
 [Размеры виртуальных машин, поддерживаемые в Azure Stack](../user/azure-stack-vm-sizes.md), представляют собой подмножество размеров, поддерживаемых в Azure. В Azure используется несколько методов ограничения ресурсов. Это предотвращает их чрезмерное использование (на уровне локальных серверов и служб). Если не ограничить потребление ресурсов клиентом, его работа может ухудшиться при чрезмерном использовании ресурсов другими клиентами. Для исходящего трафика виртуальной машины в Azure Stack предусмотрены ограничения пропускной способности, соответствующие ограничениям в Azure. Для ресурсов хранилища в Azure Stack предусмотрены ограничения числа операций ввода-вывода в секунду. Это предотвращает чрезмерное использование ресурсов клиентами при доступе к хранилищу.  

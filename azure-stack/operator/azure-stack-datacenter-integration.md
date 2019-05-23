@@ -16,12 +16,12 @@ ms.date: 03/14/2019
 ms.author: mabrigg
 ms.reviewer: wfayed
 ms.lastreviewed: 09/12/2018
-ms.openlocfilehash: 9aa8ec8bbbda1548088ad9dfeb389d292a0e1fbb
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 53289e46a2f29a03535958b76743db107f6ecf64
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985386"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65617780"
 ---
 # <a name="datacenter-integration-considerations-for-azure-stack-integrated-systems"></a>Рекомендации по интеграции центра обработки данных для интегрированных систем Azure Stack
 Если вы заинтересованы в интегрированной системе Azure Stack, ознакомьтесь с основными рекомендациями по планированию развертывания и внедрению системы в центр обработки данных. В этой статье приводится общий обзор таких рекомендаций, которые помогут при принятии важных решений об инфраструктуре для системы Azure Stack с нескольким узлами. Понимание этих рекомендаций поможет при работе с поставщиком оборудования OEM, так как он будет развертывать Azure Stack в вашем центре обработки данных.  

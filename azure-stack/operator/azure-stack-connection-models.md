@@ -16,12 +16,12 @@ ms.date: 02/12/2019
 ms.author: mabrigg
 ms.reviewer: wfayed
 ms.lastreviewed: 02/21/2019
-ms.openlocfilehash: 3c37ef0ea2262a52696a0bdf765eae36a37a4194
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: da48a9a04c9daaf2d7a29bc2d4b300563bebd6e5
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64986259"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618967"
 ---
 # <a name="azure-stack-integrated-systems-connection-models"></a>Модели подключения интегрированных систем Azure Stack | Документация Майкрософт
 Если вы заинтересованы в приобретении интегрированной системы Azure Stack, вам потребуется рассмотреть [некоторые рекомендации по интеграции центра обработки данных](azure-stack-datacenter-integration.md) для развертывания Azure Stack, чтобы определить, как эта система будет внедрена в центр обработки данных. Кроме того, необходимо решить, как Azure Stack будет интегрироваться с гибридной облачной средой. В этой статье представлен обзор этих основных решений, включая решения, связанные с выбором модели подключения к Azure, хранилища удостоверений и модели выставления счетов.

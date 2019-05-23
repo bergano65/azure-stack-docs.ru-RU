@@ -10,12 +10,12 @@ ms.date: 05/02/2019
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 02/06/2019
-ms.openlocfilehash: 262b1790b102483daca1a77d475815b34aa7a1b2
-ms.sourcegitcommit: 61de365c93eb7435891867f9808ec37486882d7f
+ms.openlocfilehash: 885568035070bc4f74b94cddff200302fccfbb72
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65097116"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618103"
 ---
 # <a name="azure-stack-datacenter-integration---publish-endpoints"></a>Интеграция центра обработки данных Azure Stack. Публикация конечных точек
 
@@ -77,7 +77,7 @@ ms.locfileid: "65097116"
 |Синдикация Marketplace|https:\//management.azure.com<br>https://&#42;.blob.core.windows.net<br>https://*.azureedge.net<br>https://&#42;.microsoftazurestack.com|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
 |Обновления и исправления|https://&#42;.azureedge.net<br>https:\//aka.ms/azurestackautomaticupdate|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
 |Регистрация|https:\//management.azure.com|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
-|Использование|https://&#42;.microsoftazurestack.com<br>https://*.trafficmanager.net |HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
+|Потребление|https://&#42;.microsoftazurestack.com<br>https://*.trafficmanager.net |HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
 |Защитник Windows|\*.wdcp.microsoft.com<br>\*.wdcpalt.microsoft.com<br>\*.wd.microsoft.com<br>\*.update.microsoft.com<br>\*.download.microsoft.com<br>https:\//www.microsoft.com/pkiops/crl<br>https:\//www.microsoft.com/pkiops/certs<br>https:\//crl.microsoft.com/pki/crl/products<br>https:\//www.microsoft.com/pki/certs<br>https:\//secure.aadcdn.microsoftonline-p.com<br>|HTTPS|80<br>443|Общедоступный виртуальный IP-адрес — /27<br>Открытая сеть инфраструктуры|
 |NTP.|(IP-адрес NTP-сервера, предоставленный для развертывания)|UDP|123|Общедоступный виртуальный IP-адрес — /27|
 |DNS|(IP-адрес DNS-сервера, предоставленный для развертывания)|TCP<br>UDP|53|Общедоступный виртуальный IP-адрес — /27|
