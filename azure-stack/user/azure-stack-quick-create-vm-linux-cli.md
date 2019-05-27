@@ -1,6 +1,6 @@
 ---
 title: Создание виртуальной машины Linux с помощью Azure CLI в Azure Stack | Документация Майкрософт
-description: Создание виртуальной машины Linux с помощью CLI в Azure Stack.
+description: Создайте виртуальную машину Linux с помощью CLI в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,22 +11,22 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 01/14/2019
+ms.date: 05/16/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: aa744414b554d5da72a63e8af6371bc94b2d6b39
-ms.sourcegitcommit: 41927cb812e6a705d8e414c5f605654da1fc6952
+ms.openlocfilehash: 19c856bdf981775b0b3a8ee923046b51e6ef79ca
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/25/2019
-ms.locfileid: "64477394"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782777"
 ---
-# <a name="quickstart-create-a-linux-server-virtual-machine-by-using-azure-cli-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины Linux с помощью Azure CLI в Azure Stack
+# <a name="quickstart-create-a-linux-server-virtual-machine-using-azure-cli-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины Linux с помощью Azure CLI в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Вы можете создать виртуальную машину под управлением Ubuntu Server 16.04 LTS с помощью Azure CLI. Чтобы создать и использовать виртуальную машину, выполните описанные в этой статье действия. В этой статье приведены инструкции, которые помогут вам:
+Вы можете создать виртуальную машину под управлением Ubuntu Server 16.04 LTS с помощью Azure CLI. Чтобы создать и использовать виртуальную машину, выполните описанные в этой статье действия. В этой статье приведены инструкции, которые помогут вам:
 
 * подключиться к виртуальной машине через удаленный клиент;
 * установить веб-сервер NGINX и открыть его стандартную домашнюю страницу;
@@ -38,7 +38,7 @@ ms.locfileid: "64477394"
 
    По умолчанию Azure Stack Marketplace не содержит образ Linux. Обратитесь к оператору Azure Stack, чтобы он предоставил нужный образ **Ubuntu Server 16.04 LTS**. Оператор может добавить его, выполнив инструкции из статьи [Download marketplace items from Azure to Azure Stack](../operator/azure-stack-download-azure-marketplace-item.md) (Скачивание элементов Marketplace из Azure в Azure Stack).
 
-* Для создания ресурсов и управления ими в Azure CLI требуется определенная версия Azure Stack. Если интерфейс командной строки Azure не настроен для Azure Stack, войдите в [пакет средств разработки](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) (или внешний клиент на базе Windows в случае [подключения через VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn)) и выполните действия по [установке и настройке Azure CLI](azure-stack-version-profiles-azurecli2.md).
+* Для создания ресурсов и управления ими в Azure CLI требуется определенная версия Azure Stack. Если вы не настраивали Azure CLI для Azure Stack, войдите в [пакет средств разработки](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) (или внешний клиент на базе Windows, [если вы подключаетесь через VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn)) и выполните действия по [установке и настройке Azure CLI](azure-stack-version-profiles-azurecli2.md).
 
 * В каталоге .ssh вашего профиля пользователя Windows сохраняется открытый ключ SSH с именем id_rsa.pub. Дополнительные сведения создании открытого ключа SSH см. в [этой статье](azure-stack-dev-start-howto-ssh-public-key.md).
 
@@ -47,9 +47,9 @@ ms.locfileid: "64477394"
 Группа ресурсов — это логический контейнер, в котором вы можете развертывать ресурсы Azure Stack и управлять ими. Из пакета средств разработки или интегрированной системы Azure Stack выполните команду [az group create](/cli/azure/group#az-group-create), чтобы создать группу ресурсов.
 
 > [!NOTE]
->  В примерах кода всем переменным уже присвоены значения. Но вы можете изменить эти значения, если потребуется.
+> В примерах кода всем переменным уже присвоены значения. Но вы можете изменить эти значения, если потребуется.
 
-В следующем примере создается группа ресурсов с именем myResourceGroup в локальном расположении.
+В следующем примере создается группа ресурсов с именем myResourceGroup в локальном расположении. 
 
 ```cli
 az group create --name myResourceGroup --location local
@@ -57,7 +57,7 @@ az group create --name myResourceGroup --location local
 
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 
-Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az-vm-create). В следующем примере создаются виртуальная машина с именем myVM В этом примере используются имя администратора Demouser и пароль Demouser@123. Укажите вместо них значения, подходящие для вашей среды.
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az-vm-create). В следующем примере создаются виртуальная машина с именем myVM В этом примере используются следующие учетные данные администратора: имя Demouser и пароль Demouser@123. Укажите вместо них значения, подходящие для вашей среды.
 
 ```cli
 az vm create \
@@ -69,11 +69,11 @@ az vm create \
   --location local
 ```
 
-Общедоступный IP-адрес возвращается в параметре **PublicIpAddress**. Запишите этот адрес: он потребуется позже для доступа к виртуальной машине.
+Общедоступный IP-адрес возвращается в параметре **PublicIpAddress**. Запишите этот адрес, так как он понадобится позже для доступа к виртуальной машине.
 
 ## <a name="open-port-80-for-web-traffic"></a>Открытие порта 80 для веб-трафика
 
-На этой виртуальной машине будет выполняться веб-сервер IIS, поэтому порт 80 должен быть доступен для интернет-трафика. Выполните команду [az vm open-port](/cli/azure/vm), чтобы открыть нужный порт.
+Так как на этой виртуальной машине будет выполняться веб-сервер IIS, порт 80 должен быть доступным из Интернета. Выполните команду [az vm open-port](/cli/azure/vm), чтобы открыть нужный порт. 
 
 ```cli
 az vm open-port --port 80 --resource-group myResourceGroup --name myVM
@@ -103,7 +103,7 @@ apt-get -y install nginx
 
 ## <a name="view-the-nginx-welcome-page"></a>Просмотр страницы приветствия nginx
 
-Теперь на виртуальной машине установлен сервер NGINX и открыт порт 80, и вы можете обращаться к веб-серверу через общедоступный IP-адрес этой виртуальной машины. Откройте окно браузера и перейдите по адресу ```http://<public IP address>```.
+Теперь на виртуальной машине установлен сервер NGINX и открыт порт 80, и вы можете обращаться к веб-серверу через общедоступный IP-адрес этой виртуальной машины. Откройте браузер и перейдите на страницу ```http://<public IP address>```.
 
 ![Страница приветствия веб-сервера NGINX](./media/azure-stack-quick-create-vm-linux-cli/nginx.png)
 

@@ -1,6 +1,6 @@
 ---
 title: Создание виртуальной машины Linux с помощью PowerShell в Azure Stack | Документация Майкрософт
-description: Создание виртуальной машины Linux с использованием PowerShell в Azure Stack
+description: Создайте виртуальную машину Linux с помощью PowerShell в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,14 +15,14 @@ ms.date: 03/11/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 95b81f6af8caa3e0f4dd7639614bed1b78915539
-ms.sourcegitcommit: 41927cb812e6a705d8e414c5f605654da1fc6952
+ms.openlocfilehash: 55f1395d66262b268b9107f196528270c1546bba
+ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/25/2019
-ms.locfileid: "64477409"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65712297"
 ---
-# <a name="quickstart-create-a-linux-server-virtual-machine-by-using-powershell-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины с сервером Linux с помощью PowerShell в Azure Stack
+# <a name="quickstart-create-a-linux-server-virtual-machine-using-powershell-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины Linux с помощью PowerShell в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
@@ -40,13 +40,16 @@ ms.locfileid: "64477409"
 
 * Для создания и администрирования ресурсов в Azure Stack требуется определенная версия Azure PowerShell. Если вы еще не настроили PowerShell для Azure Stack, выполните действия по [установке](../operator/azure-stack-powershell-install.md) PowerShell.
 
-* После настройки PowerShell для Azure Stack нужно подключиться к среде Azure Stack. Инструкции см. в статье [Настройка пользовательской среды PowerShell в Azure Stack](azure-stack-powershell-configure-user.md).
+* Настроив PowerShell для Azure Stack, подключитесь к среде Azure Stack. Инструкции см. в статье [Настройка пользовательской среды PowerShell в Azure Stack](azure-stack-powershell-configure-user.md).
 
 * В каталоге .ssh вашего профиля пользователя Windows сохраняется открытый ключ SSH с именем id_rsa.pub. Дополнительные сведения создании открытого ключа SSH см. в [этой статье](azure-stack-dev-start-howto-ssh-public-key.md).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов — это логический контейнер, в котором вы можете развертывать ресурсы Azure Stack и управлять ими. Из пакета средств разработки или интегрированной системы Azure Stack выполните следующий блок кода, чтобы создать группу ресурсов. В этом документе мы присвоили значения всем переменным. Вы можете использовать эти значения или присвоить другие.
+Группа ресурсов — это логический контейнер, в котором вы можете развертывать ресурсы Azure Stack и управлять ими. Из пакета средств разработки или интегрированной системы Azure Stack выполните следующий блок кода, чтобы создать группу ресурсов. 
+
+> [!NOTE]
+> В примерах кода всем переменным уже присвоены значения. Но вы можете изменить эти значения, если потребуется.
 
 ```powershell  
 # Create variables to store the location and resource group names.
@@ -206,7 +209,7 @@ New-AzureRmVM `
 ## <a name="quick-create-virtual-machine---full-script"></a>Быстрое создание виртуальной машины — полный скрипт
 
 > [!NOTE]
-> Это практически полное представление приведенного выше кода, но с использованием пароля, а не ключа SSH для аутентификации.
+> Это объединенное представление приведенного выше кода, но с использованием пароля, а не ключа SSH для аутентификации.
 
 ```powershell
 ## Create a resource group
@@ -380,7 +383,7 @@ New-AzureRmVM `
 Get-AzureRmPublicIpAddress -ResourceGroupName myResourceGroup | Select IpAddress
 ```
 
-Чтобы подключиться к виртуальной машине, в клиентской системе, в которой установлен протокол SSH, выполните приведенную ниже команду. Если вы работаете в Windows, можно использовать [Putty](https://www.putty.org/) для создания подключения.
+Чтобы подключиться к виртуальной машине, в клиентской системе, в которой установлен протокол SSH, выполните приведенную ниже команду. Если вы работаете в Windows, можно использовать [PuTTY](https://www.putty.org/) для установки подключения.
 
 ```
 ssh <Public IP Address>
@@ -404,7 +407,7 @@ apt-get -y install nginx
 
 ## <a name="view-the-nginx-welcome-page"></a>Просмотр страницы приветствия nginx
 
-Теперь на виртуальной машине установлен сервер NGINX и открыт порт 80, и вы можете обращаться к веб-серверу через общедоступный IP-адрес этой виртуальной машины. Откройте окно браузера и перейдите по адресу ```http://<public IP address>```.
+Теперь на виртуальной машине установлен сервер NGINX и открыт порт 80, и вы можете обращаться к веб-серверу через общедоступный IP-адрес этой виртуальной машины. Откройте веб-браузер и перейдите на страницу ```http://<public IP address>```.
 
 ![Страница приветствия веб-сервера NGINX](./media/azure-stack-quick-create-vm-linux-cli/nginx.png)
 

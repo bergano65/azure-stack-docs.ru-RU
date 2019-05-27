@@ -1,6 +1,6 @@
 ---
 title: Создание виртуальной машины Windows в Azure Stack с помощью Azure CLI | Документация Майкрософт
-description: Узнайте, как создать виртуальную машину Windows в Azure Stack с помощью Azure CLI
+description: Создание виртуальной машины Windows в Azure Stack с помощью Azure CLI
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,18 +11,18 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 01/14/2019
+ms.date: 05/16/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 67e0ccfa883e79d66eb9ca38a6cf15f00154c487
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 090ad90f15056d614e5f61b848e5c8c248889ef2
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64312941"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782631"
 ---
-# <a name="quickstart-create-a-windows-server-virtual-machine-by-using-azure-cli-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины Windows Server с помощью Azure CLI в Azure Stack
+# <a name="quickstart-create-a-windows-server-virtual-machine-using-azure-cli-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины Windows Server с помощью Azure CLI в Azure Stack
 
 ‎*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
@@ -53,7 +53,7 @@ az group create --name myResourceGroup --location local
 
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 
-Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az-vm-create). В следующем примере создаются виртуальная машина с именем myVM В этом примере используются имя администратора Demouser и пароль Demouser@123. Укажите вместо них значения, применимые в вашем окружении.
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az-vm-create). В следующем примере создаются виртуальная машина с именем myVM В этом примере используются следующие учетные данные администратора: имя Demouser и пароль Demouser@123. Укажите вместо них значения, подходящие для вашей среды.
 
 ```cli
 az vm create \
@@ -65,13 +65,13 @@ az vm create \
   --location local
 ```
 
-При создании виртуальной машины параметр **PublicIPAddress** в выходных данных содержит общедоступный IP-адрес виртуальной машины. Запишите этот адрес: он потребуется позже для доступа к виртуальной машине.
+При создании виртуальной машины параметр **PublicIPAddress** в выходных данных содержит общедоступный IP-адрес виртуальной машины. Запишите этот адрес, так как он понадобится позже для доступа к виртуальной машине.
 
 ## <a name="open-port-80-for-web-traffic"></a>Открытие порта 80 для веб-трафика
 
-На этой виртуальной машине будет выполняться веб-сервер IIS, а значит порт 80 должен быть доступен из Интернета.
+Так как на этой виртуальной машине будет выполняться веб-сервер IIS, порт 80 должен быть доступным из Интернета.
 
-Выполните команду [az vm open-port](/cli/azure/vm), чтобы открыть порт 80.
+Выполните команду [az vm open-port](/cli/azure/vm), чтобы открыть порт 80.
 
 ```cli
 az vm open-port --port 80 --resource-group myResourceGroup --name myVM
@@ -87,7 +87,7 @@ mstsc /v <Public IP Address>
 
 ## <a name="install-iis-using-powershell"></a>Установка IIS с помощью PowerShell
 
-Итак, вы выполнили вход на виртуальную машину и теперь можете установить на ней IIS с помощью PowerShell. Откройте на виртуальной машине сеанс PowerShel и выполните следующую команду:
+Итак, вы вошли на виртуальную машину и теперь можете установить на ней IIS с помощью PowerShell. Откройте на виртуальной машине сеанс PowerShel и выполните следующую команду:
 
 ```powershell
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
@@ -95,7 +95,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 ## <a name="view-the-iis-welcome-page"></a>Просмотр страницы приветствия IIS
 
-Страницу приветствия IIS по умолчанию можно просмотреть в любом веб-браузере. Чтобы перейти на страницу по умолчанию, используйте IP-адрес, записанный в предыдущем разделе.
+Страницу приветствия IIS по умолчанию можно просмотреть в любом браузере. Чтобы перейти на эту страницу, используйте общедоступный IP-адрес, записанный в предыдущем разделе.
 
 ![Сайт IIS по умолчанию](./media/azure-stack-quick-create-vm-windows-cli/default-iis-website.png)
 

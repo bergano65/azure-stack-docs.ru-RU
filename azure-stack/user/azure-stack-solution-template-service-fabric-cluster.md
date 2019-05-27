@@ -15,20 +15,20 @@ ms.date: 01/25/2019
 ms.author: mabrigg
 ms.reviewer: shnatara
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 29adea1cb8c07acc309ef7aae2856b9a14759de3
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: b35368804423a4647b84000d95adf41ee5fe09b2
+ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985885"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65712460"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack"></a>Развертывание кластера Service Fabric в Azure Stack
 
 Используйте элемент **Кластер Service Fabric** из Azure Marketplace для развертывания защищенного кластера Service Fabric в Azure Stack. 
 
-Дополнительные сведения о работе с Service Fabric см. в статьях [Общие сведения о Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) и [Сценарии защиты кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) в документации Azure.
+Дополнительные сведения о [работе с Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) и [сценариях защиты кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) можно найти в документации Azure.
 
-Кластер Service Fabric в Azure Stack не использует поставщик ресурсов Microsoft.ServiceFabric. В Azure Stack кластер Service Fabric представляет собой масштабируемый набор виртуальных машин с предустановленным с помощью Desired State Configuration (DSC) набором программного обеспечения.
+Кластер Service Fabric в Azure Stack не использует поставщик ресурсов Microsoft.ServiceFabric. Вместо этого в Azure Stack кластер Service Fabric представляет собой масштабируемый набор виртуальных машин с ПО, предустановленным с помощью платформы [Desired State Configuration (DSC)](https://docs.microsoft.com/powershell/dsc/overview/overview).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,9 +40,10 @@ ms.locfileid: "64985885"
      Дополнительные сведения см. в разделе с [требованиями](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) для создания сертификата на стороне сервера.
 
      > [!NOTE]  
-     > Вы можете использовать самозаверяющий сертификат вместо сертификата сервера X.509 для целей тестирования. Самозаверяющие сертификаты не обязательно должны совпадать с FQDN кластера.
+     > Вы можете использовать самозаверяющий сертификат вместо сертификата сервера X.509 для тестирования. Самозаверяющие сертификаты не обязательно должны совпадать с FQDN кластера.
 
-1. **Сертификат клиента администрирования** — это сертификат, который клиент будет использовать для проверки подлинности в кластере Service Fabric. Этот сертификат может быть самозаверяющим. Дополнительные сведения см. в разделе с [требованиями](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) для создания клиентского сертификата.
+1. **Сертификат клиента администрирования.**  
+   Это сертификат, который клиент использует для проверки подлинности в кластере Service Fabric. Он может быть самозаверяющим. Дополнительные сведения см. в разделе с [требованиями](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) для создания клиентского сертификата.
 
 1. **Следующие компоненты должны быть доступны в Azure Stack Marketplace:**
     - **Windows Server 2016** — этот шаблон использует образ Windows Server 2016 для создания кластера.  
@@ -51,15 +52,15 @@ ms.locfileid: "64985885"
 
 
 ## <a name="add-a-secret-to-key-vault"></a>Добавление секрета в Key Vault
-Чтобы развернуть кластер Service Fabric, необходимо указать правильный *идентификатор секрета* Key Vault или URL-адрес для кластера Service Fabric. Шаблон Azure Resource Manager принимает KeyVault в качестве входного параметра. Затем при установке кластера Service Fabric шаблон получает сертификат кластера.
+Чтобы развернуть кластер Service Fabric, необходимо указать правильный *идентификатор секрета* Key Vault или URL-адрес для кластера Service Fabric. Шаблон Azure Resource Manager принимает Key Vault в качестве входного параметра. Затем при установке кластера Service Fabric шаблон получает сертификат кластера.
 
 > [!IMPORTANT]  
-> Вы должны использовать PowerShell для добавления секрета в Key Vault для использования в Service Fabric. Не используйте портал.  
+> Добавить секрет в Key Vault для использования в Service Fabric можно с помощью PowerShell. Не используйте портал.  
 
-Используйте следующий скрипт, чтобы создать Key Vault и добавить *сертификат кластера* в него. (См. раздел [Предварительные требования](#prerequisites).) Прежде чем запустить скрипт, просмотрите его пример и обновите указанные параметры в соответствии со своей средой. Этот скрипт также будет выводить значения, которые необходимо указать в шаблоне Azure Resource Manager. 
+Используйте приведенный ниже скрипт, чтобы создать Key Vault и добавить *сертификат кластера*. (См. раздел [Предварительные требования](#prerequisites).) Прежде чем запустить скрипт, просмотрите его пример и обновите указанные параметры в соответствии со своей средой. Этот скрипт также будет выводить значения, которые необходимо указать в шаблоне Azure Resource Manager. 
 
 > [!TIP]  
-> Для успешного выполнения скрипта должно быть доступно общедоступное предложение, которое содержит службы для вычисления, сети, хранилища и Key Vault. 
+> Для успешного выполнения скрипта нужно предоставить общедоступное предложение, которое содержит службы для вычислительных ресурсов, сети, хранилища и Key Vault. 
 
   ```powershell
     function Get-ThumbprintFromPfx($PfxFilePath, $Password) 
@@ -119,7 +120,7 @@ ms.locfileid: "64985885"
    ``` 
 
 
-Дополнительные сведения см. в статье [Управление Key Vault в Azure Stack с использованием PowerShell](azure-stack-key-vault-manage-powershell.md).
+См. дополнительные сведения об [управлении Key Vault в Azure Stack с помощью PowerShell](azure-stack-key-vault-manage-powershell.md).
 
 ## <a name="deploy-the-marketplace-item"></a>Развертывание элемента Marketplace
 
@@ -135,12 +136,12 @@ ms.locfileid: "64985885"
 
    ![Параметры сети](media/azure-stack-solution-template-service-fabric-cluster/image4.png)
 
-1. На странице *Безопасность* добавьте значения, полученные в результате [создания Azure KeyVault](#add-a-secret-to-key-vault) и передачи секрета.
+1. На странице *Безопасность* добавьте значения, полученные при [создании Azure Key Vault](#add-a-secret-to-key-vault) и передаче секрета.
 
    В *соответствующем поле* введите отпечаток *сертификата клиента администрирования*. (См. раздел [Предварительные требования](#prerequisites).)
    
-   - В поле "Исходное Key Vault"  укажите всю строку *идентификатора Key Vault*, содержащуюся в результатах скрипта. 
-   - В поле URL-адреса сертификата кластера укажите полный URL-адрес из *идентификатора секрета*, содержащегося в результатах скрипта. 
+   - В поле "Исходное Key Vault"  укажите всю строку `keyVault id` из результатов скрипта. 
+   - В поле URL-адреса сертификата кластера укажите полный URL-адрес из `Secret Id` из результатов скрипта. 
    - В поле отпечатка сертификата кластера укажите *отпечаток сертификата кластера* из результатов скрипта.
    - В поле отпечатков сертификата клиента администрирования укажите *отпечаток сертификата клиента администрирования*, созданный при выполнении предварительных требований. 
 
@@ -157,7 +158,7 @@ ms.locfileid: "64985885"
 
 
 ### <a name="use-service-fabric-explorer"></a>Использование Service Fabric Explorer
-1.  Проверьте, что веб-браузер имеет доступ к сертификату клиента администрирования и может пройти проверку подлинности в кластере Service Fabric.  
+1.  Удостоверьтесь, что веб-браузер имеет доступ к сертификату клиента администрирования и может пройти проверку подлинности в кластере Service Fabric.  
 
     a. Откройте Internet Explorer и последовательно выберите **Свойства обозревателя** > **Содержимое** > **Сертификаты**.
   
@@ -184,8 +185,8 @@ ms.locfileid: "64985885"
 
 1. Чтобы найти URL-адрес для Service Fabric Explorer и конечную точку подключения клиента, просмотрите результаты развертывания шаблона.
 
-1. В браузере перейдите по адресу https://*FQDN*:19080. Замените *FQDN* на полное доменное имя кластера Service Fabric из шага 2.   
-   Если вы использовали самозаверяющий сертификат, то отобразится предупреждение, что соединение не является безопасным. Чтобы перейти на веб-сайт, выберите **More Information** (Подробнее), а затем **Go on to the webpage** (Перейти на веб-страницу). 
+1. В браузере перейдите по адресу <https://*FQDN*:19080>. Замените *FQDN* на полное доменное имя кластера Service Fabric из шага 2.   
+   Если вы использовали самозаверяющий сертификат, отобразится предупреждение о том, что подключение не является безопасным. Чтобы перейти на веб-сайт, выберите **Дополнительные сведения**, а затем **Перейти на веб-страницу**. 
 
 1. Для проверки подлинности на сайте нужно выбрать используемый сертификат. Выберите **More choices** (Дополнительные варианты), выберите соответствующий сертификат и нажмите кнопку **ОК** для подключения к Service Fabric Explorer. 
 
@@ -193,7 +194,7 @@ ms.locfileid: "64985885"
 
 
 
-## <a name="use-service-fabric-powershell"></a>Использование Service Fabric PowerShell
+### <a name="use-service-fabric-powershell"></a>Использование Service Fabric PowerShell
 
 1. Установите *пакет SDK для Microsoft Azure Service Fabric*  из раздела [Установка пакета SDK и инструментов](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started#install-the-sdk-and-tools) документации Azure Service Fabric.  
 
