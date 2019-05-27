@@ -2,26 +2,28 @@
 title: Интеграция центра обработки данных Azure Stack — DNS
 description: Узнайте, как интегрировать DNS Azure Stack из DNS центра обработки данных.
 services: azure-stack
-author: jeffgilb
+author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 02/12/2019
-ms.author: jeffgilb
+ms.date: 05/09/2019
+ms.author: mabrigg
 ms.reviewer: wfayed
-ms.lastreviewed: 10/15/2018
+ms.lastreviewed: 05/09/2019
 keywords: ''
-ms.openlocfilehash: e14fa6c172fcf579acf28bc8f3ea20f34148b90c
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: bf1aed6c8140f0c0753f49195082dfd71737868a
+ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985270"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65618668"
 ---
 # <a name="azure-stack-datacenter-integration---dns"></a>Интеграция центра обработки данных Azure Stack — DNS
+
 Чтобы иметь возможность доступа к конечным точкам Azure Stack (**portal**, **adminportal**, **management**, **adminmanagement** и т. д.) из-за пределов Azure Stack, необходимо интегрировать службы DNS Azure Stack с DNS-серверами, на которых размещаются зоны DNS, которые нужно использовать в Azure Stack.
 
 ## <a name="azure-stack-dns-namespace"></a>Пространство имен DNS Azure Stack
+
 При развертывании Azure Stack необходимо ввести некоторые важные сведения, связанные с DNS.
 
 
@@ -51,6 +53,19 @@ ms.locfileid: "64985270"
 
 Чтобы иметь возможность разрешать DNS-имена конечных точек и экземпляров Azure Stack извне Azure Stack, необходимо интегрировать DNS-серверы, где размещена внешняя зона DNS для Azure Stack, с DNS-серверами, где размещена родительская зона, которую требуется использовать.
 
+### <a name="dns-name-labels"></a>Метки DNS-имен
+
+Azure Stack поддерживает добавление метки DNS-имени для общедоступного IP-адреса, чтобы обеспечить разрешение имен для общедоступных IP-адресов. Пользователям может быть удобно обращаться по имени к приложениям и службам, размещенным в Azure Stack. Метка DNS-имени использует пространство имен, которое немного отличается от конечных точек инфраструктуры. В соответствии с предыдущим примером пространство имен для меток DNS-имен выглядит следующим образом.
+
+`*.east.cloudapp.cloud.fabrikam.com`
+
+Таким образом, если клиент указывает значение **Myapp** в поле метки DNS-имени ресурса общедоступного IP-адреса, на внешнем DNS-сервере Azure Stack в зоне **east.cloudapp.cloud.fabrikam.com**  создается запись A для **myapp**. Полученное полное доменное имя выглядит следующим образом.
+
+`myapp.east.cloudapp.cloud.fabrikam.com`
+
+Если вы хотите использовать эту функцию и данное пространство имен, необходимо интегрировать DNS-серверы, на которых размещена внешняя зона DNS для Azure Stack, с DNS-серверами, на которых размещена родительская зона, которую вы также хотите использовать. Это пространство имен, которое отличается от пространства имен для конечных точек службы Azure Stack, поэтому необходимо создать дополнительное правило делегирования или условного перенаправления.
+
+Дополнительные сведения о том, как работает метка DNS-имени, см. в разделе [Использование DNS в Azure Stack](../user/azure-stack-dns.md).
 
 ## <a name="resolution-and-delegation"></a>Разрешение и делегирование
 

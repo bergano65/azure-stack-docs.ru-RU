@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 05/10/2019
 ms.author: sethm
 ms.reviewer: adepue
 ms.lastreviewed: 03/27/2019
-ms.openlocfilehash: e89a2fc4adbe4a9d399cec67608c1c63748692e7
-ms.sourcegitcommit: 39ba6d18781aed98b29ac5e08aac2d75c37bf18c
+ms.openlocfilehash: 1fcdcdc4f592056ce3da5074b2371fde91b47c85
+ms.sourcegitcommit: 426380a3a27954cd609ba52d1066d9d69f5267fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65387126"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65532388"
 ---
 # <a name="azure-stack-1901-update"></a>Обновление 1901 для Azure Stack
 
@@ -222,6 +222,8 @@ Azure Stack выпускает исправления на регулярной 
 
 ## <a name="known-issues-with-the-update-process"></a>Известные проблемы с процессом обновления
 
+- При попытке установить обновление Azure Stack может произойти сбой состояния обновления, после чего его состояние изменится на **PreparationFailed**. Причина этого в том, что поставщику ресурсов обновления (URP) не удается правильно передать файлы из контейнера хранилища в общую папку во внутренней инфраструктуре для обработки. Начиная с версии 1901 (1.1901.0.95) эту проблему можно обойти, еще раз щелкнув **Обновить сейчас** (а не **Возобновить**). URP очистит файлы предыдущей попытки и снова начнет скачивание.
+
 - Если при выполнении [Test-AzureStack](azure-stack-diagnostic-test.md) тест **AzsInfraRoleSummary** или **AzsPortalApiSummary** завершается ошибкой, вам будет предложено запустить **Test-AzureStack** с параметром `-Repair`.  При выполнении этой команды происходит сбой со следующим сообщением об ошибке: `Unexpected exception getting Azure Stack health status. Cannot bind argument to parameter 'TestResult' because it is null.`
 
 - При запуске [Test-AzureStack](azure-stack-diagnostic-test.md) выводится предупреждающее сообщение от контроллера управления основной платой (BMC). Это предупреждение можно проигнорировать.
@@ -238,7 +240,7 @@ Azure Stack выпускает исправления на регулярной 
 
 Ниже перечислены известные проблемы после установки этой версии сборки.
 
-### <a name="portal"></a>Microsoft Azure
+### <a name="portal"></a>Портал
 
 <!-- 2930820 - IS ASDK --> 
 - На порталах администратора и пользователя при поиске "Docker" элемент возвращается неправильно. Он недоступен в Azure Stack. При попытке его создания откроется колонка с указанием ошибки. 
@@ -317,7 +319,7 @@ Azure Stack выпускает исправления на регулярной 
 <!-- #### Identity -->
 <!-- #### Marketplace -->
 
-### <a name="syslog"></a>syslog
+### <a name="syslog"></a>Системный журнал
 
 - Конфигурация системного журнала не сохраняется в цикле обновления, поэтому клиент системного журнала теряет свою конфигурацию, а пересылка сообщений системного журнала останавливается. Эта проблема относится ко всем версиям платформы Azure Stack, начиная с общедоступной версии клиента системного журнала (1809). Чтобы обойти эту проблему, повторно настройте клиент системного журнала после установки обновления Azure Stack.
 
