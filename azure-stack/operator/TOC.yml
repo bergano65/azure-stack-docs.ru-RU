@@ -293,6 +293,8 @@
       items:
         - name: Планирование производительности Службы приложений
           href: azure-stack-app-service-capacity-planning.md
+        - name: Часто задаваемые вопросы о выставлении счетов в Службе приложений
+          href: app-service-billing-faq.md
         - name: Необходимые условия
           href: azure-stack-app-service-before-you-get-started.md
         - name: Развертывание Службы приложений
