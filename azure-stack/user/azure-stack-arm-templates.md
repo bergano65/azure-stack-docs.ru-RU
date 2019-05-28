@@ -16,12 +16,12 @@ ms.date: 02/21/2019
 ms.author: sethm
 ms.reviewer: justini
 ms.lastreviewed: 11/14/2018
-ms.openlocfilehash: b2f2427f7dcf9265f379995f1e854c382e24a9c7
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: fb39928b50e6cce35d5c35c33a95fc2c6b82c160
+ms.sourcegitcommit: d2012e765c3fa5bccb4756d190349e890f9f48bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310082"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65941132"
 ---
 # <a name="use-azure-resource-manager-templates-in-azure-stack"></a>Использование шаблонов диспетчера ресурсов Azure в Azure Stack
 
@@ -33,16 +33,17 @@ ms.locfileid: "64310082"
 
 В [GitHub](https://aka.ms/azurestackgithub) доступны следующие шаблоны быстрого запуска.
 
+
 ## <a name="deploy-sharepoint-server-non-high-availability-deployment"></a>Развертывание SharePoint Server (с обычным уровнем доступности)
 
-Используйте расширение PowerShell DSC для [создания фермы SharePoint Server 2013](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/sharepoint-2013-non-ha), которая включает в себя следующие ресурсы:
+Используйте расширение PowerShell [Desired State Configuration](https://docs.microsoft.com/powershell/dsc/overview/overview) (DSC), чтобы [создать ферму SharePoint Server 2013](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/sharepoint-2013-non-ha), которая включает следующие ресурсы:
 
 * виртуальную сеть;
 * три учетные записи хранения;
 * два внешних балансировщика нагрузки;
 * одну виртуальную машину, настроенную в качестве контроллера домена для нового леса с одним доменом;
 * одну виртуальную машину, настроенную в качестве изолированного сервера SQL Server 2014;
-* одну виртуальную машину, настроенную в качестве фермы SharePoint Server 2013 с одним компьютером.
+* одну виртуальную машину, настроенную в качестве фермы SharePoint Server 2013 с одним компьютером.
 
 ## <a name="deploy-ad-non-high-availability-deployment"></a>Развертывание AD (с обычным уровнем доступности)
 
@@ -77,9 +78,11 @@ ms.locfileid: "64310082"
 
 ## <a name="cancel-a-running-template-deployment"></a>Отмена выполняющегося развертывания шаблона
 
-Чтобы отменить выполняющееся развертывание шаблона, используйте командлет PowerShell [Stop-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/stop-azurermresourcegroupdeployment).
+Чтобы отменить выполняющееся развертывание шаблона, используйте [командлет](https://docs.microsoft.com/powershell/developer/cmdlet/cmdlet-overview) PowerShell [Stop-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/stop-azurermresourcegroupdeployment).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Развертывание шаблонов с помощью портала](azure-stack-deploy-template-portal.md)
+* [Развертывание шаблонов с помощью PowerShell](azure-stack-deploy-template-powershell.md)
+* [Развертывание шаблонов с помощью Visual Studio](azure-stack-deploy-template-visual-studio.md)
 * [Общие сведения об Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview)

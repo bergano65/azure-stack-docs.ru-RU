@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/25/2019
+ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: hectorl
-ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: 1c096428bca07f557d62d0984ca1da1f428e9c28
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 05/16/2019
+ms.openlocfilehash: d2b7ec8beedcc0ffbcf881dd09d513d3e0b61426
+ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64306440"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782224"
 ---
 # <a name="backup-and-data-recovery-for-azure-stack-with-the-infrastructure-backup-service"></a>Резервное копирование и восстановление данных для Azure Stack с помощью службы резервного копирования инфраструктуры
 
@@ -32,7 +32,7 @@ ms.locfileid: "64306440"
 Прежде чем включить службу резервного копирования, убедитесь, что соблюдены все [требования](#verify-requirements-for-the-infrastructure-backup-service).
 
 > [!Note]  
-> Служба резервного копирования инфраструктуры не обрабатывает данные и приложения пользователя. Дополнительные сведения о защите приложений, развернутых на виртуальных машинах IaaS, см. в статье [Защита виртуальных машин, развернутых в Azure Stack](../user/azure-stack-manage-vm-protect.md). Подробное описание защиты приложений в Azure Stack см. в [документе с рекомендациями по обеспечению непрерывности бизнес-процессов и аварийного восстановления для Azure Stack](https://aka.ms/azurestackbcdrconsiderationswp).
+> Служба резервного копирования инфраструктуры не обрабатывает данные и приложения пользователя. Подробные сведения о защите приложений, развернутых на виртуальных машинах IaaS, см. в статье [Защита виртуальных машин, развернутых в Azure Stack](../user/azure-stack-manage-vm-protect.md). Подробное описание защиты приложений в Azure Stack см. в [документе с рекомендациями по обеспечению непрерывности бизнес-процессов и аварийного восстановления для Azure Stack](https://aka.ms/azurestackbcdrconsiderationswp).
 
 ## <a name="the-infrastructure-backup-service"></a>Служба резервного копирования инфраструктуры
 

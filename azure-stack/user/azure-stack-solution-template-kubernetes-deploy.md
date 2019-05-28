@@ -15,12 +15,12 @@ ms.date: 02/27/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: e43ee8afd479d4bead1c513aee0229d8483fab33
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 55db30efd648c76938d71bc2067c7c68e6693f88
+ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310448"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65712335"
 ---
 # <a name="deploy-kubernetes-to-use-containers-with-azure-stack"></a>Узнайте, как развернуть Kubernetes для работы с контейнерами Azure Stack.
 
@@ -33,7 +33,7 @@ ms.locfileid: "64310448"
 
 ## <a name="kubernetes-and-containers"></a>Kubernetes и контейнеры
 
-Вы можете установить Kubernetes с помощью шаблонов Azure Resource Manager, созданных модулем ACS в Azure Stack. [Kubernetes](https://kubernetes.io) — это система с открытым кодом для автоматизации развертывания, масштабирования и управления приложениями в контейнерах. [Контейнер](https://www.docker.com/what-container) — это образ. Образ контейнера схож с виртуальной машиной, но в отличие от нее в контейнер помещены ресурсы, необходимые только для запуска приложения, например код, среда выполнения для этого кода, определенные библиотеки и параметры.
+Вы можете установить Kubernetes с помощью шаблонов Azure Resource Manager, созданных обработчиком AKS в Azure Stack. [Kubernetes](https://kubernetes.io) — это система с открытым кодом для автоматизации развертывания, масштабирования и управления приложениями в контейнерах. [Контейнер](https://www.docker.com/what-container) — это образ. Образ контейнера схож с виртуальной машиной, но в отличие от нее в контейнер помещены ресурсы, необходимые только для запуска приложения, например код, среда выполнения для этого кода, определенные библиотеки и параметры.
 
 Kubernetes можно использовать для следующих целей:
 

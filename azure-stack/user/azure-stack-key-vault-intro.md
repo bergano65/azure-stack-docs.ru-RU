@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/05/2019
+ms.date: 05/21/2019
 ms.author: sethm
-ms.lastreviewed: 01/05/2019
-ms.openlocfilehash: 87c93f77011082d3e43b1c7d238999441f1b90c1
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 05/21/2019
+ms.openlocfilehash: 0167fd89e7bc9b17ff5b950a4ed5f12c368f1f8f
+ms.sourcegitcommit: 6fcd5df8b77e782ef72f0e1419f1f75ec8c16c04
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310334"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991266"
 ---
 # <a name="introduction-to-key-vault-in-azure-stack"></a>Общие сведения о хранилище ключей Azure Stack
 
@@ -50,7 +50,7 @@ ms.locfileid: "64310334"
 
 Оператор может предоставить разработчикам универсальные коды ресурсов (URI) для вызова из приложений. Операторы также могут предоставить администраторам систем безопасности данные журналов использования ключа.
 
-Разработчики также могут управлять ключами напрямую с помощью API. Дополнительные сведения см. в руководстве разработчика хранилища ключей Azure.
+Разработчики также могут управлять ключами напрямую с помощью API. Подробные сведения см. в [руководстве разработчика хранилища ключей](/azure/key-vault/key-vault-developers-guide).
 
 ## <a name="scenarios"></a>Сценарии
 
@@ -78,4 +78,3 @@ ms.locfileid: "64310334"
 
 * [Управление Key Vault в Azure Stack с помощью портала](azure-stack-key-vault-manage-portal.md)  
 * [Управление Key Vault в Azure Stack с помощью PowerShell](azure-stack-key-vault-manage-powershell.md)
-

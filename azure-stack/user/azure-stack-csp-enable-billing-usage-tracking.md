@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/19/2019
+ms.date: 05/20/2019
 ms.author: sethm
 ms.reviewer: alfredop
-ms.lastreviewed: 01/19/2019
-ms.openlocfilehash: 8ed4822d7ee74572e9562191ab89d1035a56b188
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 05/20/2019
+ms.openlocfilehash: 209a0da31d4bd5b519771f68f4bddcbb833284fa
+ms.sourcegitcommit: d2012e765c3fa5bccb4756d190349e890f9f48bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310406"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65941207"
 ---
 # <a name="enable-a-cloud-service-provider-to-manage-your-azure-stack-subscription"></a>Предоставление поставщику облачных служб возможности управлять подпиской Azure Stack
 
@@ -38,7 +38,7 @@ ms.locfileid: "64310406"
 
 Добавьте поставщик облачных служб в качестве **пользователя** вашей подписки.
 
-1. Добавьте выбранного поставщика облачных служб в качестве гостевого пользователя с ролью пользователя в вашем каталоге клиента. Пошаговые инструкции по добавлению пользователя см. в статье [Добавление или удаление пользователей с помощью Azure Active Directory](/azure/active-directory/add-users-azure-active-directory).
+1. Добавьте выбранного поставщика облачных служб в качестве гостевого пользователя с ролью **пользователя** в вашем каталоге клиента. Пошаговые инструкции по добавлению пользователя см. в статье [Добавление или удаление пользователей с помощью Azure Active Directory](/azure/active-directory/add-users-azure-active-directory).
 2. Поставщик облачных служб создает для вас локальную подписку Azure Stack. Теперь вы можете использовать Azure Stack.
 3. Поставщик облачных служб должен создать ресурс в вашей подписке, чтобы убедиться, что он также может управлять ресурсами. Например, можно [создать виртуальную машину Windows на портале Azure Stack](azure-stack-quick-windows-portal.md).
 
@@ -46,7 +46,7 @@ ms.locfileid: "64310406"
 
 Добавьте поставщик облачных служб в качестве **владельца** вашей подписки.
 
-1. Добавьте поставщик облачных служб в качестве гостевого пользователя в вашем каталоге клиента. Пошаговые инструкции по добавлению пользователя см. в статье [Добавление или удаление пользователей с помощью Azure Active Directory](/azure/active-directory/add-users-azure-active-directory).
+1. Добавьте поставщик облачных служб в качестве гостевого пользователя в вашем каталоге клиента. Пошаговые инструкции по добавлению пользователя см. в статье [Add or delete users using Azure Active Directory](/azure/active-directory/add-users-azure-active-directory) (Добавление или удаление пользователей с помощью Azure Active Directory).
 2. Назначьте гостевому пользователю поставщика облачных служб роль **владельца**. Дополнительные сведения о добавлении поставщика облачных служб в подписку см. в статье [Управление доступом с помощью RBAC и портала Azure](/azure/role-based-access-control/role-assignments-portal). Поставщик облачных служб создает для вас локальную подписку Azure Stack. Теперь вы можете использовать Azure Stack.
 3. Поставщик облачных служб должен создать ресурс в вашей подписке, чтобы убедиться, что он может управлять ресурсами.
 

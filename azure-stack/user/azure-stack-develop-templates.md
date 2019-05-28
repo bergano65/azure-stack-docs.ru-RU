@@ -12,22 +12,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/05/2019
+ms.date: 05/21/2019
 ms.author: sethm
 ms.reviewer: unknown
-ms.lastreviewed: 01/05/2019
-ms.openlocfilehash: e2bac108b47aeb1c4a1b6d777072fe4d6ff64f2d
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 05/21/2019
+ms.openlocfilehash: 9967da0434be577e3db8586f28e3078658623e9b
+ms.sourcegitcommit: 6fcd5df8b77e782ef72f0e1419f1f75ec8c16c04
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310370"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991334"
 ---
 # <a name="azure-resource-manager-template-considerations"></a>Рекомендации по использованию шаблона Azure Resource Manager
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-При разработке приложения очень важно обеспечить мобильность шаблона в контексте взаимодействия Azure и Azure Stack. Эта статья содержит рекомендации по разработке [шаблонов](https://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf) Azure Resource Manager. С ее помощью вы сможете создать прототип приложения и протестировать развертывание в Azure без доступа к среде Azure Stack.
+При разработке приложения очень важно обеспечить мобильность шаблона в контексте взаимодействия Azure и Azure Stack. Эта статья содержит рекомендации по разработке [шаблонов Azure Resource Manager](https://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf). С ее помощью вы сможете создать прототип приложения и протестировать развертывание в Azure без доступа к среде Azure Stack.
 
 ## <a name="resource-provider-availability"></a>Доступность поставщика ресурсов
 
@@ -35,7 +35,7 @@ ms.locfileid: "64310370"
 
 ## <a name="public-namespaces"></a>Общедоступные пространства имен
 
-Так как среда Azure Stack размещена в центре обработки данных, она использует собственные пространства имен конечных точек службы, а не пространства общедоступного облака Azure. Поэтому при попытке развернуть в Azure Stack встроенные общедоступные конечные точки в шаблонах Azure Resource Manager происходит ошибка. Вы можете динамически создавать конечные точки службы, используя функции `reference` и `concatenate` для получения значений от поставщика ресурсов во время развертывания. Например, чтобы не указывать *blob.core.windows.net* в шаблоне, получите [primaryEndpoints.blob](https://github.com/Azure/AzureStack-QuickStart-Templates/blob/master/101-vm-windows-create/azuredeploy.json#L175) для динамической настройки конечной точки *osDisk.URI*.
+Так как среда Azure Stack размещена в центре обработки данных, она использует собственные пространства имен конечных точек службы, а не пространства общедоступного облака Azure. Поэтому при попытке развернуть в Azure Stack встроенные общедоступные конечные точки в шаблонах Azure Resource Manager происходит ошибка. Вы можете динамически создавать конечные точки службы, используя функции `reference` и `concatenate` для получения значений от поставщика ресурсов во время развертывания. Например, чтобы не указывать `blob.core.windows.net` в шаблоне, получите [primaryEndpoints.blob](https://github.com/Azure/AzureStack-QuickStart-Templates/blob/master/101-vm-windows-create/azuredeploy.json#L175) для динамической настройки конечной точки *osDisk.URI*.
 
 ```json
 "osDisk": {"name": "osdisk","vhd": {"uri":
@@ -49,11 +49,11 @@ ms.locfileid: "64310370"
 
 | Поставщик ресурсов | версия_API |
 | --- | --- |
-| Службы вычислений |`'2015-06-15'` |
-| Сеть |`'2015-06-15'`, `'2015-05-01-preview'` |
-| Хранилище |`'2016-01-01'`, `'2015-06-15'`, `'2015-05-01-preview'` |
-| Хранилище ключей | `'2015-06-01'` |
-| Служба приложений |`'2015-08-01'` |
+| Службы вычислений |**2015-06-15**; |
+| Сеть |**2015-06-15**, **2015-05-01-preview** |
+| Хранилище |**2016-01-01**, **2015-06-15**, **2015-05-01-preview** |
+| Хранилище ключей | **2015-06-01** |
+| Служба приложений |**2015-08-01** |
 
 ## <a name="template-functions"></a>Функции шаблонов
 
