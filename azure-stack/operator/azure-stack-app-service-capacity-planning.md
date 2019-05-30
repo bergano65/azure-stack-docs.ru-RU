@@ -3,7 +3,7 @@ title: Планирование емкости для ролей сервера 
 description: Планирование емкости для ролей сервера службы приложений Azure в Azure Stack
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: BryanLa
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -16,12 +16,12 @@ ms.date: 03/13/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/13/2019
-ms.openlocfilehash: 762e506f6e6f4e56eabbfdcb3e95dcb351e37aa7
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 8c41bd0241339cc4c29637bc70ef0fb71704feee
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618480"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269183"
 ---
 # <a name="capacity-planning-for-azure-app-service-server-roles-in-azure-stack"></a>Планирование емкости для ролей сервера службы приложений Azure в Azure Stack
 
@@ -37,7 +37,7 @@ ms.locfileid: "65618480"
 | --- | --- | --- |
 | Controller | 2 | A1 |
 | Внешний интерфейс | 2 | A1 |
-| управления | 2 | A3 |
+| Управление | 2 | A3 |
 | ИЗДАТЕЛЬ | 2 | A1 |
 | Рабочие роли — общие | 2 | A1 |
 | Рабочие роли — выделенные | 2 на уровень | A1 |

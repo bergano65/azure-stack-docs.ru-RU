@@ -3,7 +3,7 @@ title: Подготовка главного компьютера для раз�
 description: В этой статье объясняется, как подготовить главный компьютер для установки Пакета средств разработки Azure Stack (ASDK).
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/21/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: b15a5b7e77f0b8fc4361af669cc9099753ad201d
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 3352df80a64bb259320a49729e42c02cb19fca58
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617455"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66267608"
 ---
 # <a name="prepare-the-asdk-host-computer"></a>Подготовка главного компьютера для ASDK
 Перед установкой ASDK на главном компьютере необходимо подготовить узел ASDK. После подготовки данные главного компьютера, на котором будет размещен пакет средств разработки, загружаются с виртуального жесткого диска CloudBuilder.vhdx, чтобы начать развертывание ASDK.

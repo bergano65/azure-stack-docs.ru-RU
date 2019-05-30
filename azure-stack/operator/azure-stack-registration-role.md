@@ -15,12 +15,12 @@ ms.date: 02/13/2019
 ms.author: patricka
 ms.reviewer: rtiberiu
 ms.lastreviewed: 02/13/2019
-ms.openlocfilehash: f5ccc5fc7a280cd8d0832edfe1be6f4ff35dba1d
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 09a75b7aad3d0a9a919883641d8dc901353a5048
+ms.sourcegitcommit: 261df5403ec01c3af5637a76d44bf030f9342410
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985349"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66251915"
 ---
 # <a name="create-a-registration-role-for-azure-stack"></a>Создание роли для регистрации для Azure Stack
 
@@ -33,7 +33,7 @@ ms.locfileid: "64985349"
 
 При регистрации Azure Stack учетная запись регистрации требует следующие разрешения Azure Active Directory и подписки Azure.
 
-* **Разрешения для регистрации приложения в клиенте Azure Active Directory.** Разрешения для регистрации приложения есть у администраторов. Разрешение для пользователя — это глобальный параметр для всех пользователей в клиенте. Чтобы просмотреть или изменить параметры, ознакомьтесь с разделом [Required permissions]((/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions) (Необходимые разрешения).
+* **Разрешения для регистрации приложения в клиенте Azure Active Directory.** Разрешения для регистрации приложения есть у администраторов. Разрешение для пользователя — это глобальный параметр для всех пользователей в клиенте. Чтобы просмотреть или изменить параметры, ознакомьтесь с разделом [Необходимые разрешения](/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions).
 
     *Пользователь может регистрировать приложения*. Параметру должно быть присвоено значение **Да**, чтобы разрешить учетной записи пользователя регистрировать Azure Stack. Если для параметра регистрации приложения установлено значение **Нет**, вы не сможете использовать учетную запись пользователя для регистрации Azure Stack и должны использовать учетную запись глобального администратора.
 
@@ -41,7 +41,7 @@ ms.locfileid: "64985349"
 
 ## <a name="create-a-custom-role-using-powershell"></a>Создание пользовательской роли с помощью PowerShell
 
-Чтобы создать пользовательскую роль, нужно иметь разрешение `Microsoft.Authorization/roleDefinitions/write` для всех объектов `AssignableScopes`, таких как [Владелец]((/azure/role-based-access-control/built-in-roles#owner) или [Администратор доступа пользователей]((/azure/role-based-access-control/built-in-roles#user-access-administrator). Используйте следующий шаблон JSON, чтобы упростить определение настраиваемой роли. Этот шаблон создает пользовательскую роль, которая дает требуемый доступ на чтение и запись для регистрации Azure Stack.
+Чтобы создать пользовательскую роль, нужно иметь разрешение `Microsoft.Authorization/roleDefinitions/write` для всех объектов `AssignableScopes`, таких как [Владелец](/azure/role-based-access-control/built-in-roles#owner) или [Администратор доступа пользователей](/azure/role-based-access-control/built-in-roles#user-access-administrator). Используйте следующий шаблон JSON, чтобы упростить определение настраиваемой роли. Этот шаблон создает пользовательскую роль, которая дает требуемый доступ на чтение и запись для регистрации Azure Stack.
 
 1. Создайте файл JSON. Например, `C:\CustomRoles\registrationrole.json`
 2. Добавьте в файл следующий код JSON. Замените `<SubscriptionID>` идентификатором своей подписки Azure.
@@ -70,7 +70,7 @@ ms.locfileid: "64985349"
     }
     ```
 
-3. В PowerShell подключитесь к Azure, чтобы использовать Azure Resource Manager. При отображении запроса войдите в учетную запись с достаточными разрешениями, например [владельца]((/azure/role-based-access-control/built-in-roles#owner) или [администратора доступа пользователей]((/azure/role-based-access-control/built-in-roles#user-access-administrator).
+3. В PowerShell подключитесь к Azure, чтобы использовать Azure Resource Manager. При поступлении запроса войдите в учетную запись с достаточными разрешениями, например [владельца](/azure/role-based-access-control/built-in-roles#owner) или [администратора доступа пользователей](/azure/role-based-access-control/built-in-roles#user-access-administrator).
 
     ```azurepowershell
     Connect-AzureRmAccount
@@ -86,7 +86,7 @@ ms.locfileid: "64985349"
 
 После создания настраиваемой роли регистрации назначьте пользователей роли, регистрирующих Azure Stack.
 
-1. Войдите в учетную запись с достаточными разрешениями в подписке Azure, чтобы делегировать права, например [владельца]((/azure/role-based-access-control/built-in-roles#owner) или [администратора доступа пользователей]((/azure/role-based-access-control/built-in-roles#user-access-administrator).
+1. Войдите в учетную запись с достаточными разрешениями в подписке Azure, чтобы делегировать права, например [владельца](/azure/role-based-access-control/built-in-roles#owner) или [администратора доступа пользователей](/azure/role-based-access-control/built-in-roles#user-access-administrator).
 2. В разделе **Подписки** выберите **Управление доступом (IAM) > Добавить назначение ролей**.
 3. В поле **Роль** выберите настраиваемую роль, для которой вы создали *роль для регистрации Azure Stack*.
 4. Выберите пользователей, которых хотите назначить роли.
@@ -94,7 +94,7 @@ ms.locfileid: "64985349"
 
     ![Выбор пользователей для назначения роли](media/azure-stack-registration-role/assign-role.png)
 
-Подробные сведения об использовании настраиваемых ролей см. в статье [Elevate access to manage all Azure subscriptions and management groups]((/azure/role-based-access-control/role-assignments-portal) (Повышение прав доступа для управления всеми подписками Azure и группами управления).
+Дополнительные сведения об использовании настраиваемых ролей см. в статье [Управление доступом с помощью RBAC и портала Azure](/azure/role-based-access-control/role-assignments-portal).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

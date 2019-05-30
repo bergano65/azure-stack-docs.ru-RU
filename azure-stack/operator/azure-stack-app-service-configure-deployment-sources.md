@@ -3,7 +3,7 @@ title: Настройка источников развертывания для
 description: Действия администратора службы для настройки источников развертывания (Git, GitHub, Bitbucket, Dropbox и OneDrive) для служб приложений в Azure Stack
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: bryanla
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/11/2019
-ms.author: mabrigg
+ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: d3e1faf53465e193faac8f4716868a9b1b10105c
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 8512568c709770f736d6740d83578dee7391adff
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618238"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269262"
 ---
 # <a name="configure-deployment-sources"></a>Настройка источников развертывания
 
@@ -102,7 +102,7 @@ ms.locfileid: "65618238"
 6. В разделе **Платформы** щелкните **Добавление платформы** и выберите **Web** (Веб).
 7. Введите **URI перенаправления**. В развертывании Azure Stack по умолчанию используется URI перенаправления в формате https://portal.local.azurestack.external/TokenAuthorize. Если вы используете другой домен, введите его имя вместо домена azurestack.local.
 ![Приложение OneDrive — добавление веб-платформы][12]
-8. Добавьте разрешения в разделе **Microsoft Graph Permissions (Разрешения Microsoft Graph)** - **Delegated Permissions (Делегированные разрешения)**.
+8. Добавьте разрешения в разделе **Microsoft Graph Permissions (Разрешения Microsoft Graph)**  - **Delegated Permissions (Делегированные разрешения)** .
     - **Files.ReadWrite.AppFolder**
     - **User. Read**  
       ![Разрешения Graph для приложения OneDrive][13]

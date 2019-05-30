@@ -15,12 +15,12 @@ ms.date: 02/11/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 02/11/2019
-ms.openlocfilehash: ca0dd74a08ce1abe454cb497a2569aae0b958d7c
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 367053882e9e44ba983d5df552929c65222fcafc
+ms.sourcegitcommit: be5382f715a9c1c18c660b630d8fcd823f13aae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311504"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66197350"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-using-active-directory-federated-services"></a>Развертывание Kubernetes в Azure Stack с помощью служб федерации Active Directory
 
@@ -83,7 +83,7 @@ ms.locfileid: "64311504"
        | Имя хранилища ключей | Имя хранилища.<br> Шаблон регулярного выражения: `^[a-zA-Z0-9-]{3,24}$` |
        | Расположение группы ресурсов | Расположение группы ресурсов. Это регион, выбранный для установки Azure Stack. |
 
-   - Откройте PowerShell с помощью командной строки с повышенными привилегиями и [подключитесь к Azure Stack](azure-stack-powershell-configure-user.md#connect-with-ad-fs). Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
+   - Откройте PowerShell с помощью командной строки с повышенными привилегиями и [подключитесь к Azure Stack](azure-stack-powershell-configure-user.md#connect-to-azure-stack-with-ad-fs). Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
 
    ```powershell  
        $armEndpoint="<Azure Resource Manager Endpoint>"
@@ -124,7 +124,7 @@ ms.locfileid: "64311504"
        | Конечная точка Azure Resource Manager | Конечная точка в Пакете средств разработки Azure Stack (ASDK) по ссылке: `https://management.local.azurestack.external/`<br>Конечная точка в интегрированных системах по ссылке: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/` |
        | Идентификатор подписки | [Идентификатор подписки](../operator/azure-stack-plan-offer-quota-overview.md#subscriptions) для доступа к предложениям в Azure Stack. |
 
-   - Откройте PowerShell с помощью командной строки с повышенными привилегиями и [подключитесь к Azure Stack](azure-stack-powershell-configure-user.md#connect-with-ad-fs). Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
+   - Откройте PowerShell с помощью командной строки с повышенными привилегиями и [подключитесь к Azure Stack](azure-stack-powershell-configure-user.md#connect-to-azure-stack-with-ad-fs). Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
 
     ```powershell
         

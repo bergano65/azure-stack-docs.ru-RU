@@ -3,7 +3,7 @@ title: Введение в Пакет средств разработки Azure 
 description: Из этой статьи вы узнаете, какие типичные варианты используются для оценки Microsoft Azure Stack и что такое ASDK.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: overview
 ms.custom: mvc
 ms.date: 02/08/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: 08f5d51eb4ded47d1e52ec53d4c75903d13c8815
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 0c6019fd07b21bf82d32bc516a05c5d491041783
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617686"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66267224"
 ---
 # <a name="what-is-the-azure-stack-development-kit"></a>Что такое Пакет средств разработки Azure Stack?
 [Интегрированные системы Microsoft Azure Stack](../operator/azure-stack-overview.md) размером от 4 до 16 узлов, которые совместно поддерживают партнер по оборудованию и корпорация Майкрософт. Использование интегрированных систем Azure Stack позволяет реализовать новые сценарии для производственных рабочих нагрузок. Если вы оператор Azure Stack, который управляет инфраструктурой интегрированных систем и предлагает службы, ознакомьтесь с нашей [документацией для операторов](/azure-stack/operator).

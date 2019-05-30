@@ -3,7 +3,7 @@ title: Обеспечение доступности веб-приложений
 description: Руководство по установке поставщика ресурсов службы приложений и созданию предложений, которые дают вашим пользователям Azure Stack возможность создавать веб-приложения и приложения API.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/11/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: anwestg
 ms.custom: mvc
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: 9954e351ecd584925d264d0c8c5e8fb8e2507192
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: fbf6993447f22a354c61102b9e670c8f1188f48d
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618649"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66268096"
 ---
 # <a name="tutorial-make-web-and-api-apps-available-to-your-azure-stack-users"></a>Руководство. Обеспечение доступности веб-приложений и приложений API для пользователей Azure Stack
 
@@ -68,11 +68,11 @@ ms.locfileid: "65618649"
 
 ### <a name="create-a-sql-database"></a>Создание базы данных SQL
 
-1. Выберите **+** > **Данные+хранилище** > **База данных SQL**.
+1. Выберите **+**  > **Данные+хранилище** > **База данных SQL**.
 2. Сохраните все значения по умолчанию, кроме следующих полей.
 
     - **Имя базы данных**: DNNdb
-    - **Максимальный размер (в МБ)**: 100
+    - **Максимальный размер (в МБ)** : 100
     - **Подписка**: TestAppServiceOffer
     - **Группа ресурсов**. DNN-RG
 
@@ -82,10 +82,10 @@ ms.locfileid: "65618649"
 
 ### <a name="create-a-dnn-app"></a>Создание приложения DNN
 
-1. Выберите **+** > **Просмотреть все** > **DNN Platform preview**(Предварительная версия платформы DNN) > **Создать**.
+1. Выберите **+**  > **Просмотреть все** > **DNN Platform preview**(Предварительная версия платформы DNN) > **Создать**.
 2. Введите *DNNapp* в поле **Имя приложения** и выберите **TestAppServiceOffer** в поле **Подписка**.
 3. Выберите **Настроить обязательные параметры** > **Создать**, а затем введите имя в поле **План службы приложений**.
-4. Выберите **Ценовая категория** > **F1 Free (F1 — "Бесплатный")** > **Выбрать** > **ОК**.
+4. Выберите **Ценовая категория** > **F1 Free (F1 — "Бесплатный")**  > **Выбрать** > **ОК**.
 5. Выберите **База данных** и введите учетные данные для базы данных SQL, которая была создана ранее.
 6. Нажмите кнопку **Создать**.
 

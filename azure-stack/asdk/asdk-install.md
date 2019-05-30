@@ -3,7 +3,7 @@ title: Установка Пакета средств разработки Azure
 description: Описание процесс установки для Пакета средств разработки Azure Stack (ASDK).
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/06/2019
-ms.author: mabrigg
+ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: c14b55379bfad08cbb604b8f27b45a125741a241
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 277b2e8c86cda65167a734d0e5775ec1748ef219
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617406"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66267644"
 ---
 # <a name="install-the-azure-stack-development-kit-asdk"></a>Установка Пакета средств разработки Azure Stack (ASDK)
 После [подготовки главного компьютера ASDK](asdk-prepare-host.md) вы можете развернуть пакет ASDK в образе CloudBuilder.vhdx, выполнив описанные в этой статье действия.
@@ -73,7 +73,7 @@ ms.locfileid: "65617406"
 
 8. Если вы создаете развертывание Azure Active Directory, вскоре после начала настройки отобразится запрос на ввод учетных данных учетной записи глобального администратора Azure Active Directory.
 
-9. Процесс развертывания займет несколько часов, в течение которых главный компьютер один раз автоматически перезагрузится. Чтобы отслеживать ход выполнения развертывания, войдите в систему как azurestack\AzureStackAdmin после того, как перезагрузится главный компьютер с Пакетом средств разработки. После завершения развертывания в окне консоли PowerShell отобразится следующее сообщение. **Завершено: Действие "Развертывание"**. 
+9. Процесс развертывания займет несколько часов, в течение которых главный компьютер один раз автоматически перезагрузится. Чтобы отслеживать ход выполнения развертывания, войдите в систему как azurestack\AzureStackAdmin после того, как перезагрузится главный компьютер с Пакетом средств разработки. После завершения развертывания в окне консоли PowerShell отобразится следующее сообщение. **Завершено: Действие "Развертывание"** . 
     > [!IMPORTANT]
     > Если вы вошли в систему от имени локального администратора, после присоединения компьютера к домену azurestack ход выполнения развертывания отображаться не будет. В этом случае повторное развертывание выполнять не нужно. Чтобы проверить выполнение процесса, просто войдите в систему как azurestack\AzureStackAdmin.
 

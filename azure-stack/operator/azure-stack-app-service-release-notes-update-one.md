@@ -3,8 +3,8 @@ title: Заметки о выпуске обновления 1 для служб
 description: Узнайте о том, что находится в пакете обновлений 1 службы приложений в Azure Stack, об известных проблемах и где можно загрузить обновление.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digmobile
+author: bryanla
+manager: stefsch
 editor: ''
 ms.assetid: ''
 ms.service: azure-stack
@@ -12,17 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 03/25/2018
-ms.date: 04/29/2019
-ms.author: v-jay
-ms.reviewer: sethm
+ms.date: 03/25/2019
+ms.author: anwestg
+ms.reviewer: anwestg
 ms.lastreviewed: 03/20/2018
-ms.openlocfilehash: 86eb23e57516bc108557bbdc4f2d131153f5e855
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: b9b884377e35b43670943f4cf94a24b5216bf233
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64306488"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269125"
 ---
 # <a name="app-service-on-azure-stack-update-1-release-notes"></a>Служба приложений в заметках о выпуске обновления 1 Azure Stack
 
@@ -224,5 +223,3 @@ ms.locfileid: "64306488"
 
 - Обзор службы приложений Azure в Azure Stack см. в [этой статье](azure-stack-app-service-overview.md).
 - Дополнительные сведения о том, как подготовиться к развертыванию службы приложений Azure в Azure Stack, см. в разделе [Подготовка к работе со службой приложений в Azure Stack](azure-stack-app-service-before-you-get-started.md).
-
-<!-- Update_Description: wording update -->

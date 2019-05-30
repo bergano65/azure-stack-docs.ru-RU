@@ -1,6 +1,6 @@
 ---
-title: Создание виртуальной машины Linux с помощью PowerShell в Azure Stack | Документация Майкрософт
-description: Создайте виртуальную машину Linux с помощью PowerShell в Azure Stack.
+title: Создание виртуальной машины Linux с помощью PowerShell в Azure Stack | Документация Майкрософт
+description: Создайте виртуальную машины Linux с помощью PowerShell в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,18 +15,18 @@ ms.date: 03/11/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 55f1395d66262b268b9107f196528270c1546bba
-ms.sourcegitcommit: 87d93cdcdb6efb06e894f56c2f09cad594e1a8b3
+ms.openlocfilehash: 4e60b2f2df2aae9cf27bdec41c6492ad3ff04fb3
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65712297"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269594"
 ---
-# <a name="quickstart-create-a-linux-server-virtual-machine-using-powershell-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины Linux с помощью PowerShell в Azure Stack
+# <a name="quickstart-create-a-linux-server-vm-using-powershell-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины Linux с помощью PowerShell в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Вы можете создать виртуальную машину Ubuntu Server 16.04 LTS с помощью Azure Stack PowerShell. Чтобы создать и использовать виртуальную машину, выполните описанные в этой статье действия.  В этой статье приведены инструкции, которые помогут вам:
+Вы можете создать виртуальную машину Ubuntu Server 16.04 LTS с помощью PowerShell в Azure Stack. Чтобы создать и использовать виртуальную машину, выполните действия, описанные в этой статье.  В этой статье приведены инструкции, которые помогут вам:
 
 * подключиться к виртуальной машине через удаленный клиент;
 * установить веб-сервер NGINX и открыть его стандартную домашнюю страницу;
@@ -113,7 +113,7 @@ $pip = New-AzureRmPublicIpAddress `
 
 ### <a name="create-a-network-security-group-and-a-network-security-group-rule"></a>Создайте группу безопасности сети и правило группы безопасности сети.
 
-Группа безопасности сети обеспечивает защиту виртуальной машины с помощью правил для входящего и исходящего трафика. Создайте правило входящего трафика для порта 3389, чтобы разрешить входящие подключения к удаленному рабочему столу, и правило входящего трафика для порта 80, чтобы разрешить входящий веб-трафик.
+Группа безопасности сети защищает виртуальную машину с использованием правил для входящего и исходящего трафика. Создайте правило входящего трафика для порта 3389, чтобы разрешить входящие подключения к удаленному рабочему столу, и правило входящего трафика для порта 80, чтобы разрешить входящий веб-трафик.
 
 ```powershell
 # Create variables to store the network security group and rules names.
@@ -137,9 +137,9 @@ $nsg = New-AzureRmNetworkSecurityGroup -ResourceGroupName $ResourceGroupName -Lo
 -Name $nsgName -SecurityRules $nsgRuleSSH,$nsgRuleWeb
 ```
 
-### <a name="create-a-network-card-for-the-virtual-machine"></a>Создание сетевой карты для виртуальной машины
+### <a name="create-a-network-card-for-the-vm"></a>Создание сетевого адаптера для виртуальной машины
 
-Сетевая карта подключает виртуальную машину к подсети, группе безопасности сети и общедоступному IP-адресу.
+С помощью сетевого адаптера можно подключить виртуальную машину к подсети, группе безопасности сети и общедоступному IP-адресу.
 
 ```powershell
 # Create a virtual network card and associate it with public IP address and NSG
@@ -152,9 +152,9 @@ $nic = New-AzureRmNetworkInterface `
   -NetworkSecurityGroupId $nsg.Id
 ```
 
-## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
+## <a name="create-a-vm"></a>Создание виртуальной машины
 
-Создайте конфигурацию виртуальной машины. Эта конфигурация содержит параметры, которые используются при развертывании виртуальной машины, например образ виртуальной машины, ее размер и учетные данные пользователя.
+Создайте конфигурацию виртуальной машины. Эта конфигурация содержит параметры, которые используются при развертывании виртуальной машины, например учетные данные, размер и образ виртуальной машины.
 
 ```powershell
 # Define a credential object.
@@ -162,7 +162,7 @@ $UserName='demouser'
 $securePassword = ConvertTo-SecureString ' ' -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential ($UserName, $securePassword)
 
-# Create the virtual machine configuration object
+# Create the VM configuration object
 $VmName = "VirtualMachinelatest"
 $VmSize = "Standard_D1"
 $VirtualMachine = New-AzureRmVMConfig `
@@ -182,7 +182,7 @@ $VirtualMachine = Set-AzureRmVMSourceImage `
   -Skus "16.04-LTS" `
   -Version "latest"
 
-# Sets the operating system disk properties on a virtual machine.
+# Sets the operating system disk properties on a VM.
 $VirtualMachine = Set-AzureRmVMOSDisk `
   -VM $VirtualMachine `
   -CreateOption FromImage | `
@@ -194,19 +194,19 @@ $VirtualMachine = Set-AzureRmVMOSDisk `
 # Configure SSH Keys
 $sshPublicKey = Get-Content "$env:USERPROFILE\.ssh\id_rsa.pub"
 
-# Adds the SSH Key to the virtual machine
+# Adds the SSH Key to the VM
 Add-AzureRmVMSshPublicKey -VM $VirtualMachine `
  -KeyData $sshPublicKey `
  -Path "/home/azureuser/.ssh/authorized_keys"
 
-# Create the virtual machine.
+# Create the VM.
 New-AzureRmVM `
   -ResourceGroupName $ResourceGroupName `
  -Location $location `
   -VM $VirtualMachine
 ```
 
-## <a name="quick-create-virtual-machine---full-script"></a>Быстрое создание виртуальной машины — полный скрипт
+## <a name="quick-create-vm---full-script"></a>Полный крипт для быстрого создания виртуальной машины
 
 > [!NOTE]
 > Это объединенное представление приведенного выше кода, но с использованием пароля, а не ключа SSH для аутентификации.
@@ -233,7 +233,7 @@ $nsgName = "myNetworkSecurityGroup"
 $nsgRuleSSHName = "myNetworkSecurityGroupRuleSSH"
 $nsgRuleWebName = "myNetworkSecurityGroupRuleWeb"
 
-# Create variable for virtual machine password
+# Create variable for VM password
 $VMPassword = 'Password123!'
 
 # End of Variables - no need to edit anything past that point to deploy a single VM
@@ -258,7 +258,7 @@ Set-AzureRmCurrentStorageAccount `
   -StorageAccountName $storageAccountName `
   -ResourceGroupName $resourceGroupName
 
-# Create a storage container to store the virtual machine image
+# Create a storage container to store the VM image
 $containerName = 'osdisks'
 $container = New-AzureStorageContainer `
   -Name $containerName `
@@ -267,7 +267,7 @@ $container = New-AzureStorageContainer `
 
 ## Create networking resources
 
-# Create a virtual network, subnet, and a public IP address. These resources are used to provide network connectivity to the virtual machine.
+# Create a virtual network, subnet, and a public IP address. These resources are used to provide network connectivity to the VM.
 
 # Create a subnet configuration
 $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig `
@@ -294,7 +294,7 @@ $pip = New-AzureRmPublicIpAddress `
 ### Create a network security group and a network security group rule
 
 <#
-The network security group secures the virtual machine by using inbound and outbound rules. Create an inbound rule for port 3389 to allow incoming Remote Desktop connections and an inbound rule for port 80 to allow incoming web traffic.
+The network security group secures the VM by using inbound and outbound rules. Create an inbound rule for port 3389 to allow incoming Remote Desktop connections and an inbound rule for port 80 to allow incoming web traffic.
 #>
 
 # Create an inbound network security group rule for port 22
@@ -311,9 +311,9 @@ $nsgRuleWeb = New-AzureRmNetworkSecurityRuleConfig -Name $nsgRuleWebName -Protoc
 $nsg = New-AzureRmNetworkSecurityGroup -ResourceGroupName $ResourceGroupName -Location $location `
 -Name $nsgName -SecurityRules $nsgRuleSSH,$nsgRuleWeb
 
-### Create a network card for the virtual machine
+### Create a network card for the VM
 
-# The network card connects the virtual machine to a subnet, network security group, and public IP address.
+# The network card connects the VM to a subnet, network security group, and public IP address.
 
 # Create a virtual network card and associate it with public IP address and NSG
 $nic = New-AzureRmNetworkInterface `
@@ -324,9 +324,9 @@ $nic = New-AzureRmNetworkInterface `
   -PublicIpAddressId $pip.Id `
   -NetworkSecurityGroupId $nsg.Id
 
-## Create a virtual machine
+## Create a VM
 <#
-Create a virtual machine configuration. This configuration includes the settings used when deploying the virtual machine. For example: user credentials, size, and the virtual machine image.
+Create a VM configuration. This configuration includes the settings used when deploying the VM. For example: user credentials, size, and the VM image.
 #>
 
 # Define a credential object.
@@ -334,7 +334,7 @@ $UserName='demouser'
 $securePassword = ConvertTo-SecureString $VMPassword -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential ($UserName, $securePassword)
 
-# Create the virtual machine configuration object
+# Create the VM configuration object
 $VmName = "VirtualMachinelatest"
 $VmSize = "Standard_D1"
 $VirtualMachine = New-AzureRmVMConfig `
@@ -360,7 +360,7 @@ $osDiskUri = '{0}vhds/{1}-{2}.vhd' -f `
   $vmName.ToLower(), `
   $osDiskName
 
-# Sets the operating system disk properties on a virtual machine.
+# Sets the operating system disk properties on a VM.
 $VirtualMachine = Set-AzureRmVMOSDisk `
   -VM $VirtualMachine `
   -Name $osDiskName `
@@ -368,16 +368,16 @@ $VirtualMachine = Set-AzureRmVMOSDisk `
   -CreateOption FromImage | `
   Add-AzureRmVMNetworkInterface -Id $nic.Id
 
-# Create the virtual machine.
+# Create the VM.
 New-AzureRmVM `
   -ResourceGroupName $ResourceGroupName `
  -Location $location `
   -VM $VirtualMachine
 ```
 
-## <a name="connect-to-the-virtual-machine"></a>Подключение к виртуальной машине
+## <a name="connect-to-the-vm"></a>Подключение к виртуальной машине
 
-Развернув виртуальную машину, настройте подключение по протоколу SSH к этой виртуальной машине. Получите общедоступный IP-адрес виртуальной машины, выполнив команду [Get-AzureRmPublicIPAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress).
+Развернув виртуальную машину, настройте подключение к ней по протоколу SSH. Получите общедоступный IP-адрес виртуальной машины, выполнив команду [Get-AzureRmPublicIPAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress).
 
 ```powershell
 Get-AzureRmPublicIpAddress -ResourceGroupName myResourceGroup | Select IpAddress
@@ -407,7 +407,7 @@ apt-get -y install nginx
 
 ## <a name="view-the-nginx-welcome-page"></a>Просмотр страницы приветствия nginx
 
-Теперь на виртуальной машине установлен сервер NGINX и открыт порт 80, и вы можете обращаться к веб-серверу через общедоступный IP-адрес этой виртуальной машины. Откройте веб-браузер и перейдите на страницу ```http://<public IP address>```.
+Теперь, когда на виртуальной машине установлен сервер NGINX и открыт порт 80, вы можете обращаться к веб-серверу по общедоступному IP-адресу этой виртуальной машины Откройте веб-браузер и перейдите на страницу ```http://<public IP address>```.
 
 ![Страница приветствия веб-сервера NGINX](./media/azure-stack-quick-create-vm-linux-cli/nginx.png)
 
@@ -421,4 +421,4 @@ Remove-AzureRmResourceGroup -Name myResourceGroup
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-С помощью этого краткого руководства вы развернули простую виртуальную машину Linux. Дополнительные сведения о виртуальных машинах Azure Stack вы найдете в [этих рекомендациях](azure-stack-vm-considerations.md).
+С помощью этого краткого руководства вы развернули простую виртуальную машину с сервером Linux. Дополнительные сведения о виртуальных машинах Azure Stack см. в статье [Рекомендации по использованию виртуальных машин в Azure Stack](azure-stack-vm-considerations.md).
