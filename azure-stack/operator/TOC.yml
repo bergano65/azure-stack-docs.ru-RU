@@ -47,13 +47,6 @@
   items:
     - name: Планирование емкости
       href: capacity-planning.md
-      items:
-        - name: Планирование ресурсов компьютера
-          href: capacity-planning-compute.md
-        - name: Планирование ресурсов хранилища
-          href: capacity-planning-storage.md
-        - name: Планировщик ресурсов Azure Stack
-          href: capacity-planning-spreadsheet.md
     - name: Интеграция центра обработки данных
       href: azure-stack-customer-journey.md
       items:
