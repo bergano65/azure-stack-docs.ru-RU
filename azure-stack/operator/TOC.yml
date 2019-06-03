@@ -4,6 +4,8 @@
   items:
     - name: Что такое Azure Stack?
       href: azure-stack-overview.md
+    - name: Что такое Azure Stack HCI?
+      href: azure-stack-hci-overview.md
     - name: 'Сравнение возможностей, предоставляемых в экосистеме Azure'
       href: compare-azure-azure-stack.md
     - name: Заметки о выпуске
@@ -381,18 +383,14 @@
           href: azure-stack-backup-best-practices.md
         - name: Справочник по резервному копированию
           href: azure-stack-backup-reference.md
-    - name: Получение справки
+    - name: Устранение неполадок
       items:
-        - name: Справка + поддержка
-          href: azure-stack-help-and-support.md
-        - name: Устранение неполадок
-          items:
-            - name: Известные проблемы
-              href: azure-stack-troubleshooting.md
-            - name: Диагностика в Azure Stack
-              href: azure-stack-diagnostics.md
-            - name: Проверка для Azure Stack
-              href: azure-stack-diagnostic-test.md
+        - name: Известные проблемы
+          href: azure-stack-troubleshooting.md
+        - name: Диагностика в Azure Stack
+          href: azure-stack-diagnostics.md
+        - name: Проверка для Azure Stack
+          href: azure-stack-diagnostic-test.md
 - name: Справочные материалы
   items:
     - name: PowerShell для Azure Stack

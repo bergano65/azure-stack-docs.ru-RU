@@ -171,6 +171,8 @@
               maintainContext: true
             - name: Использование Docker для запуска PowerShell
               href: azure-stack-powershell-user-docker.md
+            - name: Подключение с помощью расширения учетной записи Azure
+              href: azure-stack-dev-start-vscode-azure.md
             - name: Установка Visual Studio
               href: azure-stack-install-visual-studio.md
             - name: Использование открытого ключа SSH
