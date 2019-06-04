@@ -3,7 +3,7 @@ title: Автономное обновление службы приложени
 description: Подробные инструкции по обновлению службы приложений Azure в Azure Stack без подключения к Интернету
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: bryanla
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -12,22 +12,22 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/27/2019
+ms.date: 05/28/2019
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.openlocfilehash: b266614ee4fb426740d9e083efe10e1de0dddee9
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 2bbab1870c06e32889187f676022dab410aaf08c
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618723"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269068"
 ---
 # <a name="offline-update-of-azure-app-service-on-azure-stack"></a>Автономное обновление службы приложений Azure в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!IMPORTANT]
-> Прежде чем развертывать Службу приложений Azure 1.5, примените обновление 1901 или более поздней версии к интегрированной системе Azure Stack или разверните последний пакет средств разработки Azure Stack. 
+> Прежде чем развертывать Службу приложений Azure 1.6, примените обновление 1904 или более поздней версии к интегрированной системе Azure Stack или разверните последний пакет средств разработки Azure Stack.
 
 Выполнив инструкции в этой статье, вы обновите [поставщик ресурсов службы приложений](azure-stack-app-service-overview.md), развернутый в среде Azure Stack со следующими характеристиками:
 
@@ -35,13 +35,13 @@ ms.locfileid: "65618723"
 * под защитой службы федерации Active Directory (AD FS).
 
 > [!IMPORTANT]
-> Перед выполнением обновления [разверните Службу приложений Azure в поставщике ресурсов Azure Stack](azure-stack-app-service-deploy-offline.md) и ознакомьтесь с [заметками](azure-stack-app-service-release-notes-update-five.md), которые прилагаются к выпуску 1.5, чтобы узнать о новых функциях, исправлениях и любых известных проблемах, которые могут повлиять на развертывание.
+> Прежде чем выполнять обновление, [разверните Службу приложений Azure в поставщике ресурсов Azure Stack](azure-stack-app-service-deploy-offline.md) и просмотрите [заметки](azure-stack-app-service-release-notes-update-six.md) о выпуске 1.6, чтобы узнать о новых функциях, исправлениях и известных проблемах, которые могут повлиять на развертывание.
 
 ## <a name="run-the-app-service-resource-provider-installer"></a>Запуск установщика поставщика ресурсов службы приложений
 
 Чтобы обновить поставщик ресурсов службы приложений в среде Azure Stack, выполните следующие задачи:
 
-1. Загрузите [установщик службы приложений](https://aka.ms/appsvcupdate4installer).
+1. Загрузите [установщик службы приложений](https://aka.ms/appsvcupdate6installer).
 2. Создайте автономный пакет обновления.
 3. Запустите установщик службы приложений (appservice.exe) и завершите обновление.
 
@@ -61,7 +61,7 @@ ms.locfileid: "65618723"
 
     ![Установщик службы приложений][1]
 
-2. Последовательно выберите **Дополнительно** > **Create offline package (Создать автономный пакет)**.
+2. Последовательно выберите **Дополнительно** > **Create offline package (Создать автономный пакет)** .
 
     ![Установщик службы приложений, вкладка "Дополнительно"][2]
 
@@ -80,7 +80,7 @@ ms.locfileid: "65618723"
 
     ![Установщик службы приложений][1]
 
-2. Последовательно выберите **Дополнительно** > **Complete offline installation or upgrade (Завершить автономную установку или обновление)**.
+2. Последовательно выберите **Дополнительно** > **Complete offline installation or upgrade (Завершить автономную установку или обновление)** .
 
     ![Установщик службы приложений, вкладка "Дополнительно"][2]
 
@@ -98,7 +98,7 @@ ms.locfileid: "65618723"
 
    1. Нажмите кнопку **Подключить** рядом с полем **Azure Stack Subscriptions** (Подписки Azure Stack).
       * При использовании Azure Active Directory (Azure AD) введите учетную запись администратора Azure AD и пароль, предоставленный при развертывании Azure Stack. Щелкните **Sign In** (Войти).
-      * Если вы используете службы федерации Active Directory (AD FS), предоставьте соответствующую учетную запись администратора. (например, _cloudadmin@azurestack.local_). Введите пароль и нажмите кнопку **Войти**.
+      * Если вы используете службы федерации Active Directory (AD FS), предоставьте соответствующую учетную запись администратора. (например, _cloudadmin@azurestack.local_ ). Введите пароль и нажмите кнопку **Войти**.
    2. В поле **Azure Stack Subscriptions** (Подписки Azure Stack) выберите **Default Provider Subscription** (Подписка поставщика по умолчанию).
    3. В поле **Azure Stack Locations** (Расположения Azure Stack) выберите расположение, соответствующее региону, в который выполняется развертывание. Например, **локальный** регион при развертывании в Пакете средств разработки Azure Stack.
    4. Если обнаружено существующее развертывание службы приложений, поля группы ресурсов и учетной записи хранения заполняются и выделяются серым цветом.

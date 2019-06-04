@@ -1,6 +1,6 @@
 ---
 title: Подключение к Azure Stack в роли пользователя с помощью PowerShell | Документация Майкрософт
-description: Шаги по подключению к Azure Stack с помощью PowerShell
+description: Узнайте, как подключиться к Azure Stack с помощью PowerShell.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,28 +15,28 @@ ms.date: 04/26/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/24/2019
-ms.openlocfilehash: 855d7c03f4a18c4409d36b8ac5fd702c8549e413
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: c9ef9c1e936c71a8b0a2a0eb636da1eac5bf69da
+ms.sourcegitcommit: be5382f715a9c1c18c660b630d8fcd823f13aae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64986246"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66197326"
 ---
 # <a name="connect-to-azure-stack-with-powershell-as-a-user"></a>Подключение к Azure Stack в роли пользователя с помощью PowerShell
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Вы можете подключиться к Azure Stack с помощью PowerShell. Необходимо подключиться к управлению ресурсами Azure Stack с помощью PowerShell. Например, с помощью PowerShell можно будет подписываться на предложения, создавать виртуальные машины и развертывать шаблоны Azure Resource Manager.
+Вы можете подключиться к Azure Stack для управления ресурсами с помощью PowerShell. Например, с помощью PowerShell можно будет подписываться на предложения, создавать виртуальные машины и развертывать шаблоны Azure Resource Manager.
 
-Чтобы настроить:
+Для настройки сделайте следующее:
   - У вас есть такие требования:
   - Присоединиться к Azure Active Directory (Azure AD) и службам федерации Active Directory (AD FS). 
   - Зарегистрируйте поставщиков ресурсов.
   - Проверьте подключение.
 
-## <a name="prerequisites-to-connect-using-powershell"></a>Предварительные требования для подключения с помощью PowerShell
+## <a name="prerequisites-to-connecting-with-powershell"></a>Предварительные требования для подключения с помощью PowerShell
 
-Выполните предварительные требования с помощью [пакета средств разработки](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) или с помощью внешнего клиента на основе Windows, если используется [VPN-подключение](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn).
+Выполните предварительные требования с помощью [пакета средств разработки](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) или внешнего клиента на основе Windows, если используется [VPN-подключение](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn):
 
 * Установите [совместимые с Azure Stack модули Azure PowerShell](../operator/azure-stack-powershell-install.md).
 * Скачайте [средства, необходимые для работы с Azure Stack](../operator/azure-stack-powershell-download.md).
@@ -48,7 +48,7 @@ ms.locfileid: "64986246"
 - **Конечная точка Azure Resource Manager**  
   Для пакета средств разработки Azure Stack используется значение https://management.local.azurestack.external. Чтобы получить это значение для интегрированных систем Azure Stack, обратитесь к поставщику услуг.
 
-## <a name="connect-with-azure-ad"></a>Подключение к Azure AD
+## <a name="connect-to-azure-stack-with-azure-ad"></a>Подключение к Azure Stack с помощью Azure AD
 
 ```powershell  
     Add-AzureRMEnvironment -Name "AzureStackUser" -ArmEndpoint "https://management.local.azurestack.external"
@@ -62,7 +62,7 @@ ms.locfileid: "64986246"
     Add-AzureRmAccount -EnvironmentName "AzureStackUser" -TenantId $TenantId
 ```
 
-## <a name="connect-with-ad-fs"></a>Подключение к AD FS
+## <a name="connect-to-azure-stack-with-ad-fs"></a>Подключение к Azure Stack с помощью служб федерации Active Directory (AD FS)
 
   ```powershell  
   # Register an Azure Resource Manager environment that targets your Azure Stack instance
@@ -86,7 +86,7 @@ Get-AzureRmResourceProvider -ListAvailable | Register-AzureRmResourceProvider
 
 ## <a name="test-the-connectivity"></a>Проверка подключения
 
-Настроив все необходимое, проверьте возможности подключения, воспользовавшись PowerShell для создания ресурсов в Azure Stack. В целях проверки создайте группу ресурсов для приложения и добавьте в нее виртуальную машину. Используйте команду ниже, чтобы создать группу ресурсов MyResourceGroup.
+Настроив все необходимое, проверьте подключение с помощью PowerShell для создания ресурсов в Azure Stack. Для проверки создайте группу ресурсов для приложения и добавьте в нее виртуальную машину. Используйте команду ниже, чтобы создать группу ресурсов MyResourceGroup.
 
 ```powershell  
 New-AzureRmResourceGroup -Name "MyResourceGroup" -Location "Local"

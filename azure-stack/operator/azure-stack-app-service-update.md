@@ -3,7 +3,7 @@ title: Обновление Службы приложений Azure в Azure Sta
 description: Подробные инструкции по обновлению Службы приложений в Azure Stack
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: BryanLa
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,28 +11,28 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/18/2019
+ms.date: 05/28/2019
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 03/18/2019
-ms.openlocfilehash: bc379bfa93983c2e1579ebf657ce86558abc7d20
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.lastreviewed: 05/28/2019
+ms.openlocfilehash: 95611e776d2517bffaa7a3693362f5d227943bd0
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618206"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269077"
 ---
 # <a name="update-azure-app-service-on-azure-stack"></a>Обновление Службы приложений Azure в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-> [!IMPORTANT]  
-> Прежде чем развертывать Службу приложений Azure 1.5, примените обновление 1901 к интегрированной системе Azure Stack или разверните последний пакет средств разработки Azure Stack.
+> [!IMPORTANT]
+> Прежде чем развертывать Службу приложений Azure 1.6, примените обновление 1904 к интегрированной системе Azure Stack или разверните последний Пакет средств разработки Azure Stack.
 
 Выполнив инструкции в этой статье, вы обновите [поставщик ресурсов Службы приложений](azure-stack-app-service-overview.md), развернутый в среде Azure Stack с подключением к Интернету.
 
-> [!IMPORTANT]  
-> Перед выполнением обновления [разверните Службу приложений Azure в поставщике ресурсов Azure Stack](azure-stack-app-service-deploy.md) и ознакомьтесь с [заметками](azure-stack-app-service-release-notes-update-five.md), которые прилагаются к выпуску 1.5, чтобы узнать о новых функциях, исправлениях и любых известных проблемах, которые могут повлиять на развертывание.
+> [!IMPORTANT]
+> Прежде чем выполнять обновление, [разверните Службу приложений Azure в поставщике ресурсов Azure Stack](azure-stack-app-service-deploy.md) и просмотрите [заметки](azure-stack-app-service-release-notes-update-six.md) о выпуске 1.6, чтобы узнать о новых функциях, исправлениях и известных проблемах, которые могут повлиять на развертывание.
 
 ## <a name="run-the-app-service-resource-provider-installer"></a>Запуск установщика поставщика ресурсов службы приложений
 
@@ -52,7 +52,7 @@ ms.locfileid: "65618206"
 
 Чтобы обновить развертывание Службы приложений Azure в Azure Stack, сделайте следующее:
 
-1. Скачайте [установщик Службы приложений](https://aka.ms/appsvcupdate5installer).
+1. Скачайте [установщик Службы приложений](https://aka.ms/appsvcupdate6installer).
 
 2. Запустите файл appservice.exe от имени администратора.
 

@@ -1,9 +1,9 @@
 ---
 title: Создание субъекта-службы для Azure Stack | Документация Майкрософт
-description: Описывается создание субъекта-службы, который можно использовать в Azure Resource Manager в сочетании с управлением доступом на основе ролей для управления доступом к ресурсам.
+description: Узнайте, как создать субъект-службу, который можно использовать в Azure Resource Manager в сочетании с управлением доступом на основе ролей для управления доступом к ресурсам.
 services: azure-resource-manager
 documentationcenter: na
-author: mattbriggs
+author: PatAltimore
 manager: femila
 ms.service: azure-resource-manager
 ms.devlang: na
@@ -11,17 +11,17 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/15/2019
-ms.author: mabrigg
+ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 12/12/2018
-ms.openlocfilehash: 3860f8dcc99f3505fe2f838e75f5e8f09b78aefe
-ms.sourcegitcommit: 8cb2b567e9914d4d07e754d95c0864aa55868579
+ms.openlocfilehash: 8b3d0ad1f0854f7028e9dfff2d9114df141394a6
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855378"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269609"
 ---
-# <a name="give-applications-access-to-azure-stack-resources-by-creating-service-principals"></a>Предоставление приложениям доступа к ресурсам Azure Stack за счет создания субъектов-служб
+# <a name="create-service-principals-to-give-applications-access-to-azure-stack-resources"></a>Создание субъектов-служб для предоставления приложениям доступа к ресурсам Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
@@ -50,7 +50,7 @@ ms.locfileid: "65855378"
 * Создание субъекта-службы в [Azure Active Directory (Azure AD)](azure-stack-create-service-principals.md#create-service-principal-for-azure-ad).
 * Создание субъекта-службы в [службах федерации Active Directory (AD FS)](azure-stack-create-service-principals.md#create-service-principal-for-ad-fs).
 
-Действия для назначения роли для субъекта-службы аналогичны в Azure AD и AD FS. После создания субъекта-службы вы можете [делегировать разрешения](azure-stack-create-service-principals.md), назначив роль для этого субъекта-службы.
+Действия для назначения роли для субъекта-службы аналогичны в Azure AD и AD FS. Создав субъект-службу, вы можете делегировать разрешения, назначив роль для этого субъекта-службы.
 
 ## <a name="create-service-principal-for-azure-ad"></a>Создание субъекта-службы для Azure AD
 
@@ -117,7 +117,7 @@ ms.locfileid: "65855378"
 
      ![Выбор подписки Visual Studio Enterprise для назначения](./media/azure-stack-create-service-principals/image16.png)
 
-3. В качестве подписки выберите **Управление доступом (IAM)**.
+3. В качестве подписки выберите **Управление доступом (IAM)** .
 
 4. Выберите **Добавить назначение ролей**.
 

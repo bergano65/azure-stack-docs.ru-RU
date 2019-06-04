@@ -1,6 +1,6 @@
 ---
 title: Подключение к Azure Stack | Документация Майкрософт
-description: Узнайте, как подключиться к Azure Stack
+description: Из этой статьи вы узнаете, как подключиться к Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,12 +15,12 @@ ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: ee1314c26e0c30e64c3cb43af44d56a66911c1ff
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.openlocfilehash: 8b7a9e58fd4d4d8c3a05fea60c79ff47a519bf8c
+ms.sourcegitcommit: be5382f715a9c1c18c660b630d8fcd823f13aae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65783073"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66197369"
 ---
 # <a name="connect-to-azure-stack"></a>Подключение к Azure Stack
 
@@ -36,12 +36,12 @@ ms.locfileid: "65783073"
 
 2. На компьютере с комплектом разработки откройте диспетчер сервера, щелкните **Локальный сервер**, отключите усиленную безопасность Internet Explorer и закройте диспетчер сервера.
 
-3. Чтобы открыть портал, перейдите по адресу https://portal.local.azurestack.external/) и выполните вход с помощью учетных данных.
+3. Чтобы открыть портал, перейдите по адресу (https://portal.local.azurestack.external/) и выполните вход с помощью учетных данных.
 
 
 ## <a name="connect-to-azure-stack-with-vpn"></a>Подключение к Azure Stack с помощью VPN
 
-Можно установить VPN-подключение с разделенным туннелем к Пакету средств разработки Azure Stack. Через VPN-подключение можно получить доступ к порталу администратора, порталу пользователя и установленным локально средствам, таким как Visual Studio и PowerShell, для управления ресурсами Azure Stack. VPN-подключение поддерживается в развертываниях на базе Azure Active Directory и служб федерации Active Directory (AD FS). VPN-подключения позволяют нескольким клиентам одновременно подключаться к Azure Stack. 
+Вы можете установить VPN-подключение с разделенным туннелем к Пакету средств разработки Azure Stack. Через VPN-подключение можно получить доступ к порталу администратора, порталу пользователя и установленным локально средствам, таким как Visual Studio и PowerShell, для управления ресурсами Azure Stack. VPN-подключение поддерживается в развертываниях на базе Azure Active Directory и служб федерации Active Directory (AD FS). VPN-подключения позволяют нескольким клиентам одновременно подключаться к Azure Stack. 
 
 > [!NOTE] 
 > Это VPN-подключение не предоставляет возможность подключения к виртуальным машинам инфраструктуры Azure Stack. 
@@ -84,7 +84,7 @@ Add-AzsVpnConnection `
 
 ```
 
-Если настройка выполнена успешно, **azurestack** появится в списке VPN-подключений.
+Если программа установки завершается успешно, `azurestack` появится в списке VPN-подключений.
 
 ![Сетевые подключения](media/azure-stack-connect-azure-stack/image3.png)  
 
@@ -101,11 +101,11 @@ Add-AzsVpnConnection `
 
   При появлении запроса обозначьте узел Azure Stack как доверенный и установите сертификат из **AzureStackCertificateAuthority** в хранилище сертификатов на локальном компьютере (запрос может появиться вне окна сеанса PowerShell). 
 
-* На своем локальном компьютере откройте **Параметры сети** > **VPN** и щелкните **azurestack** > **Подключение**. При запросе на вход введите имя пользователя (AzureStack\AzureStackAdmin) и пароль.
+* На локальном компьютере выберите **Параметры сети** > **VPN** > `azurestack` > **Подключиться**. При запросе на вход введите имя пользователя (AzureStack\AzureStackAdmin) и пароль.
 
 ### <a name="test-the-vpn-connectivity"></a>Проверка VPN-подключения
 
-Чтобы проверить подключение портала, откройте веб-браузер и перейдите на портал пользователя (https://portal.local.azurestack.external/), войдите и создайте ресурсы.  
+Чтобы проверить подключение портала, откройте браузер, перейдите на портал пользователя https://portal.local.azurestack.external/), войдите в систему и создайте ресурсы.  
 
 ## <a name="next-steps"></a>Дополнительная информация
 

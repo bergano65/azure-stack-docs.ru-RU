@@ -3,7 +3,7 @@ title: Использование профилей версий API и Python в
 description: Сведения об использовании профилей версий API и Python в Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: sethmanheim
 manager: femila
 ms.service: azure-stack
 ms.workload: na
@@ -11,16 +11,16 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2019
-ms.author: mabrigg
+ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
 <!-- dev: viananth -->
-ms.openlocfilehash: ee5906e825af59e3b67792e8370cc5d26901ff2b
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.openlocfilehash: 98014cfa015f839e1801ffae95d08f3cbd00c986
+ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782590"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66269500"
 ---
 # <a name="use-api-version-profiles-with-python-in-azure-stack"></a>Использование профилей версий API и Python в Azure Stack
 
@@ -32,8 +32,10 @@ ms.locfileid: "65782590"
 
 - **Актуальная**  
     Профиль предназначен для последних версий API всех поставщиков служб на платформе Azure.
-- **2018-03-01-hybrid**     
+- **2019-03-01-hybrid**  
     Профиль предназначен для последних версий API всех поставщиков ресурсов на платформе Azure Stack.
+- **2018-03-01-hybrid**  
+    Профиль предназначен для наиболее совместимых версий API всех поставщиков ресурсов на платформе Azure Stack.
 - **2017-03-09-profile**  
     Профиль предназначен для наиболее совместимых версий API поставщиков ресурсов, поддерживаемых Azure Stack.
 
@@ -64,7 +66,7 @@ ms.locfileid: "65782590"
 
 Если вы используете ASDK, потребуется обеспечить доверие корневому сертификату ЦС на удаленном компьютере. Этого не требуется делать с интегрированными системами.
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 1. Найдите расположение хранилища сертификатов Python на своем компьютере. Это расположение зависит от того, куда вы установили Python. Откройте командную строку или строку PowerShell с повышенными правами и введите следующую команду:
 
@@ -117,7 +119,7 @@ ms.locfileid: "65782590"
 
 - [Hybrid-ResourceManager-Python-Manage-Resources](https://azure.microsoft.com/resources/samples/hybrid-resourcemanager-python-manage-resources/).
 - [Hybrid-Storage-Python-Manage-Storage-Account](https://azure.microsoft.com/resources/samples/hybrid-storage-python-manage-storage-account/).
-- [Hybrid-Compute-Python-Manage-VM](https://azure.microsoft.com/resources/samples/hybrid-compute-python-manage-vm/).
+- [Hybrid-Compute-Python-Manage-VM](https://azure.microsoft.com/resources/samples/hybrid-compute-python-manage-vm/). (Пример, использующий версию 2019-03-01-hybrid, которая предназначена для последних версий API, поддерживаемых Azure Stack).
 
 ## <a name="python-manage-virtual-machine-sample"></a>Пример управления виртуальной машиной на Python
 
