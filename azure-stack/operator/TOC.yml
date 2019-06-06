@@ -15,7 +15,13 @@
         - name: Контрольный список для применения обновлений
           href: azure-stack-release-notes-checklist.md
         - name: обновления для системы безопасности;
-          href: azure-stack-release-notes-security-updates-1904.md
+          href: azure-stack-release-notes-security-updates-1905.md
+        - name: "Обновление\_1905"
+          items:
+            - name: Заметки о выпуске
+              href: azure-stack-release-notes-1905.md
+            - name: Известные проблемы
+              href: azure-stack-release-notes-known-issues-1905.md
         - name: Обновление 1904
           items:
             - name: Заметки о выпуске
@@ -26,8 +32,6 @@
           href: azure-stack-update-1903.md
         - name: "Обновление\_1902"
           href: azure-stack-update-1902.md
-        - name: "Обновление\_1901"
-          href: azure-stack-update-1901.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -391,14 +395,18 @@
           href: azure-stack-backup-best-practices.md
         - name: Справочник по резервному копированию
           href: azure-stack-backup-reference.md
-    - name: Устранение неполадок
+    - name: Получение поддержки
       items:
-        - name: Известные проблемы
-          href: azure-stack-troubleshooting.md
-        - name: Диагностика в Azure Stack
-          href: azure-stack-diagnostics.md
-        - name: Проверка для Azure Stack
-          href: azure-stack-diagnostic-test.md
+        - name: Справка и поддержка
+          href: azure-stack-help-and-support-overview.md
+        - name: Устранение неполадок
+          items:
+            - name: Известные проблемы
+              href: azure-stack-troubleshooting.md
+            - name: Диагностика в Azure Stack
+              href: azure-stack-diagnostics.md
+            - name: Проверка для Azure Stack
+              href: azure-stack-diagnostic-test.md
 - name: Справочные материалы
   items:
     - name: PowerShell для Azure Stack
