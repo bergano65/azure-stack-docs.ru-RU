@@ -419,6 +419,8 @@
       href: /azure-stack/asdk/
 - name: Ресурсы
   items:
+    - name: Обучение и сертификация
+      href: azure-stack-train-and-cert.md
     - name: План выхода продуктов Azure Stack
       href: 'https://azure.microsoft.com/roadmap/?tag=azure-stack'
     - name: Форум MSDN по Azure Stack
@@ -427,7 +429,5 @@
       href: 'https://feedback.azure.com/forums/344565-azure-stack?category_id=160275'
     - name: Сведения о ценах
       href: 'https://azure.microsoft.com/overview/azure-stack/how-to-buy/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-stack'
-    - name: Обучение и сертификация
-      href: azure-stack-train-and-cert.md
