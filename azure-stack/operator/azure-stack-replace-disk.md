@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
+ms.date: 06/04/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 01/22/2019
-ms.openlocfilehash: 797e49f82938888776b2685ab44add281b730943
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.lastreviewed: 06/04/2019
+ms.openlocfilehash: bfe18e0aa59f81f614ae00057b2c1f287b1257da
+ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782413"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469276"
 ---
 # <a name="replace-a-physical-disk-in-azure-stack"></a>Замена физического диска в Azure Stack
 
@@ -50,10 +50,37 @@ ms.locfileid: "65782413"
 Чтобы предотвратить использование неподдерживаемого диска в интегрированной системе, система блокирует диски, которые не поддерживаются вашим поставщиком. Если вы пытаетесь использовать неподдерживаемый диск, новое предупреждение сообщит вам, что диск был помещен на карантин из-за неподдерживаемой модели или встроенного ПО.
 
 После замены диска Azure Stack автоматически обнаруживает новый диск и начинает процесс восстановления виртуального диска.
+
+## <a name="check-the-status-of-virtual-disk-repair-using-azure-stack-powershell"></a>Проверка состояния восстановления виртуального диска с помощью Azure Stack PowerShell
+
+После замены диска можно отслеживать состояние работоспособности виртуального диска и ход выполнения задания восстановления с помощью Azure Stack PowerShell.
+
+1. Для этого нужно установить Azure Stack PowerShell. Дополнительные сведения см. в статье [Install PowerShell for Azure Stack](azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack).
+2. Подключитесь к Azure Stack с помощью PowerShell в роли оператора. См. подробнее о [подключении к Azure Stack с помощью PowerShell в качестве оператора](azure-stack-powershell-configure-admin.md).
+3. Выполните следующие командлеты, чтобы проверить состояние работоспособности и восстановления виртуального диска:
+    ```powershell  
+    $scaleunit=Get-AzsScaleUnit
+    $StorageSubSystem=Get-AzsStorageSubSystem -ScaleUnit $scaleunit.Name
+    Get-AzsVolume -StorageSubSystem $StorageSubSystem.Name -ScaleUnit $scaleunit.name | Select-Object VolumeLabel, OperationalStatus, RepairStatus
+    ```
+
+    ![Работоспособность томов Azure Stack](media/azure-stack-replace-disk/get-azure-stack-volumes-health.png)
+
+4. Проверьте состояние системы Azure Stack. См. подробнее о [проверке состояния системы Azure Stack](azure-stack-diagnostic-test.md).
+5. При необходимости можно выполнить следующую команду, чтобы проверить состояние замененного физического диска.
+
+```powershell  
+$scaleunit=Get-AzsScaleUnit
+$StorageSubSystem=Get-AzsStorageSubSystem -ScaleUnit $scaleunit.Name
+
+Get-AzsDrive -StorageSubSystem $StorageSubSystem.Name -ScaleUnit $scaleunit.name | Format-Table Storagenode, Healthstatus, PhysicalLocation, Model, MediaType,  CapacityGB, CanPool, CannotPoolReason
+```
+
+![Замененные физические диски в Azure Stack](media/azure-stack-replace-disk/get-azure-stack-volumes-health.png)
+
+## <a name="check-the-status-of-virtual-disk-repair-using-the-privileged-endpoint"></a>Проверка состояния восстановления виртуального диска с помощью привилегированной конечной точки
  
-## <a name="check-the-status-of-virtual-disk-repair"></a>Проверка состояния восстановления виртуального диска
- 
- После замены диска можно отслеживать состояние работоспособности виртуального диска и ход выполнения задания восстановления с помощью привилегированной конечной точки. Выполните следующие шаги с любого компьютера с сетевым подключением к привилегированной конечной точке.
+После замены диска можно отслеживать состояние работоспособности виртуального диска и ход выполнения задания восстановления с помощью привилегированной конечной точки. Выполните следующие шаги с любого компьютера с сетевым подключением к привилегированной конечной точке.
 
 1. Откройте сеанс Windows PowerShell и подключитесь к привилегированной конечной точке.
     ```powershell
@@ -74,7 +101,10 @@ ms.locfileid: "65782413"
     ```
       ![Выходные данные команды PowerShell Get-StorageJob](media/azure-stack-replace-disk/GetStorageJobOutput.png)
 
-## <a name="troubleshoot-virtual-disk-repair"></a>Устранение неисправностей виртуального диска
+4. Проверьте состояние системы Azure Stack. См. подробнее о [проверке состояния системы Azure Stack](azure-stack-diagnostic-test.md).
+
+
+## <a name="troubleshoot-virtual-disk-repair-using-the-privileged-endpoint"></a>Устранение неполадок с виртуальным диском с помощью привилегированной конечной точки
 
 Если задание восстановления виртуального диска не отвечает, выполните следующую команду, чтобы перезапустить задание:
   ```powershell

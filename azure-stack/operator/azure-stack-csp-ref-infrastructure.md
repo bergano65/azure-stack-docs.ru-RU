@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/09/2019
+ms.date: 05/31/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: ca474c9addeec3b3b6fcaad8db55bc40a148bb8f
-ms.sourcegitcommit: c755c7eac0f871960f9290591421cf5990b9e734
+ms.openlocfilehash: d6f77483730c9609ad9750da9b11f62de2874ff2
+ms.sourcegitcommit: 07cc716d97bf484c7260eb165ae205ae25e09589
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65506101"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453442"
 ---
 # <a name="usage-reporting-infrastructure-for-cloud-service-providers"></a>Инфраструктура отчетов о потреблении для поставщиков облачных служб
 
@@ -34,7 +34,7 @@ Azure Stack применяет для потребления локальные 
 
 Информацию о единицах измерения и ценах, используемых в Azure Commerce для Azure Stack, как и для служб Azure, вы можете получить в Центре партнеров:
 
-1. В Центре партнеров откройте **меню панели мониторинга** > **Цены и предложения**.
+1. В Центре партнеров перейдите в **меню панели мониторинга**, выберите **Продажа**, а затем — **Цены и предложения**.
 2. В разделе **Usage-based services** (Службы на основе использования) выберите **Текущая**.
 3. Откройте электронную таблицу **Azure in Global CSP price list** (Прайс-лист Azure в глобальных CSP).
 4. Установите фильтр по значению **Region = Azure Stack**.

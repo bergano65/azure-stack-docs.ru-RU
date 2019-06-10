@@ -5,18 +5,18 @@ services: azure-stack
 keywords: ''
 author: mattbriggs
 manager: femila
-ms.date: 05/16/2019
+ms.date: 06/04/2019
 ms.topic: article
 ms.service: azure-stack
 ms.author: mabrigg
 ms.reviewer: scottnap
-ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 841e30367ded29e10c28573056f4a70361e28a9e
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.lastreviewed: 06/04/2019
+ms.openlocfilehash: de39645d1414fc852b98036e7071befcf5262cb1
+ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782573"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469189"
 ---
 # <a name="considerations-for-azure-stack-networking"></a>Рекомендации по работе с сетями Azure Stack
 
@@ -68,6 +68,7 @@ ms.locfileid: "65782573"
 |  | Группы безопасности приложений | Поддерживаются | Пока не поддерживается. |
 |  | Метки имени внутреннего DNS | Поддерживаются | Пока не поддерживается. |
 |  | Версия частного IP-адреса | Поддерживаются протоколы IPv6 и IPv4. | Поддерживается только протокол IPv4. |
+|  | Статический MAC-адрес | Не поддерживается | Не поддерживается. Каждая система Azure Stack использует одинаковый пул MAC-адресов. |
 | Наблюдатель за сетями | Возможности мониторинга сети клиента службы "Наблюдатель за сетями" | Поддерживаются | Пока не поддерживается. |
 | CDN | Профили сети доставки содержимого | Поддерживаются | Пока не поддерживается. |
 | Шлюз приложений | Балансировка нагрузки уровня 7 | Поддерживаются | Пока не поддерживается. |

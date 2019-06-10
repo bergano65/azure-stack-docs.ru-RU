@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/28/2019
 ms.author: anwestg
 ms.reviewer: ''
-ms.openlocfilehash: c8232031a40eb3d4471b9507299907df51f82edb
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: d280ffacf9cb74c519857ebafc907debc915ec21
+ms.sourcegitcommit: 85367001c332ed53fba0d2294eae3c06e8578070
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66270708"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66307836"
 ---
 # <a name="app-service-on-azure-stack-update-6-release-notes"></a>Заметки о выпуске обновления 6 для Службы приложений Azure в Azure Stack
 
@@ -34,7 +34,7 @@ ms.locfileid: "66270708"
 
 ## <a name="build-reference"></a>Указание сборки
 
-Номер сборки обновления 6 для Службы приложений Azure в Azure Stack — **82.0.50.0**.
+Номер сборки обновления 6 для Службы приложений Azure в Azure Stack — **82.0.1.50**.
 
 ### <a name="prerequisites"></a>Предварительные требования
 

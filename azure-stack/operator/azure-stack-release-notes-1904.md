@@ -1,6 +1,6 @@
 ---
 title: Заметки о выпуске Azure Stack 1904 | Документация Майкрософт
-description: Сведения о новых возможностях и известных проблемах в обновлении 1904 для интегрированных систем Azure Stack, а также о том, где можно скачать это обновление.
+description: Узнайте о новых возможностях и известных проблемах в обновлении 1904 для интегрированных систем Azure Stack, а также о том, где можно скачать это обновление и архивные заметки о выпуске Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/22/2019
+ms.date: 05/30/2019
 ms.author: sethm
 ms.reviewer: ''
-ms.lastreviewed: 05/22/2019
-ms.openlocfilehash: 3bb69c9817eaa12f2a6fab0f20bc79f510a3c251
-ms.sourcegitcommit: 9f5157ce6b938d190ef9df5a2df4342266ca5545
+ms.lastreviewed: 05/30/2019
+ms.openlocfilehash: 8d9603184e824bff5efc2536b3c4a89fdd87d685
+ms.sourcegitcommit: a427e72e4f3b6cd6000b1459af9bbf221e049e08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66174356"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66506351"
 ---
 # <a name="azure-stack-1904-update"></a>Обновление 1904 для Azure Stack
 
@@ -34,6 +34,10 @@ ms.locfileid: "66174356"
 
 > [!IMPORTANT]  
 > Этот пакет обновления предназначен только для интегрированных систем Azure Stack. Не применяйте этот пакет обновления к Пакету средств разработки Azure Stack.
+
+## <a name="archived-release-notes"></a>Архивные заметки о выпуске
+
+Вы можете просмотреть [более старые версии заметок о выпуске Azure Stack в коллекции TechNet](http://aka.ms/azsarchivedrelnotes). Эти архивные заметки о выпуске предоставляются только для справки. Поддержка этих версий не предусмотрена. За дальнейшей помощью обратитесь в службу технической поддержки Майкрософт.
 
 ## <a name="build-reference"></a>Указание сборки
 
@@ -208,4 +212,4 @@ Azure Stack выпускает исправления на регулярной 
 - [Применение обновлений в Azure Stack](azure-stack-apply-updates.md).
 - В [этой статье](azure-stack-servicing-policy.md) описаны политика обслуживания для интегрированных систем Azure Stack и действия, необходимые для сохранения поддерживаемого состояния системы.  
 - Сведения об использовании привилегированной конечной точки (PEP) для отслеживания и возобновления обновлений см. в статье [Мониторинг обновлений в Azure Stack с помощью привилегированной конечной точки](azure-stack-monitor-update.md).  
-- Заполните опрос, чтобы предоставить [отзывы о заметках о выпуске](https://forms.microsoft.com).
+

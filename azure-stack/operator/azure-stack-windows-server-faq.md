@@ -11,20 +11,20 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/21/2019
+ms.date: 05/31/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 11/12/2018
-ms.openlocfilehash: 3f177ea0c261771b67e6434215df67211452b767
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: ffb58392075521b81d9b0cd71928ac0db680991f
+ms.sourcegitcommit: 80775f5c5235147ae730dfc7e896675a9a79cdbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307250"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66459067"
 ---
 # <a name="windows-server-in-azure-stack-marketplace-faq"></a>Windows Server в Azure Stack Marketplace: вопросы и ответы
 
-В этой статье содержатся ответы на распространенные вопросы об образах Windows Server в [Azure Stack Marketplace](azure-stack-marketplace.md).
+В этой статье даются ответы на распространенные вопросы об образах Windows Server в [Azure Stack Marketplace](azure-stack-marketplace.md).
 
 ## <a name="marketplace-items"></a>Элементы Marketplace
 
@@ -32,22 +32,22 @@ ms.locfileid: "64307250"
 
 Во-первых, определите, есть ли шаблоны Azure Resource Manager, которые требуют определенной версии. Если такие шаблоны есть, обновите их или сохраните предыдущие версии образов. Лучше всего использовать параметр **version: latest**.
 
-Во-вторых, если любой из масштабируемых наборов виртуальных машин ссылается на конкретную версию, оцените вероятность масштабирования этого набора в будущем и на основе этой оценки решите, не лучше ли сохранить старые версии. Если ни одно из этих условий не применимо, удалите старые образы из Marketplace, прежде чем скачивать более новые. Если для их скачивания ранее применялось управление Marketplace, используйте его и для удаления. Теперь скачайте более новую версию.
+Во-вторых, если любой из масштабируемых наборов виртуальных машин ссылается на конкретную версию, оцените вероятность масштабирования этого набора в будущем и на основе этой оценки решите, не лучше ли сохранить старые версии. Если ни одно из этих условий не применимо, удалите старые образы из Marketplace, прежде чем скачивать новые. Если для их скачивания ранее применялось управление Marketplace, используйте его и для удаления. Теперь скачайте более новую версию.
 
 ### <a name="what-are-the-licensing-options-for-windows-server-marketplace-images-on-azure-stack"></a>Какие варианты лицензирования существуют для образов Marketplace Windows Server в Azure Stack?
 
-Корпорация Майкрософт предоставляет две версии образов Windows Server через Azure Stack Marketplace.
+Корпорация Майкрософт предлагает две версии образов Windows Server в Azure Stack Marketplace.
 
 - **Оплата по мере использования**. В таких образах используются единицы измерения полной цены для Windows.
    Предназначены для: клиентов с Соглашением Enterprise (EA), которые используют *модель выставления счетов за потребление*; поставщиков облачных решений, которые не хотят использовать лицензирование SPLA.
-- **С использованием собственной лицензии (BYOL)**. Эти образы выполняют базовые единицы измерения.
+- **С использованием собственной лицензии (BYOL)** . Эти образы выполняют базовые единицы измерения.
    Предназначены для: клиентов EA с лицензией Windows Server; поставщиков облачных решений с лицензированием SPLA.
 
 Преимущество гибридного использования Azure (AHUB) в Azure Stack не поддерживается. Клиенты, которые приобрели лицензию по модели "Производительность", должны использовать образ BYOL. При тестировании с помощью Пакета средств разработки Azure Stack (ASDK) можно использовать любой из этих вариантов.
 
 ### <a name="what-if-i-downloaded-the-wrong-version-to-offer-my-tenantsusers"></a>Что делать, если я скачаю неправильную версию для своих клиентов или пользователей?
 
-Сначала удалите неправильную версию с помощью управления Marketplace. Дождитесь полного завершения (то есть уведомления о завершении), не довольствуясь состоянием в колонке управления Marketplace. После этого скачайте правильную версию.
+Сначала удалите неправильную версию с помощью управления Marketplace. Дождитесь полного завершения (то есть уведомления о завершении, не обращая внимания на состояние в колонке **управления Marketplace**). После этого скачайте правильную версию.
 
 ### <a name="what-if-my-user-incorrectly-checked-the-i-have-a-license-box-in-previous-windows-builds-and-they-dont-have-a-license"></a>Что делать, если мой пользователь ошибочно установил флажок "У меня есть лицензия" в предыдущих сборках Windows, но у него нет лицензии?
 
@@ -70,7 +70,7 @@ ms.locfileid: "64307250"
 Чтобы активировать виртуальную машину Windows Server в Azure Stack, должны выполняться следующие условия:
 
 - Изготовитель оборудования указал правильное значение маркера BIOS на каждой хост-системе в Azure Stack.
-- В Windows Server 2012 R2 и Windows Server 2016 используется [автоматическая активация виртуальной машины](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v=ws.11)). Служба управления ключами (KMS) и другие службы активации не поддерживаются в Azure Stack.
+- В Windows Server 2012 R2 и Windows Server 2016 используется [автоматическая активация виртуальной машины](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v=ws.11)). Служба управления ключами (KMS) и другие службы активации не поддерживаются в Azure Stack.
 
 ### <a name="how-can-i-verify-that-my-virtual-machine-is-activated"></a>Как убедиться, что моя виртуальная машина активирована?
 
@@ -90,7 +90,7 @@ slmgr /dlv
 slmgr /ipk <AVMA key>
 ```
 
-В статье [об автоматической активации виртуальной машины](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v=ws.11)) вы найдете сведения о ключах для использования с образом.
+В статье [об автоматической активации виртуальной машины](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v=ws.11)) вы найдете сведения о ключах для использования с образом.
 
 ### <a name="i-create-my-own-windows-server-images-how-can-i-make-sure-they-use-avma"></a>Я создаю собственные образы Windows Server. Как мне гарантировать для них использование AVMA?
 
@@ -106,7 +106,7 @@ slmgr /ipk <AVMA key>
 
 ### <a name="what-about-earlier-versions-of-windows-server"></a>Как насчет более ранних версий Windows Server?
 
-[Автоматическая активация виртуальной машины](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v=ws.11)) не поддерживается для более ранних версий Windows Server. Такие виртуальные машины следует активировать вручную.
+[Автоматическая активация виртуальной машины](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v=ws.11)) не поддерживается для более ранних версий Windows Server. Такие виртуальные машины следует активировать вручную.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -17,12 +17,12 @@ ms.author: justinha
 ms.reviewer: unknown
 ms.lastreviewed: 09/11/2018
 ms.custom: mvc
-ms.openlocfilehash: b39eaf4365f74e59c6dd60db67fdadf1162cb91d
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 3719019ebdbc6edad17c523a937d77d4f11bb02a
+ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268137"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469216"
 ---
 # <a name="tutorial-make-virtual-machines-available-to-your-azure-stack-users"></a>Руководство. Предоставление доступа к виртуальным машинам для пользователей Azure Stack
 
@@ -41,7 +41,7 @@ ms.locfileid: "66268137"
 
 ![Подписки, предложения и планы](media/azure-stack-key-features/image4.png)
 
-Подробнее см. в [описании основных возможностей и концепций Azure Stack](azure-stack-overview.md).
+Дополнительные сведения см. в статье [Обзор планов, предложений, квот и подписок](azure-stack-plan-offer-quota-overview.md).
 
 ## <a name="create-an-offer"></a>Создание предложения
 

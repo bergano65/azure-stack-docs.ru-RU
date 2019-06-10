@@ -11,22 +11,23 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/26/2019
+ms.date: 05/31/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 02/26/2019
-ms.openlocfilehash: 52613c394d7a1caeef42a85f1dd4d5b645f5e8e4
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 6a5ef529d2eabf8039be1da6c53da907c0b7aaaf
+ms.sourcegitcommit: 80775f5c5235147ae730dfc7e896675a9a79cdbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66267940"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66459044"
 ---
 # <a name="frequently-asked-questions-in-azure-stack-usage-api"></a>Часто задаваемые вопросы об API использования в Azure Stack
 
 В этой статье содержатся ответы на некоторые часто задаваемые вопросы об API использования в Azure Stack.
 
 ## <a name="what-meter-ids-can-i-see"></a>Какие доступны идентификаторы средств измерения?
+
 Отчеты об использовании для следующих поставщиков ресурсов:
 
 ### <a name="network"></a>Network
@@ -76,7 +77,7 @@ ms.locfileid: "66267940"
 **Идентификатор единицы измерения**. 1B8C1DEC-EE42-414B-AA36-6229CF199370  
 **Имя единицы измерения**. TableDataTransOut  
 **Единица измерения**: Объем исходящих данных (в ГБ)  
-**Примечания** Объем исходящих данных службы таблиц, ГБ  
+**Примечания** Объем исходящих данных службы таблиц в ГБ.
   
 **Идентификатор единицы измерения**. 43DAF82B-4618-444A-B994-40C23F7CD438  
 **Имя единицы измерения**. BlobTransactions  
@@ -108,7 +109,7 @@ ms.locfileid: "66267940"
 **Единица измерения**: Объем исходящих данных (в ГБ)  
 **Примечания** Объем исходящих данных службы очередей, ГБ  
 
-### <a name="compute"></a>Службы вычислений 
+### <a name="compute"></a>Службы вычислений
   
 **Идентификатор единицы измерения**. FAB6EB84-500B-4A09-A8CA-7358F8BBAEA5  
 **Имя единицы измерения**. Base VM Size Hours  
@@ -123,7 +124,7 @@ ms.locfileid: "66267940"
 **Идентификатор единицы измерения**. 6DAB500F-A4FD-49C4-956D-229BB9C8C793  
 **Имя единицы измерения**. VM size hours  
 **Единица измерения**: Виртуальные машины, в часах  
-**Примечания** С учетом виртуальных машин Base и Windows. Корректировка по ядрам не учитывается  
+**Примечания** С учетом базовой виртуальной машины и виртуальной машины Windows. Корректировка по ядрам не учитывается  
   
 ### <a name="managed-disks"></a>Управляемые диски
 
@@ -385,13 +386,14 @@ ms.locfileid: "66267940"
 **Единица измерения**: GB  
 **Примечания** Общее количество байт ответа на входящий запрос + общее количество байт ответа на исходящий запрос + общее количество байт ответа на входящий запрос FTP + общее количество байт ответа на запросы веб-развертывания  
   
-
 ## <a name="how-do-the-azure-stack-usage-apis-compare-to-the-azure-usage-apihttpsdocsmicrosoftcomazurebillingbilling-usage-rate-card-overviewazure-resource-usage-api-preview-currently-in-public-preview"></a>Какие различия между API использования в Azure Stack и [API использования в Azure](https://docs.microsoft.com/azure/billing/billing-usage-rate-card-overview#azure-resource-usage-api-preview) (в настоящее время в общедоступной предварительной версии)?
-* API использования для клиента полностью совпадает с аналогичным API в Azure, за одним исключением: в настоящее время флаг *showDetails* для Azure Stack не поддерживается.
+
+* API использования для клиента полностью совпадает с аналогичным API в Azure, за одним исключением: в настоящее время флаг *showDetails* в Azure Stack не поддерживается.
 * API использования для поставщика относится только к Azure Stack.
-* В настоящее время в Azure Stack недоступен [API RateCard](https://docs.microsoft.com/azure/billing/billing-usage-rate-card-overview#azure-resource-ratecard-api-preview), который используется в Azure.
+* В настоящее время в Azure Stack недоступен [API RateCard](/azure/billing/billing-usage-rate-card-overview#azure-resource-ratecard-api-preview), который используется в Azure.
 
 ## <a name="what-is-the-difference-between-usage-time-and-reported-time"></a>В чем различия между временем использования и временем сообщения?
+
 В отчетах об использовании учитываются два показателя времени:
 
 * **Время сообщения**. Время, когда информация о событии использования поступила в систему учета использования.
@@ -402,6 +404,7 @@ ms.locfileid: "66267940"
 Сейчас запросы можно создавать только *по времени сообщения*.
 
 ## <a name="what-do-these-usage-api-error-codes-mean"></a>Что означают коды ошибок в API использования?
+
 | **Код состояния HTTP** | **Код ошибки** | **Описание** |
 | --- | --- | --- |
 | 400/Bad Request |*NoApiVersion* |Не указан параметр запроса *api-version* (версия API). |
@@ -416,9 +419,8 @@ ms.locfileid: "66267940"
 
 Работающие и остановленные виртуальные машины создают данные об использовании. В соответствии с требованиями Azure, чтобы остановить отправку данных об использовании, необходимо выполнить освобождение. Если портал недоступен, но поставщик ресурсов вычислений по-прежнему выполняется, данные об использовании все равно передаются.
 
-## <a name="next-steps"></a>Дальнейшие действия
-[Выставление счетов клиентам и начисление платы за использование Azure Stack](azure-stack-billing-and-chargeback.md)
+## <a name="next-steps"></a>Дополнительная информация
 
-[Provider Resource Usage API](azure-stack-provider-resource-api.md) (API использования ресурсов для поставщиков)
-
-[Tenant Resource Usage API](azure-stack-tenant-resource-usage-api.md) (API использования ресурсов для клиентов)
+* [Выставление счетов клиентам и начисление платы за использование Azure Stack](azure-stack-billing-and-chargeback.md)
+* [Provider Resource Usage API](azure-stack-provider-resource-api.md) (API использования ресурсов для поставщиков)
+* [Tenant Resource Usage API](azure-stack-tenant-resource-usage-api.md) (API использования ресурсов для клиентов)

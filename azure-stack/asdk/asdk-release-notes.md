@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/01/2019
+ms.date: 05/30/2019
 ms.author: sethm
 ms.reviewer: misainat
-ms.lastreviewed: 05/01/2019
-ms.openlocfilehash: 935f144ebbb40da66ac43fc8e9d5dfc7c3e3d0b6
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.lastreviewed: 05/30/2019
+ms.openlocfilehash: 8de4447cd30204d0d4e1611afd057a75dc7688da
+ms.sourcegitcommit: 2cd17b8e7352891d8b3eb827d732adf834b7693e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64983597"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428681"
 ---
 # <a name="asdk-release-notes"></a>Заметки о выпуске ASDK
 
@@ -37,6 +37,15 @@ ms.locfileid: "64983597"
 - Список новых функций для этого выпуска см. в [этом разделе](../operator/azure-stack-release-notes-1904.md#whats-in-this-update) заметок к выпуску Azure Stack.
 
 ### <a name="fixed-and-known-issues"></a>Исправленные и известные проблемы
+
+- Так как может произойти превышение времени ожидания у субъекта-службы при выполнении скрипта регистрации, чтобы успешно [зарегистрировать ASDK](asdk-register.md), необходимо изменить скрипт PowerShell **RegisterWithAzure.psm1**. Выполните следующее:
+
+  1. На главном компьютере ASDK откройте в редакторе файл **C:\AzureStack-Tools-master\Registration\RegisterWithAzure.psm1** с повышенным уровнем разрешений.
+  2. В конце строки 1249 добавьте параметр `-TimeoutInSeconds 1800`. Это необходимо, чтобы избежать превышение времени ожидания у субъекта-службы при запуске скрипта регистрации. Теперь строка 1249 должна выглядеть следующим образом:
+
+     ```powershell
+      $servicePrincipal = Invoke-Command -Session $PSSession -ScriptBlock { New-AzureBridgeServicePrincipal -RefreshToken $using:RefreshToken -AzureEnvironment $using:AzureEnvironmentName -TenantId $using:TenantId -TimeoutInSeconds 1800 }
+      ```
 
 - Исправлены проблемы подключения VPN, обнаруженные [здесь, в выпуске 1902](#known-issues).
 
