@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/04/2019
+ms.date: 06/10/2019
 ms.author: patricka
 ms.reviewer: bryanr
-ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: a35b16d2c862547ffed340f3e06dc769e373eb85
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 06/10/2019
+ms.openlocfilehash: 8547c1aea70d7b72538b5a681e7c8dd4b4d10a02
+ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64309596"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66828300"
 ---
 # <a name="multi-tenancy-in-azure-stack"></a>Мультитенантность в Azure Stack
 
@@ -110,7 +110,7 @@ Register-AzSWithMyDirectoryTenant `
 
 Итак, вы с Марией завершили все действия по подключению ее каталога, и теперь она может сообщить пользователям Fabrikam сведения о процедуре входа в ваш каталог.  Пользователи Fabrikam (то есть пользователи с суффиксом fabrikam.onmicrosoft.com) войти через страницу https://portal.local.azurestack.external.  
 
-Для всех [внешних участников]((/azure/role-based-access-control/rbac-and-directory-admin-roles) каталога Fabrikam (без суффикса fabrikam.onmicrosoft.com, но включенных в каталог Fabrikam) Мария предоставит другой URL-адрес для входа: https://portal.local.azurestack.external/fabrikam.onmicrosoft.com.  Если они не воспользуются этим URL-адресом, то они будут перенаправлены в каталог по умолчанию (Fabrikam) и получат сообщение об ошибке с указанием того, что администратор не дал согласия.
+Всем [внешним участникам](/azure/role-based-access-control/rbac-and-directory-admin-roles) каталога Fabrikam (без суффикса fabrikam.onmicrosoft.com, но включенным в каталог Fabrikam) Мария предоставит другой URL-адрес для входа: https://portal.local.azurestack.external/fabrikam.onmicrosoft.com.  Если они не воспользуются этим URL-адресом, то они будут перенаправлены в каталог по умолчанию (Fabrikam) и получат сообщение об ошибке с указанием того, что администратор не дал согласия.
 
 ## <a name="disable-multi-tenancy"></a>Отключение поддержки мультитенантности
 

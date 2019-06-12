@@ -13,12 +13,12 @@ ms.workload: na
 ms.date: 05/17/2019
 ms.author: patricka
 ms.lastreviewed: 05/17/2019
-ms.openlocfilehash: 57c5547c37fee58b37f8386983d43556ed0fd515
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: b08d2b59653b099b0cd0a314347ea2667fa42ca8
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268800"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691298"
 ---
 # <a name="provide-applications-access-to-azure-stack"></a>Предоставление приложениям доступа к Azure Stack
 
@@ -45,7 +45,7 @@ ms.locfileid: "66268800"
 
 ## <a name="manage-service-principal-for-azure-ad"></a>Управление субъектом-службой для Azure AD
 
-Если вы развернули Azure Stack с помощью Azure Active Directory (Azure AD) как службу управления удостоверениями, субъекты-службы можно создать так же, как в Azure. В этом разделе описан процесс с использованием портала. Убедитесь, что у вас есть [необходимые разрешения Azure AD]((/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions), прежде чем начать.
+Если вы развернули Azure Stack с помощью Azure Active Directory (Azure AD) как службу управления удостоверениями, субъекты-службы можно создать так же, как в Azure. В этом разделе описан процесс с использованием портала. Прежде чем начать, проверьте [необходимые разрешения Azure AD](/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions).
 
 ### <a name="create-service-principal"></a>Создание субъекта-службы
 
@@ -181,7 +181,7 @@ ms.locfileid: "66268800"
 
 2. Когда работа службы автоматизации завершится, будут отображены необходимые сведения для использования имени субъекта-службы. Рекомендуется сохранить выходные данные для последующего использования.
 
-   Например: 
+   Например:
 
    ```shell
    ApplicationIdentifier : S-1-5-21-1512385356-3796245103-1243299919-1356
@@ -362,7 +362,7 @@ ms.locfileid: "66268800"
 
 ## <a name="assign-a-role"></a>Назначение роли
 
-Чтобы обеспечить доступ к ресурсам в подписке, необходимо назначить приложению роль. Укажите, какая роль предоставит приложению необходимые разрешения. Дополнительные сведения о доступных ролях см. в статье [RBAC: встроенные роли]((/azure/role-based-access-control/built-in-roles).
+Чтобы обеспечить доступ к ресурсам в подписке, необходимо назначить приложению роль. Укажите, какая роль предоставит приложению необходимые разрешения. Дополнительные сведения о доступных ролях см. в статье [RBAC: встроенные роли](/azure/role-based-access-control/built-in-roles).
 
 Вы можете задать область действия на уровне подписки, группы ресурсов или ресурса. Разрешения наследуют более низкие уровни области действия. Например, добавление приложения в роль читателя для группы ресурсов означает, что оно может считывать группу ресурсов и все содержащиеся в ней ресурсы.
 

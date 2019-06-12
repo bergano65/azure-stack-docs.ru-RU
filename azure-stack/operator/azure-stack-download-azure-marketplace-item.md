@@ -16,12 +16,12 @@ ms.date: 04/24/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: 5b35e69a5308589223d9b5987dd3de2e8bb49cc7
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 5b90bc5014d0f8ebfaed8532f62b7c4f3aee8667
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985460"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691866"
 ---
 # <a name="download-marketplace-items-from-azure-to-azure-stack"></a>Скачивание элементов Marketplace из Azure в Azure Stack
 
@@ -92,7 +92,7 @@ ms.locfileid: "64985460"
 
 - Средство синдикации marketplace скачивается во время первой процедуры. 
 
-- Вы можете установить [AzCopy]((/azure/storage/common/storage-use-azcopy) для оптимизации производительности скачивания, но это не обязательно.
+- Вы можете установить [AzCopy](/azure/storage/common/storage-use-azcopy) для оптимизации производительности скачивания, но это не требуется.
 
 ### <a name="use-the-marketplace-syndication-tool-to-download-marketplace-items"></a>Скачивание элементов marketplace с помощью средства синдикации marketplace
 
@@ -198,7 +198,7 @@ ms.locfileid: "64985460"
    
    4. На панели "Отправить BLOB-объект" перейдите к пакету и файлам диска, которые вы хотите загрузить в хранилище, а затем нажмите кнопку **Передать**. [![Передача](media/azure-stack-download-azure-marketplace-item/uploadsm.png "Upload")](media/azure-stack-download-azure-marketplace-item/upload.png#lightbox)  
 
-   5. Переданные файлы отображаются в области контейнера. Выберите файл, а затем скопируйте URL-адрес из панели **Свойства BLOB-объекта**. Вы будете использовать этот URL-адрес на следующем шаге при импорте элементов marketplace в Azure Stack.  На следующем изображении контейнером является *blob-test-storage*, а файлом — *Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg*.  URL-адрес файла — *https://testblobstorage1.blob.local.azurestack.external/blob-test-storage/Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg*.  
+   5. Переданные файлы отображаются в области контейнера. Выберите файл, а затем скопируйте URL-адрес из панели **Свойства BLOB-объекта**. Вы будете использовать этот URL-адрес на следующем шаге при импорте элементов marketplace в Azure Stack.  На следующем изображении контейнером является *blob-test-storage*, а файлом — *Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg*.  URL-адрес файла — *https://testblobstorage1.blob.local.azurestack.external/blob-test-storage/Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg* .  
       [![Свойства больших двоичных объектов](media/azure-stack-download-azure-marketplace-item/blob-storagesm.png "Blob properties")](media/azure-stack-download-azure-marketplace-item/blob-storage.png#lightbox)  
 
 3. Импортируйте образ VHD в Azure Stack с помощью командлета **Add-AzsPlatformimage**. При использовании этого командлета замените значения *publisher*, *offer* и других параметров значениями для импортируемого образа. 
@@ -231,7 +231,7 @@ ms.locfileid: "64985460"
    Не используйте для расширений параметр *Offer*.   
 
 
-4.  Используя PowerShell, опубликуйте элемент marketplace в Azure Stack с помощью командлета **Add-AzsGalleryItem**. Например:   
+4.  Используя PowerShell, опубликуйте элемент marketplace в Azure Stack с помощью командлета **Add-AzsGalleryItem**. Например:  
     ```powershell  
     Add-AzsGalleryItem `
      -GalleryItemUri "https://mystorageaccount.blob.local.azurestack.external/cont1/Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg" `
@@ -240,7 +240,7 @@ ms.locfileid: "64985460"
 5. После публикации элемента коллекции его можно использовать. Чтобы убедиться, что элемент коллекции опубликован, перейдите в раздел **Все службы**, а затем в категории **Общее** выберите **Marketplace**.  Если вы загружаете шаблон решения, обязательно добавьте любой зависимый образ VHD для этого шаблона решения.  
   [![Просмотр Marketplace](media/azure-stack-download-azure-marketplace-item/view-marketplacesm.png "View Marketplace")](media/azure-stack-download-azure-marketplace-item/view-marketplace.png#lightbox)  
 
-В выпуске Azure Stack PowerShell 1.3.0 вы можете добавлять расширения виртуальной машины. Например: 
+В выпуске Azure Stack PowerShell 1.3.0 вы можете добавлять расширения виртуальной машины. Например:
 
 ```powershell
 Add-AzsVMExtension -Publisher "Microsoft" -Type "MicroExtension" -Version "0.1.0" -ComputeRole "IaaS" -SourceBlob "https://github.com/Microsoft/PowerShell-DSC-for-Linux/archive/v1.1.1-294.zip" -SupportMultipleExtensions -VmOsType "Linux"

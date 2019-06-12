@@ -16,12 +16,12 @@ ms.date: 05/20/2019
 ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 09/17/2018
-ms.openlocfilehash: 83a927cd0198798b4b1beaf8b84ed0b7ad2a11a0
-ms.sourcegitcommit: 914daff43ae0f0fc6673a06dfe2d42d9b4fbab48
+ms.openlocfilehash: 70151d7793ef1f58b544517cecb7aa53bf5b3041
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66043117"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691395"
 ---
 # <a name="add-a-new-azure-stack-tenant-account-in-azure-active-directory"></a>Добавление новой учетной записи клиента Azure Stack в Azure Active Directory
 
@@ -43,8 +43,8 @@ ms.locfileid: "66043117"
 
    - **Имя (обязательно).** Имя и фамилия нового пользователя. Например, Мэри Паркер.
    - **Имя пользователя (обязательно).** Имя нового пользователя. Например, mary@contoso.com.
-       В доменной части имени пользователя должно использоваться либо начальное доменное имя по умолчанию, <_yourdomainname_>.onmicrosoft.com, либо имя личного домена, например contoso.com. Дополнительные сведения о создании имени личного домена см. в статье о том, [как добавить имя личного домена в Azure Active Directory]((/azure/active-directory/fundamentals/add-custom-domain).
-   - **Профиль.** При желании вы можете добавить дополнительную информацию о пользователе. Вы также можете добавить информацию о пользователе позже. Дополнительные сведения о добавлении сведений о пользователе см. в статье о [добавлении и изменении сведений в профиле пользователя]((/azure/active-directory/fundamentals/active-directory-users-profile-azure-portal).
+       В доменной части имени пользователя должно использоваться либо начальное доменное имя по умолчанию, <_yourdomainname_>.onmicrosoft.com, либо имя личного домена, например contoso.com. Дополнительные сведения о создании имени личного домена см. в статье [How to add a custom domain name to Azure Active Directory](/azure/active-directory/fundamentals/add-custom-domain) (Как добавить имя личного домена в Azure Active Directory).
+   - **Профиль.** При желании вы можете добавить дополнительную информацию о пользователе. Вы также можете добавить информацию о пользователе позже. Дополнительные сведения о добавлении информации о пользователе см. в разделе [How to add or change user profile information](/azure/active-directory/fundamentals/active-directory-users-profile-azure-portal) (Как добавлять и изменять сведения в профиле пользователя).
    - **Роль каталога.**  выберите **Пользователь**.
 
 5. Проверьте **Показать пароль** и скопируйте автоматически созданный пароль, указанный в поле **Пароль**. Этот пароль понадобится для начального процесса входа в систему.

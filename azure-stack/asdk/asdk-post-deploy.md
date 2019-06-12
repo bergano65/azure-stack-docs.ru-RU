@@ -16,12 +16,12 @@ ms.date: 05/08/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/10/2018
-ms.openlocfilehash: 6d930c99890f8cf0be7b2a47199772c58a10b34d
-ms.sourcegitcommit: 4e0b450c91c6515794b663a39f9a4b8b49999918
+ms.openlocfilehash: aac9bb8edce4b15d3d058cdb3b6cc6e23aa58493
+ms.sourcegitcommit: 23816ec68f67f3ac51f78de925b7631590743a29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66411483"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66835005"
 ---
 # <a name="post-asdk-installation-configuration-tasks"></a>Настройка, выполняемая после установки ASDK
 
@@ -146,28 +146,6 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 ![Test-AzureStack](media/asdk-post-deploy/test-azurestack.png)
 
 Если операция закончится сбоем, выполните рекомендации из раздела об устранении неполадок.
-
-## <a name="reset-the-password-expiration-policy"></a>Политика сброса срока действия пароля
-
-Чтобы убедиться, что срок действия пароля узла комплекта разработки не завершится до окончания периода ознакомления, выполните следующие действия после развертывания ASDK.
-
-### <a name="to-change-the-password-expiration-policy-from-powershell"></a>Изменение политики срока действия паролей из PowerShell
-
-В консоли Powershell с повышенными привилегиями выполните команду:
-
-```powershell
-Set-ADDefaultDomainPasswordPolicy -MaxPasswordAge 180.00:00:00 -Identity azurestack.local
-```
-
-### <a name="to-change-the-password-expiration-policy-manually"></a>Изменение политики срока действия паролей вручную
-
-1. На компьютере с пакетом средств разработки откройте консоль управления групповыми политиками **Управление групповыми политиками** (GPMC.MMC) и последовательно выберите **Управление групповой политикой** - **Лес: azurestack.local** - **Домены** - **azurestack.local**.
-2. Щелкните правой кнопкой мыши **политику домена по умолчанию** и выберите **Изменить**.
-3. В редакторе "Управление групповыми политиками" последовательно выберите **Конфигурация компьютера** - **Политики** - **Параметры Windows** - **Параметры безопасности** - **Политики учетных записей** - **Политика паролей**.
-4. В области справа дважды щелкните параметр **Максимальный срок действия пароля**.
-5. В диалоговом окне **Maximum password age Properties** (Свойства максимального срока действия пароля) измените значение параметра **Срок истечения действия пароля** на **180** и нажмите кнопку **ОК**.
-
-![Консоль управления групповой политикой](media/asdk-post-deploy/gpmc.png)
 
 ## <a name="enable-multi-tenancy"></a>Включение поддержки мультитенантности
 

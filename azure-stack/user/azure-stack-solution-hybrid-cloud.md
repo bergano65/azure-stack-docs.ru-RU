@@ -15,12 +15,12 @@ ms.date: 01/25/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 7a599d3fdc68c6c41565111498108a202d8b3472
-ms.sourcegitcommit: 261df5403ec01c3af5637a76d44bf030f9342410
+ms.openlocfilehash: f1dd98c8c75c28ee176ca318fb9d274110e9b5fe
+ms.sourcegitcommit: 75b13158347963063b7ee62b0ec57894b542c1be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252056"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749028"
 ---
 # <a name="tutorial-deploy-a-hybrid-cloud-solution-with-azure-and-azure-stack"></a>Руководство по Развертывание гибридного облачного решения с помощью Azure и Azure Stack
 
@@ -255,7 +255,7 @@ ms.locfileid: "66252056"
 
 1. Откройте веб-приложение в Microsoft Visual Studio.
 
-2. [Добавьте Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net-core#add-application-insights-telemetry) в проект, чтобы передать данные телеметрии, с помощью которых Application Insights создает оповещения при увеличении или уменьшении веб-трафика.
+2. [Добавьте Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core#enable-client-side-telemetry-for-web-applications) в проект, чтобы передать данные телеметрии, с помощью которых Application Insights создает оповещения при увеличении или уменьшении веб-трафика.
 
 ### <a name="configure-dynamic-connection-strings"></a>Настройка динамических строк подключения
 

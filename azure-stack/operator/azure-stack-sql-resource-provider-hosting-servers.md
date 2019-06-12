@@ -15,12 +15,12 @@ ms.date: 03/26/2019
 ms.author: mabrigg
 ms.reviewer: quying
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: a56e1e8c3c5109c638432652adf9260f59f6a467
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 04ae974148d47bde1e3131aeca45e8bddc9e6109
+ms.sourcegitcommit: 75b13158347963063b7ee62b0ec57894b542c1be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618452"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748993"
 ---
 # <a name="add-hosting-servers-for-the-sql-resource-provider"></a>Добавление серверов размещения для поставщика ресурсов SQL
 
@@ -73,7 +73,7 @@ ms.locfileid: "65618452"
 
 * Хранилище Azure Stack шифруется с помощью BitLocker, поэтому любой экземпляр SQL в Azure Stack будет использовать зашифрованное хранилище BLOB-объектов.
 * Поставщик ресурсов SQL полностью поддерживает TLS 1.2. Для всех серверов SQL Server под управлением SQL RP настраивается _только_ протокол TLS 1.2. Он используется по умолчанию в RP. Все поддерживаемые версии SQL Server поддерживают TLS 1.2. См. статью [Поддержка TLS 1.2 для Microsoft SQL Server](https://support.microsoft.com/en-us/help/3135244/tls-1-2-support-for-microsoft-sql-server).
-* Чтобы обеспечить шифрование всех данных, передаваемых на сервер SQL Server, задайте параметр **ForceEncryption** с помощью диспетчера конфигурации SQL Server. См. раздел [Настройка принудительного использования зашифрованных соединений на сервере](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine?view=sql-server-2017#ConfigureServerConnections).
+* Чтобы обеспечить шифрование всех данных, передаваемых на сервер SQL Server, задайте параметр **ForceEncryption** с помощью диспетчера конфигурации SQL Server. См. раздел [Настройка принудительного использования зашифрованных соединений на сервере](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine?view=sql-server-2017#to-configure-the-server-to-force-encrypted-connections).
 * Убедитесь в том, что все клиентские приложения также обмениваются данными через защищенные соединения.
 * RP доверяет сертификатам, используемым экземплярами SQL Server.
 
@@ -158,7 +158,7 @@ ms.locfileid: "65618452"
 
 1. Войдите на портал администрирования Azure Stack в качестве администратора служб.
 
-2. Выберите **Browse** (Обзор) &gt; **Ресурсы администрирования** &gt; **SQL Hosting Servers** (Серверы размещения SQL) &gt;**+Add** (+Добавить).
+2. Выберите **Browse** (Обзор) &gt; **Ресурсы администрирования** &gt; **SQL Hosting Servers** (Серверы размещения SQL) &gt; **+Add** (+Добавить).
 
    В разделе **SQL Hosting Servers** (Серверы размещения SQL) можно подключить поставщик ресурсов SQL Server к фактическим экземплярам SQL Server, которые выступают в качестве серверной части поставщика ресурсов.
 

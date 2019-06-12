@@ -14,12 +14,12 @@ ms.date: 03/22/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: a039830e01b85ec5e8d9c66a0c815a38d9c694f8
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 8f8d7ee82890788f60266f671bcc4041795c075e
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985730"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691639"
 ---
 # <a name="connect-azure-stack-to-azure-using-azure-expressroute"></a>Подключение Azure Stack к Azure с помощью Azure ExpressRoute
 
@@ -33,7 +33,7 @@ ms.locfileid: "64985730"
 
 Azure ExpressRoute позволяет переносить локальные сети в Microsoft Cloud по частному подключению, которое предоставляется поставщиком услуг подключения. ExpressRoute не поддерживает VPN-подключение через общедоступный Интернет.
 
-Подробные сведения об Azure ExpressRoute см. в статье с [обзором возможностей ExpressRoute]((/azure/expressroute/expressroute-introduction).
+Дополнительные сведения об Azure ExpressRoute см. в [этой статье](/azure/expressroute/expressroute-introduction).
 
 ### <a name="assumptions"></a>Предположения
 
@@ -47,7 +47,7 @@ Azure ExpressRoute позволяет переносить локальные с
 
 Чтобы подключить Azure Stack и Azure с помощью ExpressRoute, требуются следующие компоненты:
 
-* [Канал ExpressRoute]((/azure/expressroute/expressroute-circuit-peerings), подготовленный через [поставщика услуг подключения]((/azure/expressroute/expressroute-locations).
+* [Канал ExpressRoute](/azure/expressroute/expressroute-circuit-peerings), подготовленный через [поставщика услуг](/azure/expressroute/expressroute-locations).
 * Подписка Azure, используемая при создании канала ExpressRoute и виртуальных сетей в Azure.
 * Маршрутизатор, который:
   * поддерживает VPN-подключения типа "сеть — сеть" между интерфейсом локальной сети и мультитенантным шлюзом Azure Stack;
@@ -324,22 +324,22 @@ Azure ExpressRoute позволяет переносить локальные с
 
 ### <a name="configure-an-expressroute-circuit"></a>Настройка канала ExpressRoute
 
-1. Просмотрите предварительные требования ExpressRoute в [этой статье]((/azure/expressroute/expressroute-prerequisites).
+1. Просмотрите предварительные требования ExpressRoute в [этой статье](/azure/expressroute/expressroute-prerequisites).
 
-1. Создайте канал ExpressRoute с помощью подписки Azure, как описано в статье [Create and modify an ExpressRoute circuit]((/azure/expressroute/expressroute-howto-circuit-portal-resource-manager) (Создание и изменение канала ExpressRoute).
+1. Создайте канал ExpressRoute с помощью подписки Azure, как описано в статье [Создание и изменение канала ExpressRoute](/azure/expressroute/expressroute-howto-circuit-portal-resource-manager).
 
    >[!NOTE]
    >Предоставьте службе ключ службы для канала, чтобы она могла настроить канал ExpressRoute на своей стороне.
 
-1. Настройте частный пиринг в канале ExpressRoute, следуя указаниям из статьи [Create and modify peering for an ExpressRoute circuit]((/azure/expressroute/expressroute-howto-routing-portal-resource-manager) (Создание и изменение пиринга для канала ExpressRoute).
+1. Настройте частный пиринг в канале ExpressRoute, следуя указаниям из статьи [Создание и изменение пиринга для канала ExpressRoute](/azure/expressroute/expressroute-howto-routing-portal-resource-manager).
 
 ### <a name="create-the-virtual-network-gateway"></a>Создание шлюза виртуальной сети
 
-Создайте шлюз виртуальной сети ExpressRoute в центральной виртуальной сети, следуя указаниям из статьи [Configure a virtual network gateway for ExpressRoute using PowerShell]((/azure/expressroute/expressroute-howto-add-gateway-resource-manager) (Настройка шлюза виртуальной сети для ExpressRoute с помощью PowerShell).
+Создайте шлюз виртуальной сети ExpressRoute в центральной виртуальной сети, следуя указаниям из статьи [Настройка шлюза виртуальной сети для ExpressRoute с помощью PowerShell](/azure/expressroute/expressroute-howto-add-gateway-resource-manager).
 
 ### <a name="create-the-connection"></a>Создание подключения
 
-Чтобы связать канал ExpressRoute с центральной виртуальной сетью, следуйте инструкциям в статье [Connect a virtual network to an ExpressRoute circuit]((/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager) (Подключение виртуальной сети к каналу ExpressRoute).
+Чтобы связать канал ExpressRoute с центральной виртуальной сетью, следуйте инструкциям в статье [Подключение виртуальной сети к каналу ExpressRoute](/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager).
 
 ### <a name="peer-the-vnets"></a>Установление пиринга между виртуальными сетями
 

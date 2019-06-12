@@ -14,12 +14,12 @@ ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 087b7b8a5b307c5be56774024c99369286ae321d
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: bdbf30a0913aeb4839d31e68c84a4b1b7965bf85
+ms.sourcegitcommit: 75b13158347963063b7ee62b0ec57894b542c1be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64986181"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748983"
 ---
 # <a name="use-data-transfer-tools-for-azure-stack-storage"></a>Использование средств передачи данных в хранилище Azure Stack
 
@@ -67,7 +67,7 @@ AzCopy — это служебная программа командной ст�
  - **AzCopy в Linux**
 
     - Можно установить и использовать AzCopy в Azure так же, как в Azure. Дополнительные сведения см. в статье [Перенос данных с помощью AzCopy для Linux](/azure/storage/common/storage-use-azcopy-linux).
-    - Для предыдущих версий (обновления 1802–1809) см. раздел [Шаги установки для AzCopy 7.1 и более ранних версий](/azure/storage/common/storage-use-azcopy-linux#installation-steps-for-azcopy-71-and-earlier-versions).
+    - Для предыдущих версий (обновления 1802–1809) см. раздел [Шаги установки для AzCopy 7.1 и более ранних версий](/azure/storage/common/storage-use-azcopy-v10#use-the-previous-version-of-azcopy).
 
 ### <a name="azcopy-command-examples-for-data-transfer"></a>Примеры команд AzCopy для передачи данных
 
