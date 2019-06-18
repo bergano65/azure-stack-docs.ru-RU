@@ -7,16 +7,16 @@ manager: femila
 editor: ''
 ms.service: azure-stack
 ms.topic: article
-ms.date: 05/31/2019
+ms.date: 06/04/2019
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 2cca789487803124e1a7b24efa199d7f68760fb6
-ms.sourcegitcommit: 07cc716d97bf484c7260eb165ae205ae25e09589
+ms.openlocfilehash: 98aae8378e4bd516181cae95b153e6ee445ce4bf
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453406"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66692006"
 ---
 # <a name="make-virtual-machine-scale-sets-available-in-azure-stack"></a>Обеспечение доступности масштабируемых наборов виртуальных машин в Azure Stack
 
@@ -36,7 +36,7 @@ ms.locfileid: "66453406"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Marketplace**. Зарегистрируйте Azure Stack в глобальной среде Azure, чтобы элементы стали доступны в Marketplace. См. инструкции по [регистрации Azure Stack в Azure](azure-stack-registration.md).
-* **Образ операционной системы**. Прежде чем создавать масштабируемый набор виртуальных машин, скачайте из [Azure Stack Marketplace](azure-stack-download-azure-marketplace-item.md) образы виртуальных машин для использования в VMSS. Образы уже должны присутствовать, прежде чем пользователь сможет создать новый VMSS.
+* **Образ операционной системы**. Прежде чем создавать масштабируемый набор виртуальных машин, скачайте из [Azure Stack Marketplace](azure-stack-download-azure-marketplace-item.md) образы виртуальных машин для использования в масштабируемом наборе. Образы уже должны присутствовать, прежде чем пользователь сможет создать новый масштабируемый набор.
 
 ## <a name="use-the-azure-stack-portal"></a>Использование портала Azure Stack
 

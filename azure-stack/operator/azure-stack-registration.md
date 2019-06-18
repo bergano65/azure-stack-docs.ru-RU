@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2019
 ms.author: mabrigg
-ms.reviewer: brbartle
+ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: b70cd30653b8b324ae4d11a4a3e8aafe47d9a179
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 94eb107450271722af773bc96bec7dfeb12ff52e
+ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618022"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66836710"
 ---
 # <a name="register-azure-stack-with-azure"></a>Регистрация Azure Stack в Azure
 
@@ -255,7 +255,17 @@ Run: Get-AzureStackStampInformation
 
 ### <a name="connect-to-azure-and-register"></a>Подключение к Azure и регистрация
 
-На компьютере, подключенном к Интернету, выполните те же действия, чтобы импортировать модуль RegisterWithAzure.psm1 и войти в правильный контекст Azure Powershell. Затем вызовите командлет Register-AzsEnvironment. Укажите маркер регистрации для регистрации в Azure: При регистрации нескольких экземпляров Azure Stack с использованием одного идентификатора подписки Azure следует задать уникальное имя регистрации. Выполните следующий командлет:
+На компьютере, подключенном к Интернету, выполните те же действия, чтобы импортировать модуль RegisterWithAzure.psm1 и войти в правильный контекст Azure Powershell. Затем вызовите командлет Register-AzsEnvironment. Укажите маркер регистрации для регистрации в Azure: При регистрации нескольких экземпляров Azure Stack с использованием одного идентификатора подписки Azure следует задать уникальное имя регистрации.
+
+Вам потребуется маркер регистрации и уникальное имя токена.
+
+1. Запустите интегрированную среду сценариев PowerShell с правами администратора и перейдите к папке **Registration** в каталоге **AzureStack-Tools-master**, созданном во время скачивания средств Azure Stack. Импортируйте модуль **RegisterWithAzure.psm1**:  
+
+   ```powershell  
+   Import-Module .\RegisterWithAzure.psm1
+   ```
+
+2. Выполните следующие командлеты PowerShell:  
 
   ```powershell  
   $RegistrationToken = "<Your Registration Token>"
@@ -263,7 +273,17 @@ Run: Get-AzureStackStampInformation
   Register-AzsEnvironment -RegistrationToken $RegistrationToken -RegistrationName $RegistrationName
   ```
 
-При необходимости можно использовать командлет Get-Content, чтобы указать файл, содержащий маркер регистрации:
+При необходимости вы можете использовать командлет Get-Content, чтобы указать файл, содержащий маркер регистрации.
+
+Вам потребуется маркер регистрации и уникальное имя токена.
+
+1. Запустите интегрированную среду сценариев PowerShell с правами администратора и перейдите к папке **Registration** в каталоге **AzureStack-Tools-master**, созданном во время скачивания средств Azure Stack. Импортируйте модуль **RegisterWithAzure.psm1**:  
+
+  ```powershell  
+  Import-Module .\RegisterWithAzure.psm1
+  ```
+
+2. Выполните следующие командлеты PowerShell:  
 
   ```powershell  
   $RegistrationToken = Get-Content -Path '<Path>\<Registration Token File>'

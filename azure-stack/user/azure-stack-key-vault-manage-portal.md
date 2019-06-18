@@ -3,8 +3,8 @@ title: Управление Key Vault в Azure Stack с использовани
 description: Узнайте, как управлять Key Vault в Azure Stack с использованием портала
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: sethmanheim
+manager: femila
 editor: ''
 ms.assetid: D4300668-461F-45F6-BF3B-33B502C39D17
 ms.service: azure-stack
@@ -12,18 +12,17 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 01/04/2019
-ms.date: 02/18/2019
-ms.author: v-jay
+ms.date: 06/11/2019
+ms.author: sethm
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: bc73e80acddaac8676b4cb47c0b9ced2467cdc44
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 57a23dc63c72657c19a92fa8f69e029be7f12f60
+ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64311294"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66836852"
 ---
-# <a name="manage-key-vault-in-azure-stack-by-using-the-portal"></a>Управление Key Vault в Azure Stack с помощью портала
+# <a name="manage-key-vault-in-azure-stack-using-the-portal"></a>Управление Key Vault в Azure Stack с помощью портала
 
 Вы можете использовать портал Azure Stack для управления Key Vault в Azure Stack. В этой статье описывается, как создать хранилище ключей в Azure Stack и управлять им.
 
@@ -55,7 +54,7 @@ ms.locfileid: "64311294"
 
 ## <a name="manage-keys-and-secrets"></a>Управление ключами и секретами
 
-После создания хранилища выполните инструкции, приведенные ниже, чтобы создать в хранилище ключи и секреты и управлять ими.
+После создания хранилища ключей выполните инструкции, приведенные ниже, чтобы создать в хранилище ключи и секреты и управлять ими.
 
 ### <a name="create-a-key"></a>Создание ключа
 
@@ -85,7 +84,7 @@ ms.locfileid: "64311294"
 
 3. В разделе **Секреты** выберите действие **Добавить**.
 
-4. В области **Создание секрета** из списка **Параметры отправки** выберите нужный параметр создания секрета. Секрет можно создать **вручную**. Для этого введите соответствующее значение или загрузите **сертификат** с локального компьютера.
+4. В области **Создание секрета** из списка **Параметры отправки** выберите нужный параметр создания секрета. Секрет можно создать **вручную**. Для этого введите соответствующее значение или отправьте **сертификат** с локального компьютера.
 
 5. Введите **имя** секрета. Имя секрета может содержать только буквы, цифры и дефис (-).
 

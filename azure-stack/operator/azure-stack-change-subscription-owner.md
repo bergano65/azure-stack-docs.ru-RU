@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: conceptual
-ms.date: 02/21/2019
+ms.date: 06/04/2019
 ms.author: sethm
 ms.reviewer: shnatara
 ms.lastreviewed: 10/19/2018
-ms.openlocfilehash: f37eb580dd9a1276587e6ad731952661ad4ddf0b
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 99f995941c4e7b09af70dff9391aeceb9a59844d
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64986203"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691933"
 ---
 # <a name="change-the-owner-for-an-azure-stack-user-subscription"></a>Изменение владельца для пользовательской подписки Azure Stack
 
@@ -42,7 +42,7 @@ ms.locfileid: "64986203"
 Чтобы изменить владельца выставления счетов пользовательской подписки, выполните следующий скрипт. Компьютер, используемый для выполнения сценария, необходимо подключить к Azure Stack и запустить модуль Azure Stack PowerShell версии 1.3.0 или более поздней. Дополнительные сведения см. в статье [Установка PowerShell для Azure Stack](azure-stack-powershell-install.md).
 
 >[!NOTE]
->В многопользовательской службе Azure Stack новый владелец должен находиться в том же каталоге, что и существующий. Прежде чем предоставить права владения подпиской пользователю, который находится в другом каталоге, необходимо сначала [пригласить этого пользователя в свой каталог в качестве гостя]((/azure/active-directory/b2b/add-users-administrator).
+>В многопользовательской службе Azure Stack новый владелец должен находиться в том же каталоге, что и существующий. Прежде чем предоставить права владения подпиской пользователю, который находится в другом каталоге, необходимо сначала [пригласить этого пользователя в свой каталог в качестве гостя](/azure/active-directory/b2b/add-users-administrator).
 
 Замените в сценарии следующие значения перед выполнением.
 

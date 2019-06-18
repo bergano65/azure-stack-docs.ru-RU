@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/28/2019
+ms.date: 06/10/2019
 ms.author: anwestg
 ms.reviewer: ''
-ms.openlocfilehash: d280ffacf9cb74c519857ebafc907debc915ec21
-ms.sourcegitcommit: 85367001c332ed53fba0d2294eae3c06e8578070
+ms.openlocfilehash: d3464681463cfb66a368210beed79d5ef4c28739
+ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66307836"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66828319"
 ---
 # <a name="app-service-on-azure-stack-update-6-release-notes"></a>Заметки о выпуске обновления 6 для Службы приложений Azure в Azure Stack
 
@@ -102,6 +102,16 @@ ms.locfileid: "66307836"
 ### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack"></a>Известные проблемы для облачных администраторов, работающих со службой приложений Azure в Azure Stack
 
 См. документацию в [заметках о выпуске обновления 1904 для Azure Stack](azure-stack-release-notes-1904.md).
+
+### <a name="known-issues-for-tenants-deploying-applications-on-azure-app-service-on-azure-stack"></a>Известные проблемы с приложениями, выполняющими развертывания клиентов, в Службе приложений Azure в Azure Stack
+
+- Центр развертывания недоступен
+
+Клиенты пока не могут использовать центр развертывания, так как эта возможность появилась в общедоступном облаке в конце 2018 г.  Клиенты по-прежнему могут использовать методы стандартного развертывания (FTP, веб-развертывания, Git, и т. д.) с помощью портала, CLI и PowerShell.
+
+- Недоступны параметры развертывания в классическом интерфейсе и параметры учетных данных развертывания на портале
+
+Для доступа к параметрам развертывания и учетным данным развертывания в развертывании Azure Stack клиенты должны перейти на портал, используя URL-адрес в формате https://portal.&lt ; *регион*&gt;.&lt;*полное доменное имя*&gt; /? websitesExtension_oldvsts = true, который для ASDK будет иметь вид [https://portal.local.azurestack.external/?websitesExtension_oldvsts=true](https://portal.local.azurestack.external/?websitesExtension_oldvsts=true), после чего перейти в свои приложения обычным образом.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -16,12 +16,12 @@ ms.date: 03/23/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: dc4cb3e7931b456de6e807d9f7b691f9bfb71a33
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 2d2aab654f2283cf019e609e9de14790ed44a76a
+ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269510"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66837039"
 ---
 # <a name="deploy-app-service-in-a-highly-available-configuration"></a>Развертывание Службы приложений в конфигурации с высоким уровнем доступности
 
@@ -234,8 +234,9 @@ ms.locfileid: "66269510"
 
     ![Установка завершена](media/app-service-deploy-ha/16.png)
 
-
 ## <a name="next-steps"></a>Дополнительная информация
+
+[Добавьте базы данных appservice_hosting и appservice_metering в группу доступности](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), если вы предоставили поставщику ресурсов для Службы приложений экземпляр SQL Always On. Синхронизируйте базы данных, чтобы избежать недоступности службы при отработке отказа базы данных.
 
 [Масштабирование Службы приложений](azure-stack-app-service-add-worker-roles.md). Возможно, вам потребуется добавить дополнительные рабочие роли инфраструктуры в Службу приложений, чтобы удовлетворить ожидаемый спрос на приложения в вашей среде. По умолчанию Служба приложений в Azure Stack поддерживает бесплатные и общие рабочие уровни. Чтобы добавить другие рабочие уровни, вам потребуется больше рабочих ролей.
 

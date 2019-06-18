@@ -7,16 +7,16 @@ manager: femila
 cloud: azure-stack
 ms.service: azure-stack
 ms.topic: article
-ms.date: 04/30/2019
+ms.date: 05/29/2019
 ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 11/20/2018
-ms.openlocfilehash: bc5710e0994480d7aa8b0496509ad2755bc9c9ac
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 98ad556bf1b0b5f0297cb7964cd9911a50145496
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268632"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691760"
 ---
 # <a name="azure-stack-diagnostics-tools"></a>Средства диагностики Azure Stack
 
@@ -85,21 +85,21 @@ if($s)
 
 * Соберите все журналы для всех ролей:
 
-```powershell
-Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred
-```
+  ```powershell
+  Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred
+  ```
 
 * Соберите журналы из ролей VirtualMachines и BareMetal:
 
-```powershell
-Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -FilterByRole VirtualMachines,BareMetal
-```
+  ```powershell
+  Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -FilterByRole VirtualMachines,BareMetal
+  ```
 
 * Соберите журналы из ролей VirtualMachines и BareMetal с фильтром по дате для файлов журнала за последние 8 часов:
 
-```powershell
-Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8)
-```
+  ```powershell
+  Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8)
+  ```
 
 * Соберите журналы из ролей VirtualMachines и BareMetal с фильтром по дате для файлов журнала за период времени между последними 8 и 2 часами:
 
@@ -110,14 +110,17 @@ Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -Filter
 * Соберите журналы и сохраните их в указанном контейнере больших двоичных объектов хранилища Azure. Ниже приведен общий синтаксис данной операции.
 
   ```powershell
-  Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -OutputSasUri "<Blob service SAS Uri>"
+  Get-AzureStackLog -OutputSasUri "<Blob service SAS Uri>"
   ```
 
-  Например: 
+  Например:
 
   ```powershell
-  Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -OutputSasUri "https://<storageAccountName>.blob.core.windows.net/<ContainerName><SAS Token>"
+  Get-AzureStackLog -OutputSasUri "https://<storageAccountName>.blob.core.windows.net/<ContainerName><SAS token>"
   ```
+
+  > [!NOTE]
+  > Эта процедура полезна, если служба поддержки Майкрософт просит вас отправить журналы по вашему запросу. Даже если виртуальной машине ERCS недоступен общий ресурс SMB и она не имеет подключения к Интернету, вы можете создать учетную запись для хранения больших двоичных объектов в Azure Stack и перенести журналы, а затем извлечь их с помощью клиента и отправить корпорации Майкрософт.  
 
   Чтобы создать маркер SAS учетной записи хранения, требуются следующие разрешения:
 
@@ -136,9 +139,6 @@ Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -Filter
   8. Чтобы получить необходимые разрешения, выберите **Чтение**, **Запись** и **Список**.
   9. Нажмите кнопку **Создать**.
   10. Будет получен подписанный URL-адрес. Скопируйте часть URL-адреса и укажите ее в параметре `-OutputSasUri`.
-```powershell
-Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8) -ToDate (Get-Date).AddHours(-2)
-```
 
 ### <a name="parameter-considerations-for-both-asdk-and-integrated-systems"></a>Рекомендации по настройке параметров для ASDK и интегрированных систем
 
@@ -146,13 +146,13 @@ Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -Filter
 
 * Параметры **FromDate** и **ToDate** можно использовать для сбора журналов за конкретный период времени. Если эти параметры не указаны, по умолчанию журналы собираются за последние четыре часа.
 
-* Чтобы фильтровать журналы по имени компьютера, используйте параметр **FilterByNode**. Например: 
+* Чтобы фильтровать журналы по имени компьютера, используйте параметр **FilterByNode**. Например:
 
     ```powershell
     Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -FilterByNode azs-xrp01
     ```
 
-* Чтобы фильтровать журналы по типу, используйте параметр **FilterByLogType**. Доступна фильтрация по файлу, общему ресурсу или по событию Windows. Например: 
+* Чтобы фильтровать журналы по типу, используйте параметр **FilterByLogType**. Доступна фильтрация по файлу, общему ресурсу или по событию Windows. Например:
 
     ```powershell
     Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -FilterByLogType File

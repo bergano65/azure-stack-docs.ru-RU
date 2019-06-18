@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 06/07/2019
 ms.author: sethm
 ms.reviewer: alfredop
-ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 5f03b80b871d3df467bc52b735432ce5568a3ad8
-ms.sourcegitcommit: a78c0d143eadcab65a601746b9ea24be28091ad2
+ms.lastreviewed: 06/07/2019
+ms.openlocfilehash: edc6fc17e426e5e391eb61d510097101ddcfce58
+ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65212295"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66828344"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack"></a>Добавление клиентов для контроля потребления и выставления счетов в Azure Stack
 
@@ -51,7 +51,7 @@ ms.locfileid: "65212295"
 
 ### <a name="create-a-guest-user-in-the-end-customer-directory"></a>Создание гостевого пользователя в каталоге клиента
 
-Если пользователь будет самостоятельно управлять своей учетной записью, создайте в его каталоге гостевого пользователя и передайте сведения о нем представителям пользователя. Затем клиент должен добавить гостевую учетную запись в каталог и повысить ее уровень до **владельца** учетной записи CSP Azure Stack.
+По умолчанию вы как поставщик облачных служб не имеете доступа к подписке Azure Stack клиента. Но если клиент хочет, чтобы вы управляли его ресурсами, он может добавить вашу учетную запись к своей подписке Azure Stack в качестве владельца или участника. Для этого клиенту нужно добавить вашу учетную запись к своему клиенту AAD в качестве гостя. Мы рекомендуем вам использовать другую учетную запись (отличную от учетной записи поставщика облачных служб Azure) для управления подпиской Azure Stack клиента, чтобы вы не потеряли доступ к подписке Azure клиента.
 
 ### <a name="update-the-registration-with-the-end-customer-subscription"></a>Добавление подписки клиента в регистрацию
 

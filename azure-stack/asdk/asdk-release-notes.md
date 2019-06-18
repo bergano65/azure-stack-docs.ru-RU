@@ -11,22 +11,45 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/30/2019
+ms.date: 06/04/2019
 ms.author: sethm
 ms.reviewer: misainat
-ms.lastreviewed: 05/30/2019
-ms.openlocfilehash: 8de4447cd30204d0d4e1611afd057a75dc7688da
-ms.sourcegitcommit: 2cd17b8e7352891d8b3eb827d732adf834b7693e
+ms.lastreviewed: 06/04/2019
+ms.openlocfilehash: 2ca85da5d9fde42fb06eef149e7304ab08bc32ee
+ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66428681"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66691204"
 ---
 # <a name="asdk-release-notes"></a>Заметки о выпуске ASDK
 
 Эта статья содержит сведения об изменениях, исправлениях ошибок и известных проблемах в Пакете средств разработки Azure Stack (ASDK). Если вы не знаете, какая версия используется, проверьте ее [с помощью портала](../operator/azure-stack-updates.md#determine-the-current-version).
 
 Будьте в курсе новых возможностей ASDK, подписавшись на [![RSS](./media/asdk-release-notes/feed-icon-14x14.png)](https://docs.microsoft.com/api/search/rss?search=Azure+Stack+Development+Kit+release+notes&locale=en-us#) [веб-канал RSS](https://docs.microsoft.com/api/search/rss?search=Azure+Stack+Development+Kit+release+notes&locale=en-us#).
+
+## <a name="build-11905040"></a>Сборка 1.1905.0.40
+
+<!-- ### Changes -->
+
+### <a name="new-features"></a>новые функции;
+
+- Список новых функций для этого выпуска см. в [этом разделе](../operator/azure-stack-release-notes-1905.md#whats-in-this-update) заметок к выпуску Azure Stack.
+
+### <a name="fixed-and-known-issues"></a>Исправленные и известные проблемы
+
+- Так как может произойти превышение времени ожидания у субъекта-службы при выполнении скрипта регистрации, чтобы успешно [зарегистрировать ASDK](asdk-register.md), необходимо изменить скрипт PowerShell **RegisterWithAzure.psm1**. Выполните следующее:
+
+  1. На главном компьютере ASDK откройте в редакторе файл **C:\AzureStack-Tools-master\Registration\RegisterWithAzure.psm1** с повышенным уровнем разрешений.
+  2. В конце строки 1249 добавьте параметр `-TimeoutInSeconds 1800`. Это необходимо, чтобы избежать превышение времени ожидания у субъекта-службы при запуске скрипта регистрации. Теперь строка 1249 должна выглядеть следующим образом:
+
+     ```powershell
+      $servicePrincipal = Invoke-Command -Session $PSSession -ScriptBlock { New-AzureBridgeServicePrincipal -RefreshToken $using:RefreshToken -AzureEnvironment $using:AzureEnvironmentName -TenantId $using:TenantId -TimeoutInSeconds 1800 }
+      ```
+
+- Список исправленных проблем для этого выпуска см. в [этом разделе](../operator/azure-stack-release-notes-1905.md#fixes) заметок к выпуску Azure Stack.
+- Список известных проблем см. в [этой статье](../operator/azure-stack-release-notes-known-issues-1905.md).
+- Обратите внимание, что [доступные исправления Azure Stack](../operator/azure-stack-release-notes-1905.md#hotfixes) нельзя применять к Azure Stack ASDK.
 
 ## <a name="build-11904036"></a>Сборка 1.1904.0.36
 
@@ -118,23 +141,3 @@ ms.locfileid: "66428681"
   netsh interface ipv4 set sub "hostnic" mtu=1660
   netsh interface ipv4 set sub "management" mtu=1660
   ```
-
-## <a name="build-11901095"></a>Сборка 1.1901.0.95
-
-Дополнительные сведения см. в разделе [Указание сборки](../operator/azure-stack-update-1901.md#build-reference).
-
-### <a name="changes"></a>изменения
-
-Эта сборка включает в себя следующие улучшения для Azure Stack.
-
-- Компоненты преобразования сетевых адресов (NAT) и BGP теперь развернуты на физическом узле. Это избавляет от необходимости иметь два общедоступных или корпоративных IP-адреса для развертывания ASDK, а также упрощает развертывание.
-- Резервные копии интегрированных систем Azure Stack теперь можно [проверить](asdk-validate-backup.md) с помощью сценария PowerShell **asdk-installer.ps1**.
-
-### <a name="new-features"></a>новые функции;
-
-- Список новых функций для этого выпуска см. в [этом разделе](../operator/azure-stack-update-1901.md#new-features) заметок к выпуску Azure Stack.
-
-### <a name="fixed-and-known-issues"></a>Исправленные и известные проблемы
-
-- Список исправленных проблем для этого выпуска см. в [этом разделе](../operator/azure-stack-update-1901.md#fixed-issues) заметок к выпуску Azure Stack. Список известных проблем см. в [этом разделе](../operator/azure-stack-update-1901.md#known-issues-post-installation).
-- Обратите внимание, что [доступные исправления Azure Stack](../operator/azure-stack-update-1901.md#azure-stack-hotfixes) нельзя применять к Azure Stack ASDK.
