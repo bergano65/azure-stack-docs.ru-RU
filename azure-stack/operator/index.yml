@@ -12,22 +12,22 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 10/16/2018
+  ms.date: 06/17/2019
   ms.author: mabrigg
 abstract:
   description: "Microsoft Azure Stack\_― это гибридная облачная платформа, позволяющая предоставлять службы Azure из центра обработки данных. Сведения о том, как с помощью наших руководств управлять инфраструктурой интегрированных систем Azure Stack и предлагать службы.<br/><br/>Если вы используете службы и создаете приложения для Azure Stack, ознакомьтесь с нашей <a href=\"/azure-stack/user\">пользовательской документацией</a>.<br/><br/>Если вы — оператор Azure Stack и хотите использовать Пакет средств разработки Azure Stack (ASDK), развертывание Azure Stack с использованием одного узла, см. <a href=\"/azure-stack/asdk\">документацию по скачиванию и бесплатному использованию ASDK</a>."
 sections:
-  - title: Быстрый запуск
+  - title: Краткое руководство
     items:
       - type: paragraph
-        text: Настройте оборудование и разверните Пакет средств разработки Azure Stack.
+        text: 'Узнайте, как использовать портал администрирования для повседневных задач управления.'
       - type: list
         style: icon48
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_deploy.svg'
-            text: Развертывание Пакета средств разработки Azure Stack
-            href: ../asdk/asdk-download.md
+            text: Использование портала администрирования Azure Stack
+            href: azure-stack-manage-portals.md
   - title: Пошаговые руководства
     items:
       - type: paragraph
@@ -40,7 +40,7 @@ sections:
           - html: <a href="/azure-stack/operator/azure-stack-tutorial-sql">Создание высокодоступных баз данных SQL</a>
           - html: <a href="/azure-stack/operator/azure-stack-tutorial-mysql">Руководство. Создание высокодоступных баз данных MySQL</a>
           - html: '<a href="/azure-stack/operator/azure-stack-tutorial-app-service">Make web, mobile, and API apps available to your Azure Stack users</a> (Создание предложения по веб-приложениям, мобильным приложениям и приложениям API для пользователей Azure Stack)'
-  - title: Бесплатные видеоуроки PluralSight
+  - title: Бесплатные видеоуроки Pluralsight
     items:
       - type: list
         style: cards
