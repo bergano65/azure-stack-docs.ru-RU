@@ -50,8 +50,6 @@
       href: azure-stack-use-portal.md
     - name: Подключение с помощью PowerShell
       href: azure-stack-powershell-configure-user.md
-    - name: Использование API Azure Stack
-      href: azure-stack-rest-api-use.md
     - name: Безопасность и соответствие требованиям
       items:
         - name: Использование контроля доступа на основе ролей
@@ -152,36 +150,36 @@
                   href: azure-stack-solution-template-kubernetes-trouble.md
             - name: Развертывание Cognitive Services
               href: azure-stack-solution-template-cognitive-services.md
-    - name: Создание приложений
+    - name: Использование Resource Manager для Azure Stack
       items:
-        - name: Разработка для Azure Stack
-          href: azure-stack-developer.md
-        - name: Настройка среды разработки
-          href: azure-stack-dev-start.md
+        - name: Настройка клиента
           items:
-            - name: Обзор PowerShell для Azure Stack
-              href: azure-stack-powershell-overview.md
-            - name: Установка PowerShell для Azure Stack
-              href: /azure-stack/operator/azure-stack-powershell-install?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
-              maintainContext: true
-            - name: Подключение с помощью PowerShell
-              href: azure-stack-powershell-configure-user.md
-            - name: Скачивание средств Azure Stack
-              href: /azure-stack/operator/azure-stack-powershell-download?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
-              maintainContext: true
-            - name: Использование Docker для запуска PowerShell
-              href: azure-stack-powershell-user-docker.md
-            - name: Подключение с помощью расширения учетной записи Azure
-              href: azure-stack-dev-start-vscode-azure.md
-            - name: Установка Visual Studio
-              href: azure-stack-install-visual-studio.md
-            - name: Использование открытого ключа SSH
-              href: azure-stack-dev-start-howto-ssh-public-key.md
-            - name: Развертывание виртуальной машины Linux для веб-приложения
-              href: azure-stack-dev-start-howto-deploy-linux.md
-            - name: Использование профилей версии API
-              href: azure-stack-version-profiles.md
+            - name: Клиенты пакета SDK Azure
+              href: azure-stack-dev-start.md
+            - name: Клиент PowerShell для Azure Stack
               items:
+                - name: Обзор PowerShell для Azure Stack
+                  href: azure-stack-powershell-overview.md
+                - name: Установка PowerShell для Azure Stack
+                  href: /azure-stack/operator/azure-stack-powershell-install?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                  maintainContext: true
+                - name: Подключение с помощью PowerShell
+                  href: azure-stack-powershell-configure-user.md
+                - name: Скачивание средств Azure Stack
+                  href: /azure-stack/operator/azure-stack-powershell-download?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
+                  maintainContext: true
+                - name: Использование Docker для запуска PowerShell
+                  href: azure-stack-powershell-user-docker.md
+            - name: Клиент Visual Studio Code
+              href: azure-stack-dev-start-vscode-azure.md
+            - name: Клиент Visual Studio
+              href: azure-stack-install-visual-studio.md
+            - name: Клиент Secure Shell
+              href: azure-stack-dev-start-howto-ssh-public-key.md
+            - name: Использование профилей версий API
+              items:
+                - name: Обзор
+                  href: azure-stack-version-profiles.md
                 - name: .NET
                   href: azure-stack-version-profiles-net.md
                 - name: Java
@@ -196,21 +194,24 @@
                   href: azure-stack-version-profiles-python.md
                 - name: 'API поставщика ресурсов, поддерживаемые в профилях'
                   href: azure-stack-profiles-azure-resource-manager-versions.md
-        - name: Распространенные сценарии развертывания для Azure Stack
-          href: azure-stack-dev-start-deploy-app.md
+        - name: Развертывание виртуальной машины и веб-приложения
           items:
-            - name: 'Развертывание приложения .Net Core (C#) на виртуальной машине'
+            - name: 'Развертывание веб-приложения C# на виртуальной машине Windows'
               href: azure-stack-dev-start-howto-vm-dotnet.md
-            - name: Развертывание приложения Java на виртуальной машине
-              href: azure-stack-dev-start-howto-vm-java.md
-            - name: Развертывание приложения Go на виртуальной машине
-              href: azure-stack-dev-start-howto-vm-go.md
-            - name: Развертывание приложения Ruby на виртуальной машине
-              href: azure-stack-dev-start-howto-vm-ruby.md
-            - name: Развертывание приложения Python на виртуальной машине
-              href: azure-stack-dev-start-howto-vm-python.md
-            - name: Развертывание приложения NodeJS на виртуальной машине
-              href: azure-stack-dev-start-howto-vm-nodejs.md
+            - name: Развертывание веб-приложения на виртуальной машине Linux
+              items:
+                - name: Развертывание виртуальной машины Linux для веб-приложения
+                  href: azure-stack-dev-start-howto-deploy-linux.md
+                - name: Развертывание веб-приложения Java
+                  href: azure-stack-dev-start-howto-vm-java.md
+                - name: Развертывание веб-приложения Go
+                  href: azure-stack-dev-start-howto-vm-go.md
+                - name: Развертывание веб-приложения Ruby
+                  href: azure-stack-dev-start-howto-vm-ruby.md
+                - name: Развертывание веб-приложения Python
+                  href: azure-stack-dev-start-howto-vm-python.md
+                - name: Развертывание веб-приложения NodeJS
+                  href: azure-stack-dev-start-howto-vm-nodejs.md
         - name: Использование модуля политики Azure Stack
           href: azure-stack-policy-module.md
         - name: Использование шаблонов
@@ -219,6 +220,8 @@
               href: azure-stack-arm-templates.md
             - name: Рекомендации по использованию шаблонов
               href: azure-stack-develop-templates.md
+            - name: Разработка шаблонов в Azure
+              href: azure-stack-developer.md
             - name: Проверка шаблонов
               href: azure-stack-validate-templates.md
             - name: Развертывание с помощью портала
@@ -229,6 +232,8 @@
               href: azure-stack-deploy-template-command-line.md
             - name: Развертывание с помощью Visual Studio
               href: azure-stack-deploy-template-visual-studio.md
+        - name: Доступ к ресурсам с помощью REST
+          href: azure-stack-rest-api-use.md
     - name: Включение поставщика облачных служб
       href: azure-stack-csp-enable-billing-usage-tracking.md
 - name: Справочные материалы
