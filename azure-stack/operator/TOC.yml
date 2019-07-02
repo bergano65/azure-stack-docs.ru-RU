@@ -1,4 +1,4 @@
-- name: Документация оператора по Azure Stack
+- name: Документация по Azure Stack для оператора
   href: index.yml
 - name: Обзор
   items:
@@ -15,7 +15,13 @@
         - name: Контрольный список для применения обновлений
           href: azure-stack-release-notes-checklist.md
         - name: обновления для системы безопасности;
-          href: azure-stack-release-notes-security-updates-1905.md
+          href: azure-stack-release-notes-security-updates-1906.md
+        - name: Обновление 1906
+          items:
+            - name: Заметки о выпуске
+              href: azure-stack-release-notes-1906.md
+            - name: Известные проблемы
+              href: azure-stack-release-notes-known-issues-1906.md
         - name: "Обновление\_1905"
           items:
             - name: Заметки о выпуске
@@ -30,14 +36,12 @@
               href: azure-stack-release-notes-known-issues-1904.md
         - name: Обновление 1903
           href: azure-stack-update-1903.md
-        - name: "Обновление\_1902"
-          href: azure-stack-update-1902.md
 - name: Краткие руководства
   expanded: true
   items:
     - name: Использование портала администрирования
       href: azure-stack-manage-portals.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Предложение по виртуальным машинам
       href: azure-stack-tutorial-tenant-vm.md
@@ -131,7 +135,7 @@
               href: azure-stack-integrate-security.md
             - name: Аудит устройства
               href: azure-stack-integrate-physical-device-auditing.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Управление Azure Stack
       items:
@@ -161,7 +165,7 @@
           items:
             - name: Обзор управления обновлениями
               href: azure-stack-updates.md
-            - name: установка обновлений;
+            - name: Установка обновлений
               href: azure-stack-apply-updates.md
             - name: Мониторинг состояния обновления
               href: azure-stack-monitor-update.md
@@ -199,8 +203,10 @@
               href: azure-stack-replace-component.md
     - name: 'Безопасность, соответствие требованиям и удостоверения'
       items:
-        - name: Обзор безопасности
+        - name: Общие сведения о безопасности
           href: azure-stack-security-foundations.md
+        - name: Настройка безопасности
+          href: azure-stack-security-configuration.md
         - name: Удостоверение
           items:
             - name: Общие сведения об удостоверениях
@@ -213,11 +219,11 @@
               href: azure-stack-add-new-user-aad.md
             - name: "Добавление пользователей для AD\_FS"
               href: azure-stack-add-users-adfs.md
-            - name: Создание субъектов-служб
+            - name: Использование удостоверения приложения для доступа к ресурсам
               href: Azure-stack-create-service-principals.md
             - name: Включение поддержки мультитенантности
               href: azure-stack-enable-multitenancy.md
-        - name: Шифрование данных при хранении
+        - name: Шифрование неактивных данных
           href: azure-stack-security-bitlocker.md
         - name: Смена секретов
           href: azure-stack-rotate-secrets.md
@@ -249,14 +255,14 @@
           href: azure-stack-redhat-create-upload-vhd.md
         - name: Предложение кластера Kubernetes
           href: azure-stack-solution-template-kubernetes-cluster-add.md
-        - name: "Создание VPN-подключения типа \"сеть\_— сеть\""
+        - name: "Создание VPN-подключения \"сеть\_— сеть\""
           href: azure-stack-create-vpn-connection-one-node.md
     - name: Предложение служб
       href: azure-stack-offer-services-overview.md
     - name: Предложение SQL как PaaS
       href: azure-stack-sql-resource-provider.md
       items:
-        - name: Развертывание поставщика ресурсов SQL Server.
+        - name: Развертывание поставщика ресурсов SQL Server
           href: azure-stack-sql-resource-provider-deploy.md
         - name: Добавление серверов размещения SQL
           href: azure-stack-sql-resource-provider-hosting-servers.md
@@ -295,7 +301,7 @@
               href: azure-stack-mysql-resource-provider-11300.md
             - name: "Заметки о выпуске для поставщика ресурсов MySQL\_1.1.33.0"
               href: azure-stack-mysql-resource-provider-11330.md
-    - name: Предложение службы приложений как PaaS
+    - name: Предложение Службы приложений как PaaS
       href: azure-stack-app-service-overview.md
       items:
         - name: Планирование производительности Службы приложений
@@ -308,11 +314,11 @@
           href: azure-stack-app-service-deploy.md
         - name: Развертывание Службы приложений для обеспечения высокого уровня доступности
           href: app-service-deploy-ha.md
-        - name: Автономное развертывание службы приложений
+        - name: Автономное развертывание Службы приложений
           href: azure-stack-app-service-deploy-offline.md
-        - name: Обновление службы приложений
+        - name: Обновление Службы приложений
           href: azure-stack-app-service-update.md
-        - name: Автономное обновление службы приложений
+        - name: Автономное обновление Службы приложений
           href: azure-stack-app-service-update-offline.md
         - name: Добавление ролей инфраструктуры Службы приложений
           href: azure-stack-app-service-add-worker-roles.md
@@ -368,7 +374,7 @@
           items:
             - name: Отчеты по данным об использовании
               href: azure-stack-usage-reporting.md
-            - name: Инфраструктура отчетов о потреблении для поставщиков облачных служб
+            - name: Использование. Инфраструктура отчетов
               href: azure-stack-csp-ref-infrastructure.md
             - name: API использования поставщика
               href: azure-stack-provider-resource-api.md
@@ -376,6 +382,12 @@
               href: azure-stack-tenant-resource-usage-api.md
             - name: Часто задаваемые вопросы об использовании
               href: azure-stack-usage-related-faq.md
+            - name: Использование. Устранение неполадок
+              items:
+                - name: Использование. Неполадки с подключением
+                  href: azure-stack-usage-issues.md
+                - name: Использование. Коды ошибок регистрации
+                  href: azure-stack-registration-errors.md
     - name: Резервное копирование для Azure Stack
       href: azure-stack-backup-infrastructure-backup.md
       items:
@@ -386,9 +398,9 @@
         - name: Резервное копирование для Azure Stack
           href: azure-stack-backup-back-up-azure-stack.md
         - name: Резервное копирование файлов и приложений в Azure Stack
-          href: /azure/backup/backup-mabs-files-applications-azure-stack?toc=/azure/azure-stack/toc.json&bc=/azure/azure-stack/breadcrumb/toc.json
+          href: /azure/backup/backup-mabs-files-applications-azure-stack?toc=/azure-stack/operator/toc.json&bc=/azure-stack/breadcrumb/toc.json
         - name: Репликация виртуальных машин Azure Stack в Azure
-          href: /azure/site-recovery/azure-stack-site-recovery?toc=/azure/azure-stack/toc.json&bc=/azure/azure-stack/breadcrumb/toc.json
+          href: /azure/site-recovery/azure-stack-site-recovery?toc=/azure-stack/operator/toc.json&bc=/azure-stack/breadcrumb/toc.json
         - name: Восстановление после катастрофической потери данных
           href: azure-stack-backup-recover-data.md
         - name: Рекомендации по резервному копированию

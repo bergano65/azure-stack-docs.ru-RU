@@ -1,10 +1,10 @@
-- name: Документация пользователя по Azure Stack
+- name: Документация по Azure Stack для пользователя
   href: index.yml
 - name: Обзор
   items:
     - name: Основные рекомендации
       href: azure-stack-considerations.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание виртуальной машины Windows с помощью портала
@@ -27,7 +27,7 @@
           href: azure-stack-subscribe-services.md
         - name: Создание виртуальной машины на основе шаблона
           href: azure-stack-create-vm-template.md
-    - name: Гибридные облачные приложения
+    - name: Общие сведения о гибридных облачных приложениях
       href: azure-stack-hybrid-cloud-patterns.md
       items:
         - name: Развертывание приложений в Azure и Azure Stack
@@ -36,26 +36,30 @@
           href: azure-stack-solution-hybrid-identity.md
         - name: Настройка подключения гибридного облака
           href: azure-stack-solution-hybrid-connectivity.md
-        - name: Создание решения для аналитики промежуточных данных
-          href: azure-stack-solution-staged-data-analytics.md
         - name: Создание решений для масштабирования в нескольких облаках в Azure
           href: azure-stack-solution-cloud-burst.md
         - name: Создание решения для географически распределенного приложения
           href: azure-stack-solution-geo-distributed.md
         - name: Развертывание гибридного облачного решения
           href: azure-stack-solution-hybrid-cloud.md
-- name: Практические руководства
+        - name: Развертывание аналитики промежуточных данных
+          href: azure-stack-solution-staged-data.md
+        - name: Развертывание MongoDB высокого уровня доступности
+          href: azure-stack-solution-mongodb-ha.md
+        - name: Развертывание SQL Server 2016 высокого уровня доступности
+          href: azure-stack-solution-sql-ha.md
+- name: Руководства
   items:
     - name: Использование портала Azure Stack
       href: azure-stack-use-portal.md
     - name: Подключение с помощью PowerShell
       href: azure-stack-powershell-configure-user.md
-    - name: Безопасность и соответствие требованиям
+    - name: 'Безопасность, соответствие требованиям и удостоверения'
       items:
-        - name: Использование контроля доступа на основе ролей
+        - name: Использование управления доступом на основе ролей
           href: azure-stack-manage-permissions.md
-        - name: Использование субъектов-служб
-          href: Azure-stack-create-service-principals.md
+        - name: Использование удостоверения приложения для доступа к ресурсам
+          href: /azure-stack/operator/azure-stack-create-service-principals?toc=/azure-stack/user/toc.json&bc=/azure-stack/breadcrumb/toc.json
     - name: Использование служб
       items:
         - name: Службы вычислений
@@ -76,7 +80,7 @@
               href: vm-update-management.md
             - name: Рекомендации по работе с виртуальными машинами SQL Server
               href: azure-stack-sql-server-vm-considerations.md
-        - name: Хранилище
+        - name: Служба хранилища
           items:
             - name: Обзор
               href: azure-stack-storage-overview.md
@@ -86,7 +90,7 @@
               href: azure-stack-storage-dev.md
             - name: Средства для передачи данных
               href: azure-stack-storage-transfer.md
-            - name: Подключение обозревателя хранилищ
+            - name: Подключение Обозревателя службы хранилища
               href: azure-stack-storage-connect-se.md
         - name: Сеть
           items:
@@ -242,11 +246,11 @@
       href: /powershell/azure/azure-stack/overview?view=azurestackps-1.3.0
     - name: Обозреватель REST API Azure Stack
       href: /rest/api/
-    - name: Azure Stack CLI
+    - name: Интерфейс командной строки для Azure Stack
       href: /cli/azure/reference-index?view=azure-cli-2017-03-09-profile
 - name: Сопутствующие материалы
   items:
-    - name: Документация оператора по Azure Stack
+    - name: Документация по Azure Stack для оператора
       href: /azure-stack/operator/
     - name: Документация ASDK
       href: /azure-stack/asdk/
@@ -260,7 +264,7 @@
       href: 'https://feedback.azure.com/forums/344565-azure-stack?category_id=160275'
     - name: Сведения о ценах
       href: 'https://azure.microsoft.com/overview/azure-stack/how-to-buy/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-stack'
     - name: Обучение и сертификация
       href: /azure-stack/operator/azure-stack-train-and-cert
