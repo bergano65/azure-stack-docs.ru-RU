@@ -14,26 +14,26 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: justinha
-ms.reviewer: quying
+ms.reviewer: xiaofmao
 ms.lastreviewed: 11/05/2018
 ms.custom: mvc
-ms.openlocfilehash: cc3af256adbcea8e6055b237945dc2286762437e
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 7198b48eef8ceb2cd802fb81e8ab835f4e254e04
+ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268001"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67308451"
 ---
 # <a name="tutorial-make-sql-databases-available-to-your-azure-stack-users"></a>Руководство. Обеспечение доступности баз данных SQL для пользователей Azure Stack
 
 В качестве администратора облака Azure Stack вы можете создавать предложения, позволяющие пользователям (клиентам) создавать базы данных SQL, которые они смогут использовать с собственными облачными приложениями, веб-сайтами и рабочими нагрузками. Предоставляя пользователям такие настраиваемые облачные базы данных по запросу, вы помогаете им экономить время и ресурсы. Для этого вам потребуется выполнить следующие действия:
 
 > [!div class="checklist"]
-> * Развертывание поставщика ресурсов SQL Server.
+> * Развертывание поставщика ресурсов SQL Server
 > * Создание предложения
 > * Тестирование предложения.
 
-## <a name="deploy-the-sql-server-resource-provider"></a>Развертывание поставщика ресурсов SQL Server.
+## <a name="deploy-the-sql-server-resource-provider"></a>Развертывание поставщика ресурсов SQL Server
 
 Процесс развертывания подробно описан в статье [Использование баз данных SQL в Microsoft Azure Stack](azure-stack-sql-resource-provider-deploy.md) и состоит из следующих основных шагов:
 
@@ -80,7 +80,7 @@ ms.locfileid: "66268001"
 Из этого руководства вы узнали, как выполнить следующие задачи:
 
 > [!div class="checklist"]
-> * Развертывание поставщика ресурсов SQL Server.
+> * Развертывание поставщика ресурсов SQL Server
 > * Создание предложения
 > * Тестирование предложения.
 
