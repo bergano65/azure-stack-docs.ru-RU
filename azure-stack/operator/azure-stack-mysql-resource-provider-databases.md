@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 06/13/2019
 ms.author: mabrigg
-ms.reviewer: quying
+ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 4cf406461c7a231617d40c50d2b5491bb4427b63
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 4f2e7a77af14c71c2b3231436d723c6e721ceca9
+ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618640"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67308622"
 ---
 # <a name="create-mysql-databases"></a>Создание баз данных MySQL
 Пользователь Azure Stack с подпиской на предложение, включающее службу базы данных MySQL, может создавать и администрировать самостоятельно обслуживаемые базы данных MySQL на портале для пользователей.
