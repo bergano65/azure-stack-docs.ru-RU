@@ -10,17 +10,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 03/04/2019
+ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9ad15342a8c0116f928b416f26e64b08563a5c14
-ms.sourcegitcommit: 75b13158347963063b7ee62b0ec57894b542c1be
+ms.openlocfilehash: 8914d9a030e9c76f3663277e104317db0cfa308d
+ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748951"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131645"
 ---
 # <a name="tutorial-set-up-resources-for-validation-as-a-service"></a>Руководство по Настройка ресурсов для VaaS
 
@@ -86,7 +86,7 @@ Validation as a Service (VaaS) — это служба Azure, которая и
 
 2. Выберите **Моя учетная запись**.
 
-3. При появлении запроса на предоставление VaaS перечисленных разрешений AAD примите условия, чтобы продолжить.
+3\. При появлении запроса на предоставление VaaS перечисленных разрешений AAD примите условия, чтобы продолжить.
 
 ## <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 

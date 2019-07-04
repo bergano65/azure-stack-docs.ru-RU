@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 06/13/2019
 ms.author: mabrigg
-ms.reviewer: quying
+ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 2b177f14fc787c05c0a7c1f654e8bcfaf8638b93
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: a8ebc50be9b1c3e1eaae491b6d8f8916f900e500
+ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618190"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67308464"
 ---
 # <a name="create-sql-databases"></a>Создание баз данных SQL
 
@@ -30,7 +30,7 @@ ms.locfileid: "65618190"
 
 2. Последовательно выберите **+Создать** &gt;**Данные и хранилище** &gt; **База данных SQL Server** &gt; **Добавить**.
 
-3. В разделе **Создание базы данных** введите требуемую информацию, в том числе **Имя базы данных** и **Максимальный размер (в МБ)**.
+3. В разделе **Создание базы данных** введите требуемую информацию, в том числе **Имя базы данных** и **Максимальный размер (в МБ)** .
 
    >[!NOTE]
    >Размер базы данных должен быть не менее 64 МБ. Вы можете дополнительно увеличить его после развертывания базы данных.
@@ -69,7 +69,7 @@ ms.locfileid: "65618190"
 
 ![Состояние базы данных AlwaysOn](./media/azure-stack-sql-rp-deploy/verifyalwayson.png)
 
-Базы данных AlwaysOn должны отображаться как синхронизированные. Они также должны быть доступными во всех экземплярах SQL и группах доступности. На предыдущем снимке экрана представлена база данных newdb1, для которой отображается состояние **newdb1 (Синхронизировано)**.
+Базы данных AlwaysOn должны отображаться как синхронизированные. Они также должны быть доступными во всех экземплярах SQL и группах доступности. На предыдущем снимке экрана представлена база данных newdb1, для которой отображается состояние **newdb1 (Синхронизировано)** .
 
 ### <a name="delete-an-alwayson-database"></a>Удаление базы данных AlwaysOn
 

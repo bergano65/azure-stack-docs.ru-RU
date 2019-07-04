@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 08/30/2018
-ms.openlocfilehash: 20ec9e6ea8831e6667a282074ba28b16da3180f9
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 59858d5538552fb04ddf41de0ad59cf77dcd7783
+ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618984"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131065"
 ---
 # <a name="about-deployment-network-traffic"></a>Сведения о трафике во время развертывания
 Понимание потоков трафика при развертывании Azure Stack крайне важно для обеспечения успешного развертывания. В этой статье рассматривается ожидаемый трафик во время процесса развертывания, чтобы помочь вам понять, чего ожидать.

@@ -10,16 +10,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 04/20/2019
+ms.date: 06/26/2019
 ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: f95dcf44c2d9d30bc6ba40facbecff97ff26bf49
-ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
+ms.openlocfilehash: 25280d1f5465776aedf2e3e0dfd84118e866a944
+ms.sourcegitcommit: c9d11be7d27c73797bdf279d4fcabb7a22451541
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66836693"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397275"
 ---
 # <a name="validate-azure-stack-system-state"></a>Проверка состояния системы Azure Stack
 
@@ -48,7 +48,7 @@ ms.locfileid: "66836693"
 
    Воспользуйтесь разделами [Рекомендации по настройке параметров](azure-stack-diagnostic-test.md#parameter-considerations) и [Примеры использования](azure-stack-diagnostic-test.md#use-case-examples), чтобы получить дополнительные сведения.
 
-3. Если любой из тестов вернет состояние **FAIL** (Сбой), выполните команду `Get-AzureStackLog`. Инструкции для интегрированной системы см. в статье о [запуске Get-AzureStackLog в интегрированных системах Azure Stack](/azure-stack-diagnostics#to-run-get-azurestacklog-on-azure-stack-integrated-systems), а инструкции для ASDK — в статье о [запуске Get-AzureStackLog в системе с Пакетом средств разработки Azure Stack](/azure-stack-diagnostics#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system).
+3. Если любой из тестов вернет состояние **FAIL** (Сбой), выполните команду `Get-AzureStackLog`. Инструкции для интегрированной системы см. в статье о [запуске Get-AzureStackLog в интегрированных системах Azure Stack](azure-stack-diagnostics.md#to-run-get-azurestacklog-on-azure-stack-integrated-systems), а инструкции для ASDK — в статье о [запуске Get-AzureStackLog в системе с Пакетом средств разработки Azure Stack](azure-stack-diagnostics.md#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system).
 
    Этот командлет собирает журналы, созданные командлетом Test-AzureStack. Нет необходимости собирать журналы или обращаться в службу поддержки пользователей, если тест возвращает состояние **WARN** (ПРЕДУПРЕЖДЕНИЕ).
 

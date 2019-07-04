@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: wfayed
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: e783d9ea577c76505f59e73230b2a00c90f867cf
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 1d5d6399887d5567806e8a9131444b5eada2f719
+ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65618765"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131188"
 ---
 # <a name="azure-connected-deployment-planning-decisions-for-azure-stack-integrated-systems"></a>Планирование развертываний с подключением к Azure для интегрированных систем Azure Stack
 Когда вы решите, [как интегрировать Azure Stack в свою среду гибридного облака](azure-stack-connection-models.md), вы сможете спланировать развертывание Azure Stack.

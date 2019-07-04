@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: justinha
-ms.reviewer: quying
+ms.reviewer: xiaofmao
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: e21819fc6475161e63fcdb99a723847c5d7fbbad
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: fa9577bf0a620f8911ee6cf5238b55f460076883
+ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268399"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67316310"
 ---
 # <a name="tutorial-offer-highly-available-sql-databases"></a>Руководство по Предоставление высокодоступных баз данных SQL
 
@@ -43,7 +43,7 @@ ms.locfileid: "66268399"
 > [!IMPORTANT]
 > Все следующие элементы необходимы для использования шаблона быстрого запуска Azure Stack.
 
-- Образ Marketplace [Windows Server 2016 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer).
+- Образ Marketplace [Windows Server 2016 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/MicrosoftWindowsServer.WindowsServer).
 - Образ сервера SQL Server 2016 SP1 или SP2 (Enterprise, Standard и Developer) в Windows Server 2016. В этом руководстве используется образ Marketplace [SQL Server 2016 SP2 Enterprise на базе Windows Server 2016](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoftsqlserver.sql2016sp2-ws2016).
 - [Расширение IaaS для SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension) версии 1.2.30 или более поздней. Расширение IaaS для SQL устанавливает необходимые компоненты, которые требуются элементам Marketplace SQL Server, для всех версий Windows. Оно обеспечивает настройку параметров SQL на виртуальных машинах SQL. Если расширение не установлено в локальной версии Marketplace, подготовка SQL завершится ошибкой.
 - [Расширение пользовательских сценариев для Windows](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.CustomScriptExtension) версии 1.9.1 или более поздней. Расширение пользовательских сценариев — это инструмент, который можно использовать для автоматического запуска задач настройки после развертывания виртуальных машин.
@@ -188,4 +188,4 @@ ms.locfileid: "66268399"
 
 Перейдите к следующему руководству, чтобы изучить дальнейшие действия:
 > [!div class="nextstepaction"]
-> [Руководство. Создание высокодоступных баз данных MySQL](azure-stack-tutorial-mysql.md)
+> [Создание высокодоступных баз данных MySQL](azure-stack-tutorial-mysql.md)
