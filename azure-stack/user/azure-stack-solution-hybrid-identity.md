@@ -1,6 +1,6 @@
 ---
-title: Настройка удостоверения гибридного облака в приложениях Azure и Azure Stack | Документация Майкрософт
-description: Узнайте, как настроить удостоверение гибридного облака в приложениях Azure и Azure Stack.
+title: Настройка идентификатора гибридного облака в приложениях Azure и Azure Stack | Документация Майкрософт
+description: Из этой статьи вы узнаете, как настроить идентификатор гибридного облака в приложениях Azure и Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: bryanla
@@ -11,31 +11,31 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/14/2019
+ms.date: 06/26/2019
 ms.author: bryanla
 ms.reviewer: anajod
-ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: ed85055c04e068ad614a406caf113555601bd620
-ms.sourcegitcommit: 261df5403ec01c3af5637a76d44bf030f9342410
+ms.lastreviewed: 06/26/2019
+ms.openlocfilehash: 074d971c1f951797b5dc2d53a62eef56d0b7249f
+ms.sourcegitcommit: eccbd0098ef652919f357ef6dba62b68abde1090
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252044"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492322"
 ---
 # <a name="tutorial-configure-hybrid-cloud-identity-for-azure-and-azure-stack-applications"></a>Руководство по Настройка идентификатора гибридного облака для приложений Azure и Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Узнайте, как настроить идентификатор гибридного облака для приложений Azure и Azure Stack.
+Из этой статьи вы узнаете, как настроить идентификатор гибридного облака для приложений Azure и Azure Stack.
 
-Платформа Azure вообще и Azure Stack поддерживают два способа доступа к приложениям.
+В Azure и Azure Stack предусмотрено два способа доступа к приложениям.
 
  * Если в Azure Stack есть постоянное подключение к Интернету, можно использовать Azure Active Directory (Azure AD).
- * Если Azure Stack не имеет подключения к Интернету, используйте службы федерации Active Directory (AD FS).
+ * Если в Azure Stack нет подключения к Интернету, используйте службы федерации Active Directory (AD FS).
 
-Субъекты-службы позволяют предоставлять доступ к приложениям Azure Stack для их развертывания или настройки с помощью Azure Resource Manager в Azure Stack.
+Субъекты-службы обеспечивают доступ к приложениям Azure Stack для их развертывания или настройки с помощью Azure Resource Manager в Azure Stack.
 
-В рамках этого руководства вы создадите пример среды и выполните в ней следующие действия:
+В этом руководстве показано, как создать среду, после чего вы выполните в ней следующие действия:
 
 > [!div class="checklist"]
 > - создадите гибридное удостоверение для глобальной платформы Azure и Azure Stack;
@@ -45,18 +45,18 @@ ms.locfileid: "66252044"
 
 > [!Tip]  
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
-> Microsoft Azure Stack — это расширение Azure.re. Azure Stack позволяет использовать гибкие и инновационные функции облачных вычислений в локальной среде, а также предоставляет единое гибридное облако для создания и развертывания гибридных приложений в любом расположении.  
+> Microsoft Azure Stack — это расширение Azure.re. Azure Stack обеспечивает гибкость и высокую скорость внедрения инноваций облачных вычислений в локальной среде. Только это гибридное облако позволяет создавать и развертывать гибридные приложения в любой точке мира.  
 > 
 > В [рекомендациях по проектированию гибридных приложений](https://aka.ms/hybrid-cloud-applications-pillars) описаны характеристики качественного программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность), которых следует придерживаться при разработке, развертывании и использовании гибридных приложений. Рекомендации помогут оптимизировать разработку гибридных приложений и свести к минимуму проблемы в рабочих средах.
 
 
 ## <a name="create-a-service-principal-for-azure-ad-in-the-portal"></a>Создание субъекта-службы с доступом для Azure AD с помощью портала
 
-Если Azure Stack развернут с использованием Azure AD в качестве хранилища идентификаторов, создание субъекта-службы выполняется точно так же, как для Azure. В статье [Создание субъектов-служб](azure-stack-create-service-principals.md#create-service-principal-for-azure-ad) рассказывается, как выполнить эти шаги с использованием портала. Прежде чем начать, проверьте [необходимые разрешения Azure AD](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).
+Если вы развернули Azure Stack с использованием Azure AD в качестве хранилища идентификаторов, субъекты-службы создаются точно так же, как для Azure. Подробные сведения об использовании портала см. в статье [Предоставление приложениям доступа к Azure Stack](../operator/azure-stack-create-service-principals.md#manage-an-azure-ad-service-principal). Прежде чем начать, проверьте [необходимые разрешения Azure AD](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).
 
 ## <a name="create-a-service-principal-for-ad-fs-using-powershell"></a>Создание субъекта-службы для AD FS с помощью PowerShell
 
-Когда вы развернете Azure Stack с использованием AD FS, для создания субъекта-службы, назначения роли для доступа и входа с этим идентификатором можно использовать PowerShell. В разделе [Создание субъекта-службы для AD FS](azure-stack-create-service-principals.md#create-service-principal-for-ad-fs) показано, как выполнить необходимые шаги с помощью PowerShell.
+Если вы развернули Azure Stack с использованием AD FS, для создания субъекта-службы, назначения роли для доступа и входа с этим идентификатором можно использовать PowerShell. Подробные сведения об использовании PowerShell см. в статье [Предоставление приложениям доступа к Azure Stack](../operator/azure-stack-create-service-principals.md#manage-an-ad-fs-service-principal).
 
 ## <a name="using-the-azure-stack-api"></a>Использование API Azure Stack
 
@@ -68,7 +68,7 @@ ms.locfileid: "66252044"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-Установка Azure Stack с подключением к Azure Active Directory и использованием доступной подписки. Если вы не установили Azure Stack, воспользуйтесь инструкциями по установке [Пакета средств разработки Azure Stack](../asdk/asdk-install.md).
+Установленная среда Azure Stack с подключением к Azure Active Directory и доступной подпиской. Если вы не установили Azure Stack, воспользуйтесь инструкциями по установке [Пакета средств разработки Azure Stack](../asdk/asdk-install.md).
 
 #### <a name="connect-to-azure-stack-using-code"></a>Подключение к Azure Stack из кода программы
 

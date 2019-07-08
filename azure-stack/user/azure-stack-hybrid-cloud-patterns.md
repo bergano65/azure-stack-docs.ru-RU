@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 05/06/2019
+ms.date: 06/20/2019
 ms.author: mabrigg
 ms.reviewer: anajod
-ms.lastreviewed: 05/06/2019
-ms.openlocfilehash: a1e13b471c9eaed9dcac79c4002ceca6b3b8e7d2
-ms.sourcegitcommit: a78c0d143eadcab65a601746b9ea24be28091ad2
+ms.lastreviewed: 06/20/2019
+ms.openlocfilehash: 442e12d435102c06a334a8a93271d3d4a27aa578
+ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65212672"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67308770"
 ---
 # <a name="create-hybrid-cloud-apps-with-azure-and-azure-stack"></a>Создание гибридных облачных приложений с помощью Azure и Azure Stack
 
@@ -30,22 +30,19 @@ Microsoft Azure — это согласованное гибридное обл
 
 Гибридные сценарии могут значительно отличаться в зависимости от ресурсов, доступных для разработки. В таких сценариях учитываются такие аспекты, как географическое расположение, безопасность, доступ к Интернету и др. Хотя эти сценарии могут не соответствовать вашим требованиям, они предоставляют некоторые ключевые рекомендации и примеры, связанные с реализацией гибридных решений.
 
-Гибридное облако можно использовать для таких сценариев:
-- примеры многоуровневых данных;
-- SQL Server в Azure и Azure Stack;
-- комплексные развертывания базы данных Mongo в Azure и Azure Stack;
-- обнаружение аннуляции выводов при использовании искусственного интеллекта в Microsoft Edge.
-
-## <a name="step-by-step-tutorials"></a>Пошаговые руководства
+## <a name="step-by-step-tutorials"></a>Пошаговые инструкции
 
 - [Развертывание приложений в Azure и Azure Stack](azure-stack-solution-pipeline.md)
 - [Развертывание приложений в Azure Stack и Azure](azure-stack-solution-hybrid-identity.md)
 - [Настройка удостоверения гибридного облака в приложениях Azure и Azure Stack](azure-stack-solution-hybrid-connectivity.md)
 - [Настройка подключения к гибридному облаку в Azure и Azure Stack](azure-stack-solution-staged-data-analytics.md)
-- [Создание решения для аналитики промежуточных данных с помощью Azure и Azure Stack](azure-stack-solution-cloud-burst.md)
+- [Создание решения для аналитики промежуточных данных с помощью Azure и Azure Stack](azure-stack-solution-staged-data.md)
 - [Создание решений для масштабирования в нескольких облаках в Azure](azure-stack-solution-cloud-burst.md)
 - [Создание решения для географически распределенного приложения с помощью Azure и Azure Stack](azure-stack-solution-geo-distributed.md)
 - [Развертывание гибридного облачного решения с помощью Azure и Azure Stack](azure-stack-solution-hybrid-cloud.md)
+- [Развертывание MongoDB в Azure и Azure Stack](azure-stack-solution-mongodb-ha.md)
+- [Развертывание SQL Server 2016 в Azure и Azure Stack](azure-stack-solution-sql-ha.md)
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 
