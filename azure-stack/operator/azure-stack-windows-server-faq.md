@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/31/2019
+ms.date: 06/22/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 11/12/2018
-ms.openlocfilehash: ffb58392075521b81d9b0cd71928ac0db680991f
-ms.sourcegitcommit: 80775f5c5235147ae730dfc7e896675a9a79cdbe
+ms.openlocfilehash: 0896ea921408d651a4b8e072c3d66ab4e333ebd6
+ms.sourcegitcommit: fdeb2760845c9760ea7df1414b8e140b0624a823
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66459067"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67334424"
 ---
 # <a name="windows-server-in-azure-stack-marketplace-faq"></a>Windows Server в Azure Stack Marketplace: вопросы и ответы
 
@@ -36,7 +36,7 @@ ms.locfileid: "66459067"
 
 ### <a name="what-are-the-licensing-options-for-windows-server-marketplace-images-on-azure-stack"></a>Какие варианты лицензирования существуют для образов Marketplace Windows Server в Azure Stack?
 
-Корпорация Майкрософт предлагает две версии образов Windows Server в Azure Stack Marketplace.
+Корпорация Майкрософт предлагает две версии образов Windows Server в Azure Stack Marketplace. В среде Azure Stack можно использовать только одну версию этого образа.  
 
 - **Оплата по мере использования**. В таких образах используются единицы измерения полной цены для Windows.
    Предназначены для: клиентов с Соглашением Enterprise (EA), которые используют *модель выставления счетов за потребление*; поставщиков облачных решений, которые не хотят использовать лицензирование SPLA.
@@ -47,7 +47,9 @@ ms.locfileid: "66459067"
 
 ### <a name="what-if-i-downloaded-the-wrong-version-to-offer-my-tenantsusers"></a>Что делать, если я скачаю неправильную версию для своих клиентов или пользователей?
 
-Сначала удалите неправильную версию с помощью управления Marketplace. Дождитесь полного завершения (то есть уведомления о завершении, не обращая внимания на состояние в колонке **управления Marketplace**). После этого скачайте правильную версию.
+Сначала удалите неправильную версию с помощью колонки управления Marketplace. Дождитесь завершения (то есть уведомлений о завершении, не обращая внимания на состояние в колонке **управления Marketplace**). После этого скачайте правильную версию.
+
+Если вы скачали обе версии образа, клиенты увидят только последнюю версию в коллекции Marketplace.
 
 ### <a name="what-if-my-user-incorrectly-checked-the-i-have-a-license-box-in-previous-windows-builds-and-they-dont-have-a-license"></a>Что делать, если мой пользователь ошибочно установил флажок "У меня есть лицензия" в предыдущих сборках Windows, но у него нет лицензии?
 

@@ -15,12 +15,12 @@ ms.date: 05/21/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 11/16/2018
-ms.openlocfilehash: 40a60c5207494ae70ccdfd051c8a223493b704c5
-ms.sourcegitcommit: 6fcd5df8b77e782ef72f0e1419f1f75ec8c16c04
+ms.openlocfilehash: 8e9617974984afac55c2b1542065ea0455da0acc
+ms.sourcegitcommit: 5a720b17bd6a5aab44929c0247db8d512e0669ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65991105"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67197146"
 ---
 # <a name="add-linux-images-to-azure-stack"></a>Добавление образов Linux в Azure Stack
 
@@ -49,13 +49,14 @@ ms.locfileid: "65991105"
 |  1.1901.3.105   | 2.2.35 или последующая |
 | 1.1902.2.73  | 2.2.35 или последующая |
 | 1.1903.0.35  | 2.2.35 или последующая |
+| Выпуски после 1903 | 2.2.35 или последующая |
 | Не поддерживается | 2.2.21–2.2.34 |
 
 Можно подготовить свой собственный образ Linux с помощью следующих инструкций.
 
 * [Подготовка виртуальной машины на основе CentOS для Azure](/azure/virtual-machines/linux/create-upload-centos?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Подготовка виртуального жесткого диска Debian для Azure](/azure/virtual-machines/linux/debian-create-upload-vhd?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Подготовка виртуальной машины на основе Red Hat для Azure](azure-stack-redhat-create-upload-vhd.md)
+* [Red Hat Enterprise Linux](azure-stack-redhat-create-upload-vhd.md)
 * [Подготовка виртуальной машины SLES или openSUSE для Azure](/azure/virtual-machines/linux/suse-create-upload-vhd?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Сервер Ubuntu](/azure/virtual-machines/linux/create-upload-ubuntu?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 

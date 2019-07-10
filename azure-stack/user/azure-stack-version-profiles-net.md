@@ -16,12 +16,12 @@ ms.date: 05/16/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: da93d2683805c6e9769a3d27a9e9ab3a4b998db5
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 0d0c4af4d3016989440dc6b9760bda0a3fc8d947
+ms.sourcegitcommit: c4507a100eadd9073aed0d537d054e394b34f530
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269370"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67198619"
 ---
 # <a name="use-api-version-profiles-with-net-in-azure-stack"></a>Использование профилей версий API и .NET в Azure Stack
 
@@ -127,9 +127,9 @@ Microsoft Azure Resource Manager — это платформа управлен�
 
 ## <a name="existing-api-profiles"></a>Существующие профили API
 
-1.  **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**: последний профиль, созданный для Azure Stack. Используйте этот профиль для служб, которым нужна максимальная совместимость с Azure Stack с меткой 1808 или более новой.
+1.  **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**: последний профиль, созданный для Azure Stack. Используйте этот профиль, чтобы обеспечить наибольшую совместимость служб и Azure Stack с меткой 1904 или более поздней версии.
 
-2.  **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
+2.  **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**: Используйте этот профиль, чтобы обеспечить совместимость служб и Azure Stack с меткой версии 1808 или более поздней версии.
 
 3.  **Latest**: профиль с новейшими версиями всех служб. Используйте последние версии всех служб. Этот профиль входит в пакет NuGet **Microsoft.Azure.Management**.
 

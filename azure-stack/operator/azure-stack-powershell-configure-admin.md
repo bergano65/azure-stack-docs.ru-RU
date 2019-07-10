@@ -3,25 +3,24 @@ title: Подключение к Azure Stack с помощью PowerShell в р�
 description: Подключитесь к Azure Stack с помощью PowerShell в роли оператора
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: mattbriggs
+manager: femila
 editor: ''
 ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-origin.date: 03/15/2019
-ms.date: 04/29/2019
-ms.author: v-jay
+ms.date: 03/15/2019
+ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/24/2019
-ms.openlocfilehash: 9d49727538f89e9429c1ae979057e89c40dc0ce9
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: fa4013c00cd9d496b6c8bb479d9fe6cbfe113575
+ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64308228"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67316217"
 ---
 # <a name="connect-to-azure-stack-with-powershell-as-an-operator"></a>Подключитесь к Azure Stack с помощью PowerShell в роли оператора.
 
@@ -48,7 +47,7 @@ Azure Stack можно настроить для управления таким
 
     # Set your tenant name
     $AuthEndpoint = (Get-AzureRmEnvironment -Name "AzureStackAdmin").ActiveDirectoryAuthority.TrimEnd('/')
-    $AADTenantName = "<myDirectoryTenantName>.partner.onmschina.cn"
+    $AADTenantName = "<myDirectoryTenantName>.onmicrosoft.com"
     $TenantId = (invoke-restmethod "$($AuthEndpoint)/$($AADTenantName)/.well-known/openid-configuration").issuer.TrimEnd('/').Split('/')[-1]
 
     # After signing in to your environment, Azure Stack cmdlets
@@ -72,7 +71,7 @@ Azure Stack можно настроить для управления таким
   ```
 
 > [!Note]  
-> AD FS поддерживает только интерактивную проверку подлинности с удостоверениями пользователей. Если требуется объект учетных данных, вам необходимо использовать субъект-службу (SPN). Дополнительные сведения о том, как с помощью Azure Stack и AD FS настроить субъект-службу в качестве службы управления удостоверениями, см. в разделе [Управление субъектом-службой для AD FS](azure-stack-create-service-principals.md#manage-service-principal-for-ad-fs).
+> AD FS поддерживает только интерактивную проверку подлинности с удостоверениями пользователей. Если требуется объект учетных данных, вам необходимо использовать субъект-службу (SPN). Дополнительные сведения о том, как с помощью Azure Stack и AD FS настроить субъект-службу в качестве службы управления удостоверениями, см. в разделе [Управление субъектом-службой AD FS](azure-stack-create-service-principals.md#manage-an-ad-fs-service-principal).
 
 ## <a name="test-the-connectivity"></a>Проверка подключения
 

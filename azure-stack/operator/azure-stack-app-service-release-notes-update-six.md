@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/10/2019
+ms.date: 06/24/2019
 ms.author: anwestg
 ms.reviewer: ''
-ms.openlocfilehash: d3464681463cfb66a368210beed79d5ef4c28739
-ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
+ms.openlocfilehash: db403f68879efa9103e35bb3581801240c0d64d3
+ms.sourcegitcommit: 1545e18a31cd715a12c7ddc3bcb173b41eb41730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828319"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348721"
 ---
 # <a name="app-service-on-azure-stack-update-6-release-notes"></a>Заметки о выпуске обновления 6 для Службы приложений Azure в Azure Stack
 
@@ -112,6 +112,10 @@ ms.locfileid: "66828319"
 - Недоступны параметры развертывания в классическом интерфейсе и параметры учетных данных развертывания на портале
 
 Для доступа к параметрам развертывания и учетным данным развертывания в развертывании Azure Stack клиенты должны перейти на портал, используя URL-адрес в формате https://portal.&lt ; *регион*&gt;.&lt;*полное доменное имя*&gt; /? websitesExtension_oldvsts = true, который для ASDK будет иметь вид [https://portal.local.azurestack.external/?websitesExtension_oldvsts=true](https://portal.local.azurestack.external/?websitesExtension_oldvsts=true), после чего перейти в свои приложения обычным образом.
+
+- Мониторинг Функции Azure постоянно отображает сообщение "Загрузка" на портале
+
+При попытке отслеживания отдельных функций на портале клиента вам не будет отображаться журнал вызовов, данные о числе успешных операций или ошибок.  Чтобы повторно включить эту функциональность, перейдите в **приложение-функцию**, выберите **Функции платформы** и **Параметры приложения**.  Добавьте новый параметр приложения с именем **AzureWebJobsDashboard** и задайте для него то же значение, что и для параметра AzureWebJobsStorage.  Затем перейдите в представление монитора для функции, чтобы просмотреть сведения мониторинга.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

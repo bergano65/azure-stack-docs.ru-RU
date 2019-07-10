@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/05/2019
+ms.date: 06/27/2019
 ms.author: sethm
-ms.reviewer: ''
-ms.lastreviewed: 06/05/2019
-ms.openlocfilehash: 5dcbb331d27bdf07a268ba883c2dfbbfe821105a
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.reviewer: hectorl
+ms.lastreviewed: 06/27/2019
+ms.openlocfilehash: c5108dc8b24fec7569d54964217f146a5cefa5e6
+ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66691590"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67419572"
 ---
 # <a name="azure-stack-update-activity-checklist"></a>Контрольный список действий по обновлению Azure Stack
 
@@ -31,13 +31,13 @@ ms.locfileid: "66691590"
 
 | Действие              | Сведения                                                                          |
 |-----------------------|----------------------------------------------------------------------------------|
-| Просмотр известных проблем   | [Список известных проблем](azure-stack-release-notes-known-issues-1905.md).                |
-| Просмотр обновлений для системы безопасности | [Список обновлений для системы безопасности](azure-stack-release-notes-security-updates-1905.md).      |
+| Просмотр известных проблем   | [Список известных проблем](azure-stack-release-notes-known-issues-1906.md).                |
+| Просмотр обновлений для системы безопасности | [Список обновлений для системы безопасности](azure-stack-release-notes-security-updates-1906.md).      |
 | Выполнение Test-AzureStack   | Выполните команду `Test-AzureStack -Group UpdateReadiness`, чтобы выявить проблемы с работоспособностью.      |
 | Решение проблем        | Устраните все проблемы с работоспособностью, выявленные с помощью команды **Test-AzureStack**.                |
 | Применение последних исправлений | Примените последние исправления к текущему установленному выпуску.         |
 | Запуск планировщика ресурсов | Обязательно используйте последнюю версию [планировщика ресурсов Azure Stack](https://aka.ms/azstackcapacityplanner)  для планирования рабочей нагрузки и определения необходимых ресурсов. В последней версии исправлены известные ошибки и реализованы новые функции, что делается при каждом обновлении Azure Stack. |
-| Доступность обновления       | Только подключенные сценарии: развертывания Azure Stack будут периодически проверять защищенную конечную точку и автоматически сообщать, доступно ли обновление для вашего облака. Автономные клиенты могут скачать и импортировать новый пакет версии 1905, выполнив [инструкции, описанные здесь](azure-stack-apply-updates.md).               |
+| Доступность обновления       | Только подключенные сценарии: развертывания Azure Stack будут периодически проверять защищенную конечную точку и автоматически сообщать, доступно ли обновление для вашего облака. Автономные клиенты могут скачать и импортировать новый пакет версии 1906, выполнив [инструкции, описанные здесь](azure-stack-apply-updates.md).               |
 
 ## <a name="during-azure-stack-update"></a>Действия при обновлении Azure Stack
 
@@ -59,5 +59,5 @@ ms.locfileid: "66691590"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Ознакомьтесь со списком известных проблем](azure-stack-release-notes-known-issues-1905.md)
-- [Ознакомьтесь со списком обновлений для системы безопасности](azure-stack-release-notes-security-updates-1905.md)
+- [Ознакомьтесь со списком известных проблем](azure-stack-release-notes-known-issues-1906.md)
+- [Ознакомьтесь со списком обновлений для системы безопасности](azure-stack-release-notes-security-updates-1906.md)

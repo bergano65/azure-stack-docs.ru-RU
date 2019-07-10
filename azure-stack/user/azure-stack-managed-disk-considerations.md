@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/23/2019
+ms.date: 06/25/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: aca01d65df454f03f5726db67b3eaa766339bb77
-ms.sourcegitcommit: 914daff43ae0f0fc6673a06dfe2d42d9b4fbab48
+ms.openlocfilehash: 2e7737033b0f94473f4b794e452c9239f275c8f8
+ms.sourcegitcommit: d1fdecdfa843dfc0629bfc226f1baf14f3ea621d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66043003"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387729"
 ---
 # <a name="azure-stack-managed-disks-differences-and-considerations"></a>Управляемые диски Azure Stack. Различия и рекомендации
 
@@ -29,17 +29,17 @@ ms.locfileid: "66043003"
 
 Управляемые диски упрощают управление дисками виртуальных машин IaaS. Они управляют [учетными записями хранения](../operator/azure-stack-manage-storage-accounts.md), связанными с этими дисками.
 
-> [!Note]  
-> Управляемые диски в Azure Stack доступны, начиная с обновления 1808. Они теперь включены по умолчанию при создании виртуальных машин с помощью портала Azure Stack, начиная с обновления 1811.
+> [!NOTE]  
+> Управляемые диски в Azure Stack доступны, начиная с обновления 1808. Начиная с обновления 1811 они стали включены по умолчанию при создании виртуальных машин с помощью портала Azure Stack.
   
 ## <a name="cheat-sheet-managed-disk-differences"></a>Памятка. Различия между управляемыми дисками
 
 | Функция | Azure (глобальная) | Azure Stack |
 | --- | --- | --- |
 |Шифрование неактивных данных |Azure Storage Service Encryption (SSE), Azure Disk Encryption (ADE) (Шифрование службы хранилища Azure и шифрование дисков Azure)     |128-битное шифрование AES BitLocker      |
-|Образ —          | Поддержка управляемого пользовательского образа |Поддерживаются|
-|Варианты резервного копирования |Поддержка службы Azure Backup |Еще не поддерживается |
-|Параметры аварийного восстановления |Поддержка Azure Site Recovery |Еще не поддерживается|
+|Образ —          | Управляемый пользовательский образ |Поддерживаются|
+|Варианты резервного копирования | Служба Azure Backup |Еще не поддерживается |
+|Параметры аварийного восстановления | Azure Site Recovery |Еще не поддерживается|
 |Типы дисков     |SSD (цен. категория "Премиум"), SSD (цен. категория "Стандартный") и HDD (цен. категория "Стандартный") |SSD (цен. категория "Премиум"), SSD (цен. категория "Стандартный") |
 |Диски уровня "Премиум"  |Полностью поддерживается |Может быть подготовлено, но не имеет ограничений производительности или гарантий  |
 |Операции ввода-вывода дисков уровня "Премиум"  |Зависит от размера диска  |2300 операций ввода-вывода в секунду на диск |
@@ -68,18 +68,21 @@ ms.locfileid: "66043003"
 
 ## <a name="convert-to-managed-disks"></a>Преобразование виртуальной машины для использования управляемых дисков
 
+> [!NOTE]  
+> Командлет Azure PowerShell**ConvertTo-AzureRmVMManagedDisk** не может быть использован для конвертации неуправляемого диска в управляемый диск в Azure Stack. На данный момент этот командлет не поддерживается в Azure Stack.
+
 С помощью приведенного ниже сценария можно переключить заранее подготовленную виртуальную машину с неуправляемых дисков на управляемые. Замените значения заполнителей на собственные.
 
 ```powershell
 $SubscriptionId = "SubId"
 
-# The name of your resource group where your VM to be converted exists
+# The name of your resource group where your VM to be converted exists.
 $ResourceGroupName ="MyResourceGroup"
 
 # The name of the managed disk to be created.
 $DiskName = "mngddisk"
 
-# The size of the disks in GiB. It should be greater than the VHD file size.
+# The size of the disks in GB. It should be greater than the VHD file size.
 $DiskSize = "50"
 
 # The URI of the VHD file that will be used to create the managed disk.
@@ -91,7 +94,7 @@ $AccountType = "StandardLRS"
 
 # The Azure Stack location where the managed disk will be located.
 # The location should be the same as the location of the storage account in which VHD file is stored.
-# Configure the new managed VM point to the old unmanaged VM's configuration (network config, vm name, location).
+# Configure the new managed VM point to the old unmanaged VM configuration (network config, VM name, location).
 $Location = "local"
 $VirtualMachineName = "unmngdvm"
 $VirtualMachineSize = "Standard_D1"
@@ -99,36 +102,36 @@ $PIpName = "unmngdvm-ip"
 $VirtualNetworkName = "unmngdrg-vnet"
 $NicName = "unmngdvm"
 
-# Set the context to the subscription ID in which the managed disk will be created
+# Set the context to the subscription ID in which the managed disk will be created.
 Select-AzureRmSubscription -SubscriptionId $SubscriptionId
 
-# Delete old VM, but keep the OS disk
+# Delete old VM, but keep the OS disk.
 Remove-AzureRmVm -Name $VirtualMachineName -ResourceGroupName $ResourceGroupName
 
-# Create the managed disk configuration
+# Create the managed disk configuration.
 $DiskConfig = New-AzureRmDiskConfig -AccountType $AccountType -Location $Location -DiskSizeGB $DiskSize -SourceUri $VhdUri -CreateOption Import
 
-# Create managed disk
+# Create managed disk.
 New-AzureRmDisk -DiskName $DiskName -Disk $DiskConfig -ResourceGroupName $resourceGroupName
 $Disk = Get-AzureRmDisk -DiskName $DiskName -ResourceGroupName $ResourceGroupName
 $VirtualMachine = New-AzureRmVMConfig -VMName $VirtualMachineName -VMSize $VirtualMachineSize
 
 # Use the managed disk resource ID to attach it to the virtual machine.
-# Change the OS type to "-Windows" if the OS disk has Windows OS.
+# Change the OS type to "-Windows" if the OS disk has the Windows OS.
 $VirtualMachine = Set-AzureRmVMOSDisk -VM $VirtualMachine -ManagedDiskId $Disk.Id -CreateOption Attach -Linux
 
-# Create a public IP for the VM
-$PublicIp = Get-AzureRmPublicIpAddress -Name $PIpName -ResourceGroupName $ResourceGroupName 
+# Create a public IP for the VM.
+$PublicIp = Get-AzureRmPublicIpAddress -Name $PIpName -ResourceGroupName $ResourceGroupName
 
-# Get the virtual network where the virtual machine will be hosted
+# Get the virtual network where the virtual machine will be hosted.
 $VNet = Get-AzureRmVirtualNetwork -Name $VirtualNetworkName -ResourceGroupName $ResourceGroupName
 
-# Create NIC in the first subnet of the virtual network
+# Create NIC in the first subnet of the virtual network.
 $Nic = Get-AzureRmNetworkInterface -Name $NicName -ResourceGroupName $ResourceGroupName
 
 $VirtualMachine = Add-AzureRmVMNetworkInterface -VM $VirtualMachine -Id $Nic.Id
 
-# Create the virtual machine with managed disk
+# Create the virtual machine with managed disk.
 New-AzureRmVM -VM $VirtualMachine -ResourceGroupName $ResourceGroupName -Location $Location
 ```
 
@@ -148,7 +151,7 @@ Azure Stack поддерживает *управляемые образы*, ко
 
 ### <a name="step-2-create-the-managed-image"></a>Шаг 2. Создание управляемого образа
 
-Создать управляемый образ можно с помощью портала, PowerShell или интерфейса командной строки. Следуйте инструкциям, приведенным в [этой статье](/azure/virtual-machines/windows/capture-image-resource) по Azure.
+Создать управляемый образ можно с помощью портала, PowerShell или интерфейса командной строки. Воспользуйтесь сведениями, данными в статье [Создание управляемого образа универсальной виртуальной машины в Azure](/azure/virtual-machines/windows/capture-image-resource).
 
 ### <a name="step-3-choose-the-use-case"></a>Шаг 3. Выбор варианта использования
 
@@ -156,13 +159,13 @@ Azure Stack поддерживает *управляемые образы*, ко
 
 Перед выполнением этого шага необходимо правильно подготовить виртуальную машину к использованию. После подготовки вы больше не сможете использовать эту виртуальную машину. Создание виртуальной машины из образа, не подготовленного должным образом, приведет к возникновению ошибки **VMProvisioningTimeout**.
 
-Следуйте инструкциям, описанным [здесь](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-vhd-in-a-storage-account), чтобы создать управляемый образ с помощью универсального виртуального жесткого диска в учетной записи хранения. Этот образ можно использовать в дальнейшем для создания управляемых виртуальных машин.
+Следуйте инструкциям, описанным в разделе [Создание образа из VHD в учетной записи хранения](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-vhd-in-a-storage-account), чтобы создать управляемый образ с помощью универсального виртуального жесткого диска в учетной записи хранения. Этот образ можно использовать в дальнейшем для создания управляемых виртуальных машин.
 
 #### <a name="case-2-create-managed-vm-from-managed-image-using-powershell"></a>Вариант 2. Создание управляемой виртуальной машины из управляемого образа с помощью PowerShell
 
-После создания образа на основе существующей виртуальной машины с управляемым диском с помощью скрипта, указанного [здесь](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-managed-disk-using-powershell), используйте следующий пример скрипта, чтобы создать аналогичную виртуальную машину Linux на основе существующего объекта образа.
+После создания образа на основе существующей виртуальной машины с управляемым диском с помощью скрипта, указанного в разделе [Создание образа из управляемого диска с помощью PowerShell](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-managed-disk-using-powershell), используйте следующий пример скрипта, чтобы создать аналогичную виртуальную машину Linux на основе существующего объекта образа.
 
-Для модуля Azure Stack PowerShell 1.7.0 или более поздней версии: следуйте инструкциям, приведенным [здесь](/azure/virtual-machines/windows/create-vm-generalized-managed).
+Для модуля Azure Stack PowerShell 1.7.0 или более поздней версии: следуйте инструкциям, приведенным в статье [Создание виртуальной машины из управляемого образа](/azure/virtual-machines/windows/create-vm-generalized-managed).
 
 Для модуля Azure Stack PowerShell 1.6.0 или более ранней версии:
 
@@ -223,9 +226,9 @@ New-AzureRmVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VmC
 После применения обновления 1808 или более поздней версии необходимо выполнить следующую конфигурацию, прежде чем использовать управляемые диски.
 
 - Если подписка была создана до пакета обновления версии 1808, выполните следующие шаги, чтобы обновить подписку. В противном случае во время развертывания виртуальных машин для этой подписки может произойти сбой с сообщением об ошибке "Internal error in disk manager" (В диспетчере дисков произошла внутренняя ошибка).
-   1. На портале клиента перейдите в раздел **Подписки** и найдите подписку. Щелкните **Поставщики ресурсов**, затем **Microsoft.Compute** и выберите **Повторная регистрация**.
+   1. На портале пользователя Azure Stack перейдите в раздел **Подписки** и найдите подписку. Щелкните **Поставщики ресурсов**, затем **Microsoft.Compute** и выберите **Повторная регистрация**.
    2. В той же подписке перейдите в раздел **Управление доступом (IAM)** и убедитесь, что указан **Azure Stack — Управляемый диск**.
-- Если вы используете среду с несколькими клиентами, попросите вашего оператора облака (из вашей организации или из компании поставщика служб) перенастроить каждый ваш гостевой каталог, выполнив шаги из [этой статьи](../operator/azure-stack-enable-multitenancy.md#registering-azure-stack-with-the-guest-directory). В противном случае, во время развертывания виртуальных машин в этой подписке, связанной с гостевым каталогом, может произойти сбой с сообщением об ошибке "В диспетчере дисков произошла внутренняя ошибка".
+- Если вы используете среду с несколькими клиентами, попросите вашего оператора облака (из вашей организации или из компании поставщика служб) перенастроить каждый ваш гостевой каталог, выполнив шаги из [этой статьи](../operator/azure-stack-enable-multitenancy.md#registering-azure-stack-with-the-guest-directory). В противном случае, во время развертывания виртуальных машин в этой подписке, связанной с гостевым каталогом, может произойти сбой с сообщением об ошибке **В диспетчере дисков произошла внутренняя ошибка**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

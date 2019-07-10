@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 05/07/2019
 ms.author: sethm
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: ab5b0b5ac0e67a2a625285bd37a04b084fa8da0f
-ms.sourcegitcommit: 39ba6d18781aed98b29ac5e08aac2d75c37bf18c
+ms.openlocfilehash: d6944fefeb55c1b2a109964271c84daafb8b8ff8
+ms.sourcegitcommit: c9d11be7d27c73797bdf279d4fcabb7a22451541
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65386607"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397298"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"
 
@@ -30,7 +30,7 @@ ms.locfileid: "65386607"
 
 ## <a name="ipsec-and-ike-policy-parameters-for-vpn-gateways"></a>Параметры политики IPsec и IKE для VPN-шлюзов
 
-Стандарт протоколов IPsec и IKE поддерживает широкий набор алгоритмов шифрования в разных комбинациях. Сведения о параметрах, поддерживаемых в Azure Stack, см. в разделе [Параметры IPsec/IKE](azure-stack-vpn-gateway-settings.md#ipsecike-parameters). Эти параметры помогут удовлетворить требования к обеспечению безопасности или соответствия.
+Стандарт протоколов IPsec и IKE поддерживает широкий набор алгоритмов шифрования в разных комбинациях. Сведения о параметрах, поддерживаемых в Azure Stack, см. в разделе [Параметры IPsec/IKE](azure-stack-vpn-gateway-settings.md#ipsecike-parameters). Эти параметры помогут удовлетворить требования к обеспечению безопасности или соответствия.
 
 Эта статья содержит инструкции по созданию и настройке политики IPsec/IKE, а также ее применению к новому или существующему подключению.
 
@@ -38,9 +38,9 @@ ms.locfileid: "65386607"
 
 Учитывайте следующие рекомендации при использовании этих политик:
 
-- Политика IPsec/IKE поддерживается только номерами SKU шлюзов категории *Стандартный* и *Высокопроизводительный* (на основе маршрутов).
+- Политика IPsec/IKE поддерживается только номерами SKU шлюзов уровня *Стандартный* и *Высокопроизводительный* (на основе маршрутов).
 
-- Можно указать только  **одну**  комбинацию политик для каждого подключения.
+- Можно указать только **одну** комбинацию политик для каждого подключения.
 
 - Вам следует указать все алгоритмы и параметры для IKE (основной режим) и IPsec (быстрый режим). Указать частичную политику нельзя.
 
@@ -111,7 +111,7 @@ ms.locfileid: "65386607"
 | 20                   | ECP384    | ECP384        | ECP (384 бит)   |
 | 24                   | DHGroup24 | PFS24         | MODP (2048 бит) |
 
-Дополнительные сведения см. в документах  [RFC3526](https://tools.ietf.org/html/rfc3526) и [RFC5114](https://tools.ietf.org/html/rfc5114).
+Дополнительные сведения см. на страницах [RFC 3526](https://tools.ietf.org/html/rfc3526) и [RFC 5114](https://tools.ietf.org/html/rfc5114).
 
 ## <a name="part-3---create-a-new-site-to-site-vpn-connection-with-ipsecike-policy"></a>Часть 3. Создание нового подключения VPN типа "сеть — сеть" с использованием политики IPsec/IKE
 
@@ -119,15 +119,15 @@ ms.locfileid: "65386607"
 
 ![Политика "сеть — сеть"](media/azure-stack-vpn-s2s/site-to-site.png)
 
-См. дополнительные сведения о  [создании виртуальной сети с VPN-подключением типа "сеть — сеть"](/azure/vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell).
+См. дополнительные сведения о [создании виртуальной сети с VPN-подключением типа "сеть — сеть"](/azure/vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell).
 
 ### <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к работе, убедитесь, что у вас есть следующие необходимые компоненты:
 
-- Подписка Azure. Если у вас нет подписки Azure, вы можете активировать  [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или зарегистрировать  [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).
+- Подписка Azure. Если у вас нет подписки Azure, вы можете [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрировать бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).
 
-- Командлеты PowerShell для Azure Resource Manager. См. дополнительные сведения об  [установке командлетов PowerShell](../operator/azure-stack-powershell-install.md) .
+- Командлеты PowerShell для Azure Resource Manager. См. дополнительные сведения об [установке командлетов PowerShell для Azure Stack](../operator/azure-stack-powershell-install.md).
 
 ### <a name="step-1---create-the-virtual-network-vpn-gateway-and-local-network-gateway"></a>Шаг 1. Создание виртуальной сети, VPN-шлюза и шлюза локальной сети
 
@@ -161,7 +161,7 @@ $LNGIP6 = "131.107.72.22"
 
 #### <a name="2-connect-to-your-subscription-and-create-a-new-resource-group"></a>2. Подключение к подписке Azure и создание группы ресурсов
 
-Для работы с командлетами диспетчера ресурсов необходимо перейти в режим PowerShell. См. дополнительные сведения о  [подключении к Azure Stack в роли пользователя с помощью PowerShell](azure-stack-powershell-configure-user.md).
+Для работы с командлетами диспетчера ресурсов необходимо перейти в режим PowerShell. См. дополнительные сведения о [подключении к Azure Stack в роли пользователя с помощью PowerShell](azure-stack-powershell-configure-user.md).
 
 Откройте консоль PowerShell и подключитесь к своей учетной записи. Для подключения используйте следующий пример.
 
@@ -239,7 +239,7 @@ New-AzureRmVirtualNetworkGatewayConnection -Name $Connection16 -ResourceGroupNam
 3. Удалить политику IPsec/IKE из подключения.
 
 > [!NOTE]
-> Политика IPsec/IKE поддерживается только уровнями VPN-шлюзами на основе маршрутов  *Стандартный*  и  *Высокопроизводительный* . Она не поддерживается номером SKU *Базовый*.
+> Политика IPsec/IKE поддерживается только для *стандартных* и *высокопроизводительных* VPN-шлюзов на основе маршрутов. Она не поддерживается номером SKU *Базовый*.
 
 ### <a name="1-show-the-ipsecike-policy-of-a-connection"></a>1. Отображение политики подключения IPsec/IKE
 
@@ -305,7 +305,7 @@ PfsGroup : None
 
 ### <a name="3-remove-an-ipsecike-policy-from-a-connection"></a>3. Удаление политики IPsec/IKE из подключения
 
-После удаления настраиваемой политики из подключения VPN-шлюз Azure возвращается к  [списку предложений IPsec/IKE по умолчанию](azure-stack-vpn-gateway-settings.md#ipsecike-parameters) и возобновляет согласование для локального VPN-устройства.
+После удаления настраиваемой политики из подключения VPN-шлюз Azure возвращается к [списку предложений IPsec/IKE по умолчанию](azure-stack-vpn-gateway-settings.md#ipsecike-parameters) и возобновляет согласование для локального VPN-устройства.
 
 ```powershell
 $RG1 = "TestPolicyRG1"

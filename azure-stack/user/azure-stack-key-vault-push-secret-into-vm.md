@@ -1,10 +1,10 @@
 ---
-title: Развертывание виртуальной машины с сертификатом, безопасно хранящимся в Azure Stack | Документация Майкрософт
+title: Развертывание VM с сертификатом, безопасно хранящимся в Azure Stack | Документация Майкрософт
 description: Узнайте, как развернуть виртуальную машину и отправить в нее сертификат с помощью хранилища ключей в Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: sethmanheim
+manager: femila
 editor: ''
 ms.assetid: 46590eb1-1746-4ecf-a9e5-41609fde8e89
 ms.service: azure-stack
@@ -12,22 +12,21 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-origin.date: 12/27/2018
-ms.date: 04/29/2019
-ms.author: v-jay
+ms.date: 06/11/2019
+ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 965b9c0cde96e1e29828f37cdddaa9d30c0503a4
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 9403931d91756e744dcdb6c34adb26e8281f6d28
+ms.sourcegitcommit: eccbd0098ef652919f357ef6dba62b68abde1090
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310910"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67492381"
 ---
-# <a name="create-a-virtual-machine-and-install-a-certificate-retrieved-from-an-azure-stack-key-vault"></a>Создание виртуальной машины и установка сертификатов, полученных из хранилища ключей Azure Stack
+# <a name="deploy-a-vm-with-a-securely-stored-certificate-on-azure-stack"></a>Развертывание VM с сертификатом, безопасно хранящимся в Azure Stack 
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Узнайте, как создать виртуальную машину Azure Stack с установленным сертификатом хранилища ключей.
+В этой статье описывается, как развернуть виртуальную машину (VM) Azure Stack с установленным сертификатом хранилища ключей.
 
 ## <a name="overview"></a>Обзор
 
@@ -37,16 +36,16 @@ ms.locfileid: "64310910"
 * упрощенное управление сертификатами;
 * возможность управлять ключами, используемыми для доступа к сертификатам.
 
-### <a name="process-description"></a>Описание процесса
+## <a name="process-description"></a>Описание процесса
 
-Ниже представлены шаги, необходимые для отправки сертификата на виртуальную машину.
+Ниже представлены шаги, которые необходимо предпринять для отправки сертификата на VM.
 
-1. Создание секрета хранилища ключей.
-2. Обновление файла azuredeploy.parameters.json соответствующим образом.
+1. Создайте секрет хранилища ключей.
+2. Обновите файл **azuredeploy.parameters.json** соответствующим образом.
 3. Разверните шаблон.
 
 > [!NOTE]
-> Эти шаги можно выполнить из Пакета средств разработки Azure Stack или из внешнего клиента при подключении через VPN.
+> Эти шаги можно выполнить из Пакета средств разработки Azure Stack (ASDK) или из внешнего клиента при подключении через VPN.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -73,8 +72,8 @@ $pwd = ConvertTo-SecureString `
   -AsPlainText
 
 Export-PfxCertificate `
-  -cert "cert:\localMachine\my\<Certificate Thumbprint that was created in the previous step>" `
-  -FilePath "<Fully qualified path where the exported certificate can be stored>" `
+  -cert "cert:\localMachine\my\<certificate thumbprint that was created in the previous step>" `
+  -FilePath "<Fully qualified path to where the exported certificate can be stored>" `
   -Password $pwd
 
 # Create a key vault and upload the certificate into the key vault as a secret
@@ -82,7 +81,7 @@ $vaultName = "contosovault"
 $resourceGroup = "contosovaultrg"
 $location = "local"
 $secretName = "servicecert"
-$fileName = "<Fully qualified path where the exported certificate can be stored>"
+$fileName = "<Fully qualified path to where the exported certificate can be stored>"
 $certPassword = "<Password used to export the certificate>"
 
 $fileContentBytes = get-content $fileName `
@@ -120,13 +119,13 @@ Set-AzureKeyVaultSecret `
    -SecretValue $secret
 ```
 
-В результате выполнения предыдущего скрипта был выведен URI секрета. Запишите его. На него необходимо указать ссылку при [отправке сертификата в шаблон Resource Manager для Windows](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/201-vm-windows-pushcertificate). Скачайте папку шаблона [vm-push-certificate-windows template](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/201-vm-windows-pushcertificate) на компьютер разработчика. Эта папка содержит файлы `azuredeploy.json` и `azuredeploy.parameters.json`, которые необходимы на следующих шагах.
+В результате выполнения этого скрипта был выведен URI секрета. Обратите внимание на этот универсальный код ресурса (URI) поскольку на него необходимо указать ссылку при [отправке сертификата в шаблон Resource Manager для Windows](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/201-vm-windows-pushcertificate). Скачайте папку шаблона [vm-push-certificate-windows template](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/201-vm-windows-pushcertificate) на компьютер разработчика. В этой папке содержатся файлы **azuredeploy.json** и **azuredeploy.parameters.json**, которые требуются в следующих шагах.
 
-Измените файл `azuredeploy.parameters.json`, указав значения для своей среды. Особый интерес представляют параметры имени хранилища, группы ресурсов хранилища и URI секрета (сгенерированный предыдущим скриптом). Ниже приведен пример файла параметров.
+Измените файл **azuredeploy.parameters.json** в соответствии со значениями своей среды. К важным параметрам относятся имя хранилища, группа ресурсов хранилища и URI секрета (сгенерированный предыдущим скриптом). Ниже приведен пример файла параметров.
 
 ## <a name="update-the-azuredeployparametersjson-file"></a>Обновление файла azuredeploy.parameters.json
 
-Измените в файле `azuredeploy.parameters.json` значения для параметров `vaultName`, секрета URI, `VmName` и других параметров на значения для своей среды. Ниже приведен пример JSON-файла параметров шаблона:
+Обновите файл **azuredeploy.parameters.json**, указав `vaultName`, URI секрета, `VmName` и другие параметры для своей среды. Ниже приведен пример JSON-файла параметров шаблона:
 
 ```json
 {
@@ -178,16 +177,16 @@ New-AzureRmResourceGroupDeployment `
 
 ![Результаты развертывания шаблона](media/azure-stack-key-vault-push-secret-into-vm/deployment-output.png)
 
-При развертывании этой виртуальной машины Azure Stack отправляет на нее сертификат. Расположение сертификата зависит от операционной системы виртуальной машины.
+При развертывании этой VM Azure Stack отправляет на нее сертификат. Расположение сертификата зависит от операционной системы VM.
 
 * В Windows сертификат добавляется в расположение сертификата **LocalMachine** с помощью хранилища сертификатов, предоставленного пользователем.
-* В Linux сертификат размещается в каталоге `/var/lib/waagent directory`: для файла сертификата X509 имя — &lt;UppercaseThumbprint&gt;.crt, а для закрытого ключа — &lt;UppercaseThumbprint&gt;.prv.
+* В Linux сертификат размещается в каталоге **/var/lib/waagent**: файл сертификата X509 с именем **UppercaseThumbprint.crt** и файл закрытого ключа с именем **UppercaseThumbprint.prv**.
 
 ## <a name="retire-certificates"></a>Списание сертификатов
 
 Прекращение использования сертификатов — это часть процесса управления сертификатами. Вы не можете удалить более раннюю версию сертификата, но ее можно отключить с помощью командлета `Set-AzureKeyVaultSecretAttribute`.
 
-В примере ниже показано, как отключить сертификат. Укажите собственные значения для параметров **VaultName**, **Name** и **Version**.
+В примере ниже показано, как отключить сертификат. Для параметров `VaultName`, `Name` и `Version` используйте свои значения.
 
 ```powershell
 Set-AzureKeyVaultSecretAttribute -VaultName contosovault -Name servicecert -Version e3391a126b65414f93f6f9806743a1f7 -Enable 0

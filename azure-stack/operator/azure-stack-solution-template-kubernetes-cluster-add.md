@@ -11,23 +11,23 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/27/2019
+ms.date: 06/18/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: 09fa7b503f0c594d2af0c6f16a6d4618cec0fac3
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.lastreviewed: 06/18/2019
+ms.openlocfilehash: 61d2739475a0593671e7a363671dd2859a6e6f24
+ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64308480"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67316249"
 ---
 # <a name="add-kubernetes-to-the-azure-stack-marketplace"></a>Добавление Kubernetes в Azure Stack Marketplace
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!note]  
-> Система Kubernetes доступна в Azure Stack в предварительной версии. Сейчас в предварительной версии не поддерживаются сценарии работы с Azure Stack в автономном режиме.
+> Система Kubernetes доступна в Azure Stack в предварительной версии. Сейчас в предварительной версии не поддерживаются сценарии работы с Azure Stack в автономном режиме. Для сценариев разработки и тестирования используйте только элемент из marketplace.
 
 Вы можете обеспечить своим пользователям доступ к Kubernetes из Azure Stack Marketplace. Затем развертывание Kubernetes выполняется за одну согласованную операцию.
 
@@ -63,129 +63,7 @@ ms.locfileid: "64308480"
 
 ## <a name="create-a-service-principal-and-credentials-in-ad-fs"></a>Создание субъекта-службы и учетных данных в AD FS
 
-Если вы используете службы федерации Active Directory (AD FS) для службы управления удостоверениями, необходимо будет создать субъект-службу для пользователей, развертывающих кластер Kubernetes.
-
-1. Создайте и экспортируйте самозаверяющий сертификат, используемый для создания субъекта-службы. 
-
-    - Вам понадобятся следующие сведения:
-
-       | Значение | ОПИСАНИЕ |
-       | ---   | ---         |
-       | Пароль | Введите новый пароль для сертификата. |
-       | Локальный путь к сертификату | Введите путь и имя файла сертификата. Например: `c:\certfilename.pfx` |
-       | Имя сертификата | Введите имя сертификата. |
-       | Расположение хранилища сертификатов |  Например `Cert:\LocalMachine\My`. |
-
-    - Откройте PowerShell с помощью командной строки с повышенными привилегиями. Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
-
-        ```powershell  
-        # Creates a new self signed certificate 
-        $passwordString = "<password>"
-        $certlocation = "<local certificate path>.pfx"
-        $certificateName = "CN=<certificate name>"
-        $certStoreLocation="<certificate store location>"
-        
-        $params = @{
-        CertStoreLocation = $certStoreLocation
-        DnsName = $certificateName
-        FriendlyName = $certificateName
-        KeyLength = 2048
-        KeyUsageProperty = 'All'
-        KeyExportPolicy = 'Exportable'
-        Provider = 'Microsoft Enhanced Cryptographic Provider v1.0'
-        HashAlgorithm = 'SHA256'
-        }
-        
-        $cert = New-SelfSignedCertificate @params -ErrorAction Stop
-        Write-Verbose "Generated new certificate '$($cert.Subject)' ($($cert.Thumbprint))." -Verbose
-        
-        #Exports certificate with password in a .pfx format
-        $pwd = ConvertTo-SecureString -String $passwordString -Force -AsPlainText
-        Export-PfxCertificate -cert $cert -FilePath $certlocation -Password $pwd
-        ```
-
-2.  Запишите новый идентификатор сертификата, отображаемый в сеансе PowerShell, `1C2ED76081405F14747DC3B5F76BB1D83227D824`. Идентификатор будет использоваться при создании субъекта-службы.
-
-    ```powershell  
-    VERBOSE: Generated new certificate 'CN=<certificate name>' (1C2ED76081405F14747DC3B5F76BB1D83227D824).
-    ```
-
-3. Создайте субъект-службу с помощью сертификата.
-
-    - Вам понадобятся следующие сведения:
-
-       | Значение | ОПИСАНИЕ                     |
-       | ---   | ---                             |
-       | IP-адрес ERCS | В ASDK привилегированная конечная точка — это, как правило, `AzS-ERCS01`. |
-       | имя приложения; | Введите простое имя субъекта-службы приложения. |
-       | Расположение хранилища сертификатов | Путь на компьютере, где был сохранен сертификат. На это указывает местоположение хранилища и идентификатор сертификата, сформированный на первом этапе. Например: `Cert:\LocalMachine\My\1C2ED76081405F14747DC3B5F76BB1D83227D824` |
-
-       При появлении запроса используйте следующие учетные данные для подключения к конечной точке привилегии. 
-        - Имя пользователя. Укажите учетную запись CloudAdmin в формате `<Azure Stack domain>\cloudadmin`. (При использовании ASDK имя пользователя — azurestack\cloudadmin.)
-        - Пароль: Введите пароль, который использовался во время установки учетной записи администратора домена AzureStackAdmin.
-
-    - Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
-
-        ```powershell  
-        #Create service principal using the certificate
-        $privilegedendpoint="<ERCS IP>"
-        $applicationName="<application name>"
-        $certStoreLocation="<certificate location>"
-        
-        # Get certificate information
-        $cert = Get-Item $certStoreLocation
-        
-        # Credential for accessing the ERCS PrivilegedEndpoint, typically domain\cloudadmin
-        $creds = Get-Credential
-
-        # Creating a PSSession to the ERCS PrivilegedEndpoint
-        $session = New-PSSession -ComputerName $privilegedendpoint -ConfigurationName PrivilegedEndpoint -Credential $creds
-
-        # Get Service principal Information
-        $ServicePrincipal = Invoke-Command -Session $session -ScriptBlock { New-GraphApplication -Name "$using:applicationName" -ClientCertificates $using:cert}
-
-        # Get Stamp information
-        $AzureStackInfo = Invoke-Command -Session $session -ScriptBlock { get-azurestackstampinformation }
-
-        # For Azure Stack development kit, this value is set to https://management.local.azurestack.external. This is read from the AzureStackStampInformation output of the ERCS VM.
-        $ArmEndpoint = $AzureStackInfo.TenantExternalEndpoints.TenantResourceManager
-
-        # For Azure Stack development kit, this value is set to https://graph.local.azurestack.external/. This is read from the AzureStackStampInformation output of the ERCS VM.
-        $GraphAudience = "https://graph." + $AzureStackInfo.ExternalDomainFQDN + "/"
-
-        # TenantID for the stamp. This is read from the AzureStackStampInformation output of the ERCS VM.
-        $TenantID = $AzureStackInfo.AADTenantID
-
-        # Register an AzureRM environment that targets your Azure Stack instance
-        Add-AzureRMEnvironment `
-        -Name "AzureStackUser" `
-        -ArmEndpoint $ArmEndpoint
-
-        # Set the GraphEndpointResourceId value
-        Set-AzureRmEnvironment `
-        -Name "AzureStackUser" `
-        -GraphAudience $GraphAudience `
-        -EnableAdfsAuthentication:$true
-        Add-AzureRmAccount -EnvironmentName "azurestackuser" `
-        -ServicePrincipal `
-        -CertificateThumbprint $ServicePrincipal.Thumbprint `
-        -ApplicationId $ServicePrincipal.ClientId `
-        -TenantId $TenantID
-
-        # Output the SPN details
-        $ServicePrincipal
-        ```
-
-    - Сведения о субъекте-службе выглядят как приведенный ниже фрагмент кода.
-
-        ```Text  
-        ApplicationIdentifier : S-1-5-21-1512385356-3796245103-1243299919-1356
-        ClientId              : 3c87e710-9f91-420b-b009-31fa9e430145
-        Thumbprint            : 30202C11BE6864437B64CE36C8D988442082A0F1
-        ApplicationName       : Azurestack-MyApp-c30febe7-1311-4fd8-9077-3d869db28342
-        PSComputerName        : azs-ercs01
-        RunspaceId            : a78c76bb-8cae-4db4-a45a-c1420613e01b
-        ```
+Если вы используете службы федерации Active Directory (AD FS) для службы управления удостоверениями, необходимо будет создать субъект-службу для пользователей, развертывающих кластер Kubernetes. Создайте субъект-службу, используя секрет клиента. Инструкции см. в разделе [Create a service principal that uses client secret credentials](azure-stack-create-service-principals.md#create-a-service-principal-that-uses-client-secret-credentials) (Создание субъекта-службы, использующего секрет клиента).
 
 ## <a name="add-an-ubuntu-server-image"></a>Добавление образа сервера Ubuntu
 
@@ -247,7 +125,7 @@ ms.locfileid: "64308480"
     > [!note]  
     > Для отображения элемента в Marketplace может потребоваться пять минут.
 
-    ![kubernetes](../user/media/azure-stack-solution-template-kubernetes-deploy/marketplaceitem.png)
+    ![Kubernetes](../user/media/azure-stack-solution-template-kubernetes-deploy/marketplaceitem.png)
 
 ## <a name="update-or-remove-the-kubernetes"></a>Обновление или удаление Kubernetes 
 

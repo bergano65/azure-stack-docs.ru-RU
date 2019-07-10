@@ -1,6 +1,6 @@
 ---
-title: Разрешение приложениям получать секреты из хранилища ключей Azure Stack | Документация Майкрософт
-description: Использование примера приложения для работы с хранилищем ключей Azure Stack.
+title: Разрешение приложениям получать доступ к секретам из хранилища ключей Azure Stack | Документация Майкрософт
+description: Из этой статьи вы узнаете, как запустить пример приложения, которое извлекает ключи и секреты из хранилища ключей в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,37 +15,37 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: sethm
 ms.lastreviewed: 04/08/2019
-ms.openlocfilehash: aca8e57a7476ac55729f30c1eadfd4a414409021
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: 6cc9475ee04bcdcb7b4c35f4ca5a39efc7c36aa8
+ms.sourcegitcommit: ad2f2cb4dc8d5cf0c2c37517d5125921cff44cdd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985654"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67138892"
 ---
-# <a name="a-sample-application-that-uses-keys-and-secrets-stored-in-a-key-vault"></a>Пример приложения, использующего ключи и секреты, хранящиеся в хранилище ключей
+# <a name="allow-apps-to-access-azure-stack-key-vault-secrets"></a>Разрешение приложениям получать доступ к секретам из хранилища ключей Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Выполните инструкции из этой статьи, чтобы запустить пример приложения **HelloKeyVault**, которое извлекает ключи и секреты из хранилища ключей в Azure Stack.
+Выполните шаги в этой статье, чтобы запустить пример приложения **HelloKeyVault**, которое извлекает ключи и секреты из хранилища ключей в Azure Stack.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Вы можете установить указанные ниже обязательные компоненты из [Пакета средств разработки Azure Stack](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) либо через внешний клиент для Windows (при [подключении через VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn)).
+Вы можете установить следующие обязательные компоненты из [Пакета средств разработки Azure Stack](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) или из внешнего клиента Windows, если вы [используете VPN-подключение](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn):
 
 * Установите [совместимые с Azure Stack модули Azure PowerShell](../operator/azure-stack-powershell-install.md).
 * Скачайте [средства, необходимые для работы с Azure Stack](../operator/azure-stack-powershell-download.md).
 
-## <a name="create-and-get-the-key-vault-and-application-settings"></a>Создание и получение хранилища ключей и параметров приложения
+## <a name="create-a-key-vault-and-register-an-app"></a>Создание хранилища ключей и регистрация приложения
 
 Чтобы подготовить пример приложения, выполните следующие действия:
 
 * Создайте хранилище ключей в Azure Stack.
-* Зарегистрируйте приложение в Azure Active Directory.
+* Зарегистрируйте приложение в Azure Active Directory (Azure AD).
 
-Подготовить пример приложения можно с помощью портала Azure или PowerShell. В этой статье показано, как создать хранилище ключей и зарегистрировать приложение с помощью PowerShell.
+С помощью портала Azure или PowerShell выполните действия для подготовки к установке примера приложения.
 
 > [!NOTE]
-> По умолчанию этот скрипт PowerShell создает приложение в Active Directory. Но его можно использовать и для регистрации существующего приложения.
+> По умолчанию скрипт PowerShell создает новое приложение в Active Directory. Но его можно использовать и для регистрации существующего приложения.
 
 Прежде чем запускать приведенный ниже скрипт, не забудьте предоставить значения для переменных `aadTenantName` и `applicationPassword`. Если вы не укажете значение для переменной `applicationPassword`, скрипт создаст случайный пароль.
 
@@ -141,11 +141,11 @@ Write-Host
 
 ## <a name="download-and-configure-the-sample-application"></a>Скачивание и настройка примера приложения
 
-Скачайте пример хранилища ключей со страницы [примеров клиентов хранилища ключей](https://www.microsoft.com/download/details.aspx?id=45343) Azure. Извлеките содержимое ZIP-файла на рабочей станции разработки. В папке примеров есть два приложения. В этой статье используется **HelloKeyVault**.
+Скачайте пример хранилища ключей со страницы [примеров клиентов хранилища ключей](https://www.microsoft.com/download/details.aspx?id=45343) Azure. Извлеките содержимое ZIP-файла на рабочей станции разработки. Папка примеров содержит два приложения. В этой статье используется **HelloKeyVault**.
 
 Чтобы применить пример **HelloKeyVault**, выполните следующие действия.
 
-1. Перейдите в папку **Microsoft.Azure.KeyVault.Samples** > **samples** > **HelloKeyVault**.
+1. Перейдите к папке **Microsoft.Azure.KeyVault.Samples** > **samples** > **HelloKeyVault**.
 2. Откройте приложение **HelloKeyVault** в Visual Studio.
 
 ### <a name="configure-the-sample-application"></a>Настройка примера приложения
@@ -153,13 +153,13 @@ Write-Host
 В Visual Studio:
 
 1. Откройте файл HelloKeyVault\App.config и найдите элемент `<appSettings>`.
-2. Укажите для ключей **VaultUrl**, **AuthClientId** и **AuthClientSecret** значения, которые были возвращены при создании хранилища ключей. По умолчанию файл App.config содержит заполнитель для `AuthCertThumbprint`. Замените его на `AuthClientSecret`.
+2. Обновите ключи **VaultUrl**, **AuthClientId** и **AuthClientSecret** с помощью значений, которые были возвращены при создании хранилища ключей. По умолчанию файл App.config содержит заполнитель для `AuthCertThumbprint`. Замените его на `AuthClientSecret`.
 
    ![Параметры приложения](media/azure-stack-key-vault-sample-app/appconfig.png)
 
 3. Повторно создайте решение.
 
-## <a name="run-the-application"></a>Выполнение приложения
+## <a name="run-the-app"></a>Запуск приложения
 
 При запуске приложение **HelloKeyVault** входит в Azure AD и применяет маркер `AuthClientSecret` для аутентификации в хранилище ключей Azure Stack.
 

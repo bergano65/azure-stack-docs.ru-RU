@@ -11,22 +11,22 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.author: mabrigg
-ms.date: 04/02/2019
+ms.date: 06/18/2019
 ms.reviewer: waltero
-ms.lastreviewed: 03/20/2019
-ms.openlocfilehash: 33eed0b574ad28c5fc0d1fb44f1c9b5a1ad37bb7
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.lastreviewed: 06/18/2019
+ms.openlocfilehash: 89138601d1049f192946473d0a1fdb2c21df3e4c
+ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269392"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67308717"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack"></a>Устранение неполадок с развертыванием Kubernetes в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!Note]  
-> Система Kubernetes доступна в Azure Stack в предварительной версии. Сейчас в предварительной версии не поддерживаются сценарии работы с Azure Stack в автономном режиме.
+> Система Kubernetes доступна в Azure Stack в предварительной версии. Сейчас в предварительной версии не поддерживаются сценарии работы с Azure Stack в автономном режиме. Для сценариев разработки и тестирования используйте только элемент из marketplace.
 
 В этой статье рассматриваются способы устранения неполадок с кластером Kubernetes. Чтобы начать устранение неполадок, просмотрите элементы, которые требуются для развертывания. Вам может потребоваться сбор журналов из Azure Stack или виртуальных машин Linux, которые размещены в Kubernetes. Чтобы получить журналы из конечной точки администрирования, обратитесь к администратору Azure Stack.
 
@@ -148,7 +148,7 @@ ms.locfileid: "66269392"
     |---------------------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
     | -d, --vmd-host      | Общедоступный IP-адрес или полное доменное имя (FQDN) DVM. Имя виртуальной машины начинается с `vmd-`. | IP-адрес: 192.168.102.38<br>DNS: vmd-myk8s.local.cloudapp.azurestack.external |
     | -h, --help  | Отображение сведений об использовании команд. | |
-    | -i, --identity-file | Файл закрытого ключа RSA, переданный элементу marketplace при создании кластера Kubernetes. Требуется для удаленного доступа к узлам Kubernetes. | C:\data\id_rsa.pem (Putty)<br>~/.ssh/id_rsa (SSH)
+    | -i, --identity-file | Путь к файлу закрытого ключа RSA, переданный элементу marketplace при создании кластера Kubernetes. Требуется для удаленного доступа к узлам Kubernetes. | C:\data\id_rsa.pem (Putty)<br>~/.ssh/id_rsa (SSH)
     | -m, --master-host   | Общедоступный IP-адрес или полное доменное имя (FQDN) главного узла Kubernetes. Имя виртуальной машины начинается с `k8s-master-`. | IP-адрес: 192.168.102.37<br>Полное доменное имя: k8s-12345.local.cloudapp.azurestack.external      |
     | -u, --user          | Имя пользователя, переданное элементу marketplace при создании кластера Kubernetes. Требуется для удаленного доступа к узлам Kubernetes. | azureuser (значение по умолчанию) |
 

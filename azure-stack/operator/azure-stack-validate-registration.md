@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/23/2019
+ms.date: 06/23/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: a777fc1d9052eb58bbebd319fe6cc7f42a09cb9a
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: ca2ea89ab73c7a8e056e4b4700e92a872e628f34
+ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64307322"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67316179"
 ---
 # <a name="validate-azure-registration"></a>Проверка регистрации в Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "64307322"
 
 Ниже перечислены необходимые компоненты.
 
-**Компьютер, на котором запускается это средство:**
+### <a name="the-computer-on-which-the-tool-runs"></a>Компьютер, на котором запускается это средство
 
 - Необходимо установить Windows 10 или Windows Server 2016 и обеспечить подключение к Интернету.
 - Необходимо установить PowerShell 5.1 или более поздней версии. Чтобы проверить используемую версию, выполните следующий командлет PowerShell и проверьте значения **Major** (основной номер версии) и **Minor** (дополнительный номер версии):  
@@ -52,7 +52,7 @@ ms.locfileid: "64307322"
 - [PowerShell для Azure Stack](azure-stack-powershell-install.md).
 - Последняя версия средства [проверки готовности Microsoft Azure Stack](https://aka.ms/AzsReadinessChecker).  
 
-**В среде Azure Active Directory:**
+### <a name="azure-active-directory-environment"></a>Среда Azure Active Directory
 
 - Определите имя пользователя и пароль для учетной записи, которая является владельцем подписки Azure, которую вы будете использовать с Azure Stack.  
 - Определите идентификатор подписки Azure, которая будет использоваться.
@@ -106,7 +106,7 @@ ms.locfileid: "64307322"
 
 Эти файлы помогут передать сведения о состоянии проверки другим заинтересованным лицам перед развертыванием Azure Stack или для исследования проблем, обнаруженных при проверке. В обоих файлах сохраняются результаты каждой очередной проверки. В отчете содержатся подтверждения команды развертывания по конфигурации удостоверений. Файл журнала поможет командам развертывания или поддержки диагностировать проблемы с проверкой.
 
-По умолчанию оба файла сохраняются в расположении **C:\Users\<имя_пользователя>\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
+По умолчанию оба файла сохраняются в расположении **C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
 
 - Чтобы задать другое расположение отчетов, при запуске проверки можно указать в конце командной строки параметр **-OutputPath** ***&lt;путь&gt;***.
 - Укажите параметр **-CleanReport** в конце команды, чтобы удалить из файла **AzsReadinessCheckerReport.json** сведения о предыдущих запусках средства.

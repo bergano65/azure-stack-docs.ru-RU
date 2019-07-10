@@ -15,12 +15,12 @@ ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 850d99232b408aa9264caf0d928231ed229e5c23
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.openlocfilehash: b66354baa30bb6bf9ec4b8cb39cab0b9def763f6
+ms.sourcegitcommit: 7348876a97e8bed504b5f5d90690ec8d1d9472b0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782418"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67557900"
 ---
 # <a name="using-the-privileged-endpoint-in-azure-stack"></a>Использование привилегированной конечной точки в Azure Stack
 
@@ -167,10 +167,16 @@ ms.locfileid: "65782418"
 Чтобы закрыть сеанс конечной точки:
 
 1. Создайте внешний файловый ресурс, доступный для привилегированной конечной точки. В среде комплекта разработки можно просто создать общую папку на узле комплекта разработки.
-2. Запустите командлет `Close-PrivilegedEndpoint`. 
-3. Будет предложено ввести путь для хранения файла журнала расшифровки. Укажите созданную ранее общую папку в формате &#92;&#92;*имя_сервера*&#92;*имя_общей_папки*. Если не указать путь, командлет завершится сбоем и сеанс останется открытым. 
+2. Запустите командлет 
+    ```powershell
+    Close-PrivilegedEndpoint -TranscriptsPathDestination "\\fileshareIP\SharedFolder" -Credential Get-Credential
+    ```
+где:
+| Параметр | ОПИСАНИЕ | type | Обязательно |
+|---------|---------|---------|---------|
+| *TranscriptsPathDestination* | Путь к внешней общей папке, который определен как "fileshareIP\sharefoldername" | Строка, | Да|
+| *Учетные данные* | Учетные данные для доступа к общей папке. | SecureString |  Да |
 
-    ![Выходные данные командлета Close-PrivilegedEndpoint с указанием целевого пути к файлу расшифровки](media/azure-stack-privileged-endpoint/closeendpoint.png)
 
 После того как файлы журнала расшифровки успешно переданы в общую папку, они автоматически удаляются из привилегированной конечной точки. 
 

@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: Howto
-ms.date: 05/31/2019
+ms.date: 06/25/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 05/31/2019
-ms.openlocfilehash: 8e64a570ab45e57e3cf58639bc2ec23d9b9bd81b
-ms.sourcegitcommit: 07cc716d97bf484c7260eb165ae205ae25e09589
+ms.lastreviewed: 06/25/2019
+ms.openlocfilehash: 4e7dd18267060f632e2d059b0a7b0d9158b2e260
+ms.sourcegitcommit: d1fdecdfa843dfc0629bfc226f1baf14f3ea621d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453581"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67387756"
 ---
 # <a name="connect-to-azure-stack-using-azure-account-extension-in-visual-studio-code"></a>Подключение к Azure Stack с помощью расширения учетной записи Azure в Visual Studio Code
 
@@ -34,9 +34,15 @@ VS Code — это упрощенный редактор для создани�
 
 ## <a name="steps-to-connect-to-azure-stack"></a>Подключение к Azure Stack
 
-1. Откройте VS Code.
+1. Запустите скрипт **Identity** с помощью средств Azure Stack в GitHub.
 
-2. Выберите **Расширения** в области слева.
+    - Прежде чем выполнить скрипт, нужно установить и настроить PowerShell для вашей среды. Инструкции приведены в статье [Установка PowerShell для Azure Stack](../operator/azure-stack-powershell-install.md).
+
+    - Сам скрипт **Identity** и инструкции по нему см. в репозитории [AzureStack-Tools/Identity](https://github.com/Azure/AzureStack-Tools/tree/master/Identity).
+
+2. Откройте VS Code.
+
+3. Выберите **Расширения** в области слева.
 
 3. В поле поиска введите `Azure Account`.
 
@@ -55,7 +61,7 @@ VS Code — это упрощенный редактор для создани�
 
     Например, URL-адрес для получения метаданных для конечной точки Azure Resource Manager может выглядеть так: `https://management.local.azurestack.external/metadata/endpoints?api-version=1.0`.
 
-    Сохраните полученные данные JSON. Эти значения потребуются для свойств `loginEndpoint` и `loginEndgraphEndpointpoint`.
+    Сохраните полученные данные JSON. Эти значения потребуются для свойств `loginEndpoint` и `audiences`.
 
 7. Нажмите клавиши **CTRL+SHIFT+P** и выберите **Предпочтения: открыть параметры пользователя (JSON)** .
 
@@ -67,7 +73,7 @@ VS Code — это упрощенный редактор для создани�
         | --- | --- |
         | `tenant-ID` | Значение [идентификатора клиента](../operator/azure-stack-identity-overview.md) Azure Stack. |
         | `activeDirectoryEndpointUrl` | Это URL-адрес из свойства loginEndpoint. |
-        | `activeDirectoryResourceId` | Это URL-адрес из свойства loginEndgraphEndpointpoint.
+        | `activeDirectoryResourceId` | Это URL-адрес из свойства audiences.
         | `resourceManagerEndpointUrl` | Это корневой URL-адрес Azure Resource Manager для Azure Stack. | 
 
     - Во фрагменте кода JSON сделайте следующее:
@@ -76,15 +82,15 @@ VS Code — это упрощенный редактор для создани�
       "azure.tenant": "tenant-ID",
       "azure.ppe": {
           "activeDirectoryEndpointUrl": "Login endpoint",
-          "activeDirectoryResourceId": "graph audience",
-          "resourceManagerEndpointUrl": "Management Endpoint",
+          "activeDirectoryResourceId": "This is the URL from the audiences property.",
+          "resourceManagerEndpointUrl": "Aure Resource Management Endpoint",
       },
       "azure.cloud": "AzurePPE"
       ```
 
-8. Сохраните параметры пользователя и еще раз нажмите клавиши **CTRL+SHIFT+P**. Выберите **Azure: войти в облако Azure**. Новый параметр **AzurePPE** отобразится в списке целевых объектов.
+9. Сохраните параметры пользователя и еще раз нажмите клавиши **CTRL+SHIFT+P**. Выберите **Azure: войти в облако Azure**. Новый параметр **AzurePPE** отобразится в списке целевых объектов.
 
-9. Выберите **AzurePPE**. В браузере загрузится страница аутентификации. Войдите в конечную точку.
+10. Выберите **AzurePPE**. В браузере загрузится страница аутентификации. Войдите в конечную точку.
 
 11. Чтобы убедиться в том, что вы вошли в подписку Azure Stack, нажмите клавиши **CTRL+SHIFT+P** и выберите **Azure: выбрать подписку**. Вы увидите, доступна ли ваша подписка.
 

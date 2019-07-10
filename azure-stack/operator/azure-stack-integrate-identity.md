@@ -10,12 +10,12 @@ ms.date: 05/10/2019
 ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: 6fb879dc49197b52133750d65aadf96b601bda69
-ms.sourcegitcommit: 914daff43ae0f0fc6673a06dfe2d42d9b4fbab48
+ms.openlocfilehash: de2c0c2181025b7dbbc01691b72b0756fa201274
+ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66043230"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67419516"
 ---
 # <a name="azure-stack-datacenter-integration---identity"></a>Интеграция центра обработки данных Azure Stack: идентификация
 
@@ -131,6 +131,7 @@ Graph поддерживает только интеграцию с отдель
 |---------|---------|---------|---------|
 |CustomAdfsName|ADFS Provider Name (Имя поставщика AD FS)|Имя поставщика утверждений.<br>Так оно отображается на целевой странице AD FS.|Contoso|
 |CustomAD<br>FSFederationMetadataEndpointUri|ADFS Metadata URI (URI метаданных AD FS)|Ссылка на метаданные федерации:| https:\//ad01.contoso.com/federationmetadata/2007-06/federationmetadata.xml |
+|SigningCertificateRevocationCheck|Нет данных|Необязательный параметр, чтобы пропустить проверку списка отзыва сертификатов|Нет|
 
 
 ### <a name="trigger-automation-to-configure-claims-provider-trust-in-azure-stack"></a>Активация службы автоматизации для настройки отношений доверия с поставщиком утверждений в Azure Stack

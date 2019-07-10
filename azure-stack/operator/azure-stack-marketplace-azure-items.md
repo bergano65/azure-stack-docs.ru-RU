@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/12/2019
+ms.date: 06/14/2019
 ms.author: sethm
-ms.reviewer: unknown
-ms.lastreviewed: 01/29/2019
-ms.openlocfilehash: 3c962f0ef9fccdf814ccfaf0a432b1c303a63368
-ms.sourcegitcommit: 23816ec68f67f3ac51f78de925b7631590743a29
+ms.reviewer: ihcherie
+ms.lastreviewed: 06/14/2019
+ms.openlocfilehash: dd6421e915f170ee576d6486362e8b93ac01465f
+ms.sourcegitcommit: 593d40bccf1b2957a763017a8a2d7043f8d8315c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66835108"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67152590"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack"></a>Элементы Azure Marketplace, доступные для Azure Stack
 
@@ -54,7 +54,7 @@ Microsoft Azure Stack поддерживает указанные ниже ви�
 
 |  | Имя элемента. | ОПИСАНИЕ | ИЗДАТЕЛЬ |
 | --- | --- | --- | --- |
-| ![Windows Server](media/azure-stack-marketplace-azure-items/windowsserver.png) | [Windows Server](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer) | Экономичные решения корпоративного уровня для приложений и пользователей, которые легко развертывать. Эти образы регулярно обновляются с установкой последних исправлений. **Важная информация. Образы, скачанные до 18 января 2018 года, необходимо удалить и заменить последними версиями.** | Microsoft |
+| ![Windows Server](media/azure-stack-marketplace-azure-items/windowsserver.png) | [Windows Server](https://azuremarketplace.microsoft.com/marketplace/apps/MicrosoftWindowsServer.WindowsServer) | Экономичные решения корпоративного уровня для приложений и пользователей, которые легко развертывать. Эти образы регулярно обновляются с установкой последних исправлений. **Важная информация. Образы, скачанные до 18 января 2018 года, необходимо удалить и заменить последними версиями.** | Microsoft |
 | ![Пробная версия SharePoint Server 2013](media/azure-stack-marketplace-azure-items/sharepoint.png) | [Пробная версия SharePoint Server 2013](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.SharePointServer2013Trial) | Пробная версия Microsoft SharePoint Server 2013 на Windows Server 2012 Datacenter и Visual Studio 2019 Community Edition. | Microsoft |
 | ![Пробная версия SharePoint Server 2016](media/azure-stack-marketplace-azure-items/sharepoint.png) | [Пробная версия SharePoint Server  2016](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.SharePointServer2016Trial) | Пробная версия Microsoft SharePoint Server 2016 на Windows Server 2016 Datacenter. | Microsoft |
 | ![SQL Server 2014 с пакетом обновления 2 (SP2) на базе Windows Server 2012 R2](media/azure-stack-marketplace-azure-items/sql.png) | [SQL Server 2014 SP2 on Windows Server 2012 R2](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftsqlserver.sql2014sp2-ws2012r2) (SQL Server 2014 с пакетом обновления 2 (SP2) на базе Windows Server 2012 R2) | SQL Server 2014 с пакетом обновления 2. **Требуемый дополнительный компонент**: расширение IaaS для SQL. | Microsoft |
@@ -249,4 +249,5 @@ Microsoft Azure Stack поддерживает указанные ниже ви�
 | ![Quest Rapid Recovery](media/azure-stack-marketplace-azure-items/quest.png) | [Quest Rapid Recovery Core](https://azuremarketplace.microsoft.com/marketplace/apps/quest.rapid-recovery-core-vm) | Удобное программное решение Rapid Recovery обеспечивает усиленную защиту данных и объединяет в себе функции резервного копирования, репликации и восстановления. | Quest Software |
 | ![SUSE Manager 3.1 Proxy (BYOS)](media/azure-stack-marketplace-azure-items/suse.png) | [SUSE Manager 3.1 Proxy (BYOS)](https://azuremarketplace.microsoft.com/marketplace/apps/suse.suse-manager-proxy-byos?tab=Overview) | Лучшая в своем классе служба с открытым кодом для управления инфраструктурой. | SUSE |
 | ![Облачный диспетчер ключей CipherTrust](media/azure-stack-marketplace-azure-items/cckm.png) | [Облачный диспетчер ключей CipherTrust](https://azuremarketplace.microsoft.com/marketplace/apps/thales-vormetric.ciphertrust-ckm) | Используя API-интерфейсы BYOK Microsoft Azure и других поставщиков облачных служб, облачный диспетчер ключей CipherTrust упрощает управление ключами и снижает операционные расходы. Благодаря этому решению вы получаете возможность управления жизненным циклом ключей шифрования в нескольких облаках и полный контроль. | Thales eSecurity |
+| ![Veeam Backup & Replication](media/azure-stack-marketplace-azure-items/veeam.png) | [Veeam Backup & Replication](https://azuremarketplace.microsoft.com/marketplace/apps/veeam.veeam-backup-replication?tab=Overview) | Veeam® Backup & Replication™ позволяет организациям обеспечить комплексную защиту данных для всех рабочих нагрузок — виртуальных, физических и облачных. С помощью одной консоли можно обеспечить быстрые, гибкие и надежные резервное копирование, восстановление и репликацию всех приложений и данных. | Veeam Software |
 | ![ZeroDown Software BCaaS](media/azure-stack-marketplace-azure-items/zerodown.png) | [Непрерывность бизнес-процессов ZeroDown Software как служба](https://azuremarketplace.microsoft.com/marketplace/apps/zerodown_software.bcaasforazure) | Технология ZeroDown® Software предоставляет предприятиям непрерывный доступ к данным через архитектуру непрерывности бизнес-процессов как услуги (BCaaS)™, защищая приложения и транзакции в случае сбоев в работе сети, которые обычно наносят ущерб предприятию. | ZeroDown Software |

@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/30/2019
+ms.date: 06/14/2019
 ms.author: justinha
 ms.reviewer: misainat
-ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: 6a636a1ed7b2426649afbe163b15780bfc4e9f0e
-ms.sourcegitcommit: 2cd17b8e7352891d8b3eb827d732adf834b7693e
+ms.lastreviewed: 06/14/2019
+ms.openlocfilehash: cf25678ad84ac79dd29ddd1684b1ca2f958180ff
+ms.sourcegitcommit: 5a720b17bd6a5aab44929c0247db8d512e0669ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66428702"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67197198"
 ---
 # <a name="azure-stack-registration"></a>Регистрация Azure Stack
 
@@ -32,13 +32,13 @@ ms.locfileid: "66428702"
 
 Перед выполнением инструкций по регистрации ASDK в Azure установите PowerShell для Azure Stack и скачайте средства Azure Stack, как описано в статье о [настройке, выполняемой после установки ASDK](asdk-post-deploy.md).
 
-Кроме того, на компьютере, используемом для регистрации ASDK в Azure, необходимо установить параметр языкового режима PowerShell **FullLanguageMode**. Чтобы проверить, что текущий языковой режим имеет значение full, откройте окно PowerShell с повышенным уровнем разрешений и выполните следующие команды PowerShell:
+Кроме того, на компьютере, используемом для регистрации ASDK в Azure, необходимо установить параметр языкового режима PowerShell **FullLanguage**. Чтобы проверить, что текущий языковой режим имеет значение full, откройте окно PowerShell с повышенным уровнем разрешений и выполните следующие команды PowerShell:
 
 ```powershell  
 $ExecutionContext.SessionState.LanguageMode
 ```
 
-Убедитесь, что в выходных данных возвращено значение **FullLanguageMode**. Если вернулось другое значение языкового режима, необходимо выполнить регистрацию на другом компьютере или задать для языкового режима значение **FullLanguageMode** и продолжить регистрацию.
+Убедитесь, что в выходных данных возвращено значение **FullLanguage**. Если вернулось другое значение языкового режима, необходимо выполнить регистрацию на другом компьютере или задать для языкового режима значение **FullLanguage** и продолжить регистрацию.
 
 Учетная запись Azure AD, используемая для регистрации, должна обладать правами доступа к подписке Azure и разрешением на создание приложений удостоверений и субъектов-служб в каталоге, который связан с подпиской. Мы рекомендуем зарегистрировать Azure Stack в Azure с помощью администрирования наименьших привилегий, [создав учетную запись службы для регистрации](../operator/azure-stack-registration-role.md) вместо использования учетных данных глобального администратора.
 
@@ -51,15 +51,7 @@ $ExecutionContext.SessionState.LanguageMode
 
 1. Откройте консоль PowerShell от имени администратора.  
 
-2. На главном компьютере ASDK откройте в редакторе файл **C:\AzureStack-Tools-master\Registration\RegisterWithAzure.psm1** с повышенным уровнем разрешений.
-
-3. В конце строки 1249 добавьте параметр `-TimeoutInSeconds 1800`. Это необходимо, чтобы избежать превышение времени ожидания у субъекта-службы при запуске скрипта регистрации. Теперь строка 1249 должна выглядеть следующим образом:
-
-   ```powershell
-   $servicePrincipal = Invoke-Command -Session $PSSession -ScriptBlock { New-AzureBridgeServicePrincipal -RefreshToken $using:RefreshToken -AzureEnvironment $using:AzureEnvironmentName -TenantId $using:TenantId -TimeoutInSeconds 1800 }
-   ```
-
-4. Выполните следующие команды PowerShell, чтобы зарегистрировать установку ASDK в Azure. Вам понадобится войти в подписку для выставления счетов Azure и локальную установку ASDK. Если у вас еще нет подписки Azure для выставления счетов, создайте [бесплатную учетную запись здесь](https://azure.microsoft.com/free/?b=17.06). За регистрацию Azure Stack в подписке Azure дополнительная плата не взимается.<br><br>Задайте уникальное имя для регистрации при выполнении командлета **Set-AzsRegistration**. Параметр **RegistrationName** имеет значение по умолчанию **AzureStackRegistration**. Тем не менее, если задать одно имя для нескольких экземпляров Azure Stack, сценарий завершится ошибкой.
+2. Выполните следующие команды PowerShell, чтобы зарегистрировать установку ASDK в Azure. Вам понадобится войти в подписку для выставления счетов Azure и локальную установку ASDK. Если у вас еще нет подписки Azure для выставления счетов, создайте [бесплатную учетную запись здесь](https://azure.microsoft.com/free/?b=17.06). За регистрацию Azure Stack в подписке Azure дополнительная плата не взимается.<br><br>Задайте уникальное имя для регистрации при выполнении командлета **Set-AzsRegistration**. Параметр **RegistrationName** имеет значение по умолчанию **AzureStackRegistration**. Тем не менее, если задать одно имя для нескольких экземпляров Azure Stack, сценарий завершится ошибкой.
 
     ```powershell  
     # Add the Azure cloud subscription environment name. 
@@ -87,7 +79,7 @@ $ExecutionContext.SessionState.LanguageMode
     -UsageReportingEnabled:$true
     ```
 
-5. После выполнения скрипта появятся сообщение, информирующее о том, что **среда зарегистрирована и активирована с помощью предоставленных параметров**.
+3. После выполнения скрипта появятся сообщение, информирующее о том, что **среда зарегистрирована и активирована с помощью предоставленных параметров**.
 
     ![Среда зарегистрирована](media/asdk-register/1.PNG)
 
@@ -239,4 +231,4 @@ $ExecutionContext.SessionState.LanguageMode
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Добавление элемента Marketplace Azure Stack](../operator/azure-stack-marketplace.md)
+- [Добавление элемента Marketplace для Azure Stack](../operator/azure-stack-marketplace.md)

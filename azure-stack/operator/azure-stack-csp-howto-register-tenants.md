@@ -15,12 +15,12 @@ ms.date: 06/07/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 06/07/2019
-ms.openlocfilehash: edc6fc17e426e5e391eb61d510097101ddcfce58
-ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
+ms.openlocfilehash: e69000eb862411dd0c8b415ab1f0ad7c8573f046
+ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828344"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67419551"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack"></a>Добавление клиентов для контроля потребления и выставления счетов в Azure Stack
 
@@ -94,6 +94,6 @@ ms.locfileid: "66828344"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Если в процессе регистрации возникнут ошибки, изучите их с помощью этой [инструкции по ошибкам регистрации клиента](azure-stack-csp-ref-infrastructure.md#usage-and-billing-error-codes).
+- Если в процессе регистрации возникнут ошибки, изучите их с помощью этой [инструкции по ошибкам регистрации клиента](azure-stack-registration-errors.md).
 - Дополнительные сведения см. в статье о [потреблении ресурсов и выставлении счетов в Azure Stack](azure-stack-billing-and-chargeback.md).
 - Чтобы помочь пользователю добавить вашу учетную запись (CSP) с правами менеджера в клиенте Azure Stack, изучите статью [Предоставление поставщику облачных служб возможности управлять подпиской Azure Stack](../user/azure-stack-csp-enable-billing-usage-tracking.md).
