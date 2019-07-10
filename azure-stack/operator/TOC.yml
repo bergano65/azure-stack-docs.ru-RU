@@ -10,7 +10,7 @@
       href: compare-azure-azure-stack.md
     - name: Заметки о выпуске
       items:
-        - name: Последние обновления
+        - name: Политика обновления и обслуживания
           href: azure-stack-servicing-policy.md
         - name: Контрольный список для применения обновлений
           href: azure-stack-release-notes-checklist.md
