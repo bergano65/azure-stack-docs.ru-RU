@@ -14,12 +14,12 @@ ms.date: 06/26/2019
 ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 25280d1f5465776aedf2e3e0dfd84118e866a944
-ms.sourcegitcommit: c9d11be7d27c73797bdf279d4fcabb7a22451541
+ms.openlocfilehash: f1c846b6d429fa323e1081d96cbca8bd10f877b5
+ms.sourcegitcommit: 1c4eda123857d714109e38bb853eb1ce49af5f5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397275"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67648083"
 ---
 # <a name="validate-azure-stack-system-state"></a>Проверка состояния системы Azure Stack
 
@@ -29,7 +29,7 @@ ms.locfileid: "67397275"
 
 ## <a name="running-the-validation-tool-and-accessing-results"></a>Запуск средства проверки и доступ к результатам
 
-Как уже упоминалось ранее, средство проверки запускается из привилегированной конечной точки. Каждый тест возвращает состояние **успеха или сбоя** в окне PowerShell. Кроме того, создается подробный отчет в формате HTML, который можно получить позднее при [сборе журналов](azure-stack-diagnostics.md). Ниже приводится описание полного процесса проверочного тестирования. 
+Как уже упоминалось ранее, средство проверки запускается из привилегированной конечной точки. Каждый тест возвращает состояние **успеха или сбоя** в окне PowerShell. Ниже приводится описание полного процесса проверочного тестирования. 
 
 1. Получите доступ к привилегированной конечной точке. Выполните следующие команды, чтобы создать сеанс подключения к привилегированной конечной точке:
 

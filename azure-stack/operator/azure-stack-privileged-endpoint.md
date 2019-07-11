@@ -15,12 +15,12 @@ ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: b66354baa30bb6bf9ec4b8cb39cab0b9def763f6
-ms.sourcegitcommit: 7348876a97e8bed504b5f5d90690ec8d1d9472b0
+ms.openlocfilehash: c9e796a4ece453c3cd74bbf9a2fb6996757a0b4e
+ms.sourcegitcommit: 44f1bf6e0bfa85ee14819cad27c9b1de65d375df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67557900"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67596082"
 ---
 # <a name="using-the-privileged-endpoint-in-azure-stack"></a>Использование привилегированной конечной точки в Azure Stack
 
@@ -172,6 +172,7 @@ ms.locfileid: "67557900"
     Close-PrivilegedEndpoint -TranscriptsPathDestination "\\fileshareIP\SharedFolder" -Credential Get-Credential
     ```
 где:
+
 | Параметр | ОПИСАНИЕ | type | Обязательно |
 |---------|---------|---------|---------|
 | *TranscriptsPathDestination* | Путь к внешней общей папке, который определен как "fileshareIP\sharefoldername" | Строка, | Да|
