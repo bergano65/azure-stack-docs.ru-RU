@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/14/2019
+ms.date: 07/09/2019
 ms.author: sethm
 ms.reviewer: ihcherie
-ms.lastreviewed: 06/14/2019
-ms.openlocfilehash: dd6421e915f170ee576d6486362e8b93ac01465f
-ms.sourcegitcommit: 593d40bccf1b2957a763017a8a2d7043f8d8315c
+ms.lastreviewed: 07/09/2019
+ms.openlocfilehash: d18775deb6d73117091a3822c5a60a32d94d4d38
+ms.sourcegitcommit: cb77ffe0d5da14696ad0fe7c09ee6b340c7f66e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67152590"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678986"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack"></a>Элементы Azure Marketplace, доступные для Azure Stack
 
@@ -36,9 +36,9 @@ ms.locfileid: "67152590"
 |![Расширение IaaS для SQL](media/azure-stack-marketplace-azure-items/cse.png) | [Расширение IaaS для SQL](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension)| **Скачайте это расширение, чтобы развернуть любой экземпляр SQL Server в элементе Windows Marketplace. Это обязательное расширение.** | Microsoft | Windows |
 |![Расширение пользовательских сценариев](media/azure-stack-marketplace-azure-items/cse.png) | [Расширение пользовательских сценариев](https://docs.microsoft.com/azure/virtual-machines/windows/extensions-customscript)| **Скачайте это обновление для встроенной версии расширения пользовательских скриптов для Windows.** | Microsoft | Windows |
 |![Расширение PowerShell DSC](media/azure-stack-marketplace-azure-items/dsc.png) | [Расширение PowerShell DSC](https://docs.microsoft.com/azure/virtual-machines/windows/extensions-dsc-overview)| **Скачайте это обновление для встроенной версии расширения PowerShell DSC. В последнем обновлении поддерживается TLS версии 1.2.** | Microsoft | Windows |
-| ![Расширение антивредоносного ПО Майкрософт](media/azure-stack-marketplace-azure-items/cse.png) | [Расширение антивредоносного ПО Майкрософт](https://docs.microsoft.com/azure/security/azure-security-antimalware)| Антивредоносное ПО для Azure — это единый агент для приложений и клиентских сред, работающий в фоновом режиме без стороннего вмешательства. **Скачайте это обновление для встроенной версии антивредоносного расширения.** | Microsoft | Windows |
+| ![Расширение антивредоносного ПО Майкрософт](media/azure-stack-marketplace-azure-items/cse.png) | [Расширение антивредоносного ПО Майкрософт](https://docs.microsoft.com/azure/security/azure-security-antimalware)| Microsoft Antimalware для Azure — это единый агент для приложений и клиентских сред, работающий в фоновом режиме и не требующий вмешательства пользователя. **Скачайте это обновление для встроенной версии антивредоносного расширения.** | Microsoft | Windows |
 | ![Диагностическое расширение Microsoft Azure](media/azure-stack-marketplace-azure-items/cse.png) | [Диагностическое расширение Microsoft Azure](https://docs.microsoft.com/azure/virtual-machines/extensions/diagnostics-windows)| Диагностика Microsoft Azure позволяет выполнять сбор диагностических данных развернутого приложения. **Скачайте это обновление для встроенной версии диагностического расширения для Windows.** | Microsoft | Windows |
-| ![Расширение мониторинга Майкрософт](media/azure-stack-marketplace-azure-items/cse.png) | [Расширение Microsoft Monitoring Agent](https://docs.microsoft.com/azure/virtual-machines/extensions/oms-windows)| Расширение Microsoft Monitoring Agent используется с OMS для обеспечения мониторинга виртуальных машин. **Скачайте это обновление для встроенной версии расширения Monitoring Agent для Windows.** | Microsoft | Windows |
+| ![Расширение "Управление конфигурацией и обновлениями Azure Monitor"](media/azure-stack-marketplace-azure-items/cse.png) | [Расширение "Управление конфигурацией и обновлениями Azure Monitor"](https://docs.microsoft.com/azure/virtual-machines/extensions/oms-windows)| Расширение "Управление конфигурацией и обновлениями Azure Monitor" используется вместе с Log Analytics, Центром безопасности Azure и Azure Sentinel, обеспечивая возможность мониторинга виртуальной машины. **Скачайте это обновление для встроенной версии расширения Monitoring Agent для Windows.** | Microsoft | Windows |
 |![Расширение пользовательских сценариев](media/azure-stack-marketplace-azure-items/cse.png) | - [Расширение пользовательских скриптов (версия 1, не рекомендуется)](https://docs.microsoft.com/azure/virtual-machines/extensions/custom-script-linuxostc) </b> - [Расширение пользовательских скриптов (версия 2)](https://docs.microsoft.com/azure/virtual-machines/extensions/custom-script-linux) |**Скачайте это обновление для встроенной версии расширения пользовательских скриптов для Linux. Существует несколько версий этого расширения, и вам нужны одновременно версии 1.5.2.1 и 2.0.x.** | Microsoft | Linux |
 | ![VM Access для Linux](media/azure-stack-marketplace-azure-items/cse.png) | [VM Access для Linux](https://azure.microsoft.com/blog/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/)| **Скачайте это обновление для встроенной версии расширения VMAccess для Linux. Это обновление важно, если вы планируете использовать виртуальные машины Debian Linux.** | Microsoft | Linux |
 | ![Расширение Acronis Backup для Linux](media/azure-stack-marketplace-azure-items/acronis.png) | [Расширение Acronis Backup для Linux](https://azuremarketplace.microsoft.com/marketplace/apps/Acronis.acronis-backup-lin-arm) | Расширение Acronis Backup для Microsoft Azure входит в семейство продуктов Acronis Backup для защиты данных. | Acronis International GmbH. | Linux |
