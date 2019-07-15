@@ -240,6 +240,18 @@
           href: azure-stack-rest-api-use.md
     - name: Включение поставщика облачных служб
       href: azure-stack-csp-enable-billing-usage-tracking.md
+- name: Основные понятия
+  items:
+    - name: Шаблоны для гибридного облака
+      items:
+        - name: Обзор шаблонов для гибридного облака
+          href: azure-stack-edge-pattern-overview.md
+        - name: Масштабирование с использованием нескольких облаков
+          href: azure-stack-edge-pattern-cross-cloud-scaling.md
+        - name: DevOps (гибридные процессы CI/CD)
+          href: azure-stack-edge-pattern-hybrid-ci-cd.md
+        - name: Географически распределенное приложение
+          href: azure-stack-edge-pattern-geo-distribution.md
 - name: Справочные материалы
   items:
     - name: PowerShell для Azure Stack
