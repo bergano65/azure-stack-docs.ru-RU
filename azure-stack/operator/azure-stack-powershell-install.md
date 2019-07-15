@@ -11,22 +11,24 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 05/09/2019
+ms.date: 07/09/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: c0f680aec95c23db2567100b47a341a5d3fb9dad
-ms.sourcegitcommit: 5a720b17bd6a5aab44929c0247db8d512e0669ef
+ms.lastreviewed: 07/09/2019
+ms.openlocfilehash: d22b1df33f4fc57cf9f823f620054a6baa6bb5d3
+ms.sourcegitcommit: d2df594e8346a875967e3cfb04c23562a1bd2e3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67197174"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67725763"
 ---
 # <a name="install-powershell-for-azure-stack"></a>Установка PowerShell для Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Для работы с облаком необходимо установить модули PowerShell, совместимые с Azure Stack. Совместимость обеспечивается с помощью функции *профилей API*.
+В Azure PowerShell доступен набор командлетов, которые используют модель Azure Resource Manager для управления ресурсами Azure Stack.
+
+Для работы с облаком необходимо установить модули PowerShell, совместимые с Azure Stack. Azure Stack использует модуль **AzureRM**, а не новый модуль **AzureAZ**, используемый в глобальной среде Azure. Кроме того, необходимо использовать *профили API*, чтобы указать совместимые конечные точки для поставщиков ресурсов Azure Stack.
 
 Профили API позволяют управлять различиями между версиями Azure и Azure Stack. Профиль версии API — это набор модулей Azure Resource Manager PowerShell с определенными версиями API. Каждая облачная платформа имеет набор поддерживаемых профилей версий API. К примеру, Azure Stack поддерживает определенную версию профиля, например **2019-03-01-hybrid**. При установке профиля устанавливается набор модулей Azure Resource Manager PowerShell, которые соответствуют выбранному профилю.
 
@@ -138,6 +140,7 @@ Get-Module -Name "Azs*" -ListAvailable
 1. Установка PowerShell для Azure Stack, подключенной к компьютеру
 2. Включение дополнительных возможностей хранилища
 3. Транспортировка пакетов PowerShell для отключенной рабочей станции
+4. Начальная загрузка поставщика NuGet, выполняемая вручную на отключенной рабочей станции
 4. Подтверждение установки PowerShell
 
 ### <a name="install-azure-stack-powershell"></a>Установка PowerShell для Azure Stack
@@ -179,7 +182,9 @@ Get-Module -Name "Azs*" -ListAvailable
 
 2. Войдите на отключенную рабочую станцию и скопируйте пакеты с USB-устройства в нужное расположение на ней.
 
-3. Теперь зарегистрируйте это расположение в качестве репозитория по умолчанию и установите из этого репозитория модули AzureRM и AzureStack:
+3. Начальная загрузка поставщика NuGet, выполняемая вручную на отключенной рабочей станции Инструкции см. в разделе [Ручной режим начальной загрузки поставщика NuGet на автономный компьютер](https://docs.microsoft.com/powershell/gallery/how-to/getting-support/bootstrapping-nuget#manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet).
+
+4. Теперь зарегистрируйте это расположение в качестве репозитория по умолчанию и установите из этого репозитория модули AzureRM и AzureStack:
 
    ```powershell
    # requires -Version 5
