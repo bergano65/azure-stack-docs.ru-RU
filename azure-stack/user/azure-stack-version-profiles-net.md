@@ -208,9 +208,9 @@ public static ActiveDirectoryServiceSettings getActiveDirectoryServiceSettings(s
   [NuGet Package Manager instructions]: https://marketplace.visualstudio.com/items?itemName=jmrog.vscode-nuget-package-manager (Инструкции по диспетчеру пакетов NuGet)
   [Create subscriptions to offers in Azure Stack]: ../operator/azure-stack-subscribe-plan-provision-vm.md (Создание подписок для предложений в Azure Stack)
   [Provide applications access to Azure Stack]: ../operator/azure-stack-create-service-principals.md (Предоставление приложениям доступа к Azure Stack)
-  [*tenant ID*]: ../operator/azure-stack-identity-overview.md (Идентификатор клиента)
-  [*subscription ID*]: ../operator/azure-stack-plan-offer-quota-overview.md#subscriptions (Идентификатор подписки)
-  [*the Azure Stack Resource Manager endpoint*]: ../user/azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint (Конечная точка Resource Manager для Azure Stack)
+  [*идентификатора клиента*]: ../operator/azure-stack-identity-overview.md
+  [*Идентификатор подписки*]: ../operator/azure-stack-plan-offer-quota-overview.md#subscriptions
+  [*конечной точке Resource Manager для Azure Stack*]: ../user/azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint (Конечная точка Resource Manager для Azure Stack)
   [Summary of API profiles]: ../user/azure-stack-version-profiles.md#summary-of-api-profiles (Сводка по профилям API)
   [Test Project to Virtual Machine, vNet, resource groups, and storage account]: https://github.com/seyadava/azure-sdk-for-net-samples/tree/master/TestProject
   [Use Azure PowerShell to create a service principal with a certificate]: ../operator/azure-stack-create-service-principals.md
