@@ -12,15 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 04/08/2019
+ms.date: 07/17/2019
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 9fcf27c8ebbde86e775b54eda593b25fcd03979c
-ms.sourcegitcommit: be5382f715a9c1c18c660b630d8fcd823f13aae3
+ms.openlocfilehash: a7a61e8eef33ee6a6efb87001504fe5234e3cf16
+ms.sourcegitcommit: 2063332b4d7f98ee944dd1f443847eea70eb5614
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66197288"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68303153"
 ---
 # <a name="differences-between-azure-stack-and-azure-when-using-services-and-building-apps"></a>Различия между Azure и Azure Stack при использовании служб и создании приложений
 
@@ -41,14 +41,14 @@ Azure Stack ― это гибридная облачная платформа, 
 
 ## <a name="cheat-sheet-high-level-differences"></a>Краткий справочник. Основные различия
 
-В следующей таблице перечислены основные различия между Azure Stack и Azure. Не забывайте о них, когда создаете приложения для Azure Stack или используете службы Azure Stack.
+В следующей таблице перечислены основные различия между Azure Stack и Azure. Не забывайте о них, когда осуществляете разработку для Azure Stack или используете службы Azure Stack.
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 | Область | Azure (глобальная) | Azure Stack |
 | -------- | ------------- | ----------|
 | Кто оператор? | Microsoft | Ваша организация или поставщик услуг.|
-| Куда обращаться для получения поддержки? | Microsoft | В интегрированной системе за поддержкой следует обращаться к оператору Azure Stack (это может быть ваша организация или поставщик услуг).<br><br>Если вы используете Пакет средств разработки Azure Stack, посетите [форумы Майкрософт](https://social.msdn.microsoft.com/Forums/home?forum=azurestack). Так как пакет разработки предлагается как среда для оценки, служба поддержки корпорации Майкрософт не предоставляет для него официальную поддержку.
+| Куда обращаться для получения поддержки? | Microsoft | В интегрированной системе за поддержкой следует обращаться к оператору Azure Stack (это может быть ваша организация или поставщик услуг).<br><br>Если вы используете Пакет средств разработки Azure Stack (ASDK), посетите [форумы Майкрософт](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStack). Так как пакет разработки предлагается как среда для оценки, служба поддержки корпорации Майкрософт не предоставляет для него официальную поддержку.
 | Доступные службы | См. список [продуктов Azure](https://azure.microsoft.com/services/?b=17.04b). Выбор доступных служб зависит от региона Azure. | Azure Stack поддерживает некоторое подмножество служб Azure. Конкретный набор зависит от политики вашей организации или поставщика услуг.
 | Конечная точка Azure Resource Manager* | https://management.azure.com | При работе с интегрированной системой Azure Stack используйте конечную точку, предоставленную оператором Azure Stack.<br><br>Для пакета разработки используйте следующий адрес: https://management.local.azurestack.external.
 | URL-адрес портала* | [https://portal.azure.com](https://portal.azure.com) | При работе с интегрированной системой Azure Stack используйте URL-адрес, предоставленный оператором Azure Stack.<br><br>Для пакета SDK используйте следующий адрес: https://portal.local.azurestack.external.
@@ -67,7 +67,7 @@ Azure Stack ― это гибридная облачная платформа, 
 | -------- | ------------- |
 | Установите подходящие инструментальные средства на рабочей станции разработчика. | - [Установка PowerShell](../operator/azure-stack-powershell-install.md)<br>- [Скачивание средств](../operator/azure-stack-powershell-download.md)<br>- [Настройка PowerShell](azure-stack-powershell-configure-user.md)<br>- [Установка Visual Studio](azure-stack-install-visual-studio.md) 
 | Изучите информацию по следующим темам:<br>рекомендации по использованию шаблона Azure Resource Manager;<br>как найти шаблоны для быстрого начала работы;<br>использование модуля политики, который позволяет применять Azure для разработки решений в Azure Stack. | [Разработка для Azure Stack](azure-stack-developer.md) | 
-| Изучите и соблюдайте рекомендации для шаблонов. | [Шаблоны Resource Manager для быстрого начала работы](https://github.com/Azure/azure-quickstart-templates/blob/master/1-CONTRIBUTION-GUIDE/best-practices.md#best-practices)
+| Изучите и соблюдайте рекомендации для шаблонов. | [Шаблоны Resource Manager для быстрого начала работы](https://github.com/Azure/azure-quickstart-templates/blob/master/1-CONTRIBUTION-GUIDE/best-practices.md)
 | | |
 
 ## <a name="version-requirements"></a>Требования к версиям
