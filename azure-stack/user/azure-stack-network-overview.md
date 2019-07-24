@@ -10,23 +10,23 @@ ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: scottnap
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 7eb57c38de01c3ad7de34b96b4c6baf7a4c14ad8
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.openlocfilehash: e5e76c3edcaa93e412d2715d7dc732731ac3d2ce
+ms.sourcegitcommit: b36d078e699c7924624b79641dbe9021af9606ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782619"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67816130"
 ---
 # <a name="introduction-to-azure-stack-networking"></a>Общие сведения о сетевых возможностях Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Azure Stack предоставляет широкий набор сетевых возможностей, которые можно использовать вместе или по отдельности:
+Azure Stack предоставляет разнообразные сетевые возможности, которые можно использовать вместе или по отдельности:
 
 - **Подключение между ресурсами Azure Stack**  
     Свяжите вместе ресурсы Azure в облаке в защищенной частной виртуальной сети.
 - **Подключение к Интернету**  
-    Обменивайтесь данными между ресурсами Azure Stack через Интернет.
+    Обменивайтесь данными с ресурсами Azure Stack через Интернет.
 - **Возможность подключения к локальной среде**  
     Подключайте локальные сети к ресурсам Azure Stack через виртуальную частную сеть в Интернете или выделенное подключение к Azure Stack.
 - **Направление трафика и балансировка нагрузки**  

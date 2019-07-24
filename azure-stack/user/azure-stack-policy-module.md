@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/26/2019
 ms.author: sethm
 ms.lastreviewed: 03/26/2019
-ms.openlocfilehash: 1ae0c24fe5f3a130c7878c8623facada222a0e49
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: fdb17c1f8f7fd183b4542a1a0417b6880a8afe9b
+ms.sourcegitcommit: b36d078e699c7924624b79641dbe9021af9606ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310796"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67816160"
 ---
 # <a name="manage-azure-policy-using-the-azure-stack-policy-module"></a>Управление политикой Azure с использованием модуля политики Azure Stack
 
@@ -33,7 +33,7 @@ ms.locfileid: "64310796"
 1. Установите необходимую версию модуля PowerShell AzureRM, как описано в шаге 1 руководства по [установке PowerShell для Azure Stack](../operator/azure-stack-powershell-install.md).
 2. [Скачайте средства Azure Stack из GitHub](../operator/azure-stack-powershell-download.md).
 3. [Настройте PowerShell для использования с Azure Stack](azure-stack-powershell-configure-user.md).
-4. Импортируйте модуль AzureStack.Policy.psm1:
+4. Импортируйте модуль *AzureStack.Policy.psm1*.
 
 
    ```powershell

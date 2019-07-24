@@ -14,18 +14,18 @@ ms.topic: article
 ms.date: 04/15/2019
 ms.author: mabrigg
 ms.lastreviewed: 12/01/2018
-ms.openlocfilehash: a068576cb907dfc2f7fcc79b1beea08899a2cb2c
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: 0b04a7834218d07706e6314a9c41e0370ff6f6fd
+ms.sourcegitcommit: b36d078e699c7924624b79641dbe9021af9606ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64310496"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67816187"
 ---
 # <a name="how-to-consume-monitoring-data-from-azure-stack"></a>Использование данных мониторинга из Azure Stack
 
 *Область применения: интегрированные системы Azure Stack*
 
-Вы можете найти данные мониторинга в одном расположении с помощью конвейера Azure Monitor, как и Azure Monitor в глобальной среде Azure. Но не все данные мониторинга, найденные в глобальной среде Azure, доступны в Azure Stack. В этой статье вы можете найти краткое изложение различных способов, которыми вы можете программно принимать данные мониторинга из службы.
+Данные мониторинга можно найти в одном расположении с помощью конвейера Azure Monitor, как и данные Azure Monitor в глобальной среде Azure. Но не все данные мониторинга, найденные в глобальной среде Azure, доступны в Azure Stack. В этой статье приводятся сводные сведения о различных способах использования данных мониторинга в Azure Stack.
  
 ## <a name="options-for-data-consumption"></a>Варианты использования данных
 

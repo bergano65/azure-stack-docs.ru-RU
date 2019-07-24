@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/08/2019
+ms.date: 07/16/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/08/2019
-ms.openlocfilehash: 7dba3d791a2ce19429506699ae538c747ed37dbd
-ms.sourcegitcommit: 7ceddf8b67f920d5a5eef4a84e157079a53b3374
+ms.openlocfilehash: 788d0fd6479ab054568d549af2f7a4306a963d3b
+ms.sourcegitcommit: 4139b507d6da98a086929da48e3b4661b70bc4f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66821789"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68299447"
 ---
 # <a name="use-api-version-profiles-with-azure-cli-in-azure-stack"></a>Использование профилей версий API и Azure CLI в Azure Stack
 
@@ -29,7 +29,7 @@ ms.locfileid: "66821789"
 
 ## <a name="prepare-for-azure-cli"></a>Подготовка к использованию Azure CLI
 
-Для использования Azure CLI на компьютере разработки потребуется корневой сертификат ЦС для Azure Stack. Этот сертификат используется для управления ресурсами с помощью CLI.
+Если вы используете Пакет средств разработки Azure Stack, на компьютере разработки потребуется корневой сертификат ЦС для Azure Stack, чтобы использовать Azure CLI. Этот сертификат используется для управления ресурсами с помощью CLI.
 
  - **Корневой сертификат ЦС Azure Stack.** Он нужен, если CLI используется на рабочей станции без ASDK.  
 

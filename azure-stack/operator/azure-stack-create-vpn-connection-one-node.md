@@ -12,17 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/02/2019
+ms.date: 07/16/2019
 ms.author: sethm
 ms.reviewer: scottnap
 ms.lastreviewed: 09/12/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: cee1ca68caa6742eb5d965b53b685746d9057691
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: f34ed3459ad8346860872a4b63a25e214501a2dd
+ms.sourcegitcommit: 4139b507d6da98a086929da48e3b4661b70bc4f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64985387"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68299460"
 ---
 # <a name="create-a-site-to-site-vpn-connection-between-two-virtual-networks-in-different-azure-stack-development-kit-environments"></a>Создание VPN-подключения типа "сеть — сеть" между двумя виртуальными сетями в разных средах Пакета средств разработки Azure Stack
 
@@ -75,7 +75,7 @@ ms.locfileid: "64985387"
 ### <a name="get-the-ip-address-of-the-external-adapter-of-the-nat-vm"></a>Получение IP-адреса внешнего адаптера виртуальной машины NAT
 
 1. Войдите в систему физического компьютера Azure Stack для POC1.
-2. Замените пароль администратора в следующем коде PowerShell собственным, а затем выполните код в узле POC:
+2. Замените пароль администратора в следующем коде PowerShell собственным, а затем выполните код на узле POC.
 
    ```powershell
    cd \AzureStack-Tools-master\connect
@@ -96,7 +96,7 @@ ms.locfileid: "64985387"
 
 Теперь вы можете создать сетевые ресурсы среды POC1, используемые при настройке шлюзов. Ниже показано, как это сделать на пользовательском портале Azure Stack. Ресурсы можно также создать с помощью кода PowerShell.
 
-![Рабочий процесс создания ресурсов](media/azure-stack-create-vpn-connection-one-node-tp2/image2.png)
+![Рабочий процесс для создания ресурсов](media/azure-stack-create-vpn-connection-one-node-tp2/image2.png)
 
 ### <a name="sign-in-as-a-tenant"></a>Вход в качестве клиента
 
@@ -173,7 +173,7 @@ ms.locfileid: "64985387"
 
 ### <a name="create-a-vm"></a>Создание виртуальной машины
 
-Чтобы проверять данные, проходящие через VPN-подключение, потребуются виртуальные машины, которые отправляют данные в Пакет средств разработки Azure Stack и получают их оттуда. Создайте виртуальную машину в POC1, а затем поместите ее в подсеть виртуальной машины в своей виртуальной сети.
+Чтобы проверять данные, проходящие через VPN-подключение, потребуются виртуальные машины, которые отправляют данные в Пакет средств разработки Azure Stack и получают их оттуда. Создайте виртуальную машину на POC1, а затем поместите ее в подсеть виртуальной машины в своей виртуальной сети.
 
 1. Выберите **+ Создать ресурс** на портале Azure.
 2. Щелкните **Marketplace**, а затем выберите **Вычисление**.
@@ -274,8 +274,6 @@ ms.locfileid: "64985387"
 
 > [!NOTE]
 > Эта конфигурация требуется только в средах Пакета средств разработки Azure Stack.
->
->
 
 ### <a name="configure-the-nat"></a>Настройка NAT
 

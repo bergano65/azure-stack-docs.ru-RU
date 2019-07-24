@@ -10,23 +10,23 @@ ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: tutorial
+ms.topic: solution
 ms.date: 06/20/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 06/20/2019
-ms.openlocfilehash: 77d0b7c856e594e7e97ad30085419bfac13bd4f7
-ms.sourcegitcommit: 104ccafcb72a16ae7e91b154116f3f312321cff7
+ms.openlocfilehash: aa48e3b40afc841a26f15ce06870d002261c5932
+ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67308798"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68286841"
 ---
-# <a name="tutorial-deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack"></a>Руководство по Развертывание высокодоступного решения MongoDB в Azure и Azure Stack
+# <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack"></a>Развертывание высокодоступного решения MongoDB в Azure и Azure Stack
 
 В этой статье описано, как автоматически развернуть базовый высокодоступный (HA) кластер MongoDB с сайтом аварийного восстановления (DR) в двух средах Azure Stack. Подробные сведения о MongoDB и высоком уровне доступности см. в руководстве по [элементам набора реплик](https://docs.mongodb.com/manual/core/replica-set-members/).
 
-В рамках этого руководства вы создадите пример среды, чтобы выполнить в ней следующее:
+В этом решении вы создадите среду, чтобы затем выполнить в ней следующие действия:
 
 > [!div class="checklist"]
 > - Оркестрация развертывания в двух экземплярах Azure Stack
@@ -36,9 +36,9 @@ ms.locfileid: "67308798"
 
 > [!Tip]  
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
-> Microsoft Azure Stack — это расширение Azure.re. Azure Stack обеспечивает гибкость и высокую скорость внедрения инноваций облачных вычислений в локальной среде. Это единственное гибридное облако, которое позволяет создавать и развертывать гибридные приложения в любой точке мира.  
+> Microsoft Azure Stack — это расширение Azure.re. Azure Stack обеспечивает гибкость и высокую скорость внедрения инноваций облачных вычислений в локальной среде. Только это гибридное облако позволяет создавать и развертывать гибридные приложения в любой точке мира.  
 > 
-> В [рекомендациях по проектированию гибридных приложений](https://aka.ms/hybrid-cloud-applications-pillars) описаны характеристики качественного программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность), которых следует придерживаться при разработке, развертывании и использовании гибридных приложений. Рекомендации помогут оптимизировать разработку гибридных приложений и свести к минимуму проблемы в рабочих средах.
+> В статье [Hybrid cloud design patterns for Azure Stack](azure-stack-edge-pattern-overview.md) (Рекомендации по проектированию гибридных приложений) описаны основные аспекты качественного программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность), которые следует учитывать при разработке, развертывании и использовании гибридных приложений. Эти рекомендации помогут оптимизировать разработку гибридных приложений и предотвратить появление проблем с рабочими средами.
 
 
 

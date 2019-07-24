@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/01/2019
+ms.date: 07/15/2019
 ms.author: sethm
 ms.reviewer: hectorl
-ms.lastreviewed: 07/01/2019
-ms.openlocfilehash: cc348bba064ddb003bbe6a2a06d2694714ad7894
-ms.sourcegitcommit: 068350a79805366e7e6536fb7df85a412bd0be99
+ms.lastreviewed: 07/15/2019
+ms.openlocfilehash: 5330136bd1d4950ace26fa3f232be039c90ab144
+ms.sourcegitcommit: 12aef286fc14ab27ed737a17e2761c38f054b9b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67511277"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67885354"
 ---
 # <a name="azure-stack-1906-update"></a>Обновление 1906 для Azure Stack
 
@@ -128,7 +128,7 @@ ms.locfileid: "67511277"
 
 ## <a name="hotfixes"></a>Исправления
 
-Azure Stack выпускает исправления на регулярной основе. Перед обновлением Azure Stack до версии 1906 обязательно установите последнее исправление Azure Stack для обновления 1905.
+Azure Stack выпускает исправления на регулярной основе. Перед обновлением Azure Stack до версии 1906 обязательно установите последнее исправление Azure Stack для обновления 1905. После обновления установите все [доступные исправления для обновления 1906.](#after-successfully-applying-the-1906-update)
 
 Исправления Azure Stack применимы только к интегрированным системам Azure Stack. Не устанавливайте исправления в пакете ASDK.
 
@@ -144,7 +144,7 @@ Azure Stack выпускает исправления на регулярной 
 После установки этого обновления установите все применимые исправления. Подробные сведения см. в статье [Политика обслуживания Azure Stack](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Исправление Azure Stack 1.1906.2.37](https://support.microsoft.com/help/4511282)
+- [Исправление Azure Stack 1.1906.11.52](https://support.microsoft.com/help/4513119)
 
 ## <a name="automatic-update-notifications"></a>Автоматические уведомления об обновлениях
 
