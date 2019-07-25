@@ -15,12 +15,12 @@ ms.date: 07/15/2019
 ms.reviewer: ppacent
 ms.author: mabrigg
 ms.lastreviewed: 07/15/2019
-ms.openlocfilehash: 681daffabda3525effc1815e6aa6657c9c7c526c
-ms.sourcegitcommit: ca7e6b7b9b27d0d93ee4d5d1eeaf3113bbcea4da
+ms.openlocfilehash: fb49649227cf17356c7d383e6505dd3e1c2c5648
+ms.sourcegitcommit: 159da88a52701679571bbedde1c36b72bbfe32dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68229458"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68380416"
 ---
 # <a name="rotate-secrets-in-azure-stack"></a>Смена секретов в Azure Stack
 
@@ -254,7 +254,7 @@ Remove-PSSession -Session $PEPSession
 
 Когда смена сертификатов будет успешно выполнена, в консоли появится следующее: **Overall action status: Success** (Общее состояние действия: успешно выполнено)
     > [!Note]
-    > If secret rotation fails, follow the instructions in the error message and rerun **Start-SecretRotation** with the  **-Internal** and **-ReRun** parameters.  
+    > If secret rotation fails, follow the instructions in the error message and rerun **Start-SecretRotation** with the  **-Internal** and **-ReRun** parameters.  
 
 ```powershell
 Start-SecretRotation -Internal -ReRun
@@ -271,13 +271,13 @@ Start-SecretRotation -Internal -ReRun
 #### <a name="for-external-secret-rotation"></a>Для смены внешних секретов
 
 ```powershell
-Start-SecretRotation [-PfxFilesPath <string>] [-PathAccessCredential <PSCredential>] [-CertificatePassword <SecureString>]  
+Start-SecretRotation [-PfxFilesPath <string>] [-PathAccessCredential <PSCredential>] [-CertificatePassword <SecureString>]  
 ```
 
 #### <a name="for-internal-secret-rotation"></a>Для смены внутренних секретов
 
 ```powershell
-Start-SecretRotation [-Internal]  
+Start-SecretRotation [-Internal]  
 ```
 
 #### <a name="for-external-secret-rotation-rerun"></a>Для повторной смены внешних секретов
@@ -294,17 +294,17 @@ Start-SecretRotation [-ReRun] [-Internal]
 
 ### <a name="description"></a>ОПИСАНИЕ
 
-Командлет **Start-SecretRotation** сменяет секреты инфраструктуры системы Azure Stack. По умолчанию он сменяет только сертификаты всех конечных точек инфраструктуры внешней сети. При использовании флага -Internal будут сменяться внутренние секреты инфраструктуры. При смене конечных точек инфраструктуры внешней сети командлет **Start-SecretRotation** необходимо выполнить через блок сценария **Invoke-Command** в сеансе с привилегированной конечной точкой среды Azure Stack, переданном в качестве параметра **сеанса**.
+Командлет **Start-SecretRotation** сменяет секреты инфраструктуры системы Azure Stack. По умолчанию он сменяет только сертификаты всех конечных точек инфраструктуры внешней сети. При использовании флага -Internal будут сменяться внутренние секреты инфраструктуры. При смене конечных точек инфраструктуры внешней сети командлет **Start-SecretRotation** необходимо выполнить через блок сценария **Invoke-Command** в сеансе с привилегированной конечной точкой среды Azure Stack, переданном в качестве параметра **сеанса**.
 
 ### <a name="parameters"></a>Параметры
 
 | Параметр | type | Обязательно | Позиция | значение по умолчанию | ОПИСАНИЕ |
 | -- | -- | -- | -- | -- | -- |
-| `PfxFilesPath` | Строка,  | Ложь  | именованная  | Нет  | Путь к общей папке в каталоге **\Certificates**, который содержит все сертификаты конечных точек внешней сети. Требуется только при смене внешних секретов. Конечным каталогом должен быть **\Certificates**. |
-| `CertificatePassword` | SecureString | Ложь  | именованная  | Нет  | Пароль для всех сертификатов, предоставляемых в -PfXFilesPath. Необходимое значение, если PfxFilesPath предоставлен, когда сменяются внешние секреты. |
+| `PfxFilesPath` | Строка,  | Ложь  | именованная  | Нет  | Путь к общей папке в каталоге **\Certificates**, который содержит все сертификаты конечных точек внешней сети. Требуется только при смене внешних секретов. Конечным каталогом должен быть **\Certificates**. |
+| `CertificatePassword` | SecureString | Ложь  | именованная  | Нет  | Пароль для всех сертификатов, предоставляемых в -PfXFilesPath. Необходимое значение, если PfxFilesPath предоставлен, когда сменяются внешние секреты. |
 | `Internal` | Строка, | Ложь | именованная | Нет | Флаг -Internal должен использоваться каждый раз, когда оператор Azure Stack хочет сменить внутренние секреты инфраструктуры. |
-| `PathAccessCredential` | PSCredential | Ложь  | именованная  | Нет  | Учетные данные PowerShell для общего ресурса каталога **\Certificates**, который содержит все сертификаты конечных точек внешней сети. Требуется только при смене внешних секретов.  |
-| `ReRun` | SwitchParameter | Ложь  | именованная  | Нет  | Повторное выполнение необходимо использовать при каждой повторной попытке смены секретов после неудачи. |
+| `PathAccessCredential` | PSCredential | Ложь  | именованная  | Нет  | Учетные данные PowerShell для общего ресурса каталога **\Certificates**, который содержит все сертификаты конечных точек внешней сети. Требуется только при смене внешних секретов.  |
+| `ReRun` | SwitchParameter | Ложь  | именованная  | Нет  | Повторное выполнение необходимо использовать при каждой повторной попытке смены секретов после неудачи. |
 
 ### <a name="examples"></a>Примеры
 
@@ -313,12 +313,12 @@ Start-SecretRotation [-ReRun] [-Internal]
 Ее необходимо выполнять с помощью [привилегированной конечной точки среды](azure-stack-privileged-endpoint.md) Azure Stack.
 
 ```powershell
-PS C:\> Start-SecretRotation -Internal
+PS C:\> Start-SecretRotation -Internal
 ```
 
 Эта команда сменяет все инфраструктурные секреты, предоставляемые внутренней сети Azure Stack.
 
-#### <a name="rotate-only-external-infrastructure-secrets"></a>Смена только секретов внешней инфраструктуры  
+#### <a name="rotate-only-external-infrastructure-secrets"></a>Смена только секретов внешней инфраструктуры  
 
 ```powershell
 # Create a PEP Session
@@ -363,7 +363,7 @@ Invoke-Command -Session $PEPSession -ScriptBlock {
 Remove-PSSession -Session $PEPSession
 ```
 
-Эта команда сменяет все секреты инфраструктуры, предоставляемые во внутренней сети Azure Stack, а также сертификаты TSL, используемые конечными точками инфраструктуры внешней сети Azure Stack. Командлет Start-SecretRotation сменяет все созданные стеком секреты и, так как сертификаты предоставлены, сертификаты внешних конечных точек.  
+Эта команда сменяет все секреты инфраструктуры, предоставляемые во внутренней сети Azure Stack, а также сертификаты TSL, используемые конечными точками инфраструктуры внешней сети Azure Stack. Командлет Start-SecretRotation сменяет все созданные стеком секреты и, так как сертификаты предоставлены, сертификаты внешних конечных точек.  
 
 ## <a name="update-the-baseboard-management-controller-bmc-credential"></a>Обновление учетных данных контроллера управления основной платой (BMC)
 
