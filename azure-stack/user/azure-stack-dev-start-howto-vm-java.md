@@ -9,12 +9,12 @@ ms.date: 04/24/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: 1738d106a0688518f7a739d3fb02ec1b16c2b8b9
-ms.sourcegitcommit: 05a16552569fae342896b6300514c656c1df3c4e
+ms.openlocfilehash: 28d60e8fc5b575cd2fbefee1298220418e4f59a1
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65838369"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68418234"
 ---
 # <a name="deploy-a-java-web-app-to-a-vm-in-azure-stack"></a>Развертывание веб-приложения Java на виртуальной машине в Azure Stack
 
@@ -284,15 +284,16 @@ ms.locfileid: "65838369"
 
     a. Очистите папку *TOMCAT_HOME/webapps*.
 
-    b. Скопируйте свой WAR-файл в папку *TOMCAT_HOME/webapps* (например */opt/tomcat/webapps/*).
+    b. Скопируйте свой WAR-файл в папку *TOMCAT_HOME/webapps* (например */opt/tomcat/webapps/* ).
 
-1.  Tomcat автоматически расширяет и развертывает приложение. Его можно просмотреть с помощью DNS-имени, которое вы создали ранее. Например: 
+1.  Tomcat автоматически расширяет и развертывает приложение. Его можно просмотреть с помощью DNS-имени, которое вы создали ранее. Например:
 
     ```HTTP  
        http://yourmachine.local.cloudapp.azurestack.external:8080/sample
+    ```
+    
+## <a name="next-steps"></a>Дополнительная информация
 
-## Next steps
-
-- Learn more about how to [develop for Azure Stack](azure-stack-dev-start.md).
-- Learn about [common deployments for Azure Stack as IaaS](azure-stack-dev-start-deploy-app.md).
-- To learn the Java programming language and find additional resources for Java, see [Java.com](https://www.java.com).
+- См. дополнительные сведения о [разработке для Azure Stack](azure-stack-dev-start.md).
+- Дополнительные сведения о распространенных сценариях развертывания IaaS для Azure Stack см. [здесь](azure-stack-dev-start-deploy-app.md).
+- Дополнительные сведения о языке программирования Java и дополнительные ресурсы см. на сайте [Java.com](https://www.java.com).

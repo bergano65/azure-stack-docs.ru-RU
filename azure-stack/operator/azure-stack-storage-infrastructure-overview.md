@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: ''
 ms.topic: article
-ms.date: 03/11/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.lastreviewed: 03/11/2019
 ms.reviewer: jiahan
-ms.openlocfilehash: c7ae7f0c8fa510b0f2b55e458266065544e1bd5e
-ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
+ms.openlocfilehash: 4c57cad7a5b002e6c73c0555c450a8103eaf8aa4
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828214"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68417998"
 ---
 # <a name="manage-storage-infrastructure-for-azure-stack"></a>Управление инфраструктурой хранения для Azure Stack
 
@@ -50,7 +50,7 @@ Azure Stack на платформе Windows Server определяет возм
 
 ![Инфраструктура хранения Azure Stack](media/azure-stack-storage-infrastructure-overview/image3.png)
 
-Доступную конфигурацию хранилища можно узнать у партнера OEM Azure Stack (https://azure.microsoft.com/overview/azure-stack/partners/)).
+Доступную конфигурацию хранилища можно узнать у партнера OEM Azure Stack (https://azure.microsoft.com/overview/azure-stack/partners/) ).
 
 > [!Note]  
 > Устройство Azure Stack может поставляться в гибридном развертывании с дисками HDD и SSD (или NVMe). Но более быстродействующие диски будут использоваться для кэширования, а все остальные диски — в качестве дисков емкости в виде пула. Данные клиента (большие двоичные объекты, таблицы, очереди и диски) будут размещены на дисках емкости. Таким образом, предоставление дисков категории "Премиум" или выбор типа учетной записи хранения категории "Премиум" не означает, что объекты гарантированно будут размещены на дисках SSD или NVMe и получат более высокую производительность.

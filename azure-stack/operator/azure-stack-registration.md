@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/16/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: 94eb107450271722af773bc96bec7dfeb12ff52e
-ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
+ms.openlocfilehash: 3fd84e5c294c2cdcfa942aeaf9c2daf9f9245891
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66836710"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68418210"
 ---
 # <a name="register-azure-stack-with-azure"></a>Регистрация Azure Stack в Azure
 
@@ -473,15 +473,15 @@ Set-AzsRegistration [-PrivilegedEndpointCredential] <PSCredential> [-PrivilegedE
 | Параметр | type | ОПИСАНИЕ |
 |-------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | PrivilegedEndpointCredential | PSCredential | Учетные данные, которые используются для [получения доступа к привилегированной конечной точке](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). Имя пользователя вводится в формате **AzureStackDomain\CloudAdmin**. |
-| PrivilegedEndpoint | Строка | Предварительно настроенная удаленная консоль PowerShell, которая позволяет собирать журналы и выполнять другие задачи после развертывания. Дополнительные сведения см. в разделе [Доступ к привилегированной конечной точке](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). |
+| PrivilegedEndpoint | Строка, | Предварительно настроенная удаленная консоль PowerShell, которая позволяет собирать журналы и выполнять другие задачи после развертывания. Дополнительные сведения см. в разделе [Доступ к привилегированной конечной точке](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). |
 | AzureContext | PSObject |  |
-| ResourceGroupName | Строка |  |
-| ResourceGroupLocation | Строка |  |
-| BillingModel | Строка | Модель выставления счетов, которая используется в подписке. Допустимые значения для этого параметра: Capacity, PayAsYouUse и Development. |
+| ResourceGroupName | Строка, |  |
+| ResourceGroupLocation | Строка, |  |
+| BillingModel | Строка, | Модель выставления счетов, которая используется в подписке. Допустимые значения для этого параметра: Capacity, PayAsYouUse и Development. |
 | MarketplaceSyndicationEnabled | True или False | Определяет, доступна ли функция управления Marketplace на портале. Имеет значение true, если регистрация осуществляется с подключением к Интернету. Имеет значение false, если регистрация осуществляется в среде без подключения к Интернету. При регистрации в среде без подключения к Интернету можно использовать [инструмент автономной синдикации](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario) для скачивания элементов Marketplace. |
 | UsageReportingEnabled | True или False | Azure Stack передает метрики использования по умолчанию. Операторам, использующим оплату за емкость или поддерживающим отключенную среду, необходимо отключить отчеты о потреблении. Допустимые значения для этого параметра: True, False. |
-| AgreementNumber | Строка |  |
-| RegistrationName | Строка | Задайте уникальное имя регистрации, если сценарий регистрации выполняется на нескольких экземплярах Azure Stack с использованием одного идентификатора подписки Azure. Этот параметр имеет значение по умолчанию **AzureStackRegistration**. Тем не менее, если задать одно имя для нескольких экземпляров Azure Stack, сценарий завершится ошибкой. |
+| AgreementNumber | Строка, |  |
+| RegistrationName | Строка, | Задайте уникальное имя регистрации, если сценарий регистрации выполняется на нескольких экземплярах Azure Stack с использованием одного идентификатора подписки Azure. Этот параметр имеет значение по умолчанию **AzureStackRegistration**. Тем не менее, если задать одно имя для нескольких экземпляров Azure Stack, сценарий завершится ошибкой. |
 
 ### <a name="get-azsregistrationtoken"></a>Get-AzsRegistrationToken
 
@@ -495,14 +495,14 @@ Get-AzsRegistrationToken [-PrivilegedEndpointCredential] <PSCredential> [-Privil
 | Параметр | type | ОПИСАНИЕ |
 |-------------------------------|--------------|-------------|
 | PrivilegedEndpointCredential | PSCredential | Учетные данные, которые используются для [получения доступа к привилегированной конечной точке](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). Имя пользователя вводится в формате **AzureStackDomain\CloudAdmin**. |
-| PrivilegedEndpoint | Строка |  Предварительно настроенная удаленная консоль PowerShell, которая позволяет собирать журналы и выполнять другие задачи после развертывания. Дополнительные сведения см. в разделе [Доступ к привилегированной конечной точке](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). |
+| PrivilegedEndpoint | Строка, |  Предварительно настроенная удаленная консоль PowerShell, которая позволяет собирать журналы и выполнять другие задачи после развертывания. Дополнительные сведения см. в разделе [Доступ к привилегированной конечной точке](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). |
 | AzureContext | PSObject |  |
-| ResourceGroupName | Строка |  |
-| ResourceGroupLocation | Строка |  |
-| BillingModel | Строка | Модель выставления счетов, которая используется в подписке. Допустимые значения для этого параметра: Capacity, PayAsYouUse и Development. |
+| ResourceGroupName | Строка, |  |
+| ResourceGroupLocation | Строка, |  |
+| BillingModel | Строка, | Модель выставления счетов, которая используется в подписке. Допустимые значения для этого параметра: Capacity, PayAsYouUse и Development. |
 | MarketplaceSyndicationEnabled | True или False |  |
 | UsageReportingEnabled | True или False | Azure Stack передает метрики использования по умолчанию. Операторам, использующим оплату за емкость или поддерживающим отключенную среду, необходимо отключить отчеты о потреблении. Допустимые значения для этого параметра: True, False. |
-| AgreementNumber | Строка |  |
+| AgreementNumber | Строка, |  |
 
 ## <a name="registration-failures"></a>Ошибки регистрации
 

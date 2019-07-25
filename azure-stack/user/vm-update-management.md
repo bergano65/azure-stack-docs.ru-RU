@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 03/20/2019
-ms.openlocfilehash: fc5466880c7340f5e9a79b7ece79663d12c9a598
-ms.sourcegitcommit: 75b13158347963063b7ee62b0ec57894b542c1be
+ms.openlocfilehash: 1e43f5df97ff91e7117759027499ffa6cd0df7c8
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749014"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68418252"
 ---
 # <a name="azure-stack-vm-update-and-management"></a>Обновление и администрирование виртуальной машины Azure Stack
 Для управления виртуальными машинами Windows и Linux, развернутыми с помощью Azure Stack, можно использовать следующие функции решения службы автоматизации Azure.
@@ -137,7 +137,3 @@ Azure Monitor для виртуальных машин отслеживает в
  
 ## <a name="next-steps"></a>Дополнительная информация
 [Оптимизация производительности SQL Server](azure-stack-sql-server-vm-considerations.md)
-
-
-
-

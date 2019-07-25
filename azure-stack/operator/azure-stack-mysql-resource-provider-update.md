@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/29/2019
+ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: a81b1f0dae233adc29437bc88a82e4560fc36f10
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.openlocfilehash: 6513138226bf60d37f7f2f541d8d00dcf8d87073
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617898"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68417433"
 ---
 # <a name="update-the-mysql-resource-provider"></a>Обновление поставщика ресурсов MySQL 
 
@@ -59,8 +59,8 @@ ms.locfileid: "65617898"
 | **DefaultSSLCertificatePassword** | Пароль для PFX-файла сертификата. | _Обязательный_ | 
 | **MaxRetryCount** | Количество повторов каждой операции в случае сбоя.| 2 | 
 | **RetryDuration** | Время ожидания между повторными попытками в секундах. | 120 | 
-| **Удаление** | Удаляет поставщик ресурсов и все связанные с ним ресурсы (см. примечания ниже). | Нет  | 
-| **DebugMode** | Отключает автоматическую очистку в случае сбоя. | Нет  | 
+| **Удаление** | Удаляет поставщик ресурсов и все связанные с ним ресурсы (см. примечания ниже). | Нет | 
+| **DebugMode** | Отключает автоматическую очистку в случае сбоя. | Нет | 
 | **AcceptLicense** | Пропускает запрос на принятие условий лицензии GPL.  (https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) | | 
 
 ## <a name="update-script-example"></a>Обновление примера сценария
