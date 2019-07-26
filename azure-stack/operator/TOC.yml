@@ -15,7 +15,13 @@
         - name: Контрольный список для применения обновлений
           href: azure-stack-release-notes-checklist.md
         - name: обновления для системы безопасности;
-          href: azure-stack-release-notes-security-updates-1906.md
+          href: azure-stack-release-notes-security-updates-1907.md
+        - name: Обновление 1907
+          items:
+            - name: Заметки о выпуске
+              href: azure-stack-release-notes-1907.md
+            - name: Известные проблемы
+              href: azure-stack-release-notes-known-issues-1907.md
         - name: Обновление 1906
           items:
             - name: Заметки о выпуске
@@ -34,8 +40,6 @@
               href: azure-stack-release-notes-1904.md
             - name: Известные проблемы
               href: azure-stack-release-notes-known-issues-1904.md
-        - name: Обновление 1903
-          href: azure-stack-update-1903.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -235,6 +239,8 @@
       items:
         - name: Обзор Marketplace
           href: azure-stack-marketplace.md
+        - name: Изменения Marketplace
+          href: azure-stack-marketplace-changes.md
         - name: Скачивание элементов Marketplace
           href: azure-stack-download-azure-marketplace-item.md
         - name: Элементы Microsoft Azure Marketplace для Azure Stack
@@ -409,16 +415,26 @@
           href: azure-stack-backup-reference.md
     - name: Получение поддержки
       items:
-        - name: Справка и поддержка
-          href: azure-stack-help-and-support-overview.md
-        - name: Устранение неполадок
+        - name: Портал справки и поддержки
           items:
-            - name: Известные проблемы
-              href: azure-stack-troubleshooting.md
-            - name: Диагностика в Azure Stack
-              href: azure-stack-diagnostics.md
-            - name: Проверка для Azure Stack
-              href: azure-stack-diagnostic-test.md
+            - name: Обзор
+              href: azure-stack-help-and-support-overview.md
+            - name: Сбор журналов диагностики
+              items:
+                - name: Обзор
+                  href: azure-stack-diagnostic-log-collection-overview.md
+                - name: Автоматический сбор
+                  items:
+                    - name: Настройка автоматического сбора
+                      href: azure-stack-configure-automatic-diagnostic-log-collection.md
+                    - name: Рекомендации
+                      href: azure-stack-best-practices-automatic-diagnostic-log-collection.md
+                - name: Сбор по запросу
+                  href: azure-stack-configure-on-demand-diagnostic-log-collection.md
+        - name: Проверка для Azure Stack
+          href: azure-stack-diagnostic-test.md
+        - name: Известные проблемы
+          href: azure-stack-troubleshooting.md
 - name: Справочные материалы
   items:
     - name: PowerShell для Azure Stack
