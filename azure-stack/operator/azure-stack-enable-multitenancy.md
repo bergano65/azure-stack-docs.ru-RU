@@ -15,12 +15,12 @@ ms.date: 06/10/2019
 ms.author: patricka
 ms.reviewer: bryanr
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 8547c1aea70d7b72538b5a681e7c8dd4b4d10a02
-ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
+ms.openlocfilehash: d8fbcba9a635d47927b1d6eb08336e0959704cfd
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828300"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68417176"
 ---
 # <a name="multi-tenancy-in-azure-stack"></a>Мультитенантность в Azure Stack
 
@@ -108,9 +108,9 @@ Register-AzSWithMyDirectoryTenant `
 
 ### <a name="direct-users-to-sign-in"></a>Информирование пользователей о возможности входа
 
-Итак, вы с Марией завершили все действия по подключению ее каталога, и теперь она может сообщить пользователям Fabrikam сведения о процедуре входа в ваш каталог.  Пользователи Fabrikam (то есть пользователи с суффиксом fabrikam.onmicrosoft.com) войти через страницу https://portal.local.azurestack.external.  
+Итак, вы с Марией завершили все действия по подключению ее каталога, и теперь она может сообщить пользователям Fabrikam сведения о процедуре входа в ваш каталог.  Пользователи Fabrikam (с суффиксом fabrikam.onmicrosoft.com) могут использовать для входа URL-адрес https\://portal.local.azurestack.external.  
 
-Всем [внешним участникам](/azure/role-based-access-control/rbac-and-directory-admin-roles) каталога Fabrikam (без суффикса fabrikam.onmicrosoft.com, но включенным в каталог Fabrikam) Мария предоставит другой URL-адрес для входа: https://portal.local.azurestack.external/fabrikam.onmicrosoft.com.  Если они не воспользуются этим URL-адресом, то они будут перенаправлены в каталог по умолчанию (Fabrikam) и получат сообщение об ошибке с указанием того, что администратор не дал согласия.
+Для всех [внешних субъектов](/azure/role-based-access-control/rbac-and-directory-admin-roles) в каталоге Fabrikam (без суффикса fabrikam.onmicrosoft.com, но включенных в каталог Fabrikam) Мария предоставит другой URL-адрес для входа: https\://portal.local.azurestack.external/fabrikam.onmicrosoft.com.  Если они не воспользуются этим URL-адресом, то они будут перенаправлены в каталог по умолчанию (Fabrikam) и получат сообщение об ошибке с указанием того, что администратор не дал согласия.
 
 ## <a name="disable-multi-tenancy"></a>Отключение поддержки мультитенантности
 

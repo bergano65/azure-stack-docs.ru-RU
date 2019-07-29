@@ -15,12 +15,12 @@ ms.date: 01/14/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 47a0fd72da842cc4d2f73372870c561f2d88e48d
-ms.sourcegitcommit: 2a4cb9a21a6e0583aa8ade330dd849304df6ccb5
+ms.openlocfilehash: ba6eb236086fe9ba0d3ee37d35e1ac69c8ee7224
+ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68286940"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68418160"
 ---
 # <a name="create-a-geo-distributed-app-solution-to-direct-traffic-with-azure-and-azure-stack"></a>Создание географически распределенного приложения для перенаправления трафика в Azure и Azure Stack
 
@@ -60,7 +60,7 @@ ms.locfileid: "68286940"
 
 Прежде чем создавать распределенную топологию, следует собрать следующие сведения:
 
--   **Личный домен приложения.** Какое имя личного домена клиенты будут использовать для доступа к приложению? В нашем примере используется имя личного домена *www.scalableasedemo.com*
+-   **Личный домен приложения.** Какое имя личного домена клиенты будут использовать для доступа к приложению? В нашем примере используется имя личного домена *www\.scalableasedemo.com*.
 
 -   **Домен диспетчера трафика.** При создании [профиля диспетчера трафика Azure](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-profiles) нужно выбрать доменное имя. При регистрации записи домена, используемой диспетчером трафика, к этому имени будет добавлен суффикс *trafficmanager.net*. В нашем примере приложения используется имя *scalable-ase-demo*, поэтому полное имя домена, управляемое диспетчером трафика, имеет вид *scalable-ase-demo.trafficmanager.net*.
 
@@ -274,7 +274,7 @@ Azure DevOps и Azure DevOps Server предоставляют конвейер 
 
 -   Обновите файл зоны DNS для соответствующего домена, добавив предоставленную службой Azure AD DNS-запись.
 
-Например, чтобы добавить записи DNS для northwindcloud.com и www.northwindcloud.com, настройте параметры DNS для корневого домена northwindcloud.com.
+Например, чтобы добавить записи DNS для northwindcloud.com и www\.northwindcloud.com, настройте параметры DNS для корневого домена northwindcloud.com.
 
 > [!Note]  
 >  Доменное имя можно приобрести через [портал Azure](https://docs.microsoft.com/azure/app-service/manage-custom-dns-buy-domain). Чтобы сопоставить настраиваемое DNS-имя с веб-приложением, его уровень [плана службы приложений](https://azure.microsoft.com/pricing/details/app-service/) должен быть платным (**Общий**, **Базовый**, **Стандартный** или **Премиум**).

@@ -1,6 +1,6 @@
 ---
-title: Использование средства проверки шаблонов для Azure Stack | Документация Майкрософт
-description: Проверка шаблонов на пригодность к развертыванию в Azure Stack
+title: Использование средства проверки шаблонов в Azure Stack | Документация Майкрософт
+description: Проверьте свои шаблоны для развертывания в Azure Stack с помощью средства проверки шаблонов.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -16,22 +16,21 @@ ms.date: 06/11/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 3cba34e2748d00ebb886e7122ce1dd7151325c85
-ms.sourcegitcommit: 07c51a03f07a6a3ee2721aa942d31a7a4c6a339b
+ms.openlocfilehash: 30513e279b406561fd2bcf88f9119807b371e4a1
+ms.sourcegitcommit: 72d45bb935db0db172d4d7c37d8e48e79e25af64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67028281"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68376785"
 ---
-# <a name="check-your-templates-for-azure-stack-with-the-template-validation-tool"></a>Проверьте свои шаблоны для Azure Stack с помощью средства проверки шаблонов.
-
+# <a name="use-the-template-validation-tool-in-azure-stack"></a>Использование средства проверки шаблонов в Azure Stack
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-С помощью средства проверки шаблонов вы можете проверить, готовы ли [шаблоны](azure-stack-arm-templates.md) Azure Resource Manager к развертыванию в Azure Stack. Средство проверки шаблона предоставляется в составе средств Azure Stack. Чтобы скачать средства Azure Stack с GitHub, выполните действия, описанные в [здесь](../operator/azure-stack-powershell-download.md).
+С помощью средства проверки шаблонов вы можете проверить, готовы ли [шаблоны](azure-stack-arm-templates.md) Azure Resource Manager к развертыванию в Azure Stack. Средство проверки шаблонов предоставляется в составе инструментов Azure Stack. Чтобы скачать средства Azure Stack с GitHub, выполните действия, описанные в [здесь](../operator/azure-stack-powershell-download.md).
 
 ## <a name="overview"></a>Обзор
 
-Чтобы проверить шаблон, сначала нужно создать файл возможностей облака, а затем запустить средство проверки. Можно использовать приведенные ниже модули PowerShell с помощью инструментов Azure Stack.
+Чтобы проверить шаблон, сначала нужно создать файл возможностей облака, а затем запустить средство проверки. Можно использовать приведенные ниже модули PowerShell из набора инструментов Azure Stack.
 
 - В папке **CloudCapabilities**: `AzureRM.CloudCapabilities.psm1` создает JSON-файл со списком возможностей облака, где перечисляются доступные в облаке Azure Stack службы и версии.
 - В папке **TemplateValidator**: `AzureRM.TemplateValidator.psm1` использует JSON-файл облачных возможностей для проверки шаблонов на возможность развертывания в Azure Stack.
@@ -43,7 +42,7 @@ ms.locfileid: "67028281"
 >[!NOTE]
 > При обновлении интегрированной системы и добавлении новых служб или расширений виртуальной машины следует еще раз запустить этот модуль.
 
-1. Убедитесь, что у вас есть подключение к Azure Stack. Эти шаги можно выполнить на узле пакета средств разработки Azure Stack или на рабочей станции, подключенной через [VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn).
+1. Убедитесь, что у вас есть подключение к Azure Stack. Эти шаги можно выполнить на узле Пакета средств разработки Azure Stack (ASDK) или на рабочей станции, подключенной через [VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn).
 2. Импортируйте модуль PowerShell **AzureRM.CloudCapabilities**.
 
     ```powershell
@@ -95,7 +94,7 @@ ms.locfileid: "67028281"
 
 ### <a name="examples"></a>Примеры
 
-Этот пример проверяет все [шаблоны быстрого запуска Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates), скачанные в локальное хранилище. Пример также проверяет размеры и расширения виртуальной машины на соответствие возможностям пакета средств разработки Azure Stack.
+Этот пример проверяет все [шаблоны быстрого запуска Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates), скачанные в локальное хранилище. Пример также проверяет размеры и расширения виртуальной машины на соответствие возможностям Пакета средств разработки Azure Stack.
 
 ```powershell
 test-AzureRMTemplate -TemplatePath C:\AzureStack-Quickstart-Templates `

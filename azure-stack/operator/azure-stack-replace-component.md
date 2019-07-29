@@ -11,21 +11,35 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/11/2019
-ms.author: mabrigg
-ms.lastreviewed: 12/06/2018
-ms.openlocfilehash: 0e1f379b651d022b2c698777a7d8708ff33bf76f
-ms.sourcegitcommit: cf9440cd2c76cc6a45b89aeead7b02a681c4628a
+ms.date: 07/18/2019
+ms.author: thoroet
+ms.lastreviewed: 07/18/2019
+ms.openlocfilehash: 4cb8da451743bc6a8e15c57aacf28f0aa83258c9
+ms.sourcegitcommit: 4f3e161e7632c8a6e3d41946b09f22b5bdb08d36
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66469149"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68413151"
 ---
 # <a name="replace-a-hardware-component-on-an-azure-stack-scale-unit-node"></a>Замена компонента оборудования на узле единицы масштабирования Azure Stack
 
 *Область применения: интегрированные системы Azure Stack*
 
 В этой статье описывается общий процесс замены компонентов оборудования, не поддерживающих оперативную замену. Фактические шаги по замене варьируются в зависимости от поставщика изготовителя оборудования (OEM). Подробные инструкции, относящиеся к вашей интегрированной системе Azure Stack, приведены в документации поставщика по элементам, заменяемым в условиях эксплуатации (FRU).
+
+> [!CAUTION]  
+> Согласование встроенного ПО является критически важным для успешного выполнения операции, описанной в этой статье. Если данный шаг пропустить, это может привести к нестабильной работе системы, снижению производительности, нарушениям безопасности или может помешать Azure Stack автоматизировать развертывание операционной системы. При замене оборудования всегда следует обращаться к документации вашего партнера, предоставляющего оборудование, чтобы гарантировать, что применяемое встроенное ПО соответствует версии OEM, отображаемой на [портале администрирования Azure Stack](azure-stack-updates.md).
+
+| Партнер по оборудованию | Регион | URL-адрес |
+|------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Cisco | Все | [Руководство по эксплуатации интегрированной системы Cisco для Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Заметки о выпуске интегрированной системы Cisco для Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
+| Dell EMC | Все | [Облако для Microsoft Azure Stack 14G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Облако для Microsoft Azure Stack 13G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
+| Fujitsu | Япония | [Служба технической поддержки Fujitsu (требуется учетная запись и имя для входа)](https://eservice.fujitsu.com/supportdesk-web/) |
+|  | Европа, Ближний Восток и Африка | [Fujitsu: поддержка продуктов и систем ИТ](https://support.ts.fujitsu.com/IndexContact.asp?lng=COM&ln=no&LC=del) |
+|  | EU | [Сайт MySupport Fujitsu (требуется учетная запись и имя для входа)](https://support.ts.fujitsu.com/IndexMySupport.asp) |
+| HPE | Все | [HPE ProLiant для Microsoft Azure Stack](http://www.hpe.com/info/MASupdates) |
+| Lenovo | Все | [Лучшие рецепты для ThinkAgile SXM](https://datacentersupport.lenovo.com/us/en/solutions/ht505122)
+| Wortmann |  | [Пакет OEM или встроенное ПО](https://drive.terracloud.de/dl/fiTdTb66mwDAJWgUXUW8KNsd/OEM)<br>[Документация по TERRA для Azure Stack (включая FRU)](https://drive.terracloud.de/dl/fiWGZwCySZSQyNdykXCFiVCR/TerraAzSDokumentation)
 
 Ниже перечислены компоненты, не подлежащие оперативной замене:
 
@@ -37,7 +51,7 @@ ms.locfileid: "66469149"
 - диск операционной системы*;
 - диски данных (диски, которые не поддерживают оперативную замену, например карты расширения PCI-e)*.
 
-* Эти компоненты могут поддерживать оперативную замену, но это зависит от конкретной реализации поставщика. Подробные инструкции приведены в документации изготовителя оборудования по элементам, заменяемым в условиях эксплуатации (FRU).
+\* Эти компоненты могут поддерживать оперативную замену, но это зависит от конкретной реализации поставщика. Подробные инструкции приведены в документации изготовителя оборудования по элементам, заменяемым в условиях эксплуатации (FRU).
 
 На блок-схеме ниже показан общий процесс FRU для замены компонентов оборудования, не подлежащих оперативной замене.
 

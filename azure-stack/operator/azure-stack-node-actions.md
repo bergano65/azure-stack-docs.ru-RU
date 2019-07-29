@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 05/16/2019
+ms.date: 07/18/2019
 ms.author: mabrigg
-ms.reviewer: ppacent
-ms.lastreviewed: 01/22/2019
-ms.openlocfilehash: fa0292419a228fcf9bbfef2bbfc2503f4ba5a702
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.reviewer: thoroet
+ms.lastreviewed: 07/18/2019
+ms.openlocfilehash: 7ac25e86be91cf6a2e8384c88c79fe3022b3f00d
+ms.sourcegitcommit: 159da88a52701679571bbedde1c36b72bbfe32dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782340"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68380468"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack"></a>Действия с узлами единицы масштабирования в Azure Stack
 
@@ -62,7 +62,7 @@ ms.locfileid: "65782340"
 | Остановлено | Узел недоступен. |
 | Добавление | Узел активно добавляется в единицу масштабирования. |
 | Восстановление | Восстановление узла активно выполняется. |
-| Обслуживание,  | Узел приостановлен, и нет запущенных активных пользовательских рабочих нагрузок. |
+| Обслуживание, | Узел приостановлен, и нет запущенных активных пользовательских рабочих нагрузок. |
 | Требуется исправление | Обнаружена ошибка, требующая восстановления узла. |
 
 ## <a name="scale-unit-node-actions"></a>Действия для узла единицы масштабирования
@@ -137,6 +137,20 @@ ms.locfileid: "65782340"
 Дополнительные сведения см. в разделе [Enable-AzsScaleUnitNode](https://docs.microsoft.com/powershell/module/azs.fabric.admin/enable-azsscaleunitnode).
 
 ## <a name="repair"></a>Восстановление
+
+> [!CAUTION]  
+> Согласование встроенного ПО является критически важным для успешного выполнения операции, описанной в этой статье. Если данный шаг пропустить, это может привести к нестабильной работе системы, снижению производительности, нарушениям безопасности или может помешать Azure Stack автоматизировать развертывание операционной системы. При замене оборудования всегда следует обращаться к документации вашего партнера, предоставляющего оборудование, чтобы гарантировать, что применяемое встроенное ПО соответствует версии OEM, отображаемой на [портале администрирования Azure Stack](azure-stack-updates.md).<br>
+Дополнительные сведения и ссылки на документацию партнеров доступны в разделе [Замена компонента оборудования на узле единицы масштабирования Azure Stack](azure-stack-replace-component.md).
+
+| Партнер по оборудованию | Регион | URL-адрес |
+|------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Cisco | Все | [Руководство по эксплуатации интегрированной системы Cisco для Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Заметки о выпуске интегрированной системы Cisco для Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
+| Dell EMC | Все | [Облако для Microsoft Azure Stack 14G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Облако для Microsoft Azure Stack 13G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
+| Fujitsu | Япония | [Служба технической поддержки Fujitsu (требуется учетная запись и имя для входа)](https://eservice.fujitsu.com/supportdesk-web/) |
+|  | Европа, Ближний Восток и Африка | [Fujitsu: поддержка продуктов и систем ИТ](https://support.ts.fujitsu.com/IndexContact.asp?lng=COM&ln=no&LC=del) |
+|  |  | [Сайт MySupport Fujitsu (требуется учетная запись и имя для входа)](https://support.ts.fujitsu.com/IndexMySupport.asp) |
+| HPE | Все | [HPE ProLiant для Microsoft Azure Stack](http://www.hpe.com/info/MASupdates) |
+| Lenovo | Все | [Лучшие рецепты для ThinkAgile SXM](https://datacentersupport.lenovo.com/us/en/solutions/ht505122) |
 
 Действие **восстановления** восстанавливает узел. Его следует применять только в следующих сценариях:
  - При полной замене узла (с заменой дисков данных или без нее).

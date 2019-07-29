@@ -6,16 +6,16 @@ author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 05/02/2019
+ms.date: 07/22/2019
 ms.author: mabrigg
 ms.reviewer: wamota
-ms.lastreviewed: 02/06/2019
-ms.openlocfilehash: 7ee47a5dc7344628561521f067a8310a0c8d3347
-ms.sourcegitcommit: 23816ec68f67f3ac51f78de925b7631590743a29
+ms.lastreviewed: 07/22/2019
+ms.openlocfilehash: 85022f074dd494978780d67db8cc14e4c243a49c
+ms.sourcegitcommit: 159da88a52701679571bbedde1c36b72bbfe32dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66835092"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68380456"
 ---
 # <a name="azure-stack-datacenter-integration---publish-endpoints"></a>Интеграция центра обработки данных Azure Stack. Публикация конечных точек
 
@@ -76,11 +76,11 @@ ms.locfileid: "66835092"
 
 |Назначение|URL-адрес назначения|Протокол|порты;|Исходная сеть|
 |---------|---------|---------|---------|---------|
-|Удостоверение|login.windows.net<br>login.microsoftonline.com<br>graph.windows.net<br>https:\//secure.aadcdn.microsoftonline-p.com<br>office.com|HTTP<br>HTTPS|80<br>443|Общедоступный виртуальный IP-адрес — /27<br>Открытая сеть инфраструктуры|
-|Синдикация Marketplace|https:\//management.azure.com<br>https://&#42;.blob.core.windows.net<br>https://*.azureedge.net<br>https://&#42;.microsoftazurestack.com|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
+|Удостоверение|login.windows.net<br>login.microsoftonline.com<br>graph.windows.net<br>https:\//secure.aadcdn.microsoftonline-p.com<br>www.office.com|HTTP<br>HTTPS|80<br>443|Общедоступный виртуальный IP-адрес — /27<br>Открытая сеть инфраструктуры|
+|Синдикация Marketplace|https:\//management.azure.com<br>https://&#42;.blob.core.windows.net<br>https://*.azureedge.net|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
 |Обновления и исправления|https://&#42;.azureedge.net<br>https:\//aka.ms/azurestackautomaticupdate|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
 |Регистрация|https:\//management.azure.com|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
-|Потребление|https://&#42;.microsoftazurestack.com<br>https://*.trafficmanager.net |HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
+|Использование|https://*.trafficmanager.net |HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
 |Защитник Windows|\*.wdcp.microsoft.com<br>\*.wdcpalt.microsoft.com<br>\*.wd.microsoft.com<br>\*.update.microsoft.com<br>\*.download.microsoft.com<br>https:\//www.microsoft.com/pkiops/crl<br>https:\//www.microsoft.com/pkiops/certs<br>https:\//crl.microsoft.com/pki/crl/products<br>https:\//www.microsoft.com/pki/certs<br>https:\//secure.aadcdn.microsoftonline-p.com<br>|HTTPS|80<br>443|Общедоступный виртуальный IP-адрес — /27<br>Открытая сеть инфраструктуры|
 |NTP.|(IP-адрес NTP-сервера, предоставленный для развертывания)|UDP|123|Общедоступный виртуальный IP-адрес — /27|
 |DNS|(IP-адрес DNS-сервера, предоставленный для развертывания)|TCP<br>UDP|53|Общедоступный виртуальный IP-адрес — /27|
@@ -90,6 +90,7 @@ ms.locfileid: "66835092"
 |LDAP GC|Лес AD DS для интеграции Graph|TCP|3268|Общедоступный виртуальный IP-адрес — /27|
 |LDAP GC SSL|Лес AD DS для интеграции Graph|TCP|3269|Общедоступный виртуальный IP-адрес — /27|
 |AD FS|Конечная точка метаданных AD FS для интеграции AD FS|TCP|443|Общедоступный виртуальный IP-адрес — /27|
+|Служба сбора журналов диагностики|URL-адрес SAS для больших двоичных объектов, предоставленный службой хранилища Azure|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
 |     |     |     |     |     |
 
 Исходящие URL-адреса распределяются с помощью диспетчера трафика Azure, чтобы обеспечить наилучшие возможные соединения, основанные на географическом расположении. С помощью распределенных URL-адресов Microsoft может обновлять и изменять конечные точки сервера без влияния на пользователей. Корпорация Майкрософт не предоставляет список IP-адресов для распределенных URL-адресов. Необходимо использовать устройство, которое поддерживает фильтрацию по URL-адресу, а не IP-адресу.
