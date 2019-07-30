@@ -97,6 +97,8 @@
               href: azure-stack-version-profiles-ruby.md
             - name: Python
               href: azure-stack-version-profiles-python.md
+            - name: Node.js
+              href: azure-stack-version-profile-nodejs.md
             - name: 'API поставщика ресурсов, поддерживаемые в профилях'
               href: azure-stack-profiles-azure-resource-manager-versions.md
     - name: Использование поставщиков ресурсов
