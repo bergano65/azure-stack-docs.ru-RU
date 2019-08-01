@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.date: 07/23/2019
-ms.topic: solution
+ms.topic: conceptual
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/07/2018
-ms.openlocfilehash: 86b7fca6b9d2b9aaa322849f2490f83851a80940
-ms.sourcegitcommit: d8981947a4bf7752d608e21e6fe0bf2ccd4825d2
+ms.openlocfilehash: 5357fcf548971e0962bec41ad9238bf88290531c
+ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68462641"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68603104"
 ---
 # <a name="deploy-apps-to-azure-and-azure-stack"></a>Развертывание приложений в Azure и Azure Stack
 
@@ -82,7 +82,7 @@ Microsoft Azure Stack — это расширение Azure, которое о�
   Любой пользователь с учетными данными администратора Azure AD или служб федерации Active Directory (AD FS) может развернуть ASDK. Поставщик вычислительной техники или партнер-поставщик оборудования Azure может развернуть рабочую среду Azure Stack. Для выполнения следующих задач настройки Azure Stack необходимо иметь права оператора Azure Stack. 
   
   - развертывание Службы приложений Azure;
-  - создание планов и предложений;
+  - разработка планов и предложений.
   - создание подписки клиента;
   - применение образа Windows Server 2016.
   

@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 04/25/2019
+ms.date: 07/30/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: 06c462ab46ce6bbae8d5c3bd6fcb757e14417edf
-ms.sourcegitcommit: 2a4321a9cf7bef2955610230f7e057e0163de779
+ms.lastreviewed: 07/30/2019
+ms.openlocfilehash: 404f6b889f921e547f8c44c7b4219b232819c322
+ms.sourcegitcommit: 7961fda0bfcdd3db8cf94a8c405b5c23a23643af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65617626"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68616458"
 ---
 # <a name="set-up-a-development-environment-in-azure-stack"></a>Настройка среды разработки в Azure Stack 
 
@@ -57,15 +57,16 @@ Azure Stack использует версию Azure Resource Manager для Azur
 
 - [.NET и C#](azure-stack-version-profiles-net.md)
 - [Java](azure-stack-version-profiles-java.md)
-- [Go](azure-stack-version-profiles-go.md)
+- [GO](azure-stack-version-profiles-go.md)
 - [Ruby](azure-stack-version-profiles-ruby.md)
 - [Python](azure-stack-version-profiles-python.md)
+- [Node.js](azure-stack-version-profile-nodejs.md)
 
 ## <a name="before-you-start"></a>Перед началом работы 
 
 Прежде чем начать настройку среды, потребуется следующее. 
 
-- Доступ к порталу пользователя Azure Stack. 
+- Войти на портал пользователя Azure Stack. 
 - Имя клиента. 
 - Определить используемый тип диспетчера удостоверений — Azure Active Directory (Azure AD) или службы федерации Active Directory (AD FS). 
 
@@ -99,7 +100,7 @@ Azure Stack использует версию Azure Resource Manager для Azur
 
      - [.NET и C#](azure-stack-version-profiles-net.md) 
      - [Java](azure-stack-version-profiles-java.md) 
-     - [Go](azure-stack-version-profiles-go.md) 
+     - [GO](azure-stack-version-profiles-go.md) 
      - [Ruby](azure-stack-version-profiles-python.md) 
      - [Python](azure-stack-version-profiles-python.md) 
 
@@ -128,7 +129,7 @@ Azure Stack использует версию Azure Resource Manager для Azur
 
      - [.NET и C#](azure-stack-version-profiles-net.md) 
      - [Java](azure-stack-version-profiles-java.md) 
-     - [Go](azure-stack-version-profiles-go.md) 
+     - [GO](azure-stack-version-profiles-go.md) 
      - [Ruby](azure-stack-version-profiles-python.md) 
      - [Python](azure-stack-version-profiles-python.md) 
 
@@ -157,7 +158,7 @@ Azure Stack использует версию Azure Resource Manager для Azur
 
      - [.NET и C#](azure-stack-version-profiles-net.md) 
      - [Java](azure-stack-version-profiles-java.md) 
-     - [Go](azure-stack-version-profiles-go.md)
+     - [GO](azure-stack-version-profiles-go.md)
      - [Ruby](azure-stack-version-profiles-python.md) 
      - [Python](azure-stack-version-profiles-python.md) 
 

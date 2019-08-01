@@ -16,12 +16,12 @@ ms.date: 05/30/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 05/30/2019
-ms.openlocfilehash: d3a50288464b81104ddd1dd032f93128fde43eae
-ms.sourcegitcommit: 593d40bccf1b2957a763017a8a2d7043f8d8315c
+ms.openlocfilehash: 71ad5812472534ae4a7e3dc34feabf7a1a02faa0
+ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67152522"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68494054"
 ---
 # <a name="azure-stack-1904-update"></a>Обновление 1904 для Azure Stack
 
@@ -77,7 +77,7 @@ ms.locfileid: "67152522"
 - Увеличен объем сообщений системного журнала за счет фильтрации ненужных событий и предоставления параметра конфигурации для выбора желаемого уровня серьезности пересылаемых сообщений. Дополнительные сведения о том, как настроить уровень серьезности см. в разделе [Интеграция центра обработки данных Azure Stack. Перенаправление системного журнала](azure-stack-integrate-security.md).
 
 <!--this applied to Bug 1473487 -->
-- Добавлена новая возможность для командлета **Get-AzureStackLog** с помощью внедрения дополнительного параметра `-OutputSASUri`. Теперь вы можете собирать журналы Azure Stack из своей среды и сохранять их в указанном контейнере больших двоичных объектов хранилища Azure. Дополнительные сведения см. в статье [Диагностики Azure Stack](azure-stack-diagnostics.md#examples).
+- Добавлена новая возможность для командлета **Get-AzureStackLog** с помощью внедрения дополнительного параметра `-OutputSASUri`. Теперь вы можете собирать журналы Azure Stack из своей среды и сохранять их в указанном контейнере больших двоичных объектов хранилища Azure. Дополнительные сведения см. в статье [Диагностики Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#examples).
 
 - Добавлена новая проверка памяти в группу **Test-AzureStack** `UpdateReadiness`, которая проверяет, достаточно ли в стеке памяти для успешного завершения обновления.
 
@@ -94,7 +94,7 @@ ms.locfileid: "67152522"
 - Усовершенствования идемпотентности плана действия резервного копирования инфраструктуры.
 
 <!--Bug/Task 3139609 -->
-- Улучшения сбора журналов Azure Stack. Эти улучшения сокращают время, необходимое для получения набора журналов. Кроме того командлет [Get-AzureStackLog](azure-stack-diagnostics.md#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system) больше не создает журналы по умолчанию для роли OEM. Необходимо выполнить командлет [Invoke AzureStackOnDemandLog](azure-stack-diagnostics.md#invoke-azurestackondemandlog), указав роли для получения журналов OEM. Дополнительные сведения см. в статье [Диагностики Azure Stack](azure-stack-diagnostics.md#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system).
+- Улучшения сбора журналов Azure Stack. Эти улучшения сокращают время, необходимое для получения набора журналов. Кроме того командлет [Get-AzureStackLog](azure-stack-configure-on-demand-diagnostic-log-collection.md#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system) больше не создает журналы по умолчанию для роли OEM. Необходимо выполнить командлет [Invoke AzureStackOnDemandLog](azure-stack-configure-on-demand-diagnostic-log-collection.md#invoke-azurestackondemandlog), указав роли для получения журналов OEM. Дополнительные сведения см. в статье [Диагностики Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system).
 
 - Azure Stack теперь отслеживает URL-адрес данных федерации, предоставленный для интеграции центра обработки данных с ADFS. Это повышает надежность во время смены секретов экземпляра клиента AD FS или фермы.
 

@@ -15,12 +15,12 @@ ms.date: 06/27/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 57c546ec3583c9e04594e4da542a3c2ce3f72c62
-ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
+ms.openlocfilehash: 68bf47ab2a0842b0aeeae07030272e7106a63220
+ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67419917"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68494116"
 ---
 # <a name="usage-connectivity-errors"></a>Использование. Неполадки с подключением
 
@@ -55,7 +55,7 @@ ms.locfileid: "67419917"
 | Не авторизовано               | Компонент "Мост Azure" не может отправить данные в службу контроля использования Azure, так как служба Azure не может проверить подлинность моста Azure Stack. | Проверьте, не изменился ли ресурс регистрации, и, если это так, повторно зарегистрируйте экземпляр Azure Stack. <br><br> В некоторых случаях проблема синхронизации времени между Azure Stack и Azure AD может вызвать этот сбой. В этом случае проверьте, синхронизировано ли время на виртуальных машинах XRP в Azure Stack с Azure AD. |
 |                            |                                                                                                                                                   |                                                                                                                                                                                                                                                                                                    |
 
-Кроме того, возможно, потребуется предоставить файлы журналов для компонентов "Мост Azure", WAS и WASPublic с помощью [этих действий](azure-stack-diagnostics.md#log-collection-tool).
+Кроме того, возможно, потребуется предоставить файлы журналов для компонентов "Мост Azure", WAS и WASPublic с помощью [этих действий](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
