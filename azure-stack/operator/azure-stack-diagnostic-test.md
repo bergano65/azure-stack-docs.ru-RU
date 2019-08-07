@@ -14,12 +14,12 @@ ms.date: 06/26/2019
 ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: a582e1d9abbd690a62f27f6bcaee8c2dd2e6be4b
-ms.sourcegitcommit: 90ed5aa051d0756b2432c8aca0e2232c8ec493a4
+ms.openlocfilehash: da89c973637042b18410db9dc3dc618bfbde12d5
+ms.sourcegitcommit: d96adbb821175167f6a4c8f3aba305981d7e7c3e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68239443"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685522"
 ---
 # <a name="validate-azure-stack-system-state"></a>Проверка состояния системы Azure Stack
 
@@ -48,7 +48,7 @@ ms.locfileid: "68239443"
 
    Воспользуйтесь разделами [Рекомендации по настройке параметров](azure-stack-diagnostic-test.md#parameter-considerations) и [Примеры использования](azure-stack-diagnostic-test.md#use-case-examples), чтобы получить дополнительные сведения.
 
-3. Если любой из тестов вернет состояние **FAIL** (Сбой), выполните команду `Get-AzureStackLog`. Инструкции для интегрированной системы см. в статье о [запуске Get-AzureStackLog в интегрированных системах Azure Stack](azure-stack-diagnostics.md#to-run-get-azurestacklog-on-azure-stack-integrated-systems), а инструкции для ASDK — в статье о [запуске Get-AzureStackLog в системе с Пакетом средств разработки Azure Stack](azure-stack-diagnostics.md#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system).
+3. Если любой из тестов вернет состояние **FAIL** (Сбой), выполните команду `Get-AzureStackLog`. Инструкции для интегрированной системы см. в статье о [запуске Get-AzureStackLog в интегрированных системах Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#to-run-get-azurestacklog-on-azure-stack-integrated-systems), а инструкции для ASDK — в статье о [запуске Get-AzureStackLog в системе с Пакетом средств разработки Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system).
 
    Этот командлет собирает журналы, созданные командлетом Test-AzureStack. Нет необходимости собирать журналы или обращаться в службу поддержки пользователей, если тест возвращает состояние **WARN** (ПРЕДУПРЕЖДЕНИЕ).
 
@@ -78,6 +78,7 @@ ms.locfileid: "68239443"
 | Производительность инфраструктуры Azure Stack                  | AzsInfraCapacity                  |
 | Производительность инфраструктуры Azure Stack               | AzsInfraPerformance               |
 | Сводка по роли инфраструктуры Azure Stack              | AzsInfraRoleSummary               |
+| Сетевая инфраструктура Azure Stack                            | AzsNetworkInfra                   |
 | Сводка по API и порталу Azure Stack                   | AzsPortalAPISummary               |
 | События виртуальной машины для единицы масштабирования Azure Stack                     | AzsScaleUnitEvents                |
 | Ресурсы виртуальной машины для единицы масштабирования Azure Stack                  | AzsScaleUnitResources             |
@@ -227,10 +228,20 @@ Test-AzureStack -Include AzsControlPlane, AzsDefenderSummary, AzsHostingInfraSum
   Test-AzureStack -Include AzsBackupShareAccessibility -BackupShareCredential "<PSCredential for backup share>"
   ```
 
+### <a name="run-validation-tool-to-test-network-infrastructure"></a>Запуск средства проверки для тестирования сетевой инфраструктуры 
+
+Этот тест проверяет подключения сетевой инфраструктуры, выполняя обход программно-определяемой сети (SDN) Azure Stack. Он демонстрирует подключение с общедоступного виртуального IP-адреса к настроенным DNS-серверам пересылки, NTP-серверам и конечным точкам аутентификации. Сюда входит подключение к Azure при использовании Azure AD в качестве поставщика удостоверений или к федеративному серверу при использовании AD FS в качестве поставщика удостоверений. 
+
+Добавьте параметр debug, чтобы получить подробные выходные данные команды.
+
+```powershell 
+Test-AzureStack -Include AzsNetworkInfra -Debug
+```
+
 
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о средствах диагностики Azure Stack и ведении журналов проблем см. в статье [Средства диагностики Azure Stack](azure-stack-diagnostics.md).
+Дополнительные сведения о средствах диагностики Azure Stack и ведении журналов проблем см. в статье [Средства диагностики Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep).
 
 Дополнительные сведения об устранении неполадок см. в статье [Устранение неполадок, связанных с Microsoft Azure Stack](azure-stack-troubleshooting.md).

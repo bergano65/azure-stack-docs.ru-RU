@@ -15,12 +15,12 @@ ms.date: 05/16/2019
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: c9e796a4ece453c3cd74bbf9a2fb6996757a0b4e
-ms.sourcegitcommit: 44f1bf6e0bfa85ee14819cad27c9b1de65d375df
+ms.openlocfilehash: 9d088cb128243b0b178e7a317ba05176a59e83c1
+ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67596082"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68494059"
 ---
 # <a name="using-the-privileged-endpoint-in-azure-stack"></a>Использование привилегированной конечной точки в Azure Stack
 
@@ -30,7 +30,7 @@ ms.locfileid: "67596082"
 
 Привилегированную конечную точку можно использовать для следующего:
 
-- выполнение задач низкого уровня, таких как [сбор журналов диагностики](azure-stack-diagnostics.md#log-collection-tool);
+- выполнение задач низкого уровня, таких как [сбор журналов диагностики](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep);
 - выполнение многих задач по интеграции центра обработки данных после развертывания для интегрированных систем, например добавление DNS-серверов после развертывания, настройка интеграции Microsoft Graph, интеграции служб федерации Active Directory (AD FS), смена сертификатов и т. д.;
 - работа со службой поддержки для получения временного доступа высокого уровня для проведения глубокой диагностики интегрированной системы.
 
@@ -154,9 +154,9 @@ ms.locfileid: "67596082"
      - **Пароль**. Введите пароль, который использовался во время установки учетной записи администратора домена AzureStackAdmin.
 
 3. Импорт сеанса привилегированной конечной точки на локальный компьютер
-    ```powershell 
+     ```powershell 
         Import-PSSession $session
-    ```
+   ```
 4. Теперь можно использовать выполнение нажатием клавиши TAB и запускать сценарии обычным образом в локальным сеансе PowerShell, располагая всеми функциями и командлетами привилегированной конечной точки и не снижая уровень безопасности Azure Stack. Вот и все!
 
 
@@ -167,16 +167,16 @@ ms.locfileid: "67596082"
 Чтобы закрыть сеанс конечной точки:
 
 1. Создайте внешний файловый ресурс, доступный для привилегированной конечной точки. В среде комплекта разработки можно просто создать общую папку на узле комплекта разработки.
-2. Запустите командлет 
-    ```powershell
-    Close-PrivilegedEndpoint -TranscriptsPathDestination "\\fileshareIP\SharedFolder" -Credential Get-Credential
-    ```
-где:
+2. Выполните следующий командлет: 
+     ```powershell
+     Close-PrivilegedEndpoint -TranscriptsPathDestination "\\fileshareIP\SharedFolder" -Credential Get-Credential
+     ```
+   Он использует параметры, описанные в следующей таблице.
 
-| Параметр | ОПИСАНИЕ | type | Обязательно |
-|---------|---------|---------|---------|
-| *TranscriptsPathDestination* | Путь к внешней общей папке, который определен как "fileshareIP\sharefoldername" | Строка, | Да|
-| *Учетные данные* | Учетные данные для доступа к общей папке. | SecureString |  Да |
+   | Параметр | ОПИСАНИЕ | type | Обязательно |
+   |---------|---------|---------|---------|
+   | *TranscriptsPathDestination* | Путь к внешней общей папке, который определен как "fileshareIP\sharefoldername" | Строка, | Да|
+   | *Учетные данные* | Учетные данные для доступа к общей папке. | SecureString |   Да |
 
 
 После того как файлы журнала расшифровки успешно переданы в общую папку, они автоматически удаляются из привилегированной конечной точки. 
@@ -187,4 +187,4 @@ ms.locfileid: "67596082"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Azure Stack diagnostic tools](azure-stack-diagnostics.md) (Средства диагностики Azure Stack)
+[Azure Stack diagnostic tools](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep) (Средства диагностики Azure Stack)

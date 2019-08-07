@@ -11,22 +11,37 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/28/2019
+ms.date: 07/25/2019
 ms.author: sethm
 ms.reviewer: misainat
-ms.lastreviewed: 06/28/2019
-ms.openlocfilehash: ba3ad4bf5e5d7f76d5d29e7967944be72e989c27
-ms.sourcegitcommit: 068350a79805366e7e6536fb7df85a412bd0be99
+ms.lastreviewed: 07/25/2019
+ms.openlocfilehash: a2b000f60c5867e557ef5b0621f994ea7ec23913
+ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67511289"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68493782"
 ---
 # <a name="asdk-release-notes"></a>Заметки о выпуске ASDK
 
 Эта статья содержит сведения об изменениях, исправлениях ошибок и известных проблемах в Пакете средств разработки Azure Stack (ASDK). Если вы не знаете, какая версия используется, проверьте ее [с помощью портала](../operator/azure-stack-updates.md#determine-the-current-version).
 
 Будьте в курсе новых возможностей ASDK, подписавшись на [![RSS](./media/asdk-release-notes/feed-icon-14x14.png)](https://docs.microsoft.com/api/search/rss?search=Azure+Stack+Development+Kit+release+notes&locale=en-us#) [веб-канал RSS](https://docs.microsoft.com/api/search/rss?search=Azure+Stack+Development+Kit+release+notes&locale=en-us#).
+
+## <a name="build-11907020"></a>Сборка 1.1907.0.20
+
+### <a name="new-features"></a>новые функции;
+
+- Список новых функций для этого выпуска см. в [этом разделе](../operator/azure-stack-release-notes-1907.md#whats-in-this-update) заметок к выпуску Azure Stack.
+
+<!-- ### Changes -->
+
+### <a name="fixed-and-known-issues"></a>Исправленные и известные проблемы
+
+- При создании ресурсов виртуальной машины с помощью некоторых образов Marketplace развертывание могло не завершаться корректно. В качестве временного решения этой проблемы вы можете щелкнуть ссылку **Скачать шаблон и параметры** на странице **Сводка** и щелкнуть кнопку **Развернуть** в колонке **Шаблон**.
+- Список проблем Azure Stack, которые были исправлены в этом выпуске, см. в [этом разделе](../operator/azure-stack-release-notes-1907.md#fixes) заметок о выпуске Azure Stack.
+- Список известных проблем см. в [этой статье](../operator/azure-stack-release-notes-known-issues-1907.md).
+- Обратите внимание, что [доступные исправления Azure Stack](../operator/azure-stack-release-notes-1907.md#hotfixes) нельзя применять к Azure Stack ASDK.
 
 ## <a name="build-11906030"></a>Сборка 1.1906.0.30
 
@@ -40,7 +55,7 @@ ms.locfileid: "67511289"
 
 ### <a name="fixed-and-known-issues"></a>Исправленные и известные проблемы
 
-- При создании ресурсов виртуальной машины с помощью некоторых образов Marketplace развертывание могло не завершаться корректно. В качестве временного решения этой проблемы вы можете щелкнуть ссылку **Скачать шаблон и параметры** на странице **Сводка** и щелкнуть кнопку **Развернуть** в колонке **Шаблон**. 
+- При создании ресурсов виртуальной машины с помощью некоторых образов Marketplace развертывание могло не завершаться корректно. В качестве временного решения этой проблемы вы можете щелкнуть ссылку **Скачать шаблон и параметры** на странице **Сводка** и щелкнуть кнопку **Развернуть** в колонке **Шаблон**.
 - Список проблем Azure Stack, которые были исправлены в этом выпуске, см. в [этом разделе](../operator/azure-stack-release-notes-1906.md#fixes) заметок о выпуске Azure Stack.
 - Список известных проблем см. в [этой статье](../operator/azure-stack-release-notes-known-issues-1906.md).
 - Обратите внимание, что [доступные исправления Azure Stack](../operator/azure-stack-release-notes-1906.md#hotfixes) нельзя применять к Azure Stack ASDK.
@@ -79,57 +94,9 @@ ms.locfileid: "67511289"
       $servicePrincipal = Invoke-Command -Session $PSSession -ScriptBlock { New-AzureBridgeServicePrincipal -RefreshToken $using:RefreshToken -AzureEnvironment $using:AzureEnvironmentName -TenantId $using:TenantId -TimeoutInSeconds 1800 }
       ```
 
-- Исправлены проблемы подключения VPN, обнаруженные [здесь, в выпуске 1902](#known-issues).
+- Исправлена проблема VPN-подключения, обнаруженная в выпуске 1902.
 
 - Список исправленных проблем для этого выпуска см. в [этом разделе](../operator/azure-stack-release-notes-1904.md#fixes) заметок к выпуску Azure Stack.
 - Список известных проблем см. в [этой статье](../operator/azure-stack-release-notes-known-issues-1904.md).
 - Обратите внимание, что [доступные исправления Azure Stack](../operator/azure-stack-release-notes-1904.md#hotfixes) нельзя применять к Azure Stack ASDK.
 
-## <a name="build-1903"></a>Сборка 1903
-
-В полезные данные обновления 1903 не включен выпуск ASDK.
-
-### <a name="known-issues"></a>Известные проблемы
-
-- Проблема установления VPN-подключения с другого узла в ASDK с помощью действия, описанного в [этой статье](asdk-connect.md). При попытке подключиться к среде ASDK из VPN-клиента вы получите сообщение об ошибке, что **указано неверное имя пользователя или пароль**, даже в том случае, если вы уверены, что используется правильная учетная запись и вы правильно ввели пароль. Проблема заключается не в ваших учетных данных, а скорее в изменениях протокола проверки подлинности, используемого для VPN-подключения в ASDK. Чтобы обойти эту проблему, выполните следующие действия.
-
-   Сначала внесите изменения в протокол проверки подлинности, используемый на стороне сервера ASDK.
-
-   1. RDP к узлу ASDK.
-   2. Откройте сеанс PowerShell с повышенными правами, войдя в систему как AzureStack\AzureStackAdmin c использованием пароля, указанного во время развертывания.
-   3. Выполните следующие команды:
-
-      ```powershell
-      netsh nps set np name = "Connections to Microsoft Routing and Remote Access server" profileid = "0x100a" profiledata = "1A000000000000000000000000000000" profileid = "0x1009" profiledata = "0x5"
-      restart-service remoteaccess -force
-      ```
-
-   Далее измените скрипт подключений на стороне клиента. Самый простой способ сделать это — внести изменения непосредственно в модуль сценария C:\AzureStack-Tools-master\connect\azurestack.connect.psm1.
-
-   1. Измените командлет **Add-AzsVpnConnection**, чтобы изменить параметр `AuthenticationMethod` с `MsChapv2` на `EAP`.
-
-      ```powershell
-      $connection = Add-VpnConnection -Name $ConnectionName -ServerAddress $ServerAddress -TunnelType L2tp -EncryptionLevel Required -AuthenticationMethod Eap -L2tpPsk $PlainPassword -Force -RememberCredential -PassThru -SplitTunneling
-      ```
-
-   2. Измените командлет **Connect-AzsVpn** с использования `rasdial @ConnectionName $User $PlainPassword` на `rasphone`, поскольку в EAP требуется интерактивный вход.
-
-      ```powershell
-      rasphone $ConnectionName
-      ```
-
-   3. Сохраните изменения и повторно импортируйте модуль **azurestack.connect.psm1**.
-   4. Следуйте инструкциям в [этой статье](asdk-connect.md#set-up-vpn-connectivity).
-   5. При подключении к ASDK через VPN подключитесь, войдя в **Параметры сети и Интернета** Windows, затем выберите **VPN**, вместо того чтобы подключаться с панели задач, чтобы убедиться, что предлагается ввести учетные данные.
-
-- Обнаружена проблема, из-за которой отбрасываются пакеты размером более 1450 байт для внутреннего балансировщика нагрузки (ILB). Проблема связана с тем, что значение параметра MTU на узле слишком низкое для размещения инкапсулированных пакетов VXLAN, проходящих роль, которая в сборке 1901 была перемещена на узел. Есть как минимум два сценария, при работе с которыми наблюдается проявление этой проблемы:
-
-  - SQL-запросы к группам доступности SQL Always On, находящиеся за внутренним балансировщиком нагрузки (ILB), размером более 660 байт.
-  - Возникновение ошибки во время развертывания Kubernetes при попытке включить несколько главных экземпляров.  
-
-  Эта проблема возникает при наличии связи между виртуальной машиной и внутренним балансировщиком нагрузки в той же виртуальной сети, но в разных подсетях. Вы можете обойти эту проблему, выполнив следующие команды в командной строке с повышенными привилегиями на узле ASDK:
-
-  ```shell
-  netsh interface ipv4 set sub "hostnic" mtu=1660
-  netsh interface ipv4 set sub "management" mtu=1660
-  ```

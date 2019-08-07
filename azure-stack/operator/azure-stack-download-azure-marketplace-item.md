@@ -16,12 +16,12 @@ ms.date: 04/24/2019
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: 7cc55659df1da1c51d92f0fc2926cee7255c422e
-ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
+ms.openlocfilehash: c5a53fcd2aa2ec516e5677e85a1516ac10208c3f
+ms.sourcegitcommit: c2690b2dd36918ff3e47e359cac926128bb83101
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67315972"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544114"
 ---
 # <a name="download-marketplace-items-from-azure-to-azure-stack"></a>Скачивание элементов Marketplace из Azure в Azure Stack
 
@@ -54,7 +54,7 @@ ms.locfileid: "67315972"
 
     ![Проверка дискового пространства](media/azure-stack-download-azure-marketplace-item/storage.png)
 
-3. Откройте Azure Stack Marketplace и подключитесь к Azure. Для этого выберите **Элементы Marketplace**, а затем нажмите **Добавить из Azure**.
+3. Откройте Azure Stack Marketplace и подключитесь к Azure. Для этого выберите службу **Marketplace management**, а затем щелкните **Marketplace items** (Элементы Marketplace) и выберите **Add from Azure** (Добавить из Azure).
 
     ![Добавление из Azure](media/azure-stack-download-azure-marketplace-item/marketplace.png)
 

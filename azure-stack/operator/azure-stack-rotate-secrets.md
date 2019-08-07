@@ -15,12 +15,12 @@ ms.date: 07/15/2019
 ms.reviewer: ppacent
 ms.author: mabrigg
 ms.lastreviewed: 07/15/2019
-ms.openlocfilehash: fb49649227cf17356c7d383e6505dd3e1c2c5648
-ms.sourcegitcommit: 159da88a52701679571bbedde1c36b72bbfe32dd
+ms.openlocfilehash: 7d8990616bcf5cdca628f4aad91e2aee6b95d42a
+ms.sourcegitcommit: 82d09bbae3e5398d2fce7e2f998dfebff018716c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68380416"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68497830"
 ---
 # <a name="rotate-secrets-in-azure-stack"></a>Смена секретов в Azure Stack
 
@@ -252,9 +252,9 @@ Remove-PSSession -Session $PEPSession
 
 3. Дождитесь смены секретов.
 
-Когда смена сертификатов будет успешно выполнена, в консоли появится следующее: **Overall action status: Success** (Общее состояние действия: успешно выполнено)
+   Когда смена сертификатов будет успешно выполнена, в консоли появится следующее: **Overall action status: Success** (Общее состояние действия: успешно выполнено)
     > [!Note]
-    > If secret rotation fails, follow the instructions in the error message and rerun **Start-SecretRotation** with the  **-Internal** and **-ReRun** parameters.  
+    > Если не удается выполнить смену секретов, следуйте инструкциям в сообщении об ошибке и повторно выполните командлет **Start-SecretRotation** с параметрами **-Internal** и **-ReRun**.  
 
 ```powershell
 Start-SecretRotation -Internal -ReRun

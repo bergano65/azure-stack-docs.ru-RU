@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/27/2019
+ms.date: 07/25/2019
 ms.author: sethm
 ms.reviewer: hectorl
-ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 49b4276da5c7e42728cf96261104f59c70355c20
-ms.sourcegitcommit: 159da88a52701679571bbedde1c36b72bbfe32dd
+ms.lastreviewed: 07/25/2019
+ms.openlocfilehash: 0c7840c723aedd38b51002e4a1f18f5a87d66ec4
+ms.sourcegitcommit: c2690b2dd36918ff3e47e359cac926128bb83101
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68380409"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544074"
 ---
 # <a name="azure-stack-update-activity-checklist"></a>Контрольный список действий по обновлению Azure Stack
 
@@ -58,8 +58,9 @@ ms.locfileid: "68380409"
 |-----------------------|----------------------------------------------------------------------------------|
 | Применение последних исправлений | Примените последние исправления к обновленной версии.                          |
 | Получение ключей шифрования | Извлеките ключи шифрования неактивных данных и надежно сохраните их за пределами развертывания Azure Stack. Следуйте указаниям [о том, как извлечь ключи](azure-stack-security-bitlocker.md). |
+| Повторное включение мультитенантности | В случае, если вы используете мультитенантную среду Azure Stack, убедитесь, что после успешного обновления [настроены все клиенты гостевых каталогов](https://docs.microsoft.com/azure-stack/operator/azure-stack-enable-multitenancy#configure-guest-directory). |
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Ознакомьтесь со списком известных проблем](azure-stack-release-notes-known-issues-1906.md)
-- [Ознакомьтесь со списком обновлений для системы безопасности](azure-stack-release-notes-security-updates-1906.md)
+- [Ознакомьтесь со списком известных проблем](azure-stack-release-notes-known-issues-1907.md)
+- [Ознакомьтесь со списком обновлений для системы безопасности](azure-stack-release-notes-security-updates-1907.md)

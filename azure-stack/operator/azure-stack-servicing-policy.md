@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/26/2019
+ms.date: 07/08/2019
 ms.author: sethm
 ms.reviewer: harik
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 8965ad94d1c8576e437e85a9714997f842f7dd50
-ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
+ms.openlocfilehash: 5e60a7fc3f01c1aa9697220738265abe0ae9089a
+ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67419453"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68494097"
 ---
 # <a name="azure-stack-servicing-policy"></a>Политика обслуживания Azure Stack
 
@@ -53,10 +53,10 @@ ms.locfileid: "67419453"
 
 Дополнительные сведения об определенном обновлении и инструкции по его скачиванию можно получить из заметок о выпуске этого обновления:
 
+- [Обновление 1907 для Azure Stack](azure-stack-release-notes-1907.md)
 - [Обновление 1906 для Azure Stack](azure-stack-release-notes-1906.md)
 - [Обновление 1905 для Azure Stack](azure-stack-release-notes-1905.md)
 - [Обновление 1904 для Azure Stack](azure-stack-release-notes-1904.md)
-- [Обновление 1903 для Azure Stack](azure-stack-update-1903.md)
 
 ## <a name="hotfixes"></a>Исправления
 
