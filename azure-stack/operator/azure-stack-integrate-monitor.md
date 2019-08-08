@@ -15,12 +15,12 @@ ms.date: 06/05/2019
 ms.author: jeffgilb
 ms.reviewer: thoroet
 ms.lastreviewed: 06/05/2019
-ms.openlocfilehash: e0c3c4740a1bc8073e827ff9809cf1aafa029792
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: 7b5bfb39c3ec14c23b1df54c13f2733724fcfe05
+ms.sourcegitcommit: ddb625bb01de11bfb75d9f7a1cc61d5814b3bc31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66691696"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68712916"
 ---
 # <a name="integrate-external-monitoring-solution-with-azure-stack"></a>Интеграция внешнего решения для мониторинга с Azure Stack
 
@@ -85,9 +85,9 @@ Operations Manager можно использовать для внешнего �
 
 2.  Библиотека Microsoft Azure Active Directory для Python. Ее можно установить с помощью Python PIP.
 
-```bash  
-sudo pip install adal pyyaml six
-```
+    ```bash  
+    sudo pip install adal pyyaml six
+    ```
 
 ### <a name="install-plugin"></a>Установка подключаемого модуля
 
@@ -96,13 +96,13 @@ sudo pip install adal pyyaml six
 Пакет подключаемого модуля содержит следующие файлы:
 
 ```
-  azurestack_plugin.py
-  azurestack_handler.sh
-  samples/etc/azurestack.cfg
-  samples/etc/azurestack_commands.cfg
-  samples/etc/azurestack_contacts.cfg
-  samples/etc/azurestack_hosts.cfg
-  samples/etc/azurestack_services.cfg
+azurestack_plugin.py
+azurestack_handler.sh
+samples/etc/azurestack.cfg
+samples/etc/azurestack_commands.cfg
+samples/etc/azurestack_contacts.cfg
+samples/etc/azurestack_hosts.cfg
+samples/etc/azurestack_services.cfg
 ```
 
 1.  Скопируйте подключаемый модуль `azurestack_plugin.py` в каталог `/usr/local/nagios/libexec`.
@@ -112,8 +112,8 @@ sudo pip install adal pyyaml six
 3.  Убедитесь, что файл подключаемого модуля указан как исполняемый.
 
     ```bash
-      sudo cp azurestack_plugin.py <PLUGINS_DIR>
-      sudo chmod +x <PLUGINS_DIR>/azurestack_plugin.py
+    sudo cp azurestack_plugin.py <PLUGINS_DIR>
+    sudo chmod +x <PLUGINS_DIR>/azurestack_plugin.py
     ```
 
 ### <a name="configure-plugin"></a>Настройка подключаемого модуля
@@ -164,17 +164,17 @@ sudo pip install adal pyyaml six
 /usr/local/nagios/etc/nagios.cfg
 ```
 
-1.  Добавьте следующие записи:
+2.  Добавьте следующие записи:
 
 ```bash  
-  #load the Azure Stack Plugin Configuration
-  cfg_file=/usr/local/Nagios/etc/objects/azurestack_contacts.cfg
-  cfg_file=/usr/local/Nagios/etc/objects/azurestack_commands.cfg
-  cfg_file=/usr/local/Nagios/etc/objects/azurestack_hosts.cfg
-  cfg_file=/usr/local/Nagios/etc/objects/azurestack_services.cfg
+# Load the Azure Stack Plugin Configuration
+cfg_file=/usr/local/Nagios/etc/objects/azurestack_contacts.cfg
+cfg_file=/usr/local/Nagios/etc/objects/azurestack_commands.cfg
+cfg_file=/usr/local/Nagios/etc/objects/azurestack_hosts.cfg
+cfg_file=/usr/local/Nagios/etc/objects/azurestack_services.cfg
 ```
 
-1.  Перезагрузите Nagios.
+3.  Перезагрузите Nagios.
 
 ```bash  
 sudo service nagios reload
@@ -185,13 +185,13 @@ sudo service nagios reload
 Активные оповещения можно закрыть в Nagios с помощью функции настраиваемого уведомления. Настраиваемое уведомление выполняется так:
 
 ```
-  /close-alert <ALERT_GUID>
+/close-alert <ALERT_GUID>
 ```
 
 Оповещение также можно закрыть с помощью следующей команды из терминала:
 
 ```bash
-  /usr/local/nagios/libexec/azurestack_plugin.py --config-file /usr/local/nagios/etc/objects/azurestack.cfg --action Close --alert-id <ALERT_GUID>
+/usr/local/nagios/libexec/azurestack_plugin.py --config-file /usr/local/nagios/etc/objects/azurestack.cfg --action Close --alert-id <ALERT_GUID>
 ```
 
 ### <a name="troubleshooting"></a>Устранение неполадок
@@ -199,7 +199,7 @@ sudo service nagios reload
 Устранить неполадки с подключаемым модулем можно, вызвав подключаемый модуль вручную в окне терминала. Для этого используйте следующий метод:
 
 ```bash
-  /usr/local/nagios/libexec/azurestack_plugin.py --config-file /usr/local/nagios/etc/objects/azurestack.cfg --action Monitor
+/usr/local/nagios/libexec/azurestack_plugin.py --config-file /usr/local/nagios/etc/objects/azurestack.cfg --action Monitor
 ```
 
 ## <a name="use-powershell-to-monitor-health-and-alerts"></a>Мониторинг работоспособности и оповещений с помощью PowerShell
@@ -211,31 +211,31 @@ sudo service nagios reload
 2. Выполните следующие команды для подключения к среде Azure Stack в качестве оператора Azure Stack.
 
    ```powershell
-    Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint https:\//adminmanagement.[Region].[External_FQDN] `
+   Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint https://adminmanagement.[Region].[External_FQDN] `
       -AzureKeyVaultDnsSuffix adminvault.[Region].[External_FQDN] `
       -AzureKeyVaultServiceEndpointResourceId https://adminvault.[Region].[External_FQDN]
 
-   Add-AzureRmAccount -EnvironmentName "AzureStackAdmin"
+   Connect-AzureRmAccount -EnvironmentName "AzureStackAdmin"
    ```
 
 3. Ниже приведены примеры команд для работы с оповещениями.
    ```powershell
-    #Retrieve all alerts
+    # Retrieve all alerts
     $Alerts = Get-AzsAlert
     $Alerts
 
-    #Filter for active alerts
+    # Filter for active alerts
     $Active = $Alerts | Where-Object { $_.State -eq "active" }
     $Active
 
-    #Close alert
+    # Close alert
     Close-AzsAlert -AlertID "ID"
 
     #Retrieve resource provider health
     $RPHealth = Get-AzsRPHealth
     $RPHealth
 
-    #Retrieve infrastructure role instance health
+    # Retrieve infrastructure role instance health
     $FRPID = $RPHealth | Where-Object { $_.DisplayName -eq "Capacity" }
     Get-AzsRegistrationHealth -ServiceRegistrationId $FRPID.RegistrationId
     ```

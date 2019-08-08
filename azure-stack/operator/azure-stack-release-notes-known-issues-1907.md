@@ -16,12 +16,12 @@ ms.date: 07/25/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 07/25/2019
-ms.openlocfilehash: cf09162fb29630ed01834aa6b2b508785206a088
-ms.sourcegitcommit: d96adbb821175167f6a4c8f3aba305981d7e7c3e
+ms.openlocfilehash: 41d07532960776cd5ed9312007877489e9ebbf20
+ms.sourcegitcommit: 83d9dbecd7334f37862e47ca028a50f8d7dafe2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685571"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738323"
 ---
 # <a name="azure-stack-1907-known-issues"></a>Известные проблемы в выпуске 1907 Azure Stack
 
@@ -89,13 +89,6 @@ ms.locfileid: "68685571"
 - Периодичность. Common
 
 ### <a name="virtual-network-gateway"></a>Шлюз виртуальной сети
-
-#### <a name="local-network-gateway-deletion"></a>Удаление шлюза локальной сети
-
-- Применимо. Эта проблема касается выпуска 1906.
-- Причина. На портале пользователя при удалении **шлюза локальной сети** отображается следующее сообщение об ошибке: **Cannot delete a Local Network Gateway with an active connection** (Не удается удалить шлюз локальной сети с активным подключением), даже если активное подключение отсутствует.
-- Решение. Исправление этой проблемы будет добавлено в выпуск 1907. Для обхода этой проблемы можно создать новый шлюз локальной сети с тем же IP-адресом, диапазоном адресов и данными конфигурации, но с другим именем. Старый шлюз локальной сети можно будет удалить после обновления среды до версии 1907.
-- Периодичность. Common
 
 #### <a name="alerts"></a>Оповещения
 
