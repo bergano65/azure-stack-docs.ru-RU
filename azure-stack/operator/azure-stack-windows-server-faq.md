@@ -15,12 +15,12 @@ ms.date: 06/22/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 11/12/2018
-ms.openlocfilehash: 0896ea921408d651a4b8e072c3d66ab4e333ebd6
-ms.sourcegitcommit: fdeb2760845c9760ea7df1414b8e140b0624a823
+ms.openlocfilehash: 177d18261d8a85807826226b0dcabdfd03e87135
+ms.sourcegitcommit: 0e0d010c4e010f2fd6799471db8bf71652d8d4e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67334424"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68806895"
 ---
 # <a name="windows-server-in-azure-stack-marketplace-faq"></a>Windows Server в Azure Stack Marketplace: вопросы и ответы
 
@@ -53,11 +53,11 @@ ms.locfileid: "67334424"
 
 ### <a name="what-if-my-user-incorrectly-checked-the-i-have-a-license-box-in-previous-windows-builds-and-they-dont-have-a-license"></a>Что делать, если мой пользователь ошибочно установил флажок "У меня есть лицензия" в предыдущих сборках Windows, но у него нет лицензии?
 
-См. рекомендации в статье [Перевод виртуальных машин Windows Server с поддержкой преимущества обратно на модель оплаты по мере использования](/azure/virtual-machines/windows/hybrid-use-benefit-licensing#powershell-1).
+См. о [преобразовании модели с использованием собственной лицензии в модель с оплатой по мере использования для виртуальных машин Windows Server](/azure/virtual-machines/windows/hybrid-use-benefit-licensing#powershell-1).
 
 ### <a name="what-if-i-have-an-older-image-and-my-user-forgot-to-check-the-i-have-a-license-box-or-we-use-our-own-images-and-we-do-have-enterprise-agreement-entitlement"></a>Что делать, если я использую старый образ и мой пользователь забыл установить флажок "У меня есть лицензия", либо мы используем собственные образы и имеем право в рамках Соглашения Enterprise?
 
-См. рекомендации в статье [Преобразование существующей виртуальной машины с поддержкой программы "Преимущество гибридного использования Azure" для Windows Server](/azure/virtual-machines/windows/hybrid-use-benefit-licensing#convert-an-existing-vm-using-azure-hybrid-benefit-for-windows-server). Обратите внимание, что Преимущество гибридного использования Azure не применяется в Azure Stack, но значение этого параметра учитывается.
+См. о [применении модели с использованием собственной лицензии к существующей виртуальной машине Windows Server](/azure/virtual-machines/windows/hybrid-use-benefit-licensing#convert-an-existing-vm-using-azure-hybrid-benefit-for-windows-server). Обратите внимание, что Преимущество гибридного использования Azure не применяется в Azure Stack, но значение этого параметра учитывается.
 
 ### <a name="what-about-other-vms-that-use-windows-server-such-as-sql-or-machine-learning-server"></a>Что будет с другими виртуальными машинами, которые используют Windows Server, например SQL Server или Machine Learning Server?
 

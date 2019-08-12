@@ -1,6 +1,6 @@
 ---
-title: Развертывание виртуальной машины с паролем, безопасно хранящимся в Azure Stack | Документация Майкрософт
-description: Узнайте, как развернуть виртуальную машину с использованием пароля, хранящегося в хранилище ключей Azure Stack.
+title: Развертывание виртуальной машины Azure Stack с помощью пароля, хранящегося в Key Vault | Документация Майкрософт
+description: Узнайте, как развернуть виртуальную машину с помощью пароля, хранящегося в хранилище ключей Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,18 +15,18 @@ ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: e4163921662b88cbd62f77eedc92d3a7db4bf491
-ms.sourcegitcommit: ca46bef5d5f824d22bdbc00605eb881410b1ffd0
+ms.openlocfilehash: 480740b12796fe90e2acd6fd1eb164b4c89d5ded
+ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67041976"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68842831"
 ---
-# <a name="create-a-virtual-machine-using-a-secure-password-stored-in-azure-stack-key-vault"></a>Создание виртуальной машины с помощью безопасного пароля, хранящегося в Key Vault Azure Stack
+# <a name="deploy-an-azure-stack-vm-using-a-password-stored-in-key-vault"></a>Развертывание виртуальной машины Azure Stack с помощью пароля, хранящегося в Key Vault
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-В этой статье приводятся пошаговые инструкции по развертыванию виртуальной машины Windows Server с помощью пароля, хранящегося в Key Vault Azure Stack. Использовать пароль из Key Vault безопаснее, чем передавать незашифрованный пароль.
+В этой статье описано, как развернуть виртуальную машину Windows Server с помощью пароля, хранящегося в Key Vault в Azure Stack. Использовать пароль из Key Vault безопаснее, чем передавать незашифрованный пароль.
 
 ## <a name="overview"></a>Обзор
 
@@ -41,14 +41,14 @@ ms.locfileid: "67041976"
 * [Установите PowerShell для Azure Stack](../operator/azure-stack-powershell-install.md).
 * [Настройте среду PowerShell.](azure-stack-powershell-configure-user.md)
 
-Следующие шаги описывают процесс, необходимый для создания виртуальной машины путем извлечения пароля, хранящегося в хранилище ключей:
+Ниже описано, как создать виртуальную машину путем извлечения пароля, хранящегося в Key Vault:
 
-1. Создайте секрет хранилища ключей.
-2. Обновление файла azuredeploy.parameters.json соответствующим образом.
+1. Создание секрета хранилища ключей.
+2. Обновите файл `azuredeploy.parameters.json`.
 3. Разверните шаблон.
 
 > [!NOTE]  
-> Эти шаги можно выполнить из Пакета средств разработки Azure Stack или из внешнего клиента при подключении через VPN.
+> Эти шаги можно выполнить из Пакета средств разработки Azure Stack (ASDK) или из внешнего клиента при подключении через VPN.
 
 ## <a name="create-a-key-vault-secret"></a>Создание секрета хранилища ключей
 
@@ -80,13 +80,13 @@ Set-AzureKeyVaultSecret `
 
 ```
 
-В результате выполнения предыдущего скрипта был выведен URI секрета. Запишите его. На него необходимо указать ссылку при [развертывании виртуальной машины Windows с паролем, хранящимся в шаблоне хранилища ключей](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-windows-create-passwordfromkv). Скачайте папку [101-vm-secure-password](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-windows-create-passwordfromkv) на компьютер разработчика. Эта папка содержит файлы `azuredeploy.json` и `azuredeploy.parameters.json`, которые необходимы на следующих шагах.
+Выполнение предыдущего скрипта возвращает URI секрета. Запишите его. Вам нужно связать его с шаблоном [Развертывание виртуальной машины Windows с помощью пароля, хранящегося в хранилище ключей](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-windows-create-passwordfromkv). Скачайте папку [101-vm-secure-password](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-windows-create-passwordfromkv) на компьютер разработчика. Эта папка содержит файлы `azuredeploy.json` и `azuredeploy.parameters.json`, которые понадобятся далее.
 
 Измените файл `azuredeploy.parameters.json`, указав значения для своей среды. Особый интерес представляют параметры имени хранилища, группы ресурсов хранилища и URI секрета (сгенерированный предыдущим скриптом). Ниже приведен пример файла параметров:
 
 ## <a name="update-the-azuredeployparametersjson-file"></a>Обновление файла azuredeploy.parameters.json
 
-В файле azuredeploy.parameters.json укажите значения универсального кода ресурса (URI) KeyVault, secretName, adminUsername виртуальной машины в соответствии со средой. Ниже приведен пример JSON-файла параметров шаблона:
+В файле `azuredeploy.parameters.json` укажите значения URI KeyVault, secretName, adminUsername для виртуальной машины с учетом среды. Ниже приведен пример JSON-файла параметров шаблона:
 
 ```json
 {

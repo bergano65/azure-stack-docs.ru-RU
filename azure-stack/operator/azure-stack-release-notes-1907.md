@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/31/2019
+ms.date: 08/02/2019
 ms.author: sethm
 ms.reviewer: hectorl
-ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: de6d45aa18dab4f6a5e4c7c772732242e296aa3a
-ms.sourcegitcommit: bf4d265a3522cbfdd9dd295a0f4ad0daf2ed5eca
+ms.lastreviewed: 08/02/2019
+ms.openlocfilehash: e868cd1e7d6ec24ddb350305c82cc1d87a334d91
+ms.sourcegitcommit: 56778bf71d5f6bbe2768fbc38c2ed2208114b867
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68692065"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68756642"
 ---
 # <a name="azure-stack-1907-update"></a>Обновление 1907 для Azure Stack
 
@@ -97,6 +97,8 @@ ms.locfileid: "68692065"
 
 - Исправлена проблема, из-за которой содержимое поля описания не сохранялось при создании предложения.
 
+- Исправлена проблема, когда пользователь с разрешениями **Только для чтения** мог создавать, изменять и удалять ресурсы. Теперь пользователь может создавать ресурсы только с назначенным разрешением **Участник**. 
+
 <!-- https://icm.ad.msft.net/imp/v3/incidents/details/127772311/home -->
 - Исправлена проблема, из-за которой не удавалось установить обновление по причине блокировки DLL-файла узлом поставщика WMI.
 
@@ -146,7 +148,7 @@ Azure Stack выпускает исправления на регулярной 
 После установки этого обновления установите все применимые исправления. Подробные сведения см. в статье [Политика обслуживания Azure Stack](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- Для выпуска 1907 нет исправлений.
+- [Исправление Azure Stack 1.1907.8.37](https://support.microsoft.com/help/4515650)
 
 ## <a name="automatic-update-notifications"></a>Автоматические уведомления об обновлениях
 

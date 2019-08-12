@@ -15,12 +15,12 @@ ms.date: 01/14/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 7f50c1f5cf565040425e0c655585c3d65b837eb3
-ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
+ms.openlocfilehash: bac13382c1fe579a04b96274d8f310d5a1737be2
+ms.sourcegitcommit: a0dcb61890ad0f7b8e1f738f7186198681adcc2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603147"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68820771"
 ---
 # <a name="create-a-geo-distributed-app-solution-to-direct-traffic-with-azure-and-azure-stack"></a>Создание географически распределенного приложения для перенаправления трафика в Azure и Azure Stack
 
@@ -302,7 +302,7 @@ Azure DevOps и Azure DevOps Server предоставляют конвейер 
 
 2. Добавьте запись CNAME, чтобы сопоставить поддомен с именем узла по умолчанию для приложения.
 
-   Например, для домена www.northwindcloud.com добавьте запись CNAME, которая сопоставляет имя с <app\_name>.azurewebsites.net.
+   Например, для домена www\.northwindcloud.com добавьте запись CNAME, которая сопоставляет имя с <app\_name>.azurewebsites.net.
 
 После добавления этой записи CNAME страница управления записями DNS выглядит так:
 

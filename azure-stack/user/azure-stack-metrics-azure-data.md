@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/23/2019
+ms.date: 08/02/2019
 ms.author: mabrigg
 ms.lastreviewed: 12/01/2018
-ms.openlocfilehash: aafdc25293ea3cc584d24688d071dadb2151ce22
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.openlocfilehash: 329ef95f7902f3fe6dfcdd71b599675fdf7c6286
+ms.sourcegitcommit: 0e0d010c4e010f2fd6799471db8bf71652d8d4e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68418540"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68806934"
 ---
 # <a name="use-azure-monitor-on-azure-stack"></a>Использование Azure Monitor в Azure Stack
 
@@ -121,13 +121,16 @@ Azure Monitor — служба платформы, которая предост
 
 ## <a name="methods-of-accessing-azure-monitor-on-azure-stack"></a>Методы получения доступа к Azure Monitor в Azure Stack
 
-В большинстве случаев для управления отслеживанием, маршрутизацией и извлечением данных можно использовать один из следующих методов. Не все методы доступны для всех действий или типов данных.
+Вы можете использовать отслеживание, маршрутизацию и извлечение данных с помощью одного из следующих методов. Не все методы доступны для всех действий или типов данных. 
 
  - [Портал Azure Stack](azure-stack-use-portal.md)
  - [PowerShell](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-powershell-samples)
  - [Кроссплатформенный интерфейс командной строки](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-cli-samples)
  - [REST API](https://docs.microsoft.com/rest/api/monitor)
  - [Пакет SDK для .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Monitor)
+
+> [!Important]  
+> Если при просмотре диаграммы производительности виртуальной машины возникнет ошибка с сообщением о том, что **ресурс не найден**, убедитесь, что вы зарегистрировали Microsoft.insights в подписке, связанной с этой виртуальной машиной.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

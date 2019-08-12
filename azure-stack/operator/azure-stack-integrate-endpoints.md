@@ -6,16 +6,16 @@ author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 07/22/2019
+ms.date: 07/30/2019
 ms.author: mabrigg
 ms.reviewer: wamota
-ms.lastreviewed: 07/22/2019
-ms.openlocfilehash: 6bf9f9bb66ba7e2c9722f64e7116778f17e0e4e2
-ms.sourcegitcommit: b3dac698f2e1834491c2f9af56a80e95654f11f3
+ms.lastreviewed: 07/30/2019
+ms.openlocfilehash: b97d542c5a885078fa80108cdb0c16e6ccb79b98
+ms.sourcegitcommit: 0e0d010c4e010f2fd6799471db8bf71652d8d4e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658624"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68806949"
 ---
 # <a name="azure-stack-datacenter-integration---publish-endpoints"></a>Интеграция центра обработки данных Azure Stack. Публикация конечных точек
 
@@ -69,19 +69,19 @@ ms.locfileid: "68658624"
 
 ## <a name="ports-and-urls-outbound"></a>Порты и URL-адреса (исходящие)
 
-Стек Azure поддерживает только прозрачные прокси-серверы. Если в вашем развертывании прозрачный прокси-сервер перенаправляет соединения к традиционному прокси-серверу, необходимо разрешить следующие порты и URL-адреса для исходящей связи:
+Azure Stack поддерживает только прозрачные прокси-серверы. Если в вашем развертывании прозрачный прокси-сервер перенаправляет подключения к обычному прокси-серверу, разрешите порты и URL-адреса из следующей таблицы для исходящей связи:
 
 > [!Note]  
 > Azure Stack не поддерживает использование ExpressRoute для доступа к службам Azure, перечисленным в следующей таблице.
 
 |Назначение|URL-адрес назначения|Протокол|порты;|Исходная сеть|
 |---------|---------|---------|---------|---------|
-|Удостоверение|login.windows.net<br>login.microsoftonline.com<br>graph.windows.net<br>https:\//secure.aadcdn.microsoftonline-p.com<br>www.office.com|HTTP<br>HTTPS|80<br>443|Общедоступный виртуальный IP-адрес — /27<br>Открытая сеть инфраструктуры|
-|Синдикация Marketplace|https:\//management.azure.com<br>https://&#42;.blob.core.windows.net<br>https://\*.azureedge.net|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
+|Удостоверение|**Таблицы Azure**<br>login.windows.net<br>login.microsoftonline.com<br>graph.windows.net<br>https:\//secure.aadcdn.microsoftonline-p.com<br>www.office.com<br>**Azure для государственных организаций**<br>https:\//login.microsoftonline.us/<br>https:\//graph.windows.net/<br>**Azure China 21Vianet**<br>https:\//login.chinacloudapi.cn/<br>https:\//graph.chinacloudapi.cn/<br>|HTTP<br>HTTPS|80<br>443|Общедоступный виртуальный IP-адрес — /27<br>Открытая сеть инфраструктуры|
+|Синдикация Marketplace|**Таблицы Azure**<br>https:\//management.azure.com<br>https://&#42;.blob.core.windows.net<br>https://&#42;.azureedge.net<br>**Azure для государственных организаций**<br>https:\//management.usgovcloudapi.net/<br>https://&#42;.blob.core.usgovcloudapi.net/<br>**Azure China 21Vianet**<br>https:\//management.chinacloudapi.cn/<br>http://&#42;.blob.core.chinacloudapi.cn/|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
 |Обновления и исправления|https://&#42;.azureedge.net<br>https:\//aka.ms/azurestackautomaticupdate|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
-|Регистрация|https:\//management.azure.com|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
-|Использование|**Таблицы Azure**<br>- https://&#42;.trafficmanager.net<br>**Azure для государственных организаций**<br>- https://&#42;.usgovtrafficmanager.net<br>**Azure для Китая**<br>- https://&#42;.trafficmanager.cn<br> |HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
-|Защитник Windows|\*.wdcp.microsoft.com<br>\*.wdcpalt.microsoft.com<br>\*.wd.microsoft.com<br>\*.update.microsoft.com<br>\*.download.microsoft.com<br>https:\//www.microsoft.com/pkiops/crl<br>https:\//www.microsoft.com/pkiops/certs<br>https:\//crl.microsoft.com/pki/crl/products<br>https:\//www.microsoft.com/pki/certs<br>https:\//secure.aadcdn.microsoftonline-p.com<br>|HTTPS|80<br>443|Общедоступный виртуальный IP-адрес — /27<br>Открытая сеть инфраструктуры|
+|Регистрация|**Таблицы Azure**<br>https:\//management.azure.com<br>**Azure для государственных организаций**<br>https:\//management.usgovcloudapi.net/<br>**Azure China 21Vianet**<br>https:\//management.chinacloudapi.cn/|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
+|Использование|**Таблицы Azure**<br>https://&#42;.trafficmanager.net<br>**Azure для государственных организаций**<br>https://&#42;.usgovtrafficmanager.net<br>**Azure China 21Vianet**<br>https://&#42;.trafficmanager.cn|HTTPS|443|Общедоступный виртуальный IP-адрес — /27|
+|Защитник Windows|&#42;.wdcp.microsoft.com<br>&#42;.wdcpalt.microsoft.com<br>&#42;.wd.microsoft.com<br>&#42;.update.microsoft.com<br>&#42;.download.microsoft.com<br>https:\//www.microsoft.com/pkiops/crl<br>https:\//www.microsoft.com/pkiops/certs<br>https:\//crl.microsoft.com/pki/crl/products<br>https:\//www.microsoft.com/pki/certs<br>https:\//secure.aadcdn.microsoftonline-p.com<br>|HTTPS|80<br>443|Общедоступный виртуальный IP-адрес — /27<br>Открытая сеть инфраструктуры|
 |NTP.|(IP-адрес NTP-сервера, предоставленный для развертывания)|UDP|123|Общедоступный виртуальный IP-адрес — /27|
 |DNS|(IP-адрес DNS-сервера, предоставленный для развертывания)|TCP<br>UDP|53|Общедоступный виртуальный IP-адрес — /27|
 |Список отзыва сертификатов|(URL-адрес сертификата для точек распространения списков отзыва)|HTTP|80|Общедоступный виртуальный IP-адрес — /27|

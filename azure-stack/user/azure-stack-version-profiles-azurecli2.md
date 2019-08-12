@@ -1,6 +1,6 @@
 ---
-title: Подключение к Azure Stack при помощи интерфейса командной строки | Документация Майкрософт
-description: Узнайте, как использовать межплатформенный интерфейс командной строки (CLI) для развертывания ресурсов и управления ими в Azure Stack
+title: Управление Azure Stack с помощью Azure CLI | Документация Майкрософт
+description: Узнайте, как развертывать и администрировать ресурсы в Azure Stack с помощью кроссплатформенного интерфейса командной строки (CLI).
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -14,47 +14,47 @@ ms.date: 07/16/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/08/2019
-ms.openlocfilehash: 788d0fd6479ab054568d549af2f7a4306a963d3b
-ms.sourcegitcommit: 4139b507d6da98a086929da48e3b4661b70bc4f3
+ms.openlocfilehash: 430df1c886a869239c040085dcea983d07b3b36d
+ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68299447"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68842927"
 ---
-# <a name="use-api-version-profiles-with-azure-cli-in-azure-stack"></a>Использование профилей версий API и Azure CLI в Azure Stack
+# <a name="manage-and-deploy-resources-to-azure-stack-with-azure-cli"></a>Развертывание и администрирование ресурсов в Azure Stack с помощью Azure CLI
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Вы можете следовать приведенным здесь инструкциям, чтобы настроить интерфейс командной строки Azure (CLI) для управления ресурсами Пакета средств разработки Azure Stack (ASDK) на клиентских платформах Linux, Mac и Windows.
+Следуйте приведенным здесь инструкциям, чтобы настроить интерфейс командной строки Azure (CLI) для управления ресурсами Пакета средств разработки Azure Stack (ASDK) на клиентских платформах Linux, Mac и Windows.
 
 ## <a name="prepare-for-azure-cli"></a>Подготовка к использованию Azure CLI
 
-Если вы используете Пакет средств разработки Azure Stack, на компьютере разработки потребуется корневой сертификат ЦС для Azure Stack, чтобы использовать Azure CLI. Этот сертификат используется для управления ресурсами с помощью CLI.
+Если вы используете Azure CLI, вам понадобится корневой сертификат ЦС для Azure Stack на компьютере разработки. Этот сертификат используется для управления ресурсами с помощью CLI.
 
- - **Корневой сертификат ЦС Azure Stack.** Он нужен, если CLI используется на рабочей станции без ASDK.  
+ - **Корневой сертификат ЦС Azure Stack** требуется, если CLI используется на рабочей станции без ASDK.  
 
- - **Конечная точка псевдонимов виртуальных машин.** Она предоставляет псевдонимы, например UbuntuLTS или Win2012Datacenter, которые позволяют при развертывании виртуальной машины в одном параметре указать сведения об издателе образа, предложении, номере SKU и версии.  
+ - **Конечная точка псевдонимов виртуальных машин** предоставляет псевдоним, например UbuntuLTS или Win2012Datacenter. Этот псевдоним ссылается на издателя образа, предложение, номер SKU и версию как на один параметр при развертывании виртуальных машин.  
 
 В разделах ниже описано, как получить эти значения.
 
 ### <a name="export-the-azure-stack-ca-root-certificate"></a>Экспорт корневого сертификата ЦС Azure Stack
 
-При использовании интегрированной системы вам не нужно экспортировать корневой сертификат ЦС. Экспорт корневого сертификата ЦС требуется для ASDK.
+При использовании интегрированной системы вам не нужно экспортировать корневой сертификат ЦС. При использовании ASDK экспортируйте корневой сертификат ЦС в ASDK.
 
 Чтобы экспортировать корневой сертификат ASDK в формате PEM:
 
 1. Получите имя корневого сертификата Azure Stack:
     - Войдите на портал клиента или администратора Azure Stack.
-    - Щелкните "Безопасность" рядом с адресной строкой.
-    - Во всплывающем окне щелкните "Действительный".
-    - В диалоговом окне "Сертификат" щелкните вкладку "Путь сертификации". 
+    - Щелкните **Безопасность** рядом с адресной строкой.
+    - Во всплывающем окне щелкните **Действительный**.
+    - В диалоговом окне "Сертификат" щелкните вкладку **Путь сертификации**.
     - Запишите имя корневого сертификата Azure Stack.
 
     ![Корневой сертификат Azure Stack](media/azure-stack-version-profiles-azurecli2/root-cert-name.png)
 
 2. [Создайте виртуальную машину Windows в Azure Stack](azure-stack-quick-windows-portal.md).
 
-3. Войдите на компьютер, откройте командную строку PowerShell с повышенными правами и выполните следующий скрипт.
+3. Войдите на виртуальную машину, откройте командную строку PowerShell с повышенными правами и выполните следующий скрипт:
 
     ```powershell  
       $label = "<the name of your azure stack root cert from Step 1>"
@@ -78,7 +78,7 @@ ms.locfileid: "68299447"
 
 ### <a name="set-up-the-virtual-machine-aliases-endpoint"></a>Настройка конечной точки псевдонимов для виртуальных машин
 
-Вы можете настроить общедоступную конечную точку с файлом псевдонимов виртуальных машин. В файле псевдонимов виртуальных машин хранится общее имя образа в JSON-формате. Имя будет использоваться при развертывании виртуальной машины в качестве параметра Azure CLI.
+Вы можете настроить общедоступную конечную точку с файлом псевдонимов виртуальных машин. В файле псевдонимов виртуальных машин хранится общее имя образа в JSON-формате. Имя будет использоваться при развертывании виртуальной машины в качестве параметра Azure CLI.
 
 1. Когда вы публикуете пользовательский образ, запишите сведения об издателе, предложении, номере SKU и версии, которые указываете во время публикации. Если используется образ из Marketplace, вы можете просмотреть эти сведения с помощью командлета ```Get-AzureVMImage```.  
 
@@ -90,9 +90,9 @@ ms.locfileid: "68299447"
 
 ### <a name="install-or-upgrade-cli"></a>Установка или обновление CLI
 
-Войдите на рабочую станцию разработки и установите CLI. Для работы с Azure Stack требуется Azure CLI версии 2.0 или выше. Для последней версии профилей API требуется текущая версия CLI.  Вы можете установить CLI, выполнив действия, описанные в статье [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli). 
+Войдите на рабочую станцию разработки и установите CLI. Для работы с Azure Stack требуется Azure CLI версии 2.0 или выше. Для последней версии профилей API требуется текущая версия CLI. См. сведения об [установке Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli). 
 
-1. Чтобы проверить успешность установки, откройте окно терминала или командной строки и выполните следующую команду.
+1. Чтобы проверить успешность установки, откройте окно терминала или командной строки и выполните следующую команду:
 
     ```shell
     az --version
@@ -107,17 +107,17 @@ ms.locfileid: "68299447"
 
 ## <a name="windows-azure-ad"></a>Windows (Azure AD)
 
-В этом разделе описывается настройка CLI, если вы используете Azure AD в качестве службы управления удостоверениями и применяете CLI на компьютере с Windows.
+В этом разделе объясняется, как настроить CLI, если вы используете Azure AD в качестве службы управления удостоверениями и работаете с CLI на компьютере с Windows.
 
 ### <a name="trust-the-azure-stack-ca-root-certificate"></a>Доверие для корневого сертификата ЦС Azure Stack
 
-Если вы используете ASDK, потребуется обеспечить доверие корневому сертификату ЦС на удаленном компьютере. Этого не требуется делать с интегрированными системами.
+Если вы используете ASDK, нужно обеспечить доверие корневому сертификату ЦС на удаленном компьютере. Этого не нужно делать при использовании интегрированных систем.
 
 Чтобы настроить доверие для корневого сертификата ЦС Azure Stack, добавьте его в существующее хранилище сертификатов Python для версии Python, установленной вместе с Azure CLI. Вы можете выполнять собственный экземпляр Python. Azure CLI содержит свою версию Python.
 
 1. Найдите хранилище сертификатов на своем компьютере.  Для этого выполните команду `az --version`.
 
-2. Перейдите к папке, содержащей ваше приложение Python с поддержкой интерфейса командной строки. Требуется запустить именно эту версию Python. Если вы настроили для Python системную переменную PATH, то при выполнении Python запустится ваша собственная версия Python. Вместо этого необходимо запустить версию, используемую интерфейсом командной строки, и добавить свой сертификат в эту версию. Например, ваше приложение Python с поддержкой интерфейса командной строки может располагаться здесь: `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\`.
+2. Перейдите к папке, содержащей ваше приложение Python с поддержкой CLI. Нужно запустить именно эту версию Python. Если вы настроили для Python системную переменную PATH, при выполнении Python запустится ваша собственная версия Python. Вместо этого нужно запустить версию, поддерживаемую CLI, и добавить свой сертификат в эту версию. Например, ваше приложение Python с поддержкой интерфейса командной строки может располагаться здесь: `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\`.
 
     Используйте следующие команды:
 
@@ -126,7 +126,7 @@ ms.locfileid: "68299447"
     .\python -c "import certifi; print(certifi.where())"
     ```
 
-    Запомните расположение сертификата. Например, `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\lib\site-packages\certifi\cacert.pem`. Конкретный путь будет зависеть от операционной системы и установки интерфейса командной строки.
+    Запомните расположение сертификата. Например, `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\lib\site-packages\certifi\cacert.pem`. Конкретный путь будет зависеть от операционной системы и установки CLI.
 
 2. Чтобы настроить доверие для корневого сертификата ЦС Azure Stack, добавьте его после существующего сертификата Python.
 
@@ -163,25 +163,25 @@ ms.locfileid: "68299447"
 
 1. Зарегистрируйте среду Azure Stack, выполнив команду `az cloud register`.
 
-    В некоторых сценариях прямое исходящее подключение к Интернету маршрутизируется через прокси-сервер или брандмауэр, который принудительно использует перехват SSL. В этих случаях команда `az cloud register` может выдать ошибку, например "Unable to get endpoints from the cloud." (Не удалось получить конечные точки из облака). Чтобы избежать этой ошибки, можно задать следующие переменные среды.
+    В некоторых сценариях прямое исходящее подключение к Интернету маршрутизируется через прокси-сервер или брандмауэр, который принудительно использует перехват SSL. В этих случаях команда `az cloud register` может выдать ошибку, например "Unable to get endpoints from the cloud." (Не удалось получить конечные точки из облака). Чтобы избежать этой ошибки, можно задать следующие переменные среды:
 
     ```shell  
     set AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1 
     set ADAL_PYTHON_SSL_NO_VERIFY=1
     ```
 
-2. Зарегистрируйте среду. При выполнении команды `az cloud register` используйте следующие параметры.
+2. Зарегистрируйте среду. При выполнении команды `az cloud register` используйте следующие параметры:
 
     | Значение | Пример | ОПИСАНИЕ |
     | --- | --- | --- |
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
-    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в Пакете средств разработки Azure Stack (ASDK): `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
-    | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать соответствующую конечную точку.  |
-    | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать конечную точку.  |
-    | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. Дополнительные сведения см. в статье [Использование профилей версий API и Azure CLI в Azure Stack](#set-up-the-virtual-machine-aliases-endpoint). |
+    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
+    | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
+    | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
+    | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. См. сведения о [настройке конечной точки псевдонимов виртуальных машин](#set-up-the-virtual-machine-aliases-endpoint). |
 
     ```azurecli  
-    az cloud register -n <environmentname> --endpoint-resource-manager "https://management.local.azurestack.external" --suffix-storage-endpoint "local.azurestack.external" --suffix-keyvault-dns ".vault.local.azurestack.external" --endpoint-vm-image-alias-doc <URI of the document which contains virtual machine image aliases>
+    az cloud register -n <environmentname> --endpoint-resource-manager "https://management.local.azurestack.external" --suffix-storage-endpoint "local.azurestack.external" --suffix-keyvault-dns ".vault.local.azurestack.external" --endpoint-vm-image-alias-doc <URI of the document which contains VM image aliases>
     ```
 
 1. Следующие команды позволяют выбрать активную среду:
@@ -197,9 +197,9 @@ ms.locfileid: "68299447"
    ```
 
     >[!NOTE]  
-    >Если вы используете версию Azure Stack до 1808, вам нужно использовать профиль версии API **2017-03-09-profile** вместо профиля версии **2019-03-01-hybrid**. Вам нужно будет использовать последнюю версию Azure CLI.
+    >Если вы используете версию Azure Stack до 1808, вам потребуется профиль версии API **2017-03-09-profile** вместо профиля версии **2019-03-01-hybrid**. Вам также потребуется последняя версия Azure CLI.
  
-1. Войдите в среду Azure Stack с помощью команды `az login`. Вы можете войти в среду Azure Stack от имени пользователя или [субъекта-службы](/azure/active-directory/develop/app-objects-and-service-principals). 
+1. Войдите в среду Azure Stack с помощью команды `az login`. Войдите в среду Azure Stack от имени пользователя или [субъекта-службы](/azure/active-directory/develop/app-objects-and-service-principals). 
 
    - Вход от имени *пользователя*. 
 
@@ -210,7 +210,7 @@ ms.locfileid: "68299447"
      ```
 
      > [!NOTE]
-     > Если в учетной записи пользователя используется многофакторная проверка подлинности, команду `az login` можно выполнять без параметра `-u`. При отсутствии этого параметра команда возвращает URL-адрес и код, которые следует использовать для аутентификации.
+     > Если в учетной записи пользователя используется многофакторная проверка подлинности, выполните команду `az login` без параметра `-u`. При отсутствии этого параметра команда возвращает URL-адрес и код, которые следует использовать для аутентификации.
 
    - Войдите в систему как *субъект-служба*. 
     
@@ -234,11 +234,11 @@ az group create -n MyResourceGroup -l local
 
 ## <a name="windows-ad-fs"></a>Windows (AD FS)
 
-В этом разделе описывается настройка CLI, если вы используете службы федерации Active Directory (AD FS) в качестве службы управления удостоверениями и применяете CLI на компьютере с Windows.
+В этом разделе объясняется, как настроить CLI, если вы используете службы федерации Active Directory (AD FS) в качестве службы управления удостоверениями и работаете с CLI на компьютере с Windows.
 
 ### <a name="trust-the-azure-stack-ca-root-certificate"></a>Доверие для корневого сертификата ЦС Azure Stack
 
-Если вы используете ASDK, потребуется обеспечить доверие корневому сертификату ЦС на удаленном компьютере. Этого не требуется делать с интегрированными системами.
+Если вы используете ASDK, нужно обеспечить доверие корневому сертификату ЦС на удаленном компьютере. Этого не нужно делать при использовании интегрированных систем.
 
 1. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Откройте командную строку или строку PowerShell с повышенными правами и введите следующую команду:
 
@@ -246,7 +246,7 @@ az group create -n MyResourceGroup -l local
       python -c "import certifi; print(certifi.where())"
     ```
 
-    Запомните расположение сертификата. Например, `~/lib/python3.5/site-packages/certifi/cacert.pem`. Конкретный путь зависит от ОС и установленной версии Python.
+    Запомните расположение сертификата. Например, `~/lib/python3.5/site-packages/certifi/cacert.pem`. Конкретный путь зависит от операционной системы и установленной версии Python.
 
 2. Чтобы настроить доверие для корневого сертификата ЦС Azure Stack, добавьте его после существующего сертификата Python.
 
@@ -283,25 +283,25 @@ az group create -n MyResourceGroup -l local
 
 1. Зарегистрируйте среду Azure Stack, выполнив команду `az cloud register`.
 
-    В некоторых сценариях прямое исходящее подключение к Интернету маршрутизируется через прокси-сервер или брандмауэр, который принудительно использует перехват SSL. В этих случаях команда `az cloud register` может выдать ошибку, например "Unable to get endpoints from the cloud." (Не удалось получить конечные точки из облака). Чтобы избежать этой ошибки, можно задать следующие переменные среды.
+    В некоторых сценариях прямое исходящее подключение к Интернету маршрутизируется через прокси-сервер или брандмауэр, который принудительно использует перехват SSL. В этих случаях команда `az cloud register` может выдать ошибку, например "Unable to get endpoints from the cloud." (Не удалось получить конечные точки из облака). Чтобы избежать этой ошибки, можно задать следующие переменные среды:
 
     ```shell  
     set AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1 
     set ADAL_PYTHON_SSL_NO_VERIFY=1
     ```
 
-2. Зарегистрируйте среду. При выполнении команды `az cloud register` используйте следующие параметры.
+2. Зарегистрируйте среду. При выполнении команды `az cloud register` используйте следующие параметры:
 
     | Значение | Пример | ОПИСАНИЕ |
     | --- | --- | --- |
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
-    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в Пакете средств разработки Azure Stack (ASDK): `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
-    | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать соответствующую конечную точку.  |
-    | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать конечную точку.  |
-    | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. Дополнительные сведения см. в статье [Использование профилей версий API и Azure CLI в Azure Stack](#set-up-the-virtual-machine-aliases-endpoint). |
+    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
+    | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
+    | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
+    | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. См. сведения о [настройке конечной точки псевдонимов виртуальных машин](#set-up-the-virtual-machine-aliases-endpoint). |
 
     ```azurecli  
-    az cloud register -n <environmentname> --endpoint-resource-manager "https://management.local.azurestack.external" --suffix-storage-endpoint "local.azurestack.external" --suffix-keyvault-dns ".vault.local.azurestack.external" --endpoint-vm-image-alias-doc <URI of the document which contains virtual machine image aliases>
+    az cloud register -n <environmentname> --endpoint-resource-manager "https://management.local.azurestack.external" --suffix-storage-endpoint "local.azurestack.external" --suffix-keyvault-dns ".vault.local.azurestack.external" --endpoint-vm-image-alias-doc <URI of the document which contains VM image aliases>
     ```
 
 1. Следующие команды позволяют выбрать активную среду:
@@ -317,7 +317,7 @@ az group create -n MyResourceGroup -l local
    ```
 
     >[!NOTE]  
-    >Если вы используете версию Azure Stack до 1808, вам нужно использовать профиль версии API **2017-03-09-profile** вместо профиля версии **2019-03-01-hybrid**. Вам нужно будет использовать последнюю версию Azure CLI.
+    >Если вы используете версию Azure Stack до 1808, вам потребуется профиль версии API **2017-03-09-profile** вместо профиля версии **2019-03-01-hybrid**. Вам также потребуется последняя версия Azure CLI.
 
 1. Войдите в среду Azure Stack с помощью команды `az login`. Вы можете войти в среду Azure Stack от имени пользователя или [субъекта-службы](/azure/active-directory/develop/app-objects-and-service-principals). 
 
@@ -326,17 +326,17 @@ az group create -n MyResourceGroup -l local
      Вы можете указать имя пользователя и пароль непосредственно в команде `az login` или выполнить аутентификацию в браузере. Если для вашей учетной записи включена многофакторная аутентификация, возможным будет только второй вариант.
 
      ```azurecli
-     az cloud register  -n <environmentname>   --endpoint-resource-manager "https://management.local.azurestack.external"  --suffix-storage-endpoint "local.azurestack.external" --suffix-keyvault-dns ".vault.local.azurestack.external" --endpoint-vm-image-alias-doc <URI of the document which contains virtual machine image aliases>   --profile "2019-03-01-hybrid"
+     az cloud register  -n <environmentname>   --endpoint-resource-manager "https://management.local.azurestack.external"  --suffix-storage-endpoint "local.azurestack.external" --suffix-keyvault-dns ".vault.local.azurestack.external" --endpoint-vm-image-alias-doc <URI of the document which contains VM image aliases>   --profile "2019-03-01-hybrid"
      ```
 
      > [!NOTE]
-     > Если в учетной записи пользователя используется многофакторная проверка подлинности, команду `az login` можно выполнять без параметра `-u`. При отсутствии этого параметра команда возвращает URL-адрес и код, которые следует использовать для аутентификации.
+     > Если в учетной записи пользователя используется многофакторная проверка подлинности, выполните команду `az login` без параметра `-u`. При отсутствии этого параметра команда возвращает URL-адрес и код, которые следует использовать для аутентификации.
 
    - Войдите в систему как *субъект-служба*. 
     
      Подготовьте PEM-файл для использования для входа субъект-службы.
 
-     На клиентском компьютере, где был создан субъект, экспортируйте сертификат субъект-службы как PFX-файл с закрытым ключом, расположенным по пути `cert:\CurrentUser\My`. Имя сертификата совпадает с именем субъекта.
+     На клиентском компьютере, где был создан субъект, экспортируйте сертификат субъект-службы как PFX-файл с закрытым ключом, расположенным здесь: `cert:\CurrentUser\My`. Имя этого сертификата совпадает с именем субъекта.
 
      Преобразуйте PFX в PEM (используйте служебную программу OpenSSL).
 
@@ -365,21 +365,21 @@ az group create -n MyResourceGroup -l local
 
 ## <a name="linux-azure-ad"></a>Linux (Azure AD)
 
-В этом разделе описывается настройка CLI, если вы используете Azure AD в качестве службы управления удостоверениями и применяете CLI на компьютере с Linux.
+В этом разделе объясняется, как настроить CLI, если вы используете Azure AD в качестве службы управления удостоверениями и работаете с CLI на компьютере с Linux.
 
 ### <a name="trust-the-azure-stack-ca-root-certificate"></a>Доверие для корневого сертификата ЦС Azure Stack
 
-Если вы используете ASDK, потребуется обеспечить доверие корневому сертификату ЦС на удаленном компьютере. Этого не требуется делать с интегрированными системами.
+Если вы используете ASDK, нужно обеспечить доверие корневому сертификату ЦС на удаленном компьютере. Этого не нужно делать при использовании интегрированных систем.
 
 Чтобы настроить доверие для корневого сертификата ЦС Azure Stack, добавьте его после существующего сертификата Python.
 
-1. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Вам потребуется установить pip и модуль certifi. Вы можете использовать следующие команды Python из командной строки Bash:
+1. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Вам потребуется установить pip и модуль certifi. Выполните следующие команды Python из командной строки Bash:
 
     ```bash  
     python3 -c "import certifi; print(certifi.where())"
     ```
 
-    Запомните расположение сертификата, например `~/lib/python3.5/site-packages/certifi/cacert.pem`. Конкретный путь зависит от операционной системы и установленной версии Python.
+    Запомните расположение сертификата. Например, `~/lib/python3.5/site-packages/certifi/cacert.pem`. Конкретный путь зависит от операционной системы и установленной версии Python.
 
 2. Запустите следующую команду bash, указав путь к вашему сертификату.
 
@@ -399,25 +399,25 @@ az group create -n MyResourceGroup -l local
 
 Для подключения к Azure Stack выполните следующие действия:
 
-1. Зарегистрируйте среду Azure Stack, выполнив команду `az cloud register`. В некоторых сценариях прямое исходящее подключение к Интернету маршрутизируется через прокси-сервер или брандмауэр, который принудительно использует перехват SSL. В этих случаях команда `az cloud register` может выдать ошибку, например "Unable to get endpoints from the cloud." (Не удалось получить конечные точки из облака). Чтобы избежать этой ошибки, можно задать следующие переменные среды.
+1. Зарегистрируйте среду Azure Stack, выполнив команду `az cloud register`. В некоторых сценариях прямое исходящее подключение к Интернету маршрутизируется через прокси-сервер или брандмауэр, который принудительно использует перехват SSL. В этих случаях команда `az cloud register` может выдать ошибку, например "Unable to get endpoints from the cloud." (Не удалось получить конечные точки из облака). Чтобы избежать этой ошибки, можно задать следующие переменные среды:
 
    ```shell
    export AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1
    export ADAL_PYTHON_SSL_NO_VERIFY=1
    ```
 
-2. Зарегистрируйте среду. При выполнении команды `az cloud register` используйте следующие параметры.
+2. Зарегистрируйте среду. При выполнении команды `az cloud register` используйте следующие параметры:
 
     | Значение | Пример | ОПИСАНИЕ |
     | --- | --- | --- |
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
-    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в Пакете средств разработки Azure Stack (ASDK): `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
-    | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать соответствующую конечную точку.  |
-    | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать конечную точку.  |
-    | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. Дополнительные сведения см. в статье [Использование профилей версий API и Azure CLI в Azure Stack](#set-up-the-virtual-machine-aliases-endpoint). |
+    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
+    | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
+    | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
+    | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. См. сведения о [настройке конечной точки псевдонимов виртуальных машин](#set-up-the-virtual-machine-aliases-endpoint). |
 
     ```azurecli  
-    az cloud register -n <environmentname> --endpoint-resource-manager "https://management.local.azurestack.external" --suffix-storage-endpoint "local.azurestack.external" --suffix-keyvault-dns ".vault.local.azurestack.external" --endpoint-vm-image-alias-doc <URI of the document which contains virtual machine image aliases>
+    az cloud register -n <environmentname> --endpoint-resource-manager "https://management.local.azurestack.external" --suffix-storage-endpoint "local.azurestack.external" --suffix-keyvault-dns ".vault.local.azurestack.external" --endpoint-vm-image-alias-doc <URI of the document which contains VM image aliases>
     ```
 
 3. Настройте активную среду. 
@@ -433,7 +433,7 @@ az group create -n MyResourceGroup -l local
    ```
 
     >[!NOTE]  
-    >Если вы используете версию Azure Stack до 1808, вам нужно использовать профиль версии API **2017-03-09-profile** вместо профиля версии **2019-03-01-hybrid**. Вам нужно будет использовать последнюю версию Azure CLI.
+    >Если вы используете версию Azure Stack до 1808, вам потребуется профиль версии API **2017-03-09-profile** вместо профиля версии **2019-03-01-hybrid**. Вам также потребуется последняя версия Azure CLI.
 
 5. Войдите в среду Azure Stack с помощью команды `az login`. Вы можете войти в среду Azure Stack от имени пользователя или [субъекта-службы](/azure/active-directory/develop/app-objects-and-service-principals). 
 
@@ -476,21 +476,21 @@ az group create -n MyResourceGroup -l local
 
 ## <a name="linux-ad-fs"></a>Linux (AD FS)
 
-В этом разделе описывается настройка CLI, если вы используете службы федерации Active Directory (AD FS) в качестве службы управления и применяете CLI на компьютере с Linux.
+В этом разделе объясняется, как настроить CLI, если вы используете службы федерации Active Directory (AD FS) в качестве службы управления и работаете с CLI на компьютере с Linux.
 
 ### <a name="trust-the-azure-stack-ca-root-certificate"></a>Доверие для корневого сертификата ЦС Azure Stack
 
-Если вы используете ASDK, потребуется обеспечить доверие корневому сертификату ЦС на удаленном компьютере. Этого не требуется делать с интегрированными системами.
+Если вы используете ASDK, нужно обеспечить доверие корневому сертификату ЦС на удаленном компьютере. Этого не нужно делать при использовании интегрированных систем.
 
 Чтобы настроить доверие для корневого сертификата ЦС Azure Stack, добавьте его после существующего сертификата Python.
 
-1. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Вам потребуется установить pip и модуль certifi. Вы можете использовать следующие команды Python из командной строки Bash:
+1. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Вам потребуется установить pip и модуль certifi. Выполните следующие команды Python из командной строки Bash:
 
     ```bash  
     python3 -c "import certifi; print(certifi.where())"
     ```
 
-    Запомните расположение сертификата, например `~/lib/python3.5/site-packages/certifi/cacert.pem`. Конкретный путь зависит от операционной системы и установленной версии Python.
+    Запомните расположение сертификата. Например, `~/lib/python3.5/site-packages/certifi/cacert.pem`. Конкретный путь зависит от операционной системы и установленной версии Python.
 
 2. Запустите следующую команду bash, указав путь к вашему сертификату.
 
@@ -510,7 +510,7 @@ az group create -n MyResourceGroup -l local
 
 Для подключения к Azure Stack выполните следующие действия:
 
-1. Зарегистрируйте среду Azure Stack, выполнив команду `az cloud register`. В некоторых сценариях прямое исходящее подключение к Интернету маршрутизируется через прокси-сервер или брандмауэр, который принудительно использует перехват SSL. В этих случаях команда `az cloud register` может выдать ошибку, например "Unable to get endpoints from the cloud." (Не удалось получить конечные точки из облака). Чтобы избежать этой ошибки, можно задать следующие переменные среды.
+1. Зарегистрируйте среду Azure Stack, выполнив команду `az cloud register`. В некоторых сценариях прямое исходящее подключение к Интернету маршрутизируется через прокси-сервер или брандмауэр, который принудительно использует перехват SSL. В этих случаях команда `az cloud register` может выдать ошибку, например "Unable to get endpoints from the cloud." (Не удалось получить конечные точки из облака). Чтобы избежать этой ошибки, можно задать следующие переменные среды:
 
    ```shell
    export AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1
@@ -522,13 +522,13 @@ az group create -n MyResourceGroup -l local
     | Значение | Пример | ОПИСАНИЕ |
     | --- | --- | --- |
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
-    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в Пакете средств разработки Azure Stack (ASDK): `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
-    | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать соответствующую конечную точку.  |
-    | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы необходимо использовать конечную точку.  |
-    | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. Дополнительные сведения см. в статье [Использование профилей версий API и Azure CLI в Azure Stack](#set-up-the-virtual-machine-aliases-endpoint). |
+    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
+    | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
+    | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
+    | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. См. сведения о [настройке конечной точки псевдонимов виртуальных машин](#set-up-the-virtual-machine-aliases-endpoint). |
 
     ```azurecli  
-    az cloud register -n <environmentname> --endpoint-resource-manager "https://management.local.azurestack.external" --suffix-storage-endpoint "local.azurestack.external" --suffix-keyvault-dns ".vault.local.azurestack.external" --endpoint-vm-image-alias-doc <URI of the document which contains virtual machine image aliases>
+    az cloud register -n <environmentname> --endpoint-resource-manager "https://management.local.azurestack.external" --suffix-storage-endpoint "local.azurestack.external" --suffix-keyvault-dns ".vault.local.azurestack.external" --endpoint-vm-image-alias-doc <URI of the document which contains VM image aliases>
     ```
 
 3. Настройте активную среду. 
@@ -544,7 +544,7 @@ az group create -n MyResourceGroup -l local
    ```
 
     >[!NOTE]  
-    >Если вы используете версию Azure Stack до 1808, вам нужно использовать профиль версии API **2017-03-09-profile** вместо профиля версии **2019-03-01-hybrid**. Вам нужно будет использовать последнюю версию Azure CLI.
+    >Если вы используете версию Azure Stack до 1808, вам потребуется профиль версии API **2017-03-09-profile** вместо профиля версии **2019-03-01-hybrid**. Вам также потребуется последняя версия Azure CLI.
 
 5. Войдите в среду Azure Stack с помощью команды `az login`. Вы можете войти в среду Azure Stack от имени пользователя или [субъекта-службы](/azure/active-directory/develop/app-objects-and-service-principals). 
 
@@ -563,7 +563,7 @@ az group create -n MyResourceGroup -l local
         
      Подготовьте PEM-файл для использования для входа субъект-службы.
 
-      * На клиентском компьютере, где был создан субъект, экспортируйте сертификат субъект-службы как PFX-файл с закрытым ключом, расположенным по пути `cert:\CurrentUser\My`. Имя сертификата совпадает с именем субъекта.
+      * На клиентском компьютере, где был создан субъект, экспортируйте сертификат субъект-службы как PFX-файл с закрытым ключом, расположенным здесь: `cert:\CurrentUser\My`. Имя этого сертификата совпадает с именем субъекта.
   
       * Преобразуйте PFX в PEM (используйте служебную программу OpenSSL).
 
@@ -593,9 +593,9 @@ az group create -n MyResourceGroup -l local
 
 При использовании интерфейса командной строки в Azure Stack существуют следующие известные проблемы.
 
- - Интерактивный режим CLI. Например, команда `az interactive` пока не поддерживается в Azure Stack.
+ - Интерактивный режим CLI. Например, команда `az interactive` еще не поддерживается в Azure Stack.
  - Чтобы получить список образов виртуальных машин, доступных в Azure Stack, используйте команду `az vm image list --all` вместо `az vm image list`. Указание параметра `--all` гарантирует, что ответ возвращает только образы, доступные в среде Azure Stack.
- - Псевдонимы образов виртуальных машин, доступные в Azure, могут быть неприменимыми для Azure Stack. При использовании образов виртуальных машин вместо псевдонима образа необходимо использовать параметр полного URN (Canonical: UbuntuServer:14.04.3-LTS:1.0.0). Этот URN должен соответствовать спецификации образа, полученной из команды `az vm images list`.
+ - Azure Stack может не поддерживать псевдонимы образов виртуальных машин, доступные в Azure. При использовании образов виртуальных машин вместо псевдонима образа необходимо указать полное имя URN (Canonical:UbuntuServer:14.04.3-LTS:1.0.0). Этот URN должен соответствовать спецификации образа, полученной из команды `az vm images list`.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -11,28 +11,50 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/31/2019
+ms.date: 08/05/2019
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: c70334bea80a84166a4bb614f15852e44f2b99f4
-ms.sourcegitcommit: bf4d265a3522cbfdd9dd295a0f4ad0daf2ed5eca
+ms.openlocfilehash: 3d0aad849395a93b1086daf5cf2c17e198d69ed5
+ms.sourcegitcommit: 0e0d010c4e010f2fd6799471db8bf71652d8d4e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68692135"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68806916"
 ---
 # <a name="azure-stack-marketplace-changes"></a>Изменения в Azure Stack Marketplace
 
-В этой статье описываются последние добавленные, обновленные, измененные и удаленные [элементы Azure Stack Marketplace](azure-stack-marketplace-azure-items.md). Сведения в этом разделе часто обновляются, поэтому регулярно проверяйте наличие изменений.
+В этой статье описываются последние добавленные, обновленные, измененные и удаленные [элементы Azure Stack Marketplace](azure-stack-marketplace-azure-items.md) (примерно за последние три месяца). Сведения в этом разделе часто обновляются, поэтому регулярно проверяйте наличие изменений.
 
-В этой статье описаны изменения, внесенные в Marketplace за последние 3 месяца (приблизительно). Статья [Элементы Marketplace для Azure Stack](azure-stack-marketplace-azure-items.md) всегда содержит самый актуальный список доступных элементов Azure Stack Marketplace.
+Статья [Элементы Marketplace для Azure Stack](azure-stack-marketplace-azure-items.md) всегда содержит самый актуальный список доступных элементов Azure Stack Marketplace.
 
 ## <a name="new-marketplace-items"></a>Новые элементы Marketplace
 
-- Veeam® Backup & Replication™. Позволяет организациям обеспечить комплексную защиту данных для ВСЕХ рабочих нагрузок — виртуальных, физических и облачных. С помощью одной консоли можно обеспечить быстрые, гибкие и надежные резервное копирование, восстановление и репликацию всех приложений и данных. Добавлено 14.06.2019.
+- 25.01.2019: A10 vThunder. (контроллер доставки приложений уровней 4–7, глобальная балансировка нагрузки сервера (GSLB), аналитика SSL)
 
-- A10 vThunder. Контроллер доставки приложений уровней 4–7, глобальная балансировка нагрузки сервера (GSLB), аналитика SSL. Добавлено 25.01.2019.
+- 14.06.2019: Veeam® Backup & Replication™
+
+- 05.08.2019: Drupal
+
+- 05.08.2019: etcd
+
+- 05.08.2019: Grafana
+
+- 05.08.2019: Neo4j
+
+- 05.08.2019: Parse Server
+
+- 05.08.2019: WordPress Multisite
+
+- 05.08.2019: ZooKeeper
+
+- 05.08.2019: Сервер модели TensorFlow
+
+- 05.08.2019: NATS
+
+- 05.08.2019: Review Board
+
+- 05.08.2019: Composr
 
 ## <a name="deprecated-marketplace-items"></a>Нерекомендуемые элементы Marketplace
 

@@ -16,12 +16,12 @@ ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 03/20/2019
-ms.openlocfilehash: cae4c6c5b96dd7bdbd6fcec7859309e0dd995a44
-ms.sourcegitcommit: b3dac698f2e1834491c2f9af56a80e95654f11f3
+ms.openlocfilehash: 891727c8e80af479e800feef9c292f7355fb208c
+ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658691"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68842687"
 ---
 # <a name="vm-update-and-management-automation-in-azure-stack"></a>Автоматизация обновления виртуальной машины и управления ею в Azure Stack
 Для управления виртуальными машинами Windows и Linux, развернутыми с помощью Azure Stack, можно использовать следующие функции решения службы автоматизации Azure.
@@ -131,6 +131,7 @@ ms.locfileid: "68658691"
 
    ![Вкладка сопоставления виртуальных машин в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/insights/media/vminsights-maps/map-multivm-azure-monitor-01.png)
 
+Если [Azure Monitor для виртуальных машин](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview) не отображает данные о производительности, включите их сбор для Windows и Linux в дополнительных параметрах [рабочей области Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-performance-counters).
 
 ## <a name="enable-update-management-using-a-resource-manager-template"></a>Включение Управления обновлениями с помощью шаблона Resource Manager
 При наличии большого количества виртуальных машин Azure Stack можно использовать [этот шаблон Azure Resource Manager](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/MicrosoftMonitoringAgent-ext-win), чтобы упростить развертывание решения на виртуальных машинах. Шаблон развертывает расширение Microsoft Monitoring Agent на имеющейся виртуальной машине Azure Stack и добавляет его в имеющуюся рабочую область LogAnalytics Azure.
