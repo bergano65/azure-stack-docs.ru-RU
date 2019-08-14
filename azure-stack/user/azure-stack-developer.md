@@ -42,4 +42,4 @@ ms.locfileid: "68658566"
 Дополнительные сведения о разработке в Stack см. в следующих статьях:
 
 * [Рекомендации по работе с шаблонами Azure Resource Manager](azure-stack-develop-templates.md)
-* [Microsoft Azure Stack Quickstart Templates](https://github.com/Azure/AzureStack-QuickStart-Templates) (Шаблоны быстрого запуска Microsoft Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates)
+* [Шаблоны быстрого запуска Microsoft Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates)
