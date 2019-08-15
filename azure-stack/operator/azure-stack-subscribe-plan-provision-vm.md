@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/10/2019
+ms.date: 08/13/2019
 ms.author: sethm
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: 792589eabf13b9aca493e230f7e3e93cfab21736
-ms.sourcegitcommit: 426380a3a27954cd609ba52d1066d9d69f5267fe
+ms.openlocfilehash: 51b61eae1f2c00a959eded275c13c5c4b8d06e4c
+ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65532372"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991787"
 ---
 # <a name="create-subscriptions-to-offers-in-azure-stack"></a>Создание подписок для предложений в Azure Stack
 
@@ -45,7 +45,7 @@ ms.locfileid: "65532372"
 2. Выберите **Добавить**. В разделе **Новая пользовательская подписка** введите следующие сведения.  
 
    - **Отображаемое имя** — понятное имя для идентификации подписки, которая отображается в виде *имени подписки пользователя*.
-   - **Пользователь** — укажите пользователя из доступного клиента каталога для этой подписки. Этот пользователь будет отображаться как *владелец*.  Формат имени пользователя зависит от решения для идентификации. Например: 
+   - **Пользователь** — укажите пользователя из доступного клиента каталога для этой подписки. Этот пользователь будет отображаться как *владелец*.  Формат имени пользователя зависит от решения для идентификации. Например:
 
      - **Azure AD:** `<user1>@<contoso.onmicrosoft.com>`
 

@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/01/2019
+ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: d02173731f8cf7834160a0228c589b036aac7fe6
-ms.sourcegitcommit: 85c3acd316fd61b4e94c991a9cd68aa97702073b
+ms.openlocfilehash: c00ce005ac72fcde34b58a1afe7e134c27274247
+ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64984023"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991723"
 ---
 # <a name="azure-stack-validation-report"></a>Отчет о проверке Azure Stack
 
@@ -35,7 +35,7 @@ ms.locfileid: "64984023"
 
 В обоих файлах сохраняются результаты всех последовательных проверок на этом компьютере. Например, вы можете запустить средство только для проверки сертификатов, затем снова запустить его для проверки удостоверений Azure, а в третий раз — для проверки регистрации. Результаты всех трех проверок будут доступны в JSON-файле отчета.  
 
-По умолчанию оба файла сохраняются в расположении **C:\Users\<имя_пользователя>\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
+По умолчанию оба файла сохраняются в расположении **C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
 
 - Используйте параметр `-OutputPath <path>` в конце командной строки, чтобы задать другое расположение для отчетов.
 - Используйте параметр `-CleanReport` в конце команды, чтобы удалить из файла **AzsReadinessCheckerReport.json** сведения о предыдущих запусках средства.
@@ -46,7 +46,7 @@ ms.locfileid: "64984023"
 
 Например, следующая команда позволяет просмотреть из командной строки PowerShell отчет, расположенный в текущем каталоге:
 
-```shell
+```powershell
 Read-AzsReadinessReport -ReportPath .\AzsReadinessReport.json
 ```
 
@@ -96,7 +96,7 @@ PSBoundParameters :
 
 ## <a name="view-the-report-summary"></a>Просмотр сводного отчета
 
-Чтобы просмотреть сводную информацию из отчета, добавьте параметр `-summary` в конец командной строки PowerShell. Например: 
+Чтобы просмотреть сводную информацию из отчета, добавьте параметр `-summary` в конец командной строки PowerShell. Например:
 
 ```powershell
 Read-AzsReadinessReport -ReportPath .\Contoso-AzsReadinessReport.json -summary

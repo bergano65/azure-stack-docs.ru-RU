@@ -10,16 +10,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/08/2019
+ms.date: 08/12/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/08/2019
-ms.openlocfilehash: 21e1e8df3d5f43f91e391b8c39f3f5aca3aefea8
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: 7f86ff3347d5d6f24bcd1fe450156c2557fb41e1
+ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269585"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959397"
 ---
 # <a name="resource-provider-api-versions-supported-by-profiles-in-azure-stack"></a>Версии API поставщика ресурсов, поддерживаемые профилями в Azure Stack
 
@@ -33,7 +33,7 @@ ms.locfileid: "66269585"
 
 Объяснение профилей API и частота выпусков версий для Azure Stack приведены в разделе [Управление профилями версий API в Azure Stack](azure-stack-version-profiles.md).
 
-> [!Note]
+> [!NOTE]
 > **Последняя версия** профиля API содержит последнюю версию API поставщика ресурсов и не описана в этой статье.
 
 ## <a name="overview-of-the-2019-03-01-hybrid-profile"></a>Общие сведения о профиле 2019-03-01-hybrid
@@ -64,7 +64,7 @@ ms.locfileid: "66269585"
 | Операции | 2015-07-01 |
 | Разрешения | 2015-07-01 |
 | Назначения политик | 2016-12-01 |
-| Определения службы "Политика Azure" | 2016-12-01 |
+| Определения политик | 2016-12-01 |
 | Операции с поставщиками | 2015-07-01 |
 | Назначения ролей | 2015-07-01 |
 | Определения ролей | 2015-07-01 |
@@ -199,5 +199,5 @@ Azure Resource Manager позволяет развертывать инфрас�
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Install PowerShell for Azure Stack](../operator/azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack)
-* [Configure the Azure Stack user's PowerShell environment](azure-stack-powershell-configure-user.md) (Настройка пользовательской среды PowerShell в Azure Stack)  
+- [Install PowerShell for Azure Stack](../operator/azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack)
+- [Configure the Azure Stack user's PowerShell environment](azure-stack-powershell-configure-user.md) (Настройка пользовательской среды PowerShell в Azure Stack)  

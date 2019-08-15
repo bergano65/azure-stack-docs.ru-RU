@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/09/2019
+ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 1f8d7573d9d3da54ddb5fa7aae85ba15d1db4c3c
-ms.sourcegitcommit: 2b6a0b3b4dc63c26df3d0535d630d640ff232fb0
+ms.openlocfilehash: 7d0e9c6914ce8748d842c9addf040355e3dc1cb1
+ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65521253"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991706"
 ---
 # <a name="start-azsreadinesschecker-cmdlet-reference"></a>Справочник по командлету Start-AzsReadinessChecker
 
@@ -302,7 +302,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|--------------|
-|Тип:                       |Строка        |
+|Тип:                       |Строка,        |
 |Позиция:                   |именованная         |
 |Значение по умолчанию:              |Нет          |
 |Принимает входные данные конвейера:      |Ложь         |
@@ -314,7 +314,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|--------------|
-|Тип:                       |Строка        |
+|Тип:                       |Строка,        |
 |Позиция:                   |именованная         |
 |Значение по умолчанию:              |ExternalFQDN, ExternalDomainName |
 |Принимает входные данные конвейера:      |Ложь         |
@@ -326,10 +326,10 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|--------------|
-|Тип:                       |Строка        |
+|Тип:                       |Строка,        |
 |Позиция:                   |именованная         |
 |Значение по умолчанию:              |Нет          |
-|Допустимые значения:                |'AAD','ADFS'  |
+|Допустимые значения:               |'AAD','ADFS'  |
 |Принимает входные данные конвейера:      |Ложь         |
 |Принимает подстановочные знаки: |Ложь         |
 
@@ -363,7 +363,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка   |
+|Тип:                       |Строка,   |
 |Позиция:                   |именованная    |
 |Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
@@ -375,7 +375,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка   |
+|Тип:                       |Строка,   |
 |Позиция:                   |именованная    |
 |Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
@@ -387,7 +387,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка   |
+|Тип:                       |Строка,   |
 |Позиция:                   |именованная    |
 |Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
@@ -414,10 +414,10 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка   |
+|Тип:                       |Строка,   |
 |Позиция:                   |именованная    |
 |Значение по умолчанию:              |Нет     |
-|Допустимые значения:                |'MultipleCSR','SingleCSR' |
+|Допустимые значения:               |'MultipleCSR','SingleCSR' |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
@@ -427,7 +427,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка   |
+|Тип:                       |Строка,   |
 |Позиция:                   |именованная    |
 |Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
@@ -451,7 +451,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка   |
+|Тип:                       |Строка,   |
 |Позиция:                   |именованная    |
 |Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
@@ -463,10 +463,10 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка   |
+|Тип:                       |Строка,   |
 |Позиция:                   |именованная    |
 |Значение по умолчанию:              |Нет     |
-|Допустимые значения:                |AzureCloud, AzureChinaCloud, AzureGermanCloud |
+|Допустимые значения:               |AzureCloud, AzureChinaCloud, AzureGermanCloud |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
@@ -476,7 +476,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка   |
+|Тип:                       |Строка,   |
 |Позиция:                   |именованная    |
 |Значение по умолчанию:              |Нет     |
 |Принимает входные данные конвейера:      |Ложь    |
@@ -500,7 +500,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка   |
+|Тип:                       |Строка,   |
 |Позиция:                   |именованная    |
 |Значение по умолчанию:              |Все      |
 |Принимает входные данные конвейера:      |Ложь    |
@@ -522,7 +522,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка   |
+|Тип:                       |Строка,   |
 |Позиция:                   |именованная    |
 |Значение по умолчанию:              |.\Certificates |
 |Принимает входные данные конвейера:      |Ложь    |
@@ -546,10 +546,10 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка   |
+|Тип:                       |Строка,   |
 |Позиция:                   |именованная    |
 |Значение по умолчанию:              |Все      |
-|Допустимые значения:                |'Certificate','AzureRegistration','AzureIdentity','Jobs','All' |
+|Допустимые значения:               |'Certificate','AzureRegistration','AzureIdentity','Jobs','All' |
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
@@ -584,7 +584,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 
 |  |  |
 |----------------------------|------------------|
-|Тип:                       |Строка            |
+|Тип:                       |Строка,            |
 |Позиция:                   |именованная             |
 |Значение по умолчанию:              |$ENV:TEMP\AzsReadinessChecker  |
 |Принимает входные данные конвейера:      |Ложь             |

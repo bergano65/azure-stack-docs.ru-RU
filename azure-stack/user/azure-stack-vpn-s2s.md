@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 08/12/2019
 ms.author: sethm
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 0c9c1af77ecf2bdf1c8da23cc7ab9e8d281067ea
-ms.sourcegitcommit: b3dac698f2e1834491c2f9af56a80e95654f11f3
+ms.openlocfilehash: 9c8911452dc77f77156c1256e42c4624b08b5648
+ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658695"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959313"
 ---
 # <a name="configure-ipsecike-policy-for-site-to-site-vpn-connections"></a>Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"
 
@@ -79,7 +79,7 @@ ms.locfileid: "68658695"
 | Время существования QM SA                                       | (Необязательно — используются значения по умолчанию, если не заданы другие значения.)<br />                         Секунды (целое число, минимум 300, по умолчанию — 27 000 с)<br />                         Килобайты (целое число, минимум 1024, по умолчанию — 102 400 000 КБ) |
 | Селектор трафика                                     | Селекторы трафика на основе политик не поддерживаются в Azure Stack.         |
 
-- Ваша конфигурация локальных VPN-устройств должна совпадать со следующими алгоритмами и параметрами, указанными в политике Azure IPsec/IKE, или содержать их:
+- Ваша конфигурация локальных VPN-устройств должна совпадать со следующими алгоритмами и параметрами, указанными в политике Azure IPsec/IKE, или содержать их.
 
   - алгоритм шифрования IKE (основной режим или фаза 1);
   - алгоритм обеспечения целостности IKE (основной режим или фаза 1);

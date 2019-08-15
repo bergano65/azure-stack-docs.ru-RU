@@ -17,10 +17,10 @@ ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 10/15/2018
 ms.openlocfilehash: 8512568c709770f736d6740d83578dee7391adff
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "66269262"
 ---
 # <a name="configure-deployment-sources"></a>Настройка источников развертывания

@@ -3,8 +3,8 @@ title: Типы квот в Azure Stack | Документация Майкро�
 description: Просмотр и редактирование разных типов квот, доступных для служб и ресурсов в Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: sethmanheim
+manager: femila
 editor: ''
 ms.assetid: ''
 ms.service: azure-stack
@@ -12,17 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-origin.date: 03/27/2019
-ms.date: 04/29/2019
-ms.author: v-jay
+ms.date: 08/13/2019
+ms.author: sethm
 ms.reviewer: xiaofmao
 ms.lastreviewed: 12/07/2018
-ms.openlocfilehash: 848b2a0c912a00a2185d7e4b7b8d8446bc1f6aca
-ms.sourcegitcommit: 0973dddb81db03cf07c8966ad66526d775ced8b9
+ms.openlocfilehash: df0bee87f512f00ea57fc11492f824730dbf9b42
+ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64308894"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991780"
 ---
 # <a name="quota-types-in-azure-stack"></a>Типы квот в Azure Stack
 
@@ -120,5 +119,3 @@ ms.locfileid: "64308894"
 
 - [Дополнительные сведения о планах, предложениях и квотах.](azure-stack-plan-offer-quota-overview.md)
 - [Create a plan in Azure Stack](azure-stack-create-plan.md) (Создание плана в Azure Stack)
-
-<!-- Update_Description: add edit a quota -->
