@@ -171,6 +171,8 @@
               href: azure-stack-updates.md
             - name: Установка обновлений
               href: azure-stack-apply-updates.md
+            - name: Применение обновлений для изготовителей оборудования
+              href: azure-stack-update-oem.md
             - name: Мониторинг состояния обновления
               href: azure-stack-monitor-update.md
         - name: Мониторинг работоспособности и оповещений
