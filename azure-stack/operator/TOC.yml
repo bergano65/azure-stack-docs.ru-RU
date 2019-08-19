@@ -86,6 +86,8 @@
               href: azure-stack-network.md
             - name: Пограничное подключение
               href: azure-stack-border-connectivity.md
+            - name: Конфигурация коммутатора
+              href: azure-stack-customer-defined.md
             - name: Интеграция DNS
               href: azure-stack-integrate-dns.md
             - name: Интеграция брандмауэра
