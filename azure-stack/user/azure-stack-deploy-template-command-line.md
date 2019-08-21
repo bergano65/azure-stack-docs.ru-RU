@@ -1,6 +1,6 @@
 ---
 title: Развертывание шаблона в Azure Stack с помощью командной строки | Документация Майкрософт
-description: Узнайте, как использовать кроссплатформенный интерфейс командной строки (CLI) для развертывания шаблонов в Azure Stack.
+description: Узнайте, как использовать кроссплатформенный интерфейс командной строки Azure (Azure CLI) для развертывания шаблонов в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: CLI
 ms.topic: article
-ms.date: 05/09/2019
+ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 92c9189f8144804f36e551ab89d8b4fc4c1f8598
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: da17e80c802e210d53effbad8f264b1a4019e6e0
+ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66691371"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991846"
 ---
 # <a name="deploy-a-template-with-the-command-line-in-azure-stack"></a>Развертывание шаблона в Azure Stack с помощью командной строки
 
@@ -55,4 +55,4 @@ az storage account list
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Узнайте больше о [развертывании шаблонов с помощью PowerShell](azure-stack-deploy-template-powershell.md).
+Узнайте, как [развертывать шаблоны с помощью PowerShell](azure-stack-deploy-template-powershell.md).

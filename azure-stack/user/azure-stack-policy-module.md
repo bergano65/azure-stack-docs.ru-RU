@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/26/2019
+ms.date: 08/13/2019
 ms.author: sethm
 ms.lastreviewed: 03/26/2019
-ms.openlocfilehash: fdb17c1f8f7fd183b4542a1a0417b6880a8afe9b
-ms.sourcegitcommit: b36d078e699c7924624b79641dbe9021af9606ba
+ms.openlocfilehash: c0872c598cc621250c3b2c5d39aca0e392f71b29
+ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67816160"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68991600"
 ---
 # <a name="manage-azure-policy-using-the-azure-stack-policy-module"></a>Управление политикой Azure с использованием модуля политики Azure Stack
 
@@ -35,14 +35,13 @@ ms.locfileid: "67816160"
 3. [Настройте PowerShell для использования с Azure Stack](azure-stack-powershell-configure-user.md).
 4. Импортируйте модуль *AzureStack.Policy.psm1*.
 
-
    ```powershell
    Import-Module .\Policy\AzureStack.Policy.psm1
    ```
 
 ## <a name="apply-policy-to-azure-subscription"></a>Применение политики к подписке Azure
 
-Следующая команда позволяет применить используемую по умолчанию политику Azure Stack к подписке Azure. Перед выполнением этой команды замените `Azure subscription name` именем своей подписки Azure.
+Следующая команда позволяет применить используемую по умолчанию политику Azure Stack к подписке Azure. Перед выполнением этих команд замените `Azure subscription name` именем своей подписки Azure.
 
 ```powershell
 Add-AzureRmAccount
@@ -54,7 +53,7 @@ New-AzureRmPolicyAssignment -Name AzureStack -PolicyDefinition $policy -Scope /s
 
 ## <a name="apply-policy-to-a-resource-group"></a>Применение политики к группе ресурсов
 
-Возможно, вам потребуется применить политики для выборочного управления. Например, у вас могут быть другие ресурсы, выполняющиеся в той же подписке. Областью действия приложения политики можно задать определенную группу ресурсов, которая позволит тестировать приложения для работы с Azure Stack с использованием ресурсов Azure. Перед выполнением этой команды замените `Azure subscription name` именем своей подписки Azure.
+Возможно, вам потребуется применить политики для выборочного управления. Например, у вас могут быть другие ресурсы, выполняющиеся в той же подписке. Областью действия приложения политики можно задать определенную группу ресурсов, которая позволит тестировать приложения для работы с Azure Stack с использованием ресурсов Azure. Перед выполнением следующих команд замените `Azure subscription name` именем своей подписки Azure.
 
 ```powershell
 Add-AzureRmAccount

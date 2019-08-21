@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 08/12/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 59e86e15289833d63b85314a84d0bb9e60dc5da8
-ms.sourcegitcommit: ccd86bd0862c45de1f6a4993f783ea2e186c187a
+ms.openlocfilehash: 24fc0f7993001ce95a21e175c84f37d755a5ce6c
+ms.sourcegitcommit: ec38ec569ad2193369c438f55e5c190aa5f0efd5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65172563"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68956597"
 ---
 # <a name="create-and-publish-a-marketplace-item"></a>Создание и публикация элемента Marketplace
 
@@ -47,7 +47,7 @@ ms.locfileid: "65172563"
 
 4. Проверьте, можно ли с помощью API-интерфейсов Microsoft Azure Stack развернуть ресурс из этого шаблона.
 5. Если шаблон использует образ виртуальной машины, [добавьте этот образ виртуальной машины в Azure Stack](azure-stack-add-vm-image.md).
-6. Сохраните шаблон Azure Resource Manager в папке **/Contoso.TodoList/DeploymentTemplates/**.
+6. Сохраните шаблон Azure Resource Manager в папке **/Contoso.TodoList/DeploymentTemplates/** .
 7. Выберите значки и текст для элемента Marketplace. Значки добавляются в папку **Icons**, а текст — в файл **resources**, расположенный в папке **Strings**. Для значков следуйте соглашению об именовании **мелких**, **обычных**, **крупных** и **огромных** значков. Подробное описание этих размеров см. в разделе [Справочные материалы. Пользовательский интерфейс элемента Marketplace](#reference-marketplace-item-ui).
 
    > [!NOTE]
@@ -81,11 +81,11 @@ ms.locfileid: "65172563"
 12. Чтобы упаковать папки в AZPKG-файл, откройте командную строку и выполните следующую команду:
 
     ```shell
-    AzureGalleryPackager.exe package -m <path to manifest.json> -o <output location for the package>
+    AzureGalleryPackager.exe package -m <absolute path to manifest.json> -o <output location for the package>
     ```
 
     > [!NOTE]
-    > Следует использовать уже существующий путь к пакету выходных данных. Например, если указан выходной путь C:\MarketPlaceItem\yourpackage.azpkg, должна существовать папка **C:\MarketPlaceItem**.
+    > Должен существовать полный путь к JSON-файлу манифеста, а также выходной пакет. Например, если указан выходной путь C:\MarketPlaceItem\yourpackage.azpkg, должна существовать папка **C:\MarketPlaceItem**.
     >
     >
 
@@ -116,7 +116,7 @@ ms.locfileid: "65172563"
 `https://portal.[Region].[external FQDN]:30015/artifact/20161101/[Template Name]/DeploymentTemplates/Template.json`
 `https://systemgallery.blob.[Region].[external FQDN]/dev20161101-microsoft-windowsazure-gallery/[Template Name]/UiDefinition.json`
 
-6. Чтобы удалить элемент Marketplace, используйте командлет **Remove-AzureRMGalleryItem**. Например: 
+6. Чтобы удалить элемент Marketplace, используйте командлет **Remove-AzureRMGalleryItem**. Например:
 
    ```powershell
    Remove-AzsGalleryItem -Name Microsoft.SimpleTemplate.1.0.0  -Verbose
@@ -133,19 +133,19 @@ ms.locfileid: "65172563"
 
 | ИМЯ | Обязательно | type | Ограничения | ОПИСАНИЕ |
 | --- | --- | --- | --- | --- |
-| ИМЯ |X |Строка |[A–Z, a–z, 0–9] + | |
-| ИЗДАТЕЛЬ |X |Строка |[A–Z, a–z, 0–9] + | |
-| Version (версия) |X |Строка |[SemVer v2](https://semver.org/) | |
+| ИМЯ |X |Строка, |[A–Z, a–z, 0–9] + | |
+| ИЗДАТЕЛЬ |X |Строка, |[A–Z, a–z, 0–9] + | |
+| Version (версия) |X |Строка, |[SemVer v2](https://semver.org/) | |
 
 ### <a name="metadata"></a>Метаданные
 
 | ИМЯ | Обязательно | type | Ограничения | ОПИСАНИЕ |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |Строка |Рекомендуется использовать 80 символов. |Портал может неправильно отображать имя элемента, если его длина превышает 80 символов. |
-| PublisherDisplayName |X |Строка |Рекомендуется использовать 30 символов. |Портал может неправильно отображать имя издателя, если его длина превышает 30 символов. |
-| PublisherLegalName |X |Строка |Не более 256 символов | |
-| Сводка |X |Строка |60–100 знаков. | |
-| LongSummary |X |Строка |140–256 знаков. |Пока не применяется в Azure Stack. |
+| DisplayName |X |Строка, |Рекомендуется использовать 80 символов. |Портал может неправильно отображать имя элемента, если его длина превышает 80 символов. |
+| PublisherDisplayName |X |Строка, |Рекомендуется использовать 30 символов. |Портал может неправильно отображать имя издателя, если его длина превышает 30 символов. |
+| PublisherLegalName |X |Строка, |Не более 256 символов | |
+| Сводка |X |Строка, |60–100 знаков. | |
+| LongSummary |X |Строка, |140–256 знаков. |Пока не применяется в Azure Stack. |
 | ОПИСАНИЕ |X |[HTML](https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md#gallery-item-metadata-html-sanitization) |От 500 до 5000 символов. | |
 
 ### <a name="images"></a>Образы
@@ -158,7 +158,7 @@ ms.locfileid: "65172563"
 | большой |115 пикселей |115 пикселей |Обязательный |
 | Средний |90 пикселей |90 пикселей |Обязательный |
 | Малый |40 пикселей |40 пикселей |Обязательный |
-| Снимок экрана |533 пикселя |32 пикселя |Необязательно |
+| Снимок экрана |533 пикселя |324 пикселя |Обязательный |
 
 ### <a name="categories"></a>Категории
 
@@ -170,7 +170,7 @@ ms.locfileid: "65172563"
 
 | ИМЯ | Обязательно | type | Ограничения | ОПИСАНИЕ |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |Строка |Длина не должна превышать 64 символов. | |
+| DisplayName |X |Строка, |Длина не должна превышать 64 символов. | |
 | URI |X |URI | | |
 
 ### <a name="additional-properties"></a>Дополнительные свойства
@@ -179,8 +179,8 @@ ms.locfileid: "65172563"
 
 | ИМЯ | Обязательно | type | Ограничения | ОПИСАНИЕ |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |Строка |Длина не должна превышать 25 символов. | |
-| Значение |X |Строка |Длина не должна превышать 30 символов. | |
+| DisplayName |X |Строка, |Длина не должна превышать 25 символов. | |
+| Значение |X |Строка, |Длина не должна превышать 30 символов. | |
 
 ### <a name="html-sanitization"></a>Очистка HTML
 

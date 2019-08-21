@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/05/2019
+ms.date: 08/09/2019
 ms.author: sethm
 ms.reviewer: ihcherie
-ms.lastreviewed: 08/05/2019
-ms.openlocfilehash: 76ce6d491969913ad48486fd9004f7686af8e6f3
-ms.sourcegitcommit: 0e0d010c4e010f2fd6799471db8bf71652d8d4e1
+ms.lastreviewed: 08/09/2019
+ms.openlocfilehash: b1085c22533530402d322702ca26c078c9cc7e4a
+ms.sourcegitcommit: 6239b35370d21852529978777c0e39cfba5a4552
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807053"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68917603"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack"></a>Элементы Azure Marketplace, доступные для Azure Stack
 
@@ -88,6 +88,7 @@ Microsoft Azure Stack поддерживает указанные ниже ви�
 | ![Container Linux от CoreOS](media/azure-stack-marketplace-azure-items/coreos.png) | [Container Linux от CoreOS](https://azuremarketplace.microsoft.com/marketplace/apps/CoreOS.CoreOS) | Container Linux — это современный компактный дистрибутив Linux, обеспечивающий простую работу с контейнерами, удобное управление кластерами и беспроблемное обновление серверов, что очень важно для вычислений промышленного масштаба. | CoreOS |
 | ![Сервер Ubuntu](media/azure-stack-marketplace-azure-items/ubuntu.png) | [Сервер Ubuntu](https://azuremarketplace.microsoft.com/marketplace/apps/Canonical.UbuntuServer) | Ubuntu Server является самой популярной в мире системой Linux для облачных сред. | Canonical |
 | ![Debian 8 "Jessie"](media/azure-stack-marketplace-azure-items/debian8.png) | [Debian 8 "Jessie"](https://azuremarketplace.microsoft.com/marketplace/apps/credativ.Debian) | Debian GNU/Linux является одним из наиболее распространенных дистрибутивов Linux. | credativ |
+| ![Oracle Linux](media/azure-stack-marketplace-azure-items/oracle.png) | [Oracle Linux](https://azuremarketplace.microsoft.com/marketplace/apps/oracle.oracle-linux) | Операционная система Oracle Linux разработана для открытой облачной инфраструктуры. Она обеспечивает высокую производительность, масштабируемость и надежность для корпоративных рабочих нагрузок SaaS и PaaS, а также для традиционных корпоративных приложений. | Oracle |
 | ![Версия 6.8 на основе CentOS](media/azure-stack-marketplace-azure-items/roguewave.png) | [Версия 6.8 на основе CentOS](https://azuremarketplace.microsoft.com/marketplace/apps/RogueWave.CentOSbased68HPC) | Этот дистрибутив Linux основан на CentOS и предоставляется компанией Rogue Wave Software. | Rogue Wave Software (прежнее название — OpenLogic)  |
 | ![Версия 6.10 на основе CentOS](media/azure-stack-marketplace-azure-items/roguewave.png) | [Версия 6.10 на основе CentOS](https://azuremarketplace.microsoft.com/marketplace/apps/RogueWave.CentOSbased610) | Этот дистрибутив Linux основан на CentOS и предоставляется компанией Rogue Wave Software. | Rogue Wave Software (прежнее название — OpenLogic)  |
 | ![Версия 7.3 на основе CentOS](media/azure-stack-marketplace-azure-items/roguewave.png) | [Версия 7.3 на основе CentOS](https://azuremarketplace.microsoft.com/marketplace/apps/RogueWave.CentOSbased73HPC) | Этот дистрибутив Linux основан на CentOS и предоставляется компанией Rogue Wave Software. | Rogue Wave Software (прежнее название — OpenLogic) |

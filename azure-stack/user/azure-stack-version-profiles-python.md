@@ -1,6 +1,6 @@
 ---
 title: Использование профилей версий API и Python в Azure Stack | Документы Майкрософт
-description: Сведения об использовании профилей версий API и Python в Azure Stack.
+description: Узнайте, как использовать профили версий API с помощью Python в Azure Stack
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,12 +15,12 @@ ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
 <!-- dev: viananth -->
-ms.openlocfilehash: 18884a4570f5c90d00b8e17e42fe8bc1b3c073c2
-ms.sourcegitcommit: c4507a100eadd9073aed0d537d054e394b34f530
+ms.openlocfilehash: 35ce331c29e89af3a81396a9658cf8a0f29018d3
+ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67198599"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959423"
 ---
 # <a name="use-api-version-profiles-with-python-in-azure-stack"></a>Использование профилей версий API и Python в Azure Stack
 
@@ -44,27 +44,27 @@ ms.locfileid: "67198599"
 ## <a name="install-the-azure-python-sdk"></a>Установка пакета Azure SDK для Python
 
 1. Установите Git с [официального сайта](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
-2. Инструкции по установке пакета SDK для Python см. в разделе [Azure для разработчиков Python](/python/azure/python-sdk-azure-install?view=azure-python).
+2. Инструкции по установке пакета SDK для Python см. в разделе [Установка пакета SDK](/python/azure/python-sdk-azure-install?view=azure-python).
 3. При необходимости создайте подписку и сохраните ее идентификатор для дальнейшего использования. Сведения о создании подписки см. в статье [Создание подписок для предложений в Azure Stack](../operator/azure-stack-subscribe-plan-provision-vm.md).
 4. Создайте субъект-службу и сохраните его идентификатор и секрет. Инструкции по созданию субъекта-службы для Azure Stack см. в статье [Предоставление приложениям доступа к Azure Stack](../operator/azure-stack-create-service-principals.md).
-5. Убедитесь, что субъект-служба имеет роль участника или владельца в вашей подписке. Сведения о том, как назначить роль субъекту-службе, см. в статье [Предоставление приложениям доступа к Azure Stack](../operator/azure-stack-create-service-principals.md).
+5. Убедитесь, что субъект-служба имеет роль участника или владельца в вашей подписке. Сведения о том, как назначить роль субъекту-службе, см. в статье [Использование удостоверения приложения для доступа к ресурсам](../operator/azure-stack-create-service-principals.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать пакет SDK Azure для Python и Azure Stack, укажите следующие значения и задайте их для переменных среды. Чтобы настроить переменные среды, воспользуйтесь инструкциями, которые указаны после таблицы для вашей операционной системы.
+Чтобы использовать пакет SDK Azure для Python и Azure Stack, укажите следующие значения и задайте их для переменных среды. Чтобы настроить переменные среды, воспользуйтесь инструкциями, которые указаны после таблицы для используемой операционной системы.
 
 | Значение | Переменные среды | ОПИСАНИЕ |
 |---------------------------|-----------------------|-------------------------------------------------------------------------------------------------------------------------|
-| Tenant ID | AZURE_TENANT_ID | Значение [идентификатора клиента](../operator/azure-stack-identity-overview.md) Azure Stack. |
-| Идентификатор клиента | AZURE_CLIENT_ID | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы в предыдущем разделе этой статьи. |
-| Идентификатор подписки | AZURE_SUBSCRIPTION_ID | [Идентификатор подписки](../operator/azure-stack-plan-offer-quota-overview.md#subscriptions) для доступа к предложениям в Azure Stack. |
-| Секрет клиента | AZURE_CLIENT_SECRET | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы. |
-| Конечная точка Resource Manager | ARM_ENDPOINT | Дополнительные сведения см. в разделе о [конечной точке Azure Stack Resource Manager](azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint). |
-| Расположение ресурса | AZURE_RESOURCE_LOCATION | Расположение ресурса в среде Azure Stack.
+| Tenant ID | `AZURE_TENANT_ID` | Значение [идентификатора клиента](../operator/azure-stack-identity-overview.md) Azure Stack. |
+| Идентификатор клиента | `AZURE_CLIENT_ID` | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы в предыдущем разделе этой статьи. |
+| Идентификатор подписки | `AZURE_SUBSCRIPTION_ID` | [Идентификатор подписки](../operator/azure-stack-plan-offer-quota-overview.md#subscriptions) для доступа к предложениям в Azure Stack. |
+| Секрет клиента | `AZURE_CLIENT_SECRET` | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы. |
+| Конечная точка Resource Manager | `ARM_ENDPOINT` | Дополнительные сведения см. в разделе о [конечной точке Azure Stack Resource Manager](azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint). |
+| Расположение ресурса | `AZURE_RESOURCE_LOCATION` | Расположение ресурса в среде Azure Stack.
 
 ### <a name="trust-the-azure-stack-ca-root-certificate"></a>Доверие для корневого сертификата ЦС Azure Stack
 
-Если вы используете ASDK, потребуется обеспечить доверие корневому сертификату ЦС на удаленном компьютере. Этого не требуется делать с интегрированными системами.
+Если вы используете ASDK, нужно обеспечить доверие корневому сертификату ЦС на удаленном компьютере. Если вы используете интегрированные системы, то это необязательно.
 
 #### <a name="windows"></a>Windows
 
@@ -74,7 +74,7 @@ ms.locfileid: "67198599"
       python -c "import certifi; print(certifi.where())"
     ```
 
-    Запомните расположение хранилища сертификатов. Например: *~/lib/python3.5/site-packages/certifi/cacert.pem*. Конкретный путь зависит от ОС и установленной версии Python.
+    Запомните расположение хранилища сертификатов. Например: *~/lib/python3.5/site-packages/certifi/cacert.pem*. Конкретный путь зависит от операционной системы и установленной версии Python.
 
 2. Чтобы настроить доверие для корневого сертификата ЦС Azure Stack, добавьте его после существующего сертификата Python.
 
@@ -109,7 +109,7 @@ ms.locfileid: "67198599"
     ```
 
 > [!NOTE]  
-> Если вы используете virtualenv для разработки с помощью пакета SDK для Python, как указано ниже, упомянутый выше сертификат необходимо также добавить в хранилище сертификатов виртуальной среды. Путь может выглядеть так: ...\mytestenv\Lib\site-packages\certifi\cacert.pem.
+> Если вы используете virtualenv для разработки с помощью пакета SDK для Python, как указано ниже, упомянутый выше сертификат необходимо добавить в хранилище сертификатов виртуальной среды. Путь может выглядеть так: ...\mytestenv\Lib\site-packages\certifi\cacert.pem.
 
 
 
@@ -117,13 +117,13 @@ ms.locfileid: "67198599"
 
 Ниже указанны некоторые примеры кода, доступные для Azure Stack с использованием пакета SDK для Python.
 
-- [Hybrid-ResourceManager-Python-Manage-Resources](https://azure.microsoft.com/resources/samples/hybrid-resourcemanager-python-manage-resources/).
-- [Hybrid-Storage-Python-Manage-Storage-Account](https://azure.microsoft.com/resources/samples/hybrid-storage-python-manage-storage-account/).
-- [Hybrid-Compute-Python-Manage-VM](https://azure.microsoft.com/resources/samples/hybrid-compute-python-manage-vm/). (Пример, использующий версию 2019-03-01-hybrid, которая предназначена для последних версий API, поддерживаемых Azure Stack).
+- [Hybrid-ResourceManager-Python-Manage-Resources](https://azure.microsoft.com/resources/samples/hybrid-resourcemanager-python-manage-resources/)
+- [Hybrid-Storage-Python-Manage-Storage-Account](https://azure.microsoft.com/resources/samples/hybrid-storage-python-manage-storage-account/)
+- [Hybrid-Compute-Python-Manage-VM](https://azure.microsoft.com/resources/samples/hybrid-compute-python-manage-vm/) (Пример, использующий профиль 2019-03-01-hybrid, который предназначен для последних версий API, поддерживаемых Azure Stack.)
 
 ## <a name="python-manage-virtual-machine-sample"></a>Пример управления виртуальной машиной на Python
 
-Указанный ниже пример кода можно использовать для выполнения типичных задач управления для виртуальных машин в Azure Stack. Из примера кода вы узнаете:
+Используйте указанный ниже пример кода для выполнения типичных задач управления для виртуальных машин в Azure Stack. Из примера кода вы изучите:
 
 - Создание виртуальных машин:
   - Создание виртуальной машины Linux
@@ -133,12 +133,12 @@ ms.locfileid: "67198599"
   - Добавление тега для виртуальной машины
   - Присоединение дисков данных
   - Отключение дисков данных
-- Эксплуатация виртуальной машины:
-  - запуск виртуальной машины
+- Управление виртуальной машиной:
+  - Запуск виртуальной машины
   - Остановка виртуальной машины
   - Перезапуск виртуальной машины
-- Отображение списка виртуальных машин
-- удаление виртуальной машины
+- Вывод списка виртуальных машин
+- Удаление виртуальной машины
 
 Чтобы просмотреть код для выполнения этих операций, изучите функцию **run_example()** в сценарии Python **example.py** из репозитория GitHub [Hybrid-Compute-Python-Manage-VM](https://github.com/Azure-Samples/Hybrid-Compute-Python-Manage-VM).
 
@@ -146,9 +146,9 @@ ms.locfileid: "67198599"
 
 ## <a name="run-the-python-sample"></a>Запуск примера Python
 
-1. [Установите Python](https://www.python.org/downloads/), если вы еще не сделали это. Этот пример (и пакет SDK) совместим с Python 2.7, 3.4, 3.5 и 3.6.
+1. [Установите Python](https://www.python.org/downloads/), если вы еще это не сделали. Этот пример (и пакет SDK) совместим с Python версий 2.7, 3.4, 3.5 и 3.6.
 
-2. Общей рекомендацией для разработки на Python является использование виртуальной среды. Дополнительные сведения см. в [документации Python](https://docs.python.org/3/tutorial/venv.html).
+2. Общей рекомендацией для разработки на Python является использование виртуальной среды. Дополнительные сведения см. в [документации по Python](https://docs.python.org/3/tutorial/venv.html).
 
 3. Установите и инициализируйте виртуальную среду с помощью модуля "venv" в Python 3 (нужно установить [virtualenv](https://pypi.python.org/pypi/virtualenv) для Python 2.7):
 
@@ -186,7 +186,7 @@ ms.locfileid: "67198599"
     export AZURE_RESOURCE_LOCATION={your AzureStack Resource location}
     ```
 
-8. Чтобы запустить этот пример, в Azure Stack Marketplace должны присутствовать образы Ubuntu 16.04-LTS и WindowsServer 2012-R2-Datacenter. Их можно [загрузить из Azure](../operator/azure-stack-download-azure-marketplace-item.md) или добавить в [репозиторий образов платформы](../operator/azure-stack-add-vm-image.md).
+8. Чтобы запустить этот пример, в Azure Stack Marketplace должны присутствовать образы Ubuntu 16.04-LTS и WindowsServer 2012-R2-Datacenter. Эти образы можно [скачать из Azure](../operator/azure-stack-download-azure-marketplace-item.md) или добавить в [репозиторий образов платформы](../operator/azure-stack-add-vm-image.md).
 
 9. Запустите пример:
 
@@ -200,4 +200,5 @@ ms.locfileid: "67198599"
 - [Центр разработки на Python Azure](https://azure.microsoft.com/develop/python/)
 - [Документация по виртуальным машинам Azure](https://azure.microsoft.com/services/virtual-machines/)
 - [Схема обучения для виртуальных машин](/learn/paths/deploy-a-website-with-azure-virtual-machines/)
-- Если у вас нет подписки Microsoft Azure, [здесь](https://go.microsoft.com/fwlink/?LinkId=330212) можно создать учетную запись и получить бесплатную пробную версию.
+
+Если у вас нет подписки Microsoft Azure, [здесь](https://go.microsoft.com/fwlink/?LinkId=330212) можно создать учетную запись и получить бесплатную пробную версию.
