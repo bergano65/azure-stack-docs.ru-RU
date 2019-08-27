@@ -16,12 +16,12 @@ ms.date: 07/25/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 07/25/2019
-ms.openlocfilehash: 41d07532960776cd5ed9312007877489e9ebbf20
-ms.sourcegitcommit: 83d9dbecd7334f37862e47ca028a50f8d7dafe2d
+ms.openlocfilehash: 0b305f07344540555b444017a04c1002bb8a08a8
+ms.sourcegitcommit: 250689d6d09acc677bf59de76510d5d5f1c6190e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738323"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896340"
 ---
 # <a name="azure-stack-1907-known-issues"></a>Известные проблемы в выпуске 1907 Azure Stack
 
@@ -107,6 +107,12 @@ ms.locfileid: "68738323"
 - Применимо. Данная проблема касается всех поддерживаемых выпусков.
 - Причина. На пользовательском портале колонка **Подключения** содержит функцию с именем **Средство устранения неполадок в VPN**. В настоящее время в Azure Stack эта функция не поддерживается.
 - Периодичность. Common
+
+### <a name="network-connection-type"></a>Тип сетевого подключения
+
+- Применимо. Эта проблема относится к любой среде версии 1906 или 1907. 
+- Причина. На пользовательском портале в колонке **AddConnection** (Добавление подключения) отображается параметр для использования **подключения виртуальной сети к виртуальной сети**. В настоящее время в Azure Stack эта функция не поддерживается. 
+- Периодичность. Common 
 
 #### <a name="documentation"></a>Документация
 
