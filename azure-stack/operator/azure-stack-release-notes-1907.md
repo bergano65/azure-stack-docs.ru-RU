@@ -16,12 +16,12 @@ ms.date: 08/16/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 08/16/2019
-ms.openlocfilehash: 2f840fdd06caf92dcadb8e49d26d7570d9d6aa71
-ms.sourcegitcommit: 54448d4518c7d9145b8755f51b18d554b3190810
+ms.openlocfilehash: 526343889bbd5cc784ebb87c39603e2152a98f3b
+ms.sourcegitcommit: b8260ef3e43f3703dd0df16fb752610ec8a86942
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69548294"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70008772"
 ---
 # <a name="azure-stack-1907-update"></a>Обновление 1907 для Azure Stack
 
@@ -143,7 +143,7 @@ Azure Stack выпускает исправления на регулярной 
 Выпуск 1907 Azure Stack должен применяться к выпуску 1906 со следующими исправлениями:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Исправление Azure Stack 1.1906.11.52](https://support.microsoft.com/help/4513119)
+- [Исправление Azure Stack 1.1906.12.54](https://support.microsoft.com/help/4518365)
 
 ### <a name="after-successfully-applying-the-1907-update"></a>После успешного применения обновления 1907
 

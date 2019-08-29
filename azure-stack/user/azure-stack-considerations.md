@@ -15,12 +15,12 @@ ms.topic: overview
 ms.date: 07/17/2019
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: a7a61e8eef33ee6a6efb87001504fe5234e3cf16
-ms.sourcegitcommit: 2063332b4d7f98ee944dd1f443847eea70eb5614
+ms.openlocfilehash: fc04032f7741c61a9b2b86e23a9173ca268a1e11
+ms.sourcegitcommit: b8260ef3e43f3703dd0df16fb752610ec8a86942
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68303153"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70008338"
 ---
 # <a name="differences-between-azure-stack-and-azure-when-using-services-and-building-apps"></a>Различия между Azure и Azure Stack при использовании служб и создании приложений
 
@@ -77,7 +77,7 @@ Azure Stack поддерживает конкретные версии Azure Pow
 Чтобы гарантировать правильность версии Azure PowerShell, используйте [профили версий API](azure-stack-version-profiles.md). Чтобы определить самый свежий профиль версии API, который можно использовать, узнайте номер используемой сборки Azure Stack. Эти сведения можно получить у администратора Azure Stack.
 
 > [!NOTE]
-> Если вы используете Пакет средств разработки Azure Stack и у вас есть права администратора, см. раздел [Определение текущей версии](../operator/azure-stack-updates.md#determine-the-current-version), в котором объясняется, как определить сборку Azure Stack.
+> Если вы используете Пакет средств разработки Azure Stack и у вас есть права администратора, см. раздел [Определение текущей версии](../operator/azure-stack-updates.md), в котором объясняется, как определить сборку Azure Stack.
 
 Чтобы получить сведения о других API, выполните приведенную ниже команду PowerShell, с помощью которой выводятся все пространства имен, типы ресурсов и версии API, поддерживаемые для подписки Azure Stack (на уровне свойств все же могут существовать различия). (Для выполнения этой команды необходимо [установить](../operator/azure-stack-powershell-install.md) и [настроить](azure-stack-powershell-configure-user.md) среду PowerShell для Azure Stack. Также вам потребуется подписка на действующее предложение Azure Stack.
 
