@@ -356,8 +356,10 @@
               href: azure-stack-app-service-release-notes-update-four.md
             - name: "Служба приложений в заметках о выпуске обновления\_5 для Azure Stack"
               href: azure-stack-app-service-release-notes-update-five.md
-            - name: "Заметки о выпуске обновления\_6 Службы приложений Azure в Azure Stack"
+            - name: "Заметки о выпуске обновления\_6 для Службы приложений Azure в Azure Stack"
               href: azure-stack-app-service-release-notes-update-six.md
+            - name: "Заметки о выпуске обновления\_7 для Службы приложений Azure в Azure Stack"
+              href: azure-stack-app-service-release-notes-update-seven.md
     - name: 'Создание планов, предложений и квот'
       items:
         - name: 'Обзор планов, предложений, квот и подписок'

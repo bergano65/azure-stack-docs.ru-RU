@@ -184,7 +184,7 @@
                   href: azure-stack-metrics-supported.md
                 - name: Использование данных мониторинга Azure
                   href: azure-stack-metrics-monitor.md
-        - name: Использование шаблонов решений
+        - name: Развертывание служб надстроек
           items:
             - name: Развертывание Ethereum
               href: azure-stack-ethereum.md
