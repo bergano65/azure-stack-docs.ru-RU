@@ -15,12 +15,12 @@ ms.date: 08/15/2019
 ms.author: mabrigg
 ms.lastreviewed: 08/15/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 1342eb503abb81308740c0103b1d54887a46cf85
-ms.sourcegitcommit: f62d58ae724020a24fa5905b6663abb5f1d62178
+ms.openlocfilehash: 73671431c70960fa517ee83c68945f14e2621b46
+ms.sourcegitcommit: 9cb82df1eccb0486bcabec0bd674162d4820c00c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69520928"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060190"
 ---
 # <a name="apply-azure-stack-original-equipment-manufacturer-oem-updates"></a>Применение обновлений изготовителя оборудования для Azure Stack
 
@@ -44,7 +44,7 @@ ms.locfileid: "69520928"
 
 | Партнер по оборудованию | Регион | URL-адрес |
 |------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cisco | Все | [Руководство по эксплуатации интегрированной системы Cisco для Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Заметки о выпуске интегрированной системы Cisco для Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
+| Cisco | Все | [Поддержка и обновления встроенного ПО для Azure Stack для Cisco — автоматическое уведомление (требуется учетная запись или имя для входа)](https://software.cisco.com/download/redirect?i=!y&mdfid=283862063&softwareid=286320368&release=1.0(0)&os=)<br><br>[Заметки о выпуске интегрированной системы Cisco для Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
 | Dell EMC | Все | [Облако для Microsoft Azure Stack 14G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Облако для Microsoft Azure Stack 13G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
 | Fujitsu | Япония | [Служба технической поддержки Fujitsu (требуется учетная запись и имя для входа)](https://eservice.fujitsu.com/supportdesk-web/) |
 |  | Европа, Ближний Восток и Африка | [Fujitsu: поддержка продуктов и систем ИТ](https://support.ts.fujitsu.com/IndexContact.asp?lng=COM&ln=no&LC=del) |
@@ -60,12 +60,12 @@ ms.locfileid: "69520928"
 1. Потребуется обратиться к изготовителю оборудования для следующего:
       - определить текущую версию пакета изготовителя оборудования;  
       - найти лучший способ скачивания пакета изготовителя оборудования.  
-2. Подготовьте пакет изготовителя оборудования, выполнив действия, описанные в разделе [Загрузка пакетов обновлений для интегрированных систем](azure-stack-servicing-policy.md#download-update-packages-for-integrated-systems).
+2. Подготовьте пакет изготовителя оборудования, выполнив действия, описанные в разделе [Загрузка пакетов обновлений для интегрированных систем](azure-stack-servicing-policy.md).
 3. Установите обновления, выполнив действия, описанные в разделе [Применение обновлений в Azure Stack](azure-stack-apply-updates.md).
 
 ## <a name="configure-hardware-vendor-vm"></a>Настройка виртуальной машины поставщика оборудования
 
-Некоторым поставщикам оборудования может потребоваться виртуальная машина для установки обновлений изготовителя оборудования. Поставщик оборудования будет отвечать за создание этих виртуальных машин и составление документации, если при выполнении командлета **Set-OEMExternalVM** вам нужно указать `ProxyVM` или `HardwareManager` для параметра **-VMType**. После создания виртуальных машин настройте их, выполнив командлет **Set-OEMExternalVM** на привилегированной конечной точке.
+Некоторым поставщикам оборудования может потребоваться виртуальная машина для установки обновлений изготовителя оборудования. Поставщик оборудования будет отвечать за создание этих виртуальных машин и составление документации, если при выполнении командлета **Set-OEMExternalVM** вам нужно указать `ProxyVM` или `HardwareManager` для параметра **-VMType**, а также за указание учетных данных, которые нужно задать для параметра **-Credential**. После создания виртуальных машин настройте их, выполнив командлет **Set-OEMExternalVM** на привилегированной конечной точке.
 
 Дополнительные сведения о привилегированной конечной точке в Azure Stack см. в разделе [Использование привилегированной конечной точки в Azure Stack](azure-stack-privileged-endpoint.md).
 
@@ -77,14 +77,14 @@ ms.locfileid: "69520928"
     -ConfigurationName PrivilegedEndpoint -Credential $cred
     ```
 
-2. Настройте виртуальную машину поставщика оборудования с помощью командлета **Set-OEMExternalVM**. Командлет проверяет IP-адрес и учетные данные для виртуальной машины, заданной параметром **-VMType** `ProxyVM`. Входные данные **-VMType** `HardwareManager` командлет не проверяет.
+2. Настройте виртуальную машину поставщика оборудования с помощью командлета **Set-OEMExternalVM**. Командлет проверяет IP-адрес и учетные данные для виртуальной машины, заданной параметром **-VMType** `ProxyVM`. Входные данные **-VMType** `HardwareManager` командлет не проверяет. Параметр **-Credential** для командлета **Set-OEMExternalVM** должен быть четко указан в документации поставщика оборудования.  Это НЕ учетные данные CloudAdmin, используемые для привилегированной конечной точки, или любые другие существующие учетные данные Azure Stack.
 
     ```powershell  
-    
+    $VmCred = Get-Credential
     Invoke-Command -Session $session
         { 
     Set-OEMExternalVM -VMType <Either "ProxyVM" or "HardwareManager">
-        -IPAddress <IP Address of hardware vendor VM>
+        -IPAddress <IP Address of hardware vendor VM> -Credential $using:VmCred
         }
     ```
 

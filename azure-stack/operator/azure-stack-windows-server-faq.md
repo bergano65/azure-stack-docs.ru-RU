@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/22/2019
+ms.date: 08/23/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 11/12/2018
-ms.openlocfilehash: 177d18261d8a85807826226b0dcabdfd03e87135
-ms.sourcegitcommit: 0e0d010c4e010f2fd6799471db8bf71652d8d4e1
+ms.openlocfilehash: 21364595b30c62f47c293e38bdcb9c5663c56e90
+ms.sourcegitcommit: b8260ef3e43f3703dd0df16fb752610ec8a86942
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68806895"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70008319"
 ---
 # <a name="windows-server-in-azure-stack-marketplace-faq"></a>Windows Server в Azure Stack Marketplace: вопросы и ответы
 
@@ -53,11 +53,29 @@ ms.locfileid: "68806895"
 
 ### <a name="what-if-my-user-incorrectly-checked-the-i-have-a-license-box-in-previous-windows-builds-and-they-dont-have-a-license"></a>Что делать, если мой пользователь ошибочно установил флажок "У меня есть лицензия" в предыдущих сборках Windows, но у него нет лицензии?
 
-См. о [преобразовании модели с использованием собственной лицензии в модель с оплатой по мере использования для виртуальных машин Windows Server](/azure/virtual-machines/windows/hybrid-use-benefit-licensing#powershell-1).
+Можно изменить атрибут модели лицензии, чтобы перейти с использования собственной лицензии (BYOL) на оплату по мере использования (PAYG), выполнив следующий сценарий.
+
+```powershell
+vm= Get-Azurermvm -ResourceGroup "<your RG>" -Name "<your VM>"
+$vm.LicenseType = "Windows_Server"
+Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
+```
+
+Вы можете проверить тип лицензии, выполнив следующие команды. Если в модели лицензии указано **Windows_Server**, то вы будете оплачивать лицензию Windows в соответствии с моделью PAYG.
+
+```powershell
+$vm | ft Name, VmId,LicenseType,ProvisioningState
+```
 
 ### <a name="what-if-i-have-an-older-image-and-my-user-forgot-to-check-the-i-have-a-license-box-or-we-use-our-own-images-and-we-do-have-enterprise-agreement-entitlement"></a>Что делать, если я использую старый образ и мой пользователь забыл установить флажок "У меня есть лицензия", либо мы используем собственные образы и имеем право в рамках Соглашения Enterprise?
 
-См. о [применении модели с использованием собственной лицензии к существующей виртуальной машине Windows Server](/azure/virtual-machines/windows/hybrid-use-benefit-licensing#convert-an-existing-vm-using-azure-hybrid-benefit-for-windows-server). Обратите внимание, что Преимущество гибридного использования Azure не применяется в Azure Stack, но значение этого параметра учитывается.
+Можно изменить атрибут модели лицензии, чтобы перейти на модель с использованием собственной лицензии, выполнив следующие команды.
+
+```powershell
+$vm= Get-Azurermvm -ResourceGroup "<your RG>" -Name "<your VM>"
+$vm.LicenseType = "None"
+Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
+```
 
 ### <a name="what-about-other-vms-that-use-windows-server-such-as-sql-or-machine-learning-server"></a>Что будет с другими виртуальными машинами, которые используют Windows Server, например SQL Server или Machine Learning Server?
 

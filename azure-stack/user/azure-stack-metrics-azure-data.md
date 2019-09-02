@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/02/2019
+ms.date: 08/27/2019
 ms.author: mabrigg
 ms.lastreviewed: 12/01/2018
-ms.openlocfilehash: 329ef95f7902f3fe6dfcdd71b599675fdf7c6286
-ms.sourcegitcommit: 0e0d010c4e010f2fd6799471db8bf71652d8d4e1
+ms.openlocfilehash: 88b07c5c3325263e068de49b78df25d17861a37e
+ms.sourcegitcommit: f1a21af6517978ddb62f4cbfa1d1df8c867814d1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68806934"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70064180"
 ---
 # <a name="use-azure-monitor-on-azure-stack"></a>Использование Azure Monitor в Azure Stack
 
@@ -40,7 +40,7 @@ Azure Monitor — служба платформы, которая предост
 
 Зарегистрируйте поставщик ресурсов **Microsoft.insights** в параметрах поставщика ресурсов для предложения подписки. Убедитесь, что поставщик ресурсов доступен в предложении, связанном с подпиской:
 
-1. Откройте портал администрирования Azure Stack.
+1. Откройте пользовательский портал Azure Stack.
 2. Выберите **Предложения**.
 3. Выберите предложение, связанное с подпиской.
 4. В разделе **Параметры** выберите **Поставщики ресурсов**. 
@@ -123,7 +123,7 @@ Azure Monitor — служба платформы, которая предост
 
 Вы можете использовать отслеживание, маршрутизацию и извлечение данных с помощью одного из следующих методов. Не все методы доступны для всех действий или типов данных. 
 
- - [Портал Azure Stack](azure-stack-use-portal.md)
+ - [Пользовательский портал Azure Stack](azure-stack-use-portal.md)
  - [PowerShell](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-powershell-samples)
  - [Кроссплатформенный интерфейс командной строки](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-cli-samples)
  - [REST API](https://docs.microsoft.com/rest/api/monitor)

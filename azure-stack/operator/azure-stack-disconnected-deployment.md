@@ -16,12 +16,12 @@ ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: wfayed
 ms.lastreviewed: 12/11/2018
-ms.openlocfilehash: a3986bcdff911fb70957dcb7529a07f77b586c0a
-ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
+ms.openlocfilehash: 11bf3bd4cc670d45fc4a4c9d1421fc0c25440726
+ms.sourcegitcommit: e8f7fe07b32be33ef621915089344caf1fdca3fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131507"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70118681"
 ---
 # <a name="azure-disconnected-deployment-planning-decisions-for-azure-stack-integrated-systems"></a>Планирование развертываний без подключения к Azure для интегрированных систем Azure Stack
 Когда вы решите, [как интегрировать Azure Stack в свою среду гибридного облака](azure-stack-connection-models.md), вы сможете спланировать развертывание Azure Stack.
@@ -52,7 +52,7 @@ ms.locfileid: "67131507"
 |Службы приложений|Ограничено. Веб-приложениям может потребоваться доступ к Интернету для получения обновленного содержимого.|
 |Интерфейс командной строки|Ограничено. Возможности интерфейса командной строки ограничены в контексте аутентификации и подготовки субъектов-служб.|
 |Visual Studio — Cloud Discovery|Ограничено. Решение Cloud Discovery будет обнаруживать разные облака или вообще не будет работать.|
-|Visual Studio — службы федерации Active Directory (AD FS)|Ограничено. Службы федерации Active Directory (AD FS) поддерживают только выпуск Visual Studio Enterprise.
+|Visual Studio — службы федерации Active Directory (AD FS)|Ограничено. Только Visual Studio Enterprise и Visual Studio Code поддерживают аутентификацию AD FS.
 Телеметрия|Недоступно. Данные телеметрии для Azure Stack, как и все сторонние пакеты коллекций, которые зависят от данных телеметрии.|
 |Сертификаты|Недоступно. Для служб "Список отзыва сертификатов" и Online Certificate Status Protocol требуется подключение к Интернету в контексте протокола HTTPS.|
 |Key Vault|Ограничено. Обычно при использовании Key Vault приложение читает секреты в среде выполнения. Для этого приложению требуется субъект-служба в каталоге. В Azure Active Directory обычным пользователям (не администраторам) по умолчанию разрешено добавлять субъекты-службы. В Active Directory (при использовании служб федерации Active Directory) они не могут это делать. Это мешает полноценной работе компонента, так как пользователю постоянно нужно обращаться к администратору каталога, чтобы добавлять приложения.| 

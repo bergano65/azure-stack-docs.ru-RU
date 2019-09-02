@@ -1,27 +1,26 @@
 ---
-title: Политика обслуживания Azure Stack | Документация Майкрософт
-description: Информация о политике обслуживания Azure Stack и рекомендации по сохранению поддерживаемого состояния для интегрированной системы.
+title: Применение обновления изготовителя оборудования к Azure Stack | Документация Майкрософт
+description: Узнайте, как применить обновление изготовителя оборудования к Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: mattbriggs
 manager: femila
 editor: ''
-ms.assetid: caac3d2f-11cc-4ff2-82d6-52b58fee4c39
 ms.service: azure-stack
 ms.workload: na
-pms.tgt_pltfrm: na
+ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/08/2019
-ms.author: sethm
-ms.reviewer: harik
-ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: c02cc78205b2622b4ef5bdd8b88070912af72b97
+ms.date: 08/15/2019
+ms.author: mabrigg
+ms.lastreviewed: 08/15/2019
+ms.reviewer: ppacent
+ms.openlocfilehash: b8031afd05ba03086cfa748614b58d9b0c5248e9
 ms.sourcegitcommit: b8260ef3e43f3703dd0df16fb752610ec8a86942
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/23/2019
-ms.locfileid: "70008600"
+ms.locfileid: "70010307"
 ---
 # <a name="azure-stack-servicing-policy"></a>Политика обслуживания Azure Stack
 
@@ -30,6 +29,8 @@ ms.locfileid: "70008600"
 В этой статье описаны политика обслуживания интегрированных систем Azure Stack, действия, необходимые для сохранения поддержки системы, а также способы получения поддержки.
 
 ## <a name="keep-your-system-under-support"></a>Сохранение поддержки для вашей системы
+
+Чтобы продолжать получать поддержку, необходимо регулярно обновлять Azure Stack.
 
 Чтобы поддержка вашего экземпляра Azure Stack сохранялась, он должен использовать последнюю выпущенную версию обновления или одну из двух предыдущих основных версий обновления.
 
@@ -43,6 +44,6 @@ ms.locfileid: "70008600"
 
 Azure Stack использует тот же процесс поддержки, что и Azure. Клиенты уровня "Корпоративный" могут следовать процессу, описанному в разделе [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Если вы являетесь клиентом поставщика облачных служб (CSP), обратитесь к своему CSP для получения поддержки. Дополнительные сведения см. на странице [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дополнительная информация
+# <a name="next-steps"></a>Дополнительная информация
 
-- [Управления обновлениями в Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates)
+[Управления обновлениями в Azure Stack](azure-stack-updates.md)

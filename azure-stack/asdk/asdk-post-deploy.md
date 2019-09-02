@@ -1,6 +1,6 @@
 ---
-title: Настройка Пакета средств разработки Azure Stack (ASDK) после его развертывания | Документация Майкрософт
-description: Описание изменений, которые мы рекомендуем внести в конфигурацию после установки Пакета средств разработки Azure Stack (ASDK).
+title: Настройка ASDK после его развертывания | Документация Майкрософт
+description: Узнайте, какие изменения мы рекомендуем внести в конфигурацию после установки Пакета средств разработки Azure Stack (ASDK).
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,16 +16,16 @@ ms.date: 07/31/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: cbf9872fa75013fdb3e933c102b813924d396a83
-ms.sourcegitcommit: bf4d265a3522cbfdd9dd295a0f4ad0daf2ed5eca
+ms.openlocfilehash: 111e8e6cb72baac64229e4808003818efece54cd
+ms.sourcegitcommit: 7968f9f0946138867323793be9966ee2ef99dcf4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68692096"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025880"
 ---
-# <a name="post-asdk-installation-configuration-tasks"></a>Настройка, выполняемая после установки ASDK
+# <a name="post-deployment-configurations-for-asdk"></a>Настройка ASDK после его развертывания
 
-После [ установки Пакета средств разработки Azure Stack (ASDK)](asdk-install.md) вам необходимо внести в конфигурацию несколько изменений. Для этого на главном компьютере с ASDK нужно выполнить вход с правами пользователя AzureStack или AzureStackAdmin.
+После [ установки Пакета средств разработки Azure Stack (ASDK)](asdk-install.md) вам необходимо внести в конфигурацию несколько изменений. Для этого на главном компьютере ASDK нужно выполнить вход с правами пользователя AzureStack\AzureStackAdmin.
 
 ## <a name="install-azure-stack-powershell"></a>Установка PowerShell для Azure Stack
 
@@ -37,14 +37,14 @@ ms.locfileid: "68692096"
 Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 ```
 
-Для указания совместимых с Azure Stack модулей AzureRM рекомендуем использовать профили версии API.  Профили версий API позволяют управлять различиями между версиями Azure и Azure Stack. Профиль версии API — это набор модулей AzureRM PowerShell с определенными версиями API. Модуль **AzureRM.BootStrapper**, доступный в коллекции PowerShell, предоставляет командлеты PowerShell, необходимые для работы с профилями версий API.
+Для указания совместимых с Azure Stack модулей AzureRM рекомендуется использовать профили версии API.  Профили версий API позволяют управлять различиями между версиями Azure и Azure Stack. Профиль версии API — это набор модулей AzureRM PowerShell с определенными версиями API. Модуль **AzureRM.Bootstrapper**, доступный в коллекции PowerShell, предоставляет командлеты PowerShell, необходимые для работы с профилями версий API.
 
-Последнюю версию модуля PowerShell для Azure Stack можно установить в двух режимах: с подключением главного компьютера ASDK к Интернету или без него:
+Последнюю версию модуля PowerShell для Azure Stack можно установить в двух режимах: с подключением главного компьютера ASDK к Интернету или без него.
 
 > [!IMPORTANT]
 > Прежде чем устанавливать нужную версию, обязательно [удалите все установленные модули Azure PowerShell](../operator/azure-stack-powershell-install.md#3-uninstall-existing-versions-of-the-azure-stack-powershell-modules).
 
-- **При наличии подключения к Интернету** с главного компьютера ASDK. Выполните следующий скрипт PowerShell, чтобы установить эти модули там, где установлен пакет средств разработки.
+- **При наличии подключения к Интернету** с главного компьютера ASDK. Выполните следующий сценарий PowerShell, чтобы установить эти модули в экземпляр ASDK.
 
 
   ```powershell  
@@ -109,16 +109,16 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 
 ## <a name="validate-the-asdk-installation"></a>Проверка установки ASDK
 
-Чтобы убедиться, что развертывание ASDK прошло успешно, примените командлет Test-AzureStack следующим образом:
+Чтобы убедиться, что развертывание ASDK прошло успешно, выполните командлет Test-AzureStack следующим образом.
 
 1. Войдите на главный компьютер ASDK с учетной записью AzureStack\AzureStackAdmin.
-2. Откройте PowerShell от имени администратора (не путайте с интегрированной средой сценариев Windows PowerShell).
+2. Откройте PowerShell с правами администратора (не путайте с интегрированной средой сценариев Windows PowerShell).
 3. Выполните команду `Enter-PSSession -ComputerName AzS-ERCS01 -ConfigurationName PrivilegedEndpoint`
 4. Выполните команду `Test-AzureStack`
 
 Выполнение тестов может занять несколько минут. Если установка выполнена успешно, выходные данные выглядят примерно так:
 
-![Test-AzureStack](media/asdk-post-deploy/test-azurestack.png)
+![Тестирование Azure Stack: установка выполнена успешно](media/asdk-post-deploy/test-azurestack.png)
 
 Если операция закончится сбоем, выполните рекомендации из раздела об устранении неполадок.
 
@@ -127,7 +127,7 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 Для развертываний с помощью Azure AD необходимо [включить поддержку мультитенантности](../operator/azure-stack-enable-multitenancy.md#enable-multi-tenancy) для установки ASDK.
 
 > [!NOTE]
-> Если для входа на портал Azure Stack используются учетные записи администратора или пользователя из доменов, отличных от того, который использовался для регистрации Azure Stack, имя домена, использованного для регистрации Azure Stack, необходимо добавить в URL-адрес портала. Например, если Azure Stack зарегистрирован с использованием домена fabrikam.onmicrosoft.com, а учетная запись для входа является admin@contoso.com, URL-адрес для входа на портал пользователей будет таким: https://portal.local.azurestack.external/fabrikam.onmicrosoft.com.
+> Если для входа на портал Azure Stack используются учетные записи администратора или пользователя из доменов, отличных от того, который использовался для регистрации Azure Stack, то доменное имя, использованное для регистрации Azure Stack, необходимо добавить в URL-адрес портала. Например, если Azure Stack зарегистрирован с использованием fabrikam.onmicrosoft.com, а учетная запись для входа — admin@contoso.com, то URL-адрес для входа на портал пользователей будет таким: https://portal.local.azurestack.external/fabrikam.onmicrosoft.com.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

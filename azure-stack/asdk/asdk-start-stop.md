@@ -1,6 +1,6 @@
 ---
-title: Запуск и остановка пакета средств разработки Azure Stack (ASDK) | Документация Майкрософт
-description: Сведения о запуске и завершении работы пакета средств разработки Azure Stack (ASDK).
+title: Запуск и остановка ASDK | Документация Майкрософт
+description: Узнайте, как запустить и остановить Пакет средств разработки Azure Stack (ASDK).
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,21 +16,21 @@ ms.date: 07/18/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 07/18/2019
-ms.openlocfilehash: 6736da0f792c0e01d1a0af06e35a0984ec398158
-ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
+ms.openlocfilehash: 5232b1087414d6e7149157063a253b18a6b6e13a
+ms.sourcegitcommit: 7968f9f0946138867323793be9966ee2ef99dcf4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68493712"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70025816"
 ---
-# <a name="start-and-stop-the-azure-stack-development-kit-asdk"></a>Запуск и остановка пакета средств разработки Azure Stack (ASDK)
-Не рекомендуется обычный перезапуск главного компьютера ASDK. Следуйте инструкциям по корректному завершению работы и перезапуску служб ASDK, приведенным в этой статье. 
+# <a name="start-and-stop-the-asdk"></a>Запуск и остановка ASDK
+Не рекомендуется просто перезапускать главный компьютер ASDK. Следуйте инструкциям по корректному завершению работы и перезапуску служб ASDK, приведенным в этой статье.
 
 ## <a name="stop-azure-stack"></a>Остановка Azure Stack 
 Чтобы правильно завершить работу служб Azure Stack и главного компьютера ASDK, используйте следующие команды PowerShell:
 
 1. Войдите на главный компьютер ASDK с именем AzureStack\AzureStackAdmin.
-2. Откройте PowerShell от имени администратора (не путайте с интегрированной средой сценариев Windows PowerShell).
+2. Откройте PowerShell с правами администратора (не путайте с интегрированной средой сценариев Windows PowerShell).
 3. Для установки сеанса привилегированной конечной точки (PEP) выполните следующие команды: 
 
    ```powershell
@@ -50,7 +50,7 @@ ms.locfileid: "68493712"
 
 1. Включите главный компьютер ASDK. 
 2. Войдите на главный компьютер ASDK с именем AzureStack\AzureStackAdmin.
-3. Откройте PowerShell от имени администратора (не путайте с интегрированной средой сценариев Windows PowerShell).
+3. Откройте PowerShell с правами администратора (не путайте с интегрированной средой сценариев Windows PowerShell).
 4. Для установки сеанса привилегированной конечной точки (PEP) выполните следующие команды:
 
    ```powershell
@@ -63,13 +63,13 @@ ms.locfileid: "68493712"
    ```
 6. Просмотрите выходные данные, чтобы убедиться, что службы Azure Stack успешно перезапущены.
 
-Чтобы узнать больше о рекомендуемых процедурах для правильного завершения работы и перезапуска служб Azure Stack, ознакомьтесь со статьей [Запуск и остановка Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep). 
+Чтобы узнать больше о рекомендуемых процедурах для правильного завершения работы и перезапуска служб Azure Stack, ознакомьтесь со статьей [Запуск и остановка Azure Stack](../operator/azure-stack-start-and-stop.md).
 
 ## <a name="troubleshoot-startup-and-shutdown"></a>Устранение неполадок при запуске и завершении работы 
 Выполните эти шаги, если службы Azure Stack не запускаются в течение двух часов после включения главного компьютера ASDK:
 
 1. Войдите на главный компьютер ASDK с именем AzureStack\AzureStackAdmin.
-2. Откройте PowerShell от имени администратора (не путайте с интегрированной средой сценариев Windows PowerShell).
+2. Откройте PowerShell с правами администратора (не путайте с интегрированной средой сценариев Windows PowerShell).
 3. Для установки сеанса привилегированной конечной точки (PEP) выполните следующие команды:
 
    ```powershell
