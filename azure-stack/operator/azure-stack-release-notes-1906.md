@@ -16,12 +16,13 @@ ms.date: 07/15/2019
 ms.author: sethm
 ms.reviewer: hectorl
 ms.lastreviewed: 07/15/2019
-ms.openlocfilehash: c646ca836728cc1963354afb66ee04ee0accf1b6
-ms.sourcegitcommit: fc7da38321736e952b2cc6d5d07f276d095dc8d1
+monikerRange: azs-1906
+ms.openlocfilehash: bf8e32d6395b3ddfc54fe586568b51b76b71dc63
+ms.sourcegitcommit: 71d7990a2b21576c44bb2aea13ae2026e9510c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887109"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70188305"
 ---
 # <a name="azure-stack-1906-update"></a>Обновление 1906 для Azure Stack
 
@@ -116,14 +117,14 @@ ms.locfileid: "69887109"
 
 ## <a name="security-updates"></a>обновления для системы безопасности;
 
-Подробные сведения об обновлениях для системы безопасности в этом обновлении Azure Stack см. в статье [Azure Stack security updates](azure-stack-release-notes-security-updates-1906.md) (Обновления для системы безопасности Azure Stack).
+Подробные сведения об обновлениях для системы безопасности в этом обновлении Azure Stack см. в статье [Azure Stack security updates](azure-stack-release-notes-security-updates.md) (Обновления для системы безопасности Azure Stack).
 
 ## <a name="update-planning"></a>Планирование обновлений
 
 Перед применением обновления, обязательно ознакомьтесь со следующими сведениями:
 
 - [Известные проблемы](azure-stack-release-notes-known-issues-1906.md)
-- [Обновления для системы безопасности](azure-stack-release-notes-security-updates-1906.md)
+- [Обновления для системы безопасности](azure-stack-release-notes-security-updates.md)
 - [Контрольный список действий до и после применения обновления](azure-stack-release-notes-checklist.md)
 
 ## <a name="download-the-update"></a>Скачивание обновления

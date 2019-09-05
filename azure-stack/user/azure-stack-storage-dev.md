@@ -10,12 +10,12 @@ ms.service: azure-stack
 manager: femila
 ms.reviewer: xiaofmao
 ms.lastreviewed: 02/27/2019
-ms.openlocfilehash: 10bf2bcc13ceab3b28e44759bbacae57d63b9b97
-ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
+ms.openlocfilehash: c708c7f94f7d7e956b0ca4a6c4c4c2c70b1590fc
+ms.sourcegitcommit: 71d7990a2b21576c44bb2aea13ae2026e9510c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131666"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70188101"
 ---
 # <a name="get-started-with-azure-stack-storage-development-tools"></a>Начало работы со средствами разработки хранилища Azure Stack
 
@@ -32,6 +32,7 @@ Microsoft Azure Stack предоставляет набор служб хран�
 
 Для клиентских библиотек хранилища вам необходимо знать версию, совместимую с REST API. Необходимо также указать конечную точку Azure Stack в коде.
 
+::: moniker range=">=azs-1811"
 ### <a name="1811-update-or-newer-versions"></a>Обновление 1811 или более новые версии
 
 | Клиентская библиотека | Поддерживаемая версия Azure Stack | Ссылка | Спецификация конечной точки |
@@ -60,7 +61,9 @@ Microsoft Azure Stack предоставляет набор служб хран�
 
 2. Скачайте файл [composer.phar](https://getcomposer.org/composer.phar) в корневой каталог проекта.
 3. Выполните команду `php composer.phar install`.
+::: moniker-end
 
+::: moniker range=">=azs-1802 <=azs-1809"
 ### <a name="previous-versions-1802-to-1809-update"></a>Предыдущие версии (обновления 1802–1809)
 
 | Клиентская библиотека | Поддерживаемая версия Azure Stack | Ссылка | Спецификация конечной точки |
@@ -89,6 +92,7 @@ Microsoft Azure Stack предоставляет набор служб хран�
 
 2. Скачайте файл [composer.phar](https://getcomposer.org/composer.phar) в корневой каталог проекта.
 3. Выполните команду `php composer.phar install`.
+:::moniker-end
 
 ## <a name="endpoint-declaration"></a>Объявление конечной точки
 

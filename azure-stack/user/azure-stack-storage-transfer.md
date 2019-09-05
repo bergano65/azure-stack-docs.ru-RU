@@ -14,12 +14,12 @@ ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 6b6ab8ac8292f8d548b49331cf5d2e2ae100e68f
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.openlocfilehash: 92e0c1a3bfd055373ffba5091d79922f1203b20b
+ms.sourcegitcommit: 71d7990a2b21576c44bb2aea13ae2026e9510c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68418453"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70188026"
 ---
 # <a name="use-data-transfer-tools-in-azure-stack-storage"></a>Использование инструментов передачи данных в хранилище Azure Stack
 
@@ -57,8 +57,13 @@ AzCopy — это служебная программа командной ст�
 
 ### <a name="download-and-install-azcopy"></a>Скачивание и установка AzCopy
 
+::: moniker range=">=azs-1811"
 * Для обновления 1811 и более поздней версии [скачайте AzCopy 10 или более поздней версии](/azure/storage/common/storage-use-azcopy-v10#download-azcopy).
+::: moniker-end
+
+::: moniker range="<azs-1811"
 * Для предыдущих версий (1802–1809) [скачайте AzCopy 7.1.0](https://aka.ms/azcopyforazurestack20170417).
+::: moniker-end
 
 ### <a name="azcopy-101-configuration-and-limits"></a>Настройки и ограничения AzCopy 10.1
 
