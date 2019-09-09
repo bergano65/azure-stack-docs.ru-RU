@@ -12,16 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/16/2019
+ms.date: 08/30/2019
 ms.author: sethm
 ms.reviewer: hectorl
-ms.lastreviewed: 08/16/2019
-ms.openlocfilehash: 526343889bbd5cc784ebb87c39603e2152a98f3b
-ms.sourcegitcommit: b8260ef3e43f3703dd0df16fb752610ec8a86942
+ms.lastreviewed: 08/30/2019
+monikerRange: azs-1907
+ms.openlocfilehash: 4dc9c69479066aad3f2b4ebd08646e09da89ba3a
+ms.sourcegitcommit: 71d7990a2b21576c44bb2aea13ae2026e9510c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70008772"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70188119"
 ---
 # <a name="azure-stack-1907-update"></a>Обновление 1907 для Azure Stack
 
@@ -77,7 +78,7 @@ ms.locfileid: "70008772"
 
 ### <a name="changes"></a>изменения
 
-- Azure Stack версии 1907 содержит предупреждающее оповещение, которое указывает операторам, что **перед** обновлением до версии 1908 необходимо обновить пакет OEM для системы до версии 2.1 или более поздней версии. Поставщики оборудования выпустят пакет OEM 2.1 одновременно с Azure Stack версии 1908. Пакет OEM 2.1 или более поздней версии будет необходимым компонентом для Azure Stack версии 1908. Дополнительные сведения о том, как скачать пакет OEM 2.1 или более поздней версии, можно получить у поставщика оборудования вашей системы.
+- Azure Stack версии 1907 содержит предупреждающее оповещение, которое указывает операторам, что перед обновлением до версии 1908 необходимо обновить пакет изготовителя оборудования для системы до версии 2.1 и выше. См. сведения о [применении оригинальных обновлений Azure Stack от изготовителя оборудования](azure-stack-update-oem.md).
 
 - Добавлено новое правило исходящего трафика (HTTPS), обеспечивающее взаимодействие для службы сбора журналов диагностики Azure Stack. Дополнительные сведения см. в разделе [Интеграция центра обработки данных Azure Stack. Публикация конечных точек](azure-stack-integrate-endpoints.md#ports-and-urls-outbound).
 
@@ -118,14 +119,14 @@ ms.locfileid: "70008772"
 
 ## <a name="security-updates"></a>обновления для системы безопасности;
 
-Подробные сведения об обновлениях для системы безопасности в этом обновлении Azure Stack см. в статье [Azure Stack security updates](azure-stack-release-notes-security-updates-1907.md) (Обновления для системы безопасности Azure Stack).
+Подробные сведения об обновлениях для системы безопасности в этом обновлении Azure Stack см. в статье [Azure Stack security updates](azure-stack-release-notes-security-updates.md) (Обновления для системы безопасности Azure Stack).
 
 ## <a name="update-planning"></a>Планирование обновлений
 
 Перед применением обновления, обязательно ознакомьтесь со следующими сведениями:
 
 - [Известные проблемы](azure-stack-release-notes-known-issues-1907.md)
-- [Обновления для системы безопасности](azure-stack-release-notes-security-updates-1907.md)
+- [Обновления для системы безопасности](azure-stack-release-notes-security-updates.md)
 - [Контрольный список действий до и после применения обновления](azure-stack-release-notes-checklist.md)
 
 ## <a name="download-the-update"></a>Скачивание обновления

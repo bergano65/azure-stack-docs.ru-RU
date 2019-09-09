@@ -3,7 +3,7 @@ title: Подготовка пакета обновления Azure Stack | До
 description: Узнайте, как подготовить пакет обновления Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/15/2019
-ms.author: mabrigg
-ms.lastreviewed: 08/15/2019
+ms.date: 09/03/2019
+ms.author: justinha
+ms.lastreviewed: 09/03/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: ab7b764e608ed1fb8008071296d0004f6ef65e7a
-ms.sourcegitcommit: 1c45814696e70ba987dd39ce61d93ea4ef5222ea
+ms.openlocfilehash: 9b58b4911a575ef66c95594b6cb4cd1cc9e27a43
+ms.sourcegitcommit: 314fd74caf356b157583d38d2b8b1dee30408b7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70029479"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70234997"
 ---
 # <a name="prepare-an-azure-stack-update-package"></a>Подготовка пакета обновления Azure Stack
 
@@ -28,14 +28,14 @@ ms.locfileid: "70029479"
 
 В этой статье приводятся общие сведения о подготовке пакетов обновления Azure Stack, чтобы их можно было использовать для обновления среды Azure Stack. Эта процедура состоит из следующих шагов:
 
-- [Скачивание пакета обновления](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#download-the-update-package).
-- [Импорт пакета обновления в среду Azure Stack через портал администрирования Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#import-and-install-updates).
+- [Скачивание пакета обновления](#download-the-update-package).
+- [Импорт пакета обновления в среду Azure Stack через портал администрирования Azure Stack](#import-and-install-updates).
 
-Этот процесс выполняется автоматически для установки обновлений программного обеспечения и исправлений для Azure Stack в системах с подключением к Интернету и доступом к [конечным точкам автоматического обновления Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#automatic-download-and-preparation-for-update-packages).
+В системах, которые могут подключаться к конечным точкам автоматического обновления, обновления программного обеспечения и исправления Azure Stack скачиваются и подготавливаются автоматически. В системах без подключения и при любом обновлении от изготовителя оборудования необходимо подготовить пакет обновления, как описано в этом разделе.  
 
-В таблице ниже показано, когда пакеты обновления требуется подготовить вручную и когда они подготавливаются автоматически.
+В таблице ниже описано, когда пакеты обновления нужно подготовить вручную или автоматически.
 
-| Тип обновления | Подключение среды Azure Stack к [конечным точкам автоматического обновления Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#automatic-download-and-preparation-for-update-packages) | Требуется действие |
+| Тип обновления | Возможность подключения | Требуется действие |
 | --- | --- | --- |
 | Обновления программного обеспечения Azure Stack | Подключено | Обновление автоматически скачивается и подготавливается при его применении. |
 | Исправления для Azure Stack | Подключено | Обновление автоматически скачивается и подготавливается при его применении. |
@@ -46,6 +46,9 @@ ms.locfileid: "70029479"
 
 ## <a name="download-the-update-package"></a>Скачивание пакета обновлений
 Пакет обновления с обновлениями и исправлениями для Azure Stack доступен в колонке "Обновление" для подключенных систем. Необходимо скачать этот пакет и переместить его в расположение, доступное экземпляру Azure Stack, если выполняется установка обновления пакета от изготовителя оборудования или если обслуживается отключенная система (без подключения к Интернету). Может также потребоваться скачать и передать пакет в доступное расположение, если используется система с прерывистым подключением.
+
+>[!NOTE]
+>Сам пакет обновления и его содержимое (например, двоичные файлы, скрипты PowerShell и т. д.) подписываются с помощью сертификатов, принадлежащих корпорации Майкрософт. Незаконное изменение пакета сделает подпись недействительной.
 
 Проверьте содержимое пакета. Обычно пакет обновлений содержит следующие файлы:
 

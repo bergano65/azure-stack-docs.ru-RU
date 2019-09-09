@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/25/2019
+ms.date: 09/04/2019
 ms.author: justinha
 ms.reviewer: prchint
-ms.lastreviewed: 07/25/2019
-ms.openlocfilehash: 17f68039382453312114dff8737072d1515a583d
-ms.sourcegitcommit: b752f4e6733d9ebe56dbd171a14528dcb9a693fd
+ms.lastreviewed: 09/04/2019
+ms.openlocfilehash: 338df8d335376ebbaf14230e62d8dee9f813994f
+ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68522011"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70271739"
 ---
 # <a name="overview-of-azure-stack-diagnostic-log-collection"></a>Общие сведения о сборе журналов диагностики Azure Stack 
 
@@ -31,7 +31,7 @@ Azure Stack — это большая коллекция компонентов
 
 До выпуска 1907 для диагностики использовался командлет [Test-AzureStack](azure-stack-diagnostic-test.md), который проверяет работоспособность системы, а также [привилегированная конечная точка (PEP)](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep), которая собирает журналы для устранения неполадок. 
 
-Начиная с выпуска 1907 на страницу **Справка и поддержка** добавлен упрощенный интерфейс с элементом **Diagnostic log collection** (Сбор журналов диагностики). 
+Начиная с выпуска 1907, на страницу **Справка и поддержка** добавлена функция **Сбор журналов диагностики**. 
 Функция **сбора журналов диагностики** является результатом наших текущих усилий, прилагаемых для расширения возможностей оператора Azure Stack по устранению неполадок. С помощью этих улучшений операторы могут быстро собирать журналы диагностики и предоставлять их службе поддержки пользователей Майкрософт (CSS). Журналы могут храниться в контейнере больших двоичных объектов в Azure, доступ к которому можно настроить согласно своим требованиям.    
    
 Функция **сбора журналов диагностики** может собирать журналы диагностики двумя разными способами:

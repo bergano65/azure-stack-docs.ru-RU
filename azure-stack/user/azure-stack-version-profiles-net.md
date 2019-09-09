@@ -16,12 +16,12 @@ ms.date: 05/16/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 14f19fa432d782eace721d47b6b578dc73846631
-ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
+ms.openlocfilehash: af1f1351a5659447fb0f9e7ac9782fb74208e038
+ms.sourcegitcommit: ebb5afb7968d3e6531ecfcde7f4bb5e4420caf02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959375"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70302378"
 ---
 # <a name="use-api-version-profiles-with-net-in-azure-stack"></a>Использование профилей версий API и .NET в Azure Stack
 
@@ -63,7 +63,7 @@ ms.locfileid: "68959375"
 
 5.  Создайте подписку, если ее еще нет, и сохраните ее идентификатор для дальнейшего использования. Инструкции по созданию подписки см. в статье [Create subscriptions to offers in Azure Stack][].
 
-6.  Создайте субъект-службу и сохраните идентификатор клиента и секрет клиента. Инструкции по созданию субъекта-службы для Azure Stack доступны в статье [Предоставление приложениям доступа к Azure Stack]. Идентификатор клиента при создании субъекта-службы называется идентификатором приложения.
+6.  Создайте субъект-службу и сохраните идентификатор клиента и секрет клиента. Инструкции по созданию субъекта-службы для Azure Stack см. в руководстве по [Provide applications access to Azure Stack][]. Идентификатор клиента при создании субъекта-службы называется идентификатором приложения.
 
 7.  Убедитесь, что субъект-служба имеет роль участника или владельца в вашей подписке. Сведения о том, как назначить роль субъекту-службе, см. в статье [Provide applications access to Azure Stack][].
 

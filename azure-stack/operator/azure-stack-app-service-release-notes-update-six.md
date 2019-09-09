@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/24/2019
 ms.author: anwestg
 ms.reviewer: ''
-ms.openlocfilehash: db403f68879efa9103e35bb3581801240c0d64d3
-ms.sourcegitcommit: 1545e18a31cd715a12c7ddc3bcb173b41eb41730
+ms.openlocfilehash: c142ecda309f00ee94429be3d7b8f3c6e8072668
+ms.sourcegitcommit: 71d7990a2b21576c44bb2aea13ae2026e9510c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67348721"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70188224"
 ---
 # <a name="app-service-on-azure-stack-update-6-release-notes"></a>Заметки о выпуске обновления 6 для Службы приложений Azure в Azure Stack
 
@@ -101,7 +101,7 @@ ms.locfileid: "67348721"
 
 ### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack"></a>Известные проблемы для облачных администраторов, работающих со службой приложений Azure в Azure Stack
 
-См. документацию в [заметках о выпуске обновления 1904 для Azure Stack](azure-stack-release-notes-1904.md).
+См. документацию в [заметках о выпуске Azure Stack 1908](azure-stack-release-notes-1908.md).
 
 ### <a name="known-issues-for-tenants-deploying-applications-on-azure-app-service-on-azure-stack"></a>Известные проблемы с приложениями, выполняющими развертывания клиентов, в Службе приложений Azure в Azure Stack
 

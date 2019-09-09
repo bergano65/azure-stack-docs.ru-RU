@@ -16,12 +16,12 @@ ms.date: 03/23/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 01e359b2fc92abfe2c4903b75fd52687c2246d56
-ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
+ms.openlocfilehash: e09cc9e5c77379441d7757fa1395941712ecc5ff
+ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959563"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70271827"
 ---
 # <a name="deploy-app-service-in-a-highly-available-configuration"></a>Развертывание Службы приложений в конфигурации с высоким уровнем доступности
 
@@ -123,7 +123,7 @@ ms.locfileid: "68959563"
 - [Скачайте установочный и вспомогательный скрипты для Службы приложений](azure-stack-app-service-before-you-get-started.md#download-the-installer-and-helper-scripts).
 - [Скачайте последнюю версию расширения настраиваемого скрипта из Marketplace для Azure Stack](azure-stack-app-service-before-you-get-started.md#syndicate-the-custom-script-extension-from-the-marketplace).
 - [Создайте необходимые сертификаты](azure-stack-app-service-before-you-get-started.md#get-certificates).
-- Создайте приложение удостоверений на основе поставщика удостоверений, выбранного для Azure Stack. Приложения удостоверений можно создать для [Azure AD](azure-stack-app-service-before-you-get-started.md#create-an-azure-active-directory-application) или [служб федерации Active Directory](azure-stack-app-service-before-you-get-started.md#create-an-active-directory-federation-services-application). После создания запишите идентификатор приложения.
+- Создайте приложение удостоверений на основе поставщика удостоверений, выбранного для Azure Stack. Приложения удостоверений можно создать для [Azure AD](azure-stack-app-service-before-you-get-started.md#create-an-azure-active-directory-app) или [служб федерации Active Directory](azure-stack-app-service-before-you-get-started.md#create-an-active-directory-federation-services-app). После создания запишите идентификатор приложения.
 - Убедитесь, что образ Windows Server 2016 Datacenter добавлен в Azure Stack Marketplace. Этот образ необходим для установки Службы приложений.
 
 ### <a name="steps-for-app-service-deployment"></a>Этапы развертывания Службы приложений

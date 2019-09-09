@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 06/11/2019
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 53a423ebc8e9f503934bfd3df2f4962a7b584059
-ms.sourcegitcommit: b3dac698f2e1834491c2f9af56a80e95654f11f3
+ms.openlocfilehash: 9fa12d91e9f2ec738c68f4a04438a93415bd36fb
+ms.sourcegitcommit: 5efa09034a56eb2f3dc0c9da238fe60cff0c67ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658586"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70144034"
 ---
 # <a name="configure-vpn-gateway-settings-for-azure-stack"></a>Настройка параметров VPN-шлюза для Azure Stack
 
@@ -39,8 +39,8 @@ VPN-шлюз — это разновидность шлюза виртуальн
 При создании шлюза виртуальной сети необходимо убедиться, что в конфигурации указан правильный тип шлюза. Для VPN-шлюза требуется отметить `-GatewayType Vpn`, например:
 
 ```powershell
-New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg
--Location 'West US' -IpConfigurations $gwipconfig -GatewayType Vpn
+New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
+-Location 'West US' -IpConfigurations $gwipconfig -GatewayType Vpn `
 -VpnType RouteBased
 ```
 
@@ -70,27 +70,25 @@ Azure Stack не поддерживает изменение размеров SK
 
 #### <a name="powershell"></a>PowerShell
 
-В следующем примере PowerShell используется `-GatewaySku` со значением **VpnGw1**:
+В следующем примере PowerShell используется `-GatewaySku` со значением **Standard**:
 
 ```powershell
-New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg
--Location 'West US' -IpConfigurations $gwipconfig -GatewaySku VpnGw1
+New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
+-Location 'West US' -IpConfigurations $gwipconfig -GatewaySku Standard `
 -GatewayType Vpn -VpnType RouteBased
 ```
 
 ### <a name="connection-types"></a>Типы подключений
 
-В модели развертывания с помощью Resource Manager каждой конфигурации необходим определенный тип подключения шлюза виртуальной сети. Для `-ConnectionType` в PowerShell можно указать такие значения (развертывание Resource Manager):
+В модели развертывания с помощью Resource Manager каждой конфигурации необходим определенный тип подключения шлюза виртуальной сети. При развертывании Resource Manager для `-ConnectionType` в PowerShell можно указать значения **IPsec**.
 
-* **IPsec**
+В следующем примере PowerShell создается подключение "сеть — сеть", для которого требуется тип IPsec.
 
-   В следующем примере PowerShell создается подключение "сеть — сеть", для которого требуется тип IPsec.
-
-   ```powershell
-   New-AzureRmVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName testrg
-   -Location 'West US' -VirtualNetworkGateway1 $gateway1 -LocalNetworkGateway2 $local
-   -ConnectionType IPsec -RoutingWeight 10 -SharedKey 'abc123'
-   ```
+```powershell
+New-AzureRmVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName testrg `
+-Location 'West US' -VirtualNetworkGateway1 $gateway1 -LocalNetworkGateway2 $local `
+-ConnectionType IPsec -RoutingWeight 10 -SharedKey 'abc123'
+```
 
 ### <a name="vpn-types"></a>Типы VPN
 
@@ -111,8 +109,8 @@ New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg
 В следующем примере PowerShell используется `-VpnType` со значением **RouteBased**. При создании шлюза необходимо убедиться, что в конфигурации указано правильное значение `-VpnType`.
 
 ```powershell
-New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg
--Location 'West US' -IpConfigurations $gwipconfig
+New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
+-Location 'West US' -IpConfigurations $gwipconfig `
 -GatewayType Vpn -VpnType RouteBased
 ```
 
@@ -156,7 +154,7 @@ Add-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.
 Следующий пример PowerShell создает шлюз локальной сети:
 
 ```powershell
-New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg
+New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 -Location 'West US' -GatewayIpAddress '23.99.221.164' -AddressPrefix '10.5.51.0/24'
 ```
 

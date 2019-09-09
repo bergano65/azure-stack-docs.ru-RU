@@ -12,23 +12,23 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/28/2019
+ms.date: 08/29/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: c97598145b0d03f3b25876296cb070b0301a3742
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: a33dc4ee1d9889b1dfa817b18b2c5c97e78c8432
+ms.sourcegitcommit: 701685f0b59e5a3d1a8d39fe477b8df701a51cd2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66269239"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70159624"
 ---
 # <a name="add-an-app-service-resource-provider-to-a-disconnected-azure-stack-environment-secured-by-ad-fs"></a>Добавление поставщика ресурсов службы приложений в автономную среду Azure Stack, защищенную с помощью службы федерации Active Directory (AD FS)
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!IMPORTANT]
-> Прежде чем развертывать Службу приложений Azure 1.6, примените обновление 1904 к интегрированной системе Azure Stack или разверните последний Пакет средств разработки Azure Stack.
+> Прежде чем развертывать Службу приложений Azure 1.7, примените обновление 1907 к интегрированной системе Azure Stack или разверните последний Пакет средств разработки Azure Stack.
 
 Выполнив инструкции в этой статье, вы установите [поставщик ресурсов службы приложений](azure-stack-app-service-overview.md) в среду Azure Stack со следующими характеристиками:
 
@@ -36,7 +36,7 @@ ms.locfileid: "66269239"
 - под защитой службы федерации Active Directory (AD FS).
 
 > [!IMPORTANT]
-> Прежде чем запускать установщик поставщика ресурсов, обязательно выполните рекомендации из [руководства по началу работы](azure-stack-app-service-before-you-get-started.md) и ознакомьтесь с [заметками о выпуске 6](azure-stack-app-service-release-notes-update-six.md), чтобы узнать о новых функциях, исправлениях и известных проблемах, которые могут повлиять на развертывание.
+> Прежде чем запускать установщик поставщика ресурсов, обязательно выполните инструкции по [началу работы](azure-stack-app-service-before-you-get-started.md) и ознакомьтесь с [заметками о выпуске 1.7](azure-stack-app-service-release-notes-update-seven.md), чтобы узнать о новых функциях, исправлениях и известных проблемах, которые могут повлиять на развертывание.
 
 Чтобы добавить поставщик ресурсов службы приложений в автономное развертывание Azure Stack, необходимо выполнить три задачи верхнего уровня.
 
@@ -105,7 +105,7 @@ ms.locfileid: "66269239"
 
       ![Установщик службы приложений][5]
 
-9. Введите данные для общего файлового ресурса и нажмите кнопку **Далее**. В адресе файлового ресурса нужно использовать полное доменное имя файлового сервера или IP-адрес. Например, \\\appservicefileserver.local.cloudapp.azurestack.external\websites или \\\10.0.0.1\websites.  Если вы используете присоединенный к домену файловый сервер, необходимо указать полное имя пользователя, в том числе домен, к примеру myfileserverdomain\FileShareOwner.
+9. Введите данные для общего файлового ресурса и нажмите кнопку **Далее**. В адресе файлового ресурса нужно использовать полное доменное имя файлового сервера или IP-адрес. Например, \\\appservicefileserver.local.cloudapp.azurestack.external\websites или \\\10.0.0.1\websites.  Если вы используете присоединенный к домену файловый сервер, необходимо указать полное имя пользователя, включая домен, например myfileserverdomain\FileShareOwner.
 
     > [!NOTE]
     > Прежде чем продолжить, программа установки пытается проверить связь с общей папкой.  Однако, если развертывание происходит в существующей виртуальной сети, установщик, возможно, не сможет подключиться к общей папке и появится предупреждение с вопросом о продолжении.  Проверьте сведения об общей папке и продолжите работу, если они верны.
@@ -219,7 +219,7 @@ ms.locfileid: "66269239"
 
 2. В общих сведениях в разделе **Состояние** должно отображаться **Все роли готовы**.
 
-    ![Управление службой приложений](media/azure-stack-app-service-deploy/image12.png)
+    ![Администрирование Службы приложений](media/azure-stack-app-service-deploy/image12.png)
 
 ## <a name="test-drive-app-service-on-azure-stack"></a>Тестовая эксплуатация службы приложений в Azure Stack
 
@@ -258,15 +258,10 @@ ms.locfileid: "66269239"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Можно также попробовать другие [службы PaaS (платформа как услуга)](azure-stack-offer-services-overview.md).
+Подготовьтесь к операциям администрирования для Службы приложений в Azure Stack
 
-- [Use SQL databases on Microsoft Azure Stack](azure-stack-sql-resource-provider-deploy.md) (Использование баз данных SQL в Microsoft Azure Stack)
-- [Use MySQL databases on Microsoft Azure Stack](azure-stack-mysql-resource-provider-deploy.md) (Использование баз данных MySQL в Microsoft Azure Stack)
-
-<!--Links-->
-[Azure_Stack_App_Service_preview_installer]: https://go.microsoft.com/fwlink/?LinkID=717531
-[App_Service_Deployment]: https://go.microsoft.com/fwlink/?LinkId=723982
-[AppServiceHelperScripts]: https://go.microsoft.com/fwlink/?LinkId=733525
+- [Планирование ресурсов](azure-stack-app-service-capacity-planning.md)
+- [Настройка источников развертывания](azure-stack-app-service-configure-deployment-sources.md)
 
 <!--Image references-->
 [1]: ./media/azure-stack-app-service-deploy-offline/app-service-exe-advanced-create-package.png

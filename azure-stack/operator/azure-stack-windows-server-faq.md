@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/23/2019
+ms.date: 08/29/2019
 ms.author: sethm
 ms.reviewer: avishwan
-ms.lastreviewed: 11/12/2018
-ms.openlocfilehash: 21364595b30c62f47c293e38bdcb9c5663c56e90
-ms.sourcegitcommit: b8260ef3e43f3703dd0df16fb752610ec8a86942
+ms.lastreviewed: 08/29/2019
+ms.openlocfilehash: b71065d4a5af880fe5fb9a48d78a0e2821822b56
+ms.sourcegitcommit: 5efa09034a56eb2f3dc0c9da238fe60cff0c67ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70008319"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70143986"
 ---
 # <a name="windows-server-in-azure-stack-marketplace-faq"></a>Windows Server в Azure Stack Marketplace: вопросы и ответы
 
@@ -57,11 +57,11 @@ ms.locfileid: "70008319"
 
 ```powershell
 vm= Get-Azurermvm -ResourceGroup "<your RG>" -Name "<your VM>"
-$vm.LicenseType = "Windows_Server"
+$vm.LicenseType = "None"
 Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
 ```
 
-Вы можете проверить тип лицензии, выполнив следующие команды. Если в модели лицензии указано **Windows_Server**, то вы будете оплачивать лицензию Windows в соответствии с моделью PAYG.
+Вы можете проверить тип лицензии, выполнив следующие команды. Если в модели лицензии указано **Windows_Server**, вы будете оплачивать лицензию Windows в соответствии с моделью BYOL. В противном случае вы будете платить за использование ресурсов Windows в соответствии с моделью PAYG:
 
 ```powershell
 $vm | ft Name, VmId,LicenseType,ProvisioningState
@@ -73,7 +73,7 @@ $vm | ft Name, VmId,LicenseType,ProvisioningState
 
 ```powershell
 $vm= Get-Azurermvm -ResourceGroup "<your RG>" -Name "<your VM>"
-$vm.LicenseType = "None"
+$vm.LicenseType = "Windows_Server"
 Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
 ```
 
