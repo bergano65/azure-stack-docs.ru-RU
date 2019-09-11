@@ -143,6 +143,8 @@
       items:
         - name: Основы администрирования
           href: azure-stack-manage-basics.md
+        - name: Очистка пользовательских данных с портала
+          href: azure-stack-portal-clear.md
         - name: Настройка коллекции телеметрии
           href: azure-stack-telemetry.md
         - name: Регистрация Azure Stack
