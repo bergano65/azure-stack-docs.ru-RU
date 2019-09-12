@@ -3,7 +3,7 @@ title: Управление обновлениями в Azure Stack | Докум
 description: Узнайте, как управлять обновлениями в Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: justinha
+author: mattbriggs
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/03/2019
-ms.author: justinha
-ms.lastreviewed: 09/03/2019
+ms.date: 09/10/2019
+ms.author: mabrigg
+ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: f34f31ac54881c5911488f5049cc75ffee85bd38
-ms.sourcegitcommit: 314fd74caf356b157583d38d2b8b1dee30408b7d
+ms.openlocfilehash: 2a6165d37aa813c332cd664ef905717ef7a8ffa8
+ms.sourcegitcommit: dc633e862d49412a963daee481226c1543287e5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70234938"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70863018"
 ---
 # <a name="manage-updates-in-azure-stack-overview"></a>Общие сведения об управлении обновлениями в Azure Stack
 
@@ -67,7 +67,7 @@ ms.locfileid: "70234938"
 
     Оповещения об обновлениях программного обеспечения и исправлениях от корпорации Майкрософт будут отображаться в колонке "Обновления" для экземпляров Azure Stack, подключенных к Интернету.
 
-    Если ваш экземпляр не подключен к Интернету и вы хотите получать уведомления о каждом выпуске исправления, подпишитесь на [RSS](https://support.microsoft.com/app/content/api/content/feeds/sap/32d322a8-acae-202d-e9a9-7371dccf381b/rss)-канал или веб-канал [Atom](https://support.microsoft.com/app/content/api/content/feeds/sap/32d322a8-acae-202d-e9a9-7371dccf381b/atom).
+    Если ваш экземпляр не подключен к Интернету и вы хотите получать уведомления о каждом выпуске исправления, подпишитесь на [RSS](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/rss)-канал или веб-канал [Atom](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/atom).
 
 - **Обновления, предоставленные производителями оборудования от изготовителя оборудования**
 
