@@ -191,16 +191,39 @@
             - name: Развертывание кластера Service Fabric
               href: azure-stack-solution-template-service-fabric-cluster.md
             - name: Развертывание кластера Kubernetes
-              href: azure-stack-solution-template-kubernetes-deploy.md
               items:
-                - name: "Развертывание Kubernetes с помощью Azure\_AD"
-                  href: azure-stack-solution-template-kubernetes-azuread.md
-                - name: "Развертывание Kubernetes с помощью AD\_FS"
-                  href: azure-stack-solution-template-kubernetes-adfs.md
-                - name: Включение панели мониторинга Kubernetes
-                  href: azure-stack-solution-template-kubernetes-dashboard.md
-                - name: Устранение неполадок кластера Kubernetes
-                  href: azure-stack-solution-template-kubernetes-trouble.md
+                - name: Обработчик AKS
+                  items:
+                    - name: Обработчик AKS в Azure Stack
+                      href: azure-stack-kubernetes-aks-engine-overview.md
+                    - name: Политика поддержки
+                      href: azure-stack-kubernetes-ask-engine-support.md
+                    - name: Настройка обработчика AKS
+                      href: azure-stack-kubernetes-aks-engine-set-up.md
+                    - name: Создание клиента Linux
+                      href: azure-stack-kubernetes-aks-engine-deploy-linux.md
+                    - name: Создание клиента Windows
+                      href: azure-stack-kubernetes-aks-engine-deploy-windows.md
+                    - name: Развертывание кластера
+                      href: azure-stack-kubernetes-aks-engine-deploy-cluster.md
+                    - name: Масштабировать кластер
+                      href: azure-stack-kubernetes-aks-engine-scale.md
+                    - name: Обновление кластера
+                      href: azure-stack-kubernetes-aks-engine-upgrade.md
+                    - name: Устранение неполадок в обработчике AKS
+                      href: azure-stack-kubernetes-aks-engine-troubleshoot.md
+                - name: Элемент Marketplace
+                  items:
+                    - name: Развертывание кластера Kubernetes
+                      href: azure-stack-solution-template-kubernetes-deploy.md
+                    - name: "Развертывание Kubernetes с помощью Azure\_AD"
+                      href: azure-stack-solution-template-kubernetes-azuread.md
+                    - name: "Развертывание Kubernetes с помощью AD\_FS"
+                      href: azure-stack-solution-template-kubernetes-adfs.md
+                    - name: Включение панели мониторинга Kubernetes
+                      href: azure-stack-solution-template-kubernetes-dashboard.md
+                    - name: Устранение неполадок кластера Kubernetes
+                      href: azure-stack-solution-template-kubernetes-trouble.md
             - name: Развертывание Cognitive Services
               href: azure-stack-solution-template-cognitive-services.md
     - name: Развертывание приложений
