@@ -12,22 +12,86 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/20/2019
+ms.date: 09/04/2019
 ms.author: justinha
 ms.reviewer: prchint
-ms.lastreviewed: 01/23/2019
-ms.openlocfilehash: 9b78a7ee9af9dde3cbb40b52268cb4cbfc0a6dcc
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.lastreviewed: 09/04/2019
+ms.openlocfilehash: a9d62640b2baabfd3283099656719a880dd0a41b
+ms.sourcegitcommit: a8379358f11db1e1097709817d21ded0231503eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268237"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70377244"
 ---
 # <a name="microsoft-azure-stack-troubleshooting"></a>Устранение неполадок, связанных с Microsoft Azure Stack
 
-В этом документе содержатся общие сведения об устранении неполадок в Azure Stack. Предоставляются универсальные рекомендации и примеры кода, поэтому они не всегда помогут вам решить ваши задачи. 
+В этом документе содержатся сведения об устранении неполадок с Azure Stack. 
 
-## <a name="deployment"></a>Развертывание
+
+## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+
+Эти разделы содержат ссылки на документацию, в которой рассматриваются распространенные вопросы, отправленные в службу поддержки пользователей Майкрософт (CSS).
+
+### <a name="purchase-considerations"></a>Вопросы, связанные с приобретением
+
+* [Как приобрести](https://azure.microsoft.com/overview/azure-stack/how-to-buy/)
+* [Общие сведения о хранилище Azure Stack](azure-stack-overview.md)
+
+### <a name="azure-stack-development-kit-asdk"></a>Пакет средств разработки Azure Stack (ASDK)
+
+Чтобы получить справку по [Пакету средств разработки Azure Stack](../asdk/asdk-what-is.md), обратитесь к экспертам на [форуме MSDN, посвященному Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). ASDK предлагается в качестве среды оценки без поддержки через CSS. Вопросы об ASDK, отправляемые в службу поддержки, предполагают обращение на форум MSDN.
+
+### <a name="updates-and-diagnostics"></a>Обновления и диагностика
+
+* [Использование средств диагностики в Azure Stack](azure-stack-diagnostics.md)
+* [Проверка состояния системы Azure Stack](azure-stack-diagnostic-test.md)
+* [Частота выпуска пакетов обновления](azure-stack-servicing-policy.md#update-package-release-cadence)
+
+### <a name="supported-operating-systems-and-sizes-for-guest-vms"></a>Поддерживаемые операционные системы и размеры для гостевых виртуальных машин
+
+* [Поддерживаемые операционные системы на виртуальной машине для Azure Stack](azure-stack-supported-os.md)
+* [Поддерживаемые размеры виртуальных машин в Azure Stack](../user/azure-stack-vm-sizes.md)
+
+### <a name="azure-marketplace"></a>Azure Marketplace
+
+* [Элементы Azure Marketplace, доступные для Azure Stack](azure-stack-marketplace-azure-items.md)
+
+### <a name="manage-capacity"></a>Управление емкостями
+
+#### <a name="memory"></a>Память
+
+Чтобы увеличить общую емкость доступной памяти для Azure Stack, можно добавить дополнительный объем памяти. Физический сервер в Azure Stack также называется узлом единицы масштабирования. Все узлы единиц масштабирования, входящие в одну единицу масштабирования, должны иметь [одинаковый объем памяти](azure-stack-manage-storage-physical-memory-capacity.md).
+
+#### <a name="retention-period"></a>Срок хранения
+
+В параметрах срока хранения оператор облачной среди может указать время (0–9999 дней), в течение которого можно восстановить удаленную учетную запись. По умолчанию срок хранения составляет 0 дней. Если задать этому параметру значение 0, срок хранения всех удаленных учетных записей мгновенно истекает и они отмечаются для периодической сборки мусора.
+
+* [Настройка срока хранения](azure-stack-manage-storage-accounts.md#set-the-retention-period)
+
+### <a name="security-compliance-and-identity"></a>Безопасность, соответствие требованиям и идентификация  
+
+#### <a name="manage-rbac"></a>Управление RBAC
+
+Пользователь в Azure Stack может быть читателем, владельцем или участником каждого экземпляра подписки, группы ресурсов или службы.
+
+* [Управление с помощью RBAC в Azure Stack](azure-stack-manage-permissions.md)
+
+Если встроенные роли для ресурсов Azure не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. С помощью этого руководства и Azure PowerShell вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя".
+
+* [Руководство. Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell](https://docs.microsoft.com/azure/role-based-access-control/tutorial-custom-role-powershell)
+
+### <a name="manage-usage-and-billing-as-a-csp"></a>Управление потреблением и выставлением счетов в качестве поставщика облачных служб
+
+* [Manage usage and billing as a CSP](azure-stack-add-manage-billing-as-a-csp.md#create-a-csp-or-apss-subscription) (Управление потреблением и выставлением счетов в качестве поставщика облачных служб)
+* [Создание подписки CSP или APSS](azure-stack-add-manage-billing-as-a-csp.md#create-a-csp-or-apss-subscription)
+
+Выберите тип учетной записи общих служб, который вы будете использовать для Azure Stack. Типы подписок, для которых можно зарегистрировать мультитенантное развертывание Azure Stack:
+
+* Поставщик облачных служб
+* Подписка общих служб партнера
+
+
+## <a name="troubleshoot-deployment"></a>Устранение неполадок с развертыванием 
 ### <a name="general-deployment-failure"></a>Общий сбой развертывания
 Если во время установки возникнет сбой, можно использовать параметр -rerun для скрипта развертывания, чтобы перезапустить развертывание с этапа, завершившегося ошибкой.  
 
@@ -54,7 +118,7 @@ An error occurred while trying to test identity provider endpoints: System.Net.W
 
 Если эта команда не выполняется, убедитесь, что коммутатор TOR и другие сетевые устройства настроены для [разрешения сетевого трафика](azure-stack-network.md).
 
-## <a name="virtual-machines"></a>Виртуальные машины
+## <a name="troubleshoot-virtual-machines"></a>Устранение неполадок с виртуальными машинами
 ### <a name="default-image-and-gallery-item"></a>Элемент коллекции и образ по умолчанию
 Перед развертыванием виртуальных машин в Azure Stack необходимо добавить элемент коллекции и образ Windows Server.
 
@@ -66,7 +130,7 @@ An error occurred while trying to test identity provider endpoints: System.Net.W
 1.  На узле Пакета средств разработки Azure Stack запустите **диспетчер отказоустойчивости кластеров** из меню "Пуск".
 2.  Выберите кластер **S-Cluster.azurestack.local**.
 3.  Выберите **Роли**.
-4.  Клиентские виртуальные машины отобразятся в состоянии *Сохранено*. После запуска всех виртуальных машин инфраструктуры щелкните правой кнопкой мыши виртуальные машины клиента и выберите **Запустить**, чтобы возобновить работу виртуальной машины.
+4.  Клиентские виртуальные машины отобразятся в состоянии *Сохранено*. Запустив все виртуальные машины инфраструктуры, щелкните правой кнопкой мыши виртуальные машины клиента и выберите **Запустить**, чтобы возобновить их работу.
 
 ### <a name="i-have-deleted-some-virtual-machines-but-still-see-the-vhd-files-on-disk-is-this-behavior-expected"></a>Некоторые виртуальные машины удалены, но на диске по-прежнему отображаются VHD-файлы. Это ожидаемое поведение?
 Да, это ожидаемое поведение. Это связано со следующими причинами:
@@ -78,7 +142,7 @@ An error occurred while trying to test identity provider endpoints: System.Net.W
 
 Вы можете больше узнать о настройке порогового значения периода удержания и освобождении по запросу в статье об [управлении учетными записями хранения](azure-stack-manage-storage-accounts.md).
 
-## <a name="storage"></a>Хранилище
+## <a name="troubleshoot-storage"></a>Устранение неполадок с хранилищем
 ### <a name="storage-reclamation"></a>Освобождение хранилища
 Для отображения освобожденной емкости на портале может понадобиться до 14 часов. Освобождение пространства зависит от различных факторов, включая процент использования файлов внутреннего контейнера в хранилище блочных BLOB-объектов. Поэтому, в зависимости от того, какое количество данных удалено, нет гарантии касательно объема пространства, которое можно освободить, запустив сборщик мусора.
 

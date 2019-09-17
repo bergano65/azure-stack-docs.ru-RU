@@ -3,7 +3,7 @@ title: Подготовка сертификатов инфраструктур�
 description: В этой статье описано, как подготовить сертификаты PKI Azure Stack для интегрированных систем Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
-ms.author: mabrigg
+ms.date: 09/10/2019
+ms.author: justinha
 ms.reviewer: ppacent
-ms.lastreviewed: 01/30/2019
-ms.openlocfilehash: 682a5ce693bd9f184fd73a322ab9ed29c2d90fae
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.lastreviewed: 09/10/2019
+ms.openlocfilehash: 6b7d7a3e70d78b8ab943224babc515395319914e
+ms.sourcegitcommit: 38f21e0bcf7b593242ad615c9d8ef8a1ac19c734
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782497"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70902719"
 ---
 # <a name="prepare-azure-stack-pki-certificates-for-use-in-deployment-or-rotation"></a>Подготовка сертификатов PKI Azure Stack для развертывания или смены секретов
 
@@ -28,7 +28,8 @@ ms.locfileid: "65782497"
 
 ## <a name="prepare-certificates-for-deployment"></a>Подготовка сертификатов к развертыванию
 
-Для подготовки и проверки сертификатов Azure Stack PKI, которые будут использоваться для развертывания новой среды Azure Stack или для смены секретов в имеющейся среде Azure Stack, выполните следующие действия. 
+Для подготовки и проверки сертификатов PKI Azure Stack, которые будут использоваться для развертывания новой среды Azure Stack или для смены секретов в имеющейся среде Azure Stack, выполните следующие действия. 
+
 
 ### <a name="import-the-certificate"></a>Импорт сертификата
 
@@ -51,6 +52,9 @@ ms.locfileid: "65782497"
    ![Пометка ключа доступным для экспорта](./media/prepare-pki-certs/2.png)
 
 1. Нажмите кнопку "Готово" для завершения импорта.
+
+> [!NOTE]
+> После импорта сертификата для Azure Stack закрытый ключ сертификата хранится в виде файла PKCS 12 (.pfx) в системе хранения данных кластера.
 
 ### <a name="export-the-certificate"></a>Экспорт сертификата
 

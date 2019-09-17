@@ -3,7 +3,7 @@ title: Подготовка пакета обновления Azure Stack | До
 description: Узнайте, как подготовить пакет обновления Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: justinha
+author: mattbriggs
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/03/2019
-ms.author: justinha
-ms.lastreviewed: 09/03/2019
+ms.date: 09/10/2019
+ms.author: mabrigg
+ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 9b58b4911a575ef66c95594b6cb4cd1cc9e27a43
-ms.sourcegitcommit: 314fd74caf356b157583d38d2b8b1dee30408b7d
+ms.openlocfilehash: 515195e30aed9944b8e0cc0e371d08b54ea75189
+ms.sourcegitcommit: 38f21e0bcf7b593242ad615c9d8ef8a1ac19c734
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70234997"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70902676"
 ---
 # <a name="prepare-an-azure-stack-update-package"></a>Подготовка пакета обновления Azure Stack
 
@@ -47,9 +47,6 @@ ms.locfileid: "70234997"
 ## <a name="download-the-update-package"></a>Скачивание пакета обновлений
 Пакет обновления с обновлениями и исправлениями для Azure Stack доступен в колонке "Обновление" для подключенных систем. Необходимо скачать этот пакет и переместить его в расположение, доступное экземпляру Azure Stack, если выполняется установка обновления пакета от изготовителя оборудования или если обслуживается отключенная система (без подключения к Интернету). Может также потребоваться скачать и передать пакет в доступное расположение, если используется система с прерывистым подключением.
 
->[!NOTE]
->Сам пакет обновления и его содержимое (например, двоичные файлы, скрипты PowerShell и т. д.) подписываются с помощью сертификатов, принадлежащих корпорации Майкрософт. Незаконное изменение пакета сделает подпись недействительной.
-
 Проверьте содержимое пакета. Обычно пакет обновлений содержит следующие файлы:
 
 -   **Самораспаковывающийся ZIP-файл \<имя_пакета>.exe**. Этот файл содержит полезные данные обновления.
@@ -62,9 +59,13 @@ ms.locfileid: "70234997"
 
 Файлы [полных и экспресс-обновлений](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates#update-package-types) для Azure Stack размещаются на защищенной конечной точке Azure. Операторы Azure Stack с подключенными экземплярами увидят, как [обновления для Azure Stack будут автоматически появляться на портале администрирования](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#automatic-download-and-preparation-for-update-packages). Для отключенных от Интернета систем или систем с ненадежным подключением к Интернету пакеты обновления [можно скачать с помощью загрузчика обновлений для Azure Stack](https://aka.ms/azurestackupdatedownload). Пакеты обновления программного обеспечения Azure Stack могут содержать обновления служб Azure Stack, а также обновления операционной системы единиц масштабирования Azure Stack.
 
+>[!NOTE]
+>Сам пакет обновления и его содержимое (например, двоичные файлы, скрипты PowerShell и т. д.) подписываются с помощью сертификатов, принадлежащих корпорации Майкрософт. Незаконное изменение пакета сделает подпись недействительной.
+
+
 ### <a name="where-to-download-azure-stack-hotfix-packages"></a>Откуда скачивать исправления Azure Stack
 
-Пакет с [исправлениями для Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates#update-package-types) размещается на той же защищенной конечной точке Azure, на которой хранятся обновления для Azure Stack. Операторы Azure Stack с подключенными экземплярами увидят, как [обновления для Azure Stack будут автоматически появляться на портале администрирования](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#automatic-download-and-preparation-for-update-packages). Вы можете скачать их, используя встроенные ссылки в каждой соответствующей статье базы знаний об исправлении, например [Исправление Azure Stack 1.1906.11.52](https://support.microsoft.com/help/4515650). Исправления можно найти в заметках о выпуске, соответствующих версии Azure Stack. Обновления, предоставленные поставщиком оборудования от изготовителя оборудования
+Пакет с [исправлениями для Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates#update-package-types) размещается на той же защищенной конечной точке Azure, на которой хранятся обновления для Azure Stack. Операторы Azure Stack с подключенными экземплярами увидят, как [обновления для Azure Stack будут автоматически появляться на портале администрирования](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#automatic-download-and-preparation-for-update-packages). Вы можете скачать их, используя встроенные ссылки в каждой соответствующей статье базы знаний об исправлении (например, об [исправлении Azure Stack 1.1906.11.52](https://support.microsoft.com/help/4515650)). Исправления можно найти в заметках о выпуске, соответствующих версии Azure Stack.
 
 ### <a name="where-to-download-oem-update-packages"></a>Откуда скачивать пакеты обновления от изготовителя оборудования
 Поставщиком изготовителя оборудования также будут выпускаться обновления, например обновления драйверов и встроенного ПО. Хотя эти обновления предоставляются поставщиком оборудования как отдельные [пакеты обновления от изготовителя оборудования](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates#update-package-types), их импорт, установка и управление ими аналогичны соответствующим процедурам для пакетов обновления от корпорации Майкрософт. Список контактных данных поставщиков можно найти в разделе [Применение обновлений изготовителя оборудования для Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-oem#oem-contact-information).

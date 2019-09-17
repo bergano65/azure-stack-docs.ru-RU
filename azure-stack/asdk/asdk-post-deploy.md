@@ -16,12 +16,12 @@ ms.date: 07/31/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: 111e8e6cb72baac64229e4808003818efece54cd
-ms.sourcegitcommit: 7968f9f0946138867323793be9966ee2ef99dcf4
+ms.openlocfilehash: f4fe915d07b81a6f99d9bd5a4b222590d1bb9a30
+ms.sourcegitcommit: 305536bfd49319455ca3ca270fe3644b1796bad1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025880"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876587"
 ---
 # <a name="post-deployment-configurations-for-asdk"></a>Настройка ASDK после его развертывания
 
@@ -127,7 +127,7 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 Для развертываний с помощью Azure AD необходимо [включить поддержку мультитенантности](../operator/azure-stack-enable-multitenancy.md#enable-multi-tenancy) для установки ASDK.
 
 > [!NOTE]
-> Если для входа на портал Azure Stack используются учетные записи администратора или пользователя из доменов, отличных от того, который использовался для регистрации Azure Stack, то доменное имя, использованное для регистрации Azure Stack, необходимо добавить в URL-адрес портала. Например, если Azure Stack зарегистрирован с использованием fabrikam.onmicrosoft.com, а учетная запись для входа — admin@contoso.com, то URL-адрес для входа на портал пользователей будет таким: https://portal.local.azurestack.external/fabrikam.onmicrosoft.com.
+> Если для входа на портал Azure Stack используются учетные записи администратора или пользователя из доменов, отличных от того, который использовался для регистрации Azure Stack, то доменное имя, использованное для регистрации Azure Stack, необходимо добавить в URL-адрес портала. Например, если вы зарегистрировали Azure Stack с использованием fabrikam.onmicrosoft.com, а учетная запись для входа является admin@contoso.com, URL-адрес для входа на портал пользователей будет следующим: https\:/portal.local.azurestack.external/fabrikam.onmicrosoft.com.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

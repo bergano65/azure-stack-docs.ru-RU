@@ -12,17 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/30/2019
+ms.date: 09/05/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 08/30/2019
 monikerRange: azs-1908
-ms.openlocfilehash: fbf4983f6f7d2f88da70552ae182792ee316994a
-ms.sourcegitcommit: 314fd74caf356b157583d38d2b8b1dee30408b7d
+ms.openlocfilehash: ad059e09bbd544e4709a237ee0c51cafc2a734b4
+ms.sourcegitcommit: 9438b559ea314cc8c19fd710e1b2a6ceb15e50c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70234969"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70912652"
 ---
 # <a name="azure-stack-1908-update"></a>Обновление 1908 для Azure Stack
 
@@ -35,7 +35,7 @@ ms.locfileid: "70234969"
 
 ## <a name="previous-release-notes"></a>Заметки о предыдущих выпусках
 
-Начиная с выпуска 1908, все предыдущие версии заметок о выпусках не отображаются в оглавлении слева. Чтобы получить доступ к предыдущим версиям заметок о выпуске, перейдите к другой статье (например, к [обзору Azure Stack](azure-stack-overview.md)), а затем выберите выпуск 1905, 1906, 1907 или 1908 с помощью селектора в верхней левой части оглавления. Предыдущие версии заметок о выпуске можно найти в разделе [Архивные заметки о выпуске](#archived-release-notes).
+Начиная с выпуска 1908, все предыдущие версии заметок о выпусках не отображаются в оглавлении слева. Чтобы получить доступ к предыдущим версиям заметок о выпуске, перейдите к другой статье (например, к [обзору Azure Stack](azure-stack-overview.md)) и выберите выпуск 1905, 1906, 1907 или 1908 с помощью селектора в верхней левой части оглавления. Предыдущие версии заметок о выпуске можно найти в разделе [Архивные заметки о выпуске](#archived-release-notes).
 
 ## <a name="build-reference"></a>Указание сборки
 
@@ -63,7 +63,7 @@ ms.locfileid: "70234969"
 
 - Обратите внимание, что для выпуска 1908 базовая операционная система, в которой выполняется Azure Stack, обновлена до Windows Server 2019. В обновление включены базовые улучшения, а также возможность добавлять в Azure Stack дополнительные возможности уже в ближайшем будущем.
 - Все компоненты инфраструктуры Azure Stack теперь работают в режиме FIPS 140-2.
-
+- Операторы Azure Stack теперь могут удалять данные пользователей портала. См. сведения об [удалении данных пользователей портала из Azure Stack](azure-stack-portal-clear.md).
 
 ### <a name="improvements"></a>Улучшения
 

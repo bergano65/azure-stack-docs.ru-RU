@@ -3,23 +3,23 @@ title: Создание сертификатов инфраструктуры о
 description: В этой статье описано, как развернуть сертификаты PKI Azure Stack для интегрированных систем Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: justinha
 manager: femila
 ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
-ms.author: mabrigg
+ms.date: 09/10/2019
+ms.author: justinha
 ms.reviewer: ppacent
-ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 1c342b1edb86629fff95dc04735fd5b6d98fc70a
-ms.sourcegitcommit: 889fd09e0ab51ad0e43552a800bbe39dc9429579
+ms.lastreviewed: 09/10/2019
+ms.openlocfilehash: c9f14e643f886fab0fae148c5af8643890866fd6
+ms.sourcegitcommit: 38f21e0bcf7b593242ad615c9d8ef8a1ac19c734
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782268"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70902685"
 ---
 # <a name="azure-stack-certificates-signing-request-generation"></a>Создание запроса на подпись сертификата Azure Stack
 
@@ -39,7 +39,7 @@ ms.locfileid: "65782268"
   - Имя региона
   - Внешнее полное доменное имя (FQDN)
   - Субъект
-- Windows 10 или Windows Server 2016;
+- Windows 10 или Windows Server 2016 или более поздней версии
 
   > [!NOTE]  
   > После получения сертификатов из центра сертификации действия, описанные в разделе [Подготовка сертификатов PKI Azure Stack](azure-stack-prepare-pki-certs.md), необходимо будет выполнить в той же системе.
@@ -54,7 +54,7 @@ ms.locfileid: "65782268"
         Install-Module Microsoft.AzureStack.ReadinessChecker
     ```
 
-2. Объявите **subject** в качестве упорядоченного словаря. Например: 
+2. Объявите **subject** в качестве упорядоченного словаря. Например:
 
     ```powershell  
     $subjectHash = [ordered]@{"OU"="AzureStack";"O"="Microsoft";"L"="Redmond";"ST"="Washington";"C"="US"}
@@ -63,7 +63,7 @@ ms.locfileid: "65782268"
     > [!note]  
     > Если указано общее имя (CN), оно будет использоваться в качестве первого DNS-имени запроса сертификата.
 
-3. Объявите имеющийся выходной каталог. Например: 
+3. Объявите имеющийся выходной каталог. Например:
 
     ```powershell  
     $outputDirectory = "$ENV:USERPROFILE\Documents\AzureStackCSR"

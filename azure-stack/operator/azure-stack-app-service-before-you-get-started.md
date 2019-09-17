@@ -16,12 +16,12 @@ ms.date: 08/29/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/11/2019
-ms.openlocfilehash: a12aceff00cf5be2d6ab70c4957ef04ea1c135d5
-ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
+ms.openlocfilehash: 0fbb57771976b896f8f6b37b62780e34d6635d78
+ms.sourcegitcommit: e2aec63cacfdc830a20a02ee40e715e3c5dfdf22
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70271710"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386239"
 ---
 # <a name="prerequisites-for-deploying-app-service-on-azure-stack"></a>Предварительные условия для развертывания Службы приложений в Azure Stack
 
@@ -47,9 +47,12 @@ ms.locfileid: "70271710"
    - Папка для модулей
      - GraphAPI.psm1
 
-## <a name="syndicate-the-custom-script-extension-from-the-marketplace"></a>Синдикация расширения пользовательских сценариев из Marketplace
+## <a name="download-items-from-the-azure-marketplace"></a>Скачивание элементов из Azure Marketplace
 
-Для Службы приложений Azure в Azure Stack требуется расширение пользовательских сценариев версии 1.9.1.  Для этого расширения нужно [выполнить синдикацию из Marketplace](azure-stack-download-azure-marketplace-item.md) до запуска развертывания или обновления Службы приложений Azure в Azure Stack.
+Для работы Службы приложений Azure в Azure Stack необходимо [скачать элементы из Azure Marketplace](azure-stack-download-azure-marketplace-item.md), сделав их доступными в Azure Stack Marketplace. До запуска развертывания или обновления Службы приложений Azure в Azure Stack нужно скачать следующие компоненты:
+
+1. Последнюю версию образа виртуальной машины Windows Server 2016 Datacenter.
+2. Расширение пользовательских скриптов версии 1.9.1 или выше. Это расширение виртуальной машины.
 
 ## <a name="get-certificates"></a>Получение сертификатов
 

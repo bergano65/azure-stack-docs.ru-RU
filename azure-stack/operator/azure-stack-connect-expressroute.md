@@ -14,12 +14,12 @@ ms.date: 06/22/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 04c793ceebf167220b74dfc40a7e4fc775723e93
-ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
+ms.openlocfilehash: 2ddc95097539eb1a7b15fdfc1fd2faf2c71f9ced
+ms.sourcegitcommit: a8379358f11db1e1097709817d21ded0231503eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67316257"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70377304"
 ---
 # <a name="connect-azure-stack-to-azure-using-azure-expressroute"></a>Подключение Azure Stack к Azure с помощью Azure ExpressRoute
 
@@ -221,22 +221,15 @@ Azure ExpressRoute позволяет переносить локальные с
 
 Пакет средств разработки Azure Stack работает автономно и изолирован от сети, в которой развернут физический узел. Сеть VIP, к которой подключены шлюзы, на самом деле не внешняя. Она скрыта за маршрутизатором, выполняющим преобразование сетевых адресов (NAT).
 
-В качестве маршрутизатора используется виртуальная машина Windows Server (AzS-BGPNAT01), на которой выполняется роль служб маршрутизации и удаленного доступа (RRAS). NAT необходимо настроить на виртуальной машине AzS-BGPNAT01. Это позволит установить VPN-подключение типа "сеть — сеть" на обоих концах.
+Маршрутизатор — это узел ASDK, на котором запущена роль службы маршрутизации и удаленного доступа (RRAS). NAT необходимо настроить на узле ASDK, чтобы установить VPN-подключение типа "сеть — сеть" на обоих концах.
 
 #### <a name="configure-the-nat"></a>Настройка NAT
 
 1. Войдите в систему главного компьютера Azure Stack с помощью учетной записи администратора.
-1. Вставьте и измените приведенный ниже сценарий PowerShell. Замените `your administrator password` на пароль администратора, а затем выполните сценарий в интегрированной среде сценариев PowerShell с повышенными правами. Этот сценарий возвращает **адрес EBGP**.
+1. Выполните скрипт в интегрированной среде сценариев PowerShell с повышенными привилегиями. Этот сценарий возвращает **адрес EBGP**.
 
    ```powershell
-   cd \AzureStack-Tools-master\connect
-   Import-Module .\AzureStack.Connect.psm1
-   $Password = ConvertTo-SecureString "your administrator password" `
-    -AsPlainText `
-    -Force
-   Get-AzureStackNatServerAddress `
-    -HostComputer "azs-bgpnat01" `
-    -Password $Password
+   Get-NetNatExternalAddress
    ```
 
 1. Чтобы настроить NAT, вставьте и измените приведенный ниже сценарий PowerShell. Отредактируйте сценарий, чтобы заменить `External BGPNAT address` и `Internal IP address` следующими значениями:
@@ -251,40 +244,32 @@ Azure ExpressRoute позволяет переносить локальные с
    $IntBgpNat = 'Internal IP address'
 
    # Designate the external NAT address for the ports that use the IKE authentication.
-   Invoke-Command `
-    -ComputerName azs-bgpnat01 `
-     {Add-NetNatExternalAddress `
+   Add-NetNatExternalAddress `
       -NatName BGPNAT `
       -IPAddress $Using:ExtBgpNat `
       -PortStart 499 `
-      -PortEnd 501}
-   Invoke-Command `
-    -ComputerName azs-bgpnat01 `
-     {Add-NetNatExternalAddress `
+      -PortEnd 501
+   Add-NetNatExternalAddress `
       -NatName BGPNAT `
       -IPAddress $Using:ExtBgpNat `
       -PortStart 4499 `
-      -PortEnd 4501}
+      -PortEnd 4501
    # Create a static NAT mapping to map the external address to the Gateway public IP address to map the ISAKMP port 500 for PHASE 1 of the IPSEC tunnel.
-   Invoke-Command `
-    -ComputerName azs-bgpnat01 `
-     {Add-NetNatStaticMapping `
+   Add-NetNatStaticMapping `
       -NatName BGPNAT `
       -Protocol UDP `
       -ExternalIPAddress $Using:ExtBgpNat `
       -InternalIPAddress $Using:IntBgpNat `
       -ExternalPort 500 `
-      -InternalPort 500}
+      -InternalPort 500
    # Configure NAT traversal which uses port 4500 to  establish the complete IPSEC tunnel over NAT devices.
-   Invoke-Command `
-    -ComputerName azs-bgpnat01 `
-     {Add-NetNatStaticMapping `
+   Add-NetNatStaticMapping `
       -NatName BGPNAT `
       -Protocol UDP `
       -ExternalIPAddress $Using:ExtBgpNat `
       -InternalIPAddress $Using:IntBgpNat `
       -ExternalPort 4500 `
-      -InternalPort 4500}
+      -InternalPort 4500
    ```
 
 ## <a name="configure-azure"></a>Настройка Azure
