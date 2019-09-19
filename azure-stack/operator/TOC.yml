@@ -11,31 +11,11 @@
     - name: Заметки о выпуске
       items:
         - name: обновления для системы безопасности;
-          href: azure-stack-release-notes-security-updates.md
-        - name: Обновление 1908
-          items:
-            - name: Заметки о выпуске
-              href: azure-stack-release-notes-1908.md
-            - name: Известные проблемы
-              href: azure-stack-release-notes-known-issues-1908.md
-        - name: Обновление 1907
-          items:
-            - name: Заметки о выпуске
-              href: azure-stack-release-notes-1907.md
-            - name: Известные проблемы
-              href: azure-stack-release-notes-known-issues-1907.md
-        - name: Обновление 1906
-          items:
-            - name: Заметки о выпуске
-              href: azure-stack-release-notes-1906.md
-            - name: Известные проблемы
-              href: azure-stack-release-notes-known-issues-1906.md
-        - name: "Обновление\_1905"
-          items:
-            - name: Заметки о выпуске
-              href: azure-stack-release-notes-1905.md
-            - name: Известные проблемы
-              href: azure-stack-release-notes-known-issues-1905.md
+          href: release-notes-security-updates.md
+        - name: Заметки о выпуске
+          href: release-notes.md
+        - name: Известные проблемы
+          href: known-issues.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -172,7 +152,7 @@
             - name: Политика обновления и обслуживания
               href: azure-stack-servicing-policy.md
             - name: Контрольный список для применения обновлений
-              href: azure-stack-release-notes-checklist.md
+              href: release-notes-checklist.md
             - name: Планирование обновлений
               href: azure-stack-update-plan.md
             - name: Подготовка пакета обновлений

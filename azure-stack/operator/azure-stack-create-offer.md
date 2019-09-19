@@ -15,17 +15,18 @@ ms.date: 06/11/2019
 ms.author: sethm
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: a2bb84cef5c24cd84653092a34dea7f0e20b624e
-ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
+ms.openlocfilehash: 1492c779144eac235e5c32e767e966b3a6cfb9fd
+ms.sourcegitcommit: 8ddd70ba5ce05c591d3fa62597981859af107c06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66836936"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70936144"
 ---
 # <a name="create-an-offer-in-azure-stack"></a>Создание предложения в Azure Stack
 
 [Предложения](azure-stack-overview.md) — это группы, содержащие один или несколько планов, которые поставщики предлагают пользователям купить (подписаться на них). В этой статье описано, как создать предложение, которое включает в себя [созданный план](azure-stack-create-plan.md). Это предложение позволит подписчикам настраивать виртуальные машины.
 
+::: moniker range=">=azs-1902"
 ## <a name="create-an-offer-1902-and-later"></a>Создание предложения (1902 и более поздние версии)
 
 1. Войдите на [портал администрирования Azure Stack](https://adminportal.local.azurestack.external) и выберите **+ Создать ресурс**, **Предложения и планы**, **Предложение**.
@@ -70,7 +71,9 @@ ms.locfileid: "66836936"
 2. Выберите **Параметры предложения**. Выберите состояние, которое необходимо использовать (например, **Общедоступный**), а затем выберите **Сохранить**.
 
    ![Выбор состояния доступности](media/azure-stack-create-offer/offer-settings.png)
+::: moniker-end
 
+::: moniker range="<=azs-1901"
 ## <a name="create-an-offer-1901-and-earlier"></a>Создание предложения (1901 и более ранние версии)
 
 1. Войдите на [портал администрирования Azure Stack](https://adminportal.local.azurestack.external) и выберите **+Создать ресурс**, **Предложения и планы клиента**, **Предложение**.
@@ -104,6 +107,7 @@ ms.locfileid: "66836936"
 
 > [!NOTE]
 > Стандартные предложения, планы и квоты также можно создавать с помощью PowerShell. Дополнительные сведения см. в [документации по модулю Azure Stack PowerShell 1.4.0](/powershell/azure/azure-stack/overview?view=azurestackps-1.4.0).
+::: moniker-end
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -15,12 +15,12 @@ ms.date: 09/10/2019
 ms.author: mabrigg
 ms.lastreviewed: 08/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 58bfdf49492caf7f8db7f4d2a04de97a17738eac
-ms.sourcegitcommit: dc633e862d49412a963daee481226c1543287e5e
+ms.openlocfilehash: 9582c47f37bdd6ae4c306593bea094b66652c49e
+ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70863026"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71101171"
 ---
 # <a name="plan-for-an-azure-stack-update"></a>Планирование обновления Azure Stack
 
@@ -36,9 +36,9 @@ ms.locfileid: "70863026"
 
 Вы можете подготовить среду к обновлению, убедившись в том, что установлены все исправления, исправления безопасности и обновления от изготовителя оборудования, проверена работоспособность экземпляра Azure Stack, проверена доступная емкость и проверен пакет обновления.
 
-1. Ознакомьтесь с известными проблемами. Инструкции см. в разделе [Известные проблемы в выпуске 1907 Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-release-notes-known-issues-1907).
+1. Ознакомьтесь с известными проблемами. Инструкции см. в разделе [Известные проблемы в выпуске 1907 Azure Stack](https://docs.microsoft.com/azure-stack/operator/release-notes.md).
 
-2. Ознакомьтесь с обновлениями для системы безопасности. Список этих обновление доступен в разделе [Обновления для системы безопасности Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-release-notes-security-updates-1907).
+2. Ознакомьтесь с обновлениями для системы безопасности. Список этих обновление доступен в разделе [Обновления для системы безопасности Azure Stack](https://docs.microsoft.com/azure-stack/operator/release-notes-security-updates.md).
 
 3. Перед установкой этого обновления выполните командлет [Test-AzureStack](https://docs.microsoft.com/azure-stack/operator/azure-stack-diagnostic-test), чтобы проверить состояние Azure Stack и устранить все найденные операционные проблемы, включая любые предупреждения и сбои. Кроме того, просмотрите активные предупреждения и решите проблемы с теми, которые требуют принятия мер.
 

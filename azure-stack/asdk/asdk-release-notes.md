@@ -15,12 +15,12 @@ ms.date: 08/30/2019
 ms.author: sethm
 ms.reviewer: misainat
 ms.lastreviewed: 08/30/2019
-ms.openlocfilehash: 9d0820634a469f775c1e3b6637c604ae98681be2
-ms.sourcegitcommit: 7d7a4c8c46613b6104caf23763bfd2275f6a826b
+ms.openlocfilehash: 98e43cfe0226e06ca936484a78da5a61915f5797
+ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70188178"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71101031"
 ---
 # <a name="asdk-release-notes"></a>Заметки о выпуске ASDK
 
@@ -33,14 +33,14 @@ ms.locfileid: "70188178"
 
 ### <a name="new-features"></a>новые функции;
 
-- Список новых функций для этого выпуска см. в [этом разделе](../operator/azure-stack-release-notes-1908.md#whats-new) заметок к выпуску Azure Stack.
+- Список новых функций для этого выпуска см. в [этом разделе](/azure-stack/operator/release-notes?view=azs-1908#whats-new-1908) заметок к выпуску Azure Stack.
 
 <!-- ### Changes -->
 
 ### <a name="fixed-and-known-issues"></a>Исправленные и известные проблемы
 
-<!-- - For a list of Azure Stack issues fixed in this release, see [this section](../operator/azure-stack-release-notes-1908.md#fixes) of the Azure Stack release notes. -->
-- Список известных проблем см. в [этой статье](../operator/azure-stack-release-notes-known-issues-1908.md).
+<!-- - For a list of Azure Stack issues fixed in this release, see [this section](/azure-stack/operator/release-notes?view=azs-1908#fixes-1908) of the Azure Stack release notes. -->
+- Список известных проблем см. в [этой статье](/azure-stack/operator/known-issues?view=azs-1908).
 - Обратите внимание, что доступные исправления Azure Stack неприменимы к ASDK.
 ::: moniker-end
 
@@ -49,16 +49,16 @@ ms.locfileid: "70188178"
 
 ### <a name="new-features"></a>новые функции;
 
-- Список новых функций для этого выпуска см. в [этом разделе](../operator/azure-stack-release-notes-1907.md#whats-in-this-update) заметок к выпуску Azure Stack.
+- Список новых функций для этого выпуска см. в [этом разделе](/azure-stack/operator/release-notes?view=azs-1907#whats-in-this-update-1907) заметок к выпуску Azure Stack.
 
 <!-- ### Changes -->
 
 ### <a name="fixed-and-known-issues"></a>Исправленные и известные проблемы
 
 - При создании ресурсов виртуальной машины с помощью некоторых образов marketplace развертывание могло не завершиться корректно. В качестве временного решения этой проблемы вы можете щелкнуть ссылку **Скачать шаблон и параметры** на странице **Сводка** и щелкнуть кнопку **Развернуть** в колонке **Шаблон**.
-- Список проблем Azure Stack, которые были исправлены в этом выпуске, см. в [этом разделе](../operator/azure-stack-release-notes-1907.md#fixes) заметок о выпуске Azure Stack.
-- Список известных проблем см. в [этой статье](../operator/azure-stack-release-notes-known-issues-1907.md).
-- Обратите внимание, что [доступные исправления Azure Stack](../operator/azure-stack-release-notes-1907.md#hotfixes) нельзя применять к Azure Stack ASDK.
+- Список проблем Azure Stack, которые были исправлены в этом выпуске, см. в [этом разделе](/azure-stack/operator/release-notes?view=azs-1907#fixes-1907) заметок о выпуске Azure Stack.
+- Список известных проблем см. в [этой статье](/azure-stack/operator/known-issues?view=azs-1907).
+- Обратите внимание, что [доступные исправления Azure Stack](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-1907) нельзя применять к Azure Stack ASDK.
 ::: moniker-end
 
 ::: moniker range="azs-1906"
@@ -66,7 +66,7 @@ ms.locfileid: "70188178"
 
 ### <a name="new-features"></a>новые функции;
 
-- Список новых функций для этого выпуска см. в [этом разделе](../operator/azure-stack-release-notes-1906.md#whats-in-this-update) заметок к выпуску Azure Stack.
+- Список новых функций для этого выпуска см. в [этом разделе](/azure-stack/operator/release-notes?view=azs-1906#whats-in-this-update-1906) заметок к выпуску Azure Stack.
 
 ### <a name="changes"></a>изменения
 
@@ -75,9 +75,9 @@ ms.locfileid: "70188178"
 ### <a name="fixed-and-known-issues"></a>Исправленные и известные проблемы
 
 - При создании ресурсов виртуальной машины с помощью некоторых образов marketplace развертывание могло не завершиться корректно. В качестве временного решения этой проблемы вы можете щелкнуть ссылку **Скачать шаблон и параметры** на странице **Сводка** и щелкнуть кнопку **Развернуть** в колонке **Шаблон**.
-- Список проблем Azure Stack, которые были исправлены в этом выпуске, см. в [этом разделе](../operator/azure-stack-release-notes-1906.md#fixes) заметок о выпуске Azure Stack.
-- Список известных проблем см. в [этой статье](../operator/azure-stack-release-notes-known-issues-1906.md).
-- Обратите внимание, что [доступные исправления Azure Stack](../operator/azure-stack-release-notes-1906.md#hotfixes) нельзя применять к Azure Stack ASDK.
+- Список проблем Azure Stack, которые были исправлены в этом выпуске, см. в [этом разделе](/azure-stack/operator/release-notes?view=azs-1906#fixes-1906) заметок о выпуске Azure Stack.
+- Список известных проблем см. в [этой статье](/azure-stack/operator/known-issues?view=azs-1906).
+- Обратите внимание, что [доступные исправления Azure Stack](/azure-stack/operator/release-notes?view=azs-1906#hotfixes-1906) нельзя применять к Azure Stack ASDK.
 ::: moniker-end
 
 ::: moniker range="azs-1905"
@@ -87,12 +87,12 @@ ms.locfileid: "70188178"
 
 ### <a name="new-features"></a>новые функции;
 
-- Список новых функций для этого выпуска см. в [этом разделе](../operator/azure-stack-release-notes-1905.md#whats-in-this-update) заметок к выпуску Azure Stack.
+- Список новых функций для этого выпуска см. в [этом разделе](/azure-stack/operator/release-notes?view=azs-1905#whats-in-this-update-1905) заметок к выпуску Azure Stack.
 
 ### <a name="fixed-and-known-issues"></a>Исправленные и известные проблемы
 
 - Исправлена проблема, при которой вам приходилось редактировать скрипт PowerShell **RegisterWithAzure.psm1** для успешной [регистрации ASDK](asdk-register.md).
-- Список исправленных проблем для этого выпуска см. в [этом разделе](../operator/azure-stack-release-notes-1905.md#fixes) заметок к выпуску Azure Stack.
-- Список известных проблем см. в [этой статье](../operator/azure-stack-release-notes-known-issues-1905.md).
-- Обратите внимание, что [доступные исправления Azure Stack](../operator/azure-stack-release-notes-1905.md#hotfixes) нельзя применять к Azure Stack ASDK.
+- Список исправленных проблем для этого выпуска см. в [этом разделе](/azure-stack/operator/release-notes?view=azs-1905#fixes-1905) заметок к выпуску Azure Stack.
+- Список известных проблем см. в [этой статье](/azure-stack/operator/known-issues?view=azs-1905).
+- Обратите внимание, что [доступные исправления Azure Stack](/azure-stack/operator/release-notes?view=azs-1905#hotfixes-1905) нельзя применять к Azure Stack ASDK.
 ::: moniker-end

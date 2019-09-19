@@ -15,12 +15,12 @@ ms.date: 09/10/2019
 ms.author: mabrigg
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 2a6165d37aa813c332cd664ef905717ef7a8ffa8
-ms.sourcegitcommit: dc633e862d49412a963daee481226c1543287e5e
+ms.openlocfilehash: 64e1bd7934b1b3b8c0bc935a920a2e4e188c4bd9
+ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70863018"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71101201"
 ---
 # <a name="manage-updates-in-azure-stack-overview"></a>Общие сведения об управлении обновлениями в Azure Stack
 
@@ -105,4 +105,4 @@ Azure Stack включает в себя поставщика ресурсов �
 
 - Чтобы начать процесс обновления, выполните действия, описанные в разделе [Планирование обновления Azure Stack](azure-stack-update-plan.md).
 - Чтобы узнать, какие версии Azure Stack поддерживаются, ознакомьтесь с разделом [Политика обслуживания Azure Stack](azure-stack-servicing-policy.md).  
-- Чтобы узнать больше о текущих и последних обновлениях, ознакомьтесь с [заметками о выпуске Azure Stack](azure-stack-release-notes-security-updates-1907.md).
+- Чтобы узнать больше о текущих и последних обновлениях, ознакомьтесь с [заметками о выпуске Azure Stack](release-notes.md).

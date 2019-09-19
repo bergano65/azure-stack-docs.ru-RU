@@ -16,12 +16,12 @@ ms.date: 06/11/2019
 ms.author: sethm
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: b120346d489f676919cb05863f81db9bfb102634
-ms.sourcegitcommit: e51cdc84a09250e8fa701bb2cb09de38d7de2c07
+ms.openlocfilehash: 6e127983afe023448d6caad23cf79e8a3a289c17
+ms.sourcegitcommit: 8ddd70ba5ce05c591d3fa62597981859af107c06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66836994"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70936163"
 ---
 # <a name="create-a-plan-in-azure-stack"></a>Создание плана в Azure Stack
 
@@ -29,6 +29,7 @@ ms.locfileid: "66836994"
 
 [Планы Azure Stack](azure-stack-overview.md) — это группы, содержащие одну или несколько служб, а также их квоты. Вы как поставщик создаете планы, чтобы предложить их пользователям. В свою очередь, пользователи подписываются на предложения, чтобы использовать содержащиеся в них планы, службы и квоты. В этом примере показано, как создать план, включающий в себя поставщики вычислительных и сетевых ресурсов, а также ресурсов хранилища. Этот план даст подписчикам возможность подготавливать виртуальные машины.
 
+::: moniker range=">=azs-1902"
 ## <a name="create-a-plan-1902-and-later"></a>Создание плана (1902 и более поздние версии)
 
 1. Войдите на [портал администратора Azure Stack](https://adminportal.local.azurestack.external).
@@ -70,7 +71,9 @@ ms.locfileid: "66836994"
 10. Когда все будет готово, щелкните **Создать**, чтобы создать план.
 
 11. Чтобы просмотреть новый план, в левой части окна щелкните **Все службы**, нажмите **Планы**, найдите план и выберите его имя. В длинном списке ресурсов план можно найти по имени с помощью **поиска**.
+::: moniker-end
 
+::: moniker range="<=azs-1901"
 ## <a name="create-a-plan-1901-and-earlier"></a>Создание плана (1901 и более ранние версии)
 
 1. Войдите на [портал администратора Azure Stack](https://adminportal.local.azurestack.external).
@@ -114,6 +117,7 @@ ms.locfileid: "66836994"
 10. Для просмотра нового плана щелкните **Все ресурсы**, а затем найдите план и щелкните его имя. В длинном списке ресурсов план можно найти по имени с помощью **поиска**.
 
     ![Проверка плана](media/azure-stack-create-plan/plan-overview1901.png)
+::: moniker-end
 
 ## <a name="next-steps"></a>Дополнительная информация
 

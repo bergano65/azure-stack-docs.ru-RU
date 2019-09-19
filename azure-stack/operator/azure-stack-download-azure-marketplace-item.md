@@ -3,7 +3,7 @@ title: Скачивание элементов Marketplace из Azure | Доку
 description: Оператор облака может скачивать элементы marketplace из Azure в свое развертывание Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/13/2019
-ms.author: sethm
+ms.author: justinha
 ms.reviewer: ihcherie
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: 4c4bac9a083ca35f851acb2f2d8201742be0ed1e
-ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
+ms.openlocfilehash: 99d0c48a5e7f5fd4e58d6fdf13e0a12c4b9dfb1e
+ms.sourcegitcommit: 95f30e32e5441599790d39542ff02ba90e70f9d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991832"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71070276"
 ---
 # <a name="download-marketplace-items-from-azure-to-azure-stack"></a>Скачивание элементов Marketplace из Azure в Azure Stack
 
@@ -100,6 +100,8 @@ ms.locfileid: "68991832"
 1. На компьютере с подключением к Интернету откройте консоль PowerShell в качестве администратора.
 
 2. Добавьте учетную запись Azure, которая использовалась для регистрации Azure Stack. Чтобы добавить учетную запись, в PowerShell запустите `Add-AzureRmAccount` без каких-либо параметров. Вам будет предложено ввести учетные данные для входа в Azure. Также может потребоваться выполнить двухфакторную аутентификацию в зависимости от конфигурации вашей учетной записи.
+
+   [!include[Remove Account](../../includes/remove-account.md)]
 
 3. Если у вас несколько подписок, выполните следующую команду, чтобы выбрать подписку, которая использовалась для регистрации:  
 
