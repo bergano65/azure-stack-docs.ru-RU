@@ -251,7 +251,9 @@
           href: azure-stack-linux.md
         - name: Добавление виртуальной машины Red Hat
           href: azure-stack-redhat-create-upload-vhd.md
-        - name: Предложение кластера Kubernetes
+        - name: Предложение подсистемы AKS
+          href: azure-stack-aks-engine.md
+        - name: Предложение элемента Kubernetes в Marketplace
           href: azure-stack-solution-template-kubernetes-cluster-add.md
         - name: "Создание VPN-подключения \"сеть\_— сеть\""
           href: azure-stack-create-vpn-connection-one-node.md
