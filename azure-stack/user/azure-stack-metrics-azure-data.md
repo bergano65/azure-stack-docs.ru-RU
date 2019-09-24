@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 08/27/2019
 ms.author: mabrigg
 ms.lastreviewed: 12/01/2018
-ms.openlocfilehash: 88b07c5c3325263e068de49b78df25d17861a37e
-ms.sourcegitcommit: f1a21af6517978ddb62f4cbfa1d1df8c867814d1
+ms.openlocfilehash: 71855d557f26fc1eb4d86ab0d5a48bf8cf987506
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70064180"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974679"
 ---
 # <a name="use-azure-monitor-on-azure-stack"></a>Использование Azure Monitor в Azure Stack
 
@@ -115,7 +115,7 @@ Azure Monitor — служба платформы, которая предост
 Визуализация данных мониторинга на графиках и диаграммах помогает находить тенденции намного быстрее, чем при просмотре самих данных. 
 
 Ниже представлены некоторые способы визуализации.
- - Использование портала пользователя и администратора Azure Stack.
+ - Использование порталов пользователя и администрирования Azure Stack.
  - Отправка данных в Microsoft Power BI.
  - Отправка данных в стороннее средство визуализации с помощью потоковой трансляции или использования инструмента для чтения из архива в службе хранилища Azure.
 

@@ -3,7 +3,7 @@ title: Добавление образа виртуальной машины в 
 description: Сведения о добавлении и удалении образа виртуальной машины в Azure Stack
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: Justinha
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,22 +11,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: conceptual
-ms.date: 07/23/2019
-ms.author: mabrigg
+ms.date: 09/17/2019
+ms.author: Justinha
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: 8fec1b3702aa7c8c55f1a90167b1ac13f0ac8847
-ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
+ms.openlocfilehash: fef815ec23655638bbe4df1bcdccae42aeee13e2
+ms.sourcegitcommit: 9f4c6e96f60b4c229316e7a4ab6e0e5ef0a9a232
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70271761"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061161"
 ---
 # <a name="add-a-vm-image-to-azure-stack"></a>Добавление образа виртуальной машины в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-В Azure Stack можно добавить образ виртуальной машины в Marketplace, чтобы сделать его доступным для пользователей. Образы можно добавлять с помощью шаблонов Azure Resource Manager для Azure Stack. Их можно также добавить в пользовательский интерфейс Azure Marketplace в качестве элемента Marketplace с помощью портала администратора или Windows PowerShell. Используйте образ из глобального магазина Azure Marketplace или пользовательский образ.
+В Azure Stack можно добавить образ виртуальной машины в Marketplace и сделать его доступным для пользователей. Образы можно добавлять с помощью шаблонов Azure Resource Manager для Azure Stack. Их можно также добавить в пользовательский интерфейс Azure Marketplace в качестве элемента Marketplace с помощью портала администратора или Windows PowerShell. Используйте образ из глобального магазина Azure Marketplace или пользовательский образ.
 
 ## <a name="add-a-vm-image-through-the-portal"></a>Добавление образа виртуальной машины через портал
 
@@ -66,7 +66,7 @@ ms.locfileid: "70271761"
 
 ## <a name="remove-a-vm-image-through-the-portal"></a>Удаление образа виртуальной машины через портал
 
-1. Откройте портал администрирования, перейдя по адресу [https://adminportal.local.azurestack.external](https://adminportal.local.azurestack.external).
+1. Откройте портал администрирования по адресу [https://adminportal.local.azurestack.external](https://adminportal.local.azurestack.external).
 
 2. Выберите **Marketplace management** (Управление Marketplace) и виртуальную машину, которую вы хотите удалить.
 
@@ -155,10 +155,13 @@ ms.locfileid: "70271761"
 5. Подготовьте образ операционной системы Windows или Linux в формате VHD (не VHDX), отправьте этот образ в учетную запись хранения и запишите URI, по которому можно получить этот образ виртуальной машины из PowerShell.  
 
    ```powershell
-    Add-AzureRmAccount `
-      -EnvironmentName "AzureStackAdmin" `
-      -TenantId $TenantID
+   Add-AzureRmAccount 
+   -EnvironmentName "AzureStackAdmin" 
+   -TenantId $TenantID
    ```
+  
+   >[!Note]
+   > Если истек срок сеанса, изменен пароль или вы хотите переключиться на другую учетную запись, перед входом с помощью Add-AzureRmAccount выполните следующий командлет: `Remove-AzureRmAccount-Scope Process`
 
 6. (Необязательно.) В образе виртуальной машины можно передать массив дисков с данными. Создайте диски данных с помощью командлета New-DataDiskObject. Откройте PowerShell в командной строке с повышенными привилегиями и выполните следующую команду:
 

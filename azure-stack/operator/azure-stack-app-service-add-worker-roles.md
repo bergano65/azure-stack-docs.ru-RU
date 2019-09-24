@@ -16,12 +16,12 @@ ms.date: 05/06/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: 43ee38c18e2831d1cb96958501cee6f77292edd0
-ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
+ms.openlocfilehash: b01199bfe96c39fe79aac65eca219a065f39375c
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70271677"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70975010"
 ---
 # <a name="add-workers-and-infrastructure-in-app-service-on-azure-stack"></a>Добавление рабочих ролей и инфраструктуры в Службе приложений в Azure Stack
 
@@ -75,7 +75,7 @@ ms.locfileid: "70271677"
 
 3. Состояние новых экземпляров роли можно отслеживать, используя функцию администрирования Службы приложений. Чтобы проверить состояние для отдельного экземпляра роли, щелкните нужный тип роли в списке.
 
-## <a name="add-additional-workers-using-the-admin-portal"></a>Добавление дополнительных рабочих ролей с помощью портала администрирования
+## <a name="add-additional-workers-using-the-administrator-portal"></a>Добавление дополнительных рабочих ролей с помощью портала администрирования
 
 1. Войдите на портал администрирования Azure Stack с правами администратора служб.
 

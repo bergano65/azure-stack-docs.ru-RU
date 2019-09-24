@@ -16,12 +16,12 @@ ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 7d0e9c6914ce8748d842c9addf040355e3dc1cb1
-ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
+ms.openlocfilehash: 9e92101b6d00da397359ed25e8682f18305f5a83
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991706"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974720"
 ---
 # <a name="start-azsreadinesschecker-cmdlet-reference"></a>Справочник по командлету Start-AzsReadinessChecker
 
@@ -166,7 +166,7 @@ Start-AzsReadinessChecker
 
 ## <a name="description"></a>ОПИСАНИЕ
 
-Командлет **Start-AzsReadinessChecker** проверяет сертификаты, учетные записи Azure, подписки Azure и Azure Active Directory. Выполните проверку перед развертыванием Azure Stack или перед такими действиями по обслуживанию Azure Stack, как смена секрета. С помощью командлета также можно создавать запросы на подпись для сертификатов инфраструктуры и, при необходимости, сертификатов PaaS. Наконец, командлет может распаковать сертификаты PFX для устранения общих проблем с упаковкой.
+Командлет **Start-AzsReadinessChecker** проверяет сертификаты, учетные записи Azure, подписки Azure и Azure Active Directory (Azure AD). Выполните проверку перед развертыванием Azure Stack или перед такими действиями по обслуживанию Azure Stack, как смена секрета. С помощью командлета также можно создавать запросы на подпись для сертификатов инфраструктуры и, при необходимости, сертификатов PaaS. Наконец, командлет может распаковать сертификаты PFX для устранения общих проблем с упаковкой.
 
 ## <a name="examples"></a>Примеры
 
@@ -197,7 +197,7 @@ $password = Read-Host -Prompt "Enter PFX Password" -AsSecureString
 Start-AzsReadinessChecker -CertificatePath .\Certificates\ -PfxPassword $password -DeploymentDataJSONPath .\deploymentdata.json
 ```
 
-В этом примере развертывания и поддержки в целях безопасности запрашивается пароль PFX, а затем `Start-AzsReadinessChecker` проверяет соответствующую папку **Certificates** на наличие допустимых сертификатов для развертывания. При этом идентификатор, название региона и внешнее имя FQDN считываются из JSON-файла с данными развертывания, созданного для развертывания.
+В этом примере развертывания и поддержки в целях безопасности запрашивается пароль PFX, а затем `Start-AzsReadinessChecker` проверяется соответствующая папка **Certificates** на наличие допустимых сертификатов для развертывания. При этом идентификатор, название региона и внешнее имя FQDN считываются из JSON-файла с данными развертывания.
 
 ### <a name="example-validate-paas-certificates"></a>Пример. Проверка сертификатов PaaS
 
@@ -237,7 +237,7 @@ $serviceAdminCredential = Get-Credential -Message "Enter Credentials for Service
 Start-AzsReadinessChecker -AADServiceAdministrator $serviceAdminCredential -AzureEnvironment "<environment name>" -AzureDirectoryTenantName azurestack.contoso.com
 ```
 
-В этом примере в целях безопасности запрашиваются учетные данные учетной записи администратора службы, а затем `Start-AzsReadinessChecker` проверяет, допустимы ли учетная запись Azure и Azure Active Directory для развертывания AAD с именем каталога клиента **azurestack.contoso.com**.
+В этом примере в целях безопасности запрашиваются учетные данные учетной записи администратора службы, а затем `Start-AzsReadinessChecker` проверяется, допустимы ли учетная запись Azure и Azure AD для развертывания Azure AD с именем каталога клиента **azurestack.contoso.com**.
 
 ### <a name="example-validate-azure-identity-with-deployment-data-deployment-support"></a>Пример. Проверка удостоверения Azure с помощью данных развертывания (развертывание и поддержка)
 
@@ -246,7 +246,7 @@ $serviceAdminCredential = Get-Credential -Message "Enter Credentials for Service
 Start-AzsReadinessChecker -AADServiceAdministrator $serviceAdminCredential -DeploymentDataJSONPath .\contoso-deploymentdata.json
 ```
 
-В этом примере в целях безопасности запрашиваются учетные данные учетной записи администратора службы, а затем `Start-AzsReadinessChecker` проверяет, допустимы ли учетная запись Azure и Azure Active Directory для развертывания AAD. При этом **AzureCloud** и **TenantName** считываются из JSON-файла с данными развертывания, созданного для развертывания.
+В этом примере в целях безопасности запрашиваются учетные данные учетной записи администратора службы, а затем `Start-AzsReadinessChecker` проверяется, допустимы ли учетная запись Azure и Azure AD для развертывания Azure AD. При этом **AzureCloud** и **TenantName** считываются из JSON-файла с данными развертывания.
 
 ### <a name="example-validate-azure-registration"></a>Пример. Проверка регистрации в Azure
 
@@ -435,7 +435,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 ### <a name="-aadserviceadministrator"></a>-AADServiceAdministrator
 
-Указывает администратора службы Azure Active Directory для развертывания Azure Stack.
+Указывает администратора службы Azure AD, который будет использоваться в развертывании Azure Stack.
 
 |  |  |
 |----------------------------|---------|
@@ -447,7 +447,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 ### <a name="-aaddirectorytenantname"></a>-AADDirectoryTenantName
 
-Указывает имя Azure Active Directory, используемое в развертывании Azure Stack.
+Указывает имя Azure AD, которое будет использоваться в развертывании Azure Stack.
 
 |  |  |
 |----------------------------|---------|
@@ -512,13 +512,13 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 Указывает путь, по которому присутствуют только необходимые папки с сертификатами.
 
-Необходимые папки для развертывания Azure Stack с системой идентификации "Azure Active Directory":
+Необходимые папки для развертывания Azure Stack с системой идентификации Azure AD:
 
-ACSBlob, ACSQueue, ACSTable, Admin Portal, ARM Admin, ARM Public, KeyVault, KeyVaultInternal, Public Portal
+- ACSBlob, ACSQueue, ACSTable, Admin Portal, ARM Admin, ARM Public, KeyVault, KeyVaultInternal, Public Portal
 
-Необходимые папки для развертывания Azure Stack с системой идентификации "Службы федерации Active Directory (AD FS)":
+Необходимые папки для развертывания Azure Stack с системой идентификации службы федерации Active Directory (AD FS):
 
-ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, KeyVault, KeyVaultInternal, Public Portal
+- ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, KeyVault, KeyVaultInternal, Public Portal
 
 |  |  |
 |----------------------------|---------|
@@ -580,7 +580,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 
 ### <a name="-outputpath"></a>-OutputPath
 
-Указывает пользовательский путь для сохранения отчета о готовности в формате JSON и подробного файла журнала. Если путь не существует, инструмент попытается создать каталог.
+Указывает пользовательский путь для сохранения отчета о готовности в формате JSON и подробного файла журнала. Если путь не существует, команда попытается создать каталог.
 
 |  |  |
 |----------------------------|------------------|

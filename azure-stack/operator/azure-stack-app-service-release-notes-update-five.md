@@ -16,12 +16,12 @@ ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/25/2019
-ms.openlocfilehash: 1955689929ef3277096aab558cca57e719a59a87
-ms.sourcegitcommit: 7d7a4c8c46613b6104caf23763bfd2275f6a826b
+ms.openlocfilehash: 4adad49b27b1ab1d255ccc566c95b003cfd09b3b
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70808189"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974917"
 ---
 # <a name="app-service-on-azure-stack-update-5-release-notes"></a>Заметки о выпуске обновления 5 для Службы приложений Azure в Azure Stack
 
@@ -42,7 +42,7 @@ ms.locfileid: "70808189"
 
 Прежде чем начать обновление Службы приложений Azure в Azure Stack до версии 1.5:
 
-- Убедитесь, что все роли настроены в разделе администрирования Службы приложений Azure на портале администрирования Azure Stack.
+- Убедитесь, что все роли настроены в разделе администрирования Службы приложений Azure на портале администратора Azure Stack.
 
 - Выполните резервное копирование Службы приложений и баз данных master:
   - AppService_Hosting;

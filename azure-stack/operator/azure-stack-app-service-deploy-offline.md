@@ -16,12 +16,12 @@ ms.date: 08/29/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 9190a8cb0b42b10710a4abc2671fe8ead3094d9a
-ms.sourcegitcommit: 7d7a4c8c46613b6104caf23763bfd2275f6a826b
+ms.openlocfilehash: 0147108a2e4fb45fce98460fcde141b5f2e28df5
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70808293"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70975042"
 ---
 # <a name="deploy-app-service-in-an-offline-environment-in-azure-stack"></a>Развертывание Службы приложений в автономной среде Azure Stack
 

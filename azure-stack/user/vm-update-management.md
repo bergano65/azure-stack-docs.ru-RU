@@ -16,12 +16,12 @@ ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 03/20/2019
-ms.openlocfilehash: 891727c8e80af479e800feef9c292f7355fb208c
-ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
+ms.openlocfilehash: 3fa6d124722d45d727525820b6a99d408f0d2350
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68842687"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70975173"
 ---
 # <a name="vm-update-and-management-automation-in-azure-stack"></a>Автоматизация обновления виртуальной машины и управления ею в Azure Stack
 Для управления виртуальными машинами Windows и Linux, развернутыми с помощью Azure Stack, можно использовать следующие функции решения службы автоматизации Azure.
@@ -44,7 +44,7 @@ ms.locfileid: "68842687"
 Чтобы использовать такие возможности автоматизации, как Azure Monitor для виртуальных машин, инвентаризацию, "Отслеживание изменений" и "Управление обновлениями" для виртуальных машин Azure Stack, необходимо сначала включить эти решения в Azure.
 
 > [!TIP]
-> Если эти возможности уже включены для виртуальных машин Azure, можно использовать учетные данные существующей рабочей области Log Analytics. Если уже существует идентификатор рабочей области и первичный ключ LogAnalytics, которые необходимо использовать, сразу перейдите к [следующему разделу](./vm-update-management.md#in-the-azure-stack-admin-portal). В противном случае оставайтесь в этом разделе, чтобы создать новую рабочую область LogAnalytics и учетную запись службы автоматизации.
+> Если эти возможности уже включены для виртуальных машин Azure, можно использовать учетные данные существующей рабочей области Log Analytics. Если уже существует идентификатор рабочей области и первичный ключ LogAnalytics, которые необходимо использовать, сразу перейдите к [следующему разделу](./vm-update-management.md#in-the-azure-stack-administrator-portal). В противном случае оставайтесь в этом разделе, чтобы создать новую рабочую область LogAnalytics и учетную запись службы автоматизации.
 
 Первый шаг в обеспечении этих решений — [создание рабочей области LogAnalytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace) в подписке Azure. Рабочая область Log Analytics — это уникальная среда журналов Azure Monitor с собственным репозиторием данных, источниками данных и решениями. После создания рабочей области запишите идентификатор и ключ рабочей области. Чтобы просмотреть эти сведения, перейдите к колонке "Рабочая область", щелкните **Дополнительные параметры** и просмотрите значения **Идентификатор рабочей области** и **Первичный ключ**. 
 
@@ -76,8 +76,8 @@ ms.locfileid: "68842687"
 
 После создания рабочей области Log Analytics включите в ней счетчики производительности для сбора данных на виртуальных машинах Windows и Linux. Установите и включите решения ServiceMap и InfrastructureInsights в рабочей области. Этот процесс описан в руководстве [по развертыванию Azure Monitor для виртуальных машин](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-onboard#how-to-enable-azure-monitor-for-vms-preview).
 
-### <a name="in-the-azure-stack-admin-portal"></a>На портале администрирования Azure Stack
-После включения решений службы автоматизации на портале Azure необходимо войти на портал администрирования Azure Stack с правами администратора облака и скачать из Azure Stack Marketplace расширения **Azure Monitor, Update and Configuration Management** и **Azure Monitor, Update and Configuration Management for Linux**.
+### <a name="in-the-azure-stack-administrator-portal"></a>На портале администратора Azure Stack
+После включения решений службы автоматизации на портале Azure необходимо войти на портал администратора Azure Stack с правами администратора облака и скачать из Azure Stack Marketplace расширения **Azure Monitor, Update and Configuration Management** и **Azure Monitor, Update and Configuration Management for Linux**.
 
    ![Элемент Marketplace расширения "Azure Monitor, Управление конфигурацией и обновлением"](media/vm-update-management/2.PNG) 
 

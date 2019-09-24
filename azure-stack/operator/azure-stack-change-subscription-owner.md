@@ -1,9 +1,9 @@
 ---
-title: Обновление владельца пользовательской подписки Azure Stack | Документация Майкрософт
-description: Измените владельца выставления счетов для пользовательских подписок Azure Stack.
+title: Изменение владельца выставления счетов для пользовательских подписок Azure Stack | Документация Майкрософт
+description: Сведения о том, как изменить владельца выставления счетов для пользовательских подписок Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: justinha
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -12,20 +12,20 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: conceptual
-ms.date: 06/04/2019
-ms.author: sethm
+ms.date: 09/17/2019
+ms.author: justinha
 ms.reviewer: shnatara
 ms.lastreviewed: 10/19/2018
-ms.openlocfilehash: 99f995941c4e7b09af70dff9391aeceb9a59844d
-ms.sourcegitcommit: 7f39bdc83717c27de54fe67eb23eb55dbab258a9
+ms.openlocfilehash: 3c4453974092fd1873e5f77b1074c82851fc1be1
+ms.sourcegitcommit: c196463492732218d2474d3a964f88e995272c80
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66691933"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094377"
 ---
-# <a name="change-the-owner-for-an-azure-stack-user-subscription"></a>Изменение владельца для пользовательской подписки Azure Stack
+# <a name="change-the-billing-owner-for-an-azure-stack-user-subscription"></a>Изменение владельца выставления счетов для пользовательских подписок Azure Stack
 
-Операторы Azure Stack могут использовать PowerShell для изменения владельца выставления счетов пользовательской подписки. Одна из причин для изменения владельца заключается в замене пользователя, который увольняется из организации.
+Операторы Azure Stack могут с помощью PowerShell изменить владельца выставления счетов для пользовательской подписки. Одна из причин для изменения владельца заключается в замене пользователя, который увольняется из организации.
 
 Существует два вида *владельцев*, назначенных к подписке.
 
@@ -66,6 +66,8 @@ $subscription = Get-AzsUserSubscription -SubscriptionId $SubscriptionId
 $Subscription.Owner = $OwnerUpn
 Set-AzsUserSubscription -InputObject $subscription
 ```
+
+[!include[Remove Account](../../includes/remove-account.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

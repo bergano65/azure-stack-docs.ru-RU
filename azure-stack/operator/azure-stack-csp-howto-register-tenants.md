@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/07/2019
+ms.date: 09/17/2019
 ms.author: sethm
 ms.reviewer: alfredop
-ms.lastreviewed: 06/07/2019
-ms.openlocfilehash: 9f35a2bef6e5aa3b9ae1866927be007d58532b74
-ms.sourcegitcommit: 5703255b4647ff0ebec23658a3f5c25d67f076a2
+ms.lastreviewed: 09/17/2019
+ms.openlocfilehash: 97d57605ce093684fcbabe2375deecda5e35cce2
+ms.sourcegitcommit: 9f4c6e96f60b4c229316e7a4ab6e0e5ef0a9a232
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70749965"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061140"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack"></a>Добавление клиентов для контроля потребления и выставления счетов в Azure Stack
 
@@ -55,13 +55,17 @@ ms.locfileid: "70749965"
 
 ### <a name="update-the-registration-with-the-end-customer-subscription"></a>Добавление подписки клиента в регистрацию
 
-Добавьте сведения о новой подписке пользователя в регистрацию. Теперь Azure будет передавать данные клиента о потреблении ресурсов, используя указанный в центре партнеров идентификатор клиента. Благодаря этому данные каждого пользователя о потреблении ресурсов будут относиться к его подписке CSP. Так будет проще отслеживать потребление и выставлять счета за него.
-
-> [!NOTE]  
-> Чтобы выполнить этот шаг, нужно [зарегистрировать Azure Stack](azure-stack-registration.md).
+Добавьте сведения о новой подписке пользователя в регистрацию. Теперь Azure будет передавать данные клиента о потреблении ресурсов, используя указанный в центре партнеров идентификатор клиента. Благодаря этому данные каждого пользователя о потреблении ресурсов будут относиться к его подписке CSP. Так будет проще отслеживать потребление и управлять выставлением счетов. Чтобы выполнить этот шаг, нужно [зарегистрировать Azure Stack](azure-stack-registration.md).
 
 1. Откройте Windows PowerShell из командной строки с повышенными привилегиями и выполните следующую команду:  
-    `Add-AzureRmAccount`
+
+   ```powershell
+   Add-AzureRmAccount
+   ```
+
+   >[!Note]
+   > Если истек срок сеанса, изменен пароль или вы хотите переключиться на другую учетную запись, перед входом с помощью Add-AzureRmAccount выполните следующий командлет: `Remove-AzureRmAccount-Scope Process`
+
 2. Введите учетные данные Azure.
 3. В сеансе PowerShell выполните следующую команду:
 

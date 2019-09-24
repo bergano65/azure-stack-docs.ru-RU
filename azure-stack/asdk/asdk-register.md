@@ -15,12 +15,12 @@ ms.date: 06/14/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 06/14/2019
-ms.openlocfilehash: 886271e99b10d3fec0801f977a693a01e59fc0a5
-ms.sourcegitcommit: 7968f9f0946138867323793be9966ee2ef99dcf4
+ms.openlocfilehash: 2dea14ab5d43aab8deab2632b07277d7094e33c4
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025863"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974627"
 ---
 # <a name="register-the-asdk-with-azure"></a>Регистрация ASDK в Azure
 
@@ -217,11 +217,11 @@ $ExecutionContext.SessionState.LanguageMode
 
 Для проверки успешной регистрации Azure Stack можно использовать плитку **Управление регионами**. На портале администрирования эта плитка размещается на панели мониторинга по умолчанию.
 
-1. Войдите на [портал администрирования Azure Stack](https://adminportal.local.azurestack.external).
+1. Войдите на [портал администратора Azure Stack](https://adminportal.local.azurestack.external).
 
 2. На панели мониторинга выберите плитку **Управление регионами**.
 
-    [![Плитка "Управление регионами"на портале администрирования Azure Stack](media/asdk-register/admin1sm.png "Плитка \"Управление регионами\"")](media/asdk-register/admin1.png#lightbox)
+    [![Плитка управления регионами на портале администратора Azure Stack](media/asdk-register/admin1sm.png "Плитка управления регионами")](media/asdk-register/admin1.png#lightbox)
 
 3. Выберите **Свойства**. В этой колонке отображаются данные о состоянии и сведения о вашей среде. Состояние может иметь значение **Зарегистрировано** или **Не зарегистрировано**. Если отображается состояние "Зарегистрировано", вы можете увидеть идентификатор подписки, использовавшийся для регистрации Azure Stack, а также группу и имя ресурса регистрации.
 

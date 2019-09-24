@@ -3,7 +3,7 @@ title: Управление доступом к ресурсам в Azure Stack 
 description: Узнайте, как администратор или клиент в Azure Stack может оперировать разрешениями для управления доступом на основе ролей (RBAC).
 services: azure-stack
 documentationcenter: ''
-author: PatAltimore
+author: bryanla
 manager: femila
 editor: ''
 ms.assetid: cccac19a-e1bf-4e36-8ac8-2228e8487646
@@ -12,26 +12,29 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/10/2019
-ms.author: patricka
+ms.date: 09/13/2019
+ms.author: bryanla
 ms.reviewer: fiseraci
 ms.lastreviewed: 03/11/2019
-ms.openlocfilehash: a5034e92e52c6da760389d7addc77c6220d59674
-ms.sourcegitcommit: 72d45bb935db0db172d4d7c37d8e48e79e25af64
+ms.openlocfilehash: a784da0d16f6ec92a105d9360430f4e8da2817ef
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68376823"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974928"
 ---
 # <a name="manage-access-to-resources-in-azure-stack-with-role-based-access-control"></a>Управление доступом к ресурсам в Azure Stack с помощью управления доступом на основе ролей
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Azure Stack поддерживает управление доступом на основе ролей (RBAC), ту же [модель безопасности для управления доступом](https://docs.microsoft.com/azure/role-based-access-control/overview), которую использует Microsoft Azure. RBAC можно использовать для управления доступом пользователя, группы или приложения к подпискам, ресурсам и службам.
+Azure Stack поддерживает управление доступом на основе ролей (RBAC), ту же [модель безопасности для управления доступом](/azure/role-based-access-control/overview), которую использует Microsoft Azure. RBAC можно использовать для управления доступом пользователя, группы или приложения к подпискам, ресурсам и службам.
 
 ## <a name="basics-of-access-management"></a>Основы управления доступом
 
-Управление доступом на основе ролей предоставляет средства детального управления доступом, которые можно использовать для защиты вашей среды. Вы предоставляете пользователям именно те разрешения, которые им необходимы, назначая им роль RBAC в определенной области. Областью назначения роли может быть подписка, группа ресурсов или отдельный ресурс. Дополнительные сведения об управлении доступом см. в разделе [Управление доступом на основе ролей на портале Azure](https://docs.microsoft.com/azure/role-based-access-control/overview).
+Управление доступом на основе ролей предоставляет средства детального управления доступом, которые можно использовать для защиты среды. Вы предоставляете пользователям именно те разрешения, которые им необходимы, назначая им роль RBAC в определенной области. Областью назначения роли может быть подписка, группа ресурсов или отдельный ресурс. Дополнительные сведения об управлении доступом см. в разделе [Управление доступом на основе ролей на портале Azure](/azure/role-based-access-control/overview).
+
+> [!NOTE]
+> Если Azure Stack развертывается с помощью служб федерации Active Directory (AD FS) в качестве поставщика удостоверений, для управления доступом на основе ролей поддерживаются только универсальные группы.
 
 ### <a name="built-in-roles"></a>Встроенные роли
 
@@ -61,7 +64,7 @@ Azure Stack поддерживает управление доступом на 
 * Вы назначили пользователю TestUser-A роль **Читатель** для подписки Subscription-1.
 * Вы назначили пользователю TestUser-A роль **Владелец** для виртуальной машины TestVM-1.
 
-В статье [Назначение ролей](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal) Azure приведены подробные сведения о просмотре, назначении и удалении ролей.
+В статье [Назначение ролей](/azure/role-based-access-control/role-assignments-portal) Azure приведены подробные сведения о просмотре, назначении и удалении ролей.
 
 ## <a name="set-access-permissions-for-a-user"></a>Настройка прав доступа для пользователя
 

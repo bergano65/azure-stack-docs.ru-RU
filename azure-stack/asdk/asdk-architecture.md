@@ -16,12 +16,12 @@ ms.date: 06/28/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 06/28/2019
-ms.openlocfilehash: 5a34061b1fa6cd30f3bbf9f9780b13c01f0a4866
-ms.sourcegitcommit: 4eb1766c7a9d1ccb1f1362ae1211ec748a7d708c
+ms.openlocfilehash: 1d740b219b971f85b34ae821d82b97eff7d3d70d
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69579099"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974582"
 ---
 # <a name="asdk-architecture"></a>Архитектура ASDK
 Пакет средств разработки Azure Stack (ASDK) — это развертывание Azure Stack с использованием одного узла, выполняемое на одном главном компьютере. Компоненты пограничной маршрутизации устанавливаются на главном компьютере для обеспечения возможностей преобразования сетевых адресов (NAT) и VPN в Azure Stack. Инфраструктурные роли Azure Stack выполняются на физическом главном компьютере в слое Hyper-V.
@@ -41,7 +41,7 @@ ms.locfileid: "69579099"
 | **AzS-NC01** | Сетевой контроллер, который управляет сетевыми службами Azure Stack.  |
 | **AzS-SLB01** | Службы мультиплексора балансировки нагрузки в Azure Stack для клиентов и служб инфраструктуры Azure Stack.  |
 | **AzS-SQL01** | Внутреннее хранилище данных для ролей инфраструктуры Azure Stack.  |
-| **AzS-WAS01** | Портал администрирования Azure Stack и службы Azure Resource Manager.|
+| **AzS-WAS01** | Службы Azure Resource Manager и портал администратора Azure Stack.|
 | **AzS-WASP01**| Портал пользователя (клиента) Azure Stack и службы Azure Resource Manager.|
 | **AzS-XRP01** | Контроллер управления инфраструктурой для Microsoft Azure Stack, включая поставщиков вычислительных и сетевых ресурсов, а также ресурсов хранения.|
 | **AzS-SRNG01** | Поддержка виртуальной машины для вызова, в которой размещена служба сбора журналов для Azure Stack. |

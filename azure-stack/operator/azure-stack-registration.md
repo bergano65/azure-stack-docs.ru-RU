@@ -16,12 +16,12 @@ ms.date: 08/01/2019
 ms.author: mabrigg
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: d36761cd7480d782ea01bc1b0d3606b5fa244ed3
-ms.sourcegitcommit: 49cfe13427f5255915d5ccbed87b36eec2caf8ca
+ms.openlocfilehash: 27dda5b79525c4a5d1c12c998077bb19cbea0079
+ms.sourcegitcommit: 9f4c6e96f60b4c229316e7a4ab6e0e5ef0a9a232
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68720025"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061189"
 ---
 # <a name="register-azure-stack-with-azure"></a>Регистрация Azure Stack в Azure
 
@@ -135,6 +135,9 @@ Run: Get-AzureStackStampInformation
    | Параметр | ОПИСАНИЕ |  
    |-----|-----|
    | EnvironmentName | Имя среды облачной подписки Azure. Поддерживаемые имена среды — **AzureCloud**, **AzureUSGovernment** или, при использовании подписки Azure для Китая, **AzureChinaCloud**.  |
+
+   >[!Note]
+   > Если истек срок сеанса, изменен пароль или вы хотите переключиться на другую учетную запись, перед входом с помощью Add-AzureRmAccount выполните следующий командлет: `Remove-AzureRmAccount-Scope Process`
 
 3. Если у вас несколько подписок Azure, выполните следующую команду, чтобы выбрать нужную подписку:  
 

@@ -16,12 +16,12 @@ ms.date: 04/23/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/21/2019
-ms.openlocfilehash: b49390434990ac2efb81692c1177c634aee4bab0
-ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
+ms.openlocfilehash: a41943a598545b1a4c5dbe6325307a8fa3594cd5
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959527"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70975023"
 ---
 # <a name="back-up-app-service-on-azure-stack"></a>Создание резервной копии Службы приложений в Azure Stack
 
@@ -49,11 +49,11 @@ ms.locfileid: "68959527"
 
 3. Выберите **Загрузка секретов**.
 
-   ![Скачивание секретов с портала администрирования Azure Stack](./media/app-service-back-up/download-secrets.png)
+   ![Скачивание секретов на портале администратора Azure Stack](./media/app-service-back-up/download-secrets.png)
 
 4. Когда секреты будут готовы к скачиванию, щелкните **Сохранить** и сохраните файл секретов Службы приложений (**SystemSecrets.JSON**) в безопасном расположении. 
 
-   ![Сохранение секретов с помощью портала администрирования Azure Stack](./media/app-service-back-up/save-secrets.png)
+   ![Сохранение секретов на портале администратора Azure Stack](./media/app-service-back-up/save-secrets.png)
 
 > [!NOTE]
 > Повторяйте эти шаги после каждой смены секретов Службы приложений.

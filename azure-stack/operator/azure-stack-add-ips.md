@@ -16,12 +16,12 @@ ms.date: 09/10/2019
 ms.author: justinha
 ms.reviewer: scottnap
 ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: 3978ac3339a2bf6a9dd4df770736bca1a21cc5a3
-ms.sourcegitcommit: 38f21e0bcf7b593242ad615c9d8ef8a1ac19c734
+ms.openlocfilehash: 090c532541ffe6ae6221958d395145c5215c3112
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70902648"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974943"
 ---
 # <a name="add-public-ip-addresses"></a>Добавление общедоступных IP-адресов
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*  
@@ -46,8 +46,8 @@ ms.locfileid: "70902648"
 
 ## <a name="add-the-ip-address-range-to-azure-stack"></a>Добавление диапазона IP-адресов в Azure Stack
 
-1. В браузере перейдите к панели мониторинга на портале администрирования. В этом примере мы используем адрес https://adminportal.local.azurestack.external.
-2. Войдите на портал администрирования Azure Stack в качестве оператора облака.
+1. В браузере перейдите к панели мониторинга на портале администратора. В этом примере мы используем адрес https://adminportal.local.azurestack.external.
+2. Войдите на портал администратора Azure Stack в качестве оператора облака.
 3. На панели мониторинга по умолчанию найдите список "Управление регионами" и щелкните регион, которым нужно управлять. В этом примере мы используем local.
 4. Найдите плитку "Поставщики ресурсов" и щелкните поставщик сетевых ресурсов.
 5. Щелкните плитку использования пулов общедоступных IP-адресов.

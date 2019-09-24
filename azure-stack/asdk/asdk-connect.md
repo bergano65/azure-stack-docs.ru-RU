@@ -16,12 +16,12 @@ ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: knithinc
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 3f1dd0d7efa2aa9549f65ef97ebb7a589949154b
-ms.sourcegitcommit: 4eb1766c7a9d1ccb1f1362ae1211ec748a7d708c
+ms.openlocfilehash: 8a9fae5324e20ecd808df1f73dc90555b4802da5
+ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69579140"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70974606"
 ---
 # <a name="connect-to-the-asdk"></a>Подключение к пакету ASDK
 
@@ -33,7 +33,7 @@ ms.locfileid: "69579140"
 <a name="connect-with-rdp"></a>
 ## <a name="connect-to-azure-stack-using-rdp"></a>Подключение к Azure Stack с помощью RDP
 
-Подключение удаленного рабочего стола позволяет одному пользователю единовременно подключаться напрямую с главного компьютера ASDK и управлять ресурсами на портале администрирования или пользовательском портале Azure Stack.
+Подключение удаленного рабочего стола позволяет одному пользователю единовременно подключаться напрямую с узла ASDK и управлять ресурсами на портале администрирования или пользовательском портале Azure Stack.
 
 > [!TIP]
 > Этот вариант также позволяет при подключении к главному компьютеру ASDK использовать RDP для входа на виртуальные машины, созданные на главном компьютере ASDK.
@@ -42,7 +42,7 @@ ms.locfileid: "69579140"
 
 2. Откройте диспетчер сервера (ServerManager.exe) на главном компьютере ASDK. Выберите **Локальный сервер**, отключите **конфигурацию усиленной безопасности Internet Explorer** и закройте диспетчер сервера.
 
-3. Войдите на портал администрирования с учетной записью **AzureStack\CloudAdmin** или используйте другие учетные данные оператора Azure Stack. Адрес портала администрирования ASDK: [https://adminportal.local.azurestack.external](https://adminportal.local.azurestack.external).
+3. Войдите на портал администрирования с учетной записью **AzureStack\CloudAdmin** или с другими учетными данными оператора Azure Stack. Адрес портала администрирования ASDK: [https://adminportal.local.azurestack.external](https://adminportal.local.azurestack.external).
 
 4. Войдите на пользовательский портал с учетной записью **AzureStack\CloudAdmin** или используйте другие учетные данные пользователя Azure Stack. Адрес пользовательского портала ASDK: [https://portal.local.azurestack.external](https://portal.local.azurestack.external).
 
@@ -127,7 +127,7 @@ Add-AzsVpnConnection `
 
 ### <a name="test-vpn-connectivity"></a>Проверка VPN-подключения
 
-Чтобы проверить подключение к порталу, откройте браузер и перейдите на пользовательский портал (https://portal.local.azurestack.external/) или на портал администрирования (https://adminportal.local.azurestack.external/). 
+Чтобы проверить подключение к порталу, откройте в браузере адрес пользовательского портала (https://portal.local.azurestack.external/) или портала администрирования (https://adminportal.local.azurestack.external/).
 
 Войдите с соответствующими учетными данными, чтобы создавать ресурсы и управлять ими.  
 
