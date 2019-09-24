@@ -1,0 +1,175 @@
+---
+title: Устранение проблем с обработчиком AKS в Azure Stack | Документация Майкрософт
+description: В этой статье описаны действия по устранению проблем с обработчиком AKS в Azure Stack.
+services: azure-stack
+documentationcenter: ''
+author: mattbriggs
+manager: femila
+editor: ''
+ms.service: azure-stack
+ms.workload: na
+pms.tgt_pltfrm: na (Kubernetes)
+ms.devlang: nav
+ms.topic: article
+ms.date: 09/14/2019
+ms.author: mabrigg
+ms.reviewer: waltero
+ms.lastreviewed: 09/14/2019
+ms.openlocfilehash: eb8a46c5b226d1be40d922a78c6ecdcdda5e45ad
+ms.sourcegitcommit: 09d14eb77a43fd585e7e6be93c32fa427770adb6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71019386"
+---
+# <a name="troubleshoot-the-aks-engine-on-azure-stack"></a>Устранение проблем с обработчиком AKS в Azure Stack
+
+*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+
+При развертывании обработчика AKS в Azure Stack или при работе с ним могут возникать проблемы. В этой статье рассматриваются действия по устранению проблем при развертывании обработчика AKS, по сбору сведений об обработчике AKS, сбору журналов Kubernetes, изучению кодов ошибок для расширения пользовательских скриптов, а также по оформлению проблем с обработчиком AKS на сайте GitHub.
+
+> [!IMPORTANT]
+> Обработчик AKS сейчас предоставляется на условиях общедоступной предварительной версии.
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+## <a name="troubleshoot-the-aks-engine-install"></a>Устранение проблем с установкой обработчика AKS
+
+### <a name="try-gofish"></a>Попробуйте GoFish
+
+Если при установке произошел сбой, попробуйте установить его с помощью диспетчера пакетов GoFish. [GoFish](https://gofi.sh) идентифицирует себя как Homebrew с кроссплатформенной поддержкой.
+
+#### <a name="install-the-aks-engine-with-gofish-on-linux"></a>Установка обработчика AKS с помощью GoFish в Linux
+
+Установите GoFish через [страницу установки](https://gofi.sh/#install).
+
+1. В командной строке bash выполните следующую команду:
+
+    ```bash
+    curl -fsSL https://raw.githubusercontent.com/fishworks/gofish/master/scripts/install.sh | bash
+    ```
+
+2.  Выполните следующую команду, чтобы установить обработчик AKS через GoFish:
+
+    ```bash
+    Run "gofish install aks-engine"
+    ```
+
+#### <a name="install-the-aks-engine-with-gofish-on-windows"></a>Установка обработчика AKS с помощью GoFish в Windows
+
+Установите GoFish через [страницу установки](https://gofi.sh/#install).
+
+1. Выполните следующую команду в сеансе PowerShell с повышенными правами:
+
+    ```PowerShell
+    Set-ExecutionPolicy Bypass -Scope Process -Force
+iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/fishworks/gofish/master/scripts/install.ps1'))
+    ```
+
+2.  Выполните в том же сеансе следующую команду, чтобы установить обработчик AKS через GoFish:
+
+    ```PowerShell
+    gofish install aks-engine
+    ```
+
+### <a name="checklist-for-common-deployment-issues"></a>Список проверки для типичных проблем развертывания
+
+Если вы столкнетесь с ошибками при развертывании кластера Kubernetes с помощью обработчика AKS, попробуйте проверить следующее:
+
+1.  Правильно ли указаны учетные данные субъекта-службы?
+2.  Имеет ли субъект-служба роль "Участник" для подписки Azure Stack?
+3. Есть ли в плане Azure Stack достаточно большой объем квоты?
+4.  Не выполняется ли в текущий момент обновление этого экземпляра Azure Stack?
+
+Дополнительные сведения см. в статье [об устранении проблем](https://github.com/Azure/aks-engine/blob/master/docs/howto/troubleshooting.md) в репозитории **Azure/aks-engine** на сайте GitHub.
+
+## <a name="collect-aks-engine-logs"></a>Сбор журналов обработчика AKS
+
+Вы можете использовать проверочные сведения, которые создаются обработчиком AKS. Обработчик AKS сообщает сведения о состоянии и об ошибках при запусках приложения. Вы можете направить эти выходные данные в текстовый файл или скопировать прямо из консоли командной строки.
+
+1.  Соберите стандартные выходные данные и сведения об ошибках, которые отображаются в программе командной строки обработчика AKS.
+
+2. Получите журналы из локального файла. Выходной каталог можно задать через параметр **--output-directory**.
+
+    Чтобы задать локальный путь для журналов, выполните следующую команду:
+
+    ```bash  
+    aks-engine --output-directory <path to the directory>
+    ```
+
+## <a name="collect-kubernetes-logs"></a>Сбор журналов Kubernetes
+
+Помимо журналов обработчика AKS, сведения о состоянии и ошибках генерируют компоненты Kubernetes. Эти журналы можно получить с помощью скрипта bash с именем [getkuberneteslogs.sh](https://github.com/msazurestackworkloads/azurestack-gallery/releases/download/diagnosis-v0.1.0/diagnosis.zip).
+
+Этот скрипт автоматически собирает сведения из следующих журналов: 
+
+ - журналы агента Linux в Microsoft Azure (waagent);
+ - журналы расширения пользовательских скриптов;
+ - метаданные выполняемого контейнера kube-system;
+ - журналы выполняемого контейнера kube-system;
+ - состояние и журнал службы Kubelet;
+ - состояние и журнал службы Etcd;
+ - журналы DVM для элемента коллекции;
+ - моментальный снимок kube-system.
+
+Без этого скрипта вам придется вручную подключаться к каждому узлу в кластере, находить и скачивать все эти журналы. Кроме того, скрипт может передавать собранные журналы в учетную запись хранения, что позволяет предоставить журналы в совместный доступ другим пользователям.
+
+Требования:
+
+ - Виртуальная машина Linux, Git bash или Bash в Windows.
+ - Установленный [Azure CLI](azure-stack-version-profiles-azurecli2.md) на компьютере, с которого будет выполняться скрипт.
+ - Удостоверение субъекта-службы, который создает сеанс подключения Azure CLI к Azure Stack. Поскольку скрипт для своей работы обнаруживает и создает ресурсы ARM, ему потребуется Azure CLI и удостоверение субъекта-службы.
+ - Учетная запись пользователя (подписка), в среде которой уже выбран кластер Kubernetes. 
+1. Скачайте последний выпуск скрипта в формате TAR-файла на клиентскую виртуальную машину, любой компьютер с доступом к кластеру Kubernetes или тот самый компьютер, на котором вы развернули кластер с помощью обработчика AKS.
+
+    Выполните следующие команды:
+
+    ```bash  
+    mkdir -p $HOME/kuberneteslogs
+    cd $HOME/kuberneteslogs
+    wget https://github.com/msazurestackworkloads/azurestack-gallery/releases/download/diagnosis-v0.1.0/diagnosis.tar.gz
+    tar xvzf diagnosis.tar.gz -C ./
+    ```
+
+2. Найдите обязательные параметры для работы скрипта `getkuberneteslogs.sh`. Этот скрипт использует следующие параметры:
+
+    | Параметр | ОПИСАНИЕ | Обязательно | Пример |
+    | --- | --- | --- | --- |
+    | -h, --help | Отображение сведений об использовании команд. | Нет | 
+    -u,--user | Имя пользователя администратора для виртуальной машины кластера. | Да | azureuser<br>(значение по умолчанию) |
+    | -i, --identity-file | Закрытый ключ RSA, привязанный к открытому ключу, который использовался для создания кластера Kubernetes (иногда называется "id_rsa")  | Да | `./rsa.pem` (Putty)<br>`~/.ssh/id_rsa` (SSH) |
+    |   -g, --resource-group    | Группа ресурсов кластера Kubernetes | Да | k8sresourcegroup |
+    |   -n, --user-namespace               | Сбор журналов из контейнеров в указанных пространствах имен (журналы kube-system собираются всегда) | Нет |   monitoring |
+    |       --api-model                    | Сохранение файла apimodel.json в учетной записи хранения Azure Stack. Отправка файла apimodel.json в учетную запись хранения выполняется, если указан параметр --upload-logs. | Нет | `./apimodel.json` |
+    | --all-namespaces               | Сбор журналов из контейнеров во всех пространствах имен. Этот параметр имеет более высокий приоритет, чем --user-namespace. | Нет | |
+    | --upload-logs                  | Сохранение полученных журналов в учетной записи хранения Azure Stack. Журналы можно найти в группе ресурсов KubernetesLogs. | Нет | |
+    --disable-host-key-checking    | Задает для параметра SSH StrictHostKeyChecking значение "no" (нет) на время выполнения скрипта. Используйте только в безопасной среде. | Нет | |
+
+3. Выполните любой из приведенных ниже примеров команд для своего набора данных:
+
+    ```bash
+    ./getkuberneteslogs.sh -u azureuser -i private.key.1.pem -g k8s-rg
+    ./getkuberneteslogs.sh -u azureuser -i ~/.ssh/id_rsa -g k8s-rg --disable-host-key-checking
+    ./getkuberneteslogs.sh -u azureuser -i ~/.ssh/id_rsa -g k8s-rg -n default -n monitoring
+    ./getkuberneteslogs.sh -u azureuser -i ~/.ssh/id_rsa -g k8s-rg --upload-logs --api-model clusterDefinition.json
+    ./getkuberneteslogs.sh -u azureuser -i ~/.ssh/id_rsa -g k8s-rg --upload-logs
+    ```
+
+## <a name="review-custom-script-extension-error-codes"></a>Проверка кодов ошибок для расширения пользовательских скриптов
+
+Вы можете проверить список кодов ошибок, которые создаются расширением пользовательских скриптов при работе кластера. Ошибки расширения пользовательских скриптов могут быть полезны при диагностике основной причины проблемы. Расширение пользовательских скриптов для сервера Ubuntu, который используется в кластере Kubernetes, поддерживает множество операций обработчика AKS. Дополнительные сведения о кодах выхода расширения пользовательских скриптов см. в файле [cse_helpers.sh](https://github.com/Azure/aks-engine/blob/master/parts/k8s/cloud-init/artifacts/cse_helpers.sh).
+
+## <a name="open-github-issues"></a>Сообщение о проблеме на сайте GitHub
+
+Если вам не удается устранить ошибку развертывания, попробуйте сообщить о проблеме на сайте GitHub. 
+
+1. Откройте раздел [Проблема GitHub](https://github.com/Azure/aks-engine/issues/new) в репозитории обработчика AKS.
+2. Введите заголовок в следующем формате: C`SE error: exit code <INSERT_YOUR_EXIT_CODE>`.
+3. Добавьте следующую информацию о проблеме:
+
+    - Файл конфигурации кластера `apimodel json`, из которого выполнялось развертывание. Перед публикацией в GitHub удалите все секреты и ключи.  
+     - Выходные данные следующей команды **kubectl** `get nodes`.  
+     - Содержимое файлов `/var/log/azure/cluster-provision.log` и `/var/log/cloud-init-output.log`.
+
+## <a name="next-steps"></a>Дополнительная информация
+
+- Сведения [об обработчике AKS в Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).
