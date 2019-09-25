@@ -274,6 +274,8 @@
           href: azure-stack-edge-pattern-cross-cloud-scaling.md
         - name: DevOps (гибридные процессы CI/CD)
           href: azure-stack-edge-pattern-hybrid-ci-cd.md
+        - name: Определение посещаемости
+          href: hybrid-solution-retail-footfall-detection.md
         - name: Географически распределенное приложение
           href: azure-stack-edge-pattern-geo-distribution.md
 - name: Справочные материалы
