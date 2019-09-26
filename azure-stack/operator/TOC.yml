@@ -165,6 +165,8 @@
                   href: azure-stack-update-oem.md
             - name: Мониторинг состояния обновления
               href: azure-stack-update-monitor.md
+            - name: Устранение неполадок при обновлении
+              href: azure-stack-updates-troubleshoot.md
         - name: Мониторинг работоспособности и оповещений
           href: azure-stack-monitor-health.md
         - name: Управление сетевыми ресурсами

@@ -9,12 +9,12 @@ ms.date: 08/09/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 08/09/2019
-ms.openlocfilehash: beddafb351af39f0a21a1cd0d7a7baa4ccfee28e
-ms.sourcegitcommit: 94669fe8a55fadd3103e80be307e9e8c823bf746
+ms.openlocfilehash: cd7ca2e1a198cb66c5d7627029215b55af0de975
+ms.sourcegitcommit: ae79b8bea670ea854ed00e9998d45f6b47fc8347
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68940277"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71142580"
 ---
 # <a name="deploy-a-c-aspnet-web-app-to-a-vm-in-azure-stack"></a>Развертывание веб-приложения C# ASP.NET на виртуальной машине в Azure Stack
 
@@ -111,7 +111,7 @@ ms.locfileid: "68940277"
     ![Развертывание веб-приложения ASP.NET для публикации в Azure Stack](media/azure-stack-dev-start-howto-vm-dotnet/deploy-app-to-azure-stack.png)
 
 1. В окне **Публикация** выберите **Создать профиль**.
-1. Выберите **IIS**, **FTP** и т. д.
+1. Выберите **IIS, FTP и т. д.**
 1. Нажмите кнопку **Опубликовать**.
 1. Выберите значение **Веб-развертывание** для параметра **Метод публикации**.
 1. В поле **Сервер** введите DNS-имя, которое было определено ранее, например *w21902.local.cloudapp.azurestack.external*.
