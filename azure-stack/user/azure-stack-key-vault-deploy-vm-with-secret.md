@@ -15,12 +15,12 @@ ms.date: 06/13/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 480740b12796fe90e2acd6fd1eb164b4c89d5ded
-ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
+ms.openlocfilehash: 11411dbf0f09e68ab122fea87f514495a9e7a6b4
+ms.sourcegitcommit: 4e48f1e5af74712a104eda97757dc5f50a591936
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68842831"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71224991"
 ---
 # <a name="deploy-an-azure-stack-vm-using-a-password-stored-in-key-vault"></a>Развертывание виртуальной машины Azure Stack с помощью пароля, хранящегося в Key Vault
 
@@ -96,14 +96,14 @@ Set-AzureKeyVaultSecret `
        "adminUsername":  {
          "value":  "demouser"
           },
-         "adminPassword":  {
-           "reference":  {
-              "keyVault":  {
-                "id":  "/subscriptions/xxxxxx/resourceGroups/RgKvPwd/providers/Microsoft.KeyVault/vaults/KvPwd"
-                },
-              "secretName":  "MySecret"
-           }
-         },
+       "adminPassword":  {
+         "reference":  {
+            "keyVault":  {
+              "id":  "/subscriptions/xxxxxx/resourceGroups/RgKvPwd/providers/Microsoft.KeyVault/vaults/KvPwd"
+              },
+            "secretName":  "MySecret"
+         }
+       },
        "dnsLabelPrefix":  {
           "value":  "mydns123456"
         },

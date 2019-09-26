@@ -15,12 +15,12 @@ ms.date: 06/18/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 61d2739475a0593671e7a363671dd2859a6e6f24
-ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
+ms.openlocfilehash: 501040273eca6ce80972ae2a69eca2018f9f8d2d
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67316249"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159599"
 ---
 # <a name="add-kubernetes-to-the-azure-stack-marketplace"></a>Добавление Kubernetes в Azure Stack Marketplace
 
@@ -28,7 +28,6 @@ ms.locfileid: "67316249"
 
 > [!note]  
 > Система Kubernetes доступна в Azure Stack в предварительной версии. Сейчас в предварительной версии не поддерживаются сценарии работы с Azure Stack в автономном режиме. Для сценариев разработки и тестирования используйте только элемент из marketplace.
-
 Вы можете обеспечить своим пользователям доступ к Kubernetes из Azure Stack Marketplace. Затем развертывание Kubernetes выполняется за одну согласованную операцию.
 
 В этой статье рассматривается развертывание и подготовка ресурсов для автономного кластера Kubernetes с помощью шаблона Azure Resource Manager. Прежде чем начать, проверьте настройки Azure Stack и глобальные параметры клиента Azure. Соберите необходимые сведения об Azure Stack. Добавьте необходимые ресурсы в клиент и Azure Stack Marketplace. Кластер зависит от сервера Ubuntu, настраиваемого скрипта и элемента кластера Kubernetes из Marketplace.
