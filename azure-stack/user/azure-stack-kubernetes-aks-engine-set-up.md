@@ -15,12 +15,12 @@ ms.date: 09/14/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/14/2019
-ms.openlocfilehash: a65449d39f114bd0ff5eb859bd49ec36d4bb4281
-ms.sourcegitcommit: 09d14eb77a43fd585e7e6be93c32fa427770adb6
+ms.openlocfilehash: cc278020bb4d2ba530e20b6f2f56bcb841207bbc
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019404"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159737"
 ---
 # <a name="set-up-the-prerequisites-for-the-aks-engine-on-azure-stack"></a>Установка необходимых компонентов для обработчика AKS в Azure Stack
 
@@ -29,6 +29,8 @@ ms.locfileid: "71019404"
 Обработчик AKS можно установить на виртуальной машине в вашей среде или на любом клиентском компьютере с доступом к конечной точке Azure Stack Resource Manager. Перед запуском обработчика необходимо подготовить следующие компоненты: сервер Ubuntu с базовым обработчиком AKS и расширение пользовательских сценариев Linux, доступные в вашей подписке, удостоверение субъекта-службы с назначенной ролью участника и пару закрытого и открытого ключей для доступа по протоколу SSH к серверу Ubuntu. Кроме того, если вы используете Пакет средств разработки Azure Stack, на компьютере разработки нужно настроить доверие нужным сертификатам.
 
 Если все необходимые компоненты готовы, приступайте к [определению кластера](azure-stack-kubernetes-aks-engine-deploy-cluster.md).
+
+Если вы являетесь оператором облака для Azure Stack и хотите предложить подсистему AKS, следуйте инструкциям в статье [Add the Azure Kubernetes Services (AKS) Engine prerequisites to the Azure Stack Marketplace](../operator/azure-stack-aks-engine.md) (Добавление предварительных требований обработчика Службы Azure Kubernetes (AKS) в Azure Stack Marketplace).
 
 ## <a name="prerequisites-for-the-aks-engine"></a>Необходимые компоненты для обработчика AKS
 

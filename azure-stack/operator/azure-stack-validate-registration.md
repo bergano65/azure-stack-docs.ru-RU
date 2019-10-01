@@ -16,12 +16,12 @@ ms.date: 06/23/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: ca2ea89ab73c7a8e056e4b4700e92a872e628f34
-ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
+ms.openlocfilehash: 9c4ddec0606556290e55850a9081c6665f2524d1
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67316179"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159587"
 ---
 # <a name="validate-azure-registration"></a>Проверка регистрации в Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "67316179"
    ```
 
    > [!NOTE]
-   > Как поставщик служб шифрования при использовании общих служб или подписки IUR вы должны указать учетные данные пользователя из этого соответствующего клиента AAD. Как правило, имя будет выглядеть примерно так: `subscriptionowner@iurcontoso.onmicrosoft.com`. Этот пользователь должен иметь соответствующие учетные данные, как описано выше.
+   > Как поставщик служб шифрования при использовании общих служб или подписки IUR вы должны указать учетные данные пользователя из этого соответствующего клиента Azure AD. Как правило, имя будет выглядеть примерно так: `subscriptionowner@iurcontoso.onmicrosoft.com`. Этот пользователь должен иметь соответствующие учетные данные, как описано выше.
 
 3. В командной строке PowerShell выполните команду ниже, чтобы задать `$subscriptionID` в качестве используемой подписки Azure. Замените `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` фактическим идентификатором подписки:
 

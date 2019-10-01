@@ -14,12 +14,12 @@ ms.date: 05/16/2019
 ms.author: sethm
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 83578f7644f7a4bfc47f854fe9974809c22bba02
-ms.sourcegitcommit: ad2f2cb4dc8d5cf0c2c37517d5125921cff44cdd
+ms.openlocfilehash: 0be1e7832d5ac32b092e44674b78c59552af351c
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67138914"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159715"
 ---
 <!--  cblackuk and charliejllewellyn. This is a community contribution by cblackuk-->
 
@@ -127,7 +127,7 @@ grant_type=password
 
   **username**
 
-  Например, учетная запись AAD Azure Stack:
+  Например, учетная запись Azure AD Azure Stack:
 
   ```
   azurestackadmin@fabrikam.onmicrosoft.com
@@ -135,7 +135,7 @@ grant_type=password
 
   **password**
 
-  Пароль администратора AAD Azure Stack.
+  Пароль администратора Azure AD Azure Stack.
 
 ### <a name="example"></a>Пример
 

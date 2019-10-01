@@ -16,12 +16,12 @@ ms.date: 07/25/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 07/25/2019
-ms.openlocfilehash: efab23f12086fee2e4f5c14a70f95717ac9669b9
-ms.sourcegitcommit: b752f4e6733d9ebe56dbd171a14528dcb9a693fd
+ms.openlocfilehash: 4d6bc431b292fc7a124aa2b8051d0a927d736eee
+ms.sourcegitcommit: 4e48f1e5af74712a104eda97757dc5f50a591936
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68522061"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71224954"
 ---
 # <a name="configure-automatic-azure-stack-diagnostic-log-collection"></a>Настройка автоматического сбора журналов диагностики Azure Stack
 
@@ -49,7 +49,7 @@ ms.locfileid: "68522061"
    - **Имя учетной записи хранения**. Укажите уникальное имя учетной записи хранения.
    - **Расположение.** Выберите центр обработки данных в соответствии с политикой своей компании.
    - **Производительность** — Выберите ценовую категорию "Стандартный".
-   - **Тип учетной записи**. Выберите "StorageV2" (общего назначения версии 2). 
+   - **Тип учетной записи**. Выберите "StorageV2" (общего назначения версии 2). 
    - **Репликация.** Выберите локально избыточное хранилище (LRS).
    - **Уровень доступа**. Выберите "Холодный".
 
@@ -100,7 +100,6 @@ ms.locfileid: "68522061"
 >[!NOTE]
 >Автоматический сбор журналов можно отключить и снова включить в любое время. Конфигурация подписанного URL-адреса не изменится. Если автоматический сбор журналов включается повторно, ранее указанный подписанный URL-адрес будет проходить те же проверки и подписанный URL-адрес с истекшим сроком действия будет отклонен. 
 
-
 ## <a name="view-log-collection"></a>Просмотр коллекции журналов
 
 Журнал сбора журналов из Azure Stack отображается на странице **Log collection** (Сбор журналов) в разделе "Справка и поддержка" со следующими значениями даты и времени.
@@ -116,6 +115,36 @@ ms.locfileid: "68522061"
 Операторы также могут проверить учетную запись хранения на наличие автоматически собранных журналов. Например, на этом снимке экрана показаны коллекции журналов с помощью предварительной версии Обозревателя службы хранилища на портале Azure.
 
 ![Снимок экрана, показывающий коллекции журналов](media/azure-stack-automatic-log-collection/check-storage-account.png)
+
+## <a name="automatic-diagnostic-log-collection-alerts"></a>Оповещения об автоматическом сборе журналов диагностики 
+
+Если этот режим включен, автоматической сбор журналов диагностики выполняется только при необходимости. Только следующая коллекция триггеров оповещений. 
+
+|Заголовок оповещения  | FaultIdType|    
+|-------------|------------|
+|"Unable to connect to the remote service" (Не удается подключиться к удаленной службе) |  UsageBridge.NetworkError|
+|Сбой обновления |    Urp.UpdateFailure   |          
+|Storage Resource Provider infrastructure/dependencies not available (Инфраструктура или зависимости поставщика ресурсов хранилища недоступны) |  StorageResourceProviderDependencyUnavailable     |     
+|Node not connected to network controller (Узел не подключен к сетевому контроллеру);|  ServerHostNotConnectedToController   |     
+|"Route publication failure" (Сбой публикации маршрута) |    SlbMuxRoutePublicationFailure | 
+|Storage Resource Provider internal data store unavailable (Внутреннее хранилище данных поставщика ресурсов хранилища недоступно) |    StorageResourceProvider. DataStoreConnectionFail     |       
+|"Storage device failure" (Отказ устройства хранения) | Microsoft.Health.FaultType.VirtualDisks.Detached   |      
+|"Health controller cannot access storage account" (Контроллеру работоспособности не удалось получить доступ к учетной записи хранения) | Microsoft.Health.FaultType.StorageError |    
+|Connectivity to a physical disk has been lost (Связь с физическим диском потеряна) |    Microsoft.Health.FaultType.PhysicalDisk.LostCommunication    |    
+|The blob service isn't running on a node (Служба BLOB-объектов не работает на узле) | StorageService.The.blob.service.is.not.running.on.a.node-Critical | 
+|Роль инфраструктуры неработоспособна. |    Microsoft.Health.FaultType.GenericExceptionFault |        
+|"Table service errors" (Ошибки службы таблиц) | StorageService.Table.service.errors-Critical |              
+|A file share is over 80% utilized (Общая папка используется более чем на 80 %) |    Microsoft.Health.FaultType.FileShare.Capacity.Warning.Infra |       
+|"Scale unit node is offline" (Узел единицы масштабирования отключен). | FRP.Heartbeat.PhysicalNode |  
+|Infrastructure role instance unavailable (Экземпляр роли инфраструктуры недоступен) | FRP.Heartbeat.InfraVM   |    
+|Infrastructure role instance unavailable (Экземпляр роли инфраструктуры недоступен)  |    FRP.Heartbeat.NonHaVm     |        
+|Роль инфраструктуры (управление каталогами) сообщила об ошибках синхронизации времени |  DirectoryServiceTimeSynchronizationError |     
+|ожидается истечение срока действия внешнего сертификата. |  CertificateExpiration.ExternalCert.Warning |
+|ожидается истечение срока действия внешнего сертификата. |  CertificateExpiration.ExternalCert.Critical |
+|"Unable to provision virtual machines for specific class and size due to low memory capacity" (Не удается подготовить виртуальные машины для определенного класса и размера из-за недостаточного объема памяти) |  AzureStack.ComputeController.VmCreationFailure.LowMemory |
+|"Node inaccessible for virtual machine placement" (Узел недоступен для замены виртуальной машины); |  AzureStack.ComputeController.HostUnresponsive | 
+|Сбой резервного копирования  | AzureStack.BackupController.BackupFailedGeneralFault |    
+|The scheduled backup was skipped due to a conflict with failed operations (Запланированное резервное копирование пропущено из-за конфликта с неудачными операциями)  | AzureStack.BackupController.BackupSkippedWithFailedOperationFault |   
 
 
 ## <a name="see-also"></a>См. также

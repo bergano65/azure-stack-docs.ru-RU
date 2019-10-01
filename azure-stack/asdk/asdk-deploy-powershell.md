@@ -17,12 +17,12 @@ ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: 5b517eec23950380bf5f0fc8febe717683960b65
-ms.sourcegitcommit: 4eb1766c7a9d1ccb1f1362ae1211ec748a7d708c
+ms.openlocfilehash: 0ba8723b9d0f03006b52ecd016c3713280b63dea
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69579114"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159293"
 ---
 # <a name="deploy-asdk-from-the-command-line-using-powershell"></a>Развертывание ASDK из командной строки с помощью PowerShell
 
@@ -144,7 +144,7 @@ $aadcred = Get-Credential "<Azure AD global administrator account name>" #Exampl
 |Параметр|Обязательный/необязательный|ОПИСАНИЕ|
 |-----|-----|-----|
 |AdminPassword|Обязательно|Задает учетную запись локального администратора и другие учетные записи пользователей на всех виртуальных машинах, созданных в процессе развертывания ASDK. Этот пароль должен совпадать с текущим паролем локального администратора на узле.|
-|InfraAzureDirectoryTenantName|Обязательно|Задает каталог клиента. Используйте этот параметр, чтобы указать конкретный каталог, где у учетной записи AAD есть разрешения на управление несколькими каталогами. Полное имя клиента AAD в формате .onmicrosoft.com или имя проверенного личного домена Azure AD.|
+|InfraAzureDirectoryTenantName|Обязательно|Задает каталог клиента. Используйте этот параметр, чтобы указать конкретный каталог, где у учетной записи Azure AD есть разрешения на управление несколькими каталогами. Полное имя клиента Azure AD в формате .onmicrosoft.com или имя проверенного личного домена Azure AD.|
 |TimeServer|Обязательно|Используйте этот параметр, чтобы указать определенный сервер времени. Этот параметр может быть предоставлен в качестве допустимого IP-адреса сервера времени. Имена серверов не поддерживаются.|
 |InfraAzureDirectoryTenantAdminCredential|Необязательно|Задает имя пользователя и пароль Azure Active Directory. В качестве этих учетных данных Azure следует использовать идентификатор организации.|
 |InfraAzureEnvironment|Необязательно|Выберите среду Azure, в которой вы хотите зарегистрировать это развертывание Azure Stack. Допустимые значения: глобальная служба Azure, Azure — Китай, Azure — US Government.|

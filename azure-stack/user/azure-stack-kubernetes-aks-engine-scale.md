@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 09/14/2019
+ms.date: 09/25/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/14/2019
-ms.openlocfilehash: 7847d79d0f2816aa56940fd7b81d25cbb1a3a7f2
-ms.sourcegitcommit: 09d14eb77a43fd585e7e6be93c32fa427770adb6
+ms.lastreviewed: 09/25/2019
+ms.openlocfilehash: 70adb6abaefc81faf487bbae5c560cc67f705341
+ms.sourcegitcommit: d967cf8cae320fa09f1e97eeb888e3db5b6e7972
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019398"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71279210"
 ---
 # <a name="scale-a-kubernetes-cluster-on-azure-stack"></a>Масштабирование кластера Kubernetes в Azure Stack
 
@@ -46,7 +46,8 @@ ms.locfileid: "71019398"
 | client-secret |  | Секрет субъекта-службы, который был указан при создании кластера. | 
 | api-model | kube-rg/apimodel.json | Путь к файлу определения кластера (apimodel.json). Возможный вариант:  _output/\<dnsPrefix>/apimodel.json | 
 | -new-node-count | 9 | Требуемое число узлов. | 
-| -master-FQDN |  | Полное доменное имя главного узла. Обязательный параметр при уменьшении масштаба. | 
+| -master-FQDN |  | Полное доменное имя главного узла. Обязательный параметр при уменьшении масштаба. |
+| identity-system | adfs | Необязательный элемент. Укажите решение по управлению удостоверениями, если используются службы федерации Active Directory (AD FS). |
 
 Параметр **–azure-env** является обязательным для операции масштабирования кластера в Azure Stack. Дополнительные сведения о параметрах и значениях для команды **scale** обработчика AKS см. в [этой статье](https://github.com/Azure/aks-engine/blob/master/docs/topics/scale.md#parameters).
 
@@ -65,6 +66,7 @@ aks-engine scale \
     --api-model <path to your apomodel.json file>
     --new-node-count <desired node count> \
     --master-FQDN <master FQDN> \
+    --identity-system adfs # required if using AD FS
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

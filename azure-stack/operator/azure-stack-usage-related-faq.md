@@ -11,26 +11,26 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/31/2019
+ms.date: 09/25/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 02/26/2019
-ms.openlocfilehash: 6a5ef529d2eabf8039be1da6c53da907c0b7aaaf
-ms.sourcegitcommit: 80775f5c5235147ae730dfc7e896675a9a79cdbe
+ms.openlocfilehash: d63d4876674c66fcccab942cd856dce958e62644
+ms.sourcegitcommit: 32609bdb04a07b063c8f20f892c30769ad6903dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66459044"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71269477"
 ---
-# <a name="frequently-asked-questions-in-azure-stack-usage-api"></a>Часто задаваемые вопросы об API использования в Azure Stack
+# <a name="frequently-asked-questions-about-azure-stack-usage"></a>Часто задаваемые вопросы об использовании в Azure Stack
 
-В этой статье содержатся ответы на некоторые часто задаваемые вопросы об API использования в Azure Stack.
+В этой статье содержатся ответы на некоторые часто задаваемые вопросы об использовании в Azure Stack и API использования в Azure Stack.
 
 ## <a name="what-meter-ids-can-i-see"></a>Какие доступны идентификаторы средств измерения?
 
 Отчеты об использовании для следующих поставщиков ресурсов:
 
-### <a name="network"></a>Network
+### <a name="network"></a>Сеть
   
 **Идентификатор единицы измерения**. F271A8A388C44D93956A063E1D2FA80B  
 **Имя единицы измерения**. Использование статических IP-адресов  
@@ -418,6 +418,16 @@ ms.locfileid: "66459044"
 ## <a name="what-is-the-policy-for-charging-for-vms"></a>Какова политика начисления платы за виртуальные машины?
 
 Работающие и остановленные виртуальные машины создают данные об использовании. В соответствии с требованиями Azure, чтобы остановить отправку данных об использовании, необходимо выполнить освобождение. Если портал недоступен, но поставщик ресурсов вычислений по-прежнему выполняется, данные об использовании все равно передаются.
+
+## <a name="how-do-i-extract-usage-data-from-the-azure-stack-usage-apis"></a>Как извлечь данные об использовании из API-интерфейсов использования в Azure Stack?
+
+Самый простой способ извлечь данные об использовании из локальных API-интерфейсов использования в Azure Stack — применить [сценарий сводки по потреблению в GitHub](https://github.com/Azure/AzureStack-Tools/blob/master/Usage/Usagesummary.ps1). Для сценария требуются даты начала и окончания в качестве входных параметров.
+
+Кроме того, можно применить REST API, как описано в статьях [API использования ресурсов для поставщиков](azure-stack-provider-resource-api.md) и [API использования ресурсов для клиентов](azure-stack-tenant-resource-usage-api.md).
+
+## <a name="how-can-i-associate-usage-extracted-from-azure-usage-apis-to-a-specific-azure-stack-user-subscription"></a>Как можно связать сведения об использовании, извлеченные из API использования Azure, с определенной пользовательской подпиской Azure Stack?
+
+Записи об использовании включают в себя контейнер свойств с именем **additionalinfo**, который содержит идентификатор подписки Azure Stack. Это пользовательская подписка, создающая соответствующую запись об использовании.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

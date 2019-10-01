@@ -16,12 +16,12 @@ ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 08/20/2018
-ms.openlocfilehash: c80a6068aa46cd182f8ec928942e7072638b143f
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: d226be9bad3bd6ddf775d8415329ea1fa8099eb0
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974846"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159544"
 ---
 # <a name="app-service-on-azure-stack-update-3-release-notes"></a>Заметки о выпуске обновления 3 для Службы приложений Azure в Azure Stack
 
@@ -50,7 +50,7 @@ ms.locfileid: "70974846"
 
 - Возможность использования SQL Server Always On для базы данных поставщика ресурсов Службы приложений Azure.
 
-- Добавлен новый параметр среды во вспомогательный скрипт Create-AADIdentityApp, упрощающий выбор регионов AAD.
+- Добавлен новый параметр среды во вспомогательный скрипт Create-AADIdentityApp, упрощающий выбор регионов Azure AD.
 
 - Обновления для **клиента, администратора службы приложений, портала функций и средств Kudu**. Они согласованы с версией пакета SDK для портала Azure Stack.
 

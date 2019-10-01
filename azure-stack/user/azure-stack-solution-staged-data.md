@@ -15,12 +15,12 @@ ms.date: 06/20/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 06/20/2019
-ms.openlocfilehash: 859d80c9782926602769664006375cb131de8637
-ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
+ms.openlocfilehash: 37ffb494ab6ae124c6a0eb460da4569f660cd283
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68602927"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159358"
 ---
 # <a name="deploy-a-staged-data-analytics-solution-to-azure-stack"></a>развертыванию решения аналитики промежуточных данных в Azure Stack
 
@@ -49,7 +49,7 @@ ms.locfileid: "68602927"
 ## <a name="prerequisites-for-staged-data-analytics"></a>Предварительные требования для аналитики промежуточных данных
 
   - Подписка Azure.
-  - Субъект-служба Azure Active Directory (AAD) с разрешениями для подписки клиента в Azure и Azure Stack. Если в Azure Stack и подписке Azure используются разные клиенты AAD, возможно, потребуется создать два субъекта-службы. Дополнительные сведения о создании субъекта-службы для Azure Stack см. в статье [Предоставление приложениям доступа к Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).
+  - Субъект-служба Azure Active Directory (Azure AD) с разрешениями для подписки клиента в Azure и Azure Stack. Если в Azure Stack и подписке Azure используются разные клиенты AAD, возможно, потребуется создать два субъекта-службы. Дополнительные сведения о создании субъекта-службы для Azure Stack см. в статье [Предоставление приложениям доступа к Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).
       - **Запомните или запишите идентификатор приложения каждого субъекта-службы, секрет клиента, идентификатор клиента Azure AD и имя клиента (xxxxx.onmicrosoft.com).**
   - Необходимо предоставить набор данных для анализа. Образец данных предоставляется.
   - Приложение [Docker для Windows](https://docs.docker.com/docker-for-windows/), установленное на локальном компьютере.

@@ -1,6 +1,6 @@
 ---
 title: Создание и публикация элемента Marketplace в Azure Stack | Документация Майкрософт
-description: Создание и публикация элемента Marketplace в Azure Stack.
+description: Узнайте, как создать и опубликовать элемент Marketplace в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.date: 08/20/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: b9e1e9a1cdd0afe18a5395c99fb2eef932791667
-ms.sourcegitcommit: 1a8ebd8103608b5ee9e804d7015eefe05ef55185
+ms.openlocfilehash: 668882b1f5e0702ce51798468c8f102efe92edcd
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69643855"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159683"
 ---
-# <a name="create-and-publish-a-marketplace-item"></a>Создание и публикация элемента Marketplace
+# <a name="create-and-publish-a-marketplace-item-in-azure-stack"></a>Создание и публикация элемента Marketplace в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
@@ -92,8 +92,8 @@ ms.locfileid: "69643855"
 ## <a name="publish-a-marketplace-item"></a>Публикация элемента Marketplace
 
 1. Передайте созданный элемент Marketplace (файл AZPKG) в хранилище больших двоичных объектов Azure с помощью PowerShell или обозревателя службы хранилища Azure. Вы можете использовать локальное хранилище Azure Stack или службу хранилища Azure, которая является временным хранилищем для пакета. Убедитесь, что используемый большой двоичный объект является общедоступным.
-2. На клиентской виртуальной машине в среде Microsoft Azure Stack проверьте, настроены ли учетные данные администратора службы для сеанса PowerShell. Инструкции по аутентификации PowerShell в Azure Stack вы можете найти в статье [Развертывание шаблонов в Azure Stack с помощью PowerShell](../user/azure-stack-deploy-template-powershell.md).
-3. При использовании [PowerShell 1.3.0](azure-stack-powershell-install.md) или более поздней версии вы можете опубликовать элемент Marketplace в Azure Stack с помощью командлета PowerShell **Add-AzsGalleryItem**. В версиях до PowerShell 1.3.0 вместо командлета **Add-AzsGalleryItem** следует использовать **Add-AzureRMGalleryitem**. Например, при использовании PowerShell 1.3.0 или более поздней версии:
+2. Убедитесь, что на клиентской виртуальной машине в среде Microsoft Azure Stack настроен сеанс PowerShell с вашими учетными данными администратора служб. Инструкции по аутентификации PowerShell в Azure Stack вы можете найти в статье [Развертывание шаблонов в Azure Stack с помощью PowerShell](../user/azure-stack-deploy-template-powershell.md).
+3. При использовании [PowerShell 1.3.0](azure-stack-powershell-install.md) или более поздней версии вы можете опубликовать элемент Marketplace в Azure Stack с помощью командлета PowerShell **Add-AzsGalleryItem**. В предшествующих версиях вместо командлета **Add-AzsGalleryItem** следует использовать **Add-AzureRMGalleryitem**. Например, при использовании PowerShell 1.3.0 или более поздней версии:
 
    ```powershell
    Add-AzsGalleryItem -GalleryItemUri `
@@ -141,8 +141,8 @@ ms.locfileid: "69643855"
 
 | ИМЯ | Обязательно | type | Ограничения | ОПИСАНИЕ |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |Строка, |Рекомендуется использовать 80 символов. |Портал может неправильно отображать имя элемента, если его длина превышает 80 символов. |
-| PublisherDisplayName |X |Строка, |Рекомендуется использовать 30 символов. |Портал может неправильно отображать имя издателя, если его длина превышает 30 символов. |
+| DisplayName |X |Строка, |Рекомендуется использовать 80 символов. |Портал может неправильно отображать имя элемента, если его длина превышает 80 символов. |
+| PublisherDisplayName |X |Строка, |Рекомендуется использовать 30 символов. |Портал может неправильно отображать имя издателя, если его длина превышает 30 символов. |
 | PublisherLegalName |X |Строка, |Не более 256 символов | |
 | Сводка |X |Строка, |60–100 знаков. | |
 | LongSummary |X |Строка, |140–256 знаков. |Пока не применяется в Azure Stack. |
@@ -162,7 +162,7 @@ ms.locfileid: "69643855"
 
 ### <a name="categories"></a>Категории
 
-Каждый элемент Marketplace должен снабжаться тегами категорий, которые определяют, где отображается этот элемент в пользовательском интерфейсе портала. Вы можете выбрать любую из существующих категорий Azure Stack (**вычисления**, **данные и хранилище** и т. д.) или создать новую.
+Каждый элемент Marketplace должен снабжаться тегами категорий, которые определяют, где отображается этот элемент в пользовательском интерфейсе портала. Вы можете выбрать любую из имеющихся категорий Azure Stack (**Вычисления**, **Данные + хранилище** и т. д.) или создать новую.
 
 ### <a name="links"></a>Ссылки
 
@@ -194,11 +194,11 @@ ms.locfileid: "69643855"
 
 ### <a name="create-blade"></a>Колонка "Создание"
 
-![Колонка "Создание"](media/azure-stack-create-and-publish-marketplace-item/image1.png)
+![Колонка "Создание" — элементы Marketplace для Azure Stack](media/azure-stack-create-and-publish-marketplace-item/image1.png)
 
 ### <a name="marketplace-item-details-blade"></a>Колонка информации об элементе Marketplace
 
-![Колонка информации об элементе Marketplace](media/azure-stack-create-and-publish-marketplace-item/image3.png)
+![Колонка информации об элементе Marketplace для Azure Stack](media/azure-stack-create-and-publish-marketplace-item/image3.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

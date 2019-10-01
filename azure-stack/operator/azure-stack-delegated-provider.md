@@ -15,12 +15,12 @@ ms.date: 08/12/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: b33c96ad10d5e4269f96741a5d4aba10d782896c
-ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
+ms.openlocfilehash: 97b253e4df3762d4579923124b7768c14f40d3de
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959521"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159665"
 ---
 # <a name="delegate-offers-in-azure-stack"></a>Делегирование предложений в Azure Stack
 
@@ -76,7 +76,7 @@ ms.locfileid: "68959521"
 | Пользователь |Пользователь |
 
  > [!NOTE]
- > В случае CSP-торгового посредника для создания этого делегированного поставщика потребуется задать этих пользователей в каталоге клиента (AAD пользователя). Оператору Azure Stack необходимо [сначала подключить](azure-stack-enable-multitenancy.md) AAD клиента, а затем настроить потребление и выставление счетов, выполнив [эти действия](azure-stack-csp-howto-register-tenants.md).
+ > В случае CSP-торгового посредника для создания этого делегированного поставщика потребуется задать этих пользователей в каталоге клиента (Azure AD пользователя). Оператору Azure Stack необходимо [сначала подключить](azure-stack-enable-multitenancy.md) Azure AD клиента, а затем настроить потребление и выставление счетов, выполнив [эти действия](azure-stack-csp-howto-register-tenants.md).
 
 ### <a name="identify-the-delegated-provider"></a>Идентификация делегированного поставщика
 

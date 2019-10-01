@@ -10,12 +10,12 @@ ms.date: 05/10/2019
 ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: de2c0c2181025b7dbbc01691b72b0756fa201274
-ms.sourcegitcommit: bcaad8b7db2ea596018d973cb29283d8c6daebfb
+ms.openlocfilehash: f51b0bdd4e433dd3083701e8cc967b3105d23ed6
+ms.sourcegitcommit: 820ec8d10ddab1fee136397d3aa609e676f8b39d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67419516"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71127519"
 ---
 # <a name="azure-stack-datacenter-integration---identity"></a>Интеграция центра обработки данных Azure Stack: идентификация
 
@@ -57,7 +57,7 @@ Graph поддерживает только интеграцию с отдель
 
 |Параметр|Параметр листа сведений о развертывании|ОПИСАНИЕ|Пример|
 |---------|---------|---------|---------|
-|`CustomADGlobalCatalog`|ADFS Forest FQDN (FQDN леса ADFS)|Полное доменное имя целевого леса Active Directory<br>для интеграции.|Contoso.com|
+|`CustomADGlobalCatalog`|Полное доменное имя леса ADFS|Полное доменное имя целевого леса Active Directory<br>для интеграции.|Contoso.com|
 |`CustomADAdminCredentials`| |Пользователь с разрешением на чтение LDAP.|ВАШ_ДОМЕН\graphservice|
 
 ### <a name="configure-active-directory-sites"></a>Настройка сайтов Active Directory
@@ -129,8 +129,8 @@ Graph поддерживает только интеграцию с отдель
 
 |Параметр|Параметр листа сведений о развертывании|ОПИСАНИЕ|Пример|
 |---------|---------|---------|---------|
-|CustomAdfsName|ADFS Provider Name (Имя поставщика AD FS)|Имя поставщика утверждений.<br>Так оно отображается на целевой странице AD FS.|Contoso|
-|CustomAD<br>FSFederationMetadataEndpointUri|ADFS Metadata URI (URI метаданных AD FS)|Ссылка на метаданные федерации:| https:\//ad01.contoso.com/federationmetadata/2007-06/federationmetadata.xml |
+|CustomAdfsName|Имя поставщика AD FS|Имя поставщика утверждений.<br>Так оно отображается на целевой странице AD FS.|Contoso|
+|CustomAD<br>FSFederationMetadataEndpointUri|URI метаданных AD FS|Ссылка на метаданные федерации:| https:\//ad01.contoso.com/federationmetadata/2007-06/federationmetadata.xml |
 |SigningCertificateRevocationCheck|Нет данных|Необязательный параметр, чтобы пропустить проверку списка отзыва сертификатов|Нет|
 
 

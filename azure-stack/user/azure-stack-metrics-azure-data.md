@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 08/27/2019
 ms.author: mabrigg
 ms.lastreviewed: 12/01/2018
-ms.openlocfilehash: 71855d557f26fc1eb4d86ab0d5a48bf8cf987506
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: e36f7c7f80de3cf0b822c4d145af411584ea38e4
+ms.sourcegitcommit: 4e48f1e5af74712a104eda97757dc5f50a591936
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974679"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71224993"
 ---
 # <a name="use-azure-monitor-on-azure-stack"></a>Использование Azure Monitor в Azure Stack
 
@@ -41,8 +41,8 @@ Azure Monitor — служба платформы, которая предост
 Зарегистрируйте поставщик ресурсов **Microsoft.insights** в параметрах поставщика ресурсов для предложения подписки. Убедитесь, что поставщик ресурсов доступен в предложении, связанном с подпиской:
 
 1. Откройте пользовательский портал Azure Stack.
-2. Выберите **Предложения**.
-3. Выберите предложение, связанное с подпиской.
+2. Выберите **Подписки**.
+3. Выберите подписку, которую нужно зарегистрировать.
 4. В разделе **Параметры** выберите **Поставщики ресурсов**. 
 5. Найдите компонент **Microsoft.Insights** в списке и убедитесь, что он находится в состоянии **Зарегистрировано**.
 

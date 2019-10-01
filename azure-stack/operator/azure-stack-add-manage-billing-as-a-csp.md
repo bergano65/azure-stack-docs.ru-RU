@@ -1,6 +1,6 @@
 ---
-title: Управление потреблением и оплатой для Azure Stack в роли поставщика облачных служб | Документация Майкрософт
-description: Узнайте, как зарегистрировать Azure Stack в качестве поставщика облачных служб (CSP) и добавить клиентов для выставления счетов.
+title: Управление потреблением и оплатой для Azure Stack в роли поставщика облачных решений | Документация Майкрософт
+description: Узнайте, как зарегистрировать Azure Stack в качестве поставщика облачных решений (CSP) и добавить клиентов для выставления счетов.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.date: 05/20/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: a8ae60e9ee19f96196d1c3763a32be0842567c7a
-ms.sourcegitcommit: e8f7fe07b32be33ef621915089344caf1fdca3fd
+ms.openlocfilehash: 82aa27440a496a813e2f1fa99879005503ba8d07
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70118691"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159498"
 ---
-# <a name="manage-usage-and-billing-for-azure-stack-as-a-cloud-service-provider"></a>Управление потреблением и оплатой для Azure Stack в роли поставщика облачных служб
+# <a name="manage-usage-and-billing-for-azure-stack-as-a-cloud-solution-provider"></a>Управление потреблением и оплатой для Azure Stack в роли поставщика облачных решений
 
 *Область применения: интегрированные системы Azure Stack*
 
@@ -32,7 +32,7 @@ ms.locfileid: "70118691"
 
 На следующем рисунке приведены шаги необходимые для выбора учетной записи общих служб и регистрации учетной записи Azure с помощью учетной записи Azure Stack. После регистрации вы сможете подключать конечных пользователей.
 
-[![Процесс настройки контроля потребления и управление для поставщика облачных служб](media/azure-stack-add-manage-billing-as-a-csp/process-add-useage-as-a-csp.png "Process for enabling usage and management as a Cloud Service Provider")](media/azure-stack-add-manage-billing-as-a-csp/process-add-useage-as-a-csp.png#lightbox)
+[![Процесс настройки контроля потребления и управление для поставщика облачных решений](media/azure-stack-add-manage-billing-as-a-csp/process-add-useage-as-a-csp.png "Процесс настройки контроля потребления и управление для поставщика облачных решений")](media/azure-stack-add-manage-billing-as-a-csp/process-add-useage-as-a-csp.png#lightbox)
 
 ## <a name="create-a-csp-or-apss-subscription"></a>Создание подписки CSP или APSS
 
@@ -40,7 +40,7 @@ ms.locfileid: "70118691"
 
 Выберите тип учетной записи общих служб, который вы будете использовать для Azure Stack. Типы подписок, для которых можно зарегистрировать мультитенантное развертывание Azure Stack:
 
-- Поставщик облачных служб
+- Поставщик облачных решений
 - Подписка общих служб партнера
 
 #### <a name="azure-partner-shared-services"></a>Общие службы партнеров Azure

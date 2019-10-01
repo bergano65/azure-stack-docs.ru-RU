@@ -15,12 +15,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 03/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7e5467945db4987bdd86b7265117c486fb6f7e1b
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.openlocfilehash: 091dc657153309298a1eda161b633a42050a0f57
+ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68418330"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71159344"
 ---
 # <a name="workflow-common-parameters-for-azure-stack-validation-as-a-service"></a>Распространенные параметры рабочего процесса для проверки как услуги Azure Stack
 
@@ -62,7 +62,7 @@ ms.locfileid: "68418330"
 Параметр    | ОПИСАНИЕ
 -------------|-----------------
 Администратор клиента                            | Администратор клиента Azure Active Directory, учетная запись которого была подготовлена администратором служб в каталоге AAD. Этот пользователь выполняет действия уровня клиента, такие как развертывание шаблонов для настройки ресурсов (виртуальных машин, учетных записей хранения и т. д.), а также рабочие нагрузки. Дополнительные сведения о подготовке учетной записи клиента см. в статье [Добавление нового клиента Azure Stack](../operator/azure-stack-add-new-user-aad.md).
-Администратор служб             | Администратор Azure Active Directory клиента каталога AAD, указанный во время развертывания Azure Stack. Найдите `AADTenant` в файле конфигурации ECE и выберите значение в элементе `UniqueName`.
+Администратор служб             | Администратор Azure Active Directory клиента каталога Azure AD, указанный во время развертывания Azure Stack. Найдите `AADTenant` в файле конфигурации ECE и выберите значение в элементе `UniqueName`.
 Администратор облака               | Учетная запись администратора домена Azure Stack (например, `contoso\cloudadmin`). Найдите `User Role="CloudAdmin"` в файле конфигурации ECE и выберите значение в элементе `UserName`.
 Строка подключения системы диагностики          | Подписанный URL-адрес (SAS) для учетной записи службы хранения Azure, в которую будут копироваться журналы диагностики во время выполнения теста. Инструкции по созданию подписанного URL-адреса см. в разделе, посвященном [созданию строки подключения системы диагностики](#generate-the-diagnostics-connection-string). |
 
