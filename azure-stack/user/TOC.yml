@@ -73,16 +73,19 @@
               href: azure-stack-develop-templates.md
             - name: Разработка шаблонов в Azure
               href: azure-stack-developer.md
-            - name: Проверка шаблонов
+            - name: Развертывание шаблонов
               href: azure-stack-validate-templates.md
-            - name: Развертывание с помощью портала
-              href: azure-stack-deploy-template-portal.md
-            - name: Развертывание с помощью PowerShell
-              href: azure-stack-deploy-template-powershell.md
-            - name: Развертывание с помощью интерфейса командной строки
-              href: azure-stack-deploy-template-command-line.md
-            - name: Развертывание с помощью Visual Studio
-              href: azure-stack-deploy-template-visual-studio.md
+              items:
+                - name: Развертывание с помощью портала
+                  href: azure-stack-deploy-template-portal.md
+                - name: Развертывание с помощью PowerShell
+                  href: azure-stack-deploy-template-powershell.md
+                - name: Развертывание с помощью интерфейса командной строки
+                  href: azure-stack-deploy-template-command-line.md
+                - name: Развертывание с помощью Visual Studio Code
+                  href: azure-stack-resource-manager-deploy-template-vscode.md
+                - name: Развертывание с помощью Visual Studio
+                  href: azure-stack-deploy-template-visual-studio.md
         - name: Использование профилей версий API
           items:
             - name: Обзор
