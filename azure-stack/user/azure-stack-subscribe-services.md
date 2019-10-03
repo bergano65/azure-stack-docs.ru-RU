@@ -3,7 +3,7 @@ title: Создание подписки с предложением в Azure St
 description: Из этой статьи вы узнаете, как создать новую подписку с предложением в Azure Stack и протестировать предложение с помощью тестовой виртуальной машины.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: bryanla
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 06/04/2019
-ms.author: sethm
+ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 11/13/2018
-ms.openlocfilehash: 5b72ccee255aadd5d8f42aefea9e397ba310812c
-ms.sourcegitcommit: 72d45bb935db0db172d4d7c37d8e48e79e25af64
+ms.openlocfilehash: f47278fed9cd9e93024d37a0a433388594bbd124
+ms.sourcegitcommit: 1bae55e754d7be75e03af7a4db3ec43fd7ff3e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68376805"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319157"
 ---
 # <a name="tutorial-create-and-test-a-subscription-in-azure-stack"></a>Руководство по Создание и тестирование подписки в Azure Stack
 

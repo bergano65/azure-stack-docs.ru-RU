@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 04/25/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 04/24/2019
-ms.openlocfilehash: c0b55579c5103c7bb1073546243dbfcc0b700b4a
-ms.sourcegitcommit: 05a16552569fae342896b6300514c656c1df3c4e
+ms.lastreviewed: 10/02/2019
+ms.openlocfilehash: 3d2854511415421b69a6972cd807132639300f96
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65838392"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824511"
 ---
 # <a name="use-an-ssh-public-key"></a>Использование открытого ключа SSH
 
@@ -79,13 +79,13 @@ BvpmONCSR3YnyUtgWV27N6zC7U1OBdmv7TN6M7g01uOYQKI/GQ==
 
     ![Окно настроек PuTTY](media/azure-stack-dev-start-howto-ssh-public-key/002-putty-connect.png)
 
-2. В поле **Host Name (or IP address)** (Имя узла или IP-адрес) введите имя пользователя и общедоступный IP-адрес виртуальной машины (например **username@192.XXX.XXX.XX**). 
+2. В поле **Host Name (or IP address)** (Имя узла или IP-адрес) введите имя пользователя и общедоступный IP-адрес виртуальной машины (например **username@192.XXX.XXX.XX** ). 
 3. Убедитесь, что в поле **Port** (Порт) указано значение**22**, а в поле **Connection type** (Тип подключения) — **SSH**.
 4. В дереве **Category** (Категория) разверните узлы **SSH** и **Auth**.
 
     ![Окно настроек PuTTY — закрытый ключ SSH](media/azure-stack-dev-start-howto-ssh-public-key/002-putty-set-private-key.png)
 
-5. Рядом с полем **Private key file for authentication** (Файл закрытого ключа для аутентификации) выберите **Browse** (Обзор) и выполните поиск файла закрытого ключа (*\<имя_файла>.ppk*) своей пары открытого и закрытого ключей.
+5. Рядом с полем **Private key file for authentication** (Файл закрытого ключа для аутентификации) выберите **Browse** (Обзор) и выполните поиск файла закрытого ключа ( *\<имя_файла>.ppk*) своей пары открытого и закрытого ключей.
 6. В дереве **Category** (Категория) выберите **Session** (Сеанс).
 
     ![Окно настроек PuTTY — поле раздела Saved Sessions (Сохраненные сеансы)](media/azure-stack-dev-start-howto-ssh-public-key/003-puTTY-save-session.png)
@@ -116,7 +116,7 @@ BvpmONCSR3YnyUtgWV27N6zC7U1OBdmv7TN6M7g01uOYQKI/GQ==
     ![Окно настроек FileZilla](media/azure-stack-dev-start-howto-ssh-public-key/006-filezilla-add-private-key.png)
 
 1. В дереве **Select page** (Выбор страницы) разверните узел **Connection** (Подключение) и выберите **SFTP**.
-1. Нажмите кнопку **Add key file** (Добавить файл ключа) и выберите файл своего закрытого ключа(*\<filename>.ppk*).
+1. Нажмите кнопку **Add key file** (Добавить файл ключа) и выберите файл своего закрытого ключа( *\<filename>.ppk*).
 1. Нажмите кнопку **ОК**.
 
 ### <a name="open-your-connection"></a>Открытие подключения
