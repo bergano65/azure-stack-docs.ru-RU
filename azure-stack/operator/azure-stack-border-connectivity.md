@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/13/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 08/30/2018
-ms.openlocfilehash: 142ea9b53d64e89157ce5c5556241b41275d430d
-ms.sourcegitcommit: c196463492732218d2474d3a964f88e995272c80
+ms.openlocfilehash: 583b23f8b70856e39f5d6f53204fd3234cb92a4e
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094350"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71829112"
 ---
 # <a name="border-connectivity"></a>Пограничное подключение 
 Планирование интеграции сети — важное условие для успешного развертывания и работы интегрированных систем Azure Stack, а также для управления ими. Планирование подключений к пограничной сети начинается с решения о том, будет ли использоваться динамическая маршрутизация по протоколу BGP. Для этого требуется назначить 16-разрядный номер автономной системы BGP (общедоступный или частный) или использовать статическую маршрутизацию, при которой пограничным устройствам назначается статический маршрут по умолчанию.

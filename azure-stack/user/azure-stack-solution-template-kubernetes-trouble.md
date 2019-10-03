@@ -14,12 +14,12 @@ ms.author: mabrigg
 ms.date: 06/18/2019
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 135bffd37c98ce53de4b7ec58ddca1d65f4c9495
-ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
+ms.openlocfilehash: 8d6730135e2a7055fc50f5c69918d1f0b2dbe5af
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68493826"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71823870"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack"></a>Устранение неполадок с развертыванием Kubernetes в Azure Stack
 
@@ -94,7 +94,7 @@ ms.locfileid: "68493826"
 4.  Если состояние виртуальной машины — **ОК**, оцените DVM. Если DVM содержит сообщение об ошибке:
 
     - Открытый ключ может быть недопустимым. Проверьте ключ, который вы создали.  
-    - Обратитесь к администратору Azure Stack, чтобы получить журналы Azure Stack с помощью привилегированных конечных точек. Дополнительные сведения см. в статье о [средствах диагностики Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep).
+    - Обратитесь к администратору Azure Stack, чтобы получить журналы Azure Stack с помощью привилегированных конечных точек. Дополнительные сведения см. в статье о [средствах диагностики Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs).
 5. Если у вас есть вопрос о развертывании, вы можете разместить его или поискать ответы на вопрос на [форуме Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
 
 ## <a name="review-deployment-status"></a>Проверка состояния развертывания

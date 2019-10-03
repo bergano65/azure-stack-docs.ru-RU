@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/30/2019
+ms.date: 10/2/2019
 ms.author: mabrigg
 ms.reviwer: xiaofmao
 ms.lastreviewed: 01/30/2019
-ms.openlocfilehash: e2bfea5cb7bb068a4cf3ca64dc3852b450a37066
-ms.sourcegitcommit: 61de365c93eb7435891867f9808ec37486882d7f
+ms.openlocfilehash: e2680a91aa2b9232eb86de4338d1198fb515e6d3
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65097083"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824729"
 ---
 # <a name="azure-stack-storage-differences-and-considerations"></a>Объем хранилища для Azure Stack. Отличия и рекомендации
 

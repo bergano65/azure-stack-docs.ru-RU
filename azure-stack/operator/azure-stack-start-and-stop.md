@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/13/2019
+ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 993c0c668a8894c82eddbf79e93b1722d3a3d8f4
-ms.sourcegitcommit: f6ea6daddb92cbf458f9824cd2f8e7e1bda9688e
+ms.openlocfilehash: 5072c40f4e8eba787e0a18c7c73a51111d0c847b
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68494023"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71829263"
 ---
 # <a name="start-and-stop-azure-stack"></a>Запуск и остановка Azure Stack
 Следуйте инструкциям по корректному завершению работы и перезапуску служб Azure Stack, приведенным в этой статье. Операция завершения работы физически отключает питание всей среды Azure Stack. При запуске включаются все роли инфраструктуры, а ресурсы клиента возвращаются в состояние, в котором они находились до завершения работы.
@@ -91,4 +91,4 @@ ms.locfileid: "68494023"
 
 ## <a name="next-steps"></a>Дополнительная информация 
 
-Дополнительные сведения о [средствах диагностики Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep)
+Дополнительные сведения о [средствах диагностики Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs)
