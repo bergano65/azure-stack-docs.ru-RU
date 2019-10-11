@@ -16,12 +16,12 @@ ms.date: 06/25/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: a2809ed8a745f2ec4cdb31d924e964ecc28209b0
-ms.sourcegitcommit: e2f6205e6469b39c2395ee09424bb7632cb94c40
+ms.openlocfilehash: 69f427bd825bdc74501256d47e61bbae95f4d64b
+ms.sourcegitcommit: 79ead51be63c372b23b7fca6ffeaf95fd44de786
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70271722"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71687985"
 ---
 # <a name="azure-stack-managed-disks-differences-and-considerations"></a>Управляемые диски Azure Stack. Различия и рекомендации
 
@@ -159,7 +159,7 @@ Azure Stack поддерживает *управляемые образы*, ко
 
 Перед выполнением этого шага необходимо правильно подготовить виртуальную машину к использованию. После подготовки вы больше не сможете использовать эту виртуальную машину. Создание виртуальной машины из образа, не подготовленного должным образом, приведет к возникновению ошибки **VMProvisioningTimeout**.
 
-Следуйте инструкциям, описанным в разделе [Создание образа из VHD в учетной записи хранения](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-vhd-in-a-storage-account), чтобы создать управляемый образ с помощью универсального виртуального жесткого диска в учетной записи хранения. Этот образ можно использовать в дальнейшем для создания управляемых виртуальных машин.
+Следуйте инструкциям, описанным в разделе [Create an image from a VM that uses a storage account](/azure/virtual-machines/windows/capture-image-resource#create-an-image-from-a-vm-that-uses-a-storage-account) (Создание образа из виртуальной машины, которая использует учетную запись хранения), чтобы создать управляемый образ с помощью универсального виртуального жесткого диска в учетной записи хранения. Этот образ можно использовать в дальнейшем для создания управляемых виртуальных машин.
 
 #### <a name="case-2-create-managed-vm-from-managed-image-using-powershell"></a>Вариант 2. Создание управляемой виртуальной машины из управляемого образа с помощью PowerShell
 

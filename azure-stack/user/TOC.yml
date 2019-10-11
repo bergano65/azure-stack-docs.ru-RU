@@ -31,7 +31,7 @@
       items:
         - name: Подписка на предложение
           href: azure-stack-subscribe-services.md
-        - name: Включение поставщика облачных служб
+        - name: Работа с поставщиком облачных решений
           href: azure-stack-csp-enable-billing-usage-tracking.md
         - name: Использование портала Azure Stack
           href: azure-stack-use-portal.md
@@ -267,6 +267,14 @@
           href: azure-stack-solution-mongodb-ha.md
         - name: Развертывание SQL Server 2016 высокого уровня доступности
           href: azure-stack-solution-sql-ha.md
+    - name: Развертывание базовых моделей
+      items:
+        - name: Настройка VPN для локальной среды
+          href: azure-stack-network-howto-vnet-to-onprem.md
+        - name: "Подключение типа \"виртуальная сеть\_— виртуальная сеть\""
+          href: azure-stack-network-howto-vnet-to-vnet-stacks.md
+        - name: Пиринг виртуальных сетей
+          href: azure-stack-network-howto-vnet-to-vnet.md
 - name: Основные понятия
   items:
     - name: Шаблоны для гибридного облака

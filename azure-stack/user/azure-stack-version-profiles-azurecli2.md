@@ -3,23 +3,23 @@ title: Управление Azure Stack с помощью Azure CLI | Доку
 description: Узнайте, как развертывать и администрировать ресурсы в Azure Stack с помощью кроссплатформенного интерфейса командной строки (CLI).
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/16/2019
-ms.author: sethm
+ms.date: 10/02/2019
+ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 05/08/2019
-ms.openlocfilehash: 18644d3d331a5c093d0a78da435d6f79e03cb531
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.lastreviewed: 10/02/2019
+ms.openlocfilehash: a0218652e2dace72356a32fe99ac5f6ac450cc94
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974663"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824789"
 ---
 # <a name="manage-and-deploy-resources-to-azure-stack-with-azure-cli"></a>Развертывание и администрирование ресурсов в Azure Stack с помощью Azure CLI
 
@@ -175,8 +175,8 @@ ms.locfileid: "70974663"
     | Значение | Пример | ОПИСАНИЕ |
     | --- | --- | --- |
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
-    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
-    | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
+    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
+    | конечную точку службы хранилища; | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
     | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
     | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. См. сведения о [настройке конечной точки псевдонимов виртуальных машин](#set-up-the-virtual-machine-aliases-endpoint). |
 
@@ -295,8 +295,8 @@ az group create -n MyResourceGroup -l local
     | Значение | Пример | ОПИСАНИЕ |
     | --- | --- | --- |
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
-    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
-    | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
+    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
+    | конечную точку службы хранилища; | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
     | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
     | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. См. сведения о [настройке конечной точки псевдонимов виртуальных машин](#set-up-the-virtual-machine-aliases-endpoint). |
 
@@ -411,8 +411,8 @@ az group create -n MyResourceGroup -l local
     | Значение | Пример | ОПИСАНИЕ |
     | --- | --- | --- |
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
-    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
-    | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
+    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
+    | конечную точку службы хранилища; | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
     | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
     | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. См. сведения о [настройке конечной точки псевдонимов виртуальных машин](#set-up-the-virtual-machine-aliases-endpoint). |
 
@@ -522,8 +522,8 @@ az group create -n MyResourceGroup -l local
     | Значение | Пример | ОПИСАНИЕ |
     | --- | --- | --- |
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
-    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
-    | Конечная точка службы хранилища | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
+    | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
+    | конечную точку службы хранилища; | local.azurestack.external | `local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
     | Суффикс хранилища ключей | .vault.local.azurestack.external | `.vault.local.azurestack.external` используется для ASDK. Для интегрированной системы нужно использовать соответствующую конечную точку.  |
     | Конечная точка документа с псевдонимами образов виртуальной машины | https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json | URI документа, который содержит псевдонимы образов виртуальной машины. См. сведения о [настройке конечной точки псевдонимов виртуальных машин](#set-up-the-virtual-machine-aliases-endpoint). |
 

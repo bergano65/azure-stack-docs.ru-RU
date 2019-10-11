@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/21/2019
+ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/21/2019
-ms.openlocfilehash: bedc4c3971c5d4a177f4d8ac804878babebaa9b6
-ms.sourcegitcommit: b3dac698f2e1834491c2f9af56a80e95654f11f3
+ms.openlocfilehash: 5cd8e87613d1d4aa4adc8dedac7dcac4fa57eae2
+ms.sourcegitcommit: bbf3edbfc07603d2c23de44240933c07976ea550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658651"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71714719"
 ---
 # <a name="develop-templates-for-azure-stack-with-azure-resource-manager"></a>Разработка шаблонов Azure Resource Manager для Azure Stack
 
@@ -31,7 +31,7 @@ ms.locfileid: "68658651"
 
 ## <a name="resource-provider-availability"></a>Доступность поставщика ресурсов
 
-Шаблон, который вы планируете развернуть, должен использовать только службы Microsoft Azure, которые уже доступны или находятся на этапе предварительной версии в Azure Stack.
+Шаблон, который вы планируете развернуть, должен использовать только службы Microsoft Azure, которые уже доступны или предоставляются в виде предварительной версии в Azure Stack.
 
 ## <a name="public-namespaces"></a>Общедоступные пространства имен
 
@@ -63,7 +63,7 @@ ms.locfileid: "68658651"
 * Указание ссылок на значения из других ресурсов.
 * Итерация по ресурсам для развертывания нескольких экземпляров.
 
-В Azure Stack недоступны следующие функции.
+В Azure Stack недоступны следующие функции:
 
 * Skip
 * Take

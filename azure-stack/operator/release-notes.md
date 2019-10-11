@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/25/2019
+ms.date: 09/27/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 08/30/2019
-ms.openlocfilehash: ed613e78cb2d592d40eb762f155e9e925f68721b
-ms.sourcegitcommit: d967cf8cae320fa09f1e97eeb888e3db5b6e7972
+ms.openlocfilehash: 62440c61ee637a0092b1e956b08ba0a9c94d8bab
+ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71279192"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71342937"
 ---
 # <a name="azure-stack-updates-release-notes"></a>Обновления Azure Stack: заметки о выпуске
 
@@ -56,7 +56,7 @@ ms.locfileid: "71279192"
 ::: moniker range="azs-1908"
 ## <a name="1908-build-reference"></a>Указание сборки 1908
 
-Номер сборки обновления 1908 для Azure Stack — **1.1908.0.20**.
+Номер сборки обновления 1908 для Azure Stack — **1.1908.4.33**.
 
 ### <a name="update-type-1908"></a>Тип обновления
 
@@ -119,7 +119,7 @@ Azure Stack выпускает исправления на регулярной 
 Выпуск 1908 Azure Stack должен применяться поверх выпуска 1907 со следующими исправлениями:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Исправление Azure Stack 1.1907.12.44](https://support.microsoft.com/help/4517473)
+- [Исправление Azure Stack 1.1907.17.54](https://support.microsoft.com/help/4523826)
 
 Для обновления 1908 для Azure Stack требуется **Azure Stack OEM версии 2.1 и выше** от поставщика оборудования для вашей системы. Обновления OEM включают обновления драйверов и встроенного ПО для оборудования вашей системы Azure Stack. См. сведения о [применении обновлений изготовителя оборудования для Azure Stack](azure-stack-update-oem.md).
 
@@ -250,7 +250,7 @@ Azure Stack выпускает исправления на регулярной 
 После установки этого обновления установите все применимые исправления. Подробные сведения см. в статье [Политика обслуживания Azure Stack](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Исправление Azure Stack 1.1907.15.50](https://support.microsoft.com/help/4520315)
+- [Исправление Azure Stack 1.1907.17.54](https://support.microsoft.com/help/4523826)
 ::: moniker-end
 
 ::: moniker range="azs-1906"

@@ -12,24 +12,24 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
+ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 755a4b373bcf305d7eb589acebca18f4ee4aafb8
-ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
+ms.openlocfilehash: f5cbf333494eb8d04ccbc974f95cda8be5d62284
+ms.sourcegitcommit: 3d14ae30ce3ee44729e5419728cce14b3000e968
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959407"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71814498"
 ---
 # <a name="use-api-version-profiles-with-java-in-azure-stack"></a>Использование профилей версий API с помощью Java в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Пакет SDK для Resource Manager Azure Stack для Java предоставляет средства для создания и администрирования инфраструктуры. В этом пакете SDK представлены поставщики ресурсов вычислений, сети, хранилища, служб приложений и [Key Vault](/azure/key-vault/key-vault-whatis). 
+Пакет SDK для Resource Manager Azure Stack для Java предоставляет средства для создания и администрирования инфраструктуры. В этом пакете SDK представлены поставщики ресурсов вычислений, сети, хранилища, служб приложений и [Key Vault](/azure/key-vault/key-vault-whatis).
 
-Пакет SDK для Java добавляет профили API, включая зависимости в файл *Pom.xml*, который загружает правильные модули из *JAVA-файла*. Но вы можете указать в качестве зависимостей несколько профилей Azure, например **2019-03-01-hybrid** или **latest**. Применение этих зависимостей позволяет загрузить правильный модуль, чтобы при создании типа ресурса вы могли выбрать из этих профилей версию API, которую нужно использовать. Это позволяет использовать в Azure последние стабильные версии, а для разработки — самые свежие версии API для Azure Stack. 
+Пакет SDK для Java добавляет профили API, включая зависимости в файл **Pom.xml**, который загружает правильные модули из **JAVA-файла**. Но вы можете указать в качестве зависимостей несколько профилей Azure, например **2019-03-01-hybrid** или **latest**. Применение этих зависимостей позволяет загрузить правильный модуль, чтобы при создании типа ресурса вы могли выбрать из этих профилей версию API, которую нужно использовать. Это позволяет использовать в Azure последние стабильные версии, а для разработки — самые свежие версии API для Azure Stack.
 
 Пакет SDK для Java позволяет создать полноценную гибридную облачную среду. Профили API в пакете SDK для Java позволяют выполнять разработку гибридных облачных приложений, легко переключаясь между глобальными ресурсами Azure и ресурсами в Azure Stack.
 
@@ -43,7 +43,7 @@ ms.locfileid: "68959407"
 
   - Чтобы использовать последние службы, поддерживаемые Azure Stack, укажите профиль **com.microsoft.azure.profile\_2019\_03\_01\_hybrid**.
 
-    - Это значение нужно указать в качестве зависимости в файле *Pom.xml*, чтобы модули загружались автоматически при выборе нужного класса из раскрывающегося списка, как в .NET.
+    - Этот профиль значение нужно указать в качестве зависимости в файле **Pom.xml**, чтобы модули загружались автоматически при выборе нужного класса из раскрывающегося списка, как в .NET.
 
   - Зависимости оформляются так:
 
@@ -61,13 +61,13 @@ ms.locfileid: "68959407"
 
 ## <a name="install-the-azure-java-sdk"></a>Установка пакета Azure SDK для Java
 
-Чтобы установить пакет SDK для Java, выполните следующие действия.
+Чтобы установить пакет SDK для Java, выполните следующие шаги.
 
-1. Выполните официальные инструкции по установке Git. Инструкции см. в разделе по [установке Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+1. Выполните официальные инструкции по установке Git. См. статью [Getting Started - Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) (Приступая к работе — установка Git)
 
-2. Выполните инструкции по установке [пакета SDK для Java](https://zulu.org/download/) и [Maven](https://maven.apache.org/). Следует использовать Java Developer Kit версии 8. Следует использовать Apache Maven версии 3.0 или более поздней версии. Для выполнения инструкций из этого краткого руководства в переменной среды `JAVA_HOME` нужно сохранить расположение установки JDK. Дополнительные сведения см. в статье [Создание первой функции с помощью Java и Maven](/azure/azure-functions/functions-create-first-java-maven).
+2. Выполните инструкции по установке [пакета SDK для Java](https://zulu.org/download/) и [Maven](https://maven.apache.org/). Следует использовать Java Developer Kit версии 8. Следует использовать Apache Maven версии 3.0 или более поздней. Для выполнения инструкций из этого краткого руководства сохраните в переменной среды `JAVA_HOME` расположение установки JDK. Дополнительные сведения см. в статье [Создание первой функции с помощью Java и Maven](/azure/azure-functions/functions-create-first-java-maven).
 
-3. Чтобы установить правильные пакеты зависимостей, откройте файл *Pom.xml* в приложении Java. Добавьте в него зависимость, как показано в следующем коде:
+3. Чтобы установить правильные пакеты зависимостей, откройте файл **Pom.xml** в приложении Java. Добавьте в него зависимость, как показано в следующем коде:
 
    ```xml  
    <dependency>
@@ -95,14 +95,14 @@ ms.locfileid: "68959407"
 
 | Значение                     | Переменные среды | ОПИСАНИЕ                                                                                                                                                                                                          |
 | ------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Tenant ID                 | `AZURE_TENANT_ID`            | Значение [идентификатора клиента](../operator/azure-stack-identity-overview.md) Azure Stack.                                                          |
+| Tenant ID                 | `AZURE_TENANT_ID`            | [Идентификатор клиента](../operator/azure-stack-identity-overview.md) Azure Stack.                                                          |
 | Идентификатор клиента                 | `AZURE_CLIENT_ID`             | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы в предыдущем разделе.                                                                                              |
-| Идентификатор подписки           | `AZURE_SUBSCRIPTION_ID`      | [Идентификатор подписки](../operator/azure-stack-plan-offer-quota-overview.md#subscriptions) для доступа к предложениям в Azure Stack.                |
+| Идентификатор подписки           | `AZURE_SUBSCRIPTION_ID`      | [Идентификатор подписки](../operator/azure-stack-plan-offer-quota-overview.md#subscriptions) используется для доступа к предложениям в Azure Stack.                |
 | Секрет клиента             | `AZURE_CLIENT_SECRET`        | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы.                                                                                                                                   |
-| Конечная точка Resource Manager | `ARM_ENDPOINT`              | Дополнительные сведения см. в разделе [Конечная точка Resource Manager для Azure Stack](../user/azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint). |
+| Конечная точка Resource Manager | `ARM_ENDPOINT`              | Дополнительные сведения см. в статье [Конечная точка Resource Manager для Azure Stack](../user/azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint). |
 | Location                  | `RESOURCE_LOCATION`    | **Локальное значение** для Azure Stack.                                                                                                                                                                                                |
 
-Чтобы узнать идентификатор клиента для Azure Stack, выполните приведенные [здесь](../operator/azure-stack-csp-ref-operations.md) инструкции. Чтобы настроить переменные среды, выполните следующие процедуры.
+Чтобы узнать идентификатор клиента для Azure Stack, выполните приведенные [здесь](../operator/azure-stack-csp-ref-operations.md) инструкции. Чтобы настроить переменные среды, выполните процедуры из следующих разделов.
 
 ### <a name="microsoft-windows"></a>Microsoft Windows
 
@@ -122,13 +122,13 @@ Export AZURE_TENANT_ID=<Your_Tenant_ID>
 
 ### <a name="trust-the-azure-stack-ca-root-certificate"></a>Доверие для корневого сертификата ЦС Azure Stack
 
-Если вы используете Пакет средств разработки Azure Stack (ASDK), корневой сертификат ЦС на удаленном компьютере должен быть доверенным. Если вы используете интегрированные системы, то это необязательно.
+Если вы используете Пакет средств разработки Azure Stack (ASDK), нужно настроить доверите корневому сертификату ЦС на удаленном компьютере. Для интегрированных систем Azure Stack доверие корневому сертификату ЦС не требуется.
 
 #### <a name="windows"></a>Windows
 
 1. Экспортируйте самозаверяющий сертификат Azure Stack на компьютер.
 
-1. В командной строке измените каталог на `%JAVA_HOME%\bin`.
+1. В командной строке перейдите в каталог `%JAVA_HOME%\bin`.
 
 1. Выполните следующую команду:
 
@@ -138,7 +138,7 @@ Export AZURE_TENANT_ID=<Your_Tenant_ID>
 
 ### <a name="the-azure-stack-resource-manager-endpoint"></a>Конечная точка Resource Manager для Azure Stack
 
-Microsoft Azure Resource Manager — это платформа управления, которая дает администраторам возможность развертывать, администрировать и отслеживать ресурсы Azure. Azure Resource Manager может обрабатывать эти задачи в рамках одной операции как группы, а не по отдельности.
+Azure Resource Manager — это платформа управления, которая дает администраторам возможность развертывать, администрировать и отслеживать ресурсы Azure. Azure Resource Manager может обрабатывать эти задачи в рамках одной операции как группы, а не по отдельности.
 
 Получить метаданные можно из конечной точки Resource Manager. Конечная точка возвращает JSON-файл со сведениями, необходимыми для запуска вашего кода.
 
@@ -167,13 +167,13 @@ Microsoft Azure Resource Manager — это платформа управлен
 
 ## <a name="existing-api-profiles"></a>Существующие профили API
 
-- **com.microsoft.azure.profile\_2019\_03\_01\_hybrid**: последний профиль, созданный для Azure Stack. Используйте этот профиль для служб, которым нужна максимальная совместимость с Azure Stack версии 1904 или более поздней версии.
+- **com.microsoft.azure.profile\_2019\_03\_01\_hybrid**: последний профиль, созданный для Azure Stack. Используйте этот профиль, чтобы обеспечить наибольшую совместимость служб и Azure Stack с версией 1904 или более поздней.
 
-- **com.microsoft.azure.profile\_2018\_03\_01\_hybrid**: Профиль, созданный для Azure Stack. Используйте этот профиль, чтобы обеспечить совместимость служб и Azure Stack версии 1808 или более поздней.
+- **com.microsoft.azure.profile\_2018\_03\_01\_hybrid**: Профиль, созданный для Azure Stack. Используйте этот профиль, чтобы обеспечить совместимость служб и Azure Stack для версии 1808 или более поздней.
 
 - **com.microsoft.azure**: профиль с новейшими версиями всех служб. Используйте последние версии всех служб.
 
-Получите дополнительные сведения о профилях API и Azure Stack, ознакомившись с разделом [Сводка по профилям API](../user/azure-stack-version-profiles.md#summary-of-api-profiles).
+См. дополнительные сведения о [профилях API и Azure Stack](../user/azure-stack-version-profiles.md#summary-of-api-profiles).
 
 ## <a name="azure-java-sdk-api-profile-usage"></a>Использование профиля API пакета SDK Azure для Java
 
@@ -231,12 +231,12 @@ public static HashMap<String, String> getActiveDirectorySettings(String armEndpo
 
         // Execute request and catch response
         HttpResponse response = httpClient.execute(getRequest);
-        
+
         // Check for HTTP response code: 200 = success
         if (response.getStatusLine().getStatusCode() != 200) {
             throw new RuntimeException("Failed : HTTP error code : " + response.getStatusLine().getStatusCode());
         }
-        
+
         String responseStr = EntityUtils.toString(response.getEntity());
         JSONObject responseJson = new JSONObject(responseStr);
         adSettings.put("galleryEndpoint", responseJson.getString("galleryEndpoint"));
@@ -261,21 +261,23 @@ public static HashMap<String, String> getActiveDirectorySettings(String armEndpo
 
 Используйте примеры из репозитория GitHub в качестве рекомендаций при создании решений с профилями API Azure Stack и .NET.
 
-- [Управление группами ресурсов](https://github.com/Azure-Samples/Hybrid-resources-java-manage-resource-group)
+- [Getting Started with Resources - Manage Resource Group - in .Net](https://github.com/Azure-Samples/Hybrid-resources-java-manage-resource-group) (Начало работы с ресурсами: управление группами ресурсов — .Net)
 
 - [Управление учетными записями хранения](https://github.com/Azure-Samples/hybrid-storage-java-manage-storage-accounts)
 
-- [Управление виртуальной машиной](https://github.com/Azure-Samples/hybrid-compute-java-manage-vm) (обновлено с указанием профиля 2019-03-01-hybrid).
+- [Управление виртуальной машиной](https://github.com/Azure-Samples/hybrid-compute-java-manage-vm) (с учетом профиля 2019-03-01-hybrid).
 
 ### <a name="sample-unit-test-project"></a>Пример проекта модульного теста
 
 1. Клонируйте репозиторий, используя следующую команду:
 
-   `git clone https://github.com/Azure-Samples/Hybrid-resources-java-manage-resource-group.git`
+   ```shell
+   git clone https://github.com/Azure-Samples/Hybrid-resources-java-manage-resource-group.git`
+   ```
 
 2. Создайте субъект-службу Azure и назначьте роль для доступа к подписке. См. дополнительные сведения о [создании субъекта-службы с сертификатом с помощью Azure PowerShell](../operator/azure-stack-create-service-principals.md).
 
-3. Получите следующие обязательные значения переменных среды:
+3. Получите следующие обязательные переменные среды:
 
    - `AZURE_TENANT_ID`
    - `AZURE_CLIENT_ID`
@@ -302,7 +304,7 @@ public static HashMap<String, String> getActiveDirectorySettings(String armEndpo
     final HashMap<String, String> settings = getActiveDirectorySettings(armEndpoint);
     ```
 
-6. В файл *Pom.xml* добавьте указанную ниже зависимость, чтобы использовать профиль **2019-03-01-hybrid** для Azure Stack. Зависимость позволяет установить связанные с этим профилем модули поставщиков ресурсов вычислений, сети, хранилища, Key Vault и Службы приложений.
+6. В файл **Pom.xml** добавьте указанную ниже зависимость, чтобы использовать профиль **2019-03-01-hybrid** для Azure Stack. Зависимость позволяет установить связанные с этим профилем модули поставщиков ресурсов вычислений, сети, хранилища, Key Vault и Службы приложений.
 
    ```xml
    <dependency>

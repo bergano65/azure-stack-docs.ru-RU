@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
+ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: c0faaa7be69ad8d23dc94eec1107362a7a7eadfa
-ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
+ms.openlocfilehash: d9ef8ab09031db59311317693f72433b63737c34
+ms.sourcegitcommit: 3d14ae30ce3ee44729e5419728cce14b3000e968
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959340"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71814472"
 ---
 # <a name="use-api-version-profiles-with-ruby-in-azure-stack"></a>Использование профилей версий API с помощью Ruby в Azure Stack
 
@@ -46,12 +46,16 @@ ms.locfileid: "68959340"
 - Выполните официальные инструкции по установке Git, указанные [здесь](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 - Выполните официальные инструкции по установке Ruby, указанные в [этой статье](https://www.ruby-lang.org/en/documentation/installation/).
   - При установке выберите **Добавить Ruby в переменную PATH**.
-  - В ходе установки Ruby при появлении запроса установите комплект разработки.
-  - Затем установите средство увязки, выполнив следующую команду.  
-    `Gem install bundler`
-- Создайте подписку, если ее еще нет, и сохраните ее идентификатор для дальнейшего использования. См. инструкции по [созданию подписки](../operator/azure-stack-subscribe-plan-provision-vm.md).
-- Создайте субъект-службу и сохраните его идентификатор и секрет. См. инструкции по [созданию субъекта-службы для Azure Stack](../operator/azure-stack-create-service-principals.md).
-- Убедитесь, что субъекту-службе назначена роль участника или владельца в вашей подписке. См. инструкции по [назначению роли субъекта-службы](../operator/azure-stack-create-service-principals.md).
+  - В ходе установки Ruby установите комплект разработки, когда появится соответствующий запрос.
+  - Затем установите средство увязки, выполнив следующую команду. 
+
+       ```Ruby
+       Gem install bundler
+       ```
+
+- Создайте подписку, если ее еще нет, и сохраните ее идентификатор для дальнейшего использования. Инструкции по созданию подписки см. в статье [Создание подписок для предложений в Azure Stack](../operator/azure-stack-subscribe-plan-provision-vm.md).
+- Создайте субъект-службу и сохраните его идентификатор и секрет. Инструкции по созданию субъекта-службы для Azure Stack см. в [этой статье](../operator/azure-stack-create-service-principals.md).
+- Убедитесь, что субъекту-службе назначена роль участника или владельца в вашей подписке. Инструкции по назначению роли субъекту-службе см. в [этой статье](../operator/azure-stack-create-service-principals.md).
 
 ## <a name="install-the-rubygem-packages"></a>Установка пакетов RubyGem
 
@@ -62,7 +66,11 @@ gem install azure_mgmt_compute
 gem install azure_mgmt_storage
 gem install azure_mgmt_resources
 gem install azure_mgmt_network
-Or use them in your Gemfile.
+```
+
+Или укажите их в Gemfile.
+
+```Ruby
 gem 'azure_mgmt_storage'
 gem 'azure_mgmt_compute'
 gem 'azure_mgmt_resources'
@@ -87,10 +95,10 @@ gem install 'azure_sdk'
 
 | Значение | Переменные среды | ОПИСАНИЕ |
 | --- | --- | --- |
-| Tenant ID | `AZURE_TENANT_ID` | Значение [идентификатора клиента](../operator/azure-stack-identity-overview.md) Azure Stack. |
-| Идентификатор клиента | `AZURE_CLIENT_ID` | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы (см. выше).  |
-| Идентификатор подписки | `AZURE_SUBSCRIPTION_ID` | [Идентификатор подписки](../operator/azure-stack-plan-offer-quota-overview.md#subscriptions) для доступа к предложениям в Azure Stack. |
-| Секрет клиента | `AZURE_CLIENT_SECRET` | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы (см. выше). |
+| Tenant ID | `AZURE_TENANT_ID` | [Идентификатор клиента](../operator/azure-stack-identity-overview.md) Azure Stack. |
+| Идентификатор клиента | `AZURE_CLIENT_ID` | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы в предыдущем разделе этой статьи.  |
+| Идентификатор подписки | `AZURE_SUBSCRIPTION_ID` | [Идентификатор подписки](../operator/azure-stack-plan-offer-quota-overview.md#subscriptions) используется для доступа к предложениям в Azure Stack. |
+| Секрет клиента | `AZURE_CLIENT_SECRET` | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы. |
 | Конечная точка Resource Manager | `ARM_ENDPOINT` | Дополнительные сведения см. в разделе [Конечная точка Resource Manager для Azure Stack](#the-azure-stack-resource-manager-endpoint).  |
 
 ### <a name="the-azure-stack-resource-manager-endpoint"></a>Конечная точка Resource Manager для Azure Stack
@@ -117,26 +125,31 @@ Microsoft Azure Resource Manager — это платформа управлен
  }
 ```
 
-### <a name="set-environmental-variables"></a>Настройка переменных среды
+### <a name="set-environment-variables"></a>Настройка переменных среды
 
-**Microsoft Windows**  
-Используйте приведенный ниже формат, чтобы настроить переменные среды в командной строке Windows.  
-`set AZURE_TENANT_ID=<YOUR_TENANT_ID>`
+#### <a name="microsoft-windows"></a>Microsoft Windows
 
-**macOS, Linux и системы на основе Unix** <br>
-В системах на основе Unix используйте такую команду:  
-`export AZURE_TENANT_ID=<YOUR_TENANT_ID>`
+Используйте приведенный ниже формат, чтобы настроить переменные среды в командной строке Windows.
+
+```shell
+set AZURE_TENANT_ID=<YOUR_TENANT_ID>
+```
+
+#### <a name="macos-linux-and-unix-based-systems"></a>MacOS, Linux и системы на основе Unix
+
+В системах на основе Unix используйте такую команду:
+
+```bash
+export AZURE_TENANT_ID=<YOUR_TENANT_ID>
+```
 
 ## <a name="existing-api-profiles"></a>Существующие профили API
 
-Накопительный пакет Azure_sdk включает три профиля:
+Накопительный пакет **Azure_sdk** содержит следующие 3 профиля.
 
-1. **V2019_03_01_Hybrid** <br>
-  Профиль, созданный для Azure Stack. Используйте этот профиль для всех последних версий служб, доступных в Azure Stack с меткой 1904 или более поздней версии.
-1. **V2017_03_09**  
-  Профиль, созданный для Azure Stack. Используйте этот профиль, чтобы обеспечить наибольшую совместимость служб и Azure Stack с меткой 1808 или более ранней версии.
-1. **Актуальная**  
-  Профиль включает последние версии всех служб. Используйте последние версии всех служб.
+- **V2019_03_01_Hybrid**. Профиль, созданный для Azure Stack. Используйте этот профиль для всех последних версий служб, доступных в Azure Stack с версией 1904 или более поздней.
+- **V2017_03_09**. Профиль, созданный для Azure Stack. Используйте этот профиль, чтобы обеспечить наибольшую совместимость служб и Azure Stack с версией 1808 или более ранней.
+- **Latest**: Этот профиль включает последние версии всех служб. Используйте последние версии всех служб.
 
 Получите дополнительные сведения о профилях API и Azure Stack, ознакомившись с разделом [Сводка по профилям API](azure-stack-version-profiles.md#summary-of-api-profiles).
 
@@ -181,7 +194,7 @@ purchase_plan_obj = Azure::Profiles::V2019_03_01_Hybrid::Compute::Mgmt::Models::
 
 ## <a name="define-azure-stack-environment-setting-functions"></a>Определение функций параметров среды Azure Stack
 
-Для проверки подлинности субъекта-службы в среде Azure Stack определите конечные точки с помощью `get_active_directory_settings()`. Этот метод использует переменную среды **ARM_Endpoint**, заданную при установке переменных среды.
+Для проверки подлинности субъекта-службы в среде Azure Stack определите конечные точки с помощью `get_active_directory_settings()`. Этот метод использует переменную среды **ARM_Endpoint**, которую вы задали ранее.
 
 ```Ruby  
 # Get Authentication endpoints using Arm Metadata Endpoints
@@ -214,7 +227,7 @@ end
 Для запуска примера необходимо установить Ruby. При использовании Visual Studio Code также скачайте пакет SDK для Ruby в качестве расширения.
 
 > [!NOTE]  
-> Репозиторий с примерами доступен здесь: [Управление ресурсами и группами ресурсов Azure на Ruby](https://github.com/Azure-Samples/Hybrid-Resource-Manager-Ruby-Resources-And-Groups).
+> Этот пример размещен в репозитории [Hybrid-Resource-Manager-Ruby-Resources-And-Groups](https://github.com/Azure-Samples/Hybrid-Resource-Manager-Ruby-Resources-And-Groups).
 
 1. Клонируйте репозиторий.
 
@@ -234,13 +247,14 @@ end
    См. дополнительные сведения о [создании субъекта-службы с сертификатом с помощью Azure PowerShell](../operator/azure-stack-create-service-principals.md).
 
    Требуемые значения:
+
    - Tenant ID
    - Идентификатор клиента
    - Секрет клиента
    - Идентификатор подписки
    - Конечная точка Resource Manager
 
-   Настройте следующие переменные среды, используя данные, полученные от созданного субъекта-службы.
+   Настройте следующие переменные среды, используя информацию, полученную от созданного субъекта-службы.
 
    - `export AZURE_TENANT_ID={your tenant ID}`
    - `export AZURE_CLIENT_ID={your client ID}`
@@ -249,17 +263,17 @@ end
    - `export ARM_ENDPOINT={your Azure Stack Resource Manager URL}`
 
    > [!NOTE]  
-   > В Windows используйте набор вместо экспорта.
+   > В ОС Windows используйте `set` вместо `export`.
 
 4. Убедитесь, что в качестве переменной расположения задано расположение Azure Stack, например `LOCAL="local"`.
 
-5. Добавьте следующую строку кода, если вы используете Azure Stack или другие частные облака, чтобы указать правильные конечные точки.
+5. Чтобы использовать правильные активные конечные точки при работе с Azure Stack или другими частными облаками, добавьте следующую строку кода.
 
    ```Ruby  
    active_directory_settings = get_active_directory_settings(ENV['ARM_ENDPOINT'])
    ```
 
-6. В переменную "Параметры" добавьте параметры Active Directory и базовый URL-адрес для работы с Azure Stack.
+6. В переменную `options` добавьте параметры Active Directory и базовый URL-адрес для работы с Azure Stack.
 
    ```ruby  
    options = {
@@ -276,7 +290,7 @@ end
    client = Azure::Resources::Profiles::V2019_03_01_Hybrid::Mgmt::Client.new(options)
    ```
 
-8. Для аутентификации субъекта-службы в среде Azure Stack определите конечные точки с помощью **get_active_directory_settings()** . Этот метод использует переменную среды **ARM_Endpoint**, заданную при установке переменных среды.
+8. Для аутентификации субъекта-службы в среде Azure Stack определите конечные точки с помощью **get_active_directory_settings()** . Этот метод использует переменную среды **ARM_Endpoint**, которую вы задали ранее.
 
    ```ruby  
    def get_active_directory_settings(armEndpoint)
@@ -297,7 +311,7 @@ end
 
 9. Запустите пример.
 
-   ```ruby
+   ```Ruby
    bundle exec ruby example.rb
    ```
 

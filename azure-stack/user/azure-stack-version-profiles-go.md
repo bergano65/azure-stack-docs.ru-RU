@@ -10,16 +10,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/26/2019
+ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/26/2019
-ms.openlocfilehash: dac2eeaf3499068812d9c9a66348b0c44ea07b7d
-ms.sourcegitcommit: 637018771ac016b7d428174e88d4dcb131b54959
+ms.openlocfilehash: 0636f3069db80613f02e979b5a102a471f12efad
+ms.sourcegitcommit: 3d14ae30ce3ee44729e5419728cce14b3000e968
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68842716"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71814454"
 ---
 # <a name="use-api-version-profiles-with-go-in-azure-stack"></a>Использование профилей версий API и Go в Azure Stack
 
@@ -32,17 +32,17 @@ ms.locfileid: "68842716"
 - стабильность приложения за счет блокировки определенных версий API;
 - совместимость приложения с Azure Stack и региональными центрами обработки данных Azure.
 
-В пакете SDK для Go профили доступны в пути к профилям. Номера версий имеют следующий формат: **ГГГГ-ММ-ДД**. **2019-03-01** — это последняя версия профиля API Azure Stack выпусков 1904 и выше. Чтобы импортировать данную службу из профиля, импортируйте из профиля ее соответствующий модуль. Например, чтобы импортировать службу **вычислений** из профиля версии **2019-03-01**, используйте следующий код:
+В пакете SDK для Go профили доступны в пути к профилям. Номера версий профилей имеют следующий формат: **ГГГГ-ММ-ДД**. **2019-03-01** — это последняя версия профиля API Azure Stack для Azure Stack выпусков 1904 и более поздних. Чтобы импортировать данную службу из профиля, импортируйте из профиля ее соответствующий модуль. Например, чтобы импортировать службу **вычислений** из профиля версии **2019-03-01**, используйте следующий код:
 
 ```go
 import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compute"
 ```
 
-## <a name="install-azure-sdk-for-go"></a>Установка пакета Azure SDK для Go
+## <a name="install-the-azure-sdk-for-go"></a>Установка пакета Azure SDK для Go
 
 1. Установите Git. Инструкции см. в разделе по [установке Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 2. Установите [язык программирования Go](https://golang.org/dl). Для профилей API для Azure необходима версия Go 1.9 или более новая.
-3. Установите пакет Azure SDK для Go и его зависимости, выполнив следующую команду Bash:
+3. Установите пакет Azure SDK для Go и его зависимости, выполнив следующую команду bash:
 
    ```bash
    go get -u -d github.com/Azure/azure-sdk-for-go/...
@@ -50,7 +50,7 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compu
 
 ### <a name="the-go-sdk"></a>Пакет SDK для GO
 
-Дополнительные сведения о пакете SDK для GO можно найти по следующим ссылкам:
+Дополнительные сведения о пакете SDK для Go можно найти по следующим ссылкам:
 
 - [Установка пакета Azure SDK для Go](/go/azure/azure-sdk-go-install).
 - Пакет Azure SDK для Go доступен на сайте GitHub в репозитории [azure-sdk-for-go](https://github.com/Azure/azure-sdk-for-go).
@@ -63,7 +63,7 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compu
 
 Чтобы запустить пример кода GO в Azure Stack, сделайте следующее:
 
-1. Установите пакет Azure SDK для Go и его зависимости. Инструкции см. в предыдущем разделе: [Установка пакета Azure SDK для Go](#install-azure-sdk-for-go).
+1. Установите пакет Azure SDK для Go и его зависимости. Инструкции см. в предыдущем разделе: [Установка пакета Azure SDK для Go](#install-the-azure-sdk-for-go).
 2. Получите метаданные из конечной точки Resource Manager. Конечная точка возвращает JSON-файл со сведениями, необходимыми для запуска кода Go.
 
    > [!NOTE]  
@@ -86,7 +86,7 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compu
 
 3. Создайте подписку, если ее еще нет, и сохраните ее идентификатор для дальнейшего использования. См. сведения о [создании подписок для предложений в Azure Stack](../operator/azure-stack-subscribe-plan-provision-vm.md).
 
-4. Создайте субъект-службу, которая использует секрет клиента, с областью **Подписка** и ролью **Владелец**. Сохраните идентификатор и секрет субъекта-службы. См. сведения о [предоставлении доступа к ресурсам с помощью идентификатора приложения](../operator/azure-stack-create-service-principals.md). <br>Среда Azure Stack теперь настроена.
+4. Создайте субъект-службу, которая использует секрет клиента, с областью **Подписка** и ролью **Владелец**. Сохраните идентификатор и секрет субъекта-службы. Сведения о создании субъекта-службы для Azure Stack см. в статье [Предоставление приложениям доступа к Azure Stack](../operator/azure-stack-create-service-principals.md). Среда Azure Stack теперь настроена.
 
 5. Импортируйте модуль службы из профиля пакета SDK для Go в код. Текущая версия профиля Azure Stack — **2019-03-01**. Например, чтобы импортировать модуль сети из профиля версии **2019-03-01**, используйте следующий код:
 
@@ -134,7 +134,7 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compu
 
 1. Если в подписке доступен субъект-служба с ролью владельца, пропустите этот шаг. Если это не так, см. сведения о [предоставлении доступа к ресурсам](../operator/azure-stack-create-service-principals.md), чтобы создать субъект-службу, который использует секрет клиента, и назначить ему роли "Владелец" в пределах вашей подписки. Обязательно сохраните идентификатор приложения и секрет субъекта-службы.
 
-2. Импортируйте пакет **adal** из Go-AutoRest в код.
+2. Импортируйте пакет **adal** из **Go-AutoRest** в код.
 
    ```go
    package main
@@ -299,11 +299,14 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compu
       }
    }
    ```
+
 Вот несколько примеров кода для Azure Stack с использованием пакета SDK для Go:
+
 - [Создание виртуальной машины](https://github.com/Azure-Samples/Hybrid-Compute-Go-Create-VM)
 - [Плоскость данных хранилища](https://github.com/Azure-Samples/Hybrid-Storage-Go-Dataplane)
 - [Использование Управляемых дисков ](https://github.com/Azure-Samples/Hybrid-Compute-Go-ManagedDisks) (пример с использованием профиля 2019-03-01, который предназначен для последних версий API, поддерживаемых Azure Stack).
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [Install PowerShell for Azure Stack](../operator/azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack)
-- [Configure the Azure Stack user's PowerShell environment](azure-stack-powershell-configure-user.md) (Настройка пользовательской среды PowerShell в Azure Stack)  
+- [Configure the Azure Stack user's PowerShell environment](azure-stack-powershell-configure-user.md) (Настройка пользовательской среды PowerShell в Azure Stack)

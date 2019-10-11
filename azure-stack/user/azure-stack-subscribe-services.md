@@ -17,12 +17,12 @@ ms.date: 06/04/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 11/13/2018
-ms.openlocfilehash: f47278fed9cd9e93024d37a0a433388594bbd124
-ms.sourcegitcommit: 1bae55e754d7be75e03af7a4db3ec43fd7ff3e9c
+ms.openlocfilehash: e6e09dffa6682a615c01e6fee841a5d736054546
+ms.sourcegitcommit: dfaf0126bc9975ca1643d55f06c71df9e32ea976
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319157"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72164995"
 ---
 # <a name="tutorial-create-and-test-a-subscription-in-azure-stack"></a>Руководство по Создание и тестирование подписки в Azure Stack
 
@@ -60,7 +60,7 @@ ms.locfileid: "71319157"
 
 ## <a name="test-the-offer"></a>Тестирование предложения.
 
-После входа на портал пользователя протестируйте предложение, подготовив виртуальную машину с использованием новых возможностей подписки.
+Протестируйте предложение на портале пользователя. Для этого подготовьте виртуальную машину с помощью новых возможностей подписки.
 
 > [!NOTE]
 > Для этого теста требуется виртуальная машина с Windows Server 2016 Datacenter, которая впервые была добавлена в Azure Stack Marketplace.

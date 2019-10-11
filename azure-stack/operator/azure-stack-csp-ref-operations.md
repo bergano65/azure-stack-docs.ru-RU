@@ -1,6 +1,6 @@
 ---
 title: Регистрация клиентов для отслеживания использования Azure Stack | Документация Майкрософт
-description: Сведения об операциях для управления регистрацией клиентов и о том, как отслеживать использование клиента в Azure Stack.
+description: Из этой статьи вы узнаете о том, как регистрировать клиентов и отслеживать использование клиентов в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.date: 09/17/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: 619bfc89e5def3406d719abfb589193c76c3db6b
-ms.sourcegitcommit: 95f30e32e5441599790d39542ff02ba90e70f9d6
+ms.openlocfilehash: a9e0dd05195d7ece62689aa8b5971cf72a6e3713
+ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71070088"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71342835"
 ---
-# <a name="manage-tenant-registration-in-azure-stack"></a>Управление регистрацией клиента в Azure Stack
+# <a name="register-tenants-for-usage-tracking-in-azure-stack"></a>Регистрация клиентов для отслеживания использования в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack*
 
@@ -50,7 +50,7 @@ ms.locfileid: "71070088"
 | Параметр                  | ОПИСАНИЕ |
 |---                         | --- |
 | registrationSubscriptionID | Подписка Azure, которая использовалась для первоначальной регистрации. |
-| customerSubscriptionID     | Подписка Azure (не Azure Stack), принадлежащая клиенту, для которого выполняется регистрация. Ее нужно создать в предложении поставщика облачных служб через Центр партнеров. Если у пользователя имеется несколько клиентов, подписку нужно создать в клиенте, который будет использоваться для входа в Azure Stack. |
+| customerSubscriptionID     | Подписка Azure (не Azure Stack), принадлежащая клиенту, для которого выполняется регистрация. Ее нужно создать в предложении поставщика облачных решений через Центр партнеров. Если у пользователя имеется несколько клиентов, подписку нужно создать в клиенте, который будет использоваться для входа в Azure Stack. |
 | resourceGroup              | Группа ресурсов Azure, в которой хранятся данные об этой регистрации. |
 | registrationName           | Имя регистрации Azure Stack. Это объект, который хранится в Azure. Имя обычно представлено в формате **azurestack-CloudID**, где **CloudID** — это идентификатор облака для развертывания Azure Stack. |
 

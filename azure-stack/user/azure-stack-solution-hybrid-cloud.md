@@ -15,12 +15,12 @@ ms.date: 01/25/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 201af19756ef3958e943549482610ee32e208f01
-ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
+ms.openlocfilehash: 4bf1334f2b4e83223bb2eb1dfbb187dc860ed360
+ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603068"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71342960"
 ---
 # <a name="deploy-a-hybrid-cloud-solution-with-azure-and-azure-stack"></a>Развертывание гибридного облачного решения с помощью Azure и Azure Stack
 
@@ -148,7 +148,7 @@ ms.locfileid: "68603068"
 
 Служба приложений в Azure Stack должна поддерживать маршрутизацию из общедоступного сегмента Интернета, чтобы пользователи могли получить доступ к приложению. Если вы можете получить доступ к Azure Stack из Интернета, запишите общедоступный IP-адрес или URL-адрес веб-приложения Azure Stack.
 
-Если вы используете ASDK, вы можете [настроить статическое сопоставление NAT](../operator/azure-stack-create-vpn-connection-one-node.md#configure-the-nat-virtual-machine-on-each-azure-stack-development-kit-for-gateway-traversal), чтобы предоставить службу приложений за пределами виртуального окружения.
+Если вы используете ASDK, вы можете [настроить статическое сопоставление NAT](../operator/azure-stack-create-vpn-connection-one-node.md#configure-the-nat-vm-on-each-asdk-for-gateway-traversal), чтобы предоставить службу приложений за пределами виртуального окружения.
 
 ### <a name="connect-a-web-app-in-azure-to-a-hybrid-network"></a>Подключение веб-приложения в среде Azure к гибридной сети
 

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 05/31/2019
-ms.openlocfilehash: c3f25f38429b58d8d72037ff4ed9758d9993a2c5
-ms.sourcegitcommit: 07cc716d97bf484c7260eb165ae205ae25e09589
+ms.openlocfilehash: 575887ddebf80b39cc0c848f4a6e6cc00abdc9d4
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453605"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71829487"
 ---
 # <a name="azure-stack-hci-overview"></a>Общие сведения об Azure Stack HCI
 
@@ -114,7 +114,7 @@ Azure Stack HCI является частью семейства Azure и Azure 
 
 Посетите [веб-сайт Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci), на котором представлено свыше 70 решений Azure Stack HCI, предлагаемых сейчас такими партнерами Майкрософт: ASUS, Axellio, bluechip, DataON, Dell EMC, Fujitsu, HPE, Hitachi, Huawei, Lenovo, NEC, primeLine Solutions, QCT, SecureGUARD и Supermicro.
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>Часто задаваемые вопросы
 
 ### <a name="what-do-azure-stack-and-azure-stack-hci-solutions-have-in-common"></a>Что общего у решений Azure Stack и Azure Stack HCI?
 

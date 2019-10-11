@@ -15,12 +15,12 @@ ms.date: 08/09/2019
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: 878e4712cf805fec188645e92784beaf6a19d591
-ms.sourcegitcommit: d967cf8cae320fa09f1e97eeb888e3db5b6e7972
+ms.openlocfilehash: c93b4535189830ee8e84acb882f85a9a51d5f443
+ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71279120"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71342725"
 ---
 # <a name="azure-stack-marketplace-changes"></a>Изменения в Azure Stack Marketplace
 
@@ -29,6 +29,26 @@ ms.locfileid: "71279120"
 Статья [Элементы Marketplace для Azure Stack](azure-stack-marketplace-azure-items.md) всегда содержит самый актуальный список доступных элементов Azure Stack Marketplace.
 
 ## <a name="new-marketplace-items"></a>Новые элементы Marketplace
+
+- 27.06.2019   SIOS DataKeeper Cluster Edition
+
+- 27.06.2019   Veeam Backup & Replication
+
+- 27.06.2019 Windows Server 2019 Datacenter Server Core с контейнерами и оплатой по мере использования
+
+- 27.06.2019 Windows Server 2019 Datacenter Server Core с контейнерами и использованием собственной лицензии
+
+- 27.06.2019   Windows Server 2019 Datacenter с оплатой по мере использования
+
+- 27.06.2019   Windows Server 2019 Datacenter с использованием собственной лицензии
+
+- 27.06.2019 Windows Server 2019 Datacenter Server Core с оплатой по мере использования
+
+- 27.06.2019 Windows Server 2019 Datacenter Server Core с использованием собственной лицензии
+
+- 27.06.2019   Windows Server 2019 Datacenter с контейнерами и оплатой по мере использования
+
+- 27.06.2019   Windows Server 2019 Datacenter с контейнерами и использованием собственной лицензии
 
 - 05.08.2019: Bitnami Drupal
 
@@ -59,15 +79,26 @@ ms.locfileid: "71279120"
 
 ## <a name="deprecated-marketplace-items"></a>Нерекомендуемые элементы Marketplace
 
-- Codiad
-- X2Engine Sales CRM
-- SugarCRM
-- Node.js High-Availability Cluster
+- Bitnami Codiad
+- Bitnami X2Engine Sales CRM
+- Bitnami SugarCRM
+- Bitnami Node.js, кластер высокого уровня доступности
 - A10 vThunder. (контроллер доставки приложений уровней 4–7, глобальная балансировка нагрузки сервера (GSLB), аналитика SSL)
 - Расширение JsonADDomain
 
 ## <a name="updated-marketplace-items"></a>Обновленные элементы Marketplace
 
+- 11.07.2019:   Облачный диспетчер ключей Thales CipherTrust, версия 1.0.7
+- 16.07.2019:   Windows Server 2016 Datacenter Server Core с использованием собственной лицензии, версия 2016.127.20190522
+- 16.07.2019:   Windows Server 2016 Datacenter Server Core с оплатой по мере использования, версия 2016.127.20190522
+- 16.07.2019:   Windows Server 2016 Datacenter Server Core с контейнерами и использованием собственной лицензии, версия 2016.127.20190522
+- 16.07.2019:   Windows Server 2016 Datacenter Server Core с контейнерами и оплатой по мере использования, версия 2016.127.20190522
+- 16.07.2019:   Windows Server 2016 Datacenter Server Core с использованием собственной лицензии, версия 2016.127.20190522
+- 16.07.2019:   Windows Server 2016 Datacenter Server Core с оплатой по мере использования, версия 2016.127.20190522
+- 16.07.2019:   Windows Server 2008 R2 с использованием собственной лицензии, версия 2.127.20190522
+- 16.07.2019:   Windows Server 2008 R2 с оплатой по мере использования, версия 2.127.20190522
+- 16.07.2019:   Windows Server 2012 R2 Datacenter с использованием собственной лицензии, версия 4.127.20190522
+- 16.07.2019:   Windows Server 2012 R2 Datacenter с оплатой по мере использования, версия 4.127.20190522
 - 30.07.2019: SQL Server 2016 с пакетом обновления 1 (SP1) (выпуски "Экспресс", "Разработка", "Стандартный" и "Корпоративный") — версия 13.2.20190410
 - 30.07.2019: SQL Server 2016 с пакетом обновления 2 (SP2) (выпуски "Экспресс", "Разработка", "Стандартный" и "Корпоративный") — версия 13.2.20190410.
 - 30.07.2019: SQL Server 2017 (выпуски "Экспресс", "Разработка", "Стандартный" и "Корпоративный") — версия 14.0.20190410

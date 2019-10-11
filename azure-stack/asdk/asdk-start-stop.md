@@ -16,12 +16,12 @@ ms.date: 07/18/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 07/18/2019
-ms.openlocfilehash: 5232b1087414d6e7149157063a253b18a6b6e13a
-ms.sourcegitcommit: 7968f9f0946138867323793be9966ee2ef99dcf4
+ms.openlocfilehash: b33ae5ce88cf05fb73e2519f7f697fca90f7f8bc
+ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025816"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71824756"
 ---
 # <a name="start-and-stop-the-asdk"></a>Запуск и остановка ASDK
 Не рекомендуется просто перезапускать главный компьютер ASDK. Следуйте инструкциям по корректному завершению работы и перезапуску служб ASDK, приведенным в этой статье.
@@ -66,7 +66,7 @@ ms.locfileid: "70025816"
 Чтобы узнать больше о рекомендуемых процедурах для правильного завершения работы и перезапуска служб Azure Stack, ознакомьтесь со статьей [Запуск и остановка Azure Stack](../operator/azure-stack-start-and-stop.md).
 
 ## <a name="troubleshoot-startup-and-shutdown"></a>Устранение неполадок при запуске и завершении работы 
-Выполните эти шаги, если службы Azure Stack не запускаются в течение двух часов после включения главного компьютера ASDK:
+Выполните эти шаги, если службы Azure Stack не запустились в течение двух часов после включения главного компьютера ASDK:
 
 1. Войдите на главный компьютер ASDK с именем AzureStack\AzureStackAdmin.
 2. Откройте PowerShell с правами администратора (не путайте с интегрированной средой сценариев Windows PowerShell).
@@ -90,4 +90,4 @@ ms.locfileid: "70025816"
 Если запуск командлета **Start-AzureStack** завершается сбоем, посетите [форум технической поддержки Azure Stack](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurestack), чтобы получить помощь по устранению неполадок с ASDK. 
 
 ## <a name="next-steps"></a>Дополнительная информация 
-Дополнительные сведения о средстве диагностики Azure Stack и регистрации проблем см. в статье [Средства диагностики Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep).
+Дополнительные сведения о средстве диагностики Azure Stack и регистрации проблем см. в статье [Средства диагностики Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs).

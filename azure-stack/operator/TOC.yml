@@ -123,6 +123,8 @@
       items:
         - name: Основы администрирования
           href: azure-stack-manage-basics.md
+        - name: Контрольный список операций
+          href: azure-stack-operations-checklist.md
         - name: Очистка пользовательских данных с портала
           href: azure-stack-portal-clear.md
         - name: Настройка коллекции телеметрии
@@ -261,6 +263,8 @@
           href: azure-stack-create-vpn-connection-one-node.md
     - name: Предложение служб
       href: azure-stack-offer-services-overview.md
+    - name: Предложение сетевых решений
+      href: azure-stack-network-solutions-enable.md
     - name: Предложение SQL как PaaS
       href: azure-stack-sql-resource-provider.md
       items:

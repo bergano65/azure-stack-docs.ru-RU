@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/10/2019
+ms.date: 10/01/2019
 ms.author: mabrigg
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 64e1bd7934b1b3b8c0bc935a920a2e4e188c4bd9
-ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
+ms.openlocfilehash: ae603e1914b5a83f190eeafe7fa7d7e94e43a1aa
+ms.sourcegitcommit: bbf3edbfc07603d2c23de44240933c07976ea550
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71101201"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71714707"
 ---
 # <a name="manage-updates-in-azure-stack-overview"></a>Общие сведения об управлении обновлениями в Azure Stack
 
@@ -65,7 +65,7 @@ ms.locfileid: "71101201"
 
 - **Обновления программного обеспечения и исправления от корпорации Майкрософт** 
 
-    Оповещения об обновлениях программного обеспечения и исправлениях от корпорации Майкрософт будут отображаться в колонке "Обновления" для экземпляров Azure Stack, подключенных к Интернету.
+    Оповещения об обновлениях программного обеспечения и исправлениях от корпорации Майкрософт будут отображаться в колонке "Обновления" для экземпляров Azure Stack, подключенных к Интернету. Если колонка "Обновление" не отображается, перезапустите виртуальную машину контроллера для управления инфраструктурой.
 
     Если ваш экземпляр не подключен к Интернету и вы хотите получать уведомления о каждом выпуске исправления, подпишитесь на [RSS](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/rss)-канал или веб-канал [Atom](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/atom).
 
