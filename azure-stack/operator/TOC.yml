@@ -42,13 +42,15 @@
     - name: Интеграция центра обработки данных
       href: azure-stack-customer-journey.md
       items:
-        - name: Общие рекомендации по интеграции Azure Stack
+        - name: Пошаговое руководство
+          href: azure-stack-customer-journey.md
+        - name: Общие рекомендации
           href: azure-stack-datacenter-integration.md
-        - name: Модели подключения для развертывания Azure Stack
+        - name: Модели подключения
           href: azure-stack-connection-models.md
-        - name: Рекомендации по развертыванию с подключением
+        - name: Развертывание с подключением
           href: azure-stack-connected-deployment.md
-        - name: Рекомендации по развертыванию без подключения
+        - name: Развертывание без подключения
           href: azure-stack-disconnected-deployment.md
         - name: Интеграция сетей Центра обработки данных
           items:
@@ -119,8 +121,6 @@
       items:
         - name: Основы администрирования
           href: azure-stack-manage-basics.md
-        - name: Контрольный список операций
-          href: azure-stack-operations-checklist.md
         - name: Очистка пользовательских данных с портала
           href: azure-stack-portal-clear.md
         - name: Настройка коллекции телеметрии
