@@ -12,20 +12,20 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/04/2019
+ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 11/19/2018
-ms.openlocfilehash: ac6e04fbb884b3689cec7e5f435f9265f7e2108e
-ms.sourcegitcommit: 593d40bccf1b2957a763017a8a2d7043f8d8315c
+ms.openlocfilehash: 6e8adbc0d84c7816a081e751473764aab79cfcf2
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67152420"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961912"
 ---
 # <a name="remediate-common-issues-for-azure-stack-pki-certificates"></a>Устранение распространенных проблем с сертификатами PKI Azure Stack
 
-Сведения в этой статье помогут вам понять и устранить распространенные проблемы с сертификатами PKI Azure Stack. Вы можете выявлять проблемы, [проверяя PKI-сертификаты Azure Stack](azure-stack-validate-pki-certs.md) с помощью средства проверки готовности Azure Stack. Это средство проверяет, соответствуют ли сертификаты требованиям PKI к развертыванию и смене секретов Azure Stack, и записывает результаты в файл [report.json](azure-stack-validation-report.md).  
+Сведения в этой статье помогут вам определить и устранить распространенные проблемы с сертификатами PKI Azure Stack. Вы можете выявлять проблемы, [проверяя PKI-сертификаты Azure Stack](azure-stack-validate-pki-certs.md) с помощью средства проверки готовности Azure Stack. Это средство проверяет, соответствуют ли сертификаты требованиям PKI к развертыванию и смене секретов Azure Stack, и записывает результаты в файл [report.json](azure-stack-validation-report.md).  
 
 ## <a name="pfx-encryption"></a>Шифрование PFX-файлов
 
@@ -93,14 +93,14 @@ ms.locfileid: "67152420"
 
 ## <a name="fix-common-packaging-issues"></a>Устранение распространенных неполадок с упаковкой
 
-Средство **AzsReadinessChecker** содержит вспомогательный командлет `Repair-AzsPfxCertificate`, который может импортировать и экспортировать PFX-файл для решения типичных проблем с созданием пакетов, включая следующие:
+**AzsReadinessChecker** содержит вспомогательный командлет **Repair-AzsPfxCertificate**, который может импортировать и экспортировать PFX-файл для исправления распространенных проблем с созданием пакетов, включая следующие:
 
 - **Алгоритм шифрования PFX-файлов** не соответствует TripleDES-SHA1.
 - Отсутствие атрибута локального компьютера в **закрытом ключе**.
 - Незавершенная или неправильная **цепочка сертификатов**. Локальный компьютер должен содержать цепочки сертификатов, если их нет в пакете PFX.
 - **Другие сертификаты**.
 
-`Repair-AzsPfxCertificate` не подходит для случаев, когда нужно создать новый запрос CSR и повторно выпустить сертификат.
+**Repair-AzsPfxCertificate** не подходит для случаев, когда нужно создать новый запрос CSR и повторно выпустить сертификат.
 
 ### <a name="prerequisites"></a>Предварительные требования
 
@@ -130,7 +130,7 @@ ms.locfileid: "67152420"
    $password = Read-Host -Prompt PFXpassword -AsSecureString
    ```
 
-3. В командной строке PowerShell выполните следующую команду, чтобы экспортировать новый PFX-файл.
+3. В командной строке PowerShell выполните следующую команду, чтобы экспортировать новый PFX-файл:
 
    - Для `-PfxPath` укажите путь к PFX-файлу, с которым вы работаете. В следующем примере используется путь `.\certificates\ssl.pfx`.
    - Для `-ExportPFXPath` укажите расположение и имя PFX-файла для экспорта. В следующем примере используется путь `.\certificates\ssl_new.pfx`.

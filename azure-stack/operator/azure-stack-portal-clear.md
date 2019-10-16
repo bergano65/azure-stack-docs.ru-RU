@@ -17,12 +17,12 @@ ms.author: sethm
 ms.reviewer: troettinger
 ms.lastreviewed: 09/10/2019
 monikerRange: azs-1802
-ms.openlocfilehash: a341ff38b0a2540fbf8e1070d9c98bdd9ec4df5f
-ms.sourcegitcommit: 305536bfd49319455ca3ca270fe3644b1796bad1
+ms.openlocfilehash: 2dd88656491a474e4082ff4e8321af836776b1f0
+ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70878783"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72019118"
 ---
 # <a name="clear-portal-user-data-from-azure-stack"></a>Удаление данных пользователя портала из Azure Stack
 
@@ -86,7 +86,7 @@ ms.locfileid: "70878783"
 
 ## <a name="clear-portal-user-data-in-guest-directory"></a>Удаление данных пользователя портала в гостевом каталоге
 
-В этом сценарии оператор Azure Stack не имеет доступа к гостевому каталогу, с которым связан пользователь. Это распространенный сценарий для поставщиков облачных служб.
+В этом сценарии оператор Azure Stack не имеет доступа к гостевому каталогу, с которым связан пользователь. Это распространенный сценарий для поставщиков облачных решений (CSP).
 
 Чтобы оператор Azure Stack мог удалить данные пользователя портала, ему необходим по крайней мере идентификатор объекта пользователя.
 

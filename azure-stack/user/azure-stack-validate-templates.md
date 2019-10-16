@@ -12,28 +12,29 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/11/2019
+ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 30513e279b406561fd2bcf88f9119807b371e4a1
-ms.sourcegitcommit: 72d45bb935db0db172d4d7c37d8e48e79e25af64
+ms.openlocfilehash: a5e86f0f0719e30ef693c736ac4c70f05830c3bb
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68376785"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961663"
 ---
 # <a name="use-the-template-validation-tool-in-azure-stack"></a>Использование средства проверки шаблонов в Azure Stack
+
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-С помощью средства проверки шаблонов вы можете проверить, готовы ли [шаблоны](azure-stack-arm-templates.md) Azure Resource Manager к развертыванию в Azure Stack. Средство проверки шаблонов предоставляется в составе инструментов Azure Stack. Чтобы скачать средства Azure Stack с GitHub, выполните действия, описанные в [здесь](../operator/azure-stack-powershell-download.md).
+С помощью средства проверки шаблонов вы можете проверить, готовы ли [шаблоны](azure-stack-arm-templates.md) Azure Resource Manager к развертыванию в Azure Stack. Средство проверки шаблона доступно в составе средств Azure Stack в репозитории GitHub. Чтобы скачать средства Azure Stack с GitHub, выполните действия, описанные в [здесь](../operator/azure-stack-powershell-download.md).
 
 ## <a name="overview"></a>Обзор
 
 Чтобы проверить шаблон, сначала нужно создать файл возможностей облака, а затем запустить средство проверки. Можно использовать приведенные ниже модули PowerShell из набора инструментов Azure Stack.
 
-- В папке **CloudCapabilities**: `AzureRM.CloudCapabilities.psm1` создает JSON-файл со списком возможностей облака, где перечисляются доступные в облаке Azure Stack службы и версии.
-- В папке **TemplateValidator**: `AzureRM.TemplateValidator.psm1` использует JSON-файл облачных возможностей для проверки шаблонов на возможность развертывания в Azure Stack.
+- В папке **CloudCapabilities**: **AzureRM.CloudCapabilities.psm1** создает JSON-файл со списком возможностей облака, где перечисляются доступные в облаке Azure Stack службы и версии.
+- В папке **TemplateValidator**: **AzureRM.TemplateValidator.psm1** использует JSON-файл облачных компонентов для проверки шаблонов на возможность развертывания в Azure Stack.
 
 ## <a name="build-the-cloud-capabilities-file"></a>Создание файла возможностей облака
 
@@ -49,7 +50,7 @@ ms.locfileid: "68376785"
     Import-Module .\CloudCapabilities\AzureRM.CloudCapabilities.psm1
     ```
 
-3. С помощью командлета `Get-CloudCapabilities` получите версии служб и создайте JSON-файл облачных возможностей. Если вы не укажете параметр `-OutputPath`, файл AzureCloudCapabilities.Json будет создан в текущем каталоге. Укажите фактическое расположение Azure.
+3. С помощью командлета **Get-CloudCapabilities** вы можете получить версии служб и создать JSON-файл облачных компонентов. Если вы не укажете параметр `-OutputPath`, файл **AzureCloudCapabilities.json** будет создан в текущем каталоге. Укажите фактическое расположение Azure.
 
     ```powershell
     Get-AzureRMCloudCapability -Location <your location> -Verbose
@@ -57,7 +58,7 @@ ms.locfileid: "68376785"
 
 ## <a name="validate-templates"></a>Проверка шаблонов
 
-Этот процесс позволяет проверить шаблоны с помощью модуля PowerShell **AzureRM.TemplateValidator**. Вы можете использовать собственные шаблоны или взять для примера [шаблоны быстрого запуска Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates).
+Этот процесс позволяет проверить шаблоны с помощью модуля PowerShell **AzureRM.TemplateValidator**. Вы можете использовать собственные шаблоны или [шаблоны быстрого запуска Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates).
 
 1. Импортируйте модуль **AzureRM.TemplateValidator.psm1** PowerShell.
 
@@ -94,7 +95,7 @@ ms.locfileid: "68376785"
 
 ### <a name="examples"></a>Примеры
 
-Этот пример проверяет все [шаблоны быстрого запуска Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates), скачанные в локальное хранилище. Пример также проверяет размеры и расширения виртуальной машины на соответствие возможностям Пакета средств разработки Azure Stack.
+Этот пример проверяет все [шаблоны быстрого запуска Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates), скачанные в локальное хранилище. Пример также проверяет размеры и расширения виртуальной машины на соответствие возможностям ASDK.
 
 ```powershell
 test-AzureRMTemplate -TemplatePath C:\AzureStack-Quickstart-Templates `

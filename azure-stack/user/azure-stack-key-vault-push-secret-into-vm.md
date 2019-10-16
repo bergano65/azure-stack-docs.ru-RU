@@ -12,21 +12,21 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/11/2019
+ms.date: 10/03/2019
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 9403931d91756e744dcdb6c34adb26e8281f6d28
-ms.sourcegitcommit: eccbd0098ef652919f357ef6dba62b68abde1090
+ms.openlocfilehash: 8741d63dbbcefde950fc10c0917d87bc4e9718f7
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67492381"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961522"
 ---
 # <a name="deploy-a-vm-with-a-securely-stored-certificate-on-azure-stack"></a>Развертывание VM с сертификатом, безопасно хранящимся в Azure Stack 
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-В этой статье описывается, как развернуть виртуальную машину (VM) Azure Stack с установленным сертификатом хранилища ключей.
+В этой статье описано, как развернуть виртуальную машину (VM) Azure Stack с установленным сертификатом Key Vault.
 
 ## <a name="overview"></a>Обзор
 
@@ -119,7 +119,7 @@ Set-AzureKeyVaultSecret `
    -SecretValue $secret
 ```
 
-В результате выполнения этого скрипта был выведен URI секрета. Обратите внимание на этот универсальный код ресурса (URI) поскольку на него необходимо указать ссылку при [отправке сертификата в шаблон Resource Manager для Windows](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/201-vm-windows-pushcertificate). Скачайте папку шаблона [vm-push-certificate-windows template](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/201-vm-windows-pushcertificate) на компьютер разработчика. В этой папке содержатся файлы **azuredeploy.json** и **azuredeploy.parameters.json**, которые требуются в следующих шагах.
+В результате выполнения этого скрипта был выведен URI секрета. Запишите этот универсальный код ресурса (URI) так как на него необходимо указать ссылку при [отправке сертификата в шаблон Resource Manager для Windows](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/201-vm-windows-pushcertificate). Скачайте папку шаблона [vm-push-certificate-windows template](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/201-vm-windows-pushcertificate) на компьютер разработчика. В этой папке содержатся файлы **azuredeploy.json** и **azuredeploy.parameters.json**, которые требуются в следующих шагах.
 
 Измените файл **azuredeploy.parameters.json** в соответствии со значениями своей среды. К важным параметрам относятся имя хранилища, группа ресурсов хранилища и URI секрета (сгенерированный предыдущим скриптом). Ниже приведен пример файла параметров.
 
@@ -165,7 +165,7 @@ Set-AzureKeyVaultSecret `
 Разверните шаблон с помощью следующего скрипта PowerShell:
 
 ```powershell
-# Deploy a Resource Manager template to create a VM and push the secret onto it
+# Deploy a Resource Manager template to create a VM and push the secret to it
 New-AzureRmResourceGroupDeployment `
   -Name KVDeployment `
   -ResourceGroupName $resourceGroup `

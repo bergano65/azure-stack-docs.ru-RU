@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/22/2019
+ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: d7fa69b632ec6d205eff0ed0c388c1f9ec9b9c41
-ms.sourcegitcommit: c196463492732218d2474d3a964f88e995272c80
+ms.openlocfilehash: 4d9331f5167a0ce9d305a76225987d8b1d3f3dcc
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094405"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961563"
 ---
 # <a name="connect-azure-stack-to-azure-using-azure-expressroute"></a>Подключение Azure Stack к Azure с помощью Azure ExpressRoute
 
@@ -51,7 +51,7 @@ Azure ExpressRoute позволяет переносить локальные с
 * Подписка Azure, используемая при создании канала ExpressRoute и виртуальных сетей в Azure.
 * Маршрутизатор, который:
   * Поддерживает VPN-подключения типа "сеть — сеть" между интерфейсом локальной сети и мультитенантным шлюзом Azure Stack.
-  * поддерживает создание нескольких компонентов VRF (Virtual Routing and Forwarding), если в вашем развертывании Azure Stack больше одного клиента.
+  * Поддерживает создание нескольких компонентов VRF (Virtual Routing and Forwarding), если в вашем развертывании Azure Stack больше одного клиента.
 * Маршрутизатор с:
   * портом WAN, подключенным к каналу ExpressRoute;
   * Портом локальной сети, подключенным к мультитенантному шлюзу Azure Stack.
@@ -62,7 +62,7 @@ Azure ExpressRoute позволяет переносить локальные с
 
 ![Сеть ExpressRoute](media/azure-stack-connect-expressroute/Conceptual.png)
 
-На следующем рисунке показано подключение нескольких клиентов из инфраструктуры Azure Stack через маршрутизатор ExpressRoute к Azure в Microsoft Edge.
+На следующем рисунке показано подключение нескольких клиентов из инфраструктуры Azure Stack через маршрутизатор ExpressRoute к Azure в Microsoft Edge:
 
 ![Мультитенантные подключения с использованием ExpressRoute](media/azure-stack-connect-expressroute/Architecture.png)
 
@@ -153,7 +153,7 @@ Azure ExpressRoute позволяет переносить локальные с
    * 10.100.0.0/16 — периферийная виртуальная сеть в Azure.
 
    > [!IMPORTANT]
-   > В этом примере предполагается, что вы используете статические маршруты подключения VPN типа "сеть — сеть" между шлюзом Azure Stack и маршрутизатором ExpressRoute.
+   > В этом примере предполагается, что вы используете статические маршруты подключения VPN типа "сеть — сеть" между шлюзом Azure Stack и маршрутизатором ExpressRoute.
 
 1. Проверьте, выбраны ли правильные значения в полях **Подписка**, **Группа ресурсов** и **Расположение**. Щелкните **Создать**.
 
@@ -570,7 +570,7 @@ route-map VNET-ONLY permit 10
 * Войдите на одну из виртуальных машин в Azure Stack и проверьте связь с виртуальной машиной, созданной в виртуальной сети Azure.
 
 >[!NOTE]
->Чтобы убедиться, что вы передаете трафик через подключение типа "сеть — сеть" и ExpressRoute, с обеих сторон следует проверять связь с выделенным IP-адресом виртуальной машины, а не с виртуальным IP-адресом.
+>Чтобы убедиться, что трафик передается через подключение типа "сеть — сеть" и ExpressRoute, с обеих сторон нужно проверить связь с выделенным IP-адресом виртуальной машины, а не виртуальным IP-адресом.
 
 ### <a name="allow-icmp-in-through-the-firewall"></a>Разрешение ICMP-трафика через брандмауэр
 

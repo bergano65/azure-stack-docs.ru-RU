@@ -1,6 +1,6 @@
 ---
-title: Создание сертификатов инфраструктуры открытых ключей Azure Stack для развертывания интегрированных систем Azure Stack | Документация Майкрософт
-description: В этой статье описано, как развернуть сертификаты PKI Azure Stack для интегрированных систем Azure Stack.
+title: Создание запросов на подписывание сертификатов для Azure Stack | Документация Майкрософт
+description: Узнайте, как создавать запросы на подписывание сертификатов для сертификатов PKI Azure Stack в интегрированных системах Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -14,25 +14,25 @@ ms.date: 09/10/2019
 ms.author: justinha
 ms.reviewer: ppacent
 ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: c9f14e643f886fab0fae148c5af8643890866fd6
-ms.sourcegitcommit: 38f21e0bcf7b593242ad615c9d8ef8a1ac19c734
+ms.openlocfilehash: 365f727f7e07c697dc2fd3cfe2a5c1bea5b68409
+ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70902685"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72019261"
 ---
-# <a name="azure-stack-certificates-signing-request-generation"></a>Создание запроса на подпись сертификата Azure Stack
+# <a name="generate-certificate-signing-requests-for-azure-stack"></a>Создание запросов на подписывание сертификатов для Azure Stack
 
 Вы можете использовать средство проверки готовности Azure Stack для создания запросов на подпись сертификата (CSR), подходящих для развертывания Azure Stack. Сертификаты необходимо запросить, создать и проверить, а также выделить достаточно времени на их тестирование перед развертыванием. Средство можно получить из [коллекции PowerShell](https://aka.ms/AzsReadinessChecker).
 
 Вы можете использовать средство проверки готовности Azure Stack (AzsReadinessChecker) для запроса следующих сертификатов.
 
-- **Стандартные запросы на сертификаты** согласно [Создание запроса на подпись сертификата Azure Stack](azure-stack-get-pki-certs.md).
+- **Стандартные запросы на сертификаты** согласно инструкциям по [созданию запроса на подпись сертификата](azure-stack-get-pki-certs.md#generate-certificate-signing-requests).
 - **Платформа как услуга (PaaS).** Можно запросить имена PaaS для сертификатов, как описано в разделе [Необязательные сертификаты PaaS](azure-stack-pki-certs.md#optional-paas-certificates).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем создать запросы на подпись сертификатов PKI для развертывания Azure Stack, необходимо убедиться, что в системе присутствуют приведенные ниже компоненты и установлена нужная ОС.
+Прежде чем создать запросы на подпись сертификатов PKI для развертывания Azure Stack, необходимо убедиться, что система отвечает следующим требованиям:
 
 - Инструмент проверки готовности Microsoft Azure Stack
 - Атрибуты сертификата:
@@ -44,7 +44,7 @@ ms.locfileid: "70902685"
   > [!NOTE]  
   > После получения сертификатов из центра сертификации действия, описанные в разделе [Подготовка сертификатов PKI Azure Stack](azure-stack-prepare-pki-certs.md), необходимо будет выполнить в той же системе.
 
-## <a name="generate-certificate-signing-requests"></a>Создание запроса на подпись сертификата
+## <a name="generate-certificate-signing-requests"></a>Создание запросов на подпись сертификата
 
 Для подготовки и проверки сертификатов PKI Azure Stack выполните следующие действия:
 
@@ -61,7 +61,7 @@ ms.locfileid: "70902685"
     ```
 
     > [!note]  
-    > Если указано общее имя (CN), оно будет использоваться в качестве первого DNS-имени запроса сертификата.
+    > Если указано общее имя (CN), оно будет использоваться в качестве первого DNS-имени запроса на сертификат.
 
 3. Объявите имеющийся выходной каталог. Например:
 
@@ -69,15 +69,15 @@ ms.locfileid: "70902685"
     $outputDirectory = "$ENV:USERPROFILE\Documents\AzureStackCSR"
     ```
 
-4. Объявление системы идентификаторов
+4. Объявление системы идентификаторов.
 
-    Azure Active Directory
+    Azure Active Directory (Azure AD).
 
     ```powershell
     $IdentitySystem = "AAD"
     ```
 
-    службы федерации Active Directory;
+    Служба федерации Active Directory (AD FS).
 
     ```powershell
     $IdentitySystem = "ADFS"
@@ -99,7 +99,7 @@ ms.locfileid: "70902685"
     New-AzsCertificateSigningRequest -RegionName $regionName -FQDN $externalFQDN -subject $subjectHash -OutputRequestPath $OutputDirectory -IdentitySystem $IdentitySystem
     ```
 
-    Для включения служб PaaS укажите параметр ```-IncludePaaS```
+    Для включения служб PaaS укажите параметр ```-IncludePaaS```.
 
 7. Также в средах разработки и тестирования для создания одного запроса на сертификат с несколькими альтернативными именами субъекта можно добавить параметр и значение **-RequestType SingleCSR** (**не** рекомендуется для рабочих сред):
 
@@ -124,7 +124,7 @@ ms.locfileid: "70902685"
     New-AzsCertificateSigningRequest Completed
     ```
 
-9. Отправьте созданный **REQ-файл** в центр сертификации (внутренний или общедоступный).  В выходном каталоге **New-AzsCertificateSigningRequest** содержится запрос на подпись сертификатов, который необходимо отправить в центр сертификации.  Каталог также содержит для справки дочерний каталог, содержащий INF-файлы, которые используются во время создания запроса сертификата. Убедитесь, что сертификаты в центре сертификации создаются с помощью запроса, который соответствует требованиям из статьи [Требования к сертификатам инфраструктуры открытых ключей Azure Stack](azure-stack-pki-certs.md).
+9. Отправьте созданный **REQ-файл** в центр сертификации (внутренний или общедоступный). В выходном каталоге **New-AzsCertificateSigningRequest** содержится запрос на подпись сертификатов, который необходимо отправить в центр сертификации. Каталог также содержит для справки дочерний каталог, содержащий INF-файлы, которые используются во время создания запроса сертификата. Убедитесь, что сертификаты в центре сертификации создаются с помощью запроса, который соответствует требованиям из статьи [Требования к сертификатам инфраструктуры открытых ключей Azure Stack](azure-stack-pki-certs.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

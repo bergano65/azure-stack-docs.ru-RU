@@ -6,16 +6,16 @@ author: sethmanheim
 manager: femila
 ms.service: azure-stack
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 10/02/2019
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/05/2019
-ms.openlocfilehash: f5086dcae534656cea4ef1addacae3f5acdcb2d6
-ms.sourcegitcommit: be5382f715a9c1c18c660b630d8fcd823f13aae3
+ms.openlocfilehash: de96b74351fa3becd0b066da4430e42cb2a9cea7
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66197383"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961677"
 ---
 # <a name="introduction-to-azure-stack-vms"></a>Общие сведения о виртуальных машинах Azure Stack
 
@@ -23,7 +23,7 @@ ms.locfileid: "66197383"
 
 Azure Stack предлагает виртуальные машины как один из видов масштабируемых вычислительных ресурсов по требованию. Когда требуется более строгий контроль за вычислительной средой, выбирают виртуальную машину. Эта статья содержит сведения о создании первой виртуальной машины.
 
-Виртуальная машина Azure Stack предоставляет гибкие возможности виртуализации. При этом управлять кластерами или отдельными машинами не нужно. Но вам по-прежнему необходимо обслуживать виртуальную машину, выполняя разные задачи, такие как настройка, а также установка исправлений и программного обеспечения, работающего на виртуальной машине.
+Виртуальная машина Azure Stack предоставляет гибкие возможности виртуализации. При этом управлять кластерами или отдельными машинами не нужно. Но вам по-прежнему необходимо обслуживать виртуальную машину, выполняя разные задачи, такие как настройка и обновление, а также установка исправлений и программного обеспечения, работающего на виртуальной машине.
 
 Виртуальные машины Azure Stack можно использовать несколькими способами. Например:
 
@@ -31,7 +31,7 @@ Azure Stack предлагает виртуальные машины как од
 
 - **Приложения в облаке**. Так как уровень спроса на приложение может меняться, с экономической точки зрения разумно запускать его на виртуальной машине в Azure Stack. Вы платите за дополнительные виртуальные машины, если они вам нужны, и отключаете их, если они не нужны.
 
-- **Расширенный центр обработки данных**. Виртуальные машины в виртуальной сети Azure Stack можно подключить к корпоративной сети или к Azure.
+- **Расширенный центр обработки данных**. Виртуальные машины в виртуальной сети Azure Stack можно подключить к корпоративной сети или Azure.
 
 При необходимости вы можете изменить масштаб виртуальных машин, используемых приложением.
 
@@ -70,7 +70,7 @@ Azure Stack предлагает виртуальные машины как од
 |---------|---------|
 |Портал Azure Stack|При выборе используемого образа значения задаются автоматически.|
 |PowerShell для Azure Stack|`Get-AzureRMVMImagePublisher -Location "location"`<br>`Get-AzureRMVMImageOffer -Location "location" -Publisher "publisherName"`<br>`Get-AzureRMVMImageSku -Location "location" -Publisher "publisherName" -Offer "offerName"`|
-|Интерфейсы REST API     |[Получение списка издателей образов](/rest/api/compute/platformimages/platformimages-list-publishers)<br>[Получение списка предложений для образа](/rest/api/compute/platformimages/platformimages-list-publisher-offers)<br>[Получение списка SKU для образа](/rest/api/compute/platformimages/platformimages-list-publisher-offer-skus)|
+|Интерфейсы REST API     |[Получение списка издателей образов](/rest/api/compute/platformimages/platformimages-list-publishers)<br>[Получение списка предложений для образа](/rest/api/compute/platformimages/platformimages-list-publisher-offers)<br>[Получение списка SKU для образа](/rest/api/compute/platformimages/platformimages-list-publisher-offer-skus)|
 
 Вы можете передать и использовать собственный образ. В этом случае имя издателя, предложение и SKU не используются.
 
@@ -91,7 +91,7 @@ Azure Stack предлагает виртуальные машины как од
 
 |Ресурс|Обязательно|ОПИСАНИЕ|
 |---------|---------|---------|
-|Группа ресурсов|Yes|Виртуальная машина должна входить в группу ресурсов.|
+|группа ресурсов.|Yes|Виртуальная машина должна входить в группу ресурсов.|
 |Учетная запись хранения|Нет|При использовании управляемых дисков виртуальной машине не требуется учетная запись хранения для хранения виртуальных жестких дисков. <br>При использовании неуправляемых дисков виртуальной машине требуется учетная запись хранения для хранения виртуальных жестких дисков.|
 |Виртуальная сеть|Yes|Виртуальная машина должна быть подключена к виртуальной сети.|
 |Общедоступный IP-адрес|Нет|Для удаленного доступа к виртуальной машине ей можно назначить общедоступный IP-адрес.|
@@ -107,7 +107,7 @@ Azure Stack предлагает виртуальные машины как од
 |Портал Azure Stack|Создание виртуальной машины Windows с помощью портала Azure Stack<br>[Создание виртуальной машины Linux с помощью портала Azure Stack](azure-stack-quick-linux-portal.md)|
 |Шаблоны|Шаблоны быстрого запуска Azure Stack доступны в следующем расположении:<br> [https://github.com/Azure/AzureStack-QuickStart-Templates](https://github.com/Azure/AzureStack-QuickStarvirtualt-Templates)|
 |PowerShell|[Создание виртуальной машины Windows с помощью PowerShell в Azure Stack](azure-stack-quick-create-vm-windows-powershell.md)<br>[Создание виртуальной машины Linux с помощью PowerShell в Azure Stack](azure-stack-quick-create-vm-linux-powershell.md)|
-|Интерфейс командной строки|[Создание виртуальной машины Windows с помощью CLI в Azure Stack](azure-stack-quick-create-vm-windows-cli.md)<br>[Создание виртуальной машины Linux с помощью CLI в Azure Stack](azure-stack-quick-create-vm-linux-cli.md)|
+|CLI|[Создание виртуальной машины Windows с помощью CLI в Azure Stack](azure-stack-quick-create-vm-windows-cli.md)<br>[Создание виртуальной машины Linux с помощью CLI в Azure Stack](azure-stack-quick-create-vm-linux-cli.md)|
 
 ## <a name="manage-your-vm"></a>Управление виртуальной машиной
 

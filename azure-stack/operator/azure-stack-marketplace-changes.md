@@ -15,12 +15,12 @@ ms.date: 08/09/2019
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: c93b4535189830ee8e84acb882f85a9a51d5f443
-ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
+ms.openlocfilehash: c5b0472921c25379f894be5e0b799b7abcb8a43b
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71342725"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961816"
 ---
 # <a name="azure-stack-marketplace-changes"></a>Изменения в Azure Stack Marketplace
 
@@ -84,7 +84,7 @@ ms.locfileid: "71342725"
 - Bitnami SugarCRM
 - Bitnami Node.js, кластер высокого уровня доступности
 - A10 vThunder. (контроллер доставки приложений уровней 4–7, глобальная балансировка нагрузки сервера (GSLB), аналитика SSL)
-- Расширение JsonADDomain
+
 
 ## <a name="updated-marketplace-items"></a>Обновленные элементы Marketplace
 
@@ -110,6 +110,7 @@ ms.locfileid: "71342725"
 - 12.09.2019: Service Fabric — версия 1.0.3
 - 24.09.2019: F5-Networks Big-IP Virtual Edition — версия 14.1.200000
 - 25.09.2019: Debian 8 — версия 8.0.20190806
+- 01.10.2019.  Расширение Microsoft JsonADDomain — версия 1.3.4
 
 
 ## <a name="next-steps"></a>Дополнительная информация

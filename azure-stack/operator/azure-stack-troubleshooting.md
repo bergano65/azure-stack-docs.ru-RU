@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/30/2019
+ms.date: 10/08/2019
 ms.author: justinha
 ms.reviewer: prchint
-ms.lastreviewed: 09/30/2019
-ms.openlocfilehash: 0fb46cd1b92c1b811ba1c72a91188201a7d2af96
-ms.sourcegitcommit: 79ead51be63c372b23b7fca6ffeaf95fd44de786
+ms.lastreviewed: 10/08/2019
+ms.openlocfilehash: b3540727b1868c700e43e2865848a71635e8003d
+ms.sourcegitcommit: 534117888d9b7d6d363ebe906a10dcf0acf8b685
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71687973"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72173103"
 ---
 # <a name="microsoft-azure-stack-troubleshooting"></a>Устранение неполадок, связанных с Microsoft Azure Stack
 
@@ -82,9 +82,20 @@ ms.locfileid: "71687973"
 
 Выберите тип учетной записи общих служб, который вы будете использовать для Azure Stack. Типы подписок, для которых можно зарегистрировать мультитенантное развертывание Azure Stack:
 
-* Поставщик облачных служб
+* Поставщик облачных решений
 * Подписка общих служб партнера
 
+## <a name="get-scale-unit-metrics"></a>Получение метрик единиц масштабирования
+
+Вы можете использовать PowerShell для получения сведений об использовании меток без помощи CSS. Получение сведений об использовании меток: 
+
+1. Создайте сеанс PEP
+2. Выполните test-azurestack
+3. Выйдите из сеанса PEP
+4. Выполните azurestacklog -filterbyrole seedring, вызвав invoke-command
+5. Извлеките файл seedring. zip и вы сможете получить отчет о проверке из папки ERCS, из которой вы выполнили test-azurestack
+
+См. сведения о [диагностике в Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#to-run-get-azurestacklog-on-azure-stack-integrated-systems).
 
 ## <a name="troubleshoot-deployment"></a>Устранение неполадок с развертыванием 
 ### <a name="general-deployment-failure"></a>Общий сбой развертывания

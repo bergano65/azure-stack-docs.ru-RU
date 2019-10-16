@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/25/2019
+ms.date: 10/09/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: bcb9dab55d00c48e5b77e7184fae0567ff1f620e
-ms.sourcegitcommit: 5e53eb5d43d28ab07b4f84891dd269bbfcf65622
+ms.lastreviewed: 10/09/2019
+ms.openlocfilehash: 6695af1e27a2182321a468b853a4650f42146a15
+ms.sourcegitcommit: 12034a1190d52ca2c7d3f05c8c096416120d8392
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71311287"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72037902"
 ---
 # <a name="add-the-azure-kubernetes-services-aks-engine-prerequisites-to-the-azure-stack-marketplace"></a>Необходимые компоненты для добавления обработчика Службы Azure Kubernetes (AKS) в Azure Stack Marketplace
 
@@ -69,10 +69,9 @@ ms.locfileid: "71311287"
 1. Выберите версию образа, соответствующую версии обработчика AKS. Список базовых образов AKS с соответствующими версиями обработчика AKS можно найти на этой [странице](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). 
 
     В списке выберите:
-    - **Издатель**: microsoft-aks.
+    - **Издатель**: Служба Azure Kubernetes
     - **Предложение**: aks.
-    - **Версия.** 2019.07.30 (или версия, соответствующая обработчику AKS).
-    - **Номер SKU**: AKS-Ubuntu-1604-201907.
+    - **Версия.** Дистрибутив с базовым образом AKS 16.04-LTS за сентябрь 2019 г. (2019.09.19 или версия, которая соответствует версии обработчика AKS)
 
 1. Выберите **Скачать**.
 

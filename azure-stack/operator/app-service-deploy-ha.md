@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/23/2019
+ms.date: 10/07/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 77ec512f5e2996aaec53ef77c000d0334bda456a
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: 0bf89b0f80557f99c83fb5ad6afd0c4a5dcd3849
+ms.sourcegitcommit: dfaf0126bc9975ca1643d55f06c71df9e32ea976
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70975213"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72165008"
 ---
 # <a name="deploy-app-service-in-a-highly-available-configuration"></a>Развертывание Службы приложений в конфигурации с высоким уровнем доступности
 
@@ -236,7 +236,7 @@ ms.locfileid: "70975213"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Добавьте базы данных appservice_hosting и appservice_metering в группу доступности](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), если вы предоставили поставщику ресурсов для Службы приложений экземпляр SQL AlwaysOn. Синхронизируйте базы данных, чтобы избежать недоступности службы при отработке отказа базы данных.
+[Добавьте базы данных appservice_hosting и appservice_metering в группу доступности](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), если вы предоставили поставщику ресурсов для Службы приложений экземпляр SQL AlwaysOn. Синхронизируйте базы данных, чтобы избежать недоступности службы при отработке отказа базы данных. Можно также выполнить [скрипт](https://blog.sqlauthority.com/2017/11/30/sql-server-alwayson-availability-groups-script-sync-logins-replicas/) чтобы импортировать имена для входа AppServices с исходного сервера-источника на сервер отработки отказа.
 
 [Масштабирование Службы приложений](azure-stack-app-service-add-worker-roles.md). Возможно, вам потребуется добавить дополнительные рабочие роли инфраструктуры в Службу приложений, чтобы удовлетворить ожидаемый спрос на приложения в вашей среде. По умолчанию Служба приложений в Azure Stack поддерживает бесплатные и общие рабочие уровни. Чтобы добавить другие рабочие уровни, вам потребуется больше рабочих ролей.
 

@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/27/2019
+ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 08/30/2019
-ms.openlocfilehash: 62440c61ee637a0092b1e956b08ba0a9c94d8bab
-ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
+ms.openlocfilehash: 6e7f4785603dc6a0523186ee31af5ef9b51bec46
+ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71342937"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71909524"
 ---
 # <a name="azure-stack-updates-release-notes"></a>Обновления Azure Stack: заметки о выпуске
 
@@ -243,7 +243,7 @@ Azure Stack выпускает исправления на регулярной 
 Выпуск 1907 Azure Stack должен применяться к выпуску 1906 со следующими исправлениями:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Исправление Azure Stack 1.1906.13.56](https://support.microsoft.com/help/4520375)
+- [Исправление Azure Stack 1.1906.15.60](https://support.microsoft.com/help/4524559)
 
 ### <a name="after-successfully-applying-the-1907-update"></a>После успешного применения обновления 1907
 
@@ -370,7 +370,7 @@ Azure Stack выпускает исправления на регулярной 
 После установки этого обновления установите все применимые исправления. Подробные сведения см. в статье [Политика обслуживания Azure Stack](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Исправление Azure Stack 1.1906.13.56](https://support.microsoft.com/help/4520375)
+- [Исправление Azure Stack 1.1906.15.60](https://support.microsoft.com/help/4524559)
 ::: moniker-end
 
 ::: moniker range="azs-1905"

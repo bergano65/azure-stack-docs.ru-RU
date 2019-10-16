@@ -15,12 +15,12 @@ ms.date: 08/12/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 3aeae5c1a0106a0c13c9b6bbe2eb4ba07de14dd4
-ms.sourcegitcommit: 58c28c0c4086b4d769e9d8c5a8249a76c0f09e57
+ms.openlocfilehash: 5fecdbe7bcc85ea01e1502afcfc1c67d3b830c3e
+ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959439"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72019390"
 ---
 # <a name="report-azure-stack-usage-data-to-azure"></a>Передача в Azure данных об использовании из Azure Stack
 
@@ -96,7 +96,7 @@ ms.locfileid: "68959439"
 
 ## <a name="does-usage-data-reporting-work-in-sovereign-clouds"></a>Работает ли передача данных о потреблении в независимых облаках?
 
-Для передачи данных о потреблении в Пакете средств разработки Azure Stack необходимы подписки, созданные в глобальной системе Azure. Подписки, созданные в одном из национальных облаков (Azure для государственных организаций, Azure для Германии или Azure для Китая), невозможно зарегистрировать в Azure, поэтому они не поддерживают передачу данных об использовании.
+Для передачи данных о потреблении в Пакете средств разработки Azure Stack необходимы подписки, созданные в глобальной системе Azure. Подписки, созданные в одном из национальных облаков (Azure для государственных организаций, Azure для Германии или Azure для Китая (21Vianet)), невозможно зарегистрировать в Azure, поэтому они не поддерживают передачу данных об использовании.
 
 ## <a name="why-doesnt-the-usage-reported-in-azure-stack-match-the-report-generated-from-azure-account-center"></a>Почему данные об использовании в Azure Stack не соответствуют данным, созданным в Центре управления учетной записью Azure?
 
@@ -107,4 +107,4 @@ ms.locfileid: "68959439"
 - [API использования поставщика](azure-stack-provider-resource-api.md)  
 - [API использования клиента](azure-stack-tenant-resource-usage-api.md)
 - [Часто задаваемые вопросы об использовании](azure-stack-usage-related-faq.md)
-- [Управление потреблением и оплатой для Azure Stack в роли поставщика облачных служб](azure-stack-add-manage-billing-as-a-csp.md)
+- [Управление потреблением и оплатой в роли поставщика облачных решений](azure-stack-add-manage-billing-as-a-csp.md)

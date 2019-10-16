@@ -15,12 +15,12 @@ ms.date: 09/10/2019
 ms.author: mabrigg
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 70fe7c8cdb43f55c8e013dcca27dcde870b1cc9a
-ms.sourcegitcommit: dc633e862d49412a963daee481226c1543287e5e
+ms.openlocfilehash: 4794ad098e83677d712af611fc74395e0e5f4e20
+ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70862960"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72019456"
 ---
 # <a name="azure-stack-servicing-policy"></a>Политика обслуживания Azure Stack
 
@@ -42,8 +42,8 @@ ms.locfileid: "70862960"
 
 ## <a name="get-support"></a>Получение поддержки
 
-Azure Stack использует тот же процесс поддержки, что и Azure. Клиенты уровня "Корпоративный" могут следовать процессу, описанному в разделе [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Если вы являетесь клиентом поставщика облачных служб (CSP), обратитесь к своему CSP для получения поддержки. Дополнительные сведения см. на странице [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq/).
+Azure Stack использует тот же процесс поддержки, что и Azure. Клиенты уровня "Корпоративный" могут следовать процессу, описанному в разделе [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Если вы являетесь клиентом поставщика облачных решений (CSP), обратитесь к своему CSP для получения поддержки. Дополнительные сведения см. на странице [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq/).
 
-# <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дополнительная информация
 
 [Управления обновлениями в Azure Stack](azure-stack-updates.md)

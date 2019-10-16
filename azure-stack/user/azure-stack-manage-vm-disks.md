@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 10/02/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: 8b4d48b55cfe21cf7de09119b9069ae4056d3efd
-ms.sourcegitcommit: eccbd0098ef652919f357ef6dba62b68abde1090
+ms.openlocfilehash: af110f6b4140a69e01dadcd38a32843866744abf
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67492429"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961593"
 ---
 # <a name="create-vm-disk-storage-in-azure-stack"></a>Создание хранилища дисков виртуальной машины в Azure Stack
 
@@ -50,7 +50,7 @@ ms.locfileid: "67492429"
 
 | Метод | Параметры
 |-|-|
-|Пользовательский портал|— Добавление нового диска данных на существующую виртуальную машину. Эти диски создаются с помощью Azure Stack. </br> </br>— Добавление имеющегося диска в виде VHD-файла на заранее созданную виртуальную машину. Для этого необходимо подготовить VHD-файл и передать его в Azure Stack. |
+|Пользовательский портал|— Добавление нового диска данных на существующую виртуальную машину. Эти диски создаются с помощью Azure Stack. </br> </br> — Добавление имеющегося диска в виде VHD-файла на заранее созданную виртуальную машину. Для этого необходимо подготовить VHD-файл и передать его в Azure Stack. |
 |[PowerShell](#use-powershell-to-add-multiple-unmanaged-disks-to-a-vm) | — Создайте виртуальную машину с диском ОС и в то же время добавьте на нее один или несколько дисков данных. |
 
 ## <a name="use-the-portal-to-add-disks-to-a-vm"></a>Добавление дисков на виртуальную машину с помощью портала
@@ -129,7 +129,7 @@ ms.locfileid: "67492429"
 
 ## <a name="attach-an-existing-data-disk-to-a-vm"></a>Подключение существующего диска данных к виртуальной машине
 
-1. [Подготовьте VHD-файл](https://docs.microsoft.com/azure/virtual-machines/windows/classic/createupload-vhd), который будет использоваться в качестве диска данных для виртуальной машины. Отправьте этот VHD-файл в учетную запись хранения для использования с виртуальной машиной, к которой нужно подключить этот VHD-файл.
+1. [Подготовьте VHD-файл](/azure/virtual-machines/windows/classic/createupload-vhd), который будет использоваться в качестве диска данных для виртуальной машины. Отправьте этот VHD-файл в учетную запись хранения для использования с виртуальной машиной, к которой нужно подключить этот VHD-файл.
 
     Запланируйте размещение VHD-файла в контейнере, отличном от того, в котором хранится диск ОС.
     ![Пример. Отправка VHD-файла](media/azure-stack-manage-vm-disks/upload-vhd.png)
@@ -163,7 +163,7 @@ ms.locfileid: "67492429"
 
 ## <a name="use-powershell-to-add-multiple-unmanaged-disks-to-a-vm"></a>Добавление нескольких неуправляемых дисков к виртуальной машине с помощью PowerShell
 
-Вы можете использовать PowerShell для подготовки виртуальной машины и добавления новых дисков данных или подключения уже имеющихся **VHD-файлов** в качестве дисков данных.
+Вы можете использовать PowerShell для подготовки виртуальной машины и добавления новых дисков данных или подключения уже имеющихся VHD-файлов в качестве дисков данных.
 
 Командлет **Add-AzureRmVMDataDisk** добавляет диск данных к виртуальной машине. Диск данных можно добавить к новой виртуальной машине при ее создании или к имеющейся виртуальной машине. Укажите параметр **VhdUri**, чтобы распределить диски в разные контейнеры.
 
@@ -215,10 +215,10 @@ $VirtualMachine = Add-AzureRmVMDataDisk -VM $VirtualMachine -Name 'DataDisk3' `
 Используйте следующие команды PowerShell, чтобы добавить конфигурацию диска ОС и сети в виртуальную машину, а затем запустите новую виртуальную машину:
 
 ```powershell
-#set variables
+# Set variables
 $rgName = "myResourceGroup"
 $location = "local"
-#Set OS Disk
+# Set OS Disk
 $osDiskUri = "https://contoso.blob.local.azurestack.external/vhds/osDisk.vhd"
 $osDiskName = "osDisk"
 

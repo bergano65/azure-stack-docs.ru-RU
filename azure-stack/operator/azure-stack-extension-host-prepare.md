@@ -1,24 +1,24 @@
 ---
-title: Подготовка хост-процесса для расширений для Azure Stack | Документация Майкрософт
-description: Сведения о подготовке хост-процесса для расширений с автоматическим включением с помощью будущего пакета обновления Azure Stack.
+title: Подготовка хост-процесса для расширений в Azure Stack | Документация Майкрософт
+description: Узнайте, как подготовить Azure Stack для хост-процесса для расширений, который автоматически включается с помощью пакета обновления Azure Stack более поздней версии, чем 1808.
 services: azure-stack
 keywords: ''
 author: mattbriggs
 ms.author: mabrigg
-ms.date: 06/13/2019
+ms.date: 10/02/2019
 ms.topic: article
 ms.service: azure-stack
 ms.reviewer: thoroet
 manager: femila
 ms.lastreviewed: 03/07/2019
-ms.openlocfilehash: ab508956ddcc57baa04c74710ea485c07cc20416
-ms.sourcegitcommit: b79a6ec12641d258b9f199da0a35365898ae55ff
+ms.openlocfilehash: 75070550f1863457c3a2aaf9ab5915536372d55b
+ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131155"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72019272"
 ---
-# <a name="prepare-for-extension-host-for-azure-stack"></a>Подготовка хост-процесса для расширений для Azure Stack
+# <a name="prepare-for-extension-host-in-azure-stack"></a>Подготовка хост-процесса для расширений в Azure Stack
 
 Хост-процесс для расширений защищает Azure Stack путем уменьшения количества необходимых портов TCP/IP. В этой статье рассматривается подготовка Azure Stack для хост-процесса для расширений, который автоматически включается с помощью пакета обновления Azure Stack более поздней версии, чем 1808. Эта статья относится к обновлениям Azure Stack 1808, 1809 и 1811.
 
@@ -33,11 +33,11 @@ ms.locfileid: "67131155"
 | Хост-процесс для расширений администратора | *.adminhosting.\<регион>.\<FQDN> (групповые SSL-сертификаты) | Хост-процесс для расширений администратора | adminhosting.\<регион>.\<FQDN> |
 | Общедоступный хост-процесс для расширений | *.hosting.\<регион>.\<FQDN> (групповые SSL-сертификаты) | Общедоступный хост-процесс для расширений | hosting.\<регион>.\<FQDN> |
 
-Подробные требования к сертификатам можно найти в статье [Требования к сертификатам инфраструктуры открытых ключей Azure Stack](azure-stack-pki-certs.md).
+Подробные требования к сертификатам см. в статье [Требования к сертификатам инфраструктуры открытых ключей Azure Stack](azure-stack-pki-certs.md).
 
 ## <a name="create-certificate-signing-request"></a>Создание запроса на подпись сертификата
 
-Инструмент проверки готовности Azure Stack предоставляет возможность создать запрос на подпись сертификата для двух новых обязательных SSL-сертификатов. Выполните действия, описанные в статье [Создание запроса на подпись сертификата Azure Stack](azure-stack-get-pki-certs.md).
+Инструмент проверки готовности Azure Stack позволяет создать запрос на подпись сертификата для двух новых обязательных SSL-сертификатов. Выполните действия, описанные в статье [Создание запроса на подпись сертификата Azure Stack](azure-stack-get-pki-certs.md).
 
 > [!Note]  
 > Можно пропустить этот шаг в зависимости от того, как вы запросили SSL-сертификаты.
@@ -45,7 +45,7 @@ ms.locfileid: "67131155"
 ## <a name="validate-new-certificates"></a>Проверка новых сертификатов
 
 1. Откройте сеанс PowerShell с повышенными правами на узле жизненного цикла аппаратного обеспечения или рабочей станции управления Azure Stack.
-2. Запустите следующий командлет, чтобы установить инструмент проверки готовности Azure Stack.
+2. Запустите следующий командлет, чтобы установить инструмент проверки готовности Azure Stack:
 
     ```powershell  
     Install-Module -Name Microsoft.AzureStack.ReadinessChecker
@@ -148,7 +148,7 @@ winrm s winrm/config/client '@{TrustedHosts= "<IpOfERCSMachine>"}'
 $PEPCreds = Get-Credential
 $PEPSession = New-PSSession -ComputerName <IpOfERCSMachine> -Credential $PEPCreds -ConfigurationName "PrivilegedEndpoint"
 
-# Obtain DNS Servers and Extension Host information from Azure Stack Stamp Information and find the IPs for the Host Extension Endpoints
+# Obtain DNS Servers and extension host information from Azure Stack Stamp Information and find the IPs for the Host Extension Endpoints
 $StampInformation = Invoke-Command $PEPSession {Get-AzureStackStampInformation} | Select-Object -Property ExternalDNSIPAddress01, ExternalDNSIPAddress02, @{n="TenantHosting";e={($_.TenantExternalEndpoints.TenantHosting) -replace "https://*.","testdnsentry"-replace "/"}},  @{n="AdminHosting";e={($_.AdminExternalEndpoints.AdminHosting)-replace "https://*.","testdnsentry"-replace "/"}},@{n="TenantHostingDNS";e={($_.TenantExternalEndpoints.TenantHosting) -replace "https://",""-replace "/"}},  @{n="AdminHostingDNS";e={($_.AdminExternalEndpoints.AdminHosting)-replace "https://",""-replace "/"}}
 If (Resolve-DnsName -Server $StampInformation.ExternalDNSIPAddress01 -Name $StampInformation.TenantHosting -ErrorAction SilentlyContinue) {
     Write-Host "Can access AZS DNS" -ForegroundColor Green
@@ -192,7 +192,7 @@ The Record to be added in the DNS zone: Type A, Name: *.hosting.\<region>.\<fqdn
 ### <a name="update-existing-publishing-rules-post-enablement-of-extension-host"></a>Обновление имеющихся правил публикации (после включения хост-процесса для расширений)
 
 > [!Note]  
-> Включение хост-процесса для расширений в пакете обновления Azure Stack 1808 пока **недоступно**. Таким образом, вы можете подготовиться для хост-процесса для расширений, импортировав требуемые сертификаты. Порты можно закрыть только после автоматического включения хост-процесса для расширений с помощью пакета обновления Azure Stack версии, вышедшей после обновления 1808.
+> Включение хост-процесса для расширений в пакете обновления Azure Stack 1808 пока **недоступно**. Таким образом, вы можете подготовиться для хост-процесса для расширений, импортировав требуемые сертификаты. Порты можно закрыть только после автоматического включения хост-процесса для расширений с помощью пакета обновления Azure Stack версии, вышедшей после обновления 1808.
 
 В имеющихся правилах брандмауэра нужно закрыть следующие порты конечных точек.
 

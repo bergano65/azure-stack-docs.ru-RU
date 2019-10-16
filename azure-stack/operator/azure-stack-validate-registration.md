@@ -12,22 +12,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/23/2019
+ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 9c4ddec0606556290e55850a9081c6665f2524d1
-ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
+ms.openlocfilehash: c959a2553d6b298ef4a815890de6f717838361de
+ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71159587"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71961863"
 ---
 # <a name="validate-azure-registration"></a>Проверка регистрации в Azure
 
-Средство проверки готовности Azure Stack (**AzsReadinessChecker**) позволяет убедиться, что ваша подписка Azure готова к использованию Azure Stack. Проверьте регистрацию перед тем, как развертывать Azure Stack. Средство проверки готовности позволяет проверить следующее:
+Средство проверки готовности Azure Stack (**AzsReadinessChecker**) позволяет убедиться, что ваша подписка Azure готова к использованию Azure Stack, до начала развертывания Azure Stack. Средство проверки готовности позволяет проверить следующее:
 
-- Используемая вами подписка Azure является поддерживаемой. Подписки должны быть типа "Поставщик облачных служб" или "Соглашение Enterprise".
+- Используемая вами подписка Azure является поддерживаемой. Подписки должны соответствовать уровню поставщика облачных решений (CSP) или Соглашения Enterprise.
 - Учетная запись, используемая для регистрации подписки в Azure, может войти в Azure и является владельцем подписки.
 
 Дополнительные сведения о регистрации Azure Stack см. в [этой статье](azure-stack-registration.md).
@@ -49,7 +49,7 @@ ms.locfileid: "71159587"
   $PSVersionTable.PSVersion
   ```
 
-- [PowerShell для Azure Stack](azure-stack-powershell-install.md).
+- [Среда PowerShell, настроенная для Azure Stack](azure-stack-powershell-install.md).
 - Последняя версия средства [проверки готовности Microsoft Azure Stack](https://aka.ms/AzsReadinessChecker).  
 
 ### <a name="azure-active-directory-environment"></a>Среда Azure Active Directory
@@ -58,7 +58,7 @@ ms.locfileid: "71159587"
 - Определите идентификатор подписки Azure, которая будет использоваться.
 - Задайте параметр **AzureEnvironment**, который будет использоваться. Поддерживаемые значения для параметра имени среды: **AzureCloud**, **AzureChinaCloud** или **AzureUSGovernment** (в зависимости от используемой подписки Azure).
 
-## <a name="steps-to-validate-azure-registration"></a>Этапы проверки регистрации в Azure
+## <a name="steps-to-validate-the-azure-registration"></a>Этапы проверки регистрации в Azure
 
 1. На компьютере, который соответствует всем предварительным требованиям, откройте командную строку PowerShell с повышенными правами и выполните следующую команду, чтобы установить **AzsReadinessChecker**:
 
@@ -86,9 +86,9 @@ ms.locfileid: "71159587"
    - Укажите для `AzureEnvironment` значение **AzureCloud**, **AzureGermanCloud** или **AzureChinaCloud**.  
    - Укажите имя администратора Azure Active Directory и имя клиента Azure Active Directory.
 
-   ```powershell
-   Invoke-AzsRegistrationValidation -RegistrationAccount $registrationCredential -AzureEnvironment AzureCloud -RegistrationSubscriptionID $subscriptionID
-   ```
+      ```powershell
+      Invoke-AzsRegistrationValidation -RegistrationAccount $registrationCredential -AzureEnvironment AzureCloud -RegistrationSubscriptionID $subscriptionID
+      ```
 
 5. Когда средство завершит работу, просмотрите выходные данные. Убедитесь, что состояние соответствует требованиям ко входу в систему и требованиям к регистрации. При успешном завершении проверки отобразится примерно такой результат:
 
@@ -108,8 +108,8 @@ ms.locfileid: "71159587"
 
 По умолчанию оба файла сохраняются в расположении **C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
 
-- Чтобы задать другое расположение отчетов, при запуске проверки можно указать в конце командной строки параметр **-OutputPath** ***&lt;путь&gt;***.
-- Укажите параметр **-CleanReport** в конце команды, чтобы удалить из файла **AzsReadinessCheckerReport.json** сведения о предыдущих запусках средства.
+- Используйте параметр `-OutputPath <path>` в конце командной строки, чтобы задать другое расположение для отчетов.
+- Используйте параметр `-CleanReport` в конце команды, чтобы удалить из файла **AzsReadinessCheckerReport.json** сведения о предыдущих запусках средства.
 
 Дополнительные сведения об отчетах проверки Azure Stack можно найти [здесь](azure-stack-validation-report.md).
 
@@ -117,7 +117,7 @@ ms.locfileid: "71159587"
 
 Если проверка завершается ошибкой, сведения о сбое отображаются в окне PowerShell. Кроме того, сведения записываются в файл **AzsReadinessChecker.log**.
 
-В следующих примерах приведены некоторые рекомендации по устранению распространенных ошибок проверки.
+В следующих примерах приведены дополнительные сведения об устранении распространенных ошибок проверки.
 
 ### <a name="user-must-be-an-owner-of-the-subscription"></a>Пользователь должен быть владельцем подписки
 
