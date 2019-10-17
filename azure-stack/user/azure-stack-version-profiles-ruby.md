@@ -16,12 +16,12 @@ ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: d9ef8ab09031db59311317693f72433b63737c34
-ms.sourcegitcommit: 3d14ae30ce3ee44729e5419728cce14b3000e968
+ms.openlocfilehash: 32a81fc86399c44362d82f1dc602f87b16d16484
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71814472"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282851"
 ---
 # <a name="use-api-version-profiles-with-ruby-in-azure-stack"></a>Использование профилей версий API с помощью Ruby в Azure Stack
 
@@ -97,7 +97,7 @@ gem install 'azure_sdk'
 | --- | --- | --- |
 | Tenant ID | `AZURE_TENANT_ID` | [Идентификатор клиента](../operator/azure-stack-identity-overview.md) Azure Stack. |
 | Идентификатор клиента | `AZURE_CLIENT_ID` | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы в предыдущем разделе этой статьи.  |
-| Идентификатор подписки | `AZURE_SUBSCRIPTION_ID` | [Идентификатор подписки](../operator/azure-stack-plan-offer-quota-overview.md#subscriptions) используется для доступа к предложениям в Azure Stack. |
+| Идентификатор подписки | `AZURE_SUBSCRIPTION_ID` | [Идентификатор подписки](../operator/service-plan-offer-subscription-overview.md#subscriptions) используется для доступа к предложениям в Azure Stack. |
 | Секрет клиента | `AZURE_CLIENT_SECRET` | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы. |
 | Конечная точка Resource Manager | `ARM_ENDPOINT` | Дополнительные сведения см. в разделе [Конечная точка Resource Manager для Azure Stack](#the-azure-stack-resource-manager-endpoint).  |
 

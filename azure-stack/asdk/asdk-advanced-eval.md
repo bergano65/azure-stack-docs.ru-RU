@@ -16,12 +16,12 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 36c4dae72f7fcf91438880f07231c94c8d286253
-ms.sourcegitcommit: 4eb1766c7a9d1ccb1f1362ae1211ec748a7d708c
+ms.openlocfilehash: a47bae619b2525534797158cf2660d5bc77192c9
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69579072"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282627"
 ---
 # <a name="advanced-asdk-evaluation-tasks"></a>Расширенные задачи оценки в ASDK
 Ознакомившись с основными функциями и возможностями пакета средств разработки Azure Stack (ASDK), можно подробнее рассмотреть возможности Azure Stack путем тестирования более сложных сценариев. Полный список этих расширенных задач оценки можно найти в документации оператора по Azure Stack.
@@ -46,4 +46,4 @@ ms.locfileid: "69579072"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Дополнительные сведения о предоставлении служб с помощью интегрированных систем Azure Stack](../operator/azure-stack-offer-services-overview.md)
+[Дополнительные сведения о предоставлении служб с помощью интегрированных систем Azure Stack](../operator/service-plan-offer-subscription-overview.md)

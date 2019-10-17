@@ -14,12 +14,12 @@ ms.date: 07/30/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 07/30/2019
-ms.openlocfilehash: 35093371ede6e3f5f776b981eaaf8463df9e7f36
-ms.sourcegitcommit: 7961fda0bfcdd3db8cf94a8c405b5c23a23643af
+ms.openlocfilehash: 7e2753ebb5bebad4f1ac2a7bbc17a27ccd87cbe9
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616840"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283050"
 ---
 # <a name="use-api-version-profiles-with-nodejs-software-development-kit-sdk-in-azure-stack"></a>Использование профилей версий API с пакетом средств разработки (SDK) для Node.js в Azure Stack
 
@@ -95,7 +95,7 @@ ms.locfileid: "68616840"
 | --- | --- | --- |
 | Tenant ID | TENANT\_ID | Значение [идентификатора клиента](https://docs.microsoft.com/azure/azure-stack/azure-stack-identity-overview) Azure Stack. |
 | Идентификатор клиента | CLIENT\_ID | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы (см. выше).  |
-| Идентификатор подписки | AZURE\_SUBSCRIPTION\_ID: [идентификатор подписки](https://docs.microsoft.com/azure/azure-stack/azure-stack-plan-offer-quota-overview#subscriptions) для доступа к предложениям в Azure Stack.  |
+| Идентификатор подписки | AZURE\_SUBSCRIPTION\_ID: [идентификатор подписки](https://docs.microsoft.com/azure/azure-stack/service-plan-offer-subscription-overview#subscriptions) для доступа к предложениям в Azure Stack.  |
 | Секрет клиента | APPLICATION\_SECRET | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы (см. выше). |
 | Конечная точка Resource Manager | ARM\_ENDPOINT | Дополнительные сведения см. в разделе [Конечная точка Resource Manager для Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-version-profiles-ruby#the-azure-stack-resource-manager-endpoint). |
 

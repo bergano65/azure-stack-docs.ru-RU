@@ -15,12 +15,12 @@ ms.date: 01/14/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: a2311466bc6949bbc1ea372410373654352418fa
-ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
+ms.openlocfilehash: ae1aaa87ab2817ec696e488372bbc8f2cb6d119b
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603021"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283713"
 ---
 # <a name="configure-hybrid-cloud-connectivity-with-azure-and-azure-stack"></a>Настройка подключения к гибридному облаку в Azure и Azure Stack
 
@@ -70,7 +70,7 @@ ms.locfileid: "68603021"
    >Развертывание ASDK может занять 7 часов. Учитывайте это при планировании.
 
  - Разверните службы PaaS [службы приложений](../operator/azure-stack-app-service-deploy.md) в Azure Stack.
- - [Создание планов и предложений](../operator/azure-stack-plan-offer-quota-overview.md) в среде Azure Stack.
+ - [Создание планов и предложений](../operator/service-plan-offer-subscription-overview.md) в среде Azure Stack.
  - Создайте [подписку клиента](../operator/azure-stack-subscribe-plan-provision-vm.md) в рамках среды Azure Stack.
 
 ### <a name="before-you-begin"></a>Перед началом работы

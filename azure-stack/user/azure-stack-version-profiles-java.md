@@ -16,12 +16,12 @@ ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: f5cbf333494eb8d04ccbc974f95cda8be5d62284
-ms.sourcegitcommit: 3d14ae30ce3ee44729e5419728cce14b3000e968
+ms.openlocfilehash: 7d2a98656671a5e6f59d46054e074e45bb9d3c89
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71814498"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282893"
 ---
 # <a name="use-api-version-profiles-with-java-in-azure-stack"></a>Использование профилей версий API с помощью Java в Azure Stack
 
@@ -97,7 +97,7 @@ ms.locfileid: "71814498"
 | ------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Tenant ID                 | `AZURE_TENANT_ID`            | [Идентификатор клиента](../operator/azure-stack-identity-overview.md) Azure Stack.                                                          |
 | Идентификатор клиента                 | `AZURE_CLIENT_ID`             | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы в предыдущем разделе.                                                                                              |
-| Идентификатор подписки           | `AZURE_SUBSCRIPTION_ID`      | [Идентификатор подписки](../operator/azure-stack-plan-offer-quota-overview.md#subscriptions) используется для доступа к предложениям в Azure Stack.                |
+| Идентификатор подписки           | `AZURE_SUBSCRIPTION_ID`      | [Идентификатор подписки](../operator/service-plan-offer-subscription-overview.md#subscriptions) используется для доступа к предложениям в Azure Stack.                |
 | Секрет клиента             | `AZURE_CLIENT_SECRET`        | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы.                                                                                                                                   |
 | Конечная точка Resource Manager | `ARM_ENDPOINT`              | Дополнительные сведения см. в статье [Конечная точка Resource Manager для Azure Stack](../user/azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint). |
 | Location                  | `RESOURCE_LOCATION`    | **Локальное значение** для Azure Stack.                                                                                                                                                                                                |

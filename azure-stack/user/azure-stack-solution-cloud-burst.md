@@ -15,12 +15,12 @@ ms.date: 01/14/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 64554d0bd2c9e9d8622b1fd48bb7d086cd0b4b76
-ms.sourcegitcommit: 35b13ea6dc0221a15cd0840be796f4af5370ddaf
+ms.openlocfilehash: ca313e2e936f7bb006fdc1c15c49d271b1059a16
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603124"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283293"
 ---
 # <a name="create-cross-cloud-scaling-app-solutions-with-azure-and-azure-stack"></a>Создание приложения для масштабирования в нескольких облаках в Azure и Azure Stack
 
@@ -56,7 +56,7 @@ ms.locfileid: "68603124"
 
 -   Разверните службы PaaS [службы приложений](../operator/azure-stack-app-service-deploy.md) в Azure Stack.
 
--   Создайте [план и предложения](../operator/azure-stack-plan-offer-quota-overview.md) в рамках среды Azure Stack.
+-   Создайте [план и предложения](../operator/service-plan-offer-subscription-overview.md) в рамках среды Azure Stack.
 
 -   Создайте [подписку клиента](../operator/azure-stack-subscribe-plan-provision-vm.md) в рамках среды Azure Stack.
 
@@ -66,7 +66,7 @@ ms.locfileid: "68603124"
 
 -   Требуется виртуальная машина Windows Server 2016 с .NET 3.5. Эта виртуальная машина будет создана в подписке клиента Azure Stack в качестве частного агента сборки.
 
--   [Windows Server 2016 с образом виртуальной машины SQL 2017](../operator/azure-stack-add-vm-image.md#add-a-vm-image-through-the-portal) доступен в Azure Stack Marketplace. Если этот образ недоступен, обратитесь к оператору Azure Stack, чтобы убедиться, что он добавлен в среду.
+-   [Windows Server 2016 с образом виртуальной машины SQL 2017](../operator/azure-stack-add-vm-image.md#add-a-vm-image-as-an-azure-stack-operator-using-the-portal) доступен в Azure Stack Marketplace. Если этот образ недоступен, обратитесь к оператору Azure Stack, чтобы убедиться, что он добавлен в среду.
 
 ## <a name="issues-and-considerations"></a>Проблемы и рекомендации
 

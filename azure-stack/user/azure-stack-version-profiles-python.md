@@ -15,12 +15,12 @@ ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
 <!-- dev: viananth -->
-ms.openlocfilehash: bf44716c160948f3deafdc8afb87b9b6d49f9eb5
-ms.sourcegitcommit: 3d14ae30ce3ee44729e5419728cce14b3000e968
+ms.openlocfilehash: d0bec72b86fc2cfc729514343a3749a7907ae04c
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71814448"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282827"
 ---
 # <a name="use-api-version-profiles-with-python-in-azure-stack"></a>Использование профилей версий API и Python в Azure Stack
 
@@ -61,7 +61,7 @@ ms.locfileid: "71814448"
 |---------------------------|-----------------------|-------------------------------------------------------------------------------------------------------------------------|
 | Tenant ID | `AZURE_TENANT_ID` | [Идентификатор клиента](../operator/azure-stack-identity-overview.md) Azure Stack. |
 | Идентификатор клиента | `AZURE_CLIENT_ID` | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы в предыдущем разделе этой статьи. |
-| Идентификатор подписки | `AZURE_SUBSCRIPTION_ID` | [Идентификатор подписки](../operator/azure-stack-plan-offer-quota-overview.md#subscriptions) используется для доступа к предложениям в Azure Stack. |
+| Идентификатор подписки | `AZURE_SUBSCRIPTION_ID` | [Идентификатор подписки](../operator/service-plan-offer-subscription-overview.md#subscriptions) используется для доступа к предложениям в Azure Stack. |
 | Секрет клиента | `AZURE_CLIENT_SECRET` | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы. |
 | Конечная точка Resource Manager | `ARM_ENDPOINT` | Дополнительные сведения см. в статье [Конечная точка Resource Manager для Azure Stack](azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint). |
 | Расположение ресурса | `AZURE_RESOURCE_LOCATION` | Расположение ресурса в конкретной среде Azure Stack.

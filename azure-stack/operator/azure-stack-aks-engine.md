@@ -15,12 +15,12 @@ ms.date: 10/09/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 10/09/2019
-ms.openlocfilehash: 6695af1e27a2182321a468b853a4650f42146a15
-ms.sourcegitcommit: 12034a1190d52ca2c7d3f05c8c096416120d8392
+ms.openlocfilehash: 1e1e72cea27bf036f662cfaa64a84a57fe9bc964
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72037902"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283056"
 ---
 # <a name="add-the-azure-kubernetes-services-aks-engine-prerequisites-to-the-azure-stack-marketplace"></a>Необходимые компоненты для добавления обработчика Службы Azure Kubernetes (AKS) в Azure Stack Marketplace
 
@@ -38,7 +38,7 @@ ms.locfileid: "72037902"
 
 Пользователям потребуется план, предложение и подписка на Azure Stack с достаточным объемом свободного пространства. Пользователям часто требуется развертывать кластеры, содержащие максимум шесть виртуальных машин и состоящие из трех главных и трех рабочих узлов. Необходимо убедиться, что у них достаточный объем квоты.
 
-Если вам нужны дополнительные сведения о планировании и настройке предложения служб, обратитесь к статье [Общие сведения о предложении служб в Azure Stack](azure-stack-offer-services-overview.md).
+Если вам нужны дополнительные сведения о планировании и настройке предложения служб, обратитесь к статье [Общие сведения о предложении служб в Azure Stack](service-plan-offer-subscription-overview.md).
 
 ## <a name="create-a-service-principal-and-credentials"></a>Создание субъекта-службы и учетных данных
 
@@ -101,4 +101,4 @@ ms.locfileid: "72037902"
 
 [Что собой представляет обработчик AKS в Azure Stack?](../user/azure-stack-kubernetes-aks-engine-overview.md)
 
-[Общие сведения о предложении служб в Azure Stack](azure-stack-offer-services-overview.md)
+[Общие сведения о предложении служб в Azure Stack](service-plan-offer-subscription-overview.md)

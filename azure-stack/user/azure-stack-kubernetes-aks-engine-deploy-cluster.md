@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 09/27/2019
+ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/27/2019
-ms.openlocfilehash: 0cccd93ca24f2e93717bfbbd6ec05137d91f5bd0
-ms.sourcegitcommit: 036d4b22a8076ca9ba5c667a451c544d88f8bb94
+ms.lastreviewed: 10/10/2019
+ms.openlocfilehash: 7ca248ace5020546fe9d25b9e1e731f7e70275d6
+ms.sourcegitcommit: 70147e858956443bc66b3541ec278c102bb45c07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71681823"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72381395"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack"></a>Развертывание кластера Kubernetes с обработчиком AKS в Azure Stack
 
@@ -170,19 +170,14 @@ ms.locfileid: "71681823"
 
     ```bash
     sudo snap install helm –classic
+    kubectl -n kube-system create serviceaccount tiller
+    kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller
+    helm init --service-account=tiller
     helm repo update
     helm install stable/mysql
     ```
 
-5. Если вы попытаетесь выполнить команду `install stable/mysql`, будет возвращена ошибка, например `Error: incompatible versions client[v2.XX.X] server[v2.YY.Y]`. Выполните следующие команды:
-
-    ```bash 
-    helm init --force-upgrade
-    and retry:
-    helm install stable/mysql
-    ```
-
-6.  Чтобы очистить тест, найдите имя для развертывания MySQL. В следующем примере используется имя `wintering-rodent`. Удалите его. 
+5.  Чтобы очистить тест, найдите имя для развертывания MySQL. В следующем примере используется имя `wintering-rodent`. Удалите его. 
 
     Выполните следующие команды:
 

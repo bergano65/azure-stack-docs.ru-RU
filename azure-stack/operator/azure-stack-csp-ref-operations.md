@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/17/2019
+ms.date: 10/14/2019
 ms.author: sethm
 ms.reviewer: alfredop
-ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: a9e0dd05195d7ece62689aa8b5971cf72a6e3713
-ms.sourcegitcommit: c2ea4ffb42563c26faaf2993ba7b484bcb6d5cb7
+ms.lastreviewed: 10/14/2019
+ms.openlocfilehash: 72310e813d0dd0a64575f1b2452bf4a5191638ef
+ms.sourcegitcommit: 97d41b3ebed07aa85a50087b6076671fd37e08c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71342835"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72350182"
 ---
 # <a name="register-tenants-for-usage-tracking-in-azure-stack"></a>Регистрация клиентов для отслеживания использования в Azure Stack
 
@@ -61,15 +61,14 @@ ms.locfileid: "71342835"
 
 Для добавления клиента используйте командлет **New-AzureRmResource**. [Подключитесь к Azure Stack](azure-stack-powershell-configure-admin.md), а затем в командной строке с повышенными привилегиями выполните следующий командлет:
 
-```powershell
-New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01 -Properties
+```powershell  
+New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
 ```
 
 ### <a name="api-call"></a>Вызов API
 
 **Operation:** ОТПРАВКА  
-**URI запроса**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}  /providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/  
-{customerSubscriptionId}?api-version=2017-06-01 HTTP/1.1`  
+**URI запроса**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}?api-version=2017-06-01 HTTP/1.1`  
 **Ответ**: 201 Создано  
 **Текст ответа**: Empty  
 
@@ -101,9 +100,7 @@ Get-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/reso
 Список всех сопоставлений арендатора можно получить с помощью операции GET.
 
 **Operation:** ПОЛУЧЕНИЕ  
-**URI запроса**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}  
-/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions?  
-api-version=2017-06-01 HTTP/1.1`  
+**URI запроса**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions?api-version=2017-06-01 HTTP/1.1`  
 **Ответ**: 200  
 **Текст ответа**:
 
@@ -152,9 +149,7 @@ Remove-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/r
 Вы можете удалить сопоставления клиента с помощью операции DELETE.
 
 **Operation:** УДАЛИТЬ  
-**URI запроса**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}  
-/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/  
-{customerSubscriptionId}?api-version=2017-06-01 HTTP/1.1`  
+**URI запроса**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}?api-version=2017-06-01 HTTP/1.1`  
 **Ответ**: 204 No Content (содержимое отсутствует)  
 **Текст ответа**: Empty
 

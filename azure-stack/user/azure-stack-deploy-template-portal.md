@@ -3,7 +3,7 @@ title: Развертывание шаблонов в Azure Stack с помощ�
 description: Из этой статьи вы узнаете, как использовать портал Azure Stack для развертывания шаблонов.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: eafa60f2-16c9-4ef1-b724-47709e9ea29e
@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/13/2019
-ms.author: sethm
+ms.date: 10/07/2019
+ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: bbbbbc5548397f82752a43c7a1aaca7b62151b75
-ms.sourcegitcommit: e8aa26b078a9bab09c8fafd888a96785cc7abb4d
+ms.openlocfilehash: 7777fc41de282e9fedec8f967d3a9387f7da8b0b
+ms.sourcegitcommit: 7226979ece29d9619c959b11352be601562b41d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71708998"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72304127"
 ---
 # <a name="deploy-a-template-using-the-portal-in-azure-stack"></a>Развертывание шаблонов в Azure Stack с помощью портала
 
