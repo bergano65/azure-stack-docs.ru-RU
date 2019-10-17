@@ -277,35 +277,53 @@
           href: azure-stack-quota-types.md
     - name: Предложение сетевых решений
       href: azure-stack-network-solutions-enable.md
-    - name: Предложение SQL как PaaS
+    - name: Управление поставщиками ресурсов служб надстроек
       items:
-        - name: Создание предложения по базам данных SQL в Azure Stack
+        - name: Использование Службы приложений в Azure Stack
           items:
             - name: Обзор
-              href: azure-stack-sql-resource-provider.md
-            - name: Развертывание поставщика ресурсов SQL Server
-              href: azure-stack-sql-resource-provider-deploy.md
-            - name: Добавление серверов размещения SQL
-              href: azure-stack-sql-resource-provider-hosting-servers.md
-            - name: Создание баз данных SQL
-              href: azure-stack-sql-resource-provider-databases.md
-        - name: Предоставление высокодоступных баз данных SQL
-          href: azure-stack-tutorial-sql.md
-        - name: Обновление поставщика ресурсов SQL Server
-          href: azure-stack-sql-resource-provider-update.md
-        - name: Поддержка поставщика ресурсов SQL Server
-          href: azure-stack-sql-resource-provider-maintain.md
-        - name: Удаление поставщика ресурсов SQL Server
-          href: azure-stack-sql-resource-provider-remove.md
-        - name: Заметки о выпуске для поставщика ресурсов SQL
-          items:
-            - name: Заметки о выпуске для поставщика ресурсов SQL 1.1.30.0
-              href: azure-stack-sql-resource-provider-11300.md
-            - name: "Заметки о выпуске для поставщика ресурсов SQL\_1.1.33.0"
-              href: azure-stack-sql-resource-provider-11330.md
-    - name: Предложение MySQL как PaaS
-      items:
-        - name: Создание предложения по базам данных MySQL в Azure Stack
+              href: azure-stack-app-service-overview.md
+            - name: Планирование производительности Службы приложений
+              href: azure-stack-app-service-capacity-planning.md
+            - name: Необходимые условия
+              href: azure-stack-app-service-before-you-get-started.md
+            - name: Развертывание Службы приложений
+              href: azure-stack-app-service-deploy.md
+            - name: Развертывание Службы приложений для обеспечения высокого уровня доступности
+              href: app-service-deploy-ha.md
+            - name: Автономное развертывание Службы приложений
+              href: azure-stack-app-service-deploy-offline.md
+            - name: Обновление Службы приложений
+              href: azure-stack-app-service-update.md
+            - name: Автономное обновление Службы приложений
+              href: azure-stack-app-service-update-offline.md
+            - name: Добавление ролей инфраструктуры Службы приложений
+              href: azure-stack-app-service-add-worker-roles.md
+            - name: Настройка источников развертывания
+              href: azure-stack-app-service-configure-deployment-sources.md
+            - name: Создание резервной копии в Службе приложений
+              href: app-service-back-up.md
+            - name: Восстановление в Службе приложений
+              href: app-service-recover.md
+            - name: Часто задаваемые вопросы о выставлении счетов в Службе приложений
+              href: app-service-billing-faq.md
+            - name: Заметки о выпуске Службы приложений в Azure Stack
+              items:
+                - name: Служба приложений в заметках о выпуске обновления 1 Azure Stack
+                  href: azure-stack-app-service-release-notes-update-one.md
+                - name: "Служба приложений в заметках о выпуске обновления\_2 Azure Stack"
+                  href: azure-stack-app-service-release-notes-update-two.md
+                - name: Служба приложений Azure в заметках о выпуске обновления 3 Azure Stack
+                  href: azure-stack-app-service-release-notes-update-three.md
+                - name: Служба приложений Azure в заметках о выпуске обновления 4 Azure Stack
+                  href: azure-stack-app-service-release-notes-update-four.md
+                - name: "Служба приложений в заметках о выпуске обновления\_5 для Azure Stack"
+                  href: azure-stack-app-service-release-notes-update-five.md
+                - name: "Заметки о выпуске обновления\_6 для Службы приложений Azure в Azure Stack"
+                  href: azure-stack-app-service-release-notes-update-six.md
+                - name: "Заметки о выпуске обновления\_7 для Службы приложений Azure в Azure Stack"
+                  href: azure-stack-app-service-release-notes-update-seven.md
+        - name: Использование MySQL в Azure Stack
           items:
             - name: Обзор
               href: azure-stack-mysql-resource-provider.md
@@ -315,63 +333,44 @@
               href: azure-stack-mysql-resource-provider-hosting-servers.md
             - name: Создание базы данных MySQL
               href: azure-stack-mysql-resource-provider-databases.md
-        - name: Предоставление высокодоступных баз данных MySQL
-          href: azure-stack-tutorial-mysql.md
-        - name: Обновление поставщика ресурсов MySQL Server
-          href: azure-stack-mysql-resource-provider-update.md
-        - name: Обслуживание поставщика ресурсов MySQL Server
-          href: azure-stack-mysql-resource-provider-maintain.md
-        - name: Удаление поставщика ресурсов MySQL Server
-          href: azure-stack-mysql-resource-provider-remove.md
-        - name: Заметки о выпуске для поставщика ресурсов MySQL
+            - name: Развертывание высокодоступных баз данных MySQL
+              href: azure-stack-tutorial-mysql.md
+            - name: Обновление поставщика ресурсов MySQL Server
+              href: azure-stack-mysql-resource-provider-update.md
+            - name: Обслуживание поставщика ресурсов MySQL Server
+              href: azure-stack-mysql-resource-provider-maintain.md
+            - name: Удаление поставщика ресурсов MySQL Server
+              href: azure-stack-mysql-resource-provider-remove.md
+            - name: Заметки о выпуске для поставщика ресурсов MySQL
+              items:
+                - name: "Заметки о выпуске для поставщика ресурсов MySQL\_1.1.30.0"
+                  href: azure-stack-mysql-resource-provider-11300.md
+                - name: "Заметки о выпуске для поставщика ресурсов MySQL\_1.1.33.0"
+                  href: azure-stack-mysql-resource-provider-11330.md
+        - name: Использование SQL в Azure Stack
           items:
-            - name: "Заметки о выпуске для поставщика ресурсов MySQL\_1.1.30.0"
-              href: azure-stack-mysql-resource-provider-11300.md
-            - name: "Заметки о выпуске для поставщика ресурсов MySQL\_1.1.33.0"
-              href: azure-stack-mysql-resource-provider-11330.md
-    - name: Предложение Службы приложений как PaaS
-      href: azure-stack-app-service-overview.md
-      items:
-        - name: Планирование производительности Службы приложений
-          href: azure-stack-app-service-capacity-planning.md
-        - name: Часто задаваемые вопросы о выставлении счетов в Службе приложений
-          href: app-service-billing-faq.md
-        - name: Необходимые условия
-          href: azure-stack-app-service-before-you-get-started.md
-        - name: Развертывание Службы приложений
-          href: azure-stack-app-service-deploy.md
-        - name: Развертывание Службы приложений для обеспечения высокого уровня доступности
-          href: app-service-deploy-ha.md
-        - name: Автономное развертывание Службы приложений
-          href: azure-stack-app-service-deploy-offline.md
-        - name: Обновление Службы приложений
-          href: azure-stack-app-service-update.md
-        - name: Автономное обновление Службы приложений
-          href: azure-stack-app-service-update-offline.md
-        - name: Добавление ролей инфраструктуры Службы приложений
-          href: azure-stack-app-service-add-worker-roles.md
-        - name: Настройка источников развертывания
-          href: azure-stack-app-service-configure-deployment-sources.md
-        - name: Создание резервной копии в Службе приложений
-          href: app-service-back-up.md
-        - name: Восстановление в Службе приложений
-          href: app-service-recover.md
-        - name: Заметки о выпуске Службы приложений в Azure Stack
-          items:
-            - name: Служба приложений в заметках о выпуске обновления 1 Azure Stack
-              href: azure-stack-app-service-release-notes-update-one.md
-            - name: "Служба приложений в заметках о выпуске обновления\_2 Azure Stack"
-              href: azure-stack-app-service-release-notes-update-two.md
-            - name: Служба приложений Azure в заметках о выпуске обновления 3 Azure Stack
-              href: azure-stack-app-service-release-notes-update-three.md
-            - name: Служба приложений Azure в заметках о выпуске обновления 4 Azure Stack
-              href: azure-stack-app-service-release-notes-update-four.md
-            - name: "Служба приложений в заметках о выпуске обновления\_5 для Azure Stack"
-              href: azure-stack-app-service-release-notes-update-five.md
-            - name: "Заметки о выпуске обновления\_6 для Службы приложений Azure в Azure Stack"
-              href: azure-stack-app-service-release-notes-update-six.md
-            - name: "Заметки о выпуске обновления\_7 для Службы приложений Azure в Azure Stack"
-              href: azure-stack-app-service-release-notes-update-seven.md
+            - name: Обзор
+              href: azure-stack-sql-resource-provider.md
+            - name: Развертывание поставщика ресурсов SQL Server
+              href: azure-stack-sql-resource-provider-deploy.md
+            - name: Добавление серверов размещения SQL
+              href: azure-stack-sql-resource-provider-hosting-servers.md
+            - name: Создание баз данных SQL
+              href: azure-stack-sql-resource-provider-databases.md
+            - name: Развертывание высокодоступных баз данных SQL
+              href: azure-stack-tutorial-sql.md
+            - name: Обновление поставщика ресурсов SQL Server
+              href: azure-stack-sql-resource-provider-update.md
+            - name: Поддержка поставщика ресурсов SQL Server
+              href: azure-stack-sql-resource-provider-maintain.md
+            - name: Удаление поставщика ресурсов SQL Server
+              href: azure-stack-sql-resource-provider-remove.md
+            - name: Заметки о выпуске для поставщика ресурсов SQL
+              items:
+                - name: Заметки о выпуске для поставщика ресурсов SQL 1.1.30.0
+                  href: azure-stack-sql-resource-provider-11300.md
+                - name: "Заметки о выпуске для поставщика ресурсов SQL\_1.1.33.0"
+                  href: azure-stack-sql-resource-provider-11330.md
     - name: Потребление и выставление счетов
       href: azure-stack-billing-and-chargeback.md
       items:
