@@ -1,50 +1,45 @@
 ---
-title: Предоставление высокодоступных баз данных SQL в Azure Stack| Документация Майкрософт
+title: Предоставление баз данных SQL с высоким уровнем доступности в Azure Stack
 description: Узнайте, как создать компьютер для размещения поставщика ресурсов SQL Server и высокодоступные базы данных SQL AlwaysOn с помощью Azure Stack.
 services: azure-stack
-documentationcenter: ''
-author: justinha
+author: BryanLa
 manager: femila
 editor: ''
-ms.assetid: ''
 ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: tutorial
-ms.date: 02/25/2019
-ms.author: justinha
+ms.topic: article
+ms.date: 10/07/2019
+ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: fa9577bf0a620f8911ee6cf5238b55f460076883
-ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
+ms.openlocfilehash: e5866a80367a826dd58aa39109ebbbbd9f2edce6
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67316310"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283359"
 ---
-# <a name="tutorial-offer-highly-available-sql-databases"></a>Руководство по Предоставление высокодоступных баз данных SQL
+# <a name="offer-highly-available-sql-databases"></a>Предоставление высокодоступных баз данных SQL
 
 Оператор Azure Stack может настроить виртуальные машины сервера для размещения баз данных сервера SQL. После успешного создания сервера размещения SQL, который управляется Azure Stack, пользователи, подписанные на службы SQL, могут легко создавать базы данных SQL.
 
-В этом руководстве показано, как использовать шаблон быстрого запуска Azure Stack для создания [группы доступности AlwaysOn SQL Server](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-2017), добавить его в качестве сервера размещения SQL Azure Stack, а затем создать высокодоступную базу данных SQL.
+В этой статье показано, как использовать шаблон быстрого запуска Azure Stack для создания [группы доступности AlwaysOn SQL Server](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-2017), добавить его в качестве сервера размещения SQL Azure Stack, а затем создать базу данных SQL с высоким уровнем доступности.
 
 Освещаются следующие темы:
 
 > [!div class="checklist"]
 > * Создание группы доступности AlwaysOn для SQL Server из шаблона.
 > * Создание сервера размещения SQL Azure Stack.
-> * Создание высокодоступной базы данных SQL.
+> * Создание высокодоступной базы данных SQL
 
-В этом руководстве будет создано и настроено две группы доступности AlwaysOn SQL Server виртуальных машин с помощью доступных элементов Azure Stack Marketplace. 
+Вы создадите и настроите группу доступности AlwaysOn SQL Server с двумя виртуальными машинами с помощью компонентов, доступных в Azure Stack Marketplace. 
 
-Прежде чем выполнять действия, описанные в этом руководстве, убедитесь, что [поставщик ресурсов сервера SQL](azure-stack-sql-resource-provider-deploy.md) успешно установлен и что приведенные ниже компоненты доступны в Azure Stack Marketplace.
+Прежде чем начать, убедитесь, что [поставщик ресурсов SQL Server](azure-stack-sql-resource-provider-deploy.md) успешно установлен и что приведенные ниже компоненты доступны в Azure Stack Marketplace.
 
 > [!IMPORTANT]
 > Все следующие элементы необходимы для использования шаблона быстрого запуска Azure Stack.
 
 - Образ Marketplace [Windows Server 2016 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/MicrosoftWindowsServer.WindowsServer).
-- Образ сервера SQL Server 2016 SP1 или SP2 (Enterprise, Standard и Developer) в Windows Server 2016. В этом руководстве используется образ Marketplace [SQL Server 2016 SP2 Enterprise на базе Windows Server 2016](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoftsqlserver.sql2016sp2-ws2016).
+- Образ сервера SQL Server 2016 SP1 или SP2 (Enterprise, Standard и Developer) в Windows Server 2016. В этой статье описывается использование образа Marketplace [SQL Server 2016 SP2 Enterprise на базе Windows Server 2016](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoftsqlserver.sql2016sp2-ws2016).
 - [Расширение IaaS для SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension) версии 1.2.30 или более поздней. Расширение IaaS для SQL устанавливает необходимые компоненты, которые требуются элементам Marketplace SQL Server, для всех версий Windows. Оно обеспечивает настройку параметров SQL на виртуальных машинах SQL. Если расширение не установлено в локальной версии Marketplace, подготовка SQL завершится ошибкой.
 - [Расширение пользовательских сценариев для Windows](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.CustomScriptExtension) версии 1.9.1 или более поздней. Расширение пользовательских сценариев — это инструмент, который можно использовать для автоматического запуска задач настройки после развертывания виртуальных машин.
 - [Настройка требуемого состояния PowerShell](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.DSC-arm) версии 2.76.0.0 или более поздней. DSC — это платформа для управления в Windows PowerShell, которая предоставляет возможности развертывания данных конфигурации и управления ими для программных служб, а также управления средой, в которой они выполняются.
@@ -144,7 +139,7 @@ ms.locfileid: "67316310"
 
 С помощью прослушивателя общедоступного IP-адреса подсистемы балансировки нагрузки группы доступности SQL AlwaysOn и сведений об имени входа для аутентификации SQL оператор Azure Stack может [создать сервер размещения SQL с использованием группы доступности SQL AlwaysOn](azure-stack-sql-resource-provider-hosting-servers.md#provide-high-availability-using-sql-always-on-availability-groups). 
 
-Кроме того, убедитесь, что вы создали планы и предложения, чтобы сделать создание базы данных SQL AlwaysOn доступным для пользователей. Оператору необходимо добавить службу **Microsoft.SqlAdapter** к плану и создать квоту специально для высокодоступных баз данных. Дополнительные сведения о создании планов см. в статье [Обзор планов, предложений, квот и подписок](azure-stack-plan-offer-quota-overview.md).
+Кроме того, убедитесь, что вы создали планы и предложения, чтобы сделать создание базы данных SQL AlwaysOn доступным для пользователей. Оператору необходимо добавить службу **Microsoft.SqlAdapter** к плану и создать квоту специально для высокодоступных баз данных. Дополнительные сведения о создании планов см. в статье [Service, plan, offer, subscription overview](service-plan-offer-subscription-overview.md) (Обзор служб, планов, предложений и подписок).
 
 > [!TIP]
 > Службу **Microsoft.SqlAdapter** не можно добавить в планы до [завершения развертывания поставщика ресурсов SQL Server](azure-stack-sql-resource-provider-deploy.md).
@@ -179,13 +174,4 @@ ms.locfileid: "67316310"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали, как выполнять такие задачи:
-
-> [!div class="checklist"]
-> * Создание группы доступности AlwaysOn для SQL Server из шаблона.
-> * Создание сервера размещения SQL Azure Stack.
-> * Создание высокодоступной базы данных SQL
-
-Перейдите к следующему руководству, чтобы изучить дальнейшие действия:
-> [!div class="nextstepaction"]
-> [Создание высокодоступных баз данных MySQL](azure-stack-tutorial-mysql.md)
+[Обновление поставщика ресурсов SQL](azure-stack-sql-resource-provider-update.md)

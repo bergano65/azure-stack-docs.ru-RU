@@ -1,6 +1,6 @@
 ---
-title: Добавление образов Linux в Azure Stack
-description: Из этой статьи вы узнаете, как добавлять образы Linux в Azure Stack.
+title: Добавление образов Linux в Azure Stack Marketplace | Документация Майкрософт
+description: Из этой статьи вы узнаете, как добавлять образы Linux в Azure Stack Marketplace.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,14 +15,14 @@ ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 11/16/2018
-ms.openlocfilehash: 309d3d7185bd225f58691d4996ba649e8df7b97a
-ms.sourcegitcommit: bbf3edbfc07603d2c23de44240933c07976ea550
+ms.openlocfilehash: d7723dcdd755a926990ee52e96c3b75694651520
+ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71714613"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72277207"
 ---
-# <a name="add-linux-images-to-azure-stack"></a>Добавление образов Linux в Azure Stack
+# <a name="add-linux-images-to-azure-stack-marketplace"></a>Добавление образов Linux в Azure Stack Marketplace
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
@@ -30,7 +30,7 @@ ms.locfileid: "71714613"
 
 ## <a name="marketplace-management"></a>Управление Marketplace
 
-Чтобы загрузить образы Linux из Azure Marketplace, выполните процедуры, описанные в статье [Скачивание элементов Marketplace из Azure в Azure Stack](azure-stack-download-azure-marketplace-item.md). Выберите образы Linux, которые вы хотите предложить пользователям в Azure Stack.
+Сведения о том, как скачать образы Linux из Azure Marketplace, см. в статье [Скачивание элементов Marketplace из Azure и их публикация в Azure Stack](azure-stack-download-azure-marketplace-item.md). Выберите образы Linux, которые вы хотите предложить пользователям в Azure Stack.
 
 Эти образы часто обновляются, поэтому чаще посещайте портал управления Marketplace, чтобы обеспечить их актуальное состояние.
 
@@ -40,7 +40,7 @@ ms.locfileid: "71714613"
 
 ### <a name="azure-linux-agent"></a>Агент Linux для Azure
 
-Агент Linux для Azure (обычно называется **WALinuxAgent** или **walinuxagent**) использовать обязательно, при этом не все версии агента будут работать с Azure Stack. Версии с 2.2.20 по 2.2.35 не поддерживаются в Azure Stack. Для использования последней версии агента выше 2.2.35 примените исправления 1901 и 1902 или обновите Azure Stack до выпуска 1903 (или последующего). Обратите внимание на то, что в настоящее время [cloud-init](https://cloud-init.io/) не поддерживается в Azure Stack.
+Агент Linux для Azure (обычно называется **WALinuxAgent** или **walinuxagent**) использовать обязательно, при этом не все версии агента будут работать с Azure Stack. Версии с 2.2.20 по 2.2.35 не поддерживаются в Azure Stack. Для использования последней версии агента выше 2.2.35 примените исправления 1901 и 1902 или обновите Azure Stack до выпуска 1903 (или последующего). Обратите внимание на то, что сейчас [cloud-init](https://cloud-init.io/) не поддерживается в Azure Stack.
 
 | Сборка Azure Stack | Сборка агента Linux для Azure |
 | ------------- | ------------- |
@@ -60,7 +60,7 @@ ms.locfileid: "71714613"
 * [Подготовка виртуальной машины SLES или openSUSE для Azure](/azure/virtual-machines/linux/suse-create-upload-vhd?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Сервер Ubuntu](/azure/virtual-machines/linux/create-upload-ubuntu?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-## <a name="add-your-image-to-the-marketplace"></a>Добавление образа в marketplace
+## <a name="add-your-image-to-marketplace"></a>Добавление образа в Marketplace
 
 Следуйте указаниям по [добавлению образа в marketplace](azure-stack-add-vm-image.md). Убедитесь, что для параметра `OSType` задано значение `Linux`.
 

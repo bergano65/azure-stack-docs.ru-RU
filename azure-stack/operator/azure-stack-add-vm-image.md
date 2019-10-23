@@ -1,6 +1,6 @@
 ---
-title: Добавление образа виртуальной машины в Azure Stack | Документация Майкрософт
-description: Сведения о добавлении и удалении образа виртуальной машины в Azure Stack
+title: Добавление пользовательского образа виртуальной машины в Azure Stack | Документация Майкрософт
+description: Сведения о добавлении и удалении пользовательского образа виртуальной машины в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: Justinha
@@ -11,71 +11,104 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: conceptual
-ms.date: 09/17/2019
+ms.date: 10/10/2019
 ms.author: Justinha
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: fef815ec23655638bbe4df1bcdccae42aeee13e2
-ms.sourcegitcommit: 9f4c6e96f60b4c229316e7a4ab6e0e5ef0a9a232
+ms.openlocfilehash: 9dc5039a2c8b74b14da59573758a4cf8d1a3657a
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061161"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282661"
 ---
-# <a name="add-a-vm-image-to-azure-stack"></a>Добавление образа виртуальной машины в Azure Stack
+# <a name="add-a-custom-vm-to-azure-stack"></a>Добавление пользовательской виртуальной машины в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-В Azure Stack можно добавить образ виртуальной машины в Marketplace и сделать его доступным для пользователей. Образы можно добавлять с помощью шаблонов Azure Resource Manager для Azure Stack. Их можно также добавить в пользовательский интерфейс Azure Marketplace в качестве элемента Marketplace с помощью портала администратора или Windows PowerShell. Используйте образ из глобального магазина Azure Marketplace или пользовательский образ.
+Azure Stack позволяет добавить пользовательский образ виртуальной машины в Marketplace и сделать его доступным для пользователей. Образы можно добавлять с помощью шаблонов Azure Resource Manager для Azure Stack. Их можно также добавить в пользовательский интерфейс Azure Marketplace в качестве элемента Marketplace с помощью портала администратора или Windows PowerShell. Используйте образ из глобального магазина Azure Marketplace или пользовательский образ виртуальной машины.
 
-## <a name="add-a-vm-image-through-the-portal"></a>Добавление образа виртуальной машины через портал
+## <a name="generalize-the-vm-image"></a>Обобщение образа виртуальной машины
 
-> [!NOTE]  
-> С помощью этого метода необходимо создать элемент Marketplace отдельно.
+### <a name="windows"></a>Windows
 
-Нужно предоставить возможность ссылаться на образы через URI хранилища BLOB-объектов. Подготовьте образ операционной системы Windows или Linux в формате VHD (не VHDX), а затем отправьте образ в учетную запись хранения в Azure или Azure Stack. Если образ уже отправлен в хранилище BLOB-объектов в Azure или Azure Stack, шаг 1 можно пропустить.
+Создайте обобщенный пользовательский VHD. Если этот виртуальный жесткий диск находится не в Azure, выполните действия из статьи [Отправка универсального диска VHD и создание виртуальных машин с его помощью в Azure](/azure/virtual-machines/windows/upload-generalized-managed), чтобы правильно подготовить VHD с помощью **Sysprep** и сделать его обобщенным.
 
-1. [Отправьте образ виртуальной машины Windows в Azure для развертываний Resource Manager](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-upload-image/) или выполните инструкции по [добавлению образов Linux в Azure Stack](azure-stack-linux.md) для образов Linux. Перед отправкой образа необходимо принять во внимание следующие факторы:
+Если виртуальный жесткий диск находится в Azure, выполните инструкции из раздела [Подготовка исходной виртуальной машины к использованию с помощью Sysprep](/azure/virtual-machines/windows/upload-generalized-managed#generalize-the-source-vm-by-using-sysprep) перед его переносом в Azure Stack.
 
-   - Azure Stack поддерживает только виртуальные машины первого поколения на дисках фиксированного размера в формате VHD. Фиксированный формат структурирует логический диск в файле линейно, то есть смещение диска X хранится в смещении BLOB-объекта X. Небольшая сноска в конце BLOB-объекта описывает свойства VHD-файла. Чтобы проверить, фиксированного ли размера ваш диск, используйте команду [Get-VHD](https://docs.microsoft.com/powershell/module/hyper-v/get-vhd?view=win10-ps) в PowerShell.  
+### <a name="linux"></a>Linux
 
-     > [!IMPORTANT]  
-     >  Azure Stack не поддерживает динамические виртуальные жесткие диски. Изменение размера динамического диска, подключенного к виртуальной машине, приведет к неисправности виртуальной машины. Чтобы устранить эту проблему, удалите виртуальную машину, не удаляя ее диск — большой двоичный объект VHD в учетной записи хранения. Затем преобразуйте VHD из динамического диска в диск с фиксированным размером и повторно создайте виртуальную машину.
+Если виртуальный жесткий диск находится за пределами Azure, выполните соответствующе инструкции по обобщению виртуального жесткого диска.
 
-   - Образ эффективнее отправлять в хранилище BLOB-объектов Azure Stack, чем в хранилище BLOB-объектов Azure, так как для размещения образа в репозитории образов Azure Stack требуется меньше времени.
+- [Подготовка виртуальной машины на основе CentOS для Azure](/azure/virtual-machines/linux/create-upload-centos?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+- [Подготовка виртуального жесткого диска Debian для Azure](/azure/virtual-machines/linux/debian-create-upload-vhd?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+- [Red Hat Enterprise Linux](/azure/azure-stack/azure-stack-redhat-create-upload-vhd)
+- [SLES и OpenSUSE](/azure/virtual-machines/linux/suse-create-upload-vhd?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+- [Сервер Ubuntu](/azure/virtual-machines/linux/create-upload-ubuntu?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+
+Если виртуальный жесткий диск находится в Azure, выполните приведенные здесь инструкции по обобщению виртуального жесткого диска.
+
+1. Остановите службу **waagent**:
+
+   ```bash
+   # sudo waagent -force -deprovision
+   # export HISTSIZE=0
+   # logout
+   ```
+
+2. Завершите работу виртуальной машины и скачайте виртуальный жесткий диск. Если вы переносите виртуальный жесткий диск из Azure, можете применить функцию экспорта дисков, как описано в статье [Скачивание виртуального жесткого диска Windows из Azure](/azure/virtual-machines/windows/download-vhd).
+
+### <a name="common-steps-for-both-windows-and-linux"></a>Общие шаги для ОС Windows и Linux
+
+Перед отправкой образа необходимо принять во внимание следующие факторы.
+
+- Azure Stack поддерживает только виртуальные машины первого поколения на дисках фиксированного размера в формате VHD. Фиксированный формат структурирует логический диск в файле линейно, то есть смещение *X* на диске соответствует смещению *X* в BLOB-объекте. Небольшой колонтитул в конце BLOB-объекта описывает свойства VHD-файла. Чтобы убедиться, что вы используете диск фиксированного размера, выполните командлет PowerShell **Get-VHD**.
+
+- Azure Stack не поддерживает динамические диски VHD. Изменение размера динамического диска, подключенного к виртуальной машине, приведет к неисправности виртуальной машины. Чтобы устранить эту проблему, удалите виртуальную машину, не удаляя ее диск — большой двоичный объект VHD в учетной записи хранения. Затем преобразуйте VHD из динамического диска в диск с фиксированным размером и повторно создайте виртуальную машину.
+
+## <a name="add-a-vm-image-as-an-azure-stack-operator-using-the-portal"></a>Добавление образа виртуальной машины от имени оператора Azure Stack с помощью портала
+
+1. Нужно предоставить возможность ссылаться на образы через URI хранилища BLOB-объектов. Подготовьте образ операционной системы Windows или Linux в формате VHD (не VHDX), а затем отправьте образ в учетную запись хранения в Azure или Azure Stack.
+
+   - Если виртуальный жесткий диск находится в Azure и вы используете подключенную среду Azure Stack, вы можете использовать средство [Azcopy](/azure/storage/common/storage-use-azcopy) или его аналоги, чтобы напрямую передать виртуальный жесткий диск из Azure в учетную запись хранения Azure Stack.
+
+   - Если виртуальный жесткий диск находится в Azure и вы используете автономную среду Azure Stack, придется скачать VHD на компьютер, который подключен одновременно к Azure и Azure Stack. Скопируйте VHD-файл из Azure на этот компьютер, а затем переносите его в Azure Stack с помощью любого стандартного [средств передачи данных в хранилище](../user/azure-stack-storage-transfer.md), которые поддерживает работу с Azure и Azure Stack.
+
+2. Например, вы можете выполнить [этот пример](/powershell/module/azurerm.compute/add-azurermvhd?view=azurermps-6.13.0), чтобы отправить виртуальный жесткий диск в учетную запись хранения с помощью портала администрирования Azure Stack.
+
+   - Образ эффективнее отправлять в хранилище BLOB-объектов Azure Stack, чем в хранилище BLOB-объектов Azure, так как оттуда будет быстрее разместить его в репозитории образов Azure Stack.
 
    - При отправке [образов виртуальной машины Windows](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-upload-image/) не забудьте переключиться с шага **Вход в Azure** на шаг [Настройка среды PowerShell для оператора Azure Stack](azure-stack-powershell-configure-admin.md).  
 
-   - При передаче образа в хранилище BLOB-объектов запишите созданный для него URI. URI в хранилище BLOB-объектов имеет следующий формат: *&lt;учетная_запись_хранения&gt;/&lt;контейнер_BLOB-объектов&gt;/&lt;имя_целевого_виртуального_диска&gt;* .vhd.
+3. При передаче образа в хранилище BLOB-объектов запишите созданный для него URI. URI в хранилище BLOB-объектов имеет следующий формат: *&lt;учетная_запись_хранения&gt;/&lt;контейнер_BLOB-объектов&gt;/&lt;имя_целевого_виртуального_диска&gt;* .vhd.
 
-   - Чтобы настроить для большого двоичного объекта анонимный доступ, перейдите в контейнер больших двоичных объектов учетной записи хранения, в который был отправлен VHD образа виртуальной машины. Выберите **Большой двоичный объект**, а затем — **Политика доступа**. Если требуется, можно создать подписанный URL-адрес для контейнера и включить его как часть URI большого двоичного объекта. Это сделает большой двоичный объект доступным для использования. Если для большого двоичного объекта не включен анонимный доступ, образ виртуальной машины будет создан с состоянием сбоя.
+4. Чтобы настроить для большого двоичного объекта анонимный доступ, перейдите в контейнер больших двоичных объектов учетной записи хранения, в который был отправлен VHD образа виртуальной машины. Выберите **Большой двоичный объект**, а затем — **Политика доступа**. Если требуется, можно создать подписанный URL-адрес для контейнера и включить его как часть URI большого двоичного объекта. Это сделает большой двоичный объект доступным для использования. Если для большого двоичного объекта не включен анонимный доступ, образ виртуальной машины будет создан с состоянием сбоя.
 
-     ![Переход к большим двоичным объектам учетной записи хранения](./media/azure-stack-add-vm-image/image1.png)
+   ![Переход к большим двоичным объектам учетной записи хранения](./media/azure-stack-add-vm-image/image1.png)
 
-     ![Установка общего доступа к большим двоичным объектам](./media/azure-stack-add-vm-image/image2.png)
+   ![Установка общего доступа к большим двоичным объектам](./media/azure-stack-add-vm-image/image2.png)
 
-2. Войдите в Azure Stack как оператор. Выберите **Все службы** > **Вычисления** и в этом меню щелкните **Образы** > **Добавить**.
+5. Войдите в Azure Stack как оператор. Выберите **Все службы** > **Вычисления** и в этом меню щелкните **Образы** > **Добавить**.
 
-3. В разделе **Создание образа** укажите имя, подписку, группу ресурсов, расположение, диск и тип операционной системы, URI BLOB-объекта хранилища, тип учетной записи и параметры кэширования узла. Затем щелкните **Создать**, чтобы создать образ виртуальной машины.
+6. В разделе **Создание образа** укажите имя, подписку, группу ресурсов, расположение, диск и тип операционной системы, URI BLOB-объекта хранилища, тип учетной записи и параметры кэширования узла. Затем щелкните **Создать**, чтобы создать образ виртуальной машины.
 
    ![Начало создания образа](./media/azure-stack-add-vm-image/image4.png)
 
    При успешном создании образа состояние образа виртуальной машины изменяется на **Успешно**.
 
-4. Чтобы сделать образ виртуальной машины более доступным для работы в пользовательском интерфейсе, [создайте элемент Marketplace](azure-stack-create-and-publish-marketplace-item.md).
+7. Добавленный образ будет доступен только для шаблонов на базе Azure Resource Manager и развертываний PowerShell. Чтобы обеспечить пользователям доступ к образу в Marketplace, опубликуйте его в качестве элемента Marketplace, как описывается в статье [Создание и публикация элемента Marketplace](azure-stack-create-and-publish-marketplace-item.md) Запишите значения **Издатель**, **Предложение**, **Номер SKU** и **Версия**. Они понадобятся при редактировании шаблона Resource Manager и Manifest.json в пользовательском AZPKG-файле.
 
-## <a name="remove-a-vm-image-through-the-portal"></a>Удаление образа виртуальной машины через портал
+## <a name="remove-the-vm-image-as-an-azure-stack-operator-using-the-portal"></a>Удаление образа виртуальной машины от имени оператора Azure Stack с помощью портала
 
-1. Откройте портал администрирования по адресу [https://adminportal.local.azurestack.external](https://adminportal.local.azurestack.external).
+1. Войдите на [портал администрирования Azure Stack](https://adminportal.local.azurestack.external).
 
-2. Выберите **Marketplace management** (Управление Marketplace) и виртуальную машину, которую вы хотите удалить.
+2. Если образ виртуальной машины имеет связанный элемент Marketplace, щелкните **Управление Marketplace** и выберите элемент Marketplace, который требуется удалить.
 
-3. Нажмите кнопку **Delete**(Удалить).
+3. Если образ виртуальной машины не связан с элементом Marketplace, перейдите в раздел **Все службы > Вычислительная среда > Образы виртуальных машин** и щелкните там символ многоточия ( **...** ) рядом с образом виртуальной машины.
 
-## <a name="add-a-vm-image-to-the-marketplace-by-using-powershell"></a>Добавление образа виртуальной машины в Marketplace с помощью PowerShell
+4. Нажмите кнопку **Удалить**.
 
-> [!Note]  
-> Добавляемый образ будет доступен только для шаблонов на базе Azure Resource Manager и развертываний PowerShell. Чтобы обеспечить пользователям доступ к образу в Marketplace, опубликуйте его в качестве элемента Marketplace, как описывается в этой статье: [Создание и публикация элемента Marketplace](azure-stack-create-and-publish-marketplace-item.md)
+## <a name="add-a-vm-image-as-an-azure-stack-operator-using-powershell"></a>Добавление образа виртуальной машины от имени оператора Azure Stack с помощью PowerShell
 
 1. [Установите PowerShell для Azure Stack](azure-stack-powershell-install.md).  
 
@@ -85,100 +118,36 @@ ms.locfileid: "71061161"
 
    ```powershell
     Add-AzsPlatformimage -publisher "<publisher>" `
-      -offer "<offer>" `
-      -sku "<sku>" `
+      -offer "<Offer>" `
+      -sku "<SKU>" `
       -version "<#.#.#>" `
-      -OSType "<ostype>" `
-      -OSUri "<osuri>"
+      -OSType "<OS type>" `
+      -OSUri "<OS URI>"
    ```
 
    Командлет **Add-AzsPlatformimage** позволяет задать значения, которые используются в шаблонах Azure Resource Manager для ссылки на образ виртуальной машины. Допустимые значения:
    - **publisher**  
      Например: `Canonical`  
-     Сегмент имени издателя образа виртуальной машины, которое применяется пользователями при развертывании образа. Например, **Microsoft**. Не используйте в этом поле пробел или другие специальные символы.  
+     Сегмент **издателя** в имени образа виртуальной машины, который применяется пользователями при развертывании образа. Не используйте в этом поле пробел или другие специальные символы.  
    - **offer**  
      Например: `UbuntuServer`  
-     Сегмент имени предложения образа виртуальной машины, которое применяется пользователями при развертывании образа виртуальной машины. Например, **WindowsServer**. Не используйте в этом поле пробел или другие специальные символы.  
+     Сегмент **предложения** в имени образа виртуальной машины, который применяется пользователями при развертывании образа виртуальной машины. Не используйте в этом поле пробел или другие специальные символы.  
    - **sku**  
      Например: `14.04.3-LTS`  
-     Сегмент имени SKU образа виртуальной машины, которое применяется пользователями при развертывании образа виртуальной машины. Например, **Datacenter2016**. Не используйте в этом поле пробел или другие специальные символы.  
+     Сегмент **номера SKU** в имени образа виртуальной машины, который применяется пользователями при развертывании образа виртуальной машины. Не используйте в этом поле пробел или другие специальные символы.  
    - **version**  
      Например: `1.0.0`  
-     Версия виртуальной машины, которая применяется пользователями при развертывании образа виртуальной машины. Эта версия имеет формат *\#.\#.\#* . Например, **1.0.0**. Не используйте в этом поле пробел или другие специальные символы.  
+     Версия виртуальной машины, которая применяется пользователями при развертывании образа виртуальной машины. Эта версия имеет формат *\#.\#.\#* . Не используйте в этом поле пробел или другие специальные символы.  
    - **osType**  
      Например: `Linux`  
-     Тип ОС образа должен быть **Windows** или **Linux**.  
+     Параметр **osType** (Тип ОС) для образа должен иметь значение **Windows** или **Linux**.  
    - **OSUri**  
      Например: `https://storageaccount.blob.core.windows.net/vhds/Ubuntu1404.vhd`  
      В качестве значения `osDisk` вы можете указать URI хранилища BLOB-объектов.  
 
-     Дополнительные сведения см. в справочнике PowerShell в разделах о командлетах [Add-AzsPlatformimage](https://docs.microsoft.com/powershell/module/azs.compute.admin/add-azsplatformimage) и [New-DataDiskObject](https://docs.microsoft.com/powershell/module/Azs.Compute.Admin/New-DataDiskObject).
+     Дополнительные сведения см. в справочнике PowerShell, в разделах о командлетах [Add-AzsPlatformimage](/powershell/module/azs.compute.admin/add-azsplatformimage) и [New-DataDiskObject](/powershell/module/Azs.Compute.Admin/New-DataDiskObject).
 
-## <a name="add-a-custom-vm-image-to-the-marketplace-by-using-powershell"></a>Добавление пользовательского образа виртуальной машины в Marketplace с помощью PowerShell
- 
-1. [Установите PowerShell для Azure Stack](azure-stack-powershell-install.md).
-
-   ```powershell
-    # Create the Azure Stack operator's Azure Resource Manager environment by using the following cmdlet:
-    Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint "https://adminmanagement.local.azurestack.external" `
-      -AzureKeyVaultDnsSuffix adminvault.local.azurestack.external `
-      -AzureKeyVaultServiceEndpointResourceId https://adminvault.local.azurestack.external
-
-    $TenantID = Get-AzsDirectoryTenantId `
-      -AADTenantName "<myDirectoryTenantName>.onmicrosoft.com" `
-      -EnvironmentName AzureStackAdmin
-
-    Add-AzureRmAccount `
-      -EnvironmentName "AzureStackAdmin" `
-      -TenantId $TenantID
-   ```
-
-2. Если вы используете **службы федерации Active Directory (AD FS)** , выполните следующий командлет:
-
-   ```powershell
-   # For Azure Stack Development Kit, this value is set to https://adminmanagement.local.azurestack.external. To get this value for Azure Stack integrated systems, contact your service provider.
-   $ArmEndpoint = "<Resource Manager endpoint for your environment>"
-
-   # For Azure Stack Development Kit, this value is set to https://graph.local.azurestack.external/. To get this value for Azure Stack integrated systems, contact your service provider.
-   $GraphAudience = "<GraphAudience endpoint for your environment>"
-
-   # Create the Azure Stack operator's Azure Resource Manager environment by using the following cmdlet:
-    Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint "https://adminmanagement.local.azurestack.external" `
-      -AzureKeyVaultDnsSuffix adminvault.local.azurestack.external `
-      -AzureKeyVaultServiceEndpointResourceId https://adminvault.local.azurestack.external
-    ```
-
-3. Войдите в Azure Stack с правами оператора. Этот процесс описан в статье [Configure the Azure Stack PowerShell environment](azure-stack-powershell-configure-admin.md) (Настройка окружения Azure Stack PowerShell).
-
-4. Создайте на глобальной платформе Azure или в Azure Stack учетную запись хранения, где будет храниться пользовательский образ виртуальной машины. Инструкции см. в статье [Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal).
-
-5. Подготовьте образ операционной системы Windows или Linux в формате VHD (не VHDX), отправьте этот образ в учетную запись хранения и запишите URI, по которому можно получить этот образ виртуальной машины из PowerShell.  
-
-   ```powershell
-   Add-AzureRmAccount 
-   -EnvironmentName "AzureStackAdmin" 
-   -TenantId $TenantID
-   ```
-  
-   >[!Note]
-   > Если истек срок сеанса, изменен пароль или вы хотите переключиться на другую учетную запись, перед входом с помощью Add-AzureRmAccount выполните следующий командлет: `Remove-AzureRmAccount-Scope Process`
-
-6. (Необязательно.) В образе виртуальной машины можно передать массив дисков с данными. Создайте диски данных с помощью командлета New-DataDiskObject. Откройте PowerShell в командной строке с повышенными привилегиями и выполните следующую команду:
-
-   ```powershell
-    New-DataDiskObject -Lun 2 `
-    -Uri "https://storageaccount.blob.core.windows.net/vhds/Datadisk.vhd"
-   ```
-
-7. Откройте PowerShell с помощью командной строки с повышенными привилегиями и выполните следующую команду:
-
-   ```powershell
-    Add-AzsPlatformimage -publisher "<publisher>" -offer "<offer>" -sku "<sku>" -version "<#.#.#>" -OSType "<ostype>" -OSUri "<osuri>"
-   ```
-
-    Дополнительные сведения о командлетах Add-AzsPlatformimage и New-DataDiskObject см. в [документации по модулю оператора Azure Stack](https://docs.microsoft.com/powershell/module/) для Microsoft PowerShell.
-
-## <a name="remove-a-vm-image-by-using-powershell"></a>Удаление образа виртуальной машины с помощью PowerShell
+## <a name="remove-a-vm-image-as-an-azure-stack-operator-using-powershell"></a>Удаление образа виртуальной машины от имени оператора Azure Stack с помощью PowerShell
 
 Если отправленный образ виртуальной машины больше не требуется, вы можете удалить его из Marketplace с помощью следующего командлета:
 
@@ -190,27 +159,29 @@ ms.locfileid: "71061161"
 
    ```powershell  
    Remove-AzsPlatformImage `
-    -publisher "<publisher>" `
-    -offer "<offer>" `
-    -sku "<sku>" `
-    -version "<version>" `
+    -publisher "<Publisher>" `
+    -offer "<Offer>" `
+    -sku "<SKU>" `
+    -version "<Version>" `
    ```
+
    Командлет **Remove-AzsPlatformimage** позволяет задать значения, которые используются в шаблонах Azure Resource Manager для ссылки на образ виртуальной машины. Допустимые значения:
    - **publisher**  
      Например: `Canonical`  
-     Сегмент имени издателя образа виртуальной машины, которое применяется пользователями при развертывании образа. Например, **Microsoft**. Не используйте в этом поле пробел или другие специальные символы.  
+     Сегмент **издателя** в имени образа виртуальной машины, который применяется пользователями при развертывании образа. Не используйте в этом поле пробел или другие специальные символы.  
    - **offer**  
      Например: `UbuntuServer`  
-     Сегмент имени предложения образа виртуальной машины, которое применяется пользователями при развертывании образа виртуальной машины. Например, **WindowsServer**. Не используйте в этом поле пробел или другие специальные символы.  
+     Сегмент **предложения** в имени образа виртуальной машины, который применяется пользователями при развертывании образа виртуальной машины. Не используйте в этом поле пробел или другие специальные символы.  
    - **sku**  
      Например: `14.04.3-LTS`  
-     Сегмент имени SKU образа виртуальной машины, которое применяется пользователями при развертывании образа виртуальной машины. Например, **Datacenter2016**. Не используйте в этом поле пробел или другие специальные символы.  
+     Сегмент **номера SKU** в имени образа виртуальной машины, который применяется пользователями при развертывании образа виртуальной машины. Не используйте в этом поле пробел или другие специальные символы.  
    - **version**  
      Например: `1.0.0`  
-     Версия виртуальной машины, которая применяется пользователями при развертывании образа виртуальной машины. Эта версия имеет формат *\#.\#.\#* . Например, **1.0.0**. Не используйте в этом поле пробел или другие специальные символы.  
-    
-     Дополнительные сведения о командлете Remove-AzsPlatformImage см. в [документации по модулю оператора Azure Stack](https://docs.microsoft.com/powershell/module/) для Microsoft PowerShell.
+     Версия виртуальной машины, которая применяется пользователями при развертывании образа виртуальной машины. Эта версия имеет формат *\#.\#.\#* . Не используйте в этом поле пробел или другие специальные символы.  
+
+     Дополнительные сведения о командлете **Remove-AzsPlatformImage** см. в [документации по модулю оператора Azure Stack](/powershell/module/) для Microsoft PowerShell.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Подготовка виртуальной машины](../user/azure-stack-create-vm-template.md)
+- [Создание и публикация пользовательского элемента Azure Stack Marketplace](azure-stack-create-and-publish-marketplace-item.md)
+- [Подготовка виртуальной машины](../user/azure-stack-create-vm-template.md)

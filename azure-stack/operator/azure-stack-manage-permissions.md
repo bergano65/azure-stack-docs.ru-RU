@@ -1,6 +1,6 @@
 ---
-title: Управление разрешениями пользователей на доступ к ресурсам в Azure Stack (для администратора служб и клиента) | Документация Майкрософт
-description: Узнайте, как администратор служб или клиент может управлять доступом на основе ролей.
+title: Настройка разрешений на доступ с помощью управления доступом на основе ролей | Документация Майкрософт
+description: Узнайте, как настроить разрешения на доступ с помощью управления доступом на основе ролей (RBAC) в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: PatAltimore
@@ -15,14 +15,14 @@ ms.date: 05/16/2019
 ms.author: patricka
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 9fc4e6bb48c8cdd7508a1a85d193a22761c62e99
-ms.sourcegitcommit: 797dbacd1c6b8479d8c9189a939a13709228d816
+ms.openlocfilehash: fa4e836a2c7cd5b59a6234a05efcc1cface12620
+ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66268587"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72277050"
 ---
-# <a name="manage-role-based-access-control"></a>Управление доступом на основе ролей
+# <a name="set-access-permissions-using-role-based-access-control"></a>Настройка разрешений на доступ с помощью управления доступом на основе ролей
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 

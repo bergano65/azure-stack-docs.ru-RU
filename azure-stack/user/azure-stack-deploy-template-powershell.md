@@ -3,7 +3,7 @@ title: Развертывание шаблона в Azure Stack с помощь�
 description: Из этой статьи вы узнаете, как развернуть шаблон в Azure Stack с помощью PowerShell.
 services: azure-stack
 documentationcenter: ''
-author: sethmanheim
+author: mattbriggs
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/23/2019
-ms.author: sethm
+ms.date: 10/07/2019
+ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/23/2019
-ms.openlocfilehash: af4ac82e03b96b4fc3f6d728cbebf5a6fa9d6388
-ms.sourcegitcommit: e8aa26b078a9bab09c8fafd888a96785cc7abb4d
+ms.openlocfilehash: 38c3c428443afa251c8a6185929bfe0b80680b86
+ms.sourcegitcommit: 7226979ece29d9619c959b11352be601562b41d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71708964"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72304066"
 ---
 # <a name="deploy-a-template-using-powershell-in-azure-stack"></a>Развертывание шаблона в Azure Stack с помощью Powershell
 
@@ -35,7 +35,7 @@ ms.locfileid: "71708964"
 >[!NOTE]
 > Прежде чем выполнять этот пример, убедитесь, что вы [настроили PowerShell](azure-stack-powershell-configure-user.md) для пользователя Azure Stack.
 
-1. Перейдите в [репозиторий AzureStackGitHub](https://aka.ms/AzureStackGitHub) и найдите шаблон **101-simple-windows-vm**. Сохраните шаблон в этом расположении: `C:\templates\azuredeploy-101-simple-windows-vm.json`.
+1. Перейдите в репозиторий [AzureStack-QuickStart-Templates](https://aka.ms/AzureStackGitHub) и найдите шаблон **101-simple-windows-vm**. Сохраните шаблон в этом расположении: `C:\templates\azuredeploy-101-simple-windows-vm.json`.
 2. Откройте командную строку PowerShell с повышенными привилегиями.
 3. Замените `username` и `password` в приведенном ниже скрипте своим именем пользователя и паролем, а затем запустите этот скрипт.
 

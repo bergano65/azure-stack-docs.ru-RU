@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/08/2019
+ms.date: 10/16/2019
 ms.author: justinha
 ms.reviewer: prchint
-ms.lastreviewed: 10/08/2019
-ms.openlocfilehash: b3540727b1868c700e43e2865848a71635e8003d
-ms.sourcegitcommit: 534117888d9b7d6d363ebe906a10dcf0acf8b685
+ms.lastreviewed: 10/16/2019
+ms.openlocfilehash: 3c0b1ce32399b4739796b2718e97c69d96291dc6
+ms.sourcegitcommit: df20662e77a6ed0a7eba03f79eb53e8cd4471206
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72173103"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72445281"
 ---
 # <a name="microsoft-azure-stack-troubleshooting"></a>Устранение неполадок, связанных с Microsoft Azure Stack
 
@@ -85,7 +85,7 @@ ms.locfileid: "72173103"
 * Поставщик облачных решений
 * Подписка общих служб партнера
 
-## <a name="get-scale-unit-metrics"></a>Получение метрик единиц масштабирования
+### <a name="get-scale-unit-metrics"></a>Получение метрик единиц масштабирования
 
 Вы можете использовать PowerShell для получения сведений об использовании меток без помощи CSS. Получение сведений об использовании меток: 
 
@@ -151,6 +151,11 @@ An error occurred while trying to test identity provider endpoints: System.Net.W
 ## <a name="troubleshoot-storage"></a>Устранение неполадок с хранилищем
 ### <a name="storage-reclamation"></a>Освобождение хранилища
 Для отображения освобожденной емкости на портале может понадобиться до 14 часов. Освобождение пространства зависит от различных факторов, включая процент использования файлов внутреннего контейнера в хранилище блочных BLOB-объектов. Поэтому, в зависимости от того, какое количество данных удалено, нет гарантии касательно объема пространства, которое можно освободить, запустив сборщик мусора.
+
+### <a name="azure-storage-explorer-not-working-with-azure-stack"></a>Обозреватель службы хранилища Azure не работает с Azure Stack 
+ 
+При работе с интегрированной системой в сценарии без подключения рекомендуется использовать центр сертификации (ЦС) предприятия. Экспортируйте корневой сертификат в формате Base-64, а затем импортируйте его в Обозреватель службы хранилища Azure. Обязательно удалите косую черту ("/") в конце конечной точки ARM. Дополнительные сведения см. в разделе [Подготовка к подключению к Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-connect-se#prepare-for-connecting-to-azure-stack).
+ 
 
 ## <a name="troubleshooting-app-service"></a>Устранение неполадок в Службе приложений
 ### <a name="create-aadidentityappps1-script-fails"></a>Сбой скрипта Create-AADIdentityApp.ps1

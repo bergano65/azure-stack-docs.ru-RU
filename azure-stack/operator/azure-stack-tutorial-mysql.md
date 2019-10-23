@@ -1,33 +1,28 @@
 ---
-title: Предоставление высокодоступных баз данных MySQL в Azure Stack | Документация Майкрософт
+title: Предоставление баз данных MySQL с высоким уровнем доступности в Azure Stack
 description: Узнайте, как создать компьютер размещения для поставщика ресурсов сервера MySQL и высокодоступные базы данных MySQL с помощью Azure Stack.
 services: azure-stack
-documentationcenter: ''
-author: justinha
+author: BryanLa
 manager: femila
 editor: ''
-ms.assetid: ''
 ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: tutorial
-ms.date: 02/12/2019
-ms.author: justinha
+ms.topic: article
+ms.date: 10/07/2019
+ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: e62e78705d6ca1ec8fa7d839b70eda3f147f82ab
-ms.sourcegitcommit: 3f52cf06fb5b3208057cfdc07616cd76f11cdb38
+ms.openlocfilehash: a03fbf9170e6cc1840bea62efeb33b960a25f99c
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67316301"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283405"
 ---
-# <a name="tutorial-offer-highly-available-mysql-databases"></a>Руководство. Предоставление высокодоступных баз данных MySQL
+# <a name="offer-highly-available-mysql-databases"></a>Предоставление высокодоступных баз данных MySQL
 
 Оператор Azure Stack может настроить виртуальные машины сервера для размещения баз данных сервера MySQL. После успешного создания кластера MySQL, которым управляет Azure Stack, пользователи, подписанные на службы MySQL, могут легко создавать высокодоступные базы данных MySQL.
 
-В этом руководстве показано, как использовать элементы Marketplace Azure Stack для создания [MySQL с кластером репликации](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/bitnami.mysql-cluster). Это решение использует несколько виртуальных машин для репликации баз данных с главного узла на определенное количество реплик. После создания кластер можно добавить в качестве сервера размещения MySQL Azure Stack. После этого пользователи могут создавать высокодоступные базы данных MySQL.
+В этой статье показано, как использовать компоненты Azure Stack Marketplace для создания [MySQL с кластером репликации](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/bitnami.mysql-cluster). Это решение использует несколько виртуальных машин для репликации баз данных с главного узла на определенное количество реплик. После создания кластер можно добавить в качестве сервера размещения MySQL Azure Stack. После этого пользователи могут создавать высокодоступные базы данных MySQL.
 
 > [!IMPORTANT]
 > Элемент Azure Stack Marketplace **MySQL с репликацией** может быть доступен не для всех сред облачной подписки Azure. Прежде чем продолжать выполнение оставшейся части руководства, убедитесь, что элемент Marketplace доступен для вашей подписки.
@@ -39,9 +34,9 @@ ms.locfileid: "67316301"
 > * создание сервера размещения MySQL Azure Stack;
 > * создание высокодоступной базы данных MySQL.
 
-В этом руководстве будет создан и настроен кластер сервера MySQL с тремя виртуальными машинами с помощью доступных элементов Azure Stack Marketplace. 
+Вы создадите и настроите кластер сервера MySQL с тремя виртуальными машинами с помощью доступных компонентов Azure Stack Marketplace. 
 
-Прежде чем выполнять действия, описанные в этом руководстве, убедитесь, что [поставщик ресурсов сервера MySQL](azure-stack-mysql-resource-provider-deploy.md) успешно установлен и что приведенные ниже компоненты доступны в Azure Stack Marketplace.
+Прежде чем начать, убедитесь, что [поставщик ресурсов сервера MySQL](azure-stack-mysql-resource-provider-deploy.md) успешно установлен и что приведенные ниже компоненты доступны в Azure Stack Marketplace.
 
 > [!IMPORTANT]
 > Все следующие элементы необходимы для создания кластера MySQL.
@@ -154,7 +149,7 @@ ms.locfileid: "67316301"
 
 Используя общедоступный IP-адрес кластера MySQL и информацию для аутентификации MySQL, оператор Azure Stack теперь может [создать сервер размещения MySQL с помощью нового кластера MySQL](azure-stack-mysql-resource-provider-hosting-servers.md#connect-to-a-mysql-hosting-server). 
 
-Кроме того, убедитесь, что вы создали планы и предложения, чтобы сделать создание базы данных MySQL доступным для пользователей. Оператору необходимо добавить службу **Microsoft.MySqlAdapter** к плану и создать квоту специально для высокодоступных баз данных. Дополнительные сведения о создании планов см. в статье [Обзор планов, предложений, квот и подписок](azure-stack-plan-offer-quota-overview.md).
+Кроме того, убедитесь, что вы создали планы и предложения, чтобы сделать создание базы данных MySQL доступным для пользователей. Оператору необходимо добавить службу **Microsoft.MySqlAdapter** к плану и создать квоту специально для высокодоступных баз данных. Дополнительные сведения о создании планов см. в статье [Service, plan, offer, subscription overview](service-plan-offer-subscription-overview.md) (Обзор служб, планов, предложений и подписок).
 
 > [!TIP]
 > Службу **Microsoft.MySqlAdapter** нельзя добавить в планы до [завершения развертывания поставщика ресурсов сервера MySQL](azure-stack-mysql-resource-provider-deploy.md).
@@ -188,13 +183,4 @@ ms.locfileid: "67316301"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали, как выполнять такие задачи:
-
-> [!div class="checklist"]
-> * создание кластера сервера MySQL из элементов Marketplace;
-> * создание сервера размещения MySQL Azure Stack;
-> * создание высокодоступной базы данных MySQL.
-
-Перейдите к следующему руководству, чтобы изучить дальнейшие действия:
-> [!div class="nextstepaction"]
-> [Предложение по веб-приложениям](azure-stack-tutorial-app-service.md)
+[Обновление поставщика ресурсов MySQL](azure-stack-mysql-resource-provider-update.md)

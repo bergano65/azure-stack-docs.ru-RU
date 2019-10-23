@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/28/2019
+ms.date: 10/15/2019
 ms.author: mabrigg
 ms.lastreviewed: 08/15/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: b218a1b40953d9266ec5a8bcdd49f5d89a421146
-ms.sourcegitcommit: 5703255b4647ff0ebec23658a3f5c25d67f076a2
+ms.openlocfilehash: efa10feb63f01166cf93b1835d8e38f99b9191db
+ms.sourcegitcommit: df20662e77a6ed0a7eba03f79eb53e8cd4471206
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70749934"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72445160"
 ---
 # <a name="apply-azure-stack-original-equipment-manufacturer-oem-updates"></a>Применение обновлений изготовителя оборудования для Azure Stack
 
@@ -44,7 +44,7 @@ ms.locfileid: "70749934"
 
 | Партнер по оборудованию | Регион | URL-адрес |
 |------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cisco | Все | [Поддержка и обновления встроенного ПО для Azure Stack для Cisco — автоматическое уведомление (требуется учетная запись или имя для входа)](https://software.cisco.com/download/redirect?i=!y&mdfid=283862063&softwareid=286320368&release=1.0(0)&os=)<br><br>[Заметки о выпуске интегрированной системы Cisco для Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
+| Cisco | Все | [Руководство по эксплуатации интегрированной системы Cisco для Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_01000.html)<br><br>[UCS C-Series Rack-Mount UCS-Managed Server Software](https://software.cisco.com/download/home/283862063/type/286320368/release/2.0(0)) (Программное обеспечение для управляемых стоечных серверов Cisco UCS серии C) |
 | Dell EMC | Все | [Облако для Microsoft Azure Stack 14G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Облако для Microsoft Azure Stack 13G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
 | Fujitsu | Япония | [Служба технической поддержки Fujitsu (требуется учетная запись и имя для входа)](https://eservice.fujitsu.com/supportdesk-web/) |
 |  | Европа, Ближний Восток, Африка и США | [Fujitsu: поддержка продуктов и систем ИТ](https://support.ts.fujitsu.com/IndexContact.asp?lng=COM&ln=no&LC=del) |

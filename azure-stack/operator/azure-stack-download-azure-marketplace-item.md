@@ -12,18 +12,18 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/13/2019
-ms.author: justinha
+ms.date: 10/10/2019
+ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: f4ffb166d4ae45ca8d7ef335d81e51e2775eb985
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 91314fcd33d3b4171dc7e9a3e2d78cdf07e2f50e
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829130"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283540"
 ---
-# <a name="download-marketplace-items-from-azure-and-publish-to-azure-stack"></a>Скачивание элементов Marketplace из Azure и их публикация в Azure Stack
+# <a name="download-existing-marketplace-items-from-azure-and-publish-to-azure-stack"></a>Скачивание существующих элементов Marketplace из Azure и их публикация в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
@@ -58,17 +58,17 @@ ms.locfileid: "71829130"
 
     ![Добавление элементов Marketplace из Azure](media/azure-stack-download-azure-marketplace-item/marketplace.png)
 
-    На портале отображается список элементов, доступных для скачивания из Azure Marketplace. Вы можете отфильтровать продукты по названию, издателю и/или типу продукта. Также вы можете выбрать любой из элементов, чтобы просмотреть его описание и дополнительную информацию, в том числе размер скачиваемого файла.
+4. На портале отображается список элементов, доступных для скачивания из Azure Marketplace. Вы можете отфильтровать продукты по имени, издателю и/или типу продукта. Вы также можете щелкнуть каждый элемент, чтобы просмотреть его описание и дополнительную информацию, включая его размер.
 
     ![Список элементов Azure Marketplace ](media/azure-stack-download-azure-marketplace-item/image03.PNG)
 
-4. Выберите нужный элемент из списка и щелкните **Скачать**. Время скачивания может различаться.
+5. Выберите нужный элемент из списка и щелкните **Скачать**. Время скачивания может различаться.
 
     ![Скачивание элемента Azure Marketplace](media/azure-stack-download-azure-marketplace-item/image04.png)
 
     Когда скачивание завершится, вы можете развернуть новый элемент Marketplace от имени оператора или пользователя Azure Stack.
 
-5. Чтобы развернуть скачанный элемент Marketplace, щелкните **+ Создать ресурс**, выберите новый элемент, выполнив поиск в категориях. Теперь выберите элемент, чтобы начать процесс развертывания. Процесс различается для разных элементов marketplace.
+6. Чтобы развернуть скачанный элемент Marketplace, щелкните **+ Создать ресурс**, выберите новый элемент, выполнив поиск в категориях. Выберите элемент, чтобы начать процесс развертывания. Процесс различается для разных элементов marketplace.
 
 ## <a name="disconnected-or-a-partially-connected-scenario"></a>Сценарий отключенного или частично подключенного режима
 
@@ -83,11 +83,15 @@ ms.locfileid: "71829130"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-- Развертывание Azure Stack должно быть [зарегистрировано в Azure](azure-stack-registration.md).
+- Подключенная к Интернету среда (не обязательно Azure Stack). Вам потребуется подключение, чтобы получить из Azure список продуктов со сведениями о них и скачать все необходимое в локальную среду. Когда эти операции завершатся, для остальной части процедуры подключение к Интернету не требуется. При этом создается каталог элементов, которые были скачаны ранее, чтобы использовать их в отключенной среде.
 
-- На компьютере с подключением к Интернету необходимо установить модуль **PowerShell для Azure Stack версии 1.2.11** или более поздней. При необходимости см. [инструкции по установке модулей PowerShell для Azure Stack](azure-stack-powershell-install.md).  
+- USB-носитель или внешний диск для подключения к отключенной среде и переноса всех необходимых артефактов.
 
-- Чтобы включить импорт скачанных элементов marketplace, необходимо настроить среду [​​PowerShell для оператора Azure Stack](azure-stack-powershell-configure-admin.md).  
+- Отключенная среда Azure Stack, которая соответствует следующим условиям:
+  - Развертывание Azure Stack должно быть [зарегистрировано в Azure](azure-stack-registration.md).
+  - На компьютере с подключением к Интернету необходимо установить модуль **PowerShell для Azure Stack версии 1.2.11** или более поздней. При необходимости см. [инструкции по установке модулей PowerShell для Azure Stack](azure-stack-powershell-install.md).
+  - Чтобы включить импорт скачанных элементов marketplace, необходимо настроить среду [​​PowerShell для оператора Azure Stack](azure-stack-powershell-configure-admin.md).
+  - Клонируйте репозиторий [средств Azure Stack](https://github.com/Azure/AzureStack-Tools) с сайта GitHub.
 
 - У вас должна быть [учетная запись хранения](azure-stack-manage-storage-accounts.md) в Azure Stack, которая имеет общедоступный контейнер (в виде BLOB-объекта хранилища). Используйте контейнер в качестве временного хранилища для файлов коллекции элементов marketplace. Если вы не знакомы с учетными записями хранения и контейнерами, см. статью [Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure](/azure/storage/blobs/storage-quickstart-blobs-portal) в документации Azure.
 
@@ -95,9 +99,16 @@ ms.locfileid: "71829130"
 
 - Вы можете установить [AzCopy](/azure/storage/common/storage-use-azcopy), чтобы ускорить скачивание, но это необязательно.
 
+После регистрации можно проигнорировать следующее сообщение, которое отображается в колонке управления Marketplace, так как оно не имеет отношения к режиму использования без подключения к Интернету.
+
+[![Не зарегистрированное сообщение](media/azure-stack-download-azure-marketplace-item/toolsmsgsm.png "Не зарегистрированное сообщение")](media/azure-stack-download-azure-marketplace-item/toolsmsg.png#lightbox)
+
 ### <a name="use-the-marketplace-syndication-tool-to-download-marketplace-items"></a>Скачивание элементов marketplace с помощью средства синдикации marketplace
 
-1. На компьютере с подключением к Интернету откройте консоль PowerShell с правами администратора.
+> [!IMPORTANT]
+> Обязательно скачивайте средство синдикации Marketplace каждый раз вместе с элементами Marketplace, если используется сценарий без подключения к Интернету. В этот скрипт часто вносятся изменения и для каждого нового скачивания следует использовать самую свежую версию.
+
+1. На компьютере с подключением к Интернету откройте консоль PowerShell в качестве администратора.
 
 2. Добавьте учетную запись Azure, которая использовалась для регистрации Azure Stack. Чтобы добавить учетную запись, в PowerShell запустите `Add-AzureRmAccount` без каких-либо параметров. Вам будет предложено ввести учетные данные для входа в Azure и, возможно, выполнить двухфакторную аутентификацию в зависимости от конфигурации учетной записи.
 
@@ -120,12 +131,11 @@ ms.locfileid: "71829130"
 
    # Expand the downloaded files.
    expand-archive master.zip `
-     -DestinationPath . `
+     -DestinationPath `
      -Force
 
    # Change to the tools directory.
    cd .\AzureStack-Tools-master
-
    ```
 
 5. Импортируйте модуль синдикации и запустите средство, выполнив следующие команды. Замените `Destination folder path` на расположение файлов, скачанных из Azure Marketplace.
@@ -138,19 +148,23 @@ ms.locfileid: "71829130"
 
    Обратите внимание, что `Export-AzSOfflineMarketplaceItem` имеет дополнительный флаг `-cloud`, который определяет облачную среду. По умолчанию это флаг **azurecloud**.
 
-6. После запуска средства появится следующий экран со списком доступных элементов Marketplace:
+6. После запуска средства появится примерно такой экран, как на следующем изображении, с полным списком доступных элементов Marketplace:
 
    [![Всплывающее окно с элементами Azure Marketplace](media/azure-stack-download-azure-marketplace-item/image05.png "Azure Marketplace items")](media/azure-stack-download-azure-marketplace-item/image05.png#lightbox)
 
-7. Выберите элемент, который необходимо скачать, и запишите его **версию**. Вы можете выбрать несколько образов, удерживая нажатой клавишу **CTRL**. Вы создадите ссылку на *версию* при импорте элемента в следующей процедуре.
+7. Если вы еще не установили средства службы хранилища Azure, появится следующее сообщение. Чтобы установить эти средства, обязательно скачайте [AzCopy](/azure/storage/common/storage-use-azcopy#download-and-install-azcopy-on-windows):
+
+   ![Средства хранилища](media/azure-stack-download-azure-marketplace-item/vmnew1.png)
+
+8. Выберите элемент, который вам нужно скачать, и запишите его **версию**. Вы можете выбрать несколько образов, удерживая нажатой клавишу **CTRL**. Вы создадите ссылку на *версию* при импорте элемента в следующей процедуре.
 
    Кроме того, вы можете отфильтровать список образов с помощью параметра **Добавить условия**.
 
-8. Нажмите кнопку **ОК**, прочтите и примите юридические условия.
+9. Нажмите кнопку **ОК**, прочтите и примите юридические условия.
 
-9. Время скачивания зависит от размера элемента. После завершения скачивания элемент доступен в папке, указанной в скрипте. Скачанный пакет содержит VHD-файл (для виртуальных машин) или ZIP-файл (для расширений виртуальных машин). Она также может содержать пакет коллекции в формате *AZPKG* (это просто ZIP-файл).
+10. Время скачивания зависит от размера элемента. После завершения скачивания элемент доступен в папке, указанной в скрипте. Скачанный пакет содержит VHD-файл (для виртуальных машин) или ZIP-файл (для расширений виртуальных машин). Она также может содержать пакет коллекции в формате *AZPKG* (это просто ZIP-файл).
 
-10. Если скачивание завершается сбоем, вы можете повторить попытку, повторно запустив следующий командлет PowerShell:
+11. Если скачивание завершается сбоем, вы можете повторить попытку, повторно запустив следующий командлет PowerShell:
 
     ```powershell
     Export-AzSOfflineMarketplaceItem -Destination "Destination folder path in quotes"
@@ -158,9 +172,9 @@ ms.locfileid: "71829130"
 
     Перед повторным выполнением удалите папку продукта, в которую не удалось выполнить скачивание. Например, если скачивание скрипта в `D:\downloadFolder\microsoft.customscriptextension-arm-1.9.1` закончилось сбоем, удалите папку `D:\downloadFolder\microsoft.customscriptextension-arm-1.9.1`, а затем повторно запустите командлет.
 
-### <a name="import-the-download-and-publish-to-azure-stack-marketplace-1811-and-higher"></a>Импорт скачанного пакета и его публикация в Azure Stack Marketplace (версия 1811 и выше)
+### <a name="import-the-download-and-publish-to-azure-stack-marketplace-using-powershell"></a>Импорт скачанного пакета и его публикация в Azure Stack Marketplace с помощью PowerShell
 
-1. Необходимо локально переместить [скачанные ранее](#use-the-marketplace-syndication-tool-to-download-marketplace-items) файлы, чтобы они стали доступны в среде Azure Stack. Средство синдикации Marketplace также должно быть доступно в среде Azure Stack, так как оно используется для операции импорта.
+1. Необходимо локально переместить файлы, [загруженные ранее](#use-the-marketplace-syndication-tool-to-download-marketplace-items), чтобы они были доступны в среде Azure Stack. Средство синдикации Marketplace также должно быть доступно в среде Azure Stack, так как оно используется для операции импорта.
 
    Пример структуры папки приведен на рисунке ниже. В папке `D:\downloadfolder` содержатся все скачанные элементы marketplace. Каждая вложенная папка представляет элемент Marketplace (например, `microsoft.custom-script-linux-arm-2.0.3`) и ее имя соответствует идентификатору продукта. Внутри каждой вложенной папки содержится скачанное содержимое элемента Marketplace.
 
@@ -184,72 +198,7 @@ ms.locfileid: "71829130"
 
 4. После успешного выполнения скрипта элемент станет доступен в Azure Stack Marketplace.
 
-### <a name="import-the-download-and-publish-to-azure-stack-marketplace-1809-and-lower"></a>Импорт скачанного пакета и его публикация в Azure Stack Marketplace (версия 1809 и выше)
-
-1. Файлы образов виртуальных машин или шаблонов решений, которые вы [скачали ранее](#use-the-marketplace-syndication-tool-to-download-marketplace-items), должны быть локально доступны для вашей среды Azure Stack.  
-
-2. Используя портал администрирования, отправьте пакет элементов Marketplace (AZPKG-файл) и образ виртуального жесткого диска в хранилище BLOB-объектов Azure Stack. Загрузка пакета и файлов диска делают их доступными в Azure Stack, поэтому вы сможете позже опубликовать элемент в Azure Stack Marketplace.
-
-   Для загрузки требуется наличие учетной записи хранения с общедоступным контейнером (см. предварительные условия для этого сценария).  
-   1. На портале администрирования Azure Stack перейдите в раздел **Все службы** и в категории **Данные+хранилище** выберите **Учетные записи хранения**.  
-
-   2. Выберите учетную запись хранения из своей подписки, а затем в колонке **службы BLOB-объектов** выберите **Контейнеры**.  
-      [![Выбор учетной записи хранения и службы BLOB-объектов](media/azure-stack-download-azure-marketplace-item/blob-service.png "Служба BLOB-объектов")](media/azure-stack-download-azure-marketplace-item/blob-service.png#lightbox)  
-
-   3. Выберите контейнер, который вы хотите использовать, а затем нажмите кнопку **Отправить**, чтобы открыть панель **Отправить BLOB-объект**.  
-      [![Создание контейнера и передача большого двоичного объекта](media/azure-stack-download-azure-marketplace-item/container.png "Контейнер")](media/azure-stack-download-azure-marketplace-item/container.png#lightbox)  
-
-   4. На панели "Отправить BLOB-объект" перейдите к пакету и файлам диска, которые вы хотите загрузить в хранилище, а затем нажмите кнопку **Передать**. [![Панель отправки BLOB-объекта](media/azure-stack-download-azure-marketplace-item/uploadsm.png "Отправка")](media/azure-stack-download-azure-marketplace-item/upload.png#lightbox)  
-
-   5. Переданные файлы отображаются в области контейнера. Выберите файл, а затем скопируйте URL-адрес из панели **Свойства BLOB-объекта**. Вы будете использовать этот URL-адрес на следующем шаге при импорте элементов marketplace в Azure Stack.  На следующем изображении контейнером является **blob-test-storage**, а файлом — **Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg**. URL-адрес файла — **https://testblobstorage1.blob.local.azurestack.external/blob-test-storage/Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg** .  
-      [![Свойства больших двоичных объектов](media/azure-stack-download-azure-marketplace-item/blob-storagesm.png "Blob properties")](media/azure-stack-download-azure-marketplace-item/blob-storage.png#lightbox)  
-
-3. Импортируйте образ VHD в Azure Stack с помощью командлета **Add-AzsPlatformimage**. При использовании этого командлета замените значения `publisher`, `offer` и других параметров реальными значениями для импортируемого образа.
-
-   Вы можете получить значения `publisher`, `offer` и `sku` образа из текстового файла, который скачивается вместе с AZPKG-файлом. Текстовый файл хранится в целевом расположении. Значение `version` — это версия, указанная при скачивании элемента из Azure в предыдущей процедуре.
-
-   В следующем примере скрипта используются значения для виртуальной машины Windows Server 2016 Datacenter Server Core. Значение `-Osuri` — это пример пути к хранилищу BLOB-объектов элемента.
-
-   Вместо этого сценария можно использовать [процедуру, описанную в этой статье](azure-stack-add-vm-image.md#add-a-vm-image-through-the-portal), для импорта образа VHD с помощью портала Azure.
-
-   ```powershell  
-   Add-AzsPlatformimage `
-    -publisher "MicrosoftWindowsServer" `
-    -offer "WindowsServer" `
-    -sku "2016-Datacenter-Server-Core" `
-    -osType Windows `
-    -Version "2016.127.20171215" `
-    -OsUri "https://mystorageaccount.blob.local.azurestack.external/cont1/Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.vhd"  
-   ```
-
-   **О шаблонах решений**. Некоторые шаблоны могут содержать небольшой VHD-файл размером 3 МБ с именем **fixed3.vhd**. Вам не нужно импортировать этот файл в Azure Stack. Файл Fixed3.vhd входит в состав некоторых шаблонов решений, чтобы они соответствовали требованиям к публикации в Azure Marketplace.
-
-   Просмотрите описание шаблонов, скачайте, а затем импортируйте дополнительные компоненты, например виртуальные жесткие диски, которые требуются для работы с шаблоном решения.  
-
-   **О расширениях**. При работе с расширениями образов виртуальных машин используйте следующие параметры:
-   - *Издатель*
-   - *Тип*
-   - *Версия*  
-
-   Не используйте для расширений параметр *Offer* (Предложение).
-
-4. Используя PowerShell, опубликуйте элемент marketplace в Azure Stack с помощью командлета **Add-AzsGalleryItem**. Например:
-
-    ```powershell
-    Add-AzsGalleryItem `
-     -GalleryItemUri "https://mystorageaccount.blob.local.azurestack.external/cont1/Microsoft.WindowsServer2016DatacenterServerCore-ARM.1.0.801.azpkg" `
-     -Verbose
-    ```
-
-5. После публикации элемента коллекции его можно использовать. Чтобы убедиться, что элемент коллекции опубликован, перейдите в раздел **Все службы**, а затем в категории **Общее** выберите **Marketplace**.  Если вы загружаете шаблон решения, обязательно добавьте любой зависимый образ VHD для этого шаблона решения.  
-  [![Просмотр Marketplace](media/azure-stack-download-azure-marketplace-item/view-marketplacesm.png "View Marketplace")](media/azure-stack-download-azure-marketplace-item/view-marketplace.png#lightbox)  
-
-В выпуске Azure Stack PowerShell 1.3.0 вы можете добавлять расширения виртуальной машины. Например:
-
-```powershell
-Add-AzsVMExtension -Publisher "Microsoft" -Type "MicroExtension" -Version "0.1.0" -ComputeRole "IaaS" -SourceBlob "https://github.com/Microsoft/PowerShell-DSC-for-Linux/archive/v1.1.1-294.zip" -SupportMultipleExtensions -VmOsType "Linux"
-```
-
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Создание и публикация элемента Marketplace](azure-stack-create-and-publish-marketplace-item.md)
+- [Добавление пользовательского образа виртуальной машины](azure-stack-add-vm-image.md)
+- [Создание и публикация пользовательского элемента Marketplace](azure-stack-create-and-publish-marketplace-item.md)

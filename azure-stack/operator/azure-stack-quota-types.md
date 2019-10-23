@@ -16,18 +16,18 @@ ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: xiaofmao
 ms.lastreviewed: 12/07/2018
-ms.openlocfilehash: 48ad7808e550fb875c8ee13caa5a429e1d77aa98
-ms.sourcegitcommit: 09d14eb77a43fd585e7e6be93c32fa427770adb6
+ms.openlocfilehash: e3e7ae6cc29756486ae5c292de6fea7e5259ecc1
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71010786"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283454"
 ---
 # <a name="quota-types-in-azure-stack"></a>Типы квот в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-[Квоты](azure-stack-plan-offer-quota-overview.md#plans) определяют ограничения ресурсов, которые может подготовить или использовать пользователь в рамках подписки. Например, квота может позволить пользователю создавать до пяти виртуальных машин. Каждый ресурс может иметь собственные типы квот.
+[Квоты](service-plan-offer-subscription-overview.md#plans) определяют ограничения ресурсов, которые может подготовить или использовать пользователь в рамках подписки. Например, квота может позволить пользователю создавать до пяти виртуальных машин. Каждый ресурс может иметь собственные типы квот.
 
 > [!IMPORTANT]
 > Отображение новых квот на пользовательском портале или применение измененных квот может занять до двух часов.
@@ -117,5 +117,5 @@ ms.locfileid: "71010786"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Дополнительные сведения о планах, предложениях и квотах.](azure-stack-plan-offer-quota-overview.md)
+- [Дополнительные сведения о службах, планах, предложениях и квотах.](service-plan-offer-subscription-overview.md)
 - [Create a plan in Azure Stack](azure-stack-create-plan.md) (Создание плана в Azure Stack)

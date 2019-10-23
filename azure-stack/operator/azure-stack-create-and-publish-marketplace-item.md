@@ -11,115 +11,200 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/20/2019
+ms.date: 10/10/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 668882b1f5e0702ce51798468c8f102efe92edcd
-ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
+ms.openlocfilehash: 4a8f24c11f8e72c4b3e2b99ae6b2a417e3bd0cba
+ms.sourcegitcommit: 5eae057cb815f151e6b8af07e3ccaca4d8e4490e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71159683"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72310586"
 ---
-# <a name="create-and-publish-a-marketplace-item-in-azure-stack"></a>Создание и публикация элемента Marketplace в Azure Stack
+# <a name="create-and-publish-a-custom-azure-stack-marketplace-item"></a>Создание и публикация пользовательского элемента Azure Stack Marketplace
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
+Каждый элемент, опубликованный в Azure Stack Marketplace, доступен в формате пакета коллекции Azure (AZPKG-файл). Средство *Azure Gallery Packager* позволяет создать пользовательский пакет коллекции Azure, который можно отправить в Azure Stack Marketplace для последующего скачивания пользователями. В процессе развертывания используется шаблон Azure Resource Manager.
+
+## <a name="marketplace-items"></a>Элементы Marketplace
+
+Примеры в этой статье показывают, как создать в Marketplace одно предложение виртуальной машины типа Windows или Linux.
+
 ## <a name="create-a-marketplace-item"></a>Создание элемента Marketplace
 
-1. Скачайте [средство Azure Gallery Packager](https://www.aka.ms/azurestackmarketplaceitem) и пример элемента Azure Stack Marketplace.
-2. Откройте пример элемента Marketplace и переименуйте папку **SimpleVMTemplate**. Новое имя должно совпадать с именем элемента Marketplace, например **Contoso.TodoList**. Эта папка содержит следующее:
+> [!IMPORTANT]
+> Прежде чем создавать элемент Marketplace для виртуальной машины, отправьте пользовательский образ виртуальной машины на портал Azure Stack по инструкциям из статьи в разделе [Добавление образа виртуальной машины в Azure Stack](azure-stack-add-vm-image.md#add-a-vm-image-as-an-azure-stack-operator-using-the-portal). Затем по инструкциям в этой статье упакуйте образ и передайте созданный AZPKG-файл в Azure Stack Marketplace.
 
-   ```shell
-   /Contoso.TodoList/
-   /Contoso.TodoList/Manifest.json
-   /Contoso.TodoList/UIDefinition.json
-   /Contoso.TodoList/Icons/
-   /Contoso.TodoList/Strings/
-   /Contoso.TodoList/DeploymentTemplates/
-   ```
+Чтобы создать пользовательский элемент Marketplace, выполните следующие действия.
 
-3. [Создайте шаблон Azure Resource Manager](/azure/azure-resource-manager/resource-group-authoring-templates) или выберите шаблон на портале GitHub. Элемент Marketplace использует этот шаблон для создания ресурса.
+1. Скачайте средство [Azure Gallery Packager](https://aka.ms/azsmarketplaceitem) и пример пакета коллекции Azure Stack. В комплект для скачивания входят пользовательские шаблоны виртуальных машин. Извлеките ZIP-файл и переименуйте папку **SimpleVMTemplate** , чтобы ее имя совпадало с именем элемента, который будет отображаться на портале Azure Stack.
 
-    > [!NOTE]  
-    > В шаблоне Azure Resource Manager нельзя жестко задавать секреты, такие как ключи продуктов, пароли или персональные данные клиентов. После публикации в коллекции JSON-файлы шаблонов доступны без аутентификации. Храните все секреты в хранилище [Key Vault](/azure/azure-resource-manager/resource-manager-keyvault-parameter) и обращайтесь к ним из шаблона.
+2. Создайте шаблон Azure Resource Manager или выберите готовый пример шаблона для Windows или Linux. Эти примеры шаблонов размещены в ZIP-файле средства, который вы скачали на шаге 1. Вы можете изменить текстовые значения в полях шаблона либо скачать уже настроенный шаблон с сайта GitHub. Дополнительную информацию о шаблонах Resource Manager см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](/azure/azure-resource-manager/resource-group-authoring-templates).
 
-4. Проверьте, можно ли с помощью API-интерфейсов Microsoft Azure Stack развернуть ресурс из этого шаблона.
-5. Если шаблон использует образ виртуальной машины, [добавьте этот образ виртуальной машины в Azure Stack](azure-stack-add-vm-image.md).
-6. Сохраните шаблон Azure Resource Manager в папке **/Contoso.TodoList/DeploymentTemplates/** .
-7. Выберите значки и текст для элемента Marketplace. Значки добавляются в папку **Icons**, а текст — в файл **resources**, расположенный в папке **Strings**. Для значков следуйте соглашению об именовании **мелких**, **обычных**, **крупных** и **огромных** значков. Подробное описание этих размеров см. в разделе [Справочные материалы. Пользовательский интерфейс элемента Marketplace](#reference-marketplace-item-ui).
+3. Пакет коллекции должен иметь такую структуру:
 
-   > [!NOTE]
-   > Для правильной сборки элемента Marketplace нужны значки всех четырех размеров (малый, средний, крупный и широкий).
-   >
-   >
+   :::image type="content" source="media/azure-stack-create-and-publish-marketplace-item/gallerypkg1.png" alt-text="Пакет коллекции":::
 
-8. В файле **manifest.json** измените значение параметра **name**, указав имя элемента Marketplace. Кроме того, для параметра **publisher** укажите ваше имя или название компании. Перед публикацией образа обновите файл manifest.json и обновите следующую строку: "name": "xxx". Убедитесь, что для каждой версии образа используются разные имена.
-9. В разделе **artefacts** укажите в параметрах **name** и **path** правильные данные для включаемого шаблона Azure Resource Manager.
+   Шаблоны развертывания имеют следующую структуру файлов:
 
-   ```json
-   "artifacts": [
-      {
-          "name": "Your template name",
-          "type": "Template",
-          "path": "DeploymentTemplates\\your path",
-          "isDefault": true
-      }
-   ```
+   :::image type="content" source="media/azure-stack-create-and-publish-marketplace-item/gallerypkg2.png" alt-text="Пакет коллекции":::
 
-10. Замените **My Marketplace Items** списком категорий, в которых должен отображаться этот элемент Marketplace.
+4. Замените следующие выделенные значения (обозначенные числами) в шаблоне Manifest.json значением, которое вы указали при [отправке пользовательского образа](azure-stack-add-vm-image.md#add-a-vm-image-as-an-azure-stack-operator-using-the-portal).
+
+   > [!NOTE]  
+   > В шаблоне Azure Resource Manager нельзя жестко задавать секреты, такие как ключи продуктов, пароли или персональные данные клиентов. После публикации в коллекции JSON-файлы шаблонов доступны без аутентификации. Храните все секреты в хранилище [Key Vault](/azure/azure-resource-manager/resource-manager-keyvault-parameter) и обращайтесь к ним из шаблона.
+
+   Ниже показан пример файла Manifest.json.
 
     ```json
-    "categories":[
-    "My Marketplace Items"
-    ],
+    {
+       "$schema": "https://gallery.azure.com/schemas/2015-10-01/manifest.json#",
+       "name": "Test", (1)
+       "publisher": "<Publisher name>", (2)
+       "version": "<Version number>", (3)
+       "displayName": "ms-resource:displayName", (4)
+       "publisherDisplayName": "ms-resource:publisherDisplayName", (5)
+       "publisherLegalName": "ms-resource:publisherDisplayName", (6)
+       "summary": "ms-resource:summary",
+       "longSummary": "ms-resource:longSummary",
+       "description": "ms-resource:description",
+       "longDescription": "ms-resource:description",
+       "uiDefinition": {
+          "path": "UIDefinition.json" (7)
+          },
+       "links": [
+        { "displayName": "ms-resource:documentationLink", "uri": "http://go.microsoft.com/fwlink/?LinkId=532898" }
+        ],
+       "artifacts": [
+          {
+             "name": "<Template name>",
+             "type": "Template",
+             "path": "DeploymentTemplates\\<Template name>.json", (8)
+             "isDefault": true
+          }
+       ],
+       "categories":[ (9)
+          "Custom",
+          "<Template name>"
+          ],
+       "images": [{
+          "context": "ibiza",
+          "items": [{
+             "id": "small",
+             "path": "icons\\Small.png", (10)
+             "type": "icon"
+             },
+             {
+                "id": "medium",
+                "path": "icons\\Medium.png",
+                "type": "icon"
+             },
+             {
+                "id": "large",
+                "path": "icons\\Large.png",
+                "type": "icon"
+             },
+             {
+                "id": "wide",
+                "path": "icons\\Wide.png",
+                "type": "icon"
+             }]
+        }]
+    }
     ```
 
-11. Остальные параметры, которые вы можете изменить в файле manifest.json, описаны в разделе [Справочные материалы. Файл Manifest.json для элемента Marketplace](#reference-marketplace-item-manifestjson).
+    В следующем списке описаны пронумерованные значения в примере шаблона выше.
 
-12. Чтобы упаковать папки в AZPKG-файл, откройте командную строку и выполните следующую команду:
+    - (1) — имя предложения.
+    - (2) — имя издателя, без пробелов.
+    - (3) — версия этого шаблона, без пробелов.
+    - (4) — имя, которое увидят клиенты.
+    - (5) — имя издателя, которое увидят клиенты.
+    - (6) — официальное наименование издателя.
+    - (7) — путь, по которому хранится файл **UIDefinition.json**.  
+    - (8) — путь и имя основного JSON-файла шаблона.
+    - (9) — имена категорий, в которых отображается этот шаблон.
+    - (10) — путь и имя для каждого значка.
+
+5. Для всех полей, в которых упоминается **ms-resource**, необходимо изменить соответствующие значения в файле **strings/resources.json**:
+
+    ```json
+    {
+    "displayName": "<OfferName.PublisherName.Version>",
+    "publisherDisplayName": "<Publisher name>",
+    "summary": "Create a simple VM",
+    "longSummary": "Create a simple VM and use it",
+    "description": "<p>This is just a sample of the type of description you could create for your gallery item!</p><p>This is a second paragraph.</p>",
+    "documentationLink": "Documentation"
+    }
+    ```
+
+    ![Отображение пакета](media/azure-stack-create-and-publish-marketplace-item/pkg1.png) ![Отображение пакета](media/azure-stack-create-and-publish-marketplace-item/pkg2.png)
+
+6. Проверьте, можно ли с помощью [API-интерфейсов Azure Stack](../user/azure-stack-profiles-azure-resource-manager-versions.md) развернуть ресурс из этого шаблона.
+
+7. Если шаблон использует образ виртуальной машины, [добавьте этот образ виртуальной машины в Azure Stack](azure-stack-add-vm-image.md).
+
+8. Сохраните шаблон Azure Resource Manager в папке **/Contoso.TodoList/DeploymentTemplates/** .
+
+9. Выберите значки и текст для элемента Marketplace. Значки добавляются в папку **Icons**, а текст — в файл **resources**, расположенный в папке **Strings**. Для значков следуйте соглашению об именовании **мелких**, **обычных**, **крупных** и **огромных** значков. Подробное описание этих размеров см. в разделе [Справочные материалы. Пользовательский интерфейс элемента Marketplace](#reference-marketplace-item-ui).
+
+    > [!NOTE]
+    > Для правильной сборки элемента Marketplace нужны значки всех четырех размеров (малый, средний, крупный и широкий).
+
+10. Остальные параметры, которые вы можете изменить в файле manifest.json, описаны в разделе [Справочные материалы. Файл Manifest.json для элемента Marketplace](#reference-marketplace-item-manifestjson).
+
+11. Завершив изменение файлов, преобразуйте их в AZPKG-файл. Преобразование выполняется с помощью средства **AzureGalleryPackager.exe** и скачанного ранее примера пакета коллекции. Выполните следующую команду:
 
     ```shell
-    AzureGalleryPackager.exe package -m <absolute path to manifest.json> -o <output location for the package>
+    .\AzureGalleryPackager.exe package –m c:\<path>\<gallery package name>\manifest.json –o c:\Temp
     ```
 
     > [!NOTE]
-    > Должен существовать полный путь к JSON-файлу манифеста, а также выходной пакет. Например, если указан выходной путь C:\MarketPlaceItem\yourpackage.azpkg, должна существовать папка **C:\MarketPlaceItem**.
+    > Для выходных данных можно выбрать любой путь, даже не обязательно на диске C:. Но пути к JSON-файлу манифеста и выходному пакету должны существовать в системе. Например, если путь к выходному файлу имеет значение `C:\<path>\galleryPackageName.azpkg`, то должна существовать папка `C:\<path>`.
     >
     >
 
 ## <a name="publish-a-marketplace-item"></a>Публикация элемента Marketplace
 
 1. Передайте созданный элемент Marketplace (файл AZPKG) в хранилище больших двоичных объектов Azure с помощью PowerShell или обозревателя службы хранилища Azure. Вы можете использовать локальное хранилище Azure Stack или службу хранилища Azure, которая является временным хранилищем для пакета. Убедитесь, что используемый большой двоичный объект является общедоступным.
-2. Убедитесь, что на клиентской виртуальной машине в среде Microsoft Azure Stack настроен сеанс PowerShell с вашими учетными данными администратора служб. Инструкции по аутентификации PowerShell в Azure Stack вы можете найти в статье [Развертывание шаблонов в Azure Stack с помощью PowerShell](../user/azure-stack-deploy-template-powershell.md).
-3. При использовании [PowerShell 1.3.0](azure-stack-powershell-install.md) или более поздней версии вы можете опубликовать элемент Marketplace в Azure Stack с помощью командлета PowerShell **Add-AzsGalleryItem**. В предшествующих версиях вместо командлета **Add-AzsGalleryItem** следует использовать **Add-AzureRMGalleryitem**. Например, при использовании PowerShell 1.3.0 или более поздней версии:
 
-   ```powershell
-   Add-AzsGalleryItem -GalleryItemUri `
-   https://sample.blob.core.windows.net/gallerypackages/Microsoft.SimpleTemplate.1.0.0.azpkg -Verbose
-   ```
+2. Чтобы импортировать пакет коллекции в Azure Stack, сначала выполните удаленное подключение (RDP) к клиентской виртуальной машине, чтобы скопировать файл, который вы только что создали в Azure Stack.
 
-   | Параметр | ОПИСАНИЕ |
-   | --- | --- |
-   | SubscriptionID |Идентификатор подписки администратора. Его можно получить с помощью PowerShell. Если вы предпочитаете получить его на портале, найдите подписку поставщика и скопируйте идентификатор этой подписки. |
-   | GalleryItemUri |URI большого двоичного объекта для пакета коллекции, который был ранее отправлен в хранилище. |
-   | Apiversion |Установите значение **2015-04-01**. |
+3. Добавьте контекст.
 
-4. Вернитесь на портал. Теперь вы увидите этот элемент Marketplace на портале, войдя как оператор или пользователь. Может пройти несколько минут, прежде чем пакет появится в списке.
+    ```powershell
+    $ArmEndpoint = "https://adminmanagement.local.azurestack.external"
+    Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint $ArmEndpoint
+    Add-AzureRmAccount -EnvironmentName "AzureStackAdmin"
+    ```
 
-5. Поздравляем, ваш элемент Marketplace успешно сохранен в Azure Stack Marketplace. Теперь его можно удалить из хранилища больших двоичных объектов.
+4. Выполните следующий скрипт, чтобы импортировать ресурс в коллекцию:
 
-    > [!CAUTION]  
-    > Все артефакты коллекции по умолчанию и пользовательские артефакты коллекции теперь доступны без проверки подлинности по следующим URL-адресам:  
-`https://adminportal.[Region].[external FQDN]:30015/artifact/20161101/[Template Name]/DeploymentTemplates/Template.json`
-`https://portal.[Region].[external FQDN]:30015/artifact/20161101/[Template Name]/DeploymentTemplates/Template.json`
-`https://systemgallery.blob.[Region].[external FQDN]/dev20161101-microsoft-windowsazure-gallery/[Template Name]/UiDefinition.json`
+    ```powershell
+    Add-AzsGalleryItem -GalleryItemUri `
+    https://sample.blob.core.windows.net/<temporary blob name>/<offerName.publisherName.version>.azpkg –Verbose
+    ```
+
+5. Убедитесь, что у вас есть допустимая учетная запись хранения, в которой можно сохранить этот элемент. Значение `GalleryItemURI` можно получить на портале администрирования Azure Stack. Выберите **Учетная запись хранения —> Свойства большого двоичного объекта > URL** с расширением .azpkg. Учетная запись хранения используется непродложительно, только для публикации в Marketplace.
+
+   После того, как вы подготовите пакет коллекции и отправите его командой **Add-AzsGalleryItem**, пользовательская виртуальная машина появится в Marketplace и в представлении **Создание ресурсов**. Обратите внимание, что пользовательский пакет коллекции не отображается в разделе **управления Marketplace**.
+
+   [![Пользовательский элемент Marketplace отправлен](media/azure-stack-create-and-publish-marketplace-item/pkg6sm.png "Пользовательский элемент Marketplace отправлен")](media/azure-stack-create-and-publish-marketplace-item/pkg6.png#lightbox)
+
+6. После успешной публикации элемента в Marketplace можно удалить содержимое из учетной записи хранения.
+
+   > [!CAUTION]  
+   > Все артефакты коллекции по умолчанию и пользовательские артефакты коллекции теперь доступны без проверки подлинности по следующим URL-адресам:  
+   `https://adminportal.[Region].[external FQDN]:30015/artifact/20161101/[Template Name]/DeploymentTemplates/Template.json`
+   `https://portal.[Region].[external FQDN]:30015/artifact/20161101/[Template Name]/DeploymentTemplates/Template.json`
 
 6. Чтобы удалить элемент Marketplace, используйте командлет **Remove-AzureRMGalleryItem**. Например:
 
    ```powershell
-   Remove-AzsGalleryItem -Name Microsoft.SimpleTemplate.1.0.0  -Verbose
+   Remove-AzsGalleryItem -Name <Gallery package name> -Verbose
    ```
 
    > [!NOTE]
@@ -202,5 +287,6 @@ ms.locfileid: "71159683"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Общие сведения об Azure Stack Marketplace](azure-stack-marketplace.md)
-* [Скачивание элементов marketplace](azure-stack-download-azure-marketplace-item.md)
+- [Общие сведения об Azure Stack Marketplace](azure-stack-marketplace.md)
+- [Скачивание элементов marketplace](azure-stack-download-azure-marketplace-item.md)
+- [Описание структуры и синтаксиса шаблонов Azure Resource Manager](/azure/azure-resource-manager/resource-group-authoring-templates)

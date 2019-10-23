@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/01/2019
+ms.date: 10/14/2019
 ms.author: mabrigg
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: 27dda5b79525c4a5d1c12c998077bb19cbea0079
-ms.sourcegitcommit: 9f4c6e96f60b4c229316e7a4ab6e0e5ef0a9a232
+ms.openlocfilehash: e972c7799b8cac37d1cd75cda9dc4e94a7ae73e2
+ms.sourcegitcommit: 5eae057cb815f151e6b8af07e3ccaca4d8e4490e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061189"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72310550"
 ---
 # <a name="register-azure-stack-with-azure"></a>Регистрация Azure Stack в Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "71061189"
 
 Для регистрации Azure Stack в Azure необходимо следующее:
 
-- Идентификатор подписки Azure. При регистрации поддерживаются только подписки на такие общие службы, как EA, CSP или CSPSS. Поставщикам служб шифрования необходимо решить, какую подписку использовать:[CSP или APSS](azure-stack-add-manage-billing-as-a-csp.md#create-a-csp-or-apss-subscription).<br><br>Чтобы получить идентификатор, войдите в Azure и щелкните **Все службы**. Затем в категории **Общие** выберите **Подписки**, щелкните нужную подписку и найдите идентификатор подписки в разделе **Основные компоненты**.
+- Идентификатор подписки Azure. При регистрации поддерживаются только подписки на такие общие службы, как EA, CSP или CSPSS. Поставщикам служб шифрования необходимо решить, какую подписку использовать:[CSP или APSS](azure-stack-add-manage-billing-as-a-csp.md#create-a-csp-or-apss-subscription).<br><br>Чтобы получить идентификатор, войдите в Azure и щелкните **Все службы**. Затем в категории **Общие** выберите **Подписки**, щелкните нужную подписку и найдите идентификатор подписки в разделе **Основные компоненты**. Для рабочей среды, сред разработки и тестирования рекомендуется использовать разные подписки. 
 
   > [!Note]  
   > Облачные подписки для Германии в настоящее время не поддерживаются.

@@ -15,12 +15,12 @@ ms.date: 06/11/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: 14f2300be0309cbd47b1481a4a52b02331f120a4
-ms.sourcegitcommit: 1bae55e754d7be75e03af7a4db3ec43fd7ff3e9c
+ms.openlocfilehash: 6ada971c092acbc1ebe8e83a784a5d1e392c4dea
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319200"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283594"
 ---
 # <a name="create-an-offer-in-azure-stack"></a>Создание предложения в Azure Stack
 
@@ -43,7 +43,7 @@ ms.locfileid: "71319200"
 
    ![Выбор плана, который требуется включить в предложение Azure Stack](media/azure-stack-create-offer/select-plan.png)
 
-4. На этом этапе можно создать дополнительный план для изменения базового плана (необязательно). Мы создадим дополнительный план при работе со следующей статьей ([Дополнительные планы Azure Stack](create-add-on-plan.md)).
+4. На этом этапе можно создать дополнительный план для изменения базового плана (необязательно). Вы можете создать дополнительный план при работе со следующей статьей [Дополнительные планы Azure Stack](create-add-on-plan.md).
 
 5. Перейдите на вкладку **Review + create** (Просмотр и создание). Просмотрите сводку предложения, чтобы убедиться, что все значения правильные. Интерфейс позволяет расширить квоты выбранных планов поочередно, чтобы просмотреть сведения о каждой из квот в плане. Вы также можете вернуться для внесения необходимых изменений.
 
@@ -111,5 +111,5 @@ ms.locfileid: "71319200"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Создание подписок](azure-stack-subscribe-plan-provision-vm.md)
-- [Подготовка виртуальной машины](../user/azure-stack-create-vm-template.md)
+- Чтобы узнать, как изменить предложение и предоставить пользователям дополнительный план, перейдите в раздел [Создание дополнительного плана](create-add-on-plan.md) (необязательно).
+- В противном случае перейдите к статье [Создание подписок для предложений в Azure Stack](azure-stack-subscribe-plan-provision-vm.md).

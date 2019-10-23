@@ -14,12 +14,12 @@ ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 4d9331f5167a0ce9d305a76225987d8b1d3f3dcc
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: 2fee81a79b58294a9c43f8d550f139157cb64a9b
+ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961563"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72283573"
 ---
 # <a name="connect-azure-stack-to-azure-using-azure-expressroute"></a>Подключение Azure Stack к Azure с помощью Azure ExpressRoute
 
@@ -84,7 +84,7 @@ Azure ExpressRoute позволяет переносить локальные с
 Прежде чем приступать к настройке Azure Stack, требуется следующее:
 
 * Развертывание системы с Azure Stack или развертывание Пакета средств разработки Azure Stack (ASDK). Сведения о развертывании ASDK см. в статье [Краткое руководство по оценке Пакета средств разработки Azure Stack](../asdk/asdk-download.md).
-* Предложение Azure Stack, на которое могут подписаться пользователи. Дополнительные сведения см. в разделе [Обзор планов, предложений, квот и подписок](azure-stack-plan-offer-quota-overview.md).
+* Предложение Azure Stack, на которое могут подписаться пользователи. Дополнительные сведения см. в статье [Service, plan, offer, subscription overview](service-plan-offer-subscription-overview.md) (Обзор служб, планов, предложений и подписок).
 
 ### <a name="create-network-resources-in-azure-stack"></a>Создание сетевых ресурсов в Azure Stack
 
@@ -341,7 +341,7 @@ ASDK работает автономно и изолирован от сети, 
 
 Вы можете использовать любой маршрутизатор, поддерживающий протокол IKEv2 VPN и BGP, чтобы разорвать VPN-подключение типа "сеть — сеть" с Azure Stack. Тот же маршрутизатор используется при подключении к Azure через канал ExpressRoute.
 
-Следующий пример конфигурации Cisco Site Recovery 1000 Series Aggregation Services Router поддерживает сетевую инфраструктуру, показанную на схеме *конфигурации маршрутизатора ExpressRoute*.
+Следующий пример конфигурации Cisco ASR 1000 Series Aggregation Services Router поддерживает сетевую инфраструктуру, показанную на схеме *конфигурации маршрутизатора ExpressRoute*.
 
 ```shell
 ip vrf Tenant 1

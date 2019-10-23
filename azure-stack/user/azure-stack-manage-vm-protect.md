@@ -16,12 +16,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: hectorl
 ms.lastreviewed: 3/19/2018
-ms.openlocfilehash: f633f000968fcf4f373fc502898fa18084f93f80
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: b9a7416bc73c0e36ab9986b1a280597c2d6d93a9
+ms.sourcegitcommit: 0866555e0ed240a65595052899ef1b836dd07fbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824305"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72257760"
 ---
 # <a name="protect-vms-deployed-on-azure-stack"></a>Защита виртуальных машин, развернутых в Azure Stack
 
@@ -162,8 +162,16 @@ RTO и RPO являются бизнес-требованиями. Провед�
 
 В этой статье представлены общие рекомендации для защиты пользовательских виртуальных машин, развернутых в Azure Stack. Дополнительные сведения о защите виртуальных машин пользователей с помощью служб Azure см. в следующих статьях:
 
+- [Azure Stack: Considerations for business continuity and disaster recovery](http://aka.ms/azurestackbcdrconsiderationswp) (Рекомендации по обеспечению непрерывности бизнес-процессов и аварийного восстановления в Azure Stack)
+
+### <a name="azure-backup-server"></a>Azure Backup Server
  - [Архивация файлов в Azure Stack](https://docs.microsoft.com/azure/backup/backup-mabs-files-applications-azure-stack)
  - [Документация по Azure Backup](https://docs.microsoft.com/azure/backup/ ) 
+ 
+ ### <a name="azure-site-recovery"></a>Azure Site Recovery
  - [Документация по Site Recovery](https://docs.microsoft.com/azure/site-recovery/)  
+ 
+ ### <a name="partner-products"></a>Партнерские продукты
+ - [Таблица партнерских экосистем для интеграции центра обработки данных Azure Stack](http://aka.ms/azurestackbcdrpartners)
 
 Дополнительные сведения о продуктах партнеров, обеспечивающих защиту виртуальной машины в Azure Stack, см. в записи блога [Protecting applications and data on Azure Stack](https://azure.microsoft.com/blog/protecting-applications-and-data-on-azure-stack/) (Защита приложений и данных в Azure Stack).
