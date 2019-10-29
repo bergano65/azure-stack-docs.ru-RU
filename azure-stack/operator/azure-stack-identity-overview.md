@@ -16,12 +16,12 @@ ms.date: 06/03/2019
 ms.author: patricka
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 8b05b2cc9fdde7987efd78c5beb0123b035e03ea
-ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
+ms.openlocfilehash: 94a7dc11c4711bcdf39215ccaab69e95ea5c57f3
+ms.sourcegitcommit: b72729305234e13c65de3771cb08678d46ba1348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72019353"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72543845"
 ---
 # <a name="overview-of-identity-providers-for-azure-stack"></a>Общие сведения о поставщиках удостоверений для Azure Stack
 
@@ -175,7 +175,7 @@ ms.locfileid: "72019353"
 - Проверяет, что JSON Web Token подписан с помощью сертификата, настроенного через OpenID, известного для Azure Resource Manager.
 - Просматривает утверждения *времени выдачи* и *окончания срока действия*, чтобы убедиться, что маркер активный и может быть принят.
 
-После выполнения всех проверок Azure Resource Manager использует утверждения *объектов* и *групп*, чтобы создать список ресурсов, к которым может получить доступ субъект.
+После выполнения всех проверок, Azure Resource Manager использует утверждения *идентификатора объекта* (oid) и *групп* для создания списка ресурсов, к которым субъект может получить доступ.
 
 ![Схема протокола обмена маркерами](media/azure-stack-identity-overview/token-exchange.png)
 
