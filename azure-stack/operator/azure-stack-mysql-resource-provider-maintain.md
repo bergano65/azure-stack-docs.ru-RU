@@ -1,5 +1,5 @@
 ---
-title: Поддержка поставщика ресурсов MySQL в Azure Stack | Документация Майкрософт
+title: Операции поддержки для поставщиков ресурсов MySQL в Azure Stack | Документация Майкрософт
 description: Сведения о поддержке службы поставщика ресурсов MySQL в Azure Stack.
 services: azure-stack
 documentationCenter: ''
@@ -15,27 +15,27 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 6667fd3db21cd6138e756c16eb8e68b8ecd1b3e9
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 9dc2de86828e188aa82b44d376e693be887717d8
+ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829413"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72682179"
 ---
-# <a name="mysql-resource-provider-maintenance-operations"></a>Операции поддержки для поставщиков ресурсов MySQL
+# <a name="mysql-resource-provider-maintenance-operations-in-azure-stack"></a>Операции поддержки для поставщиков ресурсов MySQL в Azure Stack
 
-Поставщик ресурсов MySQL выполняется на заблокированной виртуальной машине. Чтобы включить операции обслуживания, вам нужно обновить систему безопасности виртуальной машины. Чтобы применить для этого принцип предоставления минимальных прав, можно использовать конечную точку DBAdapterMaintenance PowerShell Just Enough Administration (JEA). Пакет установки поставщика ресурсов содержит сценарий для этой операции.
+Поставщик ресурсов MySQL выполняется на заблокированной виртуальной машине. Чтобы включить операции обслуживания, вам нужно обновить систему безопасности виртуальной машины. Чтобы применить для этого принцип предоставления минимальных прав (POLP), можно использовать конечную точку DBAdapterMaintenance PowerShell Just Enough Administration (JEA). Пакет установки поставщика ресурсов содержит сценарий для этой операции.
 
-## <a name="update-the-virtual-machine-operating-system"></a>Обновление ОС виртуальной машины
+## <a name="update-the-vm-operating-system"></a>Обновление операционной системы виртуальной машины
 
 Так как поставщик ресурсов выполняется на *пользовательской* виртуальной машине, нужно применять необходимые исправления и обновления по мере их выпуска. Для применения обновлений к виртуальной машине можно использовать пакеты обновления Windows, предоставляемые в рамках цикла исправлений и обновлений.
 
-Обновите поставщика виртуальной машины с помощью одного из следующих способов:
+Обновите виртуальную машину поставщика с помощью одного из следующих методов.
 
 - Установка пакета последней версии поставщика ресурсов с помощью текущего исправленного образа Windows Server 2016 Core.
 - Установка пакета обновления Windows во время установки или обновления поставщика ресурсов.
 
-## <a name="update-the-virtual-machine-windows-defender-definitions"></a>Обновление определений Защитника Windows на виртуальной машине
+## <a name="update-the-vm-windows-defender-definitions"></a>Обновление определений Защитника Windows
 
 Чтобы обновить определения Защитника, сделайте следующее:
 
@@ -76,7 +76,7 @@ Invoke-WebRequest -Uri 'https://go.microsoft.com/fwlink/?LinkID=121721&arch=x64'
 $session = New-PSSession -ComputerName $databaseRPMachine `
     -Credential $vmLocalAdminCreds -ConfigurationName DBAdapterMaintenance
 
-# Copy the defender update file to the adapter virtual machine.
+# Copy the defender update file to the adapter VM.
 Copy-Item -ToSession $session -Path $localPathToDefenderUpdate `
      -Destination "User:\"
 
@@ -128,7 +128,7 @@ $session | Remove-PSSession
 
 ```
 
-**Смена пароля учетной записи локального администратора виртуальной машины**
+**Измените пароль учетной записи локального администратора виртуальной машины**
 
 ```powershell
 .\SecretRotationMySQLProvider.ps1 `
@@ -159,7 +159,7 @@ $session | Remove-PSSession
 |CloudAdminCredential|Учетные данные учетной записи домена администратора облака Azure Stack.|
 |PrivilegedEndpoint|Привилегированная конечная точка для получения информации о метке Azure Stack (Get-AzureStackStampInformation).|
 |DiagnosticsUserPassword|Пароль учетной записи для пользователя диагностики.|
-|VMLocalCredential|Учетная запись локального администратора виртуальной машины MySQLAdapter.|
+|VMLocalCredential|Учетная запись локального администратора на виртуальной машине MySQLAdapter.|
 |DefaultSSLCertificatePassword|Пароль SSL-сертификата (*pfx) по умолчанию.|
 |DependencyFilesLocalPath|Локальный путь к файлам зависимостей.|
 |     |     |
@@ -174,7 +174,7 @@ $session | Remove-PSSession
 
 ## <a name="collect-diagnostic-logs"></a>Сбор данных журналов диагностики
 
-Чтобы собрать данные журналов с заблокированной виртуальной машины, можно использовать конечную точку DBAdapterDiagnostics PowerShell Just Enough Administration (JEA). Она предоставляет следующие команды:
+Чтобы собрать данные журналов с заблокированной виртуальной машины, используйте конечную точку DBAdapterDiagnostics PowerShell Just Enough Administration (JEA). Она предоставляет следующие команды:
 
 - **Get-AzsDBAdapterLog**. Эта команда создает пакет ZIP с журналами диагностики поставщика ресурсов и сохраняет этот файл на пользовательском диске сеанса. Эту команду можно выполнить без параметров, чтобы собрать данные журналов за последние четыре часа.
 
@@ -194,7 +194,7 @@ $session | Remove-PSSession
 * FromDate — за четыре часа до текущего момента.
 * ToDate — текущий момент времени.
 
-**Пример сценария PowerShell для сбора журналов.**
+**Пример сценария PowerShell для сбора журналов**
 
 Приведенный ниже сценарий показывает, как собирать данные журналов диагностики на виртуальной машине поставщика ресурсов.
 

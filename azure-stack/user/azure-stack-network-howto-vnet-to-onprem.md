@@ -9,12 +9,12 @@ ms.date: 10/03/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 722cd99a53a0c08e7b981a571726b378e54cd288
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: c11d5ad563ff673cfaf9e28cea7373bbc6e551aa
+ms.sourcegitcommit: b72729305234e13c65de3771cb08678d46ba1348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71962678"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72543801"
 ---
 # <a name="setup-vpn-gateway-for-azure-stack-using-fortigate-nva"></a>Настройка VPN-шлюза для Azure Stack с использованием виртуального сетевого модуля FortiGate
 
@@ -221,7 +221,7 @@ ms.locfileid: "71962678"
 | Версия IKE | 1 |
 | Режим IKE | Главный (защита идентификатора) |
 | Алгоритмы предложений первого этапа | AES128-SHA256, AES256-SHA256, AES128-SHA1, AES256-SHA1 |
-| Группы Диффи — Хеллмана | 14, 5 |
+| Группы Диффи-Хеллмана | 14, 5 |
 
 ## <a name="create-the-vpn-tunnel"></a>Создание туннеля VPN
 

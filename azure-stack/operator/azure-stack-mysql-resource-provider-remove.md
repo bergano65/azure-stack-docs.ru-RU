@@ -1,5 +1,5 @@
 ---
-title: Удаление поставщика ресурсов MySQL в Azure Stack | Документация Майкрософт
+title: Удаление поставщика ресурсов MySQL в Azure Stack | Документация Майкрософт
 description: Сведения об удалении поставщика ресурсов MySQL из развертывания Azure Stack.
 services: azure-stack
 documentationCenter: ''
@@ -15,14 +15,14 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2018
-ms.openlocfilehash: 3a48ded6a9a21650bae488e0a858086a3575235e
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: a2b55707bc05aecf8681cb866c58b0ed34fb87cd
+ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829401"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72682161"
 ---
-# <a name="remove-the-mysql-resource-provider"></a>Удаление поставщика ресурсов MySQL
+# <a name="remove-the-mysql-resource-provider-in-azure-stack"></a>Удаление поставщика ресурсов MySQL в Azure Stack
 
 Прежде чем удалить поставщик ресурсов MySQL, необходимо удалить все его зависимости. Кроме того, потребуется скопировать пакет развертывания, который был использован для установки поставщика ресурсов.
 
@@ -50,12 +50,12 @@ ms.locfileid: "71829401"
 2. Получите копию пакета установки поставщика ресурсов MySQL и запустите файл для самостоятельного извлечения содержимого во временный каталог.
 3. Откройте новую консоль PowerShell с повышенными привилегиями и перейдите в каталог, в который ранее извлекли файлы установки поставщика ресурсов MySQL.
 4. Запустите скрипт DeployMySqlProvider.ps1 со следующими параметрами:
-    - **Uninstall**. Удаляет поставщик ресурсов и все связанные с ним ресурсы.
-    - **PrivilegedEndpoint**. IP-адрес или DNS-имя привилегированной конечной точки.
-    - **AzureEnvironment**. Среда Azure, используемая для развертывания Azure Stack. Требуется только для развертываний Azure AD.
-    - **CloudAdminCredential**. Учетные данные администратора облака, необходимые для доступа к привилегированной конечной точке.
+    - **Uninstall**: Удаляет поставщик ресурсов и все связанные с ним ресурсы.
+    - **PrivilegedEndpoint**: IP-адрес или DNS-имя привилегированной конечной точки.
+    - **AzureEnvironment**: Среда Azure, используемая для развертывания Azure Stack. Требуется только для развертываний Azure AD.
+    - **CloudAdminCredential**: Учетные данные администратора облака, необходимые для доступа к привилегированной конечной точке.
     - **DirectoryTenantID**
-    - **AzCredential**. Учетные данные администратора службы Azure Stack. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack.
+    - **AzCredential**: Учетные данные администратора службы Azure Stack. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

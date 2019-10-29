@@ -15,12 +15,12 @@ ms.date: 09/25/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: 70adb6abaefc81faf487bbae5c560cc67f705341
-ms.sourcegitcommit: d967cf8cae320fa09f1e97eeb888e3db5b6e7972
+ms.openlocfilehash: b7d20327410ace5b5ad12d34a24ff474c1a384b0
+ms.sourcegitcommit: 4a2318ad395b2a931833ccba4430d8d04cdd8819
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71279210"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72780477"
 ---
 # <a name="scale-a-kubernetes-cluster-on-azure-stack"></a>Масштабирование кластера Kubernetes в Azure Stack
 
@@ -49,7 +49,7 @@ ms.locfileid: "71279210"
 | -master-FQDN |  | Полное доменное имя главного узла. Обязательный параметр при уменьшении масштаба. |
 | identity-system | adfs | Необязательный элемент. Укажите решение по управлению удостоверениями, если используются службы федерации Active Directory (AD FS). |
 
-Параметр **–azure-env** является обязательным для операции масштабирования кластера в Azure Stack. Дополнительные сведения о параметрах и значениях для команды **scale** обработчика AKS см. в [этой статье](https://github.com/Azure/aks-engine/blob/master/docs/topics/scale.md#parameters).
+При масштабировании кластера в Azure Stack необходимо указать параметр **--azure-env**. Дополнительные сведения о параметрах и значениях для команды **scale** обработчика AKS см. в [этой статье](https://github.com/Azure/aks-engine/blob/master/docs/topics/scale.md#parameters).
 
 ### <a name="command-to-scale-your-cluster"></a>Команда для масштабирования кластера
 

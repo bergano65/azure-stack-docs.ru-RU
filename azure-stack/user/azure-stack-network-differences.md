@@ -11,12 +11,12 @@ ms.service: azure-stack
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 07/10/2019
-ms.openlocfilehash: 79ec0994ecd99a5279fc0b3b032ef6872f921f38
-ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
+ms.openlocfilehash: 09e75656fc6a00181ffb31087e19e80b92760ed2
+ms.sourcegitcommit: b72729305234e13c65de3771cb08678d46ba1348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72277808"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72543677"
 ---
 # <a name="differences-and-considerations-for-azure-stack-networking"></a>Сети Azure Stack: различия и рекомендации
 
@@ -75,6 +75,23 @@ ms.locfileid: "72277808"
 | Шлюз приложений | Балансировка нагрузки уровня 7 | Поддерживаются | Пока не поддерживается. |
 | Диспетчер трафика | Маршрутизация входящего трафика для обеспечения надежности и оптимальной производительности приложений. | Поддерживаются | Пока не поддерживается. |
 | ExpressRoute | Настройка быстрого частного подключения к облачным службам Майкрософт из локальной инфраструктуры или среды для совместной работы. | Поддерживаются | Поддержка подключения Azure Stack к каналу Express Route. |
+
+## <a name="api-versions"></a>Версии API 
+
+Сеть Azure Stack поддерживает следующие версии API: 
+
+- 2018-11-01
+- 2018-10-01
+- 2018-08-01
+- 2018-07-01
+- 2018-06-01
+- 2018-05-01
+- 2018-04-01
+- 2018-03-01
+- 2018-02-01
+- 2018-01-01
+- 2017-11-01
+- 2017-10-01
 
 ## <a name="next-steps"></a>Дополнительная информация
 

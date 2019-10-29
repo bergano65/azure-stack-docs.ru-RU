@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/10/2019
+ms.date: 10/17/2019
 ms.author: mabrigg
 ms.lastreviewed: 08/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 60515f257dc8ab04e351d1353919a749e9cf4224
-ms.sourcegitcommit: 79ead51be63c372b23b7fca6ffeaf95fd44de786
+ms.openlocfilehash: 44eca76e3b9e969681f4540093088785ad06f97c
+ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71687957"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72534002"
 ---
 # <a name="plan-for-an-azure-stack-update"></a>Планирование обновления Azure Stack
 
@@ -55,6 +55,8 @@ ms.locfileid: "71687957"
 6. Убедитесь, что пакет от изготовителя оборудования совместим с версией Azure Stack, до которой выполняется обновление. Если пакет от изготовителя оборудования несовместим с версией Azure Stack, до которой выполняется обновление, то перед запуском обновления Azure Stack необходимо установить обновление пакета от изготовителя оборудования. Инструкции см. в разделе "Применение обновлений изготовителя оборудования для Azure Stack". Повторите шаги 3 и 4 после применения обновления пакета от изготовителя оборудования.
 
 7. Запустите планировщик ресурсов. Общие сведения и инструкции по использованию этого инструмента см. в разделе [Общие сведения о планировании ресурсов Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-capacity-planning-overview).
+
+8. При необходимости вы можете [включить автоматический сбор журнала диагностики](azure-stack-configure-automatic-diagnostic-log-collection.md) для заблаговременного сбора журналов для анализа поддержки клиентов, если вы видите оповещение, такое как: **Сбой обновления**. 
 
 8. Просмотрите сведения о пакете обновления. При планировании периода обслуживания обязательно просмотрите сведения о конкретном типе пакета обновления, выпущенного корпорацией Майкрософт, которые приводятся в заметках о выпуске.
 

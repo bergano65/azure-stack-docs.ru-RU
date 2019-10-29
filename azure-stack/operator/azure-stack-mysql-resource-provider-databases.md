@@ -1,6 +1,6 @@
 ---
-title: Использование баз данных, предоставленных поставщиком ресурсов адаптера MySQL в Azure Stack | Документация Майкрософт
-description: Создание баз данных MySQL, подготовленных с помощью поставщика ресурсов адаптера MySQL, и управление ими
+title: Создание баз данных MySQL в Azure Stack | Документация Майкрософт
+description: Сведения о создании баз данных MySQL, подготовленных с помощью поставщика ресурсов адаптера MySQL, и управление ими в Azure Stack.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -15,15 +15,15 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 594d1f45e19717bdbbc5f9fee56cf253c03b6efb
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: 9daaea395ee28da79da1d6fd553d2e0b30e28156
+ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72283472"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72682235"
 ---
-# <a name="create-mysql-databases"></a>Создание баз данных MySQL
-Пользователь Azure Stack с подпиской на предложение, включающее службу базы данных MySQL, может создавать и администрировать самостоятельно обслуживаемые базы данных MySQL на портале для пользователей.
+# <a name="create-mysql-databases-in-azure-stack"></a>Создание баз данных MySQL в Azure Stack
+Пользователь Azure Stack с подпиской на предложение, включающее службу базы данных MySQL, может самостоятельно создавать обслуживаемые базы данных MySQL и управлять ими на портале для пользователей.
 
 ## <a name="create-a-mysql-database"></a>Создание базы данных MySQL
 
@@ -66,4 +66,4 @@ ms.locfileid: "72283472"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Подробнее о [предоставлении баз данных MySQL с высоким уровнем доступности](azure-stack-tutorial-mysql.md)
+Подробнее о [предоставлении баз данных MySQL с высоким уровнем доступности](azure-stack-tutorial-mysql.md).
