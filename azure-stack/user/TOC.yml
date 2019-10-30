@@ -200,7 +200,7 @@
                     - name: Обработчик AKS в Azure Stack
                       href: azure-stack-kubernetes-aks-engine-overview.md
                     - name: Политика поддержки
-                      href: azure-stack-kubernetes-ask-engine-support.md
+                      href: azure-stack-kubernetes-aks-engine-support.md
                     - name: Настройка необходимых компонентов
                       href: azure-stack-kubernetes-aks-engine-set-up.md
                     - name: Создание клиента Linux
@@ -275,6 +275,8 @@
           href: azure-stack-network-howto-vnet-to-vnet-stacks.md
         - name: Пиринг виртуальных сетей
           href: azure-stack-network-howto-vnet-to-vnet.md
+        - name: Подключение к хранилищу iSCSI
+          href: azure-stack-network-howto-iscsi-storage.md
 - name: Основные понятия
   items:
     - name: Шаблоны для гибридного облака
