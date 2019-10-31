@@ -9,14 +9,16 @@ ms.date: 10/03/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: b68b0119e30d39b126aa43c2c8ed4c859073663e
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: cf9239f57423b54f6cd7f093779f5c7afa7745b1
+ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71962576"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73167236"
 ---
 # <a name="how-to-establish-a-vnet-to-vnet-connection-in-azure-stack-with-fortinet-fortigate-nva"></a>Установка подключения между виртуальными сетями в Azure Stack с помощью NVA Fortinet FortiGate
+
+*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 В этой статье показано, как подключить виртуальную сеть в одном экземпляре Azure Stack к виртуальной сети в другом экземпляре Azure Stack с помощью виртуального сетевого модуля (NVA) Fortinet FortiGate.
 

@@ -15,12 +15,12 @@ ms.date: 09/14/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/14/2019
-ms.openlocfilehash: 0b1c28369fb1865778c68040894d100af9ea7fd6
-ms.sourcegitcommit: 09d14eb77a43fd585e7e6be93c32fa427770adb6
+ms.openlocfilehash: 93a835b6d3eff233ccbd421930f9618325126ea4
+ms.sourcegitcommit: 58e1911a54ba249a82fa048c7798dadedb95462b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019380"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73057772"
 ---
 # <a name="what-is-the-aks-engine-on-azure-stack"></a>Что собой представляет обработчик AKS в Azure Stack?
 
@@ -50,7 +50,7 @@ ms.locfileid: "71019380"
 2.  Обработчик AKS развертывает кластер в существующей виртуальной сети. Дополнительные сведения см. в статье [об использовании пользовательской виртуальной сети с обработчиком AKS](https://github.com/Azure/aks-engine/blob/master/docs/tutorials/custom-vnet.md).
 3.  Операции [обновления](azure-stack-kubernetes-aks-engine-upgrade.md) и [масштабирования](azure-stack-kubernetes-aks-engine-scale.md).
 
-Дополнительные сведения об обработчике AKS и Azure Stack см. в статье о [политиках поддержки для обработчика AKS в Azure Stack](azure-stack-kubernetes-ask-engine-support.md).
+Дополнительные сведения об обработчике AKS и Azure Stack см. в статье о [политиках поддержки для обработчика AKS в Azure Stack](azure-stack-kubernetes-aks-engine-support.md).
 
 ## <a name="install-the-aks-engine-and-deploy-a-kubernetes-cluster"></a>Установка обработчика AKS и развертывание кластера Kubernetes
 

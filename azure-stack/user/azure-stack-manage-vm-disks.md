@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/02/2019
+ms.date: 10/24/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: af110f6b4140a69e01dadcd38a32843866744abf
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: b42f21a3225194cfe50b5ae7d39d8d1a7cffb6d0
+ms.sourcegitcommit: e6a738f674634e1d5dd4eb23b6c44b660ea2fe84
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961593"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72891265"
 ---
 # <a name="create-vm-disk-storage-in-azure-stack"></a>Создание хранилища дисков виртуальной машины в Azure Stack
 
@@ -131,8 +131,13 @@ ms.locfileid: "71961593"
 
 1. [Подготовьте VHD-файл](/azure/virtual-machines/windows/classic/createupload-vhd), который будет использоваться в качестве диска данных для виртуальной машины. Отправьте этот VHD-файл в учетную запись хранения для использования с виртуальной машиной, к которой нужно подключить этот VHD-файл.
 
-    Запланируйте размещение VHD-файла в контейнере, отличном от того, в котором хранится диск ОС.
-    ![Пример. Отправка VHD-файла](media/azure-stack-manage-vm-disks/upload-vhd.png)
+    - Запланируйте размещение VHD-файла в контейнере, отличном от того, в котором хранится диск ОС.  
+    - Прежде чем передавать в Azure какой-либо виртуальный жесткий диск, следует выполнить инструкции из статьи [Подготовка диска VHD или VHDX для Windows к отправке в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+    - Прежде чем начать миграцию на [Управляемые диски](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview), внимательно изучите [этот раздел](https://docs.microsoft.com/azure/virtual-machines/windows/on-prem-to-azure#plan-for-the-migration-to-managed-disks).
+    
+    ![Пример: Отправка VHD-файла](media/azure-stack-manage-vm-disks/upload-vhd.png)
+
+
 
 2. После отправки VHD-файла можно подключить VHD к виртуальной машине. В меню слева выберите **Виртуальные машины**.  
  ![Пример. Выбор виртуальной машины на панели мониторинга](media/azure-stack-manage-vm-disks/vm-dashboard.png)
