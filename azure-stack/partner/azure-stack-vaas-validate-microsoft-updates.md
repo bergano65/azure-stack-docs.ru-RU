@@ -10,17 +10,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/23/2019
+ms.date: 10/29/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.lastreviewed: 03/11/2019
+ms.lastreviewed: 10/29/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 0a507b7488a34715e528b6bbf291fec9832ef027
-ms.sourcegitcommit: b95983e6e954e772ca5267304cfe6a0dab1cfcab
+ms.openlocfilehash: 6fe2f8e7ab435cae3517890f79c26611a80c8a60
+ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68418280"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73167146"
 ---
 # <a name="validate-software-updates-from-microsoft"></a>Проверка обновлений программного обеспечения от корпорации Майкрософт
 
@@ -39,22 +39,16 @@ ms.locfileid: "68418280"
 
 ## <a name="required-tests"></a>Обязательные тесты
 
-Для ежемесячной проверки программного обеспечения приведенные ниже тесты необходимо выполнять в следующем порядке:
+Для ежемесячной проверки программного обеспечения приведенные ниже тесты нужно выполнять в следующем порядке:
 
-1. Monthly Azure Stack Update Verification;
-2. Cloud Simulation Engine (Механизм имитации в облаке).
+- Шаг 1. Проверка ежемесячных обновлений Azure Stack
+- Шаг 2. Проверка пакетов для расширения OEM
+- Шаг 3. Механизм имитации в облаке (OEM)
 
 ## <a name="validating-software-updates"></a>Проверка обновлений программного обеспечения
 
 1. Создайте рабочий процесс **проверки пакетов**.
 1. Для перечисленных выше обязательных тестов выполните инструкции из раздела [Запуск тестов проверки пакета](azure-stack-vaas-validate-oem-package.md#run-package-validation-tests). Дополнительные инструкции о тесте **проверки ежемесячного обновления Azure Stack** см. в разделе ниже.
-
-### <a name="apply-the-monthly-update"></a>Применение ежемесячного обновления
-
-1. Выберите агент для выполнения тестов.
-1. Запланируйте **проверку ежемесячного обновления Azure Stack**.
-1. Укажите расположение пакета расширения OEM, в данный момент развернутого в метке, и расположение пакета расширения OEM, который будет применяться во время обновления. Сведения о настройке URL-адресов для этих пакетов см. в разделе об [управлении пакетами для проверки](azure-stack-vaas-validate-oem-package.md#managing-packages-for-validation).
-1. Выполните действия из выбранного агента в пользовательском интерфейсе.
 
 Если у вас есть вопросы или проблемы, обращайтесь в [службу поддержки VaaS](mailto:vaashelp@microsoft.com).
 
