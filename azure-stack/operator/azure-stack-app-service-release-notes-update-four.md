@@ -16,12 +16,12 @@ ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/25/2019
-ms.openlocfilehash: 9098fb61c0d4edcb534bd7b9d07b4727c953df8d
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: e42ad185373eeb59b6fdfa5d1c769a5843774537
+ms.sourcegitcommit: 64c18637cafcc38044d139bf35b16422ada8160c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974893"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72889857"
 ---
 # <a name="app-service-on-azure-stack-update-4-release-notes"></a>Заметки о выпуске обновления 4 для Службы приложений Azure в Azure Stack
 
@@ -159,9 +159,9 @@ ms.locfileid: "70974893"
             GO  
 
             /********[appservice_hosting] Migration End********/
-    '''
+    ```
 
-1. Migrate logins to contained database users.
+1. Перенос учетных данных в пользователи автономной базы данных.
 
     ```sql
         IF EXISTS(SELECT * FROM sys.databases WHERE Name=DB_NAME() AND containment = 1)

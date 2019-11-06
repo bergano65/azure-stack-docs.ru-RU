@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/10/2019
+ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: d42b1f161d1b74633c4e9924e45677a57b3493e1
-ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
+ms.lastreviewed: 10/28/2019
+ms.openlocfilehash: 0ac21cc388b55be6548f9fdba6c8985dd2316c4e
+ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72277828"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73167132"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Заметки о выпуске для проверки как службы
 
@@ -66,7 +66,7 @@ ms.locfileid: "72277828"
 
 - Предварительные требования для VaaS
 
-    `Install-VaaSPrerequisites` больше не требуются учетные данные администратора облака. Если вы используете последнюю версию этого командлета, см. раздел [Скачивание и установка агента](azure-stack-vaas-local-agent.md#download-and-install-the-agent) с исправленными командами для установки необходимых компонентов. Используйте следующие команды:
+    `Install-VaaSPrerequisites` больше не требуются учетные данные администратора облака. Если вы используете последнюю версию этого командлета, см. раздел [Скачивание и установка локального агента](azure-stack-vaas-local-agent.md#download-and-install-the-local-agent) с исправленными командами для установки необходимых компонентов. Используйте следующие команды:
 
     ```powershell
     $ServiceAdminCreds = New-Object System.Management.Automation.PSCredential "<aadServiceAdminUser>", (ConvertTo-SecureString "<aadServiceAdminPassword>" -AsPlainText -Force)
@@ -83,7 +83,7 @@ ms.locfileid: "72277828"
 
 - Изменения для предварительных требований VaaS и виртуального жесткого диска
 
-    Теперь `Install-VaaSPrerequisites` требуются учетные данные администратора облака для устранения проблемы при проверке пакета. В документацию из раздела [Скачивание и установка агента](azure-stack-vaas-local-agent.md#download-and-install-the-agent) были внесены следующие изменения:
+    Теперь `Install-VaaSPrerequisites` требуются учетные данные администратора облака для устранения проблемы при проверке пакета. В документацию из раздела [Скачивание и установка локального агента](azure-stack-vaas-local-agent.md#download-and-install-the-local-agent) были внесены следующие изменения:
 
     ```powershell
     $ServiceAdminCreds = New-Object System.Management.Automation.PSCredential "<aadServiceAdminUser>", (ConvertTo-SecureString "<aadServiceAdminPassword>" -AsPlainText -Force)
@@ -100,7 +100,7 @@ ms.locfileid: "72277828"
 
 - Обновление локального агента
 
-    Предыдущая версия локального агента несовместима с текущей версией службы 4.0.0. Все пользователи должны обновить свои локальные агенты. Инструкции по установке последней версии агента см. в разделе [Скачивание и установка агента](azure-stack-vaas-local-agent.md#download-and-install-the-agent).
+    Предыдущая версия локального агента несовместима с текущей версией службы 4.0.0. Все пользователи должны обновить свои локальные агенты. Инструкции по установке последней версии агента см. в разделе [Скачивание и установка локального агента](azure-stack-vaas-local-agent.md#download-and-install-the-local-agent).
 
 - Обновление автоматизации PowerShell
 

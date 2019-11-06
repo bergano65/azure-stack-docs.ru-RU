@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/10/2019
+ms.date: 10/25/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 4a8f24c11f8e72c4b3e2b99ae6b2a417e3bd0cba
-ms.sourcegitcommit: 5eae057cb815f151e6b8af07e3ccaca4d8e4490e
+ms.openlocfilehash: d03049fd6dea5f5d7a10a61a25639cb1de3d67ad
+ms.sourcegitcommit: 58e1911a54ba249a82fa048c7798dadedb95462b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72310586"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73057781"
 ---
 # <a name="create-and-publish-a-custom-azure-stack-marketplace-item"></a>Создание и публикация пользовательского элемента Azure Stack Marketplace
 
@@ -45,11 +45,11 @@ ms.locfileid: "72310586"
 
 3. Пакет коллекции должен иметь такую структуру:
 
-   :::image type="content" source="media/azure-stack-create-and-publish-marketplace-item/gallerypkg1.png" alt-text="Пакет коллекции":::
+   ![Снимок экрана: структура пакета коллекции](media/azure-stack-create-and-publish-marketplace-item/gallerypkg1.png)
 
    Шаблоны развертывания имеют следующую структуру файлов:
 
-   :::image type="content" source="media/azure-stack-create-and-publish-marketplace-item/gallerypkg2.png" alt-text="Пакет коллекции":::
+   ![Снимок экрана: структура шаблонов развертывания](media/azure-stack-create-and-publish-marketplace-item/gallerypkg2.png)
 
 4. Замените следующие выделенные значения (обозначенные числами) в шаблоне Manifest.json значением, которое вы указали при [отправке пользовательского образа](azure-stack-add-vm-image.md#add-a-vm-image-as-an-azure-stack-operator-using-the-portal).
 
@@ -156,10 +156,10 @@ ms.locfileid: "72310586"
 
 10. Остальные параметры, которые вы можете изменить в файле manifest.json, описаны в разделе [Справочные материалы. Файл Manifest.json для элемента Marketplace](#reference-marketplace-item-manifestjson).
 
-11. Завершив изменение файлов, преобразуйте их в AZPKG-файл. Преобразование выполняется с помощью средства **AzureGalleryPackager.exe** и скачанного ранее примера пакета коллекции. Выполните следующую команду:
+11. Завершив изменение файлов, преобразуйте их в AZPKG-файл. Преобразование выполняется с помощью средства **AzureGallery.exe** и скачанного ранее примера пакета коллекции. Выполните следующую команду:
 
     ```shell
-    .\AzureGalleryPackager.exe package –m c:\<path>\<gallery package name>\manifest.json –o c:\Temp
+    .\AzureGallery.exe package –m c:\<path>\<gallery package name>\manifest.json –o c:\Temp
     ```
 
     > [!NOTE]
@@ -192,7 +192,7 @@ ms.locfileid: "72310586"
 
    После того, как вы подготовите пакет коллекции и отправите его командой **Add-AzsGalleryItem**, пользовательская виртуальная машина появится в Marketplace и в представлении **Создание ресурсов**. Обратите внимание, что пользовательский пакет коллекции не отображается в разделе **управления Marketplace**.
 
-   [![Пользовательский элемент Marketplace отправлен](media/azure-stack-create-and-publish-marketplace-item/pkg6sm.png "Пользовательский элемент Marketplace отправлен")](media/azure-stack-create-and-publish-marketplace-item/pkg6.png#lightbox)
+   [![Отправленный пользовательский элемент Marketplace](media/azure-stack-create-and-publish-marketplace-item/pkg6sm.png "Отправленный пользовательский элемент Marketplace")](media/azure-stack-create-and-publish-marketplace-item/pkg6.png#lightbox)
 
 6. После успешной публикации элемента в Marketplace можно удалить содержимое из учетной записи хранения.
 

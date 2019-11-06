@@ -15,19 +15,19 @@ ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: e625ba27e683dc11cd8a825441ef73ef37d00f0a
-ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
+ms.openlocfilehash: 902645ffcb6fda4afad76a1a258b55f0ace2b189
+ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72277696"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73047241"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-using-azure-active-directory"></a>Развертывание Kubernetes в Azure Stack с помощью Azure Active Directory
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!Note]  
-> Система Kubernetes доступна в Azure Stack в предварительной версии. Сейчас в предварительной версии не поддерживаются сценарии работы с Azure Stack в автономном режиме. Для сценариев разработки и тестирования используйте только элемент из marketplace.
+> Используйте элемент Kubernetes Azure Stack Marketplace для развертывания кластеров в качестве проверки концепции. Для поддерживаемых кластеров Kubernetes в Azure Stack используйте [обработчик AKS](azure-stack-kubernetes-aks-engine-overview.md).
 
 Вы можете выполнить действия, описанные в этой статье, чтобы развернуть и настроить ресурсы для Kubernetes при использовании Azure Active Directory (Azure AD) в качестве службы управления удостоверениями в одной скоординированной операции.
 

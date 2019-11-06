@@ -11,16 +11,16 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 09/25/2019
+ms.date: 10/16/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: 377857019e6a4d55e6a9372296817e1776c081c9
-ms.sourcegitcommit: d967cf8cae320fa09f1e97eeb888e3db5b6e7972
+ms.lastreviewed: 10/16/2019
+ms.openlocfilehash: 3720781dc2545fefaff0b2cd703d7c3880c4b97b
+ms.sourcegitcommit: 83cef2c4ec6e1b2fd3f997c91675c1058a850e2f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71279155"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "72999882"
 ---
 # <a name="upgrade-a-kubernetes-cluster-on-azure-stack"></a>Обновление кластера Kubernetes в Azure Stack
 
@@ -30,7 +30,9 @@ ms.locfileid: "71279155"
 
 Обработчик AKS позволяет обновить кластер, который изначально был развернут с помощью этого средства. Кластеры можно обслуживать с помощью обработчика AKS. Задачи обслуживания выполняются так же, как для любой системы IaaS. Вы должны следить за доступностью новых обновлений и применять их, используя обработчик AKS.
 
-Корпорация Майкрософт не управляет вашим кластером.
+Команда "Upgrade" (Обновление) обновляет версию Kubernetes и базовый образ ОС. При каждом запуске команды обновления для каждого узла кластера обработчик AKS создает новую виртуальную машину с помощью базового образа AKS, связанного с используемой версией **aks-engine**. Вы можете использовать команду `aks-engine upgrade`, чтобы сохранить валюту всех мастеров и агентов узлов в кластере. 
+
+Корпорация Майкрософт не управляет вашим кластером. Но корпорация Майкрософт предоставляет средство и образ виртуальной машины, которые можно использовать для управления кластером. 
 
 Для развернутого кластера обновляются следующие компоненты:
 
@@ -48,10 +50,14 @@ ms.locfileid: "71279155"
 -   Не запланировано обновлений системы или других задач.
 -   Настройте промежуточное обновление в кластере, настройки которого точно совпадают с параметрами рабочего кластера, и проверьте в нем обновление перед тем, как запускать его в рабочем кластере.
 
-## <a name="steps-to-upgrade"></a>Действия по обновлению
+## <a name="steps-to-upgrade-to-a-newer-kubernetes-version"></a>Шаги для обновления к более новой версии Kubernetes
 
-1. Следуйте инструкциям из статьи [об обновлении кластера Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/upgrade.md). 
-2. Сначала вам нужно определить версии, которые можно выбрать для обновления. Возможная версия зависит от текущей версии. Используйте полученное значение версии для выполнения обновления.
+> [!Note]  
+> Базовый образ AKS также будет обновлен, если вы используете более новую версию обработчика AKS, а образ доступен в Marketplace.
+
+В приведенных ниже инструкциях используются минимальные шаги для выполнения обновления. Дополнительные сведения см. в статье [Обновление кластеров Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/upgrade.md).
+
+1. Сначала вам нужно определить версии, которые можно выбрать для обновления. Возможная версия зависит от текущей версии. Используйте полученное значение версии для выполнения обновления.
 
     Выполните следующие команды:
 
@@ -76,7 +82,7 @@ ms.locfileid: "71279155"
 
     Например, команда `get-versions` для текущей версии Kubernetes 1.13.5 сообщает, что можно выполнить обновление до версий 1.13.7, 1.14.1, 1.14.3.
 
-3. Соберите сведения, которые понадобятся для выполнения команды `upgrade`. Обновление использует следующие параметры.
+2. Соберите сведения, которые понадобятся для выполнения команды `upgrade`. Обновление использует следующие параметры.
 
     | Параметр | Пример | ОПИСАНИЕ |
     | --- | --- | --- |
@@ -89,7 +95,7 @@ ms.locfileid: "71279155"
     | client-secret | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Введите секрет субъекта-службы. Это секрет клиента, который вы настроили при создании службы. |
     | identity-system | adfs | Необязательный элемент. Укажите решение по управлению удостоверениями, если используются службы федерации Active Directory (AD FS). |
 
-4. Указав все значения, выполните такую команду:
+3. Указав все значения, выполните такую команду:
 
     ```bash  
     aks-engine upgrade \
@@ -104,24 +110,32 @@ ms.locfileid: "71279155"
     --identity-system adfs # required if using AD FS
     ```
 
-5.  Если по какой-либо причине операция обновления завершится сбоем, можно повторно запустить команду обновления после устранения проблемы. Обработчик AKS возобновит операцию, на которой случился сбой в предыдущий раз.
+4.  Если по какой-либо причине операция обновления завершится сбоем, можно повторно запустить команду обновления после устранения проблемы. Обработчик AKS возобновит операцию, на которой случился сбой в предыдущий раз.
+
+## <a name="steps-to-only-upgrade-the-os-image"></a>Этапы только для обновления образа ОС
+
+1. Просмотрите [таблицу "supported-kubernetes-versions"](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions) (поддерживаемых версий kubernetes) и определите, есть ли у вас версия aks-engine и базовый образ AKS, которые нужно обновить. Чтобы просмотреть версию aks-engine, запустите: `aks-engine version`.
+2. Обновите обработчик AKS соответствующим образом. На компьютере с установленным aks-engine запустите `./get-akse.sh --version vx.xx.x` заменив **x.xx.x** целевой версией.
+3. Попросите оператора Azure Stack добавить версию базового образа AKS, необходимого для Azure Stack Marketplace, который нужно использовать.
+4. Выполните команду `aks-engine upgrade`, используя ту же используемую версию Kubernetes, но добавьте `--force`. Пример можно увидеть в статье [Принудительное выполнение обновления](#forcing-an-upgrade).
+
 
 ## <a name="forcing-an-upgrade"></a>Принудительное выполнение обновления
 
 В некоторых случаях может потребоваться принудительно обновить кластер. Например, в первый день вы развертываете кластер в отключенной среде, используя последнюю версию Kubernetes. На следующий день Ubuntu выпускает исправление уязвимости, для которой корпорация Майкрософт создает новый **базовый образ AKS**. Вы можете установить новый образ, выполнив обновление до той же версии Kubernetes, которая уже развернута.
 
-    ```bash  
-    aks-engine upgrade \
-    --azure-env AzureStackCloud   
-    --location <for an ASDK is local> \
-    --resource-group kube-rg \
-    --subscription-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
-    --api-model kube-rg/apimodel.json \
-    --upgrade-version 1.13.5 \
-    --client-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
-    --client-secret xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-    --force
-    ```
+```bash  
+aks-engine upgrade \
+--azure-env AzureStackCloud   
+--location <for an ASDK is local> \
+--resource-group kube-rg \
+--subscription-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+--api-model kube-rg/apimodel.json \
+--upgrade-version 1.13.5 \
+--client-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+--client-secret xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+--force
+```
 
 Инструкции см. в статье [о принудительном обновлении](https://github.com/Azure/aks-engine/blob/master/docs/topics/upgrade.md#force-upgrade).
 

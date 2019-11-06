@@ -14,19 +14,19 @@ ms.author: mabrigg
 ms.date: 10/10/2019
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 14a32696a3e46782b8990ba57f9510976200f7d3
-ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
+ms.openlocfilehash: 1070608db881426d6cb7ca78d0b19444bdba77ce
+ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72277570"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73047216"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack"></a>Устранение неполадок с развертыванием Kubernetes в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!Note]  
-> Система Kubernetes доступна в Azure Stack в предварительной версии. Сейчас в предварительной версии не поддерживаются сценарии работы с Azure Stack в автономном режиме. Для сценариев разработки и тестирования используйте только элемент из marketplace.
+> Используйте элемент Kubernetes Azure Stack Marketplace для развертывания кластеров в качестве проверки концепции. Для поддерживаемых кластеров Kubernetes в Azure Stack используйте [обработчик AKS](azure-stack-kubernetes-aks-engine-overview.md).
 
 В этой статье рассматриваются способы устранения неполадок с кластером Kubernetes. Чтобы начать устранение неполадок, просмотрите элементы, которые требуются для развертывания. Вам может потребоваться сбор журналов из Azure Stack или виртуальных машин Linux, которые размещены в Kubernetes. Чтобы получить журналы из конечной точки администрирования, обратитесь к администратору Azure Stack.
 

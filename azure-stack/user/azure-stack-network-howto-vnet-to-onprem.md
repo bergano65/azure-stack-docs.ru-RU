@@ -9,14 +9,16 @@ ms.date: 10/03/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: c11d5ad563ff673cfaf9e28cea7373bbc6e551aa
-ms.sourcegitcommit: b72729305234e13c65de3771cb08678d46ba1348
+ms.openlocfilehash: 340f9d868c854560019899f9a4d38a484c973f7f
+ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72543801"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73167293"
 ---
 # <a name="setup-vpn-gateway-for-azure-stack-using-fortigate-nva"></a>Настройка VPN-шлюза для Azure Stack с использованием виртуального сетевого модуля FortiGate
+
+*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 В этой статье описывается, как создать VPN-подключение к Azure Stack. VPN-шлюз — это разновидность шлюза виртуальной сети, который передает зашифрованный трафик между виртуальной сетью в Azure Stack и удаленным VPN-шлюзом. Приведенная ниже процедура развертывает одну виртуальную сеть с виртуальным сетевым модулем (NVA) FortiGate в группе ресурсов. Здесь также приводятся инструкции по настройке VPN-подключения IPSec к виртуальному сетевому модулю FortiGate.
 
@@ -34,7 +36,7 @@ ms.locfileid: "72543801"
     > [!Note]  
     > Если в Azure Stack Marketplace нет **виртуальной машины Fortinet FortiGate-VM для Azure BYOL** и **развертывания одной виртуальной машины (BYOL) FortiGate NGFW**, обратитесь к оператору облака.
 
--  Чтобы активировать NVA FortiGate, потребуется по крайней мере один доступный файл лицензии FortiGate. Сведения о том, как получить эти лицензии, см. в [библиотеке документации Fortinet](https://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/19071/registering-and-downloading-your-license).
+-  Чтобы активировать NVA FortiGate, потребуется по крайней мере один доступный файл лицензии FortiGate. Сведения о том, как получить эти лицензии, см. в [библиотеке документации Fortinet](https://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/19071/registering-and-downloading-your-license).
 
     В этой процедуре используется развертывание [одной виртуальной машины FortiGate-VM](ttps://docs2.fortinet.com/vm/azure/FortiGate/6.2/azure-cookbook/6.2.0/632940/single-FortiGate-vm-deployment). Вы узнаете, как подключить NVA FortiGate к виртуальной сети Azure Stack в вашей локальной сети.
 
@@ -88,7 +90,7 @@ ms.locfileid: "72543801"
 
 3. Нажмите кнопку **ОК**.
 
-4. Настройте общедоступный IP-адрес для NVA FortiGate:
+4. Настройте общедоступный IP-адрес для NVA FortiGate:
 
     ![](./media/azure-stack-network-howto-vnet-to-onprem/image8.png)
 
