@@ -15,12 +15,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: 33ead43fd8dbe77feae12db58ca7c689030c6f98
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: e36235af4dea72ae6d8016085ee18aec819ae4dd
+ms.sourcegitcommit: 20d1c0ab3892e9c4c71d5b039457f1e15b1c84c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829102"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73618247"
 ---
 # <a name="tutorial-set-up-resources-for-validation-as-a-service"></a>Руководство по Настройка ресурсов для VaaS
 
@@ -100,7 +100,7 @@ Validation as a Service (VaaS) — это служба Azure, которая и
 
 3. Для параметра **Группа ресурсов** выберите **Создать**. Введите имя новой группы ресурсов.
 
-4. Ознакомьтесь с [соглашениями об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions#storage) учетных записей службы хранилища Azure. Выберите имя для своей учетной записи хранения.
+4. Ознакомьтесь с [соглашениями об именовании](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging#storage) учетных записей службы хранилища Azure. Выберите имя для своей учетной записи хранения.
 
 5. Для своей учетной записи хранения выберите регион **Западная часть США**.
 
