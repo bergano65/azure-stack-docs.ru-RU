@@ -14,12 +14,12 @@ ms.date: 07/30/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 07/30/2019
-ms.openlocfilehash: 7e2753ebb5bebad4f1ac2a7bbc17a27ccd87cbe9
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: 65ea0b4f6f7f7cb3769e83bf9052ac2953668e48
+ms.sourcegitcommit: 20d1c0ab3892e9c4c71d5b039457f1e15b1c84c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72283050"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73618227"
 ---
 # <a name="use-api-version-profiles-with-nodejs-software-development-kit-sdk-in-azure-stack"></a>Использование профилей версий API с пакетом средств разработки (SDK) для Node.js в Azure Stack
 
@@ -73,7 +73,7 @@ ms.locfileid: "72283050"
 
 2. Установите компонент [Node.js](https://nodejs.org/en/download/) или обновите его до текущей версии. Node.js также включает в себя диспетчер пакетов JavaScript [npm](https://www.npmjs.com/).
 
-3. Установите или обновите [Visual Studio Code](https://code.visualstudio.com/) и установите [расширение Node.js](https://code.visualstudio.com/docs/Node.js/nodejs-debugging) для Visual Studio Code.
+3. Установите или обновите [Visual Studio Code](https://code.visualstudio.com/) и установите [расширение Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-debugging) для Visual Studio Code.
 
 2.  Установите клиентские пакеты для Resource Manger Azure Stack. Дополнительные сведения см. в разделе об [установке клиентских библиотек](https://www.npmjs.com/package/@azure/arm-keyvault-profile-2019-03-01-hybrid).
 
@@ -95,7 +95,7 @@ ms.locfileid: "72283050"
 | --- | --- | --- |
 | Tenant ID | TENANT\_ID | Значение [идентификатора клиента](https://docs.microsoft.com/azure/azure-stack/azure-stack-identity-overview) Azure Stack. |
 | Идентификатор клиента | CLIENT\_ID | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы (см. выше).  |
-| Идентификатор подписки | AZURE\_SUBSCRIPTION\_ID: [идентификатор подписки](https://docs.microsoft.com/azure/azure-stack/service-plan-offer-subscription-overview#subscriptions) для доступа к предложениям в Azure Stack.  |
+| Идентификатор подписки | AZURE\_SUBSCRIPTION\_ID: [идентификатор подписки](/azure-stack/operator/service-plan-offer-subscription-overview#subscriptions) для доступа к предложениям в Azure Stack.  |
 | Секрет клиента | APPLICATION\_SECRET | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы (см. выше). |
 | Конечная точка Resource Manager | ARM\_ENDPOINT | Дополнительные сведения см. в разделе [Конечная точка Resource Manager для Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-version-profiles-ruby#the-azure-stack-resource-manager-endpoint). |
 

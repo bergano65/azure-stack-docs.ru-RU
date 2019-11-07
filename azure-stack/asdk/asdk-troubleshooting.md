@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/26/2019
+ms.date: 11/05/2019
 ms.author: justinha
 ms.reviewer: misainat
-ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: ab43d94c2e65032e5e525ec000e38cacb01b2980
-ms.sourcegitcommit: 1bae55e754d7be75e03af7a4db3ec43fd7ff3e9c
+ms.lastreviewed: 11/05/2019
+ms.openlocfilehash: c8db19ff7bf8d7ccdb406617cbcf75dce3770522
+ms.sourcegitcommit: c583f19d15d81baa25dd49738d53d8fc01463bef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319092"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73659220"
 ---
 # <a name="troubleshoot-the-asdk"></a>Устранение неполадок ASDK
 В этой статье приведены общие сведения об устранении неполадок Пакета средств разработки Azure Stack (ASDK). Справочную информацию по интегрированным системам Azure Stack см. в статье [Устранение неполадок, связанных с Microsoft Azure Stack](../operator/azure-stack-troubleshooting.md). 
@@ -40,6 +40,39 @@ ms.locfileid: "71319092"
 
 ### <a name="at-the-end-of-the-deployment-the-powershell-session-is-still-open-and-doesnt-show-any-output"></a>В конце развертывания сеанс PowerShell все еще открыт и выходные данные не отображаются
 Это поведение, скорее всего, является результатом поведения по умолчанию командного окна PowerShell (если оно выбрано). Развертывание ASDK завершилось успешно, но сценарий был приостановлен при выборе окна. Чтобы узнать, завершилась ли установка, выполните поиск по слову "select" в строке заголовка командного окна. Нажмите клавишу ESC, чтобы отменить выбор, после чего должно отобразиться сообщение о завершении.
+
+### <a name="template-validation-error-parameter-osprofile-is-not-allowed"></a>Параметр ошибки osProfile для проверки шаблона не разрешен
+
+Если при проверке шаблона появляется ошибка с сообщением о том, что параметр "osProfile" не разрешен, убедитесь, что вы используете правильные версии API для следующих компонентов:
+
+- [Среда выполнения приложений](https://docs.microsoft.com/azure-stack/user/azure-stack-profiles-azure-resource-manager-versions#microsoftcompute)
+- [Сеть](https://docs.microsoft.com/azure-stack/user/azure-stack-profiles-azure-resource-manager-versions#microsoftnetwork)
+
+Чтобы скопировать виртуальный жесткий диск из Azure в Azure Stack, используйте [AzCopy 7.3.0](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-transfer#download-and-install-azcopy). Обратитесь к поставщику, чтобы устранить проблемы с самим образом. Дополнительные сведения о требованиях WALinuxAgent для Azure Stack см. в статье [об агенте Azure LinuX](../operator/azure-stack-linux.md#azure-linux-agent).
+
+### <a name="deployment-fails-due-to-lack-of-external-access"></a>Происходит сбой развертывания из-за отсутствия доступа к внешним ресурсам
+При сбое развертывания на этапах, где требуется внешний доступ, будет возвращаться исключение, как в следующем примере:
+
+```
+An error occurred while trying to test identity provider endpoints: System.Net.WebException: The operation has timed out.
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.ProcessRecord()at, <No file>: line 48 - 8/12/2018 2:40:08 AM
+```
+Если эта ошибка возникает, проверьте, выполнены ли все минимальные требования к сети, просмотрев [документацию по сетевому трафику развертывания](../operator/deployment-networking.md). Средство проверки сети также доступно для партнеров в составе набора средств партнеров.
+
+Другие сбои при развертывании обычно возникают из-за проблем с подключением к ресурсам в Интернете.
+
+Чтобы проверить возможность подключения к ресурсам в Интернете, можно выполнить следующие шаги.
+
+1. Откройте PowerShell.
+2. Войдите на виртуальную машину WAS01 или любую из виртуальных машин ERCS с помощью командлета Enter-PSSession.
+3. Выполните следующий командлет: 
+   ```powershell
+   Test-NetConnection login.windows.net -port 443
+   ```
+
+Если эта команда не выполняется, убедитесь, что коммутатор TOR и другие сетевые устройства настроены для [разрешения сетевого трафика](../operator/azure-stack-network.md).
+
 
 ## <a name="virtual-machines"></a>Виртуальные машины
 ### <a name="default-image-and-gallery-item"></a>Элемент коллекции и образ по умолчанию
