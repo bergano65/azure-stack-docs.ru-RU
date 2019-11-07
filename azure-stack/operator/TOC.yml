@@ -1,8 +1,8 @@
-- name: Документация по Azure Stack для оператора
+- name: Документация по Azure Stack Hub для операторов
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое Azure Stack?
+    - name: Что такое Azure Stack Hub?
       href: azure-stack-overview.md
     - name: Что такое Azure Stack HCI?
       href: azure-stack-hci-overview.md
@@ -251,7 +251,7 @@
           href: azure-stack-linux.md
         - name: Добавление виртуальной машины Red Hat
           href: azure-stack-redhat-create-upload-vhd.md
-        - name: Предложение подсистемы AKS
+        - name: Предложение обработчика AKS
           href: azure-stack-aks-engine.md
         - name: Предложение элемента Kubernetes в Marketplace
           href: azure-stack-solution-template-kubernetes-cluster-add.md
@@ -448,7 +448,7 @@
       href: /powershell/azure/azure-stack/overview
 - name: Сопутствующие материалы
   items:
-    - name: Документация пользователя по Azure Stack
+    - name: Документация по Azure Stack Hub для пользователей
       href: /azure-stack/user/
     - name: Документация по ASDK
       href: /azure-stack/asdk/

@@ -6,10 +6,13 @@
       tocHref: /azure-stack/
       topicHref: /azure-stack/
       items:
-        - name: ASDK
+        - name: ASDK Hub
           tocHref: /azure-stack/asdk/
           topicHref: /azure-stack/asdk/index
-        - name: Оператор
+        - name: Гибридная среда
+          tocHref: /azure-stack/hybrid/
+          topicHref: /azure-stack/hybrid/index
+        - name: Оператор Hub
           tocHref: /azure-stack/operator/
           topicHref: /azure-stack/operator/index
           items:
@@ -23,9 +26,9 @@
                 - name: Репликация виртуальных машин Azure Stack в Azure
                   tocHref: /azure/site-recovery/azure-stack-site-recovery
                   topicHref: /azure/site-recovery/azure-stack-site-recovery
-        - name: Партнер
+        - name: Партнер Hub
           tocHref: /azure-stack/partner/
           topicHref: /azure-stack/partner/index
-        - name: Пользователь
+        - name: Пользователь Hub
           tocHref: /azure-stack/user/
           topicHref: /azure-stack/user/index

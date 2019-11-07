@@ -1,8 +1,8 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по Azure Stack для пользователя
+title: Документация по Azure Stack Hub для пользователей
 metadata:
-  title: Документация по Azure Stack. Руководства и справочники по API
+  title: Документация по Azure Stack Hub. Руководства и справочники по API
   meta.description: azure-stack
   services: azure-stack
   author: mattbriggs
@@ -16,41 +16,32 @@ metadata:
   ms.date: 07/11/2019
   ms.author: mabrigg
 abstract:
-  description: "Azure Stack\_― это гибридная облачная платформа, позволяющая использовать службы Azure из центра обработки данных вашей компании или поставщика услуг. Разработчик может создавать приложения, используя Azure Stack. Затем их можно развернуть в Azure Stack или в Azure, либо можно создать действительно гибридные приложения, использующие подключение между облаком Azure Stack и Azure. Узнайте, как создавать ресурсы и развертывать приложения, изучив наши краткие руководства и руководства.<br/><br/>Если вы оператор Azure Stack, который управляет инфраструктурой и предлагает службы, ознакомьтесь с нашей <a href=\"../operator/\">документацией для операторов</a>.<br/><br/>Если вы пользователь Azure Stack и хотите использовать Пакет средств разработки Azure Stack (ASDK)\_— развертывание Azure Stack с использованием одного узла,\_— см. <a href=\"../asdk\">документацию по скачиванию и бесплатному использованию ASDK</a>."
+  description: "Azure Stack Hub\_― это гибридная облачная платформа, позволяющая использовать службы Azure из центра обработки данных вашей компании или поставщика услуг. Разработчики могут создавать приложения с помощью Azure Stack Hub. Затем их можно развернуть в Azure Stack Hub или в Azure, либо можно создать действительно гибридные приложения, использующие подключение между облаком Azure Stack Hub и Azure. Узнайте, как создавать ресурсы и развертывать приложения, изучив наши краткие руководства и руководства.<br/><br/>Если вы оператор Azure Stack Hub, который управляет инфраструктурой и предлагает службы, ознакомьтесь с нашей <a href=\"../operator/\">документацией для операторов</a>.<br/><br/>Если вы пользователь Azure Stack Hub и хотите работать с пакетом средств разработки Azure Stack Hub (развертывание Azure Stack Hub с использованием одного узла), см. <a href=\"../asdk\">документацию по скачиванию и бесплатному использованию ASDK</a>."
 sections:
-  - title: Начало работы с Azure Stack
+  - title: Начало работы с Azure Stack Hub
     items:
       - type: list
         style: cards
         className: cardsA
         items:
-          - html: "<a href=\"/azure-stack/user/azure-stack-dev-start\"> <img height=\"48\" width=\"48\" src=\"https://docs.microsoft.com/media/common/i_code-edit.svg\" alt=\"\"> <br><b>Разработка решений с помощью Azure Stack</b></a> <p>Разрабатывайте приложения для Azure Stack, используя рабочую станцию ​​Windows\_10, Linux или macOS.</p>"
-          - html: '<a href="https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-install?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fbreadcrumb%2Ftoc.json"> <img height="48" width="48" src="https://docs.microsoft.com/media/logos/logo_powershell.svg" alt=""> <br><b>PowerShell для Azure Stack</b></a> <p>Легко управляйте ресурсами Azure Stack с помощью PowerShell.</p>'
+          - html: "<a href=\"/azure-stack/user/azure-stack-dev-start\"> <img height=\"48\" width=\"48\" src=\"https://docs.microsoft.com/media/common/i_code-edit.svg\" alt=\"\"> <br><b>Разработка решений с помощью Azure Stack Hub</b></a> <p>Разрабатывайте приложения для Azure Stack Hub, используя рабочую станцию ​​Windows\_10, Linux или macOS.</p>"
+          - html: '<a href="https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-install?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fbreadcrumb%2Ftoc.json"> <img height="48" width="48" src="https://docs.microsoft.com/media/logos/logo_powershell.svg" alt=""> <br><b>PowerShell для Azure Stack</b></a> <p>Легко управляйте ресурсами Azure Stack Hub с помощью PowerShell.</p>'
           - html: '<a href="/azure-stack/user/azure-stack-version-profiles-azurecli2"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_cligeneric.svg" alt=""> <br><b>Интерфейс командной строки Azure (CLI)</b></a> <p>Интерфейс командной строки для управления ресурсами Azure Stack.</p>'
-  - title: Гибридные облачные приложения
+  - title: Инфраструктура как услуга (IaaS) в Azure Stack Hub
     items:
       - type: list
         style: cards
         className: cardsA
         items:
-          - html: '<a href="/azure-stack/user/azure-stack-solution-pipeline"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_workflow.svg" alt="hybrid cloud app ci/cd"> <br><b>Непрерывная интеграция и поставка гибридных приложений</b></a> <p>Развертывайте гибридные приложения в Azure и Azure Stack с помощью гибридного конвейера непрерывной интеграции и непрерывной поставки (CI/CD).</p>'
-          - html: '<a href="/azure-stack/user/azure-stack-solution-hybrid-identity"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_identity-protection.svg" alt="hybrid cloud app identity"> <br><b>Настройка идентификатора гибридного облака</b></a> <p>Настройте идентификатор гибридного облака для приложений Azure и Azure Stack.</p>'
-          - html: '<a href="/azure-stack/user/azure-stack-solution-cloud-burst"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_multi-connect.svg" alt="hybrid cloud app scaling"> <br><b>Решения с масштабированием в нескольких облаках</b></a> <p>Создайте решение в нескольких облаках, чтобы обеспечить активируемый вручную процесс переключения с веб-приложения, размещенного в Azure Stack, на веб-приложение, размещенное в Azure.</p>'
-  - title: Инфраструктура как услуга (IaaS) в Azure Stack
-    items:
-      - type: list
-        style: cards
-        className: cardsA
-        items:
-          - html: '<a href="/azure-stack/user/azure-stack-create-vm-template"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_package.svg" alt=""> <br><b>Развертывание виртуальной машины в IaaS с помощью шаблона</b></a> <p>Создайте виртуальную машину с помощью шаблона Resource Manager для Azure Stack.</p>'
+          - html: '<a href="/azure-stack/user/azure-stack-create-vm-template"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_package.svg" alt=""> <br><b>Развертывание виртуальной машины в IaaS с помощью шаблона</b></a> <p>Создание виртуальной машины с помощью шаблона Resource Manager для Azure Stack Hub</p>'
           - html: '<a href="/azure-stack/user/azure-stack-quick-linux-portal"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_vmm-cloud.svg" alt=""> <br><b>Краткое руководство. Создание виртуальной машины</b></a> <p>Создайте виртуальную машину, чтобы разместить на ней свое приложение.</p>'
-          - html: '<a href="/azure-stack/user/azure-stack-dev-start-deploy-app"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_web-color.svg" alt=""> <br><b>Размещение приложений с помощью кода</b></a> <p>Настройте виртуальную машину в Azure Stack и разверните свое приложение с помощью C#, Java, Python, Go, Ruby или Node.js.</p>'
-  - title: Платформа как услуга (PaaS) в Azure Stack
+          - html: '<a href="/azure-stack/user/azure-stack-dev-start-deploy-app"> <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_web-color.svg" alt=""> <br><b>Размещение приложений с помощью кода</b></a> <p>Настройте виртуальную машину в Azure Stack Hub и разверните свое приложение с помощью C#, Java, Python, Go, Ruby или Node.js.</p>'
+  - title: Платформа как услуга (PaaS) в Azure Stack Hub
     items:
       - type: list
         style: cards
         className: cardsA
         items:
-          - html: <a href="/azure-stack/user/azure-stack-solution-template-service-fabric-cluster"> <img height="48" width="48" src="/azure-stack/user/media/index/service-fabric-cluster.png" alt=""> <br><b>Развертывание кластера Service Fabric</b></a> <p>Разверните защищенный кластер Service Fabric в Azure Stack.</p>
+          - html: <a href="/azure-stack/user/azure-stack-solution-template-service-fabric-cluster"> <img height="48" width="48" src="/azure-stack/user/media/index/service-fabric-cluster.png" alt=""> <br><b>Развертывание кластера Service Fabric</b></a> <p>Разверните защищенный кластер Service Fabric в Azure Stack Hub.</p>
           - html: <a href="/azure-stack/user/azure-stack-solution-template-kubernetes-deploy"> <img height="48" width="48" src="/azure-stack/user/media/index/kubernetes.png" alt=""> <br><b>Развертывание кластера Kubernetes</b></a> <p>Разверните и настройте ресурсы для Kubernetes с помощью одной согласованной операции.</p>
           - html: '<a href="/azure-stack/user/azure-stack-solution-template-cognitive-services"> <img height="48" width="48" src="/azure-stack/user/media/index/icon-cognitive-services.svg" alt=""> <br><b>Развертывание Azure Cognitive Services</b></a> <p>Поддержка контейнеров в Azure Cognitive Services позволяет использовать все API-интерфейсы, которые доступны в Azure.</p>'

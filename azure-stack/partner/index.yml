@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация партнера по Azure Stack
+title: Документация по Azure Stack Hub для партнеров
 metadata:
   document_id: null
-  title: Документация партнера по Azure Stack. Руководства и справочники по API
-  description: "Узнайте, как для проверить оборудование для размещения Azure Stack. Проверка как услуга\_— это собственная служба Azure, предназначенная для партнеров по разработке решений, которые создают предложения Azure Stack совместно с корпорацией Майкрософт."
+  title: Документация по Azure Stack Hub для партнеров. Руководства и справочники по API
+  description: "Узнайте, как для проверить оборудование для размещения Azure Stack. Проверка как услуга\_— это собственная служба Azure, предназначенная для партнеров по разработке решений, которые создают предложения Azure Stack Hub совместно с корпорацией Майкрософт."
   services: azure-stack
   author: mattbriggs
   manager: femila
@@ -16,9 +16,9 @@ metadata:
   ms.author: mabrigg
   ms.reviewer: johnhas
 abstract:
-  description: 'Функция проверки как услуги позволяет тестировать оборудование, предназначенное для использования с Azure Stack. Это собственная служба Azure, предназначенная для партнеров по разработке решений, которые создают предложения Azure Stack совместно с корпорацией Майкрософт.'
+  description: 'Функция проверки как услуги позволяет тестировать оборудование, предназначенное для использования с Azure Stack. Это собственная служба Azure, предназначенная для партнеров по разработке решений, которые создают предложения Azure Stack Hub совместно с корпорацией Майкрософт.'
 sections:
-  - title: 5-минутное руководство по началу работы
+  - title: Пятиминутное руководство по началу работы
     items:
       - type: paragraph
         text: 'Узнайте, как протестировать оборудование на портале проверки как услуги.'
@@ -29,13 +29,13 @@ sections:
               src: media/i_account-management.svg
             text: Запланируйте первый тест с помощью портала проверки как услуги
             href: azure-stack-vaas-schedule-test-pass.md
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
-        text: 'Узнайте, как для проверить оборудование для Azure Stack.'
+        text: 'Узнайте, как для проверить оборудование для Azure Stack Hub.'
       - type: list
         style: unordered
         items:
-          - html: <a href="/azure-stack/partner/azure-stack-vaas-validate-solution-new">Проверка нового решения Azure Stack</a>
+          - html: <a href="/azure-stack/partner/azure-stack-vaas-validate-solution-new">Проверка нового решения Azure Stack Hub</a>
           - html: <a href="/azure-stack/partner/azure-stack-vaas-validate-oem-package">Проверка пакетов OEM</a>
           - html: <a href="/azure-stack/partner/azure-stack-vaas-validate-microsoft-updates">Проверка обновлений программного обеспечения от корпорации Майкрософт</a>

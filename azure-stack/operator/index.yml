@@ -1,8 +1,8 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по Azure Stack для оператора
+title: Документация по Azure Stack Hub для операторов
 metadata:
-  title: Документация по Azure Stack. Руководства и справочники по API
+  title: Документация по Azure Stack Hub. Руководства и справочники по API
   meta.description: azure-stack
   services: azure-stack
   author: justinha
@@ -16,9 +16,9 @@ metadata:
   ms.date: 07/09/2019
   ms.author: justinha
 abstract:
-  description: "Microsoft Azure Stack\_― это гибридная облачная платформа, позволяющая предоставлять службы Azure из центра обработки данных. Сведения о том, как с помощью наших руководств управлять инфраструктурой интегрированных систем Azure Stack и предлагать службы.<br/><br/>Если вы используете службы и создаете приложения для Azure Stack, ознакомьтесь с нашей <a href=\"/azure-stack/user\">пользовательской документацией</a>.<br/><br/>Если вы — оператор Azure Stack и хотите использовать Пакет средств разработки Azure Stack (развертывание Azure Stack с использованием одного узла), см. <a href=\"/azure-stack/asdk\">документацию по скачиванию и бесплатному использованию ASDK</a>."
+  description: "Microsoft Azure Stack Hub\_― это гибридная облачная платформа, позволяющая предоставлять службы Azure из центра обработки данных. Сведения о том, как с помощью наших руководств управлять инфраструктурой интегрированных систем Azure Stack Hub и предлагать службы.<br/><br/>Если вы используете службы и создаете приложения для Azure Stack Hub, ознакомьтесь с нашей <a href=\"/azure-stack/user\">пользовательской документацией</a>.<br/><br/>Если вы оператор Azure Stack Hub и хотите использовать пакет средств разработки Azure Stack Hub (развертывание Azure Stack Hub с использованием одного узла), см. <a href=\"/azure-stack/asdk\">документацию по скачиванию и бесплатному использованию ASDK</a>."
 sections:
-  - title: Начало работы с Azure Stack
+  - title: Начало работы с Azure Stack Hub
     items:
       - type: list
         style: cards
@@ -28,39 +28,35 @@ sections:
               <a href="/azure-stack/operator/azure-stack-manage-portals">
               <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_portal.svg" alt="">
               <br><b>Использование портала администрирования</b></a>
-              <p>Использование портала администрирования для повседневного управления и эксплуатации Azure Stack.</p>
+              <p>Использование портала администрирования для повседневного управления и эксплуатации Azure Stack Hub.</p>
           - html: |-
               <a href="/azure-stack/operator/azure-stack-powershell-install">
               <img height="48" width="48" src="https://docs.microsoft.com/media/logos/logo_powershell.svg" alt="">
               <br><b>PowerShell для Azure Stack</b></a>
-              <p>Легко управляйте ресурсами Azure Stack с помощью PowerShell.</p>
+              <p>Легко управляйте ресурсами Azure Stack Hub с помощью PowerShell.</p>
           - html: |-
               <a href="/azure-stack/operator/azure-stack-capacity-planning-overview">
               <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_load-testing.svg" alt="">
               <br><b>Планирование ресурсов</b></a>
               <p>Узнайте, какие сценарии распределения вычислительных ресурсов соответствуют существующим аппаратным предложениям.</p>
-  - title: Предложение служб Azure Stack
+  - title: Предложение служб Azure Stack Hub
     items:
       - type: list
         style: cards
         className: cardsA
         items:
-          - html: |-
-              <a href="/azure-stack/operator/azure-stack-sql-resource-provider">
-              <img height="48" width="48" src="https://docs.microsoft.com/media/logos/logo_SQL.svg" alt="hybrid cloud app ci/cd">
-              <br><b>Предложение SQL как PaaS</b></a>
-              <p>Чтобы предоставлять базы данных SQL как услуги в Azure Stack, используйте поставщик ресурсов SQL Server.</p>
+          - html: "<a href=\"/azure-stack/operator/azure-stack-sql-resource-provider\">\n<img height=\"48\" width=\"48\" src=\"https://docs.microsoft.com/media/logos/logo_SQL.svg\" alt=\"hybrid cloud app ci/cd\">\n<br><b>Предложение SQL как PaaS</b></a>\n<p>Чтобы предоставлять базы данных SQL как услуги в Azure Stack Hub, используйте поставщик ресурсов SQL\_Server.</p>"
           - html: |-
               <a href="/azure-stack/operator/azure-stack-mysql-resource-provider">
               <img height="48" width="48" src="https://docs.microsoft.com/media/logos/logo_mysql.svg" alt="hybrid cloud app identity">
               <br><b>Предложение MySQL как PaaS</b></a>
-              <p>Чтобы предоставлять базы данных MySQL как услуги в Azure Stack, используйте поставщик ресурсов MySQL.</p>
+              <p>Чтобы предоставлять базы данных MySQL как услуги в Azure Stack Hub, используйте поставщик ресурсов MySQL.</p>
           - html: |-
               <a href="/azure-stack/operator/azure-stack-app-service-overview">
               <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_web-apps.svg" alt="hybrid cloud app scaling">
               <br><b>Предложение Службы приложений Azure как PaaS</b></a>
               <p>Помощь пользователям в создании веб-приложений и API-интерфейсов для любой платформы или устройства.</p>
-  - title: Управление Azure Stack
+  - title: Управление Azure Stack Hub
     items:
       - type: list
         style: cards
@@ -69,15 +65,15 @@ sections:
           - html: |-
               <a href="/azure-stack/operator/azure-stack-updates">
               <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_upgrade.svg" alt="">
-              <br><b>Обновление Azure Stack</b></a>
-              <p>Каждый месяц корпорация Майкрософт выпускает один пакет обновления для интегрированных систем Azure Stack. </p>
+              <br><b>Обновление Azure Stack Hub</b></a>
+              <p>Каждый месяц корпорация Майкрософт выпускает один пакет обновления для интегрированных систем Azure Stack Hub. </p>
           - html: |-
               <a href="/azure-stack/operator/azure-stack-backup-infrastructure-backup">
               <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_usb.svg" alt="">
-              <br><b>Резервное копирование для Azure Stack</b></a>
+              <br><b>Резервное копирование для Azure Stack Hub</b></a>
               <p>Резервное копирование и восстановление данных конфигурации и службы с помощью службы "Резервное копирование инфраструктуры".</p>
           - html: |-
               <a href="/azure-stack/operator/azure-stack-security-configuration">
               <img height="48" width="48" src="https://docs.microsoft.com/media/common/i_cloud-security.svg" alt="">
-              <br><b>Настройка параметров безопасности в Azure Stack</b></a>
-              <p>Инфраструктура Azure Stack разрабатывалась так, чтобы система безопасности обеспечивала защиту от современных угроз и учитывала требования стандартов соответствия.</p>
+              <br><b>Настройка параметров безопасности в Azure Stack Hub</b></a>
+              <p>Инфраструктура Azure Stack Hub разрабатывалась так, чтобы система безопасности обеспечивала защиту от современных угроз и учитывала требования стандартов соответствия.</p>

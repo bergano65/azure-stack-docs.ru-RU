@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по пакету средств разработки Azure Stack
+title: Документация по пакету средств разработки Azure Stack Hub
 metadata:
   document_id: null
-  title: Документация по пакету средств разработки Azure Stack. Руководства и справочники по API
-  description: 'Сведения о том, как развернуть и использовать пакет средств разработки Azure Stack.'
+  title: Документация по пакету средств разработки Azure Stack Hub. Руководства и справочники по API
+  description: 'Сведения о том, как развернуть и использовать пакет средств разработки Azure Stack Hub.'
   services: azure-stack
   author: mattbriggs
   manager: femila
@@ -15,9 +15,9 @@ metadata:
   ms.date: 04/13/2018
   ms.author: mabrigg
 abstract:
-  description: 'Пакет средств разработки Azure Stack (ASDK) — это развертывание Azure Stack с использованием одного узла, которое можно скачать и применять бесплатно. Пакет ASDK предоставляет среду, в которой можно оценить возможности Azure Stack и разрабатывать современные приложения с помощью API-интерфейсов и средств, совместимых с Azure, в непроизводственной среде. <br/><br/>Если вы оператор Azure Stack, который управляет инфраструктурой интегрированных систем и предлагает службы, ознакомьтесь с нашей <a href="/azure-stack/operator">документацией для операторов</a>.<br/><br/>Если вы используете службы и создаете приложения для Azure Stack, ознакомьтесь с нашей <a href="/azure-stack/user">пользовательской документацией</a>.'
+  description: 'Пакет средств разработки Azure Stack Hub (ASDK) — это развертывание Azure Stack с использованием одного узла, которое можно скачать и применять бесплатно. Пакет ASDK предоставляет среду, в которой можно оценить возможности Azure Stack и разрабатывать современные приложения с помощью API-интерфейсов и средств, совместимых с Azure, в непроизводственной среде. <br/><br/>Если вы оператор Azure Stack, который управляет инфраструктурой интегрированных систем и предлагает службы, ознакомьтесь с нашей <a href="/azure-stack/operator">документацией для операторов</a>.<br/><br/>Если вы используете службы и создаете приложения для Azure Stack, ознакомьтесь с нашей <a href="/azure-stack/user">пользовательской документацией</a>.'
 sections:
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как добавлять службы в развертывание пакета ASDK.'
@@ -25,7 +25,7 @@ sections:
         style: ordered
         items:
           - html: <a href="/azure-stack/asdk/asdk-install">Развертывание пакета ASDK</a>
-          - html: <a href="/azure-stack/operator/azure-stack-create-and-publish-marketplace-item">Добавление элемента Marketplace Azure Stack</a>
+          - html: <a href="/azure-stack/operator/azure-stack-create-and-publish-marketplace-item">Добавление элемента Marketplace для Azure Stack</a>
           - html: <a href="/azure-stack/operator/azure-stack-tutorial-tenant-vm">Предложение служб IaaS</a>
           - html: <a href="/azure-stack/user/azure-stack-subscribe-services">Подписка на предложение</a>
           - html: <a href="/azure-stack/operator/create-add-on-plan">Обновление предложений и планов</a>
@@ -37,4 +37,4 @@ sections:
         className: cardsD
         items:
           - title: Командная строка
-            html: <p><a href="/powershell/azure/azure-stack/overview?view=azurestackps-1.2.10">PowerShell для Azure Stack</a></p><p><a href="/cli/azure/?view=azure-cli-2017-03-09-profile">Azure Stack CLI</a></p>
+            html: <p><a href="/powershell/azure/azure-stack/overview?view=azurestackps-1.2.10">PowerShell для Azure Stack</a></p><p><a href="/cli/azure/?view=azure-cli-2017-03-09-profile">Интерфейс командной строки Azure Stack</a></p>
