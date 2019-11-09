@@ -40,7 +40,6 @@
         - name: Планировщик ресурсов Azure Stack
           href: azure-stack-capacity-planner.md
     - name: Интеграция центра обработки данных
-      href: azure-stack-customer-journey.md
       items:
         - name: Пошаговое руководство
           href: azure-stack-customer-journey.md
@@ -151,8 +150,6 @@
               href: azure-stack-servicing-policy.md
             - name: Контрольный список для применения обновлений
               href: release-notes-checklist.md
-            - name: Планирование обновлений
-              href: azure-stack-update-plan.md
             - name: Подготовка пакета обновлений
               href: azure-stack-update-prepare-package.md
             - name: Установка обновлений
