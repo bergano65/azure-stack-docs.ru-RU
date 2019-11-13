@@ -15,12 +15,12 @@ ms.date: 09/25/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: b7d20327410ace5b5ad12d34a24ff474c1a384b0
-ms.sourcegitcommit: 4a2318ad395b2a931833ccba4430d8d04cdd8819
+ms.openlocfilehash: 39c651649aea60ab12aae9daf35b0d07615bf697
+ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72780477"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73595304"
 ---
 # <a name="scale-a-kubernetes-cluster-on-azure-stack"></a>Масштабирование кластера Kubernetes в Azure Stack
 
@@ -42,7 +42,7 @@ ms.locfileid: "72780477"
 | location | local | Это регион для экземпляра Azure Stack. Для ASDK параметр региона нужно настроить как `local`.  | 
 | resource-group | kube-rg | Имя группы ресурсов, которая содержит кластер. | 
 | subscription-id |  | Идентификатор GUID подписки, которая содержит используемые кластером ресурсы. Убедитесь, что в подписке есть достаточная квота для масштабирования. | 
-| client-id |  | Идентификатор клиента субъекта-службы, который был указан при создании кластера из обработчика AKS. | 
+| client-id |  | Идентификатор клиента субъекта-службы, который был указан при создании кластера в обработчике AKS. | 
 | client-secret |  | Секрет субъекта-службы, который был указан при создании кластера. | 
 | api-model | kube-rg/apimodel.json | Путь к файлу определения кластера (apimodel.json). Возможный вариант:  _output/\<dnsPrefix>/apimodel.json | 
 | -new-node-count | 9 | Требуемое число узлов. | 
@@ -71,5 +71,5 @@ aks-engine scale \
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Сведения [об обработчике AKS в Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).
+- См. сведения об [обработчике AKS в Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).
 - [Обновление кластера Kubernetes в Azure Stack](azure-stack-kubernetes-aks-engine-upgrade.md)

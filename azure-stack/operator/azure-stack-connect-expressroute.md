@@ -14,12 +14,12 @@ ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 2fee81a79b58294a9c43f8d550f139157cb64a9b
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: efea925c421a031206ac33b49a13bd486bab1eea
+ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72283573"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73636892"
 ---
 # <a name="connect-azure-stack-to-azure-using-azure-expressroute"></a>Подключение Azure Stack к Azure с помощью Azure ExpressRoute
 
@@ -62,7 +62,7 @@ Azure ExpressRoute позволяет переносить локальные с
 
 ![Сеть ExpressRoute](media/azure-stack-connect-expressroute/Conceptual.png)
 
-На следующем рисунке показано подключение нескольких клиентов из инфраструктуры Azure Stack через маршрутизатор ExpressRoute к Azure в Microsoft Edge:
+На следующем рисунке показано подключение нескольких клиентов из инфраструктуры Azure Stack через маршрутизатор ExpressRoute к Azure.
 
 ![Мультитенантные подключения с использованием ExpressRoute](media/azure-stack-connect-expressroute/Architecture.png)
 
@@ -610,4 +610,4 @@ New-NetFirewallRule `
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Развертывание приложений в Azure и Azure Stack](../user/azure-stack-solution-pipeline.md )
+[Развертывание приложений в Azure и Azure Stack](../user/azure-stack-solution-pipeline.md)

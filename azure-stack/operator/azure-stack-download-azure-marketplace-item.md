@@ -16,12 +16,12 @@ ms.date: 10/10/2019
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 12/10/2018
-ms.openlocfilehash: 91314fcd33d3b4171dc7e9a3e2d78cdf07e2f50e
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: 095744322937a34dffd680b886fd4b06ca65d7d6
+ms.sourcegitcommit: 20d1c0ab3892e9c4c71d5b039457f1e15b1c84c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72283540"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73618275"
 ---
 # <a name="download-existing-marketplace-items-from-azure-and-publish-to-azure-stack"></a>Скачивание существующих элементов Marketplace из Azure и их публикация в Azure Stack
 
@@ -101,7 +101,7 @@ ms.locfileid: "72283540"
 
 После регистрации можно проигнорировать следующее сообщение, которое отображается в колонке управления Marketplace, так как оно не имеет отношения к режиму использования без подключения к Интернету.
 
-[![Не зарегистрированное сообщение](media/azure-stack-download-azure-marketplace-item/toolsmsgsm.png "Не зарегистрированное сообщение")](media/azure-stack-download-azure-marketplace-item/toolsmsg.png#lightbox)
+[![Незарегистрированное сообщение](media/azure-stack-download-azure-marketplace-item/toolsmsgsm.png "Незарегистрированное сообщение")](media/azure-stack-download-azure-marketplace-item/toolsmsg.png#lightbox)
 
 ### <a name="use-the-marketplace-syndication-tool-to-download-marketplace-items"></a>Скачивание элементов marketplace с помощью средства синдикации marketplace
 
@@ -150,9 +150,9 @@ ms.locfileid: "72283540"
 
 6. После запуска средства появится примерно такой экран, как на следующем изображении, с полным списком доступных элементов Marketplace:
 
-   [![Всплывающее окно с элементами Azure Marketplace](media/azure-stack-download-azure-marketplace-item/image05.png "Azure Marketplace items")](media/azure-stack-download-azure-marketplace-item/image05.png#lightbox)
+   [![Всплывающее окно с элементами Azure Marketplace](media/azure-stack-download-azure-marketplace-item/image05.png "Элементы Azure Marketplace")](media/azure-stack-download-azure-marketplace-item/image05.png#lightbox)
 
-7. Если вы еще не установили средства службы хранилища Azure, появится следующее сообщение. Чтобы установить эти средства, обязательно скачайте [AzCopy](/azure/storage/common/storage-use-azcopy#download-and-install-azcopy-on-windows):
+7. Если вы еще не установили средства службы хранилища Azure, появится следующее сообщение. Чтобы установить эти средства, обязательно скачайте [AzCopy](/azure/storage/common/storage-use-azcopy#download-azcopy):
 
    ![Средства хранилища](media/azure-stack-download-azure-marketplace-item/vmnew1.png)
 
@@ -178,7 +178,7 @@ ms.locfileid: "72283540"
 
    Пример структуры папки приведен на рисунке ниже. В папке `D:\downloadfolder` содержатся все скачанные элементы marketplace. Каждая вложенная папка представляет элемент Marketplace (например, `microsoft.custom-script-linux-arm-2.0.3`) и ее имя соответствует идентификатору продукта. Внутри каждой вложенной папки содержится скачанное содержимое элемента Marketplace.
 
-   [![Структура скачанных каталогов Marketplace](media/azure-stack-download-azure-marketplace-item/mp1sm.png "Marketplace download directory structure")](media/azure-stack-download-azure-marketplace-item/mp1.png#lightbox)
+   [![Структура каталогов для скачивания из Marketplace](media/azure-stack-download-azure-marketplace-item/mp1sm.png "Структура каталогов для скачивания из Marketplace")](media/azure-stack-download-azure-marketplace-item/mp1.png#lightbox)
 
 2. Инструкции в [этой статье](azure-stack-powershell-configure-admin.md) позволяют настроить сеанс PowerShell для оператора Azure Stack.
 

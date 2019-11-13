@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: how-to
-ms.date: 10/19/2019
+ms.date: 10/30/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/19/2019
-ms.openlocfilehash: 553b6af0e61067b4223baee100bd1a9b3079d1f1
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.lastreviewed: 10/30/2019
+ms.openlocfilehash: 4294f7f1d53f77c55532645de428678cf42be531
+ms.sourcegitcommit: 20d1c0ab3892e9c4c71d5b039457f1e15b1c84c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73168531"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73618286"
 ---
 # <a name="back-up-your-vm-on-azure-stack-with-commvault"></a>Резервное копирование виртуальной машины в Azure Stack с помощью Commvault
 
@@ -149,7 +149,7 @@ ms.locfileid: "73168531"
 
 9. Введите сведения для доступа к вашей учетной записи хранения. Инструкции по настройке учетной записи Службы хранения Azure можно найти здесь. Сведения о доступе:
 
-    -  **Узел службы**. Получите имя URL-адреса из свойств контейнера больших двоичных объектов в вашем ресурсе. Например, мой URL-адрес был https://backuptest.blob.westus.stackpoc.com/mybackups и я использовал, blob.westus.stackpoc.com в узле службы.
+    -  **Узел службы**. Получите имя URL-адреса из свойств контейнера больших двоичных объектов в вашем ресурсе. Например, мой URL-адрес имел вид https:\//backuptest.blob.westus.stackpoc.com/mybackups, и мной использовался blob.westus.stackpoc.com в узле службы.
     
     -   **Имя учетной записи**: Введите имя учетной записи хранения. Его можно найти в колонке "Ключи доступа" в ресурсе хранилища.
     

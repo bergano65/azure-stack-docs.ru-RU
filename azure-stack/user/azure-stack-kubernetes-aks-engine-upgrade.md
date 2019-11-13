@@ -15,12 +15,12 @@ ms.date: 10/16/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 10/16/2019
-ms.openlocfilehash: 3720781dc2545fefaff0b2cd703d7c3880c4b97b
-ms.sourcegitcommit: 83cef2c4ec6e1b2fd3f997c91675c1058a850e2f
+ms.openlocfilehash: 39eebfbc4d60d4cd68bb33d6efcf35cc12ffe313
+ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "72999882"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73594895"
 ---
 # <a name="upgrade-a-kubernetes-cluster-on-azure-stack"></a>Обновление кластера Kubernetes в Azure Stack
 
@@ -86,7 +86,7 @@ ms.locfileid: "72999882"
 
     | Параметр | Пример | ОПИСАНИЕ |
     | --- | --- | --- |
-    | azure-env | AzureStackCloud | Чтобы сообщить обработчику AKS, что целевой платформой является Azure Stack, укажите `AzureStackCloud`. |
+    | azure-env | AzureStackCloud | Чтобы сообщить обработчику AKS, что целевой платформой является Azure Stack, используйте `AzureStackCloud`. |
     | location | local | Название региона для Azure Stack. Для ASDK параметр региона нужно настроить как `local`. |
     | resource-group | kube-rg | Введите имя новой группы ресурсов или выберите существующую. Имя ресурса должно содержать буквенно-цифровые символы. Оно вводится в нижнем регистре. |
     | subscription-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Введите идентификатор подписки. Дополнительные сведения см. в разделе [Подписка на предложение](https://docs.microsoft.com/azure-stack/user/azure-stack-subscribe-services#subscribe-to-an-offer). |
@@ -115,7 +115,7 @@ ms.locfileid: "72999882"
 ## <a name="steps-to-only-upgrade-the-os-image"></a>Этапы только для обновления образа ОС
 
 1. Просмотрите [таблицу "supported-kubernetes-versions"](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions) (поддерживаемых версий kubernetes) и определите, есть ли у вас версия aks-engine и базовый образ AKS, которые нужно обновить. Чтобы просмотреть версию aks-engine, запустите: `aks-engine version`.
-2. Обновите обработчик AKS соответствующим образом. На компьютере с установленным aks-engine запустите `./get-akse.sh --version vx.xx.x` заменив **x.xx.x** целевой версией.
+2. Обновите обработчик AKS соответствующим образом. На компьютере с установленным aks-engine запустите `./get-akse.sh --version vx.xx.x`, заменив **x.xx.x** целевой версией.
 3. Попросите оператора Azure Stack добавить версию базового образа AKS, необходимого для Azure Stack Marketplace, который нужно использовать.
 4. Выполните команду `aks-engine upgrade`, используя ту же используемую версию Kubernetes, но добавьте `--force`. Пример можно увидеть в статье [Принудительное выполнение обновления](#forcing-an-upgrade).
 
@@ -141,5 +141,5 @@ aks-engine upgrade \
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Сведения [об обработчике AKS в Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).
+- См. сведения об [обработчике AKS в Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).
 - [Масштабирование кластера Kubernetes в Azure Stack](azure-stack-kubernetes-aks-engine-scale.md).

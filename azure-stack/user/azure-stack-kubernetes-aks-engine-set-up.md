@@ -15,12 +15,12 @@ ms.date: 09/14/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 09/14/2019
-ms.openlocfilehash: b56c5a2be45e9f92630283a2b702f37471e80290
-ms.sourcegitcommit: 534117888d9b7d6d363ebe906a10dcf0acf8b685
+ms.openlocfilehash: 9a1f25873512da735df4e098804bb474d9ce75ea
+ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72173097"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73594939"
 ---
 # <a name="set-up-the-prerequisites-for-the-aks-engine-on-azure-stack"></a>Установка необходимых компонентов для обработчика AKS в Azure Stack
 
@@ -30,16 +30,16 @@ ms.locfileid: "72173097"
 
 Если все необходимые компоненты готовы, приступайте к [определению кластера](azure-stack-kubernetes-aks-engine-deploy-cluster.md).
 
-Если вы являетесь оператором облака для Azure Stack и хотите предложить подсистему AKS, следуйте инструкциям в статье [Add the Azure Kubernetes Services (AKS) Engine prerequisites to the Azure Stack Marketplace](../operator/azure-stack-aks-engine.md) (Добавление предварительных требований обработчика Службы Azure Kubernetes (AKS) в Azure Stack Marketplace).
+Если вы являетесь оператором облака для Azure Stack и хотите предложить обработчик AKS, следуйте инструкциям по [добавлению предварительных требований обработчика AKS в Azure Stack Marketplace](../operator/azure-stack-aks-engine.md).
 
 ## <a name="prerequisites-for-the-aks-engine"></a>Необходимые компоненты для обработчика AKS
 
-Для работы с обработчиком AKS должны быть доступны следующие ресурсы. Учитывайте, что обработчик AKS рассчитан на использование клиентами Azure Stack для развертывания кластеров Kubernetes в клиентских подписках. Единственный процесс, который может предполагать взаимодействие с оператором Azure Stack, это скачивание элементов Marketplace и создание удостоверения субъекта-службы. Подробные сведения собраны в следующей таблице.
+Для использования обработчика AKS должны быть доступны следующие ресурсы. Учитывайте, что обработчик AKS рассчитан на использование клиентами Azure Stack для развертывания кластеров Kubernetes в клиентских подписках. Единственный процесс, который может предполагать взаимодействие с оператором Azure Stack, это скачивание элементов Marketplace и создание удостоверения субъекта-службы. Подробные сведения собраны в следующей таблице.
 
 | Предварительные требования | ОПИСАНИЕ | Обязательно | Указания |
 | --- | --- | --- | --- |
 | Расширение пользовательских скриптов Linux | Расширение пользовательских скриптов Linux 2.0<br>Предложение: Настраиваемый скрипт для Linux 2.0<br>Версия: 2.0.6 (или последняя версия)<br>Издатель: Корпорация Майкрософт | Обязательно | Если у вас в подписке нет этого элемента, обратитесь к оператору облака. |
-| Базовый образ AKS для Ubuntu | Базовый образ AKS<br>Предложение: aks<br>Версия: 2019.09.19 (или более новая)<br>Издатель: microsoft-aks<br>SKU: aks-ubuntu-1604-201909 | Обязательно | Если у вас в подписке нет этого элемента, обратитесь к оператору облака. Дополнительные сведения о зависимости версий см. в разделе [Соответствие версий обработчика и базового образа](#matching-engine-to-base-image-version).<br> Если вы являетесь оператором облака для Azure Stack и хотите предложить подсистему AKS, следуйте инструкциям в статье [Add the Azure Kubernetes Services (AKS) Engine prerequisites to the Azure Stack Marketplace](../operator/azure-stack-aks-engine.md) (Добавление предварительных требований обработчика Службы Azure Kubernetes (AKS) в Azure Stack Marketplace). |
+| Базовый образ AKS для Ubuntu | Базовый образ AKS<br>Предложение: aks<br> 2019.10.24 (или более новая версия)<br>Издатель: microsoft-aks<br>SKU: aks-ubuntu-1604-201910 | Обязательно | Если у вас в подписке нет этого элемента, обратитесь к оператору облака. Дополнительные сведения о зависимости версий см. в разделе [Соответствие версий обработчика и базового образа](#matching-engine-to-base-image-version).<br> Если вы являетесь оператором облака для Azure Stack и хотите предложить обработчик AKS, следуйте инструкциям по [добавлению предварительных требований обработчика AKS в Azure Stack Marketplace](../operator/azure-stack-aks-engine.md). |
 | Подписка Azure Stack | Доступ к предложениям в Azure Stack осуществляется через подписки. Предложение содержит доступные вам службы. | Обязательно | Чтобы иметь возможность развертывать рабочие нагрузки клиента в Azure Stack, прежде всего нужно получить [подписку Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-subscribe-services). |
 | Имя субъекта-службы |  Приложение, необходимое для развертывания или настройки ресурсов через Azure Resource Manager, должно быть представлено субъектом-службой. | Обязательно | Для получения этого элемента может потребоваться взаимодействие с оператором Azure Stack.  Инструкции см. в статье [Использование удостоверения приложения для доступа к ресурсам](https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals). |
 | Имя субъекта-службы с назначенной ролью **Участник** | Чтобы разрешить приложению доступ к ресурсам в подписке с помощью субъекта-службы, необходимо назначить этому субъекту-службе роль для конкретного ресурса. | Обязательно | Инструкции см. в разделе [Назначение роли](https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals#assign-a-role). |
@@ -51,9 +51,9 @@ ms.locfileid: "72173097"
 
 ## <a name="matching-engine-to-base-image-version"></a>Соответствие версий обработчика и базового образа
 
-Обработчик AKS использует специально созданный образ, который именуется **базовым образом AKS**. Версия обработчика AKS определяется версией образа, который предоставляет для Azure Stack ваш оператор Azure Stack. Таблицу, в которой перечислены версии обработчика AKS и соответствующие поддерживаемые версии Kubernetes, можно найти [здесь](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). Например, для обработчика AKS версии `v0.41.2` необходим базовый образ AKS версии `2019.09.19`. Попросите оператора Azure Stack скачать нужную версию образа из Azure Marketplace в Azure Stack Marketplace.
+Обработчик AKS использует специально созданный образ — **базовый образ AKS**. Версия обработчика AKS определяется версией образа, который предоставляет для Azure Stack ваш оператор Azure Stack. См. таблицу, в которой перечислены [версии обработчика AKS и соответствующие поддерживаемые версии Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). Например, для использования обработчика AKS версии `v0.43.0` необходим базовый образ AKS версии `2019.10.24`. Попросите оператора Azure Stack скачать нужную версию образа из Azure Marketplace в Azure Stack Marketplace.
 
-Если образ недоступен в Azure Stack Marketplace, будет происходить ошибка. Например, если вы используете обработчик AKS версии 0.41.2, и в системе недоступна версия `2019.09.19` базового образа AKS, при запуске обработчика AKS вы увидите следующую ошибку: 
+Если образ недоступен в Azure Stack Marketplace, будет происходить ошибка. Например, если вы используете обработчик AKS версии 0.43.0, и в системе недоступна версия `2019.10.24` базового образа AKS, при запуске обработчика AKS вы увидите следующую ошибку: 
 
 ```Text  
 The platform image 'microsoft-aks:aks:aks-ubuntu-1604-201908:2019.08.09' is not available. 
@@ -72,5 +72,5 @@ GitTreeState: clean
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Развертывание обработчика AKS в Windows в Azure Stack](azure-stack-kubernetes-aks-engine-deploy-windows.md)  
-> [Развертывание обработчика AKS в Linux в Azure Stack](azure-stack-kubernetes-aks-engine-deploy-linux.md)
+> [Развертывание обработчика AKS в Azure Stack в Windows](azure-stack-kubernetes-aks-engine-deploy-windows.md)  
+> [Развертывание обработчика AKS в Azure Stack в Linux](azure-stack-kubernetes-aks-engine-deploy-linux.md)

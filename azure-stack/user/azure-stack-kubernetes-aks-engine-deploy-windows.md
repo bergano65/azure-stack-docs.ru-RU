@@ -15,12 +15,12 @@ ms.date: 10/30/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 10/30/2019
-ms.openlocfilehash: c646f8229b5360aed12c9cd8070a00bf38ca3e01
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.openlocfilehash: b9dd45b6ea7fdfaab1b1e7418800dcd2031dc151
+ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73167307"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73595188"
 ---
 # <a name="install-the-aks-engine-on-windows-in-azure-stack"></a>Установка обработчика AKS в Windows в Azure Stack
 
@@ -46,11 +46,11 @@ ms.locfileid: "73167307"
 3. [Установите Chocolatey по инструкциям для PowerShell](https://chocolatey.org/install#install-with-powershellexe). 
 
     Веб-сайт Chocolaty предоставляет такую информацию: Chocolaty является диспетчером пакетов для Windows — почти как apt-get или yum, но для Windows. Он был разработан как децентрализованная платформа для быстрой установки нужных приложений и средств. Он основан на инфраструктуре NuGet и в настоящее время использует PowerShell для доставки пакетов из дистрибутивов прямо к вашей двери, ну то есть к компьютеру.
-4. Найдите версию обработчика AKS в таблице [поддерживаемых версий Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). Базовый обработчик AKS должен быть доступен в Azure Stack Marketplace. При выполнении этой команды укажите версию `--version v0.41.2`. Если вы ее не укажете, команда попытается установить последнюю версию, для которой может понадобиться образ VHD, недоступный в вашем marketplace.
+4. Найдите версию обработчика AKS в таблице [поддерживаемых версий Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). Базовый обработчик AKS должен быть доступен в Azure Stack Marketplace. При выполнении этой команды укажите версию `--version v0.43.0`. Если вы ее не укажете, команда попытается установить последнюю версию, для которой может понадобиться образ VHD, недоступный в вашем marketplace.
 5. Выполните следующую команду в командной строке с повышенными привилегиями, добавив к ней номер версии:
 
     ```PowerShell  
-        choco install aks-engine --version 0.41.2 -y
+        choco install aks-engine --version 0.43.0 -y
     ```
 
 > [!Note]  
@@ -75,7 +75,7 @@ ms.locfileid: "73167307"
 7.  Выполните следующую команду в командной строке с повышенными привилегиями: Укажите правильный номер версии:
 
     ```PowerShell  
-        choco install aks-engine --version v0.41.2 -y
+        choco install aks-engine --version 0.43.0 -y
     ```
 
 ## <a name="verify-the-installation"></a>Проверка установки

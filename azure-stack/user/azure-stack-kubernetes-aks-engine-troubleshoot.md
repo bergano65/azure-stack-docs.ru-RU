@@ -1,6 +1,6 @@
 ---
-title: Устранение проблем с обработчиком AKS в Azure Stack | Документация Майкрософт
-description: В этой статье описаны действия по устранению проблем с обработчиком AKS в Azure Stack.
+title: Устранение неполадок с обработчиком AKS в Azure Stack | Документация Майкрософт
+description: В этой статье описано, как устранять неполадки с обработчиком AKS в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,28 +15,28 @@ ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: 49684cb1821a5014e984a8e177f881be13123829
-ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
+ms.openlocfilehash: 7c2dfd33db3847f386136922716b0ee35c61ce75
+ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73047146"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73595285"
 ---
-# <a name="troubleshoot-the-aks-engine-on-azure-stack"></a>Устранение проблем с обработчиком AKS в Azure Stack
+# <a name="troubleshoot-the-aks-engine-on-azure-stack"></a>Устранение неполадок с обработчиком AKS в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-При развертывании обработчика AKS в Azure Stack или при работе с ним могут возникать проблемы. В этой статье рассматриваются действия по устранению проблем при развертывании обработчика AKS, по сбору сведений об обработчике AKS, сбору журналов Kubernetes, изучению кодов ошибок для расширения пользовательских скриптов, а также по оформлению проблем с обработчиком AKS на сайте GitHub.
+При развертывании обработчика AKS в Azure Stack или при работе с ним могут возникать проблемы. В этой статье описано, как устранять неполадки при развертывании обработчика AKS, собирать сведения об обработчике AKS, собирать журналы Kubernetes, изучать коды ошибок для расширения пользовательских скриптов, а также регистрировать проблемы с обработчиком AKS на сайте GitHub.
 
 > [!IMPORTANT]
 > Обработчик AKS сейчас предоставляется на условиях общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="troubleshoot-the-aks-engine-install"></a>Устранение проблем с установкой обработчика AKS
+## <a name="troubleshoot-the-aks-engine-install"></a>Устранение неполадок с установкой обработчика AKS
 
 ### <a name="try-gofish"></a>Попробуйте GoFish
 
-Если при установке произошел сбой, попробуйте установить его с помощью диспетчера пакетов GoFish. [GoFish](https://gofi.sh) идентифицирует себя как Homebrew с кроссплатформенной поддержкой.
+Если при установке обработчика AKS произошел сбой, попробуйте установить его с помощью диспетчера пакетов GoFish. [GoFish](https://gofi.sh) идентифицирует себя как Homebrew с кроссплатформенной поддержкой.
 
 #### <a name="install-the-aks-engine-with-gofish-on-linux"></a>Установка обработчика AKS с помощью GoFish в Linux
 
@@ -48,7 +48,7 @@ ms.locfileid: "73047146"
     curl -fsSL https://raw.githubusercontent.com/fishworks/gofish/master/scripts/install.sh | bash
     ```
 
-2.  Выполните следующую команду, чтобы установить обработчик AKS через GoFish:
+2.  Выполните следующую команду, чтобы установить обработчик AKS с помощью GoFish:
 
     ```bash
     Run "gofish install aks-engine"
@@ -62,10 +62,10 @@ ms.locfileid: "73047146"
 
     ```PowerShell
     Set-ExecutionPolicy Bypass -Scope Process -Force
-iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/fishworks/gofish/master/scripts/install.ps1'))
+    iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/fishworks/gofish/master/scripts/install.ps1'))
     ```
 
-2.  Выполните в том же сеансе следующую команду, чтобы установить обработчик AKS через GoFish:
+2.  Выполните в том же сеансе следующую команду, чтобы установить обработчик AKS с помощью GoFish:
 
     ```PowerShell
     gofish install aks-engine
@@ -73,7 +73,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 
 ### <a name="checklist-for-common-deployment-issues"></a>Список проверки для типичных проблем развертывания
 
-Если вы столкнетесь с ошибками при развертывании кластера Kubernetes с помощью обработчика AKS, попробуйте проверить следующее:
+Если вы столкнетесь с ошибками при развертывании кластера Kubernetes с помощью обработчика AKS, проверьте следующее:
 
 1.  Правильно ли указаны учетные данные субъекта-службы?
 2.  Имеет ли субъект-служба роль "Участник" для подписки Azure Stack?
@@ -84,7 +84,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 
 ## <a name="collect-aks-engine-logs"></a>Сбор журналов обработчика AKS
 
-Вы можете использовать проверочные сведения, которые создаются обработчиком AKS. Обработчик AKS сообщает сведения о состоянии и об ошибках при запусках приложения. Вы можете направить эти выходные данные в текстовый файл или скопировать прямо из консоли командной строки. Список кодов ошибок, активируемых обработчиком AKS, см. в статье [Проверка кодов ошибок для расширения пользовательских скриптов](#review-custom-script-extension-error-codes).
+Вы можете использовать проверочные сведения, которые создаются обработчиком AKS. Обработчик AKS сообщает сведения о состоянии и ошибках при запусках приложения. Вы можете направить эти выходные данные в текстовый файл или скопировать прямо из консоли командной строки. См. список кодов ошибок, активируемых обработчиком AKS, в списке [кодов ошибок для расширения пользовательских скриптов](#review-custom-script-extension-error-codes).
 
 1.  Соберите стандартные выходные данные и сведения об ошибках, которые отображаются в программе командной строки обработчика AKS.
 
@@ -98,7 +98,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 
 ## <a name="collect-kubernetes-logs"></a>Сбор журналов Kubernetes
 
-Помимо журналов обработчика AKS, сведения о состоянии и ошибках генерируют компоненты Kubernetes. Эти журналы можно получить с помощью скрипта bash с именем [getkuberneteslogs.sh](https://github.com/msazurestackworkloads/azurestack-gallery/releases/download/diagnosis-v0.1.0/diagnosis.zip).
+Кроме журналов обработчика AKS, вы также можете просматривать сведения о состоянии и ошибках, генерируемые компонентами Kubernetes. Эти журналы можно получить с помощью скрипта bash с именем [getkuberneteslogs.sh](https://github.com/msazurestackworkloads/azurestack-gallery/releases/download/diagnosis-v0.1.0/diagnosis.zip).
 
 Этот скрипт автоматически собирает сведения из следующих журналов: 
 
@@ -126,8 +126,8 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
     ```bash  
     mkdir -p $HOME/kuberneteslogs
     cd $HOME/kuberneteslogs
-    wget https://github.com/msazurestackworkloads/azurestack-gallery/releases/download/diagnosis-v0.1.0/diagnosis.tar.gz
-    tar xvzf diagnosis.tar.gz -C ./
+    wget https://github.com/msazurestackworkloads/azurestack-gallery/releases/download/diagnosis-v0.1.1/diagnosis-v0.1.1.tar.gz
+    tar xvf diagnosis-v0.1.1.tar.gz -C ./
     ```
 
 2. Найдите обязательные параметры для работы скрипта `getkuberneteslogs.sh`. Этот скрипт использует следующие параметры:
@@ -174,7 +174,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 
 Если вам не удается устранить ошибку развертывания, попробуйте сообщить о проблеме на сайте GitHub. 
 
-1. Откройте раздел [Проблема GitHub](https://github.com/Azure/aks-engine/issues/new) в репозитории обработчика AKS.
+1. Откройте [проблему GitHub](https://github.com/Azure/aks-engine/issues/new) в репозитории обработчика AKS.
 2. Введите заголовок в следующем формате: C`SE error: exit code <INSERT_YOUR_EXIT_CODE>`.
 3. Добавьте следующую информацию о проблеме:
 
@@ -184,4 +184,4 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Сведения [об обработчике AKS в Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).
+- См. сведения об [обработчике AKS в Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).

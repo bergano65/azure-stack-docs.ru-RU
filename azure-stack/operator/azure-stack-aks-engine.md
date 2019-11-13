@@ -1,6 +1,6 @@
 ---
-title: Необходимые компоненты для добавления обработчика Службы Azure Kubernetes (AKS) в Azure Stack Marketplace | Документация Майкрософт
-description: Из этой статьи вы узнаете о необходимых компонентах для добавления обработчика AKS в Azure Stack Marketplace.
+title: Добавление необходимых компонентов для обработчика Службы Azure Kubernetes (AKS) в Azure Stack Marketplace | Документация Майкрософт
+description: Узнайте, как добавить необходимые компоненты обработчика AKS в Azure Stack Marketplace.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,24 +11,24 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/09/2019
+ms.date: 11/05/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 10/09/2019
-ms.openlocfilehash: 1e1e72cea27bf036f662cfaa64a84a57fe9bc964
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.lastreviewed: 11/05/2019
+ms.openlocfilehash: c21223ca8926a1e2b3ca1b06752a79a14adaeda1
+ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72283056"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73636878"
 ---
-# <a name="add-the-azure-kubernetes-services-aks-engine-prerequisites-to-the-azure-stack-marketplace"></a>Необходимые компоненты для добавления обработчика Службы Azure Kubernetes (AKS) в Azure Stack Marketplace
+# <a name="add-the-azure-kubernetes-services-aks-engine-prerequisites-to-the-azure-stack-marketplace"></a>Добавление необходимых компонентов для обработчика Службы Azure Kubernetes (AKS) в Azure Stack Marketplace
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Вы можете разрешить пользователям настраивать обработчик Службы Azure Kubernetes (AKS), добавив в Azure Stack элементы, описанные в этой статье. Затем пользователи смогут развернуть кластер Kubernetes с помощью одной согласованной операции. В этой статье рассматриваются шаги, которые необходимо выполнить, чтобы обеспечить доступность обработчика AKS для пользователей в подключенных и отключенных средах. Обработчик AKS зависит от удостоверения субъекта-службы, а в Marketplace также от пользовательского расширения скриптов и базового образа AKS.
+Вы можете разрешить пользователям настраивать обработчик Службы Azure Kubernetes (AKS), добавив в Azure Stack элементы, описанные в этой статье. Затем пользователи смогут развернуть кластер Kubernetes с помощью одной согласованной операции. В этой статье описано, как обеспечить доступность обработчика AKS для пользователей в подключенных и отключенных средах. Обработчик AKS зависит от удостоверения субъекта-службы, а в Marketplace — от пользовательского расширения скриптов и базового образа AKS.
 
-Обработчик AKS использует специально созданный образ, который именуется [базовым образом AKS](https://github.com/Azure/aks-engine). Любая версия обработчика AKS зависит от конкретной версии образа, которую можно сделать доступной в Azure Stack. Таблицу, в которой перечислены версии обработчика AKS и соответствующие поддерживаемые версии Kubernetes, можно найти [здесь](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions).
+[Обработчик AKS](https://github.com/Azure/aks-engine) использует специально созданный образ — базовый образ AKS. Любая версия обработчика AKS зависит от конкретной версии образа, которую можно сделать доступной в Azure Stack. См. таблицу, в которой перечислены версии обработчика AKS и соответствующие [поддерживаемые версии Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions).
 
 > [!IMPORTANT]
 > Обработчик AKS сейчас предоставляется на условиях общедоступной предварительной версии.
@@ -64,14 +64,14 @@ ms.locfileid: "72283056"
 
 1. Выберите **+ Add from Azure** (Добавить из Azure).
 
-1. Укажите `AKS Base Image`.
+1. Укажите `AKS Base`.
 
-1. Выберите версию образа, соответствующую версии обработчика AKS. Список базовых образов AKS с соответствующими версиями обработчика AKS можно найти на этой [странице](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). 
+1. Выберите версию образа, соответствующую версии обработчика AKS. См. список базовых образов AKS, соответствующих версии обработчика AKS и [поддерживаемым версиям Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). 
 
     В списке выберите:
     - **Издатель**: Служба Azure Kubernetes
     - **Предложение**: aks.
-    - **Версия.** Дистрибутив с базовым образом AKS 16.04-LTS за сентябрь 2019 г. (2019.09.19 или версия, которая соответствует версии обработчика AKS)
+    - **Версия.** Дистрибутив с базовым образом AKS 16.04-LTS за сентябрь 2019 г. (2019.10.24 или версия, которая соответствует версии обработчика AKS)
 
 1. Выберите **Скачать**.
 
