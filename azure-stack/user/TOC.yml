@@ -261,6 +261,8 @@
           href: azure-stack-network-howto-vnet-to-vnet-stacks.md
         - name: Расширение центра обработки данных
           href: azure-stack-network-howto-extend-datacenter.md
+        - name: Подсистема балансировки нагрузки от F5
+          href: network-howto-f5.md
         - name: Подключение к хранилищу iSCSI
           href: azure-stack-network-howto-iscsi-storage.md
         - name: Настройка туннелей
