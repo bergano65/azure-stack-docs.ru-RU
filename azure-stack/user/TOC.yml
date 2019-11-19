@@ -213,6 +213,8 @@
                       href: azure-stack-kubernetes-aks-engine-upgrade.md
                     - name: Устранение неполадок с обработчиком AKS
                       href: azure-stack-kubernetes-aks-engine-troubleshoot.md
+                    - name: Использование Azure Monitor для контейнеров
+                      href: kubernetes-aks-engine-azure-monitor.md
                 - name: Элемент Marketplace
                   items:
                     - name: Развертывание кластера Kubernetes
