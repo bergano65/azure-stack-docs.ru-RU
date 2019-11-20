@@ -15,12 +15,12 @@ ms.date: 09/18/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 09/18/2019
-ms.openlocfilehash: 79d7a0adfc7d869f600e864264716b34d6452213
-ms.sourcegitcommit: c46d913ebfa4cb6c775c5117ac5c9e87d032a271
+ms.openlocfilehash: 53390633cf1abb1508a87a10e8672d7a23772207
+ms.sourcegitcommit: ca358ea5c91a0441e1d33f540f6dbb5b4d3c92c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71101139"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73802360"
 ---
 # <a name="install-powershell-for-azure-stack"></a>Установка PowerShell для Azure Stack
 
@@ -28,7 +28,7 @@ ms.locfileid: "71101139"
 
 В Azure PowerShell доступен набор командлетов, которые используют модель Azure Resource Manager для управления ресурсами Azure Stack.
 
-Для работы с облаком необходимо установить модули PowerShell, совместимые с Azure Stack. Azure Stack использует модуль **AzureRM**, а не новый модуль **AzureAZ**, используемый в глобальной среде Azure. Кроме того, необходимо использовать *профили API*, чтобы указать совместимые конечные точки для поставщиков ресурсов Azure Stack.
+Для работы с облаком необходимо установить модули PowerShell, совместимые с Azure Stack. Azure Stack использует модуль **AzureRM** вместо нового модуля **AzureAZ**, используемого в глобальной среде Azure. Кроме того, необходимо использовать *профили API*, чтобы указать совместимые конечные точки для поставщиков ресурсов Azure Stack.
 
 Профили API позволяют управлять различиями между версиями Azure и Azure Stack. Профиль версии API — это набор модулей Azure Resource Manager PowerShell с определенными версиями API. Каждая облачная платформа имеет набор поддерживаемых профилей версий API. К примеру, Azure Stack поддерживает определенную версию профиля, например **2019-03-01-hybrid**. При установке профиля устанавливается набор модулей Azure Resource Manager PowerShell, которые соответствуют выбранному профилю.
 
@@ -129,7 +129,7 @@ Get-Module -Name "Azure*" -ListAvailable
 Get-Module -Name "Azs*" -ListAvailable
 ```
 
-Если установка выполнена успешно, в выходных данных указываются модули AzureRM и AzureStack.
+Если установка выполнена успешно, в выходных данных указываются модули `AzureRM` и `AzureStack`.
 
 ## <a name="5-disconnected-install-powershell-without-an-internet-connection"></a>5. Без подключения. Установка PowerShell без подключения к Интернету
 
@@ -170,7 +170,7 @@ Get-Module -Name "Azs*" -ListAvailable
     ```
 
     > [!Note]  
-    > Модуль Azure Stack версии 1.7.1 является критическим изменением. Чтобы выполнить миграцию из Azure Stack 1.6.0, см. руководство по миграции [здесь](https://github.com/Azure/azure-powershell/tree/AzureRM/documentation/migration-guides/Stack).
+    > Модуль Azure Stack версии 1.7.1 является критическим изменением. Чтобы выполнить миграцию из Azure Stack 1.6.0, см. руководство по миграции, указанное [здесь](https://github.com/Azure/azure-powershell/tree/AzureRM/documentation/migration-guides/Stack).
 
     > [!NOTE]
     > На компьютерах без подключения к Интернету советуем выполнить приведенный ниже командлет для отключения сбора данных телеметрии. Без выключения сбора данных телеметрии может произойти снижение производительности командлетов. Это относится только к компьютерам без подключения к Интернету.
@@ -186,7 +186,7 @@ Get-Module -Name "Azs*" -ListAvailable
 
 3. Начальная загрузка поставщика NuGet, выполняемая вручную на отключенной рабочей станции Инструкции см. в разделе [Ручной режим начальной загрузки поставщика NuGet на автономный компьютер](https://docs.microsoft.com/powershell/gallery/how-to/getting-support/bootstrapping-nuget#manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet).
 
-4. Зарегистрируйте это расположение в качестве репозитория по умолчанию и установите из этого репозитория модули AzureRM и AzureStack.
+4. Зарегистрируйте это расположение в качестве репозитория по умолчанию и установите из этого репозитория модули AzureRM и `AzureStack`:
 
    ```powershell
    # requires -Version 5

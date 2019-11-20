@@ -1,28 +1,22 @@
 ---
-title: Получение доступа к ресурсам с использованием удостоверения приложения | Документация Майкрософт
-description: Сведения о настройке субъекта-службы, с помощью которого в сочетании с механизмом управления доступом на основе ролей можно выполнять вход и получать доступ к ресурсам.
-services: azure-stack
-documentationcenter: na
+title: Использование удостоверения приложения для доступа к ресурсам
+description: Узнайте, как управлять субъектом-службой Azure Stack Hub. Субъект-службу можно использовать в сочетании с механизмом управления доступом на основе ролей для входа и получения доступа к ресурсам.
 author: BryanLa
-manager: femila
-ms.service: azure-stack
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 11/06/2019
 ms.author: bryanla
-ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: 7110febfa58fb1d31cde5f0ae1b4df659f567956
-ms.sourcegitcommit: 8203490cf3ab8a8e6d39b137c8c31e3baec52298
+ms.service: azure-stack
+ms.topic: how-to
+ms.date: 11/11/2019
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: ff36a5c280df7ecb68d0d181438489ce696ed4fc
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73712739"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955384"
 ---
-# <a name="use-an-app-identity-to-access-resources"></a>Использование удостоверения приложения для доступа к ресурсам
+# <a name="use-an-app-identity-to-access-azure-stack-hub-resources"></a>Использование удостоверения приложения для доступа к ресурсам Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и среда "Пакет средств разработки Azure Stack" (ASDK)*
+*Область применения: интегрированные системы Azure Stack Hub и Пакет средств разработки Azure Stack Hub (ASDK)*
 
 Приложение, необходимое для развертывания или настройки ресурсов через Azure Resource Manager, должно быть представлено субъектом-службой. Так же как пользователь представлен субъектом-пользователем, субъект-служба — это тип субъекта безопасности, который представляет приложение. Субъект-служба предоставляет приложению удостоверение, что позволяет делегировать субъекту-службе только необходимые разрешения.  
 
@@ -41,16 +35,16 @@ ms.locfileid: "73712739"
  - Вы можете назначить субъекту-службе **более строгие разрешения**. Как правило, приложение получает именно те разрешения, которые требуются для его работы. Это называется *принцип минимальных привилегий*.
  - **Разрешения и учетные данные субъекта-службы не требуется изменять так часто**, как учетные данные пользователя. Например, когда изменяются обязанности пользователя или пользователь покидает организацию, требования к паролю определяют изменение.
 
-Сначала необходимо создать регистрацию приложения в каталоге, в результате чего создается связанный [объект субъекта-службы](/azure/active-directory/develop/developer-glossary#service-principal-object), представляющий удостоверение приложения в каталоге. В этом документе описывается процесс создания субъекта-службы и управления им в зависимости от выбранного каталога экземпляра Azure Stack:
+Сначала необходимо создать регистрацию приложения в каталоге, в результате чего создается связанный [объект субъекта-службы](/azure/active-directory/develop/developer-glossary#service-principal-object), представляющий удостоверение приложения в каталоге. В этом документе описывается процесс создания субъекта-службы и управления им в зависимости от выбранного каталога экземпляра Azure Stack Hub:
 
-- Azure Active Directory (Azure AD). Azure AD — это мультитенантный облачный каталог и служба управления удостоверениями. Azure AD можно использовать с подключенным экземпляром Azure Stack.
-- Служба федерации Active Directory (AD FS). В AD FS представлены возможности упрощенной безопасной федерации удостоверений и единого входа. AD FS можно использовать с подключенными и отключенными экземплярами Azure Stack.
+- Azure Active Directory (Azure AD). Azure AD — это мультитенантный облачный каталог и служба управления удостоверениями. Azure AD можно использовать с подключенным экземпляром Azure Stack Hub.
+- Служба федерации Active Directory (AD FS). В AD FS представлены возможности упрощенной безопасной федерации удостоверений и единого входа. AD FS можно использовать с подключенными и отключенными экземплярами Azure Stack Hub.
 
 Сначала вы узнаете, как настроить субъект-службу, а затем как назначить ему роль, ограничивая доступ к ресурсам.
 
 ## <a name="manage-an-azure-ad-service-principal"></a>Управление субъектом-службой Azure AD
 
-Если вы развернули Azure Stack с помощью Azure AD в качестве службы управления удостоверениями, субъекты-службы можно создать так же, как в Azure. В этом разделе описан процесс с использованием портала Azure. Прежде чем начать, проверьте [необходимые разрешения Azure AD](/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions).
+Если вы развернули Azure Stack Hub с помощью Azure AD в качестве службы управления удостоверениями, субъекты-службы можно создать так же, как в Azure. В этом разделе описан процесс с использованием портала Azure. Прежде чем начать, проверьте [необходимые разрешения Azure AD](/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions).
 
 ### <a name="create-a-service-principal-that-uses-a-client-secret-credential"></a>Создание субъекта-службы, который использует учетные данные в виде секрета клиента
 
@@ -72,9 +66,9 @@ ms.locfileid: "73712739"
 
 ## <a name="manage-an-ad-fs-service-principal"></a>Управление субъектом-службой AD FS
 
-Если вы развернули Azure Stack с помощью AD FS в качестве службы управления удостоверениями, настроить субъект-службу необходимо с использованием PowerShell. Ниже приведены примеры для управления учетными данными субъекта-службы на основе сертификата X509 и секрета клиента.
+Если вы развернули Azure Stack Hub с помощью AD FS в качестве службы управления удостоверениями, настроить субъект-службу необходимо с использованием PowerShell. Ниже приведены примеры для управления учетными данными субъекта-службы на основе сертификата X509 и секрета клиента.
 
-Сценарии необходимо выполнять в консоли PowerShell, открытой с повышенными привилегиями ("Запуск от имени администратора"). Это также открывает другой сеанс на виртуальной машине, на котором размещена привилегированная конечная точка экземпляра Azure Stack. После установления сеанса привилегированной конечной точки с помощью дополнительных командлетов можно настроить субъект-службу. Дополнительные сведения о привилегированной конечной точке см. в статье [Использование привилегированной конечной точки в Azure Stack](azure-stack-privileged-endpoint.md).
+Сценарии необходимо выполнять в консоли PowerShell, открытой с повышенными привилегиями ("Запуск от имени администратора"). Это также открывает другой сеанс на виртуальной машине, на котором размещена привилегированная конечная точка экземпляра Azure Stack Hub. После установления сеанса привилегированной конечной точки с помощью дополнительных командлетов можно настроить субъект-службу. Дополнительные сведения о привилегированной конечной точке см. в статье [Использование привилегированной конечной точки в Azure Stack Hub](azure-stack-privileged-endpoint.md).
 
 ### <a name="create-a-service-principal-that-uses-a-certificate-credential"></a>Создание субъекта-службы, который использует учетные данные на основе сертификата
 
@@ -83,13 +77,13 @@ ms.locfileid: "73712739"
  - Сертификаты должны быть выданы внутренним или общедоступным центром сертификации. Используя общедоступный центр сертификации, необходимо включить центр в базовый образ операционной системы в рамках программы по использованию доверенного корневого центра сертификации Майкрософт. Вы можете ознакомиться с полным списком здесь: [Microsoft Trusted Root Certificate Program: Participants](https://gallery.technet.microsoft.com/Trusted-Root-Certificate-123665ca). Пример создания самозаверяющего тестового сертификата также будет показан позже в ходе [обновления учетных данных сертификата субъекта-службы](#update-a-service-principals-certificate-credential). 
  - Поставщик служб шифрования должен быть указан как устаревший поставщик ключей поставщика служб шифрования (CSP) Майкрософт.
  - Сертификат должен быть PFX-файлом, так как и открытый, и закрытый ключи являются обязательными. Серверы Windows используют PFX-файлы, содержащие файлы открытого ключа (файл SSL-сертификата) и связанные файлы закрытого ключа.
- - У инфраструктуры Azure Stack должен быть сетевой доступ к расположению списка отзыва сертификатов (CRL) центра сертификации, опубликованного в сертификате. Этот список отзыва сертификатов должен быть конечной точкой HTTP.
+ - У инфраструктуры Azure Stack Hub должен быть сетевой доступ к расположению списка отзыва сертификатов (CRL) центра сертификации, опубликованного в сертификате. Этот список отзыва сертификатов должен быть конечной точкой HTTP.
 
 Получив сертификат, с помощью приведенного ниже сценария PowerShell зарегистрируйте приложение и создайте субъект-службу. С помощью субъекта-службы также выполняется вход в Azure. Вместо приведенных ниже заполнителей используйте собственные значения.
 
 | Placeholder | ОПИСАНИЕ | Пример |
 | ----------- | ----------- | ------- |
-| \<PepVM\> | Имя виртуальной машины с привилегированной конечной точкой в экземпляре Azure Stack. | AzS-ERCS01 |
+| \<PepVM\> | Имя виртуальной машины с привилегированной конечной точкой в экземпляре Azure Stack Hub. | AzS-ERCS01 |
 | \<YourCertificateLocation\> | Расположение сертификата X509 в локальном хранилище сертификатов. | Cert:\CurrentUser\My\AB5A8A3533CC7AA2025BF05120117E06DE407B34 |
 | \<YourAppName\> | Описательное имя новой регистрации приложения. | Инструмент управления |
 
@@ -112,7 +106,7 @@ ms.locfileid: "73712739"
     $AzureStackInfo = Invoke-Command -Session $Session -ScriptBlock {Get-AzureStackStampInformation}
     $Session | Remove-PSSession
 
-    # Using the stamp info for your Azure Stack instance, populate the following variables:
+    # Using the stamp info for your Azure Stack Hub instance, populate the following variables:
     # - AzureRM endpoint used for Azure Resource Manager operations 
     # - Audience for acquiring an OAuth token used to access Graph API 
     # - GUID of the directory tenant
@@ -120,7 +114,7 @@ ms.locfileid: "73712739"
     $GraphAudience = "https://graph." + $AzureStackInfo.ExternalDomainFQDN + "/"
     $TenantID = $AzureStackInfo.AADTenantID
 
-    # Register and set an AzureRM environment that targets your Azure Stack instance
+    # Register and set an AzureRM environment that targets your Azure Stack Hub instance
     Add-AzureRMEnvironment -Name "AzureStackUser" -ArmEndpoint $ArmEndpoint
 
     # Sign in using the new service principal identity
@@ -160,7 +154,7 @@ ms.locfileid: "73712739"
 
 | Placeholder | ОПИСАНИЕ | Пример |
 | ----------- | ----------- | ------- |
-| \<PepVM\> | Имя виртуальной машины с привилегированной конечной точкой в экземпляре Azure Stack. | AzS-ERCS01 |
+| \<PepVM\> | Имя виртуальной машины с привилегированной конечной точкой в экземпляре Azure Stack Hub. | AzS-ERCS01 |
 | \<YourAppName\> | Описательное имя новой регистрации приложения. | Инструмент управления |
 | \<YourCertificateLocation\> | Расположение сертификата X509 в локальном хранилище сертификатов. | Cert:\CurrentUser\My\AB5A8A3533CC7AA2025BF05120117E06DE407B34 |
 | \<AppIdentifier\> | Идентификатор, присвоенный регистрации приложения. | S-1-5-21-1512385356-3796245103-1243299919-1356 |
@@ -205,7 +199,7 @@ ms.locfileid: "73712739"
 
 | Placeholder | ОПИСАНИЕ | Пример |
 | ----------- | ----------- | ------- |
-| \<PepVM\> | Имя виртуальной машины с привилегированной конечной точкой в экземпляре Azure Stack. | AzS-ERCS01 |
+| \<PepVM\> | Имя виртуальной машины с привилегированной конечной точкой в экземпляре Azure Stack Hub. | AzS-ERCS01 |
 | \<YourAppName\> | Описательное имя новой регистрации приложения. | Инструмент управления |
 
 1. Откройте сеанс Windows PowerShell с повышенными правами и выполните следующие командлеты.
@@ -222,7 +216,7 @@ ms.locfileid: "73712739"
      $AzureStackInfo = Invoke-Command -Session $Session -ScriptBlock {Get-AzureStackStampInformation}
      $Session | Remove-PSSession
 
-     # Using the stamp info for your Azure Stack instance, populate the following variables:
+     # Using the stamp info for your Azure Stack Hub instance, populate the following variables:
      # - AzureRM endpoint used for Azure Resource Manager operations 
      # - Audience for acquiring an OAuth token used to access Graph API 
      # - GUID of the directory tenant
@@ -230,7 +224,7 @@ ms.locfileid: "73712739"
      $GraphAudience = "https://graph." + $AzureStackInfo.ExternalDomainFQDN + "/"
      $TenantID = $AzureStackInfo.AADTenantID
 
-     # Register and set an AzureRM environment that targets your Azure Stack instance
+     # Register and set an AzureRM environment that targets your Azure Stack Hub instance
      Add-AzureRMEnvironment -Name "AzureStackUser" -ArmEndpoint $ArmEndpoint
 
      # Sign in using the new service principal identity
@@ -262,7 +256,7 @@ ms.locfileid: "73712739"
 
 | Placeholder | ОПИСАНИЕ | Пример |
 | ----------- | ----------- | ------- |
-| \<PepVM\> | Имя виртуальной машины с привилегированной конечной точкой в экземпляре Azure Stack. | AzS-ERCS01 |
+| \<PepVM\> | Имя виртуальной машины с привилегированной конечной точкой в экземпляре Azure Stack Hub. | AzS-ERCS01 |
 | \<AppIdentifier\> | Идентификатор, присвоенный регистрации приложения. | S-1-5-21-1634563105-1224503876-2692824315-2623 |
 
 1. В сеансе Windows PowerShell, открытом с повышенными правами, выполните следующие командлеты:
@@ -299,7 +293,7 @@ ms.locfileid: "73712739"
 
 | Placeholder | ОПИСАНИЕ | Пример |
 | ----------- | ----------- | ------- |
-| \<PepVM\> | Имя виртуальной машины с привилегированной конечной точкой в экземпляре Azure Stack. | AzS-ERCS01 |
+| \<PepVM\> | Имя виртуальной машины с привилегированной конечной точкой в экземпляре Azure Stack Hub. | AzS-ERCS01 |
 | \<AppIdentifier\> | Идентификатор, присвоенный регистрации приложения. | S-1-5-21-1634563105-1224503876-2692824315-2623 |
 
 ```powershell  
@@ -331,7 +325,7 @@ VERBOSE: Remove-GraphApplication : END on AZS-ADFS01 under ADFSGraphEndpoint con
 
 Выбранный тип ресурса также устанавливает *область доступа* для субъекта-службы. Вы можете задать область доступа на уровне подписки, группы ресурсов или ресурса. Разрешения наследуют более низкие уровни области действия. Например, добавление приложения в роль читателя для группы ресурсов означает, что оно может считывать группу ресурсов и все содержащиеся в ней ресурсы.
 
-1. Войдите на соответствующий портал в зависимости от каталога, указанного во время установки Azure Stack (например, портал Azure для Azure AD или пользовательский портал Azure Stack для AD FS). В этом примере используется пользовательский портал Azure Stack.
+1. Войдите на соответствующий портал в зависимости от каталога, указанного во время установки Azure Stack Hub (например, портал Azure для Azure AD или пользовательский портал Azure Stack Hub для AD FS). В этом примере используется пользовательский портал Azure Stack Hub.
 
    > [!NOTE]
    > Чтобы добавить назначение ролей для определенного ресурса, учетной записи пользователя должна быть назначена роль с разрешением `Microsoft.Authorization/roleAssignments/write`. Это, например, либо встроенная роль [Владелец](/azure/role-based-access-control/built-in-roles#owner), либо [Администратор доступа пользователей](/azure/role-based-access-control/built-in-roles#user-access-administrator).  
@@ -352,7 +346,7 @@ VERBOSE: Remove-GraphApplication : END on AZS-ADFS01 under ADFSGraphEndpoint con
 
      [![Назначенная роль](media/azure-stack-create-service-principal/assigned-role.png)](media/azure-stack-create-service-principal/assigned-role.png#lightbox)
 
-Итак, вы создали субъект-службу и назначили ему роль. Теперь вы можете использовать субъект-службу в приложении для доступа к ресурсам Azure Stack.  
+Итак, вы создали субъект-службу и назначили ему роль. Теперь вы можете использовать субъект-службу в приложении для доступа к ресурсам Azure Stack Hub.  
 
 ## <a name="next-steps"></a>Дополнительная информация
 

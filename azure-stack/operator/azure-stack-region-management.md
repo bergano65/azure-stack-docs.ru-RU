@@ -1,5 +1,6 @@
 ---
 title: Управление регионами в Azure Stack | Документация Майкрософт
+titleSuffix: Azure Stack
 description: Общие сведения об управлении регионами в Azure Stack.
 services: azure-stack
 documentationcenter: ''
@@ -16,12 +17,12 @@ ms.date: 08/13/2019
 ms.author: sethm
 ms.reviewer: efemmano
 ms.lastreviewed: 11/27/2018
-ms.openlocfilehash: da80b144987e1dd90e45e83bb7be4ed581db143e
-ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
+ms.openlocfilehash: 38004b88f43ef59448ca99c3eb2762e5ca63e89c
+ms.sourcegitcommit: ca358ea5c91a0441e1d33f540f6dbb5b4d3c92c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991761"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73802278"
 ---
 # <a name="region-management-in-azure-stack"></a>Управление регионами в Azure Stack
 
@@ -35,13 +36,13 @@ Azure Stack использует концепцию *регионов*, кото
 
 Azure Stack предоставляет ряд возможностей для управления регионами, которые можно вызвать при помощи плитки **Управление регионами**. На административном портале для оператора Azure Stack эта плитка размещается на панели мониторинга по умолчанию. С ее помощью вы можете контролировать и обновлять регион Azure Stack и его компоненты. Состав компонентов зависит от региона.
 
-![Плитка управления регионами](media/azure-stack-region-management/image1.png)
+![Плитка Region Management (Управление регионами) на портале администрирования Azure Stack](media/azure-stack-region-management/image1.png)
 
 Если щелкнуть любой регион на плитке **управления регионами**, отобразятся следующие сведения:
 
-[![Описание панелей в колонке управления регионами](media/azure-stack-region-management/regionssm.png "Колонка управления регионами")](media/azure-stack-region-management/regions.png#lightbox)
+[![Описание панелей в колонке Region management (Управление регионами) на портале администрирования Azure Stack](media/azure-stack-region-management/regionssm.png "Колонка Region Management (Управление регионами) на портале администрирования Azure Stack")](media/azure-stack-region-management/regions.png#lightbox)
 
-1. **Меню ресурсов.** Получайте доступ к определенным областям управления инфраструктурой. Вы можете просматривать ресурсы пользователей (например, учетные записи хранения и виртуальные сети) и управлять ими.
+1. **Меню ресурсов.** Получайте доступ к различным областям управления инфраструктурой. Вы можете просматривать ресурсы пользователей (например, учетные записи хранения и виртуальные сети) и управлять ими.
 
 2. **Оповещения**. Покажите список оповещений для всей системы и подробные сведения о каждом из них.
 
@@ -56,4 +57,4 @@ Azure Stack предоставляет ряд возможностей для у
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [Monitor health and alerts in Azure Stack](azure-stack-monitor-health.md) (Мониторинг работоспособности и оповещений в Azure Stack).
-- [Manage updates in Azure Stack overview](azure-stack-updates.md) (Обзор управления обновлениями в Azure Stack).
+- [Управления обновлениями в Azure Stack](azure-stack-updates.md)

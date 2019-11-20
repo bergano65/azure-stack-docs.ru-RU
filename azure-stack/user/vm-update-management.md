@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/23/2019
+ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
-ms.lastreviewed: 03/20/2019
-ms.openlocfilehash: 3fa6d124722d45d727525820b6a99d408f0d2350
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.lastreviewed: 11/11/2019
+ms.openlocfilehash: 87549d27418f787b0e173cfda1ca835dc1c181e4
+ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70975173"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73955945"
 ---
 # <a name="vm-update-and-management-automation-in-azure-stack"></a>Автоматизация обновления виртуальной машины и управления ею в Azure Stack
 Для управления виртуальными машинами Windows и Linux, развернутыми с помощью Azure Stack, можно использовать следующие функции решения службы автоматизации Azure.
@@ -60,7 +60,7 @@ ms.locfileid: "70975173"
 
 5. Повторите шаги 2–4, чтобы включить все три решения. 
 
-   [![](media/vm-update-management/1-sm.PNG "Включение возможностей учетной записи службы автоматизации")](media/vm-update-management/1-lg.PNG#lightbox)
+   [![](media/vm-update-management/1-sm.PNG "Enable Azure Automation account features")](media/vm-update-management/1-lg.PNG#lightbox)
 
 ### <a name="enable-azure-monitor-for-vms"></a>Включение Azure Monitor для виртуальных машин
 
@@ -92,15 +92,15 @@ ms.locfileid: "70975173"
 
 2. На пользовательском портале Azure Stack перейдите в колонку "Расширения" виртуальных машин, для которых необходимо включить эти решения, щелкните **+ Добавить**, выберите расширение **Azure Update and Configuration Management** и щелкните **Создать**.
 
-   [![](media/vm-update-management/3-sm.PNG "Колонка расширения виртуальной машины")](media/vm-update-management/3-lg.PNG#lightbox)
+   [![](media/vm-update-management/3-sm.PNG "VM extension blade")](media/vm-update-management/3-lg.PNG#lightbox)
 
 3. Укажите созданный ранее идентификатор рабочей области и первичный ключ для связывания агента с рабочей областью LogAnalytics. Щелкните **ОК**, чтобы развернуть расширение.
 
-   [![](media/vm-update-management/4-sm.PNG "Указание идентификатора рабочей области и ключа")](media/vm-update-management/4-lg.PNG#lightbox) 
+   [![](media/vm-update-management/4-sm.PNG "Providing the WorkspaceID and Key")](media/vm-update-management/4-lg.PNG#lightbox) 
 
 4. Как описано в [документации по Управлению обновлениями](https://docs.microsoft.com/azure/automation/automation-update-management), необходимо включить решение "Управление обновлениями" для каждой виртуальной машины, которой нужно управлять. Чтобы включить решение для всех виртуальных машин, которые отправляют отчеты в рабочую область, выберите **Управление обновлениями**, щелкните **Управление компьютерами**, а затем выберите параметр **Включить для всех доступных и будущих компьютеров**.
 
-   [![](media/vm-update-management/5-sm.PNG "Включение решения \"Управление обновлениями\" на всех компьютерах")](media/vm-update-management/5-lg.PNG#lightbox) 
+   [![](media/vm-update-management/5-sm.PNG "Enable Update Management solution on all machines")](media/vm-update-management/5-lg.PNG#lightbox) 
 
    > [!TIP]
    > Повторите этот шаг, чтобы включить каждое решение для виртуальных машин Azure Stack, отправляющих отчетные данные в эту рабочую область. 
@@ -109,7 +109,7 @@ ms.locfileid: "70975173"
 
 После проверки виртуальные машины будут отображаться в учетной записи службы автоматизации Azure в решении "Управление обновлениями". 
 
-   [![](media/vm-update-management/6-sm.PNG "Учетная запись службы автоматизации Azure в решении \"Управление обновлениями\"")](media/vm-update-management/6-lg.PNG#lightbox) 
+   [![](media/vm-update-management/6-sm.PNG "Azure Automation account in Update Management")](media/vm-update-management/6-lg.PNG#lightbox) 
 
 > [!IMPORTANT]
 > Отображение обновленных данных с управляемых компьютеров на панели мониторинга может занять от 30 минут до 6 часов.

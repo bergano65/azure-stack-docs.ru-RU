@@ -9,12 +9,12 @@ ms.date: 10/03/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 91a90146f1f62ebea980a785d8a8e347f04fe137
-ms.sourcegitcommit: 58e1911a54ba249a82fa048c7798dadedb95462b
+ms.openlocfilehash: 9eb4780a80e5cedd595950813d5cb5029e1b1857
+ms.sourcegitcommit: ed44d477b9fd11573d1e0d1ed3a3c0ef4512df53
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73064927"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73845842"
 ---
 # <a name="vnet-peering-in-azure-stack-with-vms"></a>Пиринг виртуальных сетей в Azure Stack с виртуальными машинами
 
@@ -24,8 +24,8 @@ ms.locfileid: "73064927"
 
 Такой шаблон развертывания является основой, которая позволит создавать туннели VPN не только в экземпляре Azure Stack, но и между экземплярами Azure Stack и другими ресурсами, такими как локальные сети с использованием VPN туннелей S2S на Windows RRAS. 
 
-Вы можете найти шаблоны в вилке **lucidqdreams** раздела [Шаблоны интеллектуальных границ Azure](https://github.com/lucidqdreams/azure-intelligent-edge-patterns
-) репозитория GitHub. Шаблон находится в папке **S2SVPNTunnel**.
+Вы можете найти шаблоны в репозитории [шаблонов интеллектуальных границ Azure](https://github.com/Azure-Samples/azure-intelligent-edge-patterns
+) на сайте GitHub. Шаблон находится в папке **S2SVPNTunnel**.
 
 ![замещающий текст](./media/azure-stack-network-howto-vnet-peering/overview.png)
 
