@@ -16,12 +16,12 @@ ms.date: 08/14/2019
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/06/2019
-ms.openlocfilehash: 98baf8217bc245f7aa6ac7bc0e2b8f8a5284c6d6
-ms.sourcegitcommit: 86e2b776383a9f761072199ec6b6b8a7d2e6b798
+ms.openlocfilehash: 25a32b1d73818e988a8bdf7fb565d06b06d53d68
+ms.sourcegitcommit: bb2bbfad8061f7677954f6ce5a435b4e6f9299b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69021842"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74100019"
 ---
 # <a name="guest-operating-systems-supported-on-azure-stack"></a>Поддерживаемые операционные системы на виртуальной машине для Azure Stack
 
@@ -64,7 +64,7 @@ Azure Stack поддерживает гостевые операционные �
 | Версия 7.5 на основе CentOS | 64-разрядная | Rogue Wave | Yes |
 | Версия 7.3 на основе CentOS | 64-разрядная | Rogue Wave | Yes |
 | ClearLinux | 64-разрядная | ClearLinux.org | Yes |
-| Контейнер Linux |  64-разрядная | CoreOS | Stable |
+| CoreOS Linux (стабильная версия) |  64-разрядная | CoreOS | Yes |
 | Debian 8 "Jessie" | 64-разрядная | credativ |  Yes |
 | Debian 9 "Stretch" | 64-разрядная | credativ | Yes |
 | Oracle Linux | 64-разрядная | Oracle | Yes |
