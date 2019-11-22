@@ -61,6 +61,8 @@
               href: azure-stack-customer-defined.md
             - name: Интеграция DNS
               href: azure-stack-integrate-dns.md
+            - name: Настройка DNS-сервера переадресации
+              href: azure-stack-configure-dns.md
             - name: Настройка сервера времени
               href: azure-stack-configure-time.md
             - name: Интеграция брандмауэра
@@ -164,6 +166,8 @@
               href: azure-stack-updates-troubleshoot.md
         - name: Мониторинг работоспособности и оповещений
           href: azure-stack-monitor-health.md
+        - name: Мониторинг компонентов оборудования
+          href: azure-stack-hardware-monitoring.md
         - name: Управление сетевыми ресурсами
           href: azure-stack-viewing-public-ip-address-consumption.md
         - name: Изменение владельца пользовательской подписки
