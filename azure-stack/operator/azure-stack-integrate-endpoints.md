@@ -6,16 +6,16 @@ author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 09/09/2019
+ms.date: 11/15/2019
 ms.author: justinha
 ms.reviewer: wamota
-ms.lastreviewed: 09/09/2019
-ms.openlocfilehash: cfd9434bc52684f89617eff3b62a7bf51fc68bcd
-ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
+ms.lastreviewed: 11/15/2019
+ms.openlocfilehash: d165b2c2ae2293f8549cf1c0d2f482801f645312
+ms.sourcegitcommit: f2a059f1be36f82adea8877f3f6e90d41ef3b161
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72277430"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74162900"
 ---
 # <a name="publish-azure-stack-services-in-your-datacenter"></a>Публикация служб Azure Stack в центре обработки данных 
 
@@ -26,9 +26,12 @@ ms.locfileid: "72277430"
 ![Схема с несколькими уровнями сети и списками управления доступом](media/azure-stack-integrate-endpoints/Integrate-Endpoints-01.png)
 
 ### <a name="ports-and-urls"></a>URL-адреса и порты
+
 Чтобы службы Azure Stack (порталы, Azure Resource Manager, DNS и т. д.) стали доступны для внешних сетей, необходимо разрешить входящий трафик к этим конечным точкам для определенных URL-адресов, портов и протоколов.
  
 Если в вашем развертывании прозрачный прокси-сервер передает данные по каналу исходящей связи на традиционный прокси-сервер или решение защищено брандмауэром, то необходимо разрешить определенные порты и URL-адреса для [исходящего](azure-stack-integrate-endpoints.md#ports-and-protocols-inbound) и [входящего](azure-stack-integrate-endpoints.md#ports-and-urls-outbound) трафика. К ним относятся порты и URL-адреса для идентификации и marketplace, а также для исправления и обновления, регистрации и использования данных.
+
+Перехват трафика SSL [не поддерживается](azure-stack-firewall.md#ssl-interception) и может привести к сбоям службы при обращении к конечным точкам. 
 
 ## <a name="ports-and-protocols-inbound"></a>Порты и протоколы (входящие)
 
@@ -70,6 +73,8 @@ ms.locfileid: "72277430"
 ## <a name="ports-and-urls-outbound"></a>Порты и URL-адреса (исходящие)
 
 Azure Stack поддерживает только прозрачные прокси-серверы. Если в вашем развертывании прозрачный прокси-сервер перенаправляет подключения к обычному прокси-серверу, разрешите порты и URL-адреса из следующей таблицы для исходящей связи:
+
+Перехват трафика SSL [не поддерживается](azure-stack-firewall.md#ssl-interception) и может привести к сбоям службы при обращении к конечным точкам. Максимальное поддерживаемое время ожидания для связи с конечными точками, требуемыми для использования удостоверения, — 60 с.
 
 > [!Note]  
 > Azure Stack не поддерживает использование ExpressRoute для доступа к службам Azure, перечисленным в следующей таблице, так как ExpressRoute может маршрутизировать трафик не ко всем конечным точкам.

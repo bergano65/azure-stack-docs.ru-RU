@@ -16,12 +16,12 @@ ms.date: 10/17/2019
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 10/17/2019
-ms.openlocfilehash: dac6b6dad423ab3d18e069a91d8bdd5a09498842
-ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
+ms.openlocfilehash: 84c5512c26ffe36e9f24811c3fc241675ae22181
+ms.sourcegitcommit: ac7d98a2b58442e82798022d69ebfae6616a225f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72534205"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74239368"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack"></a>Элементы Azure Marketplace, доступные для Azure Stack
 
@@ -33,7 +33,7 @@ ms.locfileid: "72534205"
 
 |  | Имя элемента. | ОПИСАНИЕ | ИЗДАТЕЛЬ | тип ОС; |
 | --- | --- | --- | --- | --- |
-|![Расширение IaaS для SQL](media/azure-stack-marketplace-azure-items/cse.png) | [Расширение IaaS для SQL](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension)| **Скачайте это расширение, чтобы развернуть любой экземпляр SQL Server в элементе Windows Marketplace. Это обязательное расширение.** | Microsoft | Windows |
+|![Расширение IaaS SQL (SqlIaasExtension)](media/azure-stack-marketplace-azure-items/cse.png) | [Расширение IaaS SQL (SqlIaasExtension)](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension)| **Скачайте это расширение, чтобы развернуть любой экземпляр SQL Server в элементе Windows Marketplace. Это обязательное расширение.** | Microsoft | Windows |
 |![Расширение пользовательских сценариев](media/azure-stack-marketplace-azure-items/cse.png) | [Расширение пользовательских сценариев](https://docs.microsoft.com/azure/virtual-machines/windows/extensions-customscript)| **Скачайте это обновление для встроенной версии расширения пользовательских скриптов для Windows.** | Microsoft | Windows |
 |![Расширение PowerShell DSC](media/azure-stack-marketplace-azure-items/dsc.png) | [Расширение PowerShell DSC](https://docs.microsoft.com/azure/virtual-machines/windows/extensions-dsc-overview)| **Скачайте это обновление для встроенной версии расширения PowerShell DSC. В последнем обновлении поддерживается TLS версии 1.2.** | Microsoft | Windows |
 | ![Расширение антивредоносного ПО Майкрософт](media/azure-stack-marketplace-azure-items/cse.png) | [Расширение антивредоносного ПО Майкрософт](https://docs.microsoft.com/azure/security/azure-security-antimalware)| Microsoft Antimalware для Azure — это единый агент для приложений и клиентских сред, работающий в фоновом режиме и не требующий вмешательства пользователя. **Скачайте это обновление для встроенной версии антивредоносного расширения.** | Microsoft | Windows |
@@ -85,7 +85,7 @@ Microsoft Azure Stack поддерживает указанные ниже ВМ 
 |  | Имя элемента. | ОПИСАНИЕ | ИЗДАТЕЛЬ |
 | --- | --- | --- | --- |
 | ![Clear Linux OS](media/azure-stack-marketplace-azure-items/clearlinux.png) | [Clear Linux OS](https://azuremarketplace.microsoft.com/marketplace/apps/clear-linux-project.clear-linux-os) | Эталонный дистрибутив Linux, оптимизированный для архитектуры Intel. | Проект Clear Linux |
-| ![Container Linux от CoreOS](media/azure-stack-marketplace-azure-items/coreos.png) | [Container Linux от CoreOS](https://azuremarketplace.microsoft.com/marketplace/apps/CoreOS.CoreOS) | Container Linux — это современный компактный дистрибутив Linux, обеспечивающий простую работу с контейнерами, удобное управление кластерами и беспроблемное обновление серверов, что очень важно для вычислений промышленного масштаба. | CoreOS |
+| ![CoreOS Linux (стабильная версия)](media/azure-stack-marketplace-azure-items/coreos.png) | [CoreOS Linux (стабильная версия)](https://azuremarketplace.microsoft.com/marketplace/apps/CoreOS.CoreOS) | CoreOS — это современный компактный дистрибутив Linux, обеспечивающий простую работу с контейнерами, удобное управление кластерами и беспроблемное обновление серверов, что очень важно для вычислений промышленного масштаба. | CoreOS |
 | ![Сервер Ubuntu](media/azure-stack-marketplace-azure-items/ubuntu.png) | [Сервер Ubuntu](https://azuremarketplace.microsoft.com/marketplace/apps/Canonical.UbuntuServer) | Ubuntu Server является самой популярной в мире системой Linux для облачных сред. | Canonical |
 | ![Debian 8 "Jessie"](media/azure-stack-marketplace-azure-items/debian8.png) | [Debian 8 "Jessie"](https://azuremarketplace.microsoft.com/marketplace/apps/credativ.Debian) | Debian GNU/Linux является одним из наиболее распространенных дистрибутивов Linux. | credativ |
 | ![Oracle Linux](media/azure-stack-marketplace-azure-items/oracle.png) | [Oracle Linux](https://azuremarketplace.microsoft.com/marketplace/apps/oracle.oracle-linux) | Операционная система Oracle Linux разработана для открытой облачной инфраструктуры. Она обеспечивает высокую производительность, масштабируемость и надежность для корпоративных рабочих нагрузок SaaS и PaaS, а также для традиционных корпоративных приложений. | Oracle |

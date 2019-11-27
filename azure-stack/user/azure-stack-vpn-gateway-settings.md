@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 650257a0bfe94741d00345f98b40fddd8d00cb44
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: e6d7f2d46a578bbbc8527a5e69f441ec12f38b01
+ms.sourcegitcommit: ac7d98a2b58442e82798022d69ebfae6616a225f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961466"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74239310"
 ---
 # <a name="configure-vpn-gateway-settings-for-azure-stack"></a>Настройка параметров VPN-шлюза для Azure Stack
 
@@ -171,9 +171,9 @@ New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 | Свойство              | Значение|
 |-|-|
 | Версия IKE           | IKEv2 |
-|Группа Диффи — Хелмана   | Группа 2 (1024 бита) |
+|Группа Диффи — Хелмана   | ECP384 |
 | Метод проверки подлинности | Общий ключ |
-|Алгоритмы шифрования и хэширования | AES256, SHA256 |
+|Алгоритмы шифрования и хэширования | AES256, SHA384 |
 |Срок действия SA (время)     | 28 800 сек|
 
 ### <a name="ike-phase-2-quick-mode-parameters"></a>Параметры этапа 2 IKE (быстрый режим)
@@ -185,10 +185,8 @@ New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 |Алгоритмы шифрования и хэширования (аутентификация) | GCMAES256|
 |Срок действия SA (время)  | 27 000 секунд  |
 |Срок действия SA (килобайты) | 33 553 408     |
-|Полная безопасность пересылки (PFS) |Нет (см. **примечание 1**) |
+|Полная безопасность пересылки (PFS) | ECP384 |
 |Обнаружение неиспользуемых одноранговых узлов | Поддерживаются|  
-
-**Примечание 1**. До версии 1807 в Azure Stack использовалось значение PFS2048 для полной безопасности пересылки (PFS).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

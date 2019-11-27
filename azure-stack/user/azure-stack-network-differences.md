@@ -11,12 +11,12 @@ ms.service: azure-stack
 ms.author: mabrigg
 ms.reviewer: wamota
 ms.lastreviewed: 07/10/2019
-ms.openlocfilehash: 09e75656fc6a00181ffb31087e19e80b92760ed2
-ms.sourcegitcommit: b72729305234e13c65de3771cb08678d46ba1348
+ms.openlocfilehash: 2ba1fc76b8b0ead1da543abb467d7a1613a5304c
+ms.sourcegitcommit: ac7d98a2b58442e82798022d69ebfae6616a225f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72543677"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74239339"
 ---
 # <a name="differences-and-considerations-for-azure-stack-networking"></a>Сети Azure Stack: различия и рекомендации
 
@@ -62,6 +62,7 @@ ms.locfileid: "72543677"
 |  | Поддержка правил NAT для входящего трафика конечными точками службы | Azure поддерживает указание конечных точек службы для правил NAT для входящего трафика. | Azure Stack пока не поддерживает конечные точки службы, поэтому их невозможно указать. |
 |  | Протокол | Azure поддерживает указание GRE или ESP. | Класс протокола в Azure Stack не поддерживается. |
 | Общедоступный IP-адрес | Версия общедоступного IP-адреса | Azure поддерживает протоколы IPv6 и IPv4. | Поддерживается только протокол IPv4. |
+| | SKU | Azure поддерживает ценовые категории "Базовый" и "Стандартный". | Поддерживается только ценовая категория "Базовый". |
 | Сетевой интерфейс | Получение действующей таблицы маршрутов | Поддерживаются | Пока не поддерживается. |
 |  | Получение действующих списков ACL | Поддерживаются | Пока не поддерживается. |
 |  | Включение ускорения работы в сети | Поддерживаются | Пока не поддерживается. |
