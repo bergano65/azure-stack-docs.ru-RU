@@ -14,13 +14,13 @@ ms.topic: tutorial
 ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: shnatara
-ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: 8a323bf5d767db288cd2d876f38119b61f577afa
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.lastreviewed: 09/25/2019
+ms.openlocfilehash: 1b6975490a876c0ff0b51fdf9f21ba010e14622d
+ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909672"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74299097"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack"></a>Развертывание кластера Service Fabric в Azure Stack
 
@@ -35,7 +35,7 @@ ms.locfileid: "71909672"
 Ниже перечислены необходимые условия для развертывания кластера Service Fabric.
 1. **Сертификат кластера**  
    Этот сертификат сервера X.509 вы добавляете в Key Vault при развертывании Service Fabric. 
-   - **Имя этого сертификата** должно соответствовать полному доменному имени (FQDN) созданного вами кластера Service Fabric. Дополнительные сведения о FQDN см. в разделе о [сертификатах, необходимых для рабочего развертывания Службы приложений Azure в Azure Stack](../operator/azure-stack-app-service-before-you-get-started.md#certificates-required-for-azure-stack-production-deployment-of-azure-app-service).
+   - **Имя этого сертификата** должно соответствовать полному доменному имени (FQDN) созданного вами кластера Service Fabric. 
    - Сертификат должен быть PFX-файлом, так как и открытый, и закрытый ключи являются обязательными. 
      Дополнительные сведения см. в разделе с [требованиями](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) для создания сертификата на стороне сервера.
 

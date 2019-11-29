@@ -11,26 +11,22 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 09/14/2019
+ms.date: 11/21/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 09/14/2019
-ms.openlocfilehash: 8c83e0b006904482634e50bdf217ec5d236e4e5c
-ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
+ms.lastreviewed: 11/21/2019
+ms.openlocfilehash: 1aa8aa65f0b19efcbafc85887e644c1c2b773bde
+ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73594961"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74310168"
 ---
 # <a name="support-policies-for-aks-engine-on-azure-stack"></a>Политики поддержки для обработчика AKS в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 В этой статье описаны политики технической поддержки и ограничения для обработчика AKS в Azure Stack. Также в ней предоставлены сведения об элементе Kubernetes в Marketplace, сторонних компонентах с открытым кодом и управлении безопасностью или исправлениями. 
-
-> [!IMPORTANT]
-> Обработчик AKS сейчас предоставляется на условиях общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="self-managed-kubernetes-clusters-on-azure-stack-with-aks-engine"></a>Самоуправляемые кластеры Kubernetes в Azure Stack с обработчиком AKS
 

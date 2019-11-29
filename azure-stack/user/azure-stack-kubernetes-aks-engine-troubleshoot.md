@@ -11,26 +11,22 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 11/14/2019
+ms.date: 11/21/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 11/14/2019
-ms.openlocfilehash: a847f04e3766e943aba78b567b0f21a99d0da860
-ms.sourcegitcommit: f2a059f1be36f82adea8877f3f6e90d41ef3b161
+ms.lastreviewed: 11/21/2019
+ms.openlocfilehash: aed53295b7c1748abd8ab3bd2862043d7d69e4b8
+ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74162941"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74310345"
 ---
 # <a name="troubleshoot-the-aks-engine-on-azure-stack"></a>Устранение неполадок с обработчиком AKS в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 При развертывании обработчика AKS в Azure Stack или при работе с ним могут возникать проблемы. В этой статье описано, как устранять неполадки при развертывании обработчика AKS, собирать сведения об обработчике AKS, собирать журналы Kubernetes, изучать коды ошибок для расширения пользовательских скриптов, а также регистрировать проблемы с обработчиком AKS на сайте GitHub.
-
-> [!IMPORTANT]
-> Обработчик AKS сейчас предоставляется на условиях общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="troubleshoot-the-aks-engine-install"></a>Устранение неполадок с установкой обработчика AKS
 

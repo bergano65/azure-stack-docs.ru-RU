@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/02/2019
+ms.date: 11/22/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: a0218652e2dace72356a32fe99ac5f6ac450cc94
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.lastreviewed: 11/22/2019
+ms.openlocfilehash: a5a6cf3ef5c2c03992647c207422eb266f171ac4
+ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824789"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74465485"
 ---
 # <a name="manage-and-deploy-resources-to-azure-stack-with-azure-cli"></a>Развертывание и администрирование ресурсов в Azure Stack с помощью Azure CLI
 
@@ -163,13 +163,6 @@ ms.locfileid: "71824789"
 
 1. Зарегистрируйте среду Azure Stack, выполнив команду `az cloud register`.
 
-    В некоторых сценариях прямое исходящее подключение к Интернету маршрутизируется через прокси-сервер или брандмауэр, который принудительно использует перехват SSL. В этих случаях команда `az cloud register` может выдать ошибку, например "Unable to get endpoints from the cloud." (Не удалось получить конечные точки из облака). Чтобы избежать этой ошибки, можно задать следующие переменные среды:
-
-    ```shell  
-    set AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1 
-    set ADAL_PYTHON_SSL_NO_VERIFY=1
-    ```
-
 2. Зарегистрируйте среду. При выполнении команды `az cloud register` используйте следующие параметры:
 
     | Значение | Пример | ОПИСАНИЕ |
@@ -282,13 +275,6 @@ az group create -n MyResourceGroup -l local
 ### <a name="connect-to-azure-stack"></a>Подключение к Azure Stack
 
 1. Зарегистрируйте среду Azure Stack, выполнив команду `az cloud register`.
-
-    В некоторых сценариях прямое исходящее подключение к Интернету маршрутизируется через прокси-сервер или брандмауэр, который принудительно использует перехват SSL. В этих случаях команда `az cloud register` может выдать ошибку, например "Unable to get endpoints from the cloud." (Не удалось получить конечные точки из облака). Чтобы избежать этой ошибки, можно задать следующие переменные среды:
-
-    ```shell  
-    set AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1 
-    set ADAL_PYTHON_SSL_NO_VERIFY=1
-    ```
 
 2. Зарегистрируйте среду. При выполнении команды `az cloud register` используйте следующие параметры:
 

@@ -15,12 +15,12 @@ ms.date: 09/25/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: 3b728bb08d41c234ccffb94005be740bea0766b6
-ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
+ms.openlocfilehash: a146a99476912e97c72e7a37ffc5224158feaffc
+ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72019286"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74310155"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack"></a>Добавление клиентов для контроля потребления и выставления счетов в Azure Stack
 
@@ -72,7 +72,7 @@ ms.locfileid: "72019286"
 3. В сеансе PowerShell выполните следующую команду:
 
    ```powershell
-   New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01 -Properties <PSObject>
+   New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
    ```
 
 ### <a name="new-azurermresource-powershell-parameters"></a>Параметры команды New-AzureRmResource в PowerShell
@@ -84,8 +84,7 @@ ms.locfileid: "72019286"
 |registrationSubscriptionID | Подписка Azure, которая использовалась для первоначальной регистрации Azure Stack.|
 | customerSubscriptionID | Подписка Azure (не Azure Stack), принадлежащая клиенту, для которого выполняется регистрация. Необходимо создать в предложении CSP. На практике это осуществляется через Центр партнеров. Если для клиента создано несколько учетных записей в Azure Active Directory, подписку нужно создать в той из них, которая будет использоваться для входа в Azure Stack. Идентификатор подписки клиента должен состоять из строчных букв. |
 | resourceGroup | Группа ресурсов Azure, в которой хранятся данные об этой регистрации. |
-| registrationName | Имя регистрации Azure Stack. Это объект, который хранится в Azure. |
-| properties | Задает свойства для ресурса. Используйте этот параметр, чтобы задать значения свойств, которые соответствуют типу ресурса.
+| registrationName | Имя регистрации Azure Stack. Это объект, который хранится в Azure. 
 
 > [!NOTE]  
 > Клиенты должны быть зарегистрированы в каждом используемом ими экземпляре Azure Stack. Если у вас есть два развертывания Azure Stack и клиент будет использовать оба, сведения о подписке клиента нужно внести в начальные регистрации для обоих развертываний.

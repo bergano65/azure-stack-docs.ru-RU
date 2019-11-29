@@ -9,18 +9,18 @@ ms.date: 11/07/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: e65943bd0b84d11e3696da206d360edc948c203f
-ms.sourcegitcommit: ca358ea5c91a0441e1d33f540f6dbb5b4d3c92c5
+ms.openlocfilehash: 03388b08e6cc258437656f2e580b75de14b8cee5
+ms.sourcegitcommit: 3a8e116fd0b16e1201e55e2088dde2e581004045
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73802259"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74557685"
 ---
 # <a name="how-to-replicate-resources-using-the-azure-stack-subscription-replicator"></a>Сведения о репликации ресурсов с помощью репликатора подписки Azure Stack
 
 Сценарий PowerShell репликатора подписки Azure Stack можно использовать для копирования ресурсов между подписками Azure Stack, между метками Azure Stack или между Azure Stack и Azure. Сценарий репликатора считывает и перестраивает ресурсы Azure Resource Manager из разных подписок Azure и Azure Stack. В этой статье мы рассмотрим, как работает сценарий, как его можно использовать, а также рекомендации для операций в сценарии.
 
-Вы можете найти сценарии, используемые в статье, в репозитории [шаблонов интеллектуальных границ Azure](https://github.com/Azure-Samples/azure-intelligent-edge-patterns) на сайте GitHub. Сценарии находятся в папке **репликатора подписок**.
+Вы можете найти сценарии, используемые в статье, в репозитории [шаблонов интеллектуальных границ Azure](https://github.com/Azure-Samples/azure-intelligent-edge-patterns) на сайте GitHub. Сценарии находятся в папке [репликатора подписок](https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/subscription%20replicator).
 
 ## <a name="subscription-replicator-overview"></a>Общие сведения о репликаторе подписок
 
