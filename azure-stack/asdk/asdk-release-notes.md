@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/27/2019
+ms.date: 11/21/2019
 ms.author: sethm
 ms.reviewer: misainat
-ms.lastreviewed: 08/30/2019
-ms.openlocfilehash: e61c3dad2383f1b6471b784b303b9f22a7dfde51
-ms.sourcegitcommit: b28190b4e91cd0c045d019083e7e9203410d7c29
+ms.lastreviewed: 11/21/2019
+ms.openlocfilehash: f5955751df89262441b7afc2381d34b6cc74691c
+ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71354556"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74298730"
 ---
 # <a name="asdk-release-notes"></a>Заметки о выпуске ASDK
 
@@ -28,7 +28,28 @@ ms.locfileid: "71354556"
 
 Будьте в курсе новых возможностей ASDK, подписавшись на [![RSS](./media/asdk-release-notes/feed-icon-14x14.png)](https://docs.microsoft.com/api/search/rss?search=Azure+Stack+Development+Kit+release+notes&locale=en-us#) [веб-канал RSS](https://docs.microsoft.com/api/search/rss?search=Azure+Stack+Development+Kit+release+notes&locale=en-us#).
 
+::: moniker range="azs-1910"
+## <a name="build-11910058"></a>Сборка 1.1910.0.58
+
+### <a name="new-features"></a>новые функции;
+
+- Список исправленных проблем, изменений и новых функций в этом выпуске см. в соответствующих разделах статьи [Обновления Azure Stack: заметки о выпуске](../operator/release-notes.md).
+
+### <a name="fixed-and-known-issues"></a>Исправленные и известные проблемы
+
+- Исправлена проблема со сбором журналов и их хранением в контейнере больших двоичных объектов службы хранилища Azure. Ниже приведен синтаксис данной операции:
+
+  ```powershell
+  Get-AzureStackLog -OutputSasUri "<Blob service SAS Uri>"
+  ``` 
+
+- Исправлена проблема развертывания, при которой служба очереди печати с медленной загрузкой предотвращает удаление некоторых компонентов Windows и требует перезагрузки.
+- Список известных проблем Azure Stack в этом выпуске см. в [этой статье](../operator/known-issues.md).
+- Обратите внимание, что доступные исправления Azure Stack неприменимы к ASDK.
+::: moniker-end
+
 ::: moniker range="azs-1908"
+  
 ## <a name="build-11908020"></a>Сборка 1.1908.0.20
 
 ### <a name="new-features"></a>новые функции;
@@ -78,21 +99,4 @@ ms.locfileid: "71354556"
 - Список проблем Azure Stack, которые были исправлены в этом выпуске, см. в [этом разделе](/azure-stack/operator/release-notes?view=azs-1906#fixes-1906) заметок о выпуске Azure Stack.
 - Список известных проблем см. в [этой статье](/azure-stack/operator/known-issues?view=azs-1906).
 - Обратите внимание, что [доступные исправления Azure Stack](/azure-stack/operator/release-notes?view=azs-1906#hotfixes-1906) нельзя применять к Azure Stack ASDK.
-::: moniker-end
-
-::: moniker range="azs-1905"
-## <a name="build-11905040"></a>Сборка 1.1905.0.40
-
-<!-- ### Changes -->
-
-### <a name="new-features"></a>новые функции;
-
-- Список новых функций для этого выпуска см. в [этом разделе](/azure-stack/operator/release-notes?view=azs-1905#whats-in-this-update-1905) заметок к выпуску Azure Stack.
-
-### <a name="fixed-and-known-issues"></a>Исправленные и известные проблемы
-
-- Исправлена проблема, при которой вам приходилось редактировать скрипт PowerShell **RegisterWithAzure.psm1** для успешной [регистрации ASDK](asdk-register.md).
-- Список исправленных проблем для этого выпуска см. в [этом разделе](/azure-stack/operator/release-notes?view=azs-1905#fixes-1905) заметок к выпуску Azure Stack.
-- Список известных проблем см. в [этой статье](/azure-stack/operator/known-issues?view=azs-1905).
-- Обратите внимание, что [доступные исправления Azure Stack](/azure-stack/operator/release-notes?view=azs-1905#hotfixes-1905) нельзя применять к Azure Stack ASDK.
 ::: moniker-end

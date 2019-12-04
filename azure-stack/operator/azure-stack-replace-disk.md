@@ -1,6 +1,7 @@
 ---
-title: Замена физического диска в Azure Stack | Документация Майкрософт
-description: Описание процесса замены физического диска в Azure Stack.
+title: Добавление физического диска
+titleSuffix: Azure Stack
+description: Узнайте, как заменить физический диск в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,12 +17,12 @@ ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 06/04/2019
-ms.openlocfilehash: 5da479853487dfd93467bd1413159d6e602b93c6
-ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
+ms.openlocfilehash: 2d4ebaf62a3a2e836df988ec510e21274040e68b
+ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72277673"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74465473"
 ---
 # <a name="replace-a-physical-disk-in-azure-stack"></a>Замена физического диска в Azure Stack
 
@@ -29,18 +30,18 @@ ms.locfileid: "72277673"
 
 В этой статье описывается общий процесс замены физического диска в Azure Stack. Если физический диск выйдет из строя, его следует как можно скорее заменить.
 
-Эту процедуру можно использовать для интегрированных систем, а также для развертываний пакета SDK, содержащих диски с возможностью оперативной замены.
+Эту процедуру можно использовать для интегрированных систем, а также для развертываний Пакета средств разработки Azure Stack (ASDK), содержащих диски с возможностью оперативной замены.
 
 Фактические шаги по замене диска будут варьироваться в зависимости от поставщика изготовителя оборудования (OEM). Подробные инструкции, относящиеся к вашей системе, см. в документации поставщика по элементам, заменяемым в условиях эксплуатации (FRU).
 
 ## <a name="review-disk-alert-information"></a>Просмотр сведений оповещения о диске
 Когда диск выходит из строя, вы получаете оповещение о том, что соединение с физическим диском потеряно.
 
-![Оповещение, показывающее потерянное соединение с физическим диском](media/azure-stack-replace-disk/DiskAlert.png)
+![Оповещение, показывающее потерянное соединение с физическим диском в разделе администрирования Azure Stack](media/azure-stack-replace-disk/DiskAlert.png)
 
 Если открыть оповещение, в его описании будет содержаться узел единицы масштабирования и точное расположение физического слота диска, который необходимо заменить. Azure Stack дополнительно помогает идентифицировать неисправный диск, используя возможности светодиодного индикатора.
 
-## <a name="replace-the-disk"></a>Замена диска
+## <a name="replace-the-physical-disk"></a>Замена физического диска
 
 Следуйте инструкциям по FRU своего поставщика OEM для фактической замены диска.
 
@@ -58,13 +59,14 @@ ms.locfileid: "72277673"
 1. Для этого нужно установить Azure Stack PowerShell. Дополнительные сведения см. в статье [Install PowerShell for Azure Stack](azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack).
 2. Подключитесь к Azure Stack с помощью PowerShell в роли оператора. См. подробнее о [подключении к Azure Stack с помощью PowerShell в качестве оператора](azure-stack-powershell-configure-admin.md).
 3. Выполните следующие командлеты, чтобы проверить состояние работоспособности и восстановления виртуального диска:
+
     ```powershell  
     $scaleunit=Get-AzsScaleUnit
     $StorageSubSystem=Get-AzsStorageSubSystem -ScaleUnit $scaleunit.Name
     Get-AzsVolume -StorageSubSystem $StorageSubSystem.Name -ScaleUnit $scaleunit.name | Select-Object VolumeLabel, OperationalStatus, RepairStatus
     ```
 
-    ![Работоспособность томов Azure Stack](media/azure-stack-replace-disk/get-azure-stack-volumes-health.png)
+    ![Работоспособность томов Azure Stack в Powershell](media/azure-stack-replace-disk/get-azure-stack-volumes-health.png)
 
 4. Проверьте состояние системы Azure Stack. См. подробнее о [проверке состояния системы Azure Stack](azure-stack-diagnostic-test.md).
 5. При необходимости можно выполнить следующую команду, чтобы проверить состояние замененного физического диска.
@@ -76,10 +78,10 @@ $StorageSubSystem=Get-AzsStorageSubSystem -ScaleUnit $scaleunit.Name
 Get-AzsDrive -StorageSubSystem $StorageSubSystem.Name -ScaleUnit $scaleunit.name | Sort-Object StorageNode,MediaType,PhysicalLocation | Format-Table Storagenode, Healthstatus, PhysicalLocation, Model, MediaType,  CapacityGB, CanPool, CannotPoolReason
 ```
 
-![Замененные физические диски в Azure Stack](media/azure-stack-replace-disk/check-replaced-physical-disks-azure-stack.png)
+![Физические диски, замененные в Azure Stack с помощью PowerShell](media/azure-stack-replace-disk/check-replaced-physical-disks-azure-stack.png)
 
 ## <a name="check-the-status-of-virtual-disk-repair-using-the-privileged-endpoint"></a>Проверка состояния восстановления виртуального диска с помощью привилегированной конечной точки
- 
+
 После замены диска можно отслеживать состояние работоспособности виртуального диска и ход выполнения задания восстановления с помощью привилегированной конечной точки. Выполните следующие шаги с любого компьютера с сетевым подключением к привилегированной конечной точке.
 
 1. Откройте сеанс Windows PowerShell и подключитесь к привилегированной конечной точке.
@@ -87,12 +89,13 @@ Get-AzsDrive -StorageSubSystem $StorageSubSystem.Name -ScaleUnit $scaleunit.name
         $cred = Get-Credential
         Enter-PSSession -ComputerName <IP_address_of_ERCS>`
           -ConfigurationName PrivilegedEndpoint -Credential $cred
-    ``` 
+    ```
   
 2. Выполните следующую команду, чтобы просмотреть состояние работоспособности виртуального диска:
     ```powershell
         Get-VirtualDisk -CimSession s-cluster
     ```
+
    ![Выходные данные команды PowerShell Get-VirtualDisk](media/azure-stack-replace-disk/GetVirtualDiskOutput.png)
 
 3. Чтобы просмотреть текущее состояние задания хранилища, выполните следующую команду:
@@ -103,10 +106,9 @@ Get-AzsDrive -StorageSubSystem $StorageSubSystem.Name -ScaleUnit $scaleunit.name
 
 4. Проверьте состояние системы Azure Stack. См. подробнее о [проверке состояния системы Azure Stack](azure-stack-diagnostic-test.md).
 
-
 ## <a name="troubleshoot-virtual-disk-repair-using-the-privileged-endpoint"></a>Устранение неполадок с виртуальным диском с помощью привилегированной конечной точки
 
 Если задание восстановления виртуального диска не отвечает, выполните следующую команду, чтобы перезапустить задание:
   ```powershell
         Get-VirtualDisk -CimSession s-cluster | Repair-VirtualDisk
-  ``` 
+  ```

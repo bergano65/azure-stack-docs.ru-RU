@@ -15,12 +15,12 @@ ms.date: 11/15/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/15/2019
-ms.openlocfilehash: 2d13b5d2296d8dc76a154e1f8edf1a0238d0226b
-ms.sourcegitcommit: f2a059f1be36f82adea8877f3f6e90d41ef3b161
+ms.openlocfilehash: a3941a3ada52a8588b504884a2d03cb00dd2c850
+ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74163719"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74310317"
 ---
 # <a name="use-azure-monitor-for-containers-on-azure-stack-hub"></a>Использование Azure Monitor для контейнеров в Azure Stack Hub
 
@@ -29,7 +29,7 @@ ms.locfileid: "74163719"
 Вы можете использовать [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/), чтобы отслеживать контейнеры в кластере Kubernetes, развернутом в Azure Stack Hub. 
 
 > [!IMPORTANT]
-> Обработчик AKS сейчас предоставляется на условиях общедоступной предварительной версии.
+> Azure Monitor для контейнеров в Azure Stack Hub в настоящее время находится в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Чтобы проверить данные о работоспособности контейнера в Azure Monitor, собирайте данные метрик памяти и процессора от доступных в Kubernetes контроллеров, узлов и контейнеров, используя API метрик. Кроме того, служба собирает журналы контейнеров. Эти журналы можно использовать для диагностики проблем в локальном кластере из Azure. Эти метрики и журналы будут собираться автоматически, когда вы настроите мониторинг для кластеров Kubernetes. Журналы ведет контейнерная версия агента Log Analytics для Linux. Azure Monitor сохраняет метрики и журналы в рабочей области Log Analytics, доступной которая доступна в вашей подписке Azure.
@@ -50,21 +50,21 @@ ms.locfileid: "74163719"
 
 Поддерживаемые определения API для кластера Azure Stack Hub можно найти в примере [kubernetes-container-monitoring_existing_workspace_id_and_key.json](https://github.com/Azure/aks-engine/blob/master/examples/addons/container-monitoring/kubernetes-container-monitoring_existing_workspace_id_and_key.json). В частности, найдите свойство **addons** в **kubernetesConfig**:
 
-    ```JSON  
-    "orchestratorType": "Kubernetes",
-          "kubernetesConfig": {
-            "addons": [
-              {
-                "name": "container-monitoring",
-                "enabled": true,
-                "config": {
-                  "workspaceGuid": "<Azure Log Analytics Workspace Guid in Base-64 encoded>",
-                  "workspaceKey": "<Azure Log Analytics Workspace Key in Base-64 encoded>"
-                }
-              }
-            ]
-          }
-    ```
+```JSON  
+ "orchestratorType": "Kubernetes",
+       "kubernetesConfig": {
+         "addons": [
+           {
+             "name": "container-monitoring",
+             "enabled": true,
+             "config": {
+               "workspaceGuid": "<Azure Log Analytics Workspace Guid in Base-64 encoded>",
+               "workspaceKey": "<Azure Log Analytics Workspace Key in Base-64 encoded>"
+             }
+           }
+         ]
+       }
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
