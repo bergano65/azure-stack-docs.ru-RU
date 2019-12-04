@@ -71,8 +71,9 @@
               href: azure-stack-develop-templates.md
             - name: Разработка шаблонов в Azure
               href: azure-stack-developer.md
-            - name: Развертывание шаблонов
+            - name: Проверка шаблонов
               href: azure-stack-validate-templates.md
+            - name: Развертывание шаблонов
               items:
                 - name: Развертывание с помощью портала
                   href: azure-stack-deploy-template-portal.md
