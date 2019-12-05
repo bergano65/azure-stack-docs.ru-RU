@@ -17,12 +17,12 @@ ms.date: 10/14/2019
 ms.author: mabrigg
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: d777827e6c700167dff6f203045277353837beef
-ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
+ms.openlocfilehash: 1ab0e33d894b1856e1769a0f6780f5d0b9df3474
+ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465443"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74780768"
 ---
 # <a name="register-azure-stack-with-azure"></a>Регистрация Azure Stack в Azure
 
@@ -272,11 +272,11 @@ Run: Get-AzureStackStampInformation
 
 2. Выполните следующие командлеты PowerShell:  
 
-  ```powershell  
-  $RegistrationToken = "<Your Registration Token>"
-  $RegistrationName = "<unique-registration-name>"
-  Register-AzsEnvironment -RegistrationToken $RegistrationToken -RegistrationName $RegistrationName
-  ```
+    ```powershell  
+    $RegistrationToken = "<Your Registration Token>"
+    $RegistrationName = "<unique-registration-name>"
+    Register-AzsEnvironment -RegistrationToken $RegistrationToken -RegistrationName $RegistrationName
+    ```
 
 При необходимости вы можете использовать командлет Get-Content, чтобы указать файл, содержащий маркер регистрации.
 
@@ -284,16 +284,16 @@ Run: Get-AzureStackStampInformation
 
 1. Запустите интегрированную среду сценариев PowerShell с правами администратора и перейдите к папке **Registration** в каталоге **AzureStack-Tools-master**, созданном во время скачивания средств Azure Stack. Импортируйте модуль **RegisterWithAzure.psm1**:  
 
-  ```powershell  
-  Import-Module .\RegisterWithAzure.psm1
-  ```
+    ```powershell  
+    Import-Module .\RegisterWithAzure.psm1
+    ```
 
 2. Выполните следующие командлеты PowerShell:  
 
-  ```powershell  
-  $RegistrationToken = Get-Content -Path '<Path>\<Registration Token File>'
-  Register-AzsEnvironment -RegistrationToken $RegistrationToken -RegistrationName $RegistrationName
-  ```
+    ```powershell  
+    $RegistrationToken = Get-Content -Path '<Path>\<Registration Token File>'
+    Register-AzsEnvironment -RegistrationToken $RegistrationToken -RegistrationName $RegistrationName
+    ```
 
   > [!Note]  
   > Сохраните имя ресурса регистрации или токен регистрации для дальнейшего использования.

@@ -16,12 +16,12 @@ ms.date: 06/10/2019
 ms.author: patricka
 ms.reviewer: chengwei
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 31fa9bcdf60b27b2eb2e8396be1d2a0e89f31b70
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: ff633133b7d0fd0489b3e81295ea53351968ac8f
+ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829189"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74690199"
 ---
 # <a name="azure-stack-log-and-customer-data-handling"></a>Обработка журнала Azure Stack и данных клиента 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*  
@@ -31,7 +31,7 @@ ms.locfileid: "71829189"
 - Положение "Обработка Персональных данных; GDPR" из раздела "Условия защиты данных" в документе [Условия использования Веб-служб](http://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31).
 - Положения Общего регламенте по защите данных Европейского союза, приведенные в Приложении 4 документа [Условия использования Веб-служб](http://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31).
 
-Так как Azure Stack размещается в центрах обработки данных клиента, только корпорация Майкрософт управляет данными, которые получает с помощью служб [диагностики](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs), [телеметрии](azure-stack-telemetry.md) и [выставления счетов](azure-stack-usage-reporting.md).  
+Так как Azure Stack размещается в центрах обработки данных клиента, только корпорация Майкрософт управляет данными, которые получает с помощью служб [диагностики](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs), [телеметрии](azure-stack-telemetry.md) и [выставления счетов](azure-stack-usage-reporting.md).  
 
 ## <a name="data-access-controls"></a>Элементы управления доступом к данным 
 Сотрудникам корпорации Майкрософт, назначенным для изучения определенного обращения в службу поддержки, будет предоставляться доступ только для чтения к зашифрованным данным. При необходимости сотрудники корпорации Майкрософт также получают доступ к инструментам, которые используются для удаления данных. Все операции доступа к данным клиента подвергаются аудиту и записываются в журнал.  
@@ -51,7 +51,7 @@ ms.locfileid: "71829189"
 Для удаления данных по требованию инженерам службы поддержки Майкрософт предоставлено средство, которое позволяет им выборочно удалять данные. Они могут по телефону предоставить клиенту подтверждение, когда этот процесс завершится.
 
 ## <a name="diagnostic-data"></a>Диагностические данные
-В рамках процесса поддержки операторы Azure Stack могут [предоставить журналы диагностики](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs) группе поддержки и команде разработки Azure Stack, чтобы упростить устранение неполадок.
+В рамках процесса поддержки операторы Azure Stack могут [предоставить журналы диагностики](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs) группе поддержки и команде разработки Azure Stack, чтобы упростить устранение неполадок.
 
 Корпорация Майкрософт предоставляет клиентам инструмент и сценарий для сбора и передачи запрошенных файлов журнала диагностики. После сбора файлы журнала передаются по защищенному зашифрованному HTTPS-подключению в корпорацию Майкрософт. Так как протокол HTTPS обеспечивает шифрование в сети, пароль для шифрования при передаче не требуется. После получения журналы шифруются и хранятся, пока не будут автоматически удалены через 90 дней после закрытия обращения в службу поддержки.
 

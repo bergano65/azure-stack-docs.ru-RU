@@ -16,12 +16,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 5072c40f4e8eba787e0a18c7c73a51111d0c847b
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: e0e23ca6d469e33adbcd47bc66125d6af92f0123
+ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829263"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74689986"
 ---
 # <a name="start-and-stop-azure-stack"></a>Запуск и остановка Azure Stack
 Следуйте инструкциям по корректному завершению работы и перезапуску служб Azure Stack, приведенным в этой статье. Операция завершения работы физически отключает питание всей среды Azure Stack. При запуске включаются все роли инфраструктуры, а ресурсы клиента возвращаются в состояние, в котором они находились до завершения работы.
@@ -91,4 +91,4 @@ ms.locfileid: "71829263"
 
 ## <a name="next-steps"></a>Дополнительная информация 
 
-Дополнительные сведения о [средствах диагностики Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs)
+Дополнительные сведения о [средствах диагностики Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs)

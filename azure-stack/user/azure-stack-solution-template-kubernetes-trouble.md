@@ -14,12 +14,12 @@ ms.author: mabrigg
 ms.date: 11/14/2019
 ms.reviewer: waltero
 ms.lastreviewed: 11/14/2019
-ms.openlocfilehash: 89ed4549dc44eb433f8061aba9bcff9405d80699
-ms.sourcegitcommit: f2a059f1be36f82adea8877f3f6e90d41ef3b161
+ms.openlocfilehash: 900ff88136d75759fdc3bc05bf351968f9c13654
+ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74162971"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74689930"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack"></a>Устранение неполадок с развертыванием Kubernetes в Azure Stack
 
@@ -93,10 +93,10 @@ ms.locfileid: "74162971"
     - Создание виртуальной машины может вызывать внутреннюю ошибку или активировать ошибку создания. Ряд факторов могут быть причиной ошибок, включая ограничения емкости подписки Azure Stack.
     - Убедитесь, что полное доменное имя виртуальной машины начинается с повторяющегося префикса.
 5.  Если состояние виртуальной машины — **ОК**, оцените DVM. Если DVM содержит сообщение об ошибке:
-
     - Открытый ключ может быть недопустимым. Проверьте ключ, который вы создали.  
-    - Обратитесь к администратору Azure Stack, чтобы получить журналы Azure Stack с помощью привилегированных конечных точек. Дополнительные сведения см. в статье о [средствах диагностики Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs).
-6. Если у вас есть вопрос о развертывании, вы можете разместить его или поискать ответы на вопрос на [форуме Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
+    - Обратитесь к администратору Azure Stack, чтобы получить журналы Azure Stack с помощью привилегированных конечных точек. Дополнительные сведения см. в статье о [средствах диагностики Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
+5. Если у вас есть вопрос о развертывании, вы можете разместить его или поискать ответы на вопрос на [форуме Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
+
 
 ## <a name="review-deployment-status"></a>Проверка состояния развертывания
 

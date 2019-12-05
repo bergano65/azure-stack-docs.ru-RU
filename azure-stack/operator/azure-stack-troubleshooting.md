@@ -16,12 +16,12 @@ ms.date: 11/05/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4c04eafab93da233859b5b67571b70899b081b95
-ms.sourcegitcommit: c583f19d15d81baa25dd49738d53d8fc01463bef
+ms.openlocfilehash: 28e067abef24fbc60cff629e5112ffacdf14b1ec
+ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73659233"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74689941"
 ---
 # <a name="microsoft-azure-stack-troubleshooting"></a>Устранение неполадок, связанных с Microsoft Azure Stack
 
@@ -95,7 +95,7 @@ ms.locfileid: "73659233"
 4. Выполните azurestacklog -filterbyrole seedring, вызвав invoke-command
 5. Извлеките файл seedring. zip и вы сможете получить отчет о проверке из папки ERCS, из которой вы выполнили test-azurestack
 
-См. сведения о [диагностике в Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#to-run-get-azurestacklog-on-azure-stack-integrated-systems).
+См. сведения о [диагностике в Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
 
 ## <a name="troubleshoot-virtual-machines"></a>Устранение неполадок с виртуальными машинами
 ### <a name="default-image-and-gallery-item"></a>Элемент коллекции и образ по умолчанию

@@ -15,12 +15,12 @@ ms.date: 10/04/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 265645b69e909c7c9762cd03e4f49035baa2872b
-ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
+ms.openlocfilehash: 3c7b3dcd304b684170cec8974910a42f7f86e84f
+ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72019422"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74690082"
 ---
 # <a name="usage-connectivity-errors"></a>Использование. Неполадки с подключением
 
@@ -55,7 +55,7 @@ ms.locfileid: "72019422"
 | Не авторизовано               | Мост Azure не может отправить данные в службу контроля использования Azure, так как служба Azure не может выполнить аутентификацию для моста Azure Stack. | Проверьте, не изменился ли ресурс регистрации, и, если это так, повторно зарегистрируйте экземпляр Azure Stack. <br><br> В некоторых случаях проблема синхронизации времени между Azure Stack и Azure AD может вызвать этот сбой. В этом случае проверьте, синхронизировано ли время на виртуальных машинах XRP в Azure Stack с Azure AD. |
 |                            |                                                                                                                                                   |                                                                                                                                                                                                                                                                                                    |
 
-Кроме того, возможно, потребуется предоставить файлы журналов для компонентов "Мост Azure", WAS и WASPublic с помощью [этих действий](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs).
+Кроме того, возможно, потребуется предоставить файлы журналов для компонентов "Мост Azure", WAS и WASPublic с помощью [этих действий](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
