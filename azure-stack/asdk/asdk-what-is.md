@@ -13,16 +13,16 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
 ms.custom: mvc
-ms.date: 02/08/2019
+ms.date: 11/27/2019
 ms.author: justinha
 ms.reviewer: misainat
-ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: 2669c8e9a4d684fbbd9340c6dbae43191f0261dc
-ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
+ms.lastreviewed: 11/27/2019
+ms.openlocfilehash: fb9dab302e20d436be7f3cf9a76de913bbfe22e3
+ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73594908"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74689825"
 ---
 # <a name="what-is-the-azure-stack-hub-development-kit-asdk"></a>Что такое Пакет средств разработки для Azure Stack Hub (ASDK)?
 [Интегрированные системы Microsoft Azure Stack Hub](../operator/azure-stack-overview.md) размером от 4 до 16 узлов, которые совместно поддерживаются партнером по оборудованию и корпорацией Майкрософт. Использование интегрированных систем Azure Stack Hub позволяет реализовать новые сценарии в производственных рабочих нагрузках. Если вы оператор Azure Stack Hub, который управляет инфраструктурой интегрированных систем и предлагает службы, ознакомьтесь с нашей [документацией для операторов](/azure-stack/operator).
@@ -49,7 +49,7 @@ ASDK предназначен для обеспечения согласован
 |ОПИСАНИЕ|ASDK|Многоузловой Azure Stack Hub|
 |-----|-----|-----|
 |**Масштабирование**|Все компоненты установлены на одноузловой серверный компьютер.|Размер варьируется от 4 до 16 узлов.|
-|**Устойчивость**|Конфигурация с одним узлом не обеспечивает высокий уровень доступности.|Поддерживаются возможности [высокой доступности](../operator/azure-stack-overview.md#providing-high-availability).|
+|**Устойчивость**|Конфигурация с одним узлом не обеспечивает высокий уровень доступности.|Поддерживаются возможности высокого уровня доступности.|
 |**Сеть**|Главный компьютер с ASDK маршрутизирует весь сетевой трафик ASDK. Отсутствуют дополнительные требования для коммутатора.|Развертываниям с несколькими узлами необходима более сложная [сетевая инфраструктура](../operator/azure-stack-network.md#network-infrastructure), включая коммутатор TOR, контроллер управления основной платой (BMC) и пограничные коммутаторы (сети центров обработки данных).|
 |**Patch and update process** (Процесс исправления и обновления)|Чтобы перейти на новую версию ASDK, необходимо повторно развернуть этот пакет на главном компьютере ASDK.|Процесс [исправления и обновления](../operator/azure-stack-updates.md) используется для обновления установленной версии Azure Stack Hub.|
 |**Поддержка**|Форум MSDN Azure Stack. Поддержка службы поддержки пользователей Майкрософт (CSS) *недоступна* для нерабочих сред.|[Форум MSDN Azure Stack](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStack) и полная поддержка CSS.|
