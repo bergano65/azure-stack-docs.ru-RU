@@ -1,6 +1,7 @@
 ---
-title: Шифрование неактивных данных в Azure Stack
-description: Узнайте, как Azure Stack обеспечивает защиту данных с помощью шифрования неактивных данных
+title: Шифрование неактивных данных
+titleSuffix: Azure Stack
+description: Узнайте, как Azure Stack обеспечивает защиту данных с помощью шифрования неактивных данных.
 services: azure-stack
 author: PatAltimore
 ms.service: azure-stack
@@ -10,12 +11,12 @@ ms.author: patricka
 ms.reviewer: fiseraci
 ms.lastreviewed: 03/11/2019
 keywords: ''
-ms.openlocfilehash: 0e21808ad82a61014b69cb26958a0c13518af13a
-ms.sourcegitcommit: 7fa9b64aeae2b22be7acfb5c4987d233303107c5
+ms.openlocfilehash: 13455668330571e9190d37ea0abb4de2a7b88a5d
+ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67166500"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74780717"
 ---
 # <a name="data-at-rest-encryption-in-azure-stack"></a>Шифрование неактивных данных в Azure Stack
 
@@ -44,7 +45,7 @@ Get-AzsRecoveryKeys
 
 | Параметр | ОПИСАНИЕ | type | Обязательно |
 |---------|---------|---------|---------|
-|*raw* (Без форматирования) | возвращает необработанные данные сопоставления между ключом восстановления, именем компьютера и идентификаторами паролей каждого зашифрованного тома  | Параметр | нет (предназначен для сценариев поддержки)|
+|*raw* (Без форматирования) | Возвращает необработанные данные сопоставления между ключом восстановления, именем компьютера и идентификаторами паролей каждого зашифрованного тома  | Switch | Нет (предназначен для сценариев поддержки)|
 
 ## <a name="troubleshoot-issues"></a>Устранение неполадок
 
@@ -57,5 +58,5 @@ Get-AzsRecoveryKeys
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Система безопасности для инфраструктуры Azure Stack](azure-stack-security-foundations.md)
+- [Дополнительные сведения о системе безопасности Azure Stack](azure-stack-security-foundations.md).
 - Дополнительные сведения о том, как BitLocker защищает CSV-файлы, см. в статье [Protecting cluster shared volumes and storage area networks with BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/protecting-cluster-shared-volumes-and-storage-area-networks-with-bitlocker) (Защита общих томов кластера и сетей хранения данных с помощью BitLocker).

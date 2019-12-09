@@ -1,5 +1,6 @@
 ---
-title: Добавление Kubernetes в Azure Stack Marketplace | Документация Майкрософт
+title: Добавление Kubernetes в Azure Stack Marketplace
+titleSuffix: Azure Stack
 description: Узнайте, как добавить Kubernetes в Azure Stack Marketplace.
 services: azure-stack
 documentationcenter: ''
@@ -15,29 +16,29 @@ ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: fc83c8c68402622d721864f24a3ef9c5bab10479
-ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
+ms.openlocfilehash: 985d0e33fd5a15329a1a47bd2d6b11e50cd82a1c
+ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73047187"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74780819"
 ---
-# <a name="add-kubernetes-to-the-azure-stack-marketplace"></a>Добавление Kubernetes в Azure Stack Marketplace
+# <a name="add-kubernetes-to-azure-stack-marketplace"></a>Добавление Kubernetes в Azure Stack Marketplace
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!note]  
 > Используйте элемент Kubernetes Azure Stack Marketplace для развертывания кластеров в качестве проверки концепции. Для поддерживаемых кластеров Kubernetes в Azure Stack используйте[обработчик AKS](azure-stack-aks-engine.md).
 
-Вы можете обеспечить своим пользователям доступ к Kubernetes из Azure Stack Marketplace. Затем развертывание Kubernetes выполняется за одну согласованную операцию.
+Вы можете обеспечить своим пользователям доступ к Kubernetes из Marketplace. Затем развертывание Kubernetes выполняется за одну согласованную операцию.
 
-В этой статье рассматривается развертывание и подготовка ресурсов для автономного кластера Kubernetes с помощью шаблона Azure Resource Manager. Прежде чем начать, проверьте настройки Azure Stack и глобальные параметры клиента Azure. Соберите необходимые сведения об Azure Stack. Добавьте необходимые ресурсы в клиент и Azure Stack Marketplace. Кластер зависит от сервера Ubuntu, настраиваемого скрипта и элемента кластера Kubernetes из Marketplace.
+В этой статье рассматривается развертывание и подготовка ресурсов для автономного кластера Kubernetes с помощью шаблона Azure Resource Manager. Прежде чем начать, проверьте настройки Azure Stack и глобальные параметры клиента Azure. Соберите необходимые сведения об Azure Stack. Добавьте необходимые ресурсы в клиент и Azure Stack Marketplace. Кластер зависит от сервера Ubuntu, настраиваемого скрипта и элемента кластера Kubernetes из Azure Stack Marketplace.
 
 ## <a name="create-a-plan-an-offer-and-a-subscription"></a>Создание плана, предложения и подписки
 
-Создайте план, предложение и подписку для Kubernetes. Можно также использовать имеющийся план и предложение.
+Создайте план, предложение и подписку для Kubernetes (элемент Marketplace). Можно также использовать имеющийся план и предложение.
 
-1. Войдите на [портал администрирования.](https://adminportal.local.azurestack.external)
+1. Войдите на [портал администрирования](https://adminportal.local.azurestack.external).
 
 1. Создайте базовый план. Инструкции см. в статье [Создание плана в Azure Stack](azure-stack-create-plan.md).
 
@@ -63,11 +64,11 @@ ms.locfileid: "73047187"
 
 ## <a name="create-a-service-principal-and-credentials-in-ad-fs"></a>Создание субъекта-службы и учетных данных в AD FS
 
-Если вы используете службы федерации Active Directory (AD FS) для службы управления удостоверениями, необходимо будет создать субъект-службу для пользователей, развертывающих кластер Kubernetes. Создайте субъект-службу, используя секрет клиента. Инструкции см. в разделе [Create a service principal that uses client secret credentials](azure-stack-create-service-principals.md#create-a-service-principal-that-uses-client-secret-credentials) (Создание субъекта-службы, использующего секрет клиента).
+Если вы используете службы федерации Active Directory (AD FS) для службы управления удостоверениями, необходимо будет создать субъект-службу для пользователей, развертывающих кластер Kubernetes. Создайте субъект-службу, используя секрет клиента. Инструкции см. в разделе [Create a service principal that uses client secret credentials](azure-stack-create-service-principals.md#create-a-service-principal-that-uses-client-secret-credentials) (Создание субъекта-службы, использующего секрет клиента).
 
 ## <a name="add-an-ubuntu-server-image"></a>Добавление образа сервера Ubuntu
 
-Добавьте в Marketplace следующий образ сервера Ubuntu:
+Добавьте в Azure Stack Marketplace следующий образ сервера Ubuntu:
 
 1. Войдите на [портал администрирования](https://adminportal.local.azurestack.external).
 
@@ -87,7 +88,7 @@ ms.locfileid: "73047187"
 
 ## <a name="add-a-custom-script-for-linux"></a>Добавление настраиваемого скрипта для Linux
 
-Добавьте Kubernetes в Marketplace, выполнив следующие действия:
+Добавьте Kubernetes в Azure Stack Marketplace, выполнив следующие действия:
 
 1. Откройте [портал администрирования](https://adminportal.local.azurestack.external).
 
@@ -107,7 +108,6 @@ ms.locfileid: "73047187"
 
 1. Выберите **Скачать**.
 
-
 ## <a name="add-kubernetes-to-the-marketplace"></a>Добавление Kubernetes в Marketplace
 
 1. Откройте [портал администрирования](https://adminportal.local.azurestack.external).
@@ -123,13 +123,13 @@ ms.locfileid: "73047187"
 1. Выберите **Скачать**.
 
     > [!note]  
-    > Для отображения элемента в Marketplace может потребоваться пять минут.
+    > Для отображения элемента в Azure Stack Marketplace может потребоваться пять минут.
 
-    ![Kubernetes](../user/media/azure-stack-solution-template-kubernetes-deploy/marketplaceitem.png)
+    ![Элемент Kubernetes в Azure Stack Marketplace](../user/media/azure-stack-solution-template-kubernetes-deploy/marketplaceitem.png)
 
-## <a name="update-or-remove-the-kubernetes"></a>Обновление или удаление Kubernetes 
+## <a name="update-or-remove-the-kubernetes"></a>Обновление или удаление Kubernetes
 
-При обновлении Kubernetes удалите предыдущий элемент в Marketplace. Выполните инструкции из этой статьи по добавлению обновления Kubernetes в Marketplace.
+При обновлении Kubernetes удалите предыдущий элемент в Azure Stack Marketplace. Выполните инструкции из этой статьи по добавлению обновления Kubernetes в Azure Stack Marketplace.
 
 Чтобы удалить Kubernetes, выполните такие действия:
 

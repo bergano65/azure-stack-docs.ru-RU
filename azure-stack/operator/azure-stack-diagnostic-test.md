@@ -14,12 +14,12 @@ ms.date: 06/26/2019
 ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 194af241480cce42273ff81d91213a63b1b9fd59
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 98732c3eb5933e1fd6d7ce42d726d3f5019c97eb
+ms.sourcegitcommit: 53f7daf295783a30feb284d4c48c30c6936557c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829169"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74830961"
 ---
 # <a name="validate-azure-stack-system-state"></a>Проверка состояния системы Azure Stack
 
@@ -48,7 +48,7 @@ ms.locfileid: "71829169"
 
    Подробные сведения см. в разделах [Рекомендации по настройке параметров](azure-stack-diagnostic-test.md#parameter-considerations) и [Примеры использования](azure-stack-diagnostic-test.md#use-case-examples).
 
-3. Если любой из тестов вернет состояние **FAIL** (Сбой), выполните команду `Get-AzureStackLog`. Инструкции для интегрированной системы см. в статье о [запуске Get-AzureStackLog в интегрированных системах Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#to-run-get-azurestacklog-on-azure-stack-integrated-systems), а инструкции для ASDK — в статье о [запуске Get-AzureStackLog в системе с ASDK](azure-stack-configure-on-demand-diagnostic-log-collection.md#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system).
+3. Если любой из тестов вернет состояние **FAIL** (Сбой), выполните команду `Get-AzureStackLog`. Инструкции для интегрированной системы см. в статье о [запуске Get-AzureStackLog в интегрированных системах Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs), а инструкции для ASDK — в статье о [запуске Get-AzureStackLog в системе с ASDK](azure-stack-configure-on-demand-diagnostic-log-collection.md#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system).
 
    Этот командлет собирает журналы, созданные командлетом Test-AzureStack. Если тест возвратит результат **WARN** (Предупреждение), мы рекомендуем не собирать журналы, а сразу связаться со службой поддержки.
 
@@ -167,16 +167,11 @@ Test-AzureStack -ServiceAdminCredential "<Cloud administrator user name>" -Inclu
 Чтобы улучшить эффективность операции, был добавлен параметр **Group**, который используется для одновременного выполнения нескольких категорий тестов. На данный момент определены 3 группы: **Default** (По умолчанию), **UpdateReadiness** (Готовность к обновлению) и **SecretRotationReadiness** (Готовность к ротации секретов).
 
 - **По умолчанию**: Это следует рассматривать как стандартный запуск **Test-AzureStack**. Если другие группы не выбраны, эта группа выполняется по умолчанию.
-- **UpdateReadiness**. Проверка возможности обновить экземпляр Azure Stack. При выполнении группы **UpdateReadiness** могут отображаться предупреждения в виде ошибок в выходных данных консоли, которые следует рассматривать как условия, препятствующие обновлению. К группе **UpdateReadiness** принадлежат следующие категории.
+- **UpdateReadiness**. Проверка возможности обновить экземпляр Azure Stack. При выполнении группы **UpdateReadiness** могут отображаться предупреждения в виде ошибок в выходных данных консоли, которые следует рассматривать как условия, препятствующие обновлению. Начиная с версии Azure Stack 1910, следующие категории входят в группу **UpdateReadiness**:
 
-  - **AzsAcsSummary**
-  - **AzsDefenderSummary**
-  - **AzsHostingInfraSummary**
-  - **AzsInfraCapacity**
-  - **AzsInfraRoleSummary**
-  - **AzsPortalAPISummary**
-  - **AzsSFRoleSummary**
-  - **AzsStoreSummary**
+  - **AzsInfraFileValidation**;
+  - **AzsActionPlanStatus**;
+  - **AzsStampBMCSummary**.
 
 - **SecretRotationReadiness**. Эта проверка помогает узнать, позволяет ли текущее состояние экземпляра Azure Stack выполнять ротацию секретов. При выполнении группы **SecretRotationReadiness** могут отображаться предупреждения в виде ошибок в выходных данных консоли, которые следует рассматривать как условия, препятствующие ротации секретов. К группе SecretRotationReadiness принадлежат следующие категории.
 
@@ -240,6 +235,6 @@ Test-AzureStack -Include AzsNetworkInfra -Debug
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о средствах диагностики Azure Stack и ведении журналов проблем см. в статье [Средства диагностики Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#using-pep-to-collect-diagnostic-logs).
+Дополнительные сведения о средствах диагностики Azure Stack и ведении журналов проблем см. в статье [Средства диагностики Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
 
 Дополнительные сведения об устранении неполадок см. в статье [Устранение неполадок, связанных с Microsoft Azure Stack](azure-stack-troubleshooting.md).

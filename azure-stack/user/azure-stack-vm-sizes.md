@@ -9,23 +9,23 @@ ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 11/11/2019
+ms.topic: reference
+ms.date: 12/3/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
-ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 3e91b4baae4dc844cedebb22ca323005ea0e76fa
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.lastreviewed: 12/3/2019
+ms.openlocfilehash: d38168fee437b27dfde8d5381c960b8e2a237487
+ms.sourcegitcommit: 757f612663059f1af8c535d8b37f63a8cf4a5e7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955670"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74784090"
 ---
 # <a name="vm-sizes-supported-in-azure-stack"></a>Размеры виртуальных машин, поддерживаемые в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-В этой статье перечислены размеры виртуальных машин, которые доступны в Azure Stack.
+В этой статье перечислены размеры виртуальных машин, которые доступны в Azure Stack. С помощью этой статьи вы сможете выбрать виртуальную машину для поддержки решения Azure Stack.
 
 Дисковые операции ввода-вывода в секунду в Azure Stack зависят от размера виртуальной машины, а не от типа диска. Это означает, что для виртуальной машины серии Standard_Fs, независимо от того, выбираете ли вы SSD или HDD для типа диска, ограничение операций ввода-вывода в секунду для одного дополнительного диска с данными составляет 2300 операций ввода-вывода в секунду. Установленные ограничения операций ввода-вывода в секунду являются ограничением (максимально возможное) для предотвращения шумных соседей. Это не гарантирует количество операций ввода-вывода в секунду, которое вы получаете для определенного размера виртуальной машины.
 

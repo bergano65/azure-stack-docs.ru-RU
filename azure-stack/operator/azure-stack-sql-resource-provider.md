@@ -1,6 +1,7 @@
 ---
-title: Использование баз данных SQL в Azure Stack | Документация Майкрософт
-description: Узнайте, как развернуть базы данных SQL в качестве службы для Azure Stack, и изучите простую процедуру развертывания адаптера поставщика ресурсов SQL Server.
+title: Использование баз данных SQL
+titleSuffix: Azure Stack
+description: Узнайте как предоставлять базы данных SQL как услуги в Azure Stack, используя поставщик ресурсов SQL Server.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -15,14 +16,14 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 210d8e074cd8c0d62567b33b70cd75984f72d149
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: d2ce6c0af2912a2658db80301c9a64c8e3d5c066
+ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829277"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74780734"
 ---
-# <a name="use-sql-databases-on-microsoft-azure-stack"></a>Использование баз данных SQL в Microsoft Azure Stack
+# <a name="use-sql-databases-on-azure-stack"></a>Использование баз данных SQL в Azure Stack
 
 Чтобы предоставлять базы данных SQL как услуги в [Azure Stack](azure-stack-overview.md), используйте поставщик ресурсов SQL Server. Когда вы установите поставщик ресурсов и подключите его к одному или нескольким экземплярам SQL Server, вы и ваши пользователи сможете создавать:
 
@@ -30,7 +31,7 @@ ms.locfileid: "71829277"
 - Веб-сайты, использующие SQL.
 - Рабочие нагрузки, использующие SQL.
 
-Поставщик ресурсов поддерживает не все возможности [Базы данных SQL Azure](https://azure.microsoft.com/services/sql-database/) по управлению базами данных. Например, не поддерживаются эластичные пулы, которые выделяют ресурсы автоматически. Но поставщик ресурсов поддерживает аналогичные операции создания, чтения, обновления и удаления (CRUD) для базы данных SQL Server. 
+Поставщик ресурсов поддерживает не все возможности [Базы данных SQL Azure](https://azure.microsoft.com/services/sql-database/) по управлению базами данных. Например, не поддерживаются эластичные пулы, которые выделяют ресурсы автоматически. Но поставщик ресурсов поддерживает аналогичные операции создания, чтения, обновления и удаления (CRUD) для базы данных SQL Server.
 
 ## <a name="sql-resource-provider-adapter-architecture"></a>Архитектура адаптера поставщика ресурсов SQL
 
