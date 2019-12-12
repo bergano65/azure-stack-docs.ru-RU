@@ -17,12 +17,12 @@ ms.date: 10/30/2019
 ms.author: sethm
 ms.reviewer: harik
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: b874e81afc37684e15dd9cfe79adbf123f126f89
-ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
+ms.openlocfilehash: c9f9558d1885de28b1bf685d370e67951542a6ac
+ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74780666"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74993793"
 ---
 # <a name="azure-stack-servicing-policy"></a>Политика обслуживания Azure Stack
 
@@ -70,9 +70,9 @@ ms.locfileid: "74780666"
 Сведения о доступных исправлениях см. в заметках о выпуске для этого обновления:
 
 - [Исправление 1910 для Azure Stack](/azure-stack/operator/release-notes?view=azs-1910#hotfixes)
-- [Исправление 1908 для Azure Stack](/azure-stack/operator/release-notes?view=azs-1908#hotfixes)
-- [Исправление 1907 для Azure Stack](/azure-stack/operator/release-notes?view=azs-1907#hotfixes)
-- [Исправление 1906 для Azure Stack](/azure-stack/operator/release-notes?view=azs-1906#hotfixes)
+- [Исправление 1908 для Azure Stack](/azure-stack/operator/release-notes?view=azs-1908#hotfixes-1)
+- [Исправление 1907 для Azure Stack](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-2)
+- [Исправление 1906 для Azure Stack](/azure-stack/operator/release-notes?view=azs-1906#hotfixes-3)
 
 ## <a name="keep-your-system-under-support"></a>Сохранение поддержки для вашей системы
 

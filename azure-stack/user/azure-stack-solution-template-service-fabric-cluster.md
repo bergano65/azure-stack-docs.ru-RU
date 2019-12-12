@@ -15,12 +15,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: shnatara
 ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: 1b6975490a876c0ff0b51fdf9f21ba010e14622d
-ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
+ms.openlocfilehash: e8b7809908bf09cdc60017c8944e26461aa6f07d
+ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74299097"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74993847"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack"></a>Развертывание кластера Service Fabric в Azure Stack
 
@@ -28,7 +28,7 @@ ms.locfileid: "74299097"
 
 Дополнительные сведения о [работе с Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) и [сценариях защиты кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) можно найти в документации Azure.
 
-Кластер Service Fabric в Azure Stack не использует поставщик ресурсов Microsoft.ServiceFabric. Вместо этого в Azure Stack кластер Service Fabric представляет собой масштабируемый набор виртуальных машин с ПО, предустановленным с помощью платформы [Desired State Configuration (DSC)](https://docs.microsoft.com/powershell/dsc/overview/overview).
+Кластер Service Fabric в Azure Stack не использует поставщик ресурсов Microsoft.ServiceFabric. Вместо этого в Azure Stack кластер Service Fabric представляет собой масштабируемый набор виртуальных машин с ПО, предустановленным с помощью платформы [Desired State Configuration (DSC)](https://docs.microsoft.com/powershell/scripting/dsc/overview/overview).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

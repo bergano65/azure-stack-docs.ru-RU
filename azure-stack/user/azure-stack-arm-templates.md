@@ -16,12 +16,12 @@ ms.date: 10/07/2019
 ms.author: mabrigg
 ms.reviewer: justini
 ms.lastreviewed: 11/14/2018
-ms.openlocfilehash: e2daa9416c966966b3c7cff240ddeb72ac227a8c
-ms.sourcegitcommit: 7226979ece29d9619c959b11352be601562b41d3
+ms.openlocfilehash: df7a6e7c42a8863117faaccfd4108c4ffd806a5a
+ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72304057"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74993764"
 ---
 # <a name="use-azure-resource-manager-templates-in-azure-stack"></a>Использование шаблонов диспетчера ресурсов Azure в Azure Stack
 
@@ -35,7 +35,7 @@ ms.locfileid: "72304057"
 
 ## <a name="deploy-sharepoint-server-non-high-availability-deployment"></a>Развертывание SharePoint Server (с обычным уровнем доступности)
 
-Используйте расширение PowerShell [Desired State Configuration](/powershell/dsc/overview/overview) (DSC), чтобы [создать ферму SharePoint Server 2013](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/sharepoint-2013-non-ha), которая включает следующие ресурсы:
+Используйте расширение PowerShell [Desired State Configuration](/powershell/scripting/dsc/overview/overview) (DSC), чтобы [создать ферму SharePoint Server 2013](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/sharepoint-2013-non-ha), которая включает следующие ресурсы:
 
 * виртуальную сеть;
 * три учетные записи хранения;
@@ -77,7 +77,7 @@ ms.locfileid: "72304057"
 
 ## <a name="cancel-a-running-template-deployment"></a>Отмена выполняющегося развертывания шаблона
 
-Чтобы отменить выполняющееся развертывание шаблона, используйте [командлет](/powershell/developer/cmdlet/cmdlet-overview) PowerShell [Stop-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/stop-azurermresourcegroupdeployment).
+Чтобы отменить выполняющееся развертывание шаблона, используйте [командлет](/powershell/scripting/developer/cmdlet/cmdlet-overview) PowerShell [Stop-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/stop-azurermresourcegroupdeployment).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
