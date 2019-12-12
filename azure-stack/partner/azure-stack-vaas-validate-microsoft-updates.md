@@ -15,12 +15,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/29/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 6fe2f8e7ab435cae3517890f79c26611a80c8a60
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.openlocfilehash: 3399288b801114f076afe3b68d3f9790bfe2af29
+ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73167146"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74954491"
 ---
 # <a name="validate-software-updates-from-microsoft"></a>Проверка обновлений программного обеспечения от корпорации Майкрософт
 
@@ -35,15 +35,12 @@ ms.locfileid: "73167146"
 Прежде чем выполнять ежемесячный процесс обновления в VaaS, необходимо ознакомиться со следующими темами:
 
 - [Validation as a Service key concepts](azure-stack-vaas-key-concepts.md) (Проверка как услуга: основные понятия)
-- [тестирование интерактивной проверки функций](azure-stack-vaas-interactive-feature-verification.md).
 
 ## <a name="required-tests"></a>Обязательные тесты
 
 Для ежемесячной проверки программного обеспечения приведенные ниже тесты нужно выполнять в следующем порядке:
 
-- Шаг 1. Проверка ежемесячных обновлений Azure Stack
-- Шаг 2. Проверка пакетов для расширения OEM
-- Шаг 3. Механизм имитации в облаке (OEM)
+- Рабочий процесс проверки OEM
 
 ## <a name="validating-software-updates"></a>Проверка обновлений программного обеспечения
 
