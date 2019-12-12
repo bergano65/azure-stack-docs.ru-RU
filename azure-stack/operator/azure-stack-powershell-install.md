@@ -15,12 +15,12 @@ ms.date: 09/19/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: ce827f900c6522d720f493c60495bd830cf328f4
-ms.sourcegitcommit: 55ec59f831a98c42a4e9ff0dd954bf10adb98ff1
+ms.openlocfilehash: e20012ce8ca397a9e74b97e380753b8f3ad33e45
+ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540292"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74993832"
 ---
 # <a name="install-powershell-for-azure-stack"></a>Установка PowerShell для Azure Stack
 
@@ -39,7 +39,7 @@ ms.locfileid: "74540292"
 Перед началом работы с Azure Stack и PowerShell необходимо убедится в выполнении следующих условий:
 
 - **Версия PowerShell 5.0** <br>
-Чтобы проверить используемую версию, выполните команду **$PSVersionTable.PSVersion** и сравните **номер основной версии**. Если у вас нет PowerShell 5.0, следуйте инструкциям из раздела [Обновление существующей версии Windows PowerShell](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+Чтобы проверить используемую версию, выполните команду **$PSVersionTable.PSVersion** и сравните **номер основной версии**. Если у вас нет PowerShell 5.0, следуйте инструкциям из раздела [Обновление существующей версии Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell).
 
   > [!Note]
   > Для PowerShell 5.0 требуется компьютер с ОС Windows.
@@ -126,7 +126,7 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
     ```
 
     > [!Note]  
-    > - Модуль Azure Stack версии 1.8.0 является выпуском с критическим изменением. Дополнительные сведения см. в [заметках о выпуске](release-notes.md#changes).
+    > - Модуль Azure Stack версии 1.8.0 является выпуском с критическим изменением. Дополнительные сведения см. в [заметках о выпуске](release-notes.md).
     > - Модуль Azure Stack версии 1.7.2 является выпуском с критическим изменением. Чтобы выполнить миграцию с Azure Stack 1.6.0, обратитесь к [руководству по миграции](https://aka.ms/azspshmigration171).
     > - Модуль AzureRM версии 2.4.0 включает критическое изменение для командлета Remove-AzureRmStorageAccount. Для удаления учетной записи хранения без подтверждения этот командлет ожидает параметр `-Force`.
     > - Чтобы установить модули для Azure Stack 1901 или более поздней версии, установка **AzureRM.BootStrapper** не требуется.
@@ -193,7 +193,7 @@ Get-Module -Name "Azs*" -ListAvailable
     ```
 
     > [!Note]  
-    > - Модуль Azure Stack версии 1.8.0 является выпуском с критическим изменением. Дополнительные сведения см. в [заметках о выпуске](release-notes.md#changes).
+    > - Модуль Azure Stack версии 1.8.0 является выпуском с критическим изменением. Дополнительные сведения см. в [заметках о выпуске](release-notes.md).
     > Модуль Azure Stack версии 1.7.1 является критическим изменением. Чтобы выполнить миграцию из Azure Stack 1.6.0, см. руководство по миграции, указанное [здесь](https://github.com/Azure/azure-powershell/tree/AzureRM/documentation/migration-guides/Stack).
 
     > [!NOTE]
@@ -208,7 +208,7 @@ Get-Module -Name "Azs*" -ListAvailable
 
 2. Войдите на отключенную рабочую станцию и скопируйте пакеты с USB-устройства в нужное расположение на ней.
 
-3. Начальная загрузка поставщика NuGet, выполняемая вручную на отключенной рабочей станции Инструкции см. в разделе [Ручной режим начальной загрузки поставщика NuGet на автономный компьютер](https://docs.microsoft.com/powershell/gallery/how-to/getting-support/bootstrapping-nuget#manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet).
+3. Начальная загрузка поставщика NuGet, выполняемая вручную на отключенной рабочей станции Инструкции см. в разделе [Ручной режим начальной загрузки поставщика NuGet на автономный компьютер](https://docs.microsoft.com/powershell/scripting/gallery/how-to/getting-support/bootstrapping-nuget#manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet).
 
 4. Зарегистрируйте это расположение в качестве репозитория по умолчанию и установите из этого репозитория модули AzureRM и `AzureStack`:
 

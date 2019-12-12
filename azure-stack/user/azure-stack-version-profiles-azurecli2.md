@@ -10,16 +10,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/22/2019
+ms.date: 12/10/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 11/22/2019
-ms.openlocfilehash: a5a6cf3ef5c2c03992647c207422eb266f171ac4
-ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
+ms.lastreviewed: 12/10/2019
+ms.openlocfilehash: f8acc74aed978b3672dacd65524a8f1dbb5e6909
+ms.sourcegitcommit: 3c40e6df2447531a69e33b2fd0f2365b7dcf8892
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465485"
+ms.lasthandoff: 12/11/2019
+ms.locfileid: "75005383"
 ---
 # <a name="manage-and-deploy-resources-to-azure-stack-with-azure-cli"></a>Развертывание и администрирование ресурсов в Azure Stack с помощью Azure CLI
 
@@ -362,7 +362,7 @@ az group create -n MyResourceGroup -l local
 1. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Вам потребуется установить pip и модуль certifi. Выполните следующие команды Python из командной строки Bash:
 
     ```bash  
-    python3 -c "import certifi; print(certifi.where())"
+    az --version
     ```
 
     Запомните расположение сертификата. Например, `~/lib/python3.5/site-packages/certifi/cacert.pem`. Конкретный путь зависит от операционной системы и установленной версии Python.
@@ -385,12 +385,7 @@ az group create -n MyResourceGroup -l local
 
 Для подключения к Azure Stack выполните следующие действия:
 
-1. Зарегистрируйте среду Azure Stack, выполнив команду `az cloud register`. В некоторых сценариях прямое исходящее подключение к Интернету маршрутизируется через прокси-сервер или брандмауэр, который принудительно использует перехват SSL. В этих случаях команда `az cloud register` может выдать ошибку, например "Unable to get endpoints from the cloud." (Не удалось получить конечные точки из облака). Чтобы избежать этой ошибки, можно задать следующие переменные среды:
-
-   ```shell
-   export AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1
-   export ADAL_PYTHON_SSL_NO_VERIFY=1
-   ```
+1. Зарегистрируйте среду Azure Stack, выполнив команду `az cloud register`.
 
 2. Зарегистрируйте среду. При выполнении команды `az cloud register` используйте следующие параметры:
 
@@ -473,7 +468,7 @@ az group create -n MyResourceGroup -l local
 1. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Вам потребуется установить pip и модуль certifi. Выполните следующие команды Python из командной строки Bash:
 
     ```bash  
-    python3 -c "import certifi; print(certifi.where())"
+    az --version 
     ```
 
     Запомните расположение сертификата. Например, `~/lib/python3.5/site-packages/certifi/cacert.pem`. Конкретный путь зависит от операционной системы и установленной версии Python.
@@ -496,12 +491,7 @@ az group create -n MyResourceGroup -l local
 
 Для подключения к Azure Stack выполните следующие действия:
 
-1. Зарегистрируйте среду Azure Stack, выполнив команду `az cloud register`. В некоторых сценариях прямое исходящее подключение к Интернету маршрутизируется через прокси-сервер или брандмауэр, который принудительно использует перехват SSL. В этих случаях команда `az cloud register` может выдать ошибку, например "Unable to get endpoints from the cloud." (Не удалось получить конечные точки из облака). Чтобы избежать этой ошибки, можно задать следующие переменные среды:
-
-   ```shell
-   export AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1
-   export ADAL_PYTHON_SSL_NO_VERIFY=1
-   ```
+1. Зарегистрируйте среду Azure Stack, выполнив команду `az cloud register`.
 
 2. Зарегистрируйте среду. При выполнении команды `az cloud register` используйте следующие параметры.
 
