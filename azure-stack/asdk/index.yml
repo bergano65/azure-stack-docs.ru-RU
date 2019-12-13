@@ -2,7 +2,6 @@
 documentType: LandingData
 title: Документация по пакету средств разработки Azure Stack Hub
 metadata:
-  document_id: null
   title: Документация по пакету средств разработки Azure Stack Hub. Руководства и справочники по API
   description: 'Сведения о том, как развернуть и использовать пакет средств разработки Azure Stack Hub.'
   services: azure-stack

@@ -2,7 +2,6 @@
 documentType: LandingData
 title: Документация по Azure Stack Hub для партнеров
 metadata:
-  document_id: null
   title: Документация по Azure Stack Hub для партнеров. Руководства и справочники по API
   description: "Узнайте, как для проверить оборудование для размещения Azure Stack. Проверка как услуга\_— это собственная служба Azure, предназначенная для партнеров по разработке решений, которые создают предложения Azure Stack Hub совместно с корпорацией Майкрософт."
   services: azure-stack
