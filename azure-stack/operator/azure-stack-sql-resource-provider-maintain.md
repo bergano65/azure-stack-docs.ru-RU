@@ -1,6 +1,7 @@
 ---
-title: Поддержка поставщика ресурсов SQL в Azure Stack | Документация Майкрософт
-description: Сведения о поддержке службы поставщика ресурсов SQL в Azure Stack.
+title: Операции поддержки для поставщиков ресурсов SQL
+titleSuffix: Azure Stack
+description: Узнайте об операциях поддержки для поставщиков ресурсов SQL в Azure Stack.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -15,24 +16,24 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: bf5bd23fc9d497034dfb51c76f28e5b17fbd8e33
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 8d8464c35b2aaa48c5611f7eac84ed6f9d80e866
+ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829310"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74954508"
 ---
 # <a name="sql-resource-provider-maintenance-operations"></a>Операции поддержки для поставщиков ресурсов SQL
 
-Поставщик ресурсов SQL выполняется на заблокированной виртуальной машине. Чтобы включить операции обслуживания, вам нужно обновить систему безопасности виртуальной машины. Чтобы применить для этого принцип предоставления минимальных прав, можно использовать конечную точку *DBAdapterMaintenance* [PowerShell Just Enough Administration (JEA)](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview). Пакет установки поставщика ресурсов содержит сценарий для этой операции.
+Поставщик ресурсов SQL выполняется на заблокированной виртуальной машине. Чтобы включить операции обслуживания, вам нужно обновить систему безопасности виртуальной машины. Чтобы применить для этого принцип предоставления минимальных прав, используйте конечную точку *DBAdapterMaintenance* [PowerShell Just Enough Administration (JEA)](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview). Пакет установки поставщика ресурсов содержит скрипт для этого действия.
 
 ## <a name="patching-and-updating"></a>Установка исправлений и обновлений
 
 Поставщик ресурсов SQL не обслуживается как часть Azure Stack, так как это дополнительный компонент. Корпорация Майкрософт предоставляет обновления поставщика ресурсов SQL по мере необходимости. При выпуске обновленного адаптера SQL предоставляется сценарий для применения обновления. Этот сценарий создает виртуальную машину поставщика ресурсов, перенося в нее состояние старой виртуальной машины поставщика. Дополнительную информацию см. в статье [Обновление поставщика ресурсов SQL](azure-stack-sql-resource-provider-update.md).
 
-### <a name="provider-virtual-machine"></a>Виртуальная машина поставщика
+### <a name="provider-vm"></a>Виртуальная машина поставщика
 
-Так как поставщик ресурсов выполняется на *пользовательской* виртуальной машине, нужно применять необходимые исправления и обновления по мере их выпуска. Для применения обновлений к виртуальной машине можно использовать пакеты обновления Windows, предоставляемые в рамках цикла исправлений и обновлений.
+Так как поставщик ресурсов выполняется на *пользовательской* виртуальной машине, нужно применять необходимые исправления и обновления по мере их выпуска. Для применения обновлений к виртуальной машине используйте пакеты обновления Windows, предоставляемые в рамках цикла исправлений и обновлений.
 
 ## <a name="updating-sql-credentials"></a>Обновление учетных данных SQL
 
@@ -40,7 +41,7 @@ ms.locfileid: "71829310"
 
 Чтобы изменить параметры, выберите **Обзор** &gt; **Ресурсы администрирования** &gt; **SQL Hosting Servers** (Серверы размещения SQL) &gt; **Имена входа SQL** и выберите имя пользователя. Сначала нужно внести изменения в экземпляр SQL (и любые реплики, если необходимо). В разделе **Параметры** выберите **Пароль**.
 
-![Обновление пароля администратора](./media/azure-stack-sql-rp-deploy/sqlrp-update-password.PNG)
+![Обновление пароля администратора SQL](./media/azure-stack-sql-rp-deploy/sqlrp-update-password.PNG)
 
 ## <a name="secrets-rotation"></a>Смена секретов
 
@@ -77,7 +78,7 @@ ms.locfileid: "71829310"
     -DiagnosticsUserPassword  $passwd
 ```
 
-**Смена пароля учетной записи локального администратора виртуальной машины**
+**Измените пароль учетной записи локального администратора виртуальной машины.**
 
 ```powershell
 .\SecretRotationSQLProvider.ps1 `
@@ -106,35 +107,35 @@ ms.locfileid: "71829310"
 |CloudAdminCredential|Учетные данные учетной записи домена администратора облака Azure Stack.|
 |PrivilegedEndpoint|Привилегированная конечная точка для получения информации о метке Azure Stack (Get-AzureStackStampInformation).|
 |DiagnosticsUserPassword|Пароль учетной записи для пользователя диагностики.|
-|VMLocalCredential|Учетная запись локального администратора виртуальной машины MySQLAdapter.|
+|VMLocalCredential|Учетная запись локального администратора на виртуальной машине MySQLAdapter.|
 |DefaultSSLCertificatePassword|Пароль SSL-сертификата (*pfx) по умолчанию.|
 |DependencyFilesLocalPath|Локальный путь к файлам зависимостей.|
 |     |     |
 
 ### <a name="known-issues"></a>Известные проблемы
 
-**Проблема**: журналы смены секретов.<br>
-Не выполняется автоматический сбор журналов для смены секретов, если происходит сбой настраиваемого сценария смены секретов при его запуске.
+**Проблема**:<br>
+журналы смены секретов. Не выполняется автоматический сбор журналов для смены секретов, если происходит сбой настраиваемого скрипта смены секретов при его запуске.
 
 **Возможное решение**:<br>
 используйте командлет Get-AzsDBAdapterLogs, чтобы собрать все журналы поставщика ресурсов, включая AzureStack.DatabaseAdapter.SecretRotation.ps1_*.log в каталоге C:\Logs.
 
-## <a name="update-the-virtual-machine-operating-system"></a>Обновление ОС виртуальной машины
+## <a name="update-the-vm-operating-system"></a>Обновление операционной системы виртуальной машины
 
 Для обновления ОС виртуальной машины используйте один из следующих способов:
 
 - Установка пакета последней версии поставщика ресурсов с помощью текущего исправленного образа Windows Server 2016 Core.
 - Установка пакета обновления Windows во время установки или обновления поставщика ресурсов.
 
-## <a name="update-the-virtual-machine-windows-defender-definitions"></a>Обновление определений Защитника Windows на виртуальной машине
+## <a name="update-the-vm-windows-defender-definitions"></a>Обновление определений Защитника Windows
 
 Обновление определений Защитника Windows:
 
-1. Загрузите обновление определений Защитника Windows на странице [обновлений определений для антивирусной программы "Защитник Windows" и других антивирусных программ корпорации Майкрософт](https://www.microsoft.com/en-us/wdsi/definitions).
+1. Скачайте обновление определений Защитника Windows на странице [обновлений механизма обнаружения угроз для программы "Защитник Windows"](https://www.microsoft.com/wdsi/definitions).
 
-   На странице обновления определений прокрутите список вниз до пункта "Manually download and install the definitions" (Скачать и установить определения вручную). Скачайте 64-разрядный файл "Windows Defender Antivirus for Windows 10 and Windows 8.1" (Антивирусная программа "Защитник Windows" для Windows 10 и Windows 8.1).
+   На странице обновления определений прокрутите список вниз до пункта Manually download the update (Скачать обновление вручную). Скачайте 64-разрядный файл "Windows Defender Antivirus for Windows 10 and Windows 8.1" (Антивирусная программа "Защитник Windows" для Windows 10 и Windows 8.1).
 
-   Кроме того, можно использовать [эту прямую ссылку](https://go.microsoft.com/fwlink/?LinkID=121721&arch=x64), чтобы скачать и установить файл fpam-fe.exe.
+   Вы также можете использовать [эту прямую ссылку](https://go.microsoft.com/fwlink/?LinkID=121721&arch=x64), чтобы скачать и установить файл fpam-fe.exe.
 
 2. Создайте сеанс PowerShell для конечной точки обслуживания виртуальной машины для адаптера поставщика ресурсов SQL.
 
@@ -142,9 +143,9 @@ ms.locfileid: "71829310"
 
 4. Во время сеанса обслуживания PowerShell выполните команду *Update-DBAdapterWindowsDefenderDefinitions*.
 
-5. После установки определений рекомендуется удалить этот файл обновления определений с помощью команды *Remove-ItemOnUserDrive*.
+5. После установки определений советуем удалить этот файл обновления определений с помощью команды *Remove-ItemOnUserDrive*.
 
-**Пример сценария PowerShell для обновления определений.**
+**Пример скрипта PowerShell для обновления определений**
 
 Вы можете изменить и запустить приведенный ниже сценарий, чтобы обновить определения Защитника. Замените значения в сценарии значениями для своей среды.
 
@@ -159,14 +160,14 @@ $vmLocalAdminCreds = New-Object System.Management.Automation.PSCredential `
 $databaseRPMachine  = "<RP VM IP address>"
 $localPathToDefenderUpdate = "C:\DefenderUpdates\mpam-fe.exe"
 
-# Download the Windows Defender update definitions file from https://www.microsoft.com/en-us/wdsi/definitions.
+# Download the Windows Defender update definitions file from https://www.microsoft.com/wdsi/definitions.
 Invoke-WebRequest -Uri 'https://go.microsoft.com/fwlink/?LinkID=121721&arch=x64' `
     -Outfile $localPathToDefenderUpdate
 
 # Create a session to the maintenance endpoint.
 $session = New-PSSession -ComputerName $databaseRPMachine `
     -Credential $vmLocalAdminCreds -ConfigurationName DBAdapterMaintenance
-# Copy the defender update file to the adapter virtual machine.
+# Copy the defender update file to the adapter VM.
 Copy-Item -ToSession $session -Path $localPathToDefenderUpdate `
      -Destination "User:\"
 # Install the update definitions.
@@ -180,7 +181,7 @@ $session | Remove-PSSession
 
 ## <a name="collect-diagnostic-logs"></a>Сбор данных журналов диагностики
 
-Чтобы собрать данные журналов с заблокированной виртуальной машины, можно использовать конечную точку *DBAdapterDiagnostics* PowerShell Just Enough Administration (JEA). Она предоставляет следующие команды:
+Чтобы собрать данные журналов с заблокированной виртуальной машины, используйте конечную точку *DBAdapterDiagnostics* PowerShell Just Enough Administration (JEA). Она предоставляет следующие команды:
 
 - **Get-AzsDBAdapterLog**. Эта команда создает пакет ZIP с журналами диагностики поставщика ресурсов и сохраняет этот файл на пользовательском диске сеанса. Эту команду можно выполнить без параметров, чтобы собрать данные журналов за последние четыре часа.
 - **Remove-AzsDBAdapterLog**. Эта команда удаляет имеющиеся пакеты журналов на виртуальной машине поставщика ресурсов.
@@ -199,7 +200,7 @@ $session | Remove-PSSession
 - FromDate — за четыре часа до текущего момента.
 - ToDate — текущий момент времени.
 
-**Пример сценария PowerShell для сбора журналов.**
+**Пример скрипта PowerShell для сбора журналов**
 
 Приведенный ниже сценарий показывает, как собирать данные журналов диагностики на виртуальной машине поставщика ресурсов.
 

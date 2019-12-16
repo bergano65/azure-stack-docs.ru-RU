@@ -16,21 +16,21 @@ ms.date: 04/02/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: eca886314388f404e7a26a22f7a3b03294ff0577
-ms.sourcegitcommit: 5e53eb5d43d28ab07b4f84891dd269bbfcf65622
+ms.openlocfilehash: 96dbca8c3b834565d2fafb73aa02b870cb2bc9a6
+ms.sourcegitcommit: 6bb20ed3dcbd64231331a8e807ba69eff8b7439b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71311295"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74946824"
 ---
 # <a name="sql-server-best-practices-to-optimize-performance-in-azure-stack"></a>Рекомендации по оптимизации производительности SQL Server в Azure Stack
 
 Эта статья содержит рекомендации по работе с SQL Server для повышения производительности и оптимизации использования SQL Server на виртуальных машинах Azure Stack. При выполнении SQL Server на виртуальных машинах Azure Stack используйте те же средства настройки производительности базы данных, которые применяются для SQL Server в локальной серверной среде. Производительность реляционной базы данных в облаке Azure Stack зависит от многих факторов, таких как размер виртуальной машины и конфигурация дисков данных.
 
-При создании образов SQL Server [рекомендуется подготовить виртуальные машины на портале Azure Stack](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision). Скачайте расширение IaaS SQL в интерфейсе управления Marketplace на портале администратора Azure Stack и необходимые виртуальные жесткие диски (VHD) виртуальной машины SQL. К ним относятся SQL2014SP2, SQL2016SP1 и SQL2017.
+При создании образов SQL Server [рекомендуется подготовить виртуальные машины на портале Azure Stack](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision). Скачайте расширение IaaS SQL в интерфейсе управления Marketplace на портале администратора Azure Stack и необходимые образы виртуальной машины SQL Server. К ним относятся SQL Server 2016 с пакетом обновления 1, SQL Server 2016 с пакетом обновления 2 и SQL Server 2017.
 
 > [!NOTE]  
-> Хотя в статье описано, как подготовить виртуальную машину SQL Server с помощью глобального портала Azure, это руководство также применимо к Azure Stack. Но есть и некоторые различия: SSD и управляемые диски недоступны для диска операционной системы. Также есть незначительные различия в конфигурации хранилища.
+> Хотя в статье описано, как подготовить виртуальную машину SQL Server с помощью глобального портала Azure, это руководство также применимо к Azure Stack. Но есть и некоторые различия: SSD недоступен для диска операционной системы. Кроме того, есть незначительные различия в конфигурации хранилища.
 
 Из этой статьи вы узнаете, как обеспечить *максимальную* производительность для SQL Server на виртуальных машинах Azure Stack. Если рабочая нагрузка не так велика, могут потребоваться не все рекомендуемые варианты оптимизации. При оценке этих рекомендаций учитывайте актуальные потребности в производительности и характер рабочих нагрузок.
 

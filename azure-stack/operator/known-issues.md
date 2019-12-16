@@ -16,12 +16,12 @@ ms.date: 11/21/2019
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 4b27d5195159b809c3ad439054c88d675ab99164
-ms.sourcegitcommit: 11e0c2d9abbc0a2506f992976b3c9f8ca4e746b9
+ms.openlocfilehash: 684f6925c32eabca51fa89776ec95b57a852a987
+ms.sourcegitcommit: d9430072dd96ae305101da6d8a47d6c23a0a64c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74810222"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74995592"
 ---
 # <a name="azure-stack-known-issues"></a>Известные проблемы с Azure Stack
 
@@ -43,6 +43,11 @@ ms.locfileid: "74810222"
 <!---------------------------------------------------------->
 
 ::: moniker range="azs-1910"
+## <a name="update"></a>Обновление
+
+Чтобы узнать об известных проблемах с обновлениями Azure Stack Hub, ознакомьтесь со сведениями об [устранении неполадок с обновлениями в Azure Stack Hub](azure-stack-updates-troubleshoot.md).
+
+
 ## <a name="portal"></a>Портал
 
 ### <a name="administrative-subscriptions"></a>Административные подписки

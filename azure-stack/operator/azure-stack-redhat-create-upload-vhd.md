@@ -14,16 +14,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/02/2019
+ms.date: 12/11/2019
 ms.author: mabrigg
-ms.reviewer: jeffgo
-ms.lastreviewed: 08/15/2018
-ms.openlocfilehash: d8b986dede7e55cb0418219fce6ac78673eeff60
-ms.sourcegitcommit: ca358ea5c91a0441e1d33f540f6dbb5b4d3c92c5
+ms.reviewer: kivenkat
+ms.lastreviewed: 12/11/2019
+ms.openlocfilehash: deea66ed257ecab933c294022fbdd07d1ccb137b
+ms.sourcegitcommit: ae9d29c6a158948a7dbc4fd53082984eba890c59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73802287"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75007968"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure-stack"></a>Подготовка виртуальной машины на основе Red Hat для Azure Stack
 
@@ -44,7 +44,7 @@ ms.locfileid: "73802287"
 * Требуется поддержка ядра для подключения файловых систем UDF. При первой загрузке UDF-носитель, подключенный к гостевой машине, передает конфигурацию подготовки на виртуальную машину Linux. Агент Azure Linux должен подключить файловую систему UDF для считывания конфигурации и подготовки виртуальной машины.
 * Не настраивайте раздел swap на диске операционной системы. Вы можете настроить агент Linux для создания файла подкачки на временном диске ресурсов. Дополнительные сведения описаны ниже.
 * Размер виртуальной памяти всех виртуальных жестких дисков в Azure должен быть округлен до 1 МБ. Перед конвертацией диска RAW в формат VHD убедитесь, что размер диска RAW в несколько раз превышает 1 МБ. Дополнительные сведения можно найти в инструкциях ниже.
-* В Azure Stack не поддерживается cloud-init. На виртуальной машине должна быть настроена поддерживаемая версия агента Windows Azure Linux (WALA).
+* Azure Stack поддерживает cloud-init. [Пакет cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/using-cloud-init) — широко используемое средство, используемое для настройки виртуальной машины Linux при ее первой загрузке. Вы можете использовать cloud-init для установки пакетов, записи файлов или настройки пользователей и параметров безопасности. Так как cloud-init вызывается при начальной загрузке, к вашей конфигурации не нужно применять какие-либо дополнительные действия или агентов.
 
 ### <a name="prepare-an-rhel-7-vm-from-hyper-v-manager"></a>Подготовка виртуальной машины RHEL 7 с помощью диспетчера Hyper-V
 

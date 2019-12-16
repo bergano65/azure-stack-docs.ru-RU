@@ -1,6 +1,7 @@
 ---
-title: Удаление поставщика ресурсов SQL в Azure Stack | Документация Майкрософт
-description: Узнайте, как удалить поставщик ресурсов SQL из развертывания Azure Stack.
+title: Удаление поставщика ресурсов SQL
+titleSuffix: Azure Stack
+description: Сведения об удалении поставщика ресурсов SQL из развертывания Azure Stack.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -15,12 +16,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2018
-ms.openlocfilehash: 3a1b3dc51bbbd48ebe27ce9cafd9617ba7a1d07a
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.openlocfilehash: a172b56c43dafd637a66fa8354c2e06e06a67b98
+ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909487"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74954457"
 ---
 # <a name="remove-the-sql-resource-provider"></a>Удаление поставщика ресурсов SQL
 
@@ -35,10 +36,10 @@ ms.locfileid: "71909487"
 
 Есть несколько задач очистки, которые нужно выполнить перед запуском скрипта DeploySqlProvider.ps1 для удаления поставщика ресурсов.
 
-Эти задачи очистки выполняет Оператор Azure Stack:
+Эти задачи очистки выполняет оператор Azure Stack:
 
-* Удаление всех планов, которые ссылаются на адаптер SQL.
-* Удаление всех квот, которые связаны с адаптером SQL.
+* удаление всех планов, которые ссылаются на адаптер SQL;
+* удаление всех квот, которые связаны с адаптером SQL.
 
 ## <a name="to-remove-the-sql-resource-provider"></a>Удаление поставщика ресурсов SQL
 
@@ -53,11 +54,11 @@ ms.locfileid: "71909487"
 
 4. Запустите сценарий DeploySqlProvider.ps1 со следующими параметрами.
 
-    * **Uninstall**. Удаляет поставщик ресурсов и все связанные с ним ресурсы.
-    * **PrivilegedEndpoint**. IP-адрес или DNS-имя привилегированной конечной точки.
-    * **AzureEnvironment**. Среда Azure, используемая для развертывания Azure Stack. Требуется только для развертываний Azure AD.
-    * **CloudAdminCredential**. Учетные данные администратора облака, необходимые для доступа к привилегированной конечной точке.
-    * **AzCredential**. Учетные данные администратора службы Azure Stack. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack.
+    * **Uninstall**: Удаляет поставщик ресурсов и все связанные с ним ресурсы.
+    * **PrivilegedEndpoint**: IP-адрес или DNS-имя привилегированной конечной точки.
+    * **AzureEnvironment**: Среда Azure, используемая для развертывания Azure Stack. Требуется только для развертываний Azure AD.
+    * **CloudAdminCredential**: Учетные данные администратора облака, необходимые для доступа к привилегированной конечной точке.
+    * **AzCredential**: Учетные данные администратора службы Azure Stack. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
