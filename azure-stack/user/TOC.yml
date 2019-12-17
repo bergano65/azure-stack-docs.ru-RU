@@ -37,6 +37,8 @@
           items:
             - name: Настройка среды разработки
               href: azure-stack-dev-start.md
+            - name: Получение сведений об авторизации
+              href: authenticate-azure-stack-hub.md
             - name: Использование PowerShell с Azure Stack Hub
               items:
                 - name: Обзор PowerShell для Azure Stack Hub

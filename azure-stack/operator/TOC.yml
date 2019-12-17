@@ -346,6 +346,8 @@
               href: azure-stack-mysql-resource-provider-remove.md
             - name: Заметки о выпуске для поставщика ресурсов MySQL
               items:
+                - name: "Заметки о выпуске для поставщика ресурсов MySQL\_1.1.47.0"
+                  href: azure-stack-mysql-resource-provider-11470.md
                 - name: "Заметки о выпуске для поставщика ресурсов MySQL\_1.1.33.0"
                   href: azure-stack-mysql-resource-provider-11330.md
                 - name: "Заметки о выпуске для поставщика ресурсов MySQL\_1.1.30.0"
@@ -370,6 +372,8 @@
               href: azure-stack-sql-resource-provider-remove.md
             - name: Заметки о выпуске для поставщика ресурсов SQL
               items:
+                - name: "Заметки о выпуске для поставщика ресурсов SQL\_1.1.47.0"
+                  href: azure-stack-sql-resource-provider-11470.md
                 - name: "Заметки о выпуске для поставщика ресурсов SQL\_1.1.33.0"
                   href: azure-stack-sql-resource-provider-11330.md
                 - name: Заметки о выпуске для поставщика ресурсов SQL 1.1.30.0
@@ -403,7 +407,6 @@
                 - name: Использование. Коды ошибок регистрации
                   href: azure-stack-registration-errors.md
     - name: Резервное копирование для Azure Stack
-      href: azure-stack-backup-infrastructure-backup.md
       items:
         - name: Включение резервного копирования для Azure Stack с консоли администрирования
           href: azure-stack-backup-enable-backup-console.md
@@ -411,6 +414,8 @@
           href: azure-stack-backup-enable-backup-powershell.md
         - name: Резервное копирование для Azure Stack
           href: azure-stack-backup-back-up-azure-stack.md
+        - name: Восстановление данных с помощью службы резервного копирования
+          href: azure-stack-backup-infrastructure-backup.md
         - name: Резервное копирование файлов и приложений в Azure Stack
           href: /azure/backup/backup-mabs-files-applications-azure-stack?toc=/azure-stack/operator/toc.json&bc=/azure-stack/breadcrumb/toc.json
         - name: Репликация виртуальных машин Azure Stack в Azure
