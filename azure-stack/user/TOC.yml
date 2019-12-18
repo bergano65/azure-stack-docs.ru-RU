@@ -254,30 +254,35 @@
               href: azure-stack-dev-start-howto-vm-nodejs.md
     - name: Развертывание базовых моделей
       items:
-        - name: Пиринг виртуальных сетей
+        - name: Шаблоны сети
           items:
-            - name: Пиринг виртуальных сетей с помощью FortiGate
-              href: azure-stack-network-howto-vnet-to-vnet.md
             - name: Пиринг виртуальных сетей с использованием виртуальных машин
               href: azure-stack-network-howto-vnet-peering.md
-        - name: Настройка VPN для локальной среды
-          href: azure-stack-network-howto-vnet-to-onprem.md
-        - name: "Подключение типа \"виртуальная сеть\_— виртуальная сеть\""
-          href: azure-stack-network-howto-vnet-to-vnet-stacks.md
-        - name: Расширение центра обработки данных
-          href: azure-stack-network-howto-extend-datacenter.md
+            - name: Использование NVA (NVA Fortinet Fortigate) стороннего производителя
+              items:
+                - name: Пиринг виртуальных сетей с помощью FortiGate
+                  href: azure-stack-network-howto-vnet-to-vnet.md
+                - name: Настройка VPN для локальной среды
+                  href: azure-stack-network-howto-vnet-to-onprem.md
+                - name: "Подключение типа \"виртуальная сеть\_— виртуальная сеть\""
+                  href: azure-stack-network-howto-vnet-to-vnet-stacks.md
+            - name: Использование RRAS
+              items:
+                - name: "Настройка нескольких VPN-подключений типа \"сеть\_— сеть\""
+                  href: network-howto-vpn-tunnel.md
+                - name: Создание VPN-туннеля (GRE)
+                  href: network-howto-vpn-tunnel-gre.md
+                - name: Создание VPN-туннеля (IPSEC)
+                  href: network-howto-vpn-tunnel-ipsec.md
         - name: Подсистема балансировки нагрузки от F5
           href: network-howto-f5.md
-        - name: Подключение к хранилищу iSCSI
-          href: azure-stack-network-howto-iscsi-storage.md
-        - name: Настройка туннелей
+        - name: Подключение к внешнему хранилищу
           items:
-            - name: "Настройка нескольких VPN-подключений типа \"сеть\_— сеть\""
-              href: network-howto-vpn-tunnel.md
-            - name: Создание VPN-туннеля (GRE)
-              href: network-howto-vpn-tunnel-gre.md
-            - name: Создание VPN-туннеля (IPSEC)
-              href: network-howto-vpn-tunnel-ipsec.md
+            - name: Подключение к хранилищу iSCSI
+              href: azure-stack-network-howto-iscsi-storage.md
+            - name: Расширение центра обработки данных
+              href: azure-stack-network-howto-extend-datacenter.md
+        - name: Пиринг виртуальных сетей
         - name: Резервное копирование и восстановление
           items:
             - name: Резервное копирование виртуальной машины в Azure Stack с помощью Commvault
