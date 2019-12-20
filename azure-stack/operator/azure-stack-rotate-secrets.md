@@ -12,17 +12,17 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/30/2019
+ms.date: 12/13/2019
 ms.reviewer: ppacent
 ms.author: mabrigg
-ms.lastreviewed: 09/30/2019
+ms.lastreviewed: 12/13/2019
 monikerRange: '>=azs-1802'
-ms.openlocfilehash: 14c1d6ba96cd8c9671b28f435db90b7b3ce3ad34
-ms.sourcegitcommit: ae9d29c6a158948a7dbc4fd53082984eba890c59
+ms.openlocfilehash: 2d6329a150e4ab1a81e9c9d092101a085d00afd0
+ms.sourcegitcommit: 7dd9d7bc2b86cca3be5118da149c1d422b2fb09d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2019
-ms.locfileid: "75007985"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75033968"
 ---
 # <a name="rotate-secrets-in-azure-stack"></a>Смена секретов в Azure Stack
 
@@ -386,6 +386,10 @@ Remove-PSSession -Session $PEPSession
 1. **Версии ниже 1910**. Обновите контроллер управления основной платой на физических серверах Azure Stack в соответствии с инструкциями поставщика. Пароли и имена пользователя для всех контроллеров BMC в среде должны совпадать. Имена пользователей BMC должны содержать не более 16 знаков.
 
    **1910 и более поздние версии**. Больше не требуется обновлять учетные данные BMC на физических серверах Azure Stack, следуя инструкциям OEM. Пароли и имена пользователя для всех контроллеров BMC в среде должны совпадать. Имена пользователей BMC должны содержать не более 16 знаков.
+
+    | Параметр | ОПИСАНИЕ | Состояние |
+    | --- | --- | --- |
+    | BypassBMCUpdate | При использовании этого параметра учетные данные в BMC не обновляются. Обновляется только внутреннее хранилище Azure Stack. | Необязательно |
 
 2. Откройте привилегированную конечную точку в сеансах Azure Stack. См. инструкции по [использованию привилегированной конечной точки в Azure Stack](azure-stack-privileged-endpoint.md).
 

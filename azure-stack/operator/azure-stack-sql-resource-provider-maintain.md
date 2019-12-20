@@ -16,12 +16,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 8d8464c35b2aaa48c5611f7eac84ed6f9d80e866
-ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
+ms.openlocfilehash: 5841509f9c5c9aef20dd2687adb0e54856fa5d3e
+ms.sourcegitcommit: de577d821d3b93ab524fee9e7a18a07c0ecc243c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954508"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75183522"
 ---
 # <a name="sql-resource-provider-maintenance-operations"></a>Операции поддержки для поставщиков ресурсов SQL
 
@@ -231,6 +231,27 @@ $cleanup = Invoke-Command -Session $session -ScriptBlock {Remove-AzsDBAdapterLog
 # Close the session.
 $session | Remove-PSSession
 ```
+## <a name="configure-azure-diagnostics-extension-for-sql-resource-provider"></a>Настройка расширения Диагностики Azure для поставщика ресурсов SQL
+Расширение Диагностики Azure по умолчанию устанавливается на виртуальную машину адаптера поставщика ресурсов SQL. Далее приведены инструкции по настройке расширения для сбора операционных журналов событий поставщика ресурсов SQL и журналов IIS с целью устранения неполадок и аудита.
+
+1. Войдите на портал администратора Azure Stack Hub.
+
+2. Выберите **Виртуальные машины** на панели слева, найдите виртуальную машину адаптера поставщика ресурсов SQL и выберите ее.
+
+3. В разделе **Параметры диагностики** на виртуальной машине откройте вкладку **Журналы** и выберите **Настройка**, чтобы настроить собираемые журналы событий.
+![Переход к параметрам диагностики](media/azure-stack-sql-resource-provider-maintain/sqlrp-diagnostics-settings.png)
+
+4. Добавьте **Microsoft-AzureStack-DatabaseAdapter/Operational!\*** для сбора операционных журналов событий поставщика ресурсов SQL.
+![Добавление журналов событий](media/azure-stack-sql-resource-provider-maintain/sqlrp-event-logs.png)
+
+5. Чтобы включить сбор журналов IIS, установите флажки **Журналы IIS** и **Журналы неудачных запросов**.
+![Добавление журналов IIS](media/azure-stack-sql-resource-provider-maintain/sqlrp-iis-logs.png)
+
+6. Наконец, нажмите кнопку **Сохранить**, чтобы сохранить все параметры диагностики.
+
+После настройки сбора журналов событий и журналов IIS для поставщика ресурсов SQL эти журналы можно найти в системной учетной записи хранения с именем **sqladapterdiagaccount**.
+
+См. [основные сведения о расширении Диагностики Azure](/azure-monitor/platform/diagnostics-extension-overview).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

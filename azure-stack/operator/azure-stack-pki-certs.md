@@ -12,16 +12,16 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/10/2019
+ms.date: 12/16/2019
 ms.author: justinha
 ms.reviewer: ppacent
-ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: f306391451c4d04af3b5a37645f145fb732714f0
-ms.sourcegitcommit: acebda8a42ac8ecdeba490fc1738e9041479dab0
+ms.lastreviewed: 12/16/2019
+ms.openlocfilehash: e9276d67c767ec6a08549be830c52bbbe03230ec
+ms.sourcegitcommit: 50b7974454e008724817cbb4416ce40368b31ef4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72813997"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75035512"
 ---
 # <a name="azure-stack-public-key-infrastructure-certificate-requirements"></a>Требования к сертификатам инфраструктуры открытых ключей Azure Stack
 
@@ -56,7 +56,8 @@ ms.locfileid: "72813997"
 - Убедитесь, что имена субъекта и альтернативные имена субъектов в расширении альтернативного имени субъекта (x509v3_config) совпадают. В поле альтернативного имени субъекта можно указать дополнительные имена узлов (веб-сайты, IP-адреса, общие имена), которые необходимо защитить одним сертификатом SSL.
 
 > [!NOTE]  
-> Самозаверяющие сертификаты не поддерживаются.
+> Самозаверяющие сертификаты не поддерживаются.  
+> При развертывании Azure Stack Hub в отключенном режиме рекомендуем использовать сертификаты, выданные корпоративным центром сертификации. Это важно, так как клиенты, осуществляющие доступ к конечным точкам Azure Stack, должны иметь возможность обратиться к списку отзыва сертификатов (CRL).
 
 > [!NOTE]  
 > Наличие промежуточных центров сертификации в цепочках доверия сертификата *поддерживается*.

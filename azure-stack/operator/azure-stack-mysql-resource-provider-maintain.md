@@ -15,12 +15,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 9dc2de86828e188aa82b44d376e693be887717d8
-ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
+ms.openlocfilehash: 75135801bf5762f597ae70d980588dedadf31b36
+ms.sourcegitcommit: de577d821d3b93ab524fee9e7a18a07c0ecc243c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72682179"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75183467"
 ---
 # <a name="mysql-resource-provider-maintenance-operations-in-azure-stack"></a>Операции поддержки для поставщиков ресурсов MySQL в Azure Stack
 
@@ -225,6 +225,32 @@ $cleanup = Invoke-Command -Session $session -ScriptBlock {Remove-AzsDBAdapterLog
 $session | Remove-PSSession
 
 ```
+
+## <a name="configure-azure-diagnostics-extension-for-mysql-resource-provider"></a>Настройка расширения Диагностики Azure для поставщика ресурсов MySQL
+
+Расширение Диагностики Azure по умолчанию устанавливается на виртуальную машину адаптера поставщика ресурсов MySQL. Далее приведены инструкции по настройке расширения для сбора операционных журналов событий поставщика ресурсов MySQL и журналов IIS с целью устранения неполадок и аудита.
+
+1. Войдите на портал администратора Azure Stack Hub.
+
+2. Выберите **Виртуальные машины** на панели слева, найдите виртуальную машину адаптера поставщика ресурсов MySQL и выберите ее.
+
+3. В разделе **Параметры диагностики** на виртуальной машине откройте вкладку **Журналы** и выберите **Настройка**, чтобы настроить собираемые журналы событий.
+   
+   ![Переход к параметрам диагностики](media/azure-stack-mysql-resource-provider-maintain/mysqlrp-diagnostics-settings.png)
+
+4. Добавьте **Microsoft-AzureStack-DatabaseAdapter/Operational!\*** для сбора операционных журналов событий поставщика ресурсов MySQL.
+
+   ![Добавление журналов событий](media/azure-stack-mysql-resource-provider-maintain/mysqlrp-event-logs.png)
+
+5. Чтобы включить сбор журналов IIS, установите флажки **Журналы IIS** и **Журналы неудачных запросов**.
+
+   ![Добавление журналов IIS](media/azure-stack-mysql-resource-provider-maintain/mysqlrp-iis-logs.png)
+
+6. Наконец, нажмите кнопку **Сохранить**, чтобы сохранить все параметры диагностики.
+
+После настройки сбора журналов событий и журналов IIS для поставщика ресурсов MySQL эти журналы можно найти в системной учетной записи хранения с именем **mysqladapterdiagaccount**.
+
+См. [основные сведения о расширении Диагностики Azure](/azure-monitor/platform/diagnostics-extension-overview).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
