@@ -8,12 +8,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 54d79742ab39a2732a774401a1765b7a264e1fab
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: d6adbc374cbd2472ceed1895fe7efb34ab5b9d64
+ms.sourcegitcommit: a6c02421069ab9e72728aa9b915a52ab1dd1dbe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640055"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75654922"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Развертывание приложения, которое выполняет масштабирование в нескольких облаках с помощью Azure и Azure Stack Hub
 
@@ -38,7 +38,7 @@ ms.locfileid: "73640055"
 > 
 > В статье [Hybrid cloud design patterns for Azure Stack](overview-app-design-considerations.md) (Рекомендации по проектированию гибридных приложений) описаны основные аспекты качественного программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность), которые следует учитывать при разработке, развертывании и использовании гибридных приложений. Эти рекомендации помогут оптимизировать разработку гибридных приложений и предотвратить появление проблем с рабочими средами.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 -   Подписка Azure. При необходимости для начала создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
@@ -59,7 +59,7 @@ ms.locfileid: "73640055"
 
 -   Требуется виртуальная машина Windows Server 2016 с .NET 3.5. Эта виртуальная машина будет создана в подписке клиента Azure Stack Hub в качестве частного агента сборки.
 
--   [Windows Server 2016 с образом виртуальной машины SQL 2017](../operator/azure-stack-add-vm-image.md#add-a-vm-image-as-an-azure-stack-operator-using-the-portal) доступен в Azure Stack Hub Marketplace. Если этот образ недоступен, обратитесь к оператору Azure Stack Hub, чтобы убедиться, что он добавлен в среду.
+-   [Windows Server 2016 с образом виртуальной машины SQL 2017](../operator/azure-stack-add-vm-image.md) доступен в Azure Stack Hub Marketplace. Если этот образ недоступен, обратитесь к оператору Azure Stack Hub, чтобы убедиться, что он добавлен в среду.
 
 ## <a name="issues-and-considerations"></a>Проблемы и рекомендации
 
@@ -374,5 +374,5 @@ Azure Pipelines и Azure DevOps Services предоставляют конвей
 
 Гибкая и надежная служба для множества облаков обеспечивает защиту данных, резервное копирование и избыточность, согласованность и быструю доступность, масштабируемое хранение и распределение, а также геореплицированную маршрутизацию. Этот процесс с активацией вручную обеспечивает надежное и эффективное переключение нагрузки между размещенными веб-приложениями, обеспечивая моментальную доступность важных данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о шаблонах для облака Azure см. в статье [Конструктивные шаблоны облачных решений](https://docs.microsoft.com/azure/architecture/patterns).

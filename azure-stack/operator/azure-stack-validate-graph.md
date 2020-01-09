@@ -16,12 +16,12 @@ ms.date: 06/10/2019
 ms.author: patricka
 ms.reviewer: jerskine
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 75943b3259db736a3dfcd4b30b76f434eaf19111
-ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
+ms.openlocfilehash: ba5a70b1a13e232619a2a47d1192782cc35b10c6
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828445"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718527"
 ---
 # <a name="validate-graph-integration-for-azure-stack"></a>Проверка интеграции Azure Graph для Azure Stack
 
@@ -40,7 +40,7 @@ ms.locfileid: "66828445"
 
 Скачайте последнюю версию средства проверки готовности Azure Stack (AzsReadinessChecker) из [коллекции PowerShell](https://aka.ms/AzsReadinessChecker).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Убедитесь, что выполнены указанные ниже предварительные требования.
 
@@ -84,7 +84,7 @@ ms.locfileid: "66828445"
 
     Details:
 
-    [-] In standalone mode, some tests should not be considered fully indicative of connectivity or readiness the Azure Stack Stamp requires prior to Data Center Integration.
+    [-] In standalone mode, some tests should not be considered fully indicative of connectivity or readiness the Azure Stack Stamp requires prior to Datacenter Integration.
 
     Additional help URL: https://aka.ms/AzsGraphIntegration
 
@@ -114,7 +114,7 @@ ms.locfileid: "66828445"
 
 Если проверка завершается ошибкой, сведения о сбое отображаются в окне PowerShell. Кроме того, сведения записываются в файл *AzsGraphIntegration.log*.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Просмотр отчета о готовности](azure-stack-validation-report.md)  
 [Общие рекомендации по интеграции Azure Stack](azure-stack-datacenter-integration.md)  

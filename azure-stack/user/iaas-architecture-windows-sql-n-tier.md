@@ -9,18 +9,18 @@ ms.date: 11/01/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: ced042ac48017a8191d02e48de12e107677051fc
-ms.sourcegitcommit: 8a74a5572e24bfc42f71e18e181318c82c8b4f24
+ms.openlocfilehash: 65ec9942b765eddcfda42056b47da60481d38ff4
+ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73569303"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75756990"
 ---
 # <a name="windows-n-tier-application-on-azure-stack-with-sql-server"></a>Использование n-уровневого приложения с SQL Server в Azure Stack
 
 На примере этой эталонной архитектуры показано, как развернуть виртуальные машины и виртуальную сеть, настроенные для [n-уровневого](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier) приложения, с использованием SQL Server на платформе Windows для уровня данных. 
 
-## <a name="architecture"></a>Архитектура
+## <a name="architecture"></a>Architecture
 
 Архитектура состоит из следующих компонентов.
 
@@ -82,7 +82,7 @@ ms.locfileid: "73569303"
 
 Не подключайте виртуальные машины напрямую к Интернету. Вместо этого предоставьте каждой из них частный IP-адрес. Клиент подключается через общедоступный IP-адрес, связанный с Load Balancer уровня 7.
 
-Определите правила подсистемы балансировки нагрузки для направления трафика к виртуальным машинам. Например, чтобы включить трафик HTTP, сопоставьте порт 80 интерфейсной конфигурации с портом 80 серверного пула адресов. Когда клиент отправляет HTTP-запрос на порт 80, подсистема балансировки нагрузки выбирает IP-адрес серверной части с помощью [хэш-алгоритма](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview#fundamental-load-balancer-features), который содержит исходный IP-адрес. Клиентские запросы распределяются между всеми виртуальными машинами в серверном пуле адресов.
+Определите правила подсистемы балансировки нагрузки для направления трафика к виртуальным машинам. Например, чтобы включить трафик HTTP, сопоставьте порт 80 интерфейсной конфигурации с портом 80 серверного пула адресов. Когда клиент отправляет HTTP-запрос на порт 80, подсистема балансировки нагрузки выбирает IP-адрес серверной части с помощью [хэш-алгоритма](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview#load-balancer-concepts), который содержит исходный IP-адрес. Клиентские запросы распределяются между всеми виртуальными машинами в серверном пуле адресов.
 
 ### <a name="network-security-groups"></a>Группы безопасности сети
 
@@ -173,6 +173,6 @@ Jumpbox имеет минимальные требования к произво
 
 **Шифрование**. Выполните шифрование конфиденциальных неактивных данных и используйте [Key Vault в Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-key-vault-manage-portal) для управления ключами шифрования базы данных. Дополнительные сведения см. в статье [Настройка интеграции хранилища ключей Azure для SQL Server на виртуальных машинах Azure (Resource Manager)](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-ps-sql-keyvault). В Key Vault также рекомендуется хранить секреты приложения, например строки подключения к базе данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о шаблонах для облака Azure см. в статье [Конструктивные шаблоны облачных решений](https://docs.microsoft.com/azure/architecture/patterns).

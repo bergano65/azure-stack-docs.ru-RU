@@ -15,12 +15,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 75135801bf5762f597ae70d980588dedadf31b36
-ms.sourcegitcommit: de577d821d3b93ab524fee9e7a18a07c0ecc243c
+ms.openlocfilehash: fea4d8abcb0b8bb4f541105d782d2adbdc1f0f4c
+ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75183467"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75756871"
 ---
 # <a name="mysql-resource-provider-maintenance-operations-in-azure-stack"></a>Операции поддержки для поставщиков ресурсов MySQL в Azure Stack
 
@@ -153,7 +153,7 @@ $session | Remove-PSSession
 
 ### <a name="secretrotationmysqlproviderps1-parameters"></a>Параметры SecretRotationMySQLProvider.ps1
 
-|Параметр|ОПИСАНИЕ|
+|Параметр|Description|
 |-----|-----|
 |AzCredential|Учетные данные учетной записи администратора службы Azure Stack.|
 |CloudAdminCredential|Учетные данные учетной записи домена администратора облака Azure Stack.|
@@ -166,10 +166,10 @@ $session | Remove-PSSession
 
 ### <a name="known-issues"></a>Известные проблемы
 
-**Проблема.**<br>
+**Проблема**.<br>
 Не выполняется автоматический сбор журналов для смены секретов, если происходит сбой скрипта смены секретов при его запуске.
 
-**Возможное решение.**<br>
+**Решение:**<br>
 Используйте командлет Get-AzsDBAdapterLogs, чтобы собрать все журналы поставщика ресурсов, включая AzureStack.DatabaseAdapter.SecretRotation.ps1_*.log в каталоге C:\Logs.
 
 ## <a name="collect-diagnostic-logs"></a>Сбор данных журналов диагностики
@@ -250,8 +250,8 @@ $session | Remove-PSSession
 
 После настройки сбора журналов событий и журналов IIS для поставщика ресурсов MySQL эти журналы можно найти в системной учетной записи хранения с именем **mysqladapterdiagaccount**.
 
-См. [основные сведения о расширении Диагностики Azure](/azure-monitor/platform/diagnostics-extension-overview).
+См. [основные сведения о расширении Диагностики Azure](/azure/azure-monitor/platform/diagnostics-extension-overview).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Удаление поставщика ресурсов MySQL](azure-stack-mysql-resource-provider-remove.md)

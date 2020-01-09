@@ -15,12 +15,12 @@ ms.date: 06/05/2019
 ms.author: jeffgilb
 ms.reviewer: thoroet
 ms.lastreviewed: 06/05/2019
-ms.openlocfilehash: aa9b20b9ee80cfdb17dba3020c03718085d8b625
-ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
+ms.openlocfilehash: 69522b0a32d2044ff334b91ea3142aadb11c89c8
+ms.sourcegitcommit: 7626143e5d2a5e32a43162692f59306182fec854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72277174"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75333088"
 ---
 # <a name="integrate-external-monitoring-solution-with-azure-stack"></a>Интеграция внешнего решения для мониторинга с Azure Stack
 
@@ -81,9 +81,9 @@ Operations Manager можно использовать для внешнего �
 
 ### <a name="requirements-for-nagios"></a>Требования для Nagios
 
-1.  Версия Nagios не ниже 4.x.
+1. Версия Nagios не ниже 4.x.
 
-2.  Библиотека Microsoft Azure Active Directory для Python. Эту библиотеку можно установить с помощью Python PIP.
+2. Библиотека Microsoft Azure Active Directory для Python. Эту библиотеку можно установить с помощью Python PIP.
 
     ```bash  
     sudo pip install adal pyyaml six
@@ -105,11 +105,11 @@ samples/etc/azurestack_hosts.cfg
 samples/etc/azurestack_services.cfg
 ```
 
-1.  Скопируйте подключаемый модуль `azurestack_plugin.py` в каталог `/usr/local/nagios/libexec`.
+1. Скопируйте подключаемый модуль `azurestack_plugin.py` в каталог `/usr/local/nagios/libexec`.
 
-2.  Скопируйте обработчик `azurestack_handler.sh` в каталог `/usr/local/nagios/libexec/eventhandlers`.
+2. Скопируйте обработчик `azurestack_handler.sh` в каталог `/usr/local/nagios/libexec/eventhandlers`.
 
-3.  Убедитесь, что файл подключаемого модуля настроен как исполняемый.
+3. Убедитесь, что файл подключаемого модуля настроен как исполняемый.
 
     ```bash
     sudo cp azurestack_plugin.py <PLUGINS_DIR>
@@ -120,9 +120,9 @@ samples/etc/azurestack_services.cfg
 
 В файле azurestack.cfg можно настраивать следующие параметры. Выделенные жирным шрифтом параметры должны быть настроены для любой модели аутентификации.
 
-Подробнее о создании имени субъекта-службы см. статью [Использование удостоверения приложения для доступа к ресурсам](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-create-service-principals).
+Подробнее о создании имени субъекта-службы см. статью [Использование удостоверения приложения для доступа к ресурсам](azure-stack-create-service-principals.md).
 
-| Параметр | ОПИСАНИЕ | Аутентификация |
+| Параметр | Description | Аутентификация |
 | --- | --- | --- |
 | **External_domain_fqdn ** | Полное доменное имя внешнего домена |    |
 | **region: ** | Имя региона |    |
@@ -141,7 +141,7 @@ samples/etc/azurestack_services.cfg
 > [!Note]  
 > Проверьте расположение, указанное в файлах azurestack_hosts.cfg и azurestack_services.cfg.
 
-| Конфигурация | ОПИСАНИЕ |
+| Конфигурация | Description |
 | --- | --- |
 | azurestack_commands.cfg | Конфигурация обработчика, не требующая изменений |
 | azurestack_contacts.cfg | Параметры уведомлений |
@@ -150,35 +150,35 @@ samples/etc/azurestack_services.cfg
 
 ### <a name="setup-steps"></a>Процедура настройки
 
-1.  Измените файл конфигурации.
+1. Измените файл конфигурации.
 
-2.  Скопируйте измененные файлы конфигурации в папку `/usr/local/nagios/etc/objects`.
+2. Скопируйте измененные файлы конфигурации в папку `/usr/local/nagios/etc/objects`.
 
 ### <a name="update-nagios-configuration"></a>Обновление конфигурации Nagios
 
 Конфигурацию Nagios необходимо обновить для загрузки подключаемого модуля Nagios.
 
-1.  Откройте этот файл:
+1. Откройте этот файл:
 
-```bash  
-/usr/local/nagios/etc/nagios.cfg
-```
+   ```bash  
+   /usr/local/nagios/etc/nagios.cfg
+   ```
 
-2.  Добавьте следующую запись:
+2. Добавьте следующую запись:
 
-```bash  
-# Load the Azure Stack Plugin Configuration
-cfg_file=/usr/local/Nagios/etc/objects/azurestack_contacts.cfg
-cfg_file=/usr/local/Nagios/etc/objects/azurestack_commands.cfg
-cfg_file=/usr/local/Nagios/etc/objects/azurestack_hosts.cfg
-cfg_file=/usr/local/Nagios/etc/objects/azurestack_services.cfg
-```
+   ```bash  
+   # Load the Azure Stack Plugin Configuration
+   cfg_file=/usr/local/Nagios/etc/objects/azurestack_contacts.cfg
+   cfg_file=/usr/local/Nagios/etc/objects/azurestack_commands.cfg
+   cfg_file=/usr/local/Nagios/etc/objects/azurestack_hosts.cfg
+   cfg_file=/usr/local/Nagios/etc/objects/azurestack_services.cfg
+   ```
 
-3.  Перезагрузите Nagios.
+3. Перезагрузите Nagios.
 
-```bash  
-sudo service nagios reload
-```
+   ```bash  
+   sudo service nagios reload
+   ```
 
 ### <a name="manually-close-active-alerts"></a>Закрытие активных оповещений вручную
 
@@ -240,10 +240,10 @@ sudo service nagios reload
     Get-AzsRegistrationHealth -ServiceRegistrationId $FRPID.RegistrationId
     ```
 
-## <a name="learn-more"></a>Подробнее
+## <a name="learn-more"></a>Дополнительные сведения
 
 Сведения о встроенных средствах мониторинга работоспособности см. в разделе [Мониторинг работоспособности и оповещений в Azure Stack](azure-stack-monitor-health.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Интеграция решений для обеспечения безопасности](azure-stack-integrate-security.md)

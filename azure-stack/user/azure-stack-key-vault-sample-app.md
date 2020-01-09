@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/17/2019
+ms.date: 01/06/2020
 ms.author: sethm
 ms.lastreviewed: 04/08/2019
-ms.openlocfilehash: fa5a602fbdca32aed635f587fef248bcff0dae06
-ms.sourcegitcommit: 2063332b4d7f98ee944dd1f443847eea70eb5614
+ms.openlocfilehash: 97299ec47908325f7d3eddb7cf57ca891e145a8d
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68303162"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718493"
 ---
 # <a name="allow-apps-to-access-azure-stack-key-vault-secrets"></a>Разрешение приложениям получать доступ к секретам из хранилища ключей Azure Stack
 
@@ -28,7 +28,7 @@ ms.locfileid: "68303162"
 
 Выполните шаги в этой статье, чтобы запустить пример приложения **HelloKeyVault**, которое извлекает ключи и секреты из хранилища ключей в Azure Stack.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Вы можете установить следующие обязательные компоненты из [Пакета средств разработки Azure Stack](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) или из внешнего клиента Windows, если вы [используете VPN-подключение](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn):
 
@@ -159,7 +159,7 @@ Write-Host
 
 3. Повторно создайте решение.
 
-## <a name="run-the-app"></a>Запуск приложения
+## <a name="run-the-app"></a>Запустите приложение
 
 При запуске приложение **HelloKeyVault** входит в Azure AD и применяет маркер `AuthClientSecret` для аутентификации в хранилище ключей Azure Stack.
 
@@ -168,7 +168,7 @@ Write-Host
 * запустить основные операции, например создание, шифрование, заключение в оболочку или удаление ключей и секретных данных;
 * передать приложению **HelloKeyVault** параметры, например `encrypt` и `decrypt`, чтобы применить указанные изменения к хранилищу ключей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание виртуальной машины с помощью пароля из хранилища ключей](azure-stack-key-vault-deploy-vm-with-secret.md)
 * [Create a virtual machine and include certificate retrieved from a key vault](azure-stack-key-vault-push-secret-into-vm.md) (Создание виртуальной машины с сертификатом хранилища ключей)

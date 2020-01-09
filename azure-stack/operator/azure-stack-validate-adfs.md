@@ -16,12 +16,12 @@ ms.date: 06/10/2019
 ms.author: patricka
 ms.reviewer: jerskine
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: dcc473d270d0a72b2ebf5f31c67fffa6827c9ecc
-ms.sourcegitcommit: af63214919e798901399fdffef09650de4176956
+ms.openlocfilehash: 9945113e778f69000a720d5f5045f691f439d076
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828424"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718544"
 ---
 # <a name="validate-ad-fs-integration-for-azure-stack"></a>Проверка интеграции AD FS с Azure Stack
 
@@ -39,7 +39,7 @@ ms.locfileid: "66828424"
 
 Скачайте последнюю версию средства проверки готовности Azure Stack (AzsReadinessChecker) из [коллекции PowerShell](https://aka.ms/AzsReadinessChecker).  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Убедитесь, что выполнены указанные ниже предварительные требования.
 
@@ -81,7 +81,7 @@ ms.locfileid: "66828424"
             Test Certificate Expiry:               OK
 
     Details:
-    [-] In standalone mode, some tests should not be considered fully indicative of connectivity or readiness the Azure Stack Stamp requires prior to Data Center Integration.
+    [-] In standalone mode, some tests should not be considered fully indicative of connectivity or readiness the Azure Stack Stamp requires prior to Datacenter Integration.
     Additional help URL: https://aka.ms/AzsADFSIntegration
 
     Log location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessChecker.log
@@ -121,7 +121,7 @@ ms.locfileid: "66828424"
 
 `Import-Module "c:\Program Files\WindowsPowerShell\Modules\Microsoft.AzureStack.ReadinessChecker\<version>\Microsoft.AzureStack.ReadinessChecker.psd1" -Force`
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Просмотр отчета о готовности](azure-stack-validation-report.md)  
 [Общие рекомендации по интеграции Azure Stack](azure-stack-datacenter-integration.md)  
