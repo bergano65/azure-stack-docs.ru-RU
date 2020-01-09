@@ -10,7 +10,7 @@
       href: compare-azure-azure-stack.md
     - name: Заметки о выпуске
       items:
-        - name: обновления для системы безопасности;
+        - name: Обновления для системы безопасности
           href: release-notes-security-updates.md
         - name: Заметки о выпуске
           href: release-notes.md
@@ -35,7 +35,7 @@
           href: azure-stack-capacity-planning-overview.md
         - name: Службы вычислений
           href: azure-stack-capacity-planning-compute.md
-        - name: Хранилище
+        - name: Память
           href: azure-stack-capacity-planning-storage.md
         - name: Планировщик ресурсов Azure Stack
           href: azure-stack-capacity-planner.md
@@ -116,7 +116,7 @@
               href: azure-stack-integrate-security.md
             - name: Аудит устройства
               href: azure-stack-integrate-physical-device-auditing.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Управление Azure Stack
       items:
@@ -154,9 +154,9 @@
               href: release-notes-checklist.md
             - name: Подготовка пакета обновлений
               href: azure-stack-update-prepare-package.md
-            - name: Установка обновлений
+            - name: Применение обновлений
               items:
-                - name: Установка обновлений
+                - name: Применение обновлений
                   href: azure-stack-apply-updates.md
                 - name: Применение обновлений для изготовителей оборудования
                   href: azure-stack-update-oem.md
@@ -280,7 +280,7 @@
           href: azure-stack-quota-types.md
     - name: Предложение сетевых решений
       href: azure-stack-network-solutions-enable.md
-    - name: Управление поставщиками ресурсов служб надстроек
+    - name: Управление поставщиками дополнительных ресурсов
       items:
         - name: Использование Службы приложений в Azure Stack
           items:
@@ -448,7 +448,7 @@
           href: azure-stack-diagnostic-test.md
         - name: Устранение неполадок
           href: azure-stack-troubleshooting.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: PowerShell для Azure Stack
       href: /powershell/azure/azure-stack/overview
