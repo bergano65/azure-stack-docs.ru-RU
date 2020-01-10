@@ -4,7 +4,7 @@
   items:
     - name: Что такое Azure Stack Hub?
       href: azure-stack-overview.md
-    - name: Что такое Azure Stack HCI?
+    - name: Что такое Azure Stack Hub HCI?
       href: azure-stack-hci-overview.md
     - name: 'Сравнение возможностей, предоставляемых в экосистеме Azure'
       href: compare-azure-azure-stack.md
@@ -37,7 +37,7 @@
           href: azure-stack-capacity-planning-compute.md
         - name: Память
           href: azure-stack-capacity-planning-storage.md
-        - name: Планировщик ресурсов Azure Stack
+        - name: Планировщик ресурсов Azure Stack Hub
           href: azure-stack-capacity-planner.md
     - name: Интеграция центра обработки данных
       items:
@@ -86,12 +86,12 @@
               href: azure-stack-validate-adfs.md
             - name: Проверка интеграции с Graph
               href: azure-stack-validate-graph.md
-        - name: Требования к инфраструктуре открытых ключей (PKI) для развертывания Azure Stack
+        - name: Требования к инфраструктуре PKI для развертывания Azure Stack Hub
           href: azure-stack-pki-certs.md
           items:
             - name: Создание сертификатов PKI
               href: azure-stack-get-pki-certs.md
-            - name: Подготовка сертификатов PKI Azure Stack
+            - name: Подготовка сертификатов PKI Azure Stack Hub
               href: azure-stack-prepare-pki-certs.md
             - name: Проверка сертификатов PKI
               href: azure-stack-validate-pki-certs.md
@@ -118,7 +118,7 @@
               href: azure-stack-integrate-physical-device-auditing.md
 - name: Практические руководства
   items:
-    - name: Управление Azure Stack
+    - name: Управление Azure Stack Hub
       items:
         - name: Основы администрирования
           href: azure-stack-manage-basics.md
@@ -126,7 +126,7 @@
           href: azure-stack-portal-clear.md
         - name: Настройка коллекции телеметрии
           href: azure-stack-telemetry.md
-        - name: Регистрация Azure Stack
+        - name: Регистрация Azure Stack Hub
           href: azure-stack-registration.md
         - name: Управление регионами
           href: azure-stack-region-management.md
@@ -136,7 +136,7 @@
           href: azure-stack-cli-admin.md
         - name: Настройка среды управления
           items:
-            - name: Установка PowerShell для Azure Stack
+            - name: Установка PowerShell для Azure Stack Hub
               href: azure-stack-powershell-install.md
             - name: Загрузка средств
               href: azure-stack-powershell-download.md
@@ -172,7 +172,7 @@
           href: azure-stack-viewing-public-ip-address-consumption.md
         - name: Изменение владельца пользовательской подписки
           href: azure-stack-change-subscription-owner.md
-        - name: Запуск и остановка Azure Stack
+        - name: Запуск и остановка Azure Stack Hub
           href: azure-stack-start-and-stop.md
         - name: Управление емкостями
           items:
@@ -234,7 +234,7 @@
           href: azure-stack-marketplace.md
         - name: Изменения Marketplace
           href: azure-stack-marketplace-changes.md
-        - name: Элементы Microsoft Azure Marketplace для Azure Stack
+        - name: Элементы Azure Marketplace для Azure Stack Hub
           href: azure-stack-marketplace-azure-items.md
         - name: Скачивание элементов Marketplace
           href: azure-stack-download-azure-marketplace-item.md
@@ -242,7 +242,7 @@
           href: azure-stack-add-vm-image.md
         - name: Создание и публикация элемента Marketplace
           href: azure-stack-create-and-publish-marketplace-item.md
-        - name: Поддерживаемые операционные системы на виртуальной машине для Azure Stack
+        - name: Поддерживаемые операционные системы на виртуальной машине для Azure Stack Hub
           href: azure-stack-supported-os.md
         - name: Добавление масштабируемого набора виртуальных машин
           href: azure-stack-compute-add-scalesets.md
@@ -274,7 +274,7 @@
           href: azure-stack-subscribe-plan-provision-vm.md
         - name: Удаление предложений
           href: azure-stack-delete-offer.md
-        - name: Делегирование предложений в Azure Stack
+        - name: Делегирование предложений в Azure Stack Hub
           href: azure-stack-delegated-provider.md
         - name: Типы квот
           href: azure-stack-quota-types.md
@@ -282,7 +282,7 @@
       href: azure-stack-network-solutions-enable.md
     - name: Управление поставщиками дополнительных ресурсов
       items:
-        - name: Использование Службы приложений в Azure Stack
+        - name: Использование Службы приложений в Azure Stack Hub
           items:
             - name: Обзор
               href: azure-stack-app-service-overview.md
@@ -310,23 +310,23 @@
               href: app-service-recover.md
             - name: Часто задаваемые вопросы о выставлении счетов в Службе приложений
               href: app-service-billing-faq.md
-            - name: Заметки о выпуске Службы приложений в Azure Stack
+            - name: Заметки о выпуске Службы приложений в Azure Stack Hub
               items:
-                - name: Служба приложений в заметках о выпуске обновления 1 Azure Stack
+                - name: "Заметки о выпуске обновления\_1 для Службы приложений Azure в Azure Stack Hub"
                   href: azure-stack-app-service-release-notes-update-one.md
-                - name: "Служба приложений в заметках о выпуске обновления\_2 Azure Stack"
+                - name: "Заметки о выпуске обновления\_2 для Службы приложений Azure в Azure Stack Hub"
                   href: azure-stack-app-service-release-notes-update-two.md
-                - name: Служба приложений Azure в заметках о выпуске обновления 3 Azure Stack
+                - name: "Заметки о выпуске обновления\_3 для Службы приложений Azure в Azure Stack Hub"
                   href: azure-stack-app-service-release-notes-update-three.md
-                - name: Служба приложений Azure в заметках о выпуске обновления 4 Azure Stack
+                - name: "Заметки о выпуске обновления\_4 для Службы приложений Azure в Azure Stack Hub"
                   href: azure-stack-app-service-release-notes-update-four.md
-                - name: "Служба приложений в заметках о выпуске обновления\_5 для Azure Stack"
+                - name: "Заметки о выпуске обновления\_5 для Службы приложений Azure в Azure Stack Hub"
                   href: azure-stack-app-service-release-notes-update-five.md
-                - name: "Заметки о выпуске обновления\_6 для Службы приложений Azure в Azure Stack"
+                - name: "Заметки о выпуске обновления\_6 для Службы приложений Azure в Azure Stack Hub"
                   href: azure-stack-app-service-release-notes-update-six.md
-                - name: "Заметки о выпуске обновления\_7 для Службы приложений Azure в Azure Stack"
+                - name: "Заметки о выпуске обновления\_7 для Службы приложений Azure в Azure Stack Hub"
                   href: azure-stack-app-service-release-notes-update-seven.md
-        - name: Использование MySQL в Azure Stack
+        - name: Использование MySQL в Azure Stack Hub
           items:
             - name: Обзор
               href: azure-stack-mysql-resource-provider.md
@@ -352,7 +352,7 @@
                   href: azure-stack-mysql-resource-provider-11330.md
                 - name: "Заметки о выпуске для поставщика ресурсов MySQL\_1.1.30.0"
                   href: azure-stack-mysql-resource-provider-11300.md
-        - name: Использование SQL в Azure Stack
+        - name: Использование SQL в Azure Stack Hub
           items:
             - name: Обзор
               href: azure-stack-sql-resource-provider.md
@@ -406,19 +406,19 @@
                   href: azure-stack-usage-issues.md
                 - name: Использование. Коды ошибок регистрации
                   href: azure-stack-registration-errors.md
-    - name: Резервное копирование для Azure Stack
+    - name: Резервное копирование для Azure Stack Hub
       items:
-        - name: Включение резервного копирования для Azure Stack с консоли администрирования
+        - name: Включение резервного копирования для Azure Stack Hub в консоли администрирования
           href: azure-stack-backup-enable-backup-console.md
-        - name: Включение резервного копирования для Azure Stack с помощью PowerShell
+        - name: Включение резервного копирования для Azure Stack Hub с помощью PowerShell
           href: azure-stack-backup-enable-backup-powershell.md
-        - name: Резервное копирование для Azure Stack
+        - name: Резервное копирование для Azure Stack Hub
           href: azure-stack-backup-back-up-azure-stack.md
         - name: Восстановление данных с помощью службы резервного копирования
           href: azure-stack-backup-infrastructure-backup.md
-        - name: Резервное копирование файлов и приложений в Azure Stack
+        - name: Резервное копирование файлов и приложений в Azure Stack Hub
           href: /azure/backup/backup-mabs-files-applications-azure-stack?toc=/azure-stack/operator/toc.json&bc=/azure-stack/breadcrumb/toc.json
-        - name: Репликация виртуальных машин Azure Stack в Azure
+        - name: Репликация виртуальных машин Azure Stack Hub в Azure
           href: /azure/site-recovery/azure-stack-site-recovery?toc=/azure-stack/operator/toc.json&bc=/azure-stack/breadcrumb/toc.json
         - name: Восстановление после катастрофической потери данных
           href: azure-stack-backup-recover-data.md
@@ -444,13 +444,13 @@
                       href: azure-stack-best-practices-automatic-diagnostic-log-collection.md
                 - name: Сбор по запросу
                   href: azure-stack-configure-on-demand-diagnostic-log-collection.md
-        - name: Проверка для Azure Stack
+        - name: Проверка для Azure Stack Hub
           href: azure-stack-diagnostic-test.md
         - name: Устранение неполадок
           href: azure-stack-troubleshooting.md
 - name: Справочник
   items:
-    - name: PowerShell для Azure Stack
+    - name: PowerShell для Azure Stack Hub
       href: /powershell/azure/azure-stack/overview
 - name: Сопутствующие материалы
   items:
@@ -462,11 +462,11 @@
   items:
     - name: Обучение и сертификация
       href: azure-stack-train-and-cert.md
-    - name: План выхода продуктов Azure Stack
+    - name: План выхода решений для Azure Stack Hub
       href: 'https://azure.microsoft.com/roadmap/?tag=azure-stack'
-    - name: Форум MSDN по Azure Stack
+    - name: Форум MSDN по Azure Stack Hub
       href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStack'
-    - name: Отзывы о документации по Azure Stack
+    - name: Отзывы о документации по Azure Stack Hub
       href: 'https://feedback.azure.com/forums/344565-azure-stack?category_id=160275'
     - name: Сведения о ценах
       href: 'https://azure.microsoft.com/overview/azure-stack/how-to-buy/'
