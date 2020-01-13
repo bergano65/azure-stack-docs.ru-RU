@@ -16,12 +16,12 @@ ms.author: mabrigg
 ms.custom: mvc
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 0b30f95b1158df7a20d4c03f26ce0b9ce034f6d6
-ms.sourcegitcommit: e509ae283c6c3c6a83143dbdc63d0b5556daf54a
+ms.openlocfilehash: e31edd266c16fa51855efa3259c86ecf9b53660b
+ms.sourcegitcommit: bbe1048682c7dccc6cebde542462c14ee1f3d0d1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2019
-ms.locfileid: "75031789"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75677694"
 ---
 # <a name="quickstart-create-a-windows-server-vm-by-using-powershell-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины Windows Server с помощью PowerShell в Azure Stack
 
@@ -63,7 +63,7 @@ New-AzureRmResourceGroup `
 
 ## <a name="create-storage-resources"></a>Создание ресурсов хранилища
 
-Создайте учетную запись хранения и контейнер хранилища для размещения образа Windows Server 2016.
+Создайте учетную запись хранения, чтобы хранить выходные данные диагностики загрузки.
 
 ```powershell
 # Create variables to store the storage account name and the storage account SKU information
@@ -246,6 +246,6 @@ Remove-AzureRmResourceGroup `
   -Name $ResourceGroupName
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого краткого руководстве вы развернули простую виртуальную машину Windows. Дополнительные сведения о виртуальных машинах Azure Stack см. в статье [Рекомендации по использованию виртуальных машин в Azure Stack](azure-stack-vm-considerations.md).

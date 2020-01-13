@@ -304,6 +304,8 @@
               href: azure-stack-app-service-add-worker-roles.md
             - name: Настройка источников развертывания
               href: azure-stack-app-service-configure-deployment-sources.md
+            - name: Смена секретов и сертификатов в Службе приложений
+              href: app-service-rotate-certificates.md
             - name: Создание резервной копии в Службе приложений
               href: app-service-back-up.md
             - name: Восстановление в Службе приложений

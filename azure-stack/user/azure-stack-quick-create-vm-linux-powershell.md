@@ -15,12 +15,12 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 9d1c9f963433e0a41218bb1984d07f0b47d032eb
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 2bd72ad2de570eeb3089645c5ee7c9dd3784e83c
+ms.sourcegitcommit: bbe1048682c7dccc6cebde542462c14ee1f3d0d1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955702"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75677677"
 ---
 # <a name="quickstart-create-a-linux-server-vm-by-using-powershell-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины с сервером Linux с помощью PowerShell в Azure Stack
 
@@ -32,7 +32,7 @@ ms.locfileid: "73955702"
 * установить веб-сервер NGINX и открыть его стандартную домашнюю страницу;
 * очистить неиспользуемые ресурсы.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Образ Linux в Azure Stack Marketplace. По умолчанию Azure Stack Marketplace не содержит образа Linux. Обратитесь к оператору Azure Stack, чтобы он предоставил нужный образ Ubuntu Server 16.04 LTS. Для этого оператор может выполнить инструкции из статьи [Скачивание элементов Marketplace из Azure в Azure Stack](../operator/azure-stack-download-azure-marketplace-item.md).
 
@@ -61,7 +61,7 @@ New-AzureRmResourceGroup `
 
 ## <a name="create-storage-resources"></a>Создание ресурсов хранилища
 
-Создайте учетную запись хранения, а затем контейнер хранилища для образа Ubuntu Server 16.04 LTS.
+Создайте учетную запись хранения, которая будет использоваться для хранения выходных данных диагностики загрузки.
 
 ```powershell  
 # Create variables to store the storage account name and the storage account SKU information
@@ -416,6 +416,6 @@ apt-get -y install nginx
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этого краткого руководства вы развернули простую виртуальную машину с сервером Linux. Дополнительные сведения о виртуальных машинах Azure Stack см. в статье [Рекомендации по использованию виртуальных машин в Azure Stack](azure-stack-vm-considerations.md).
