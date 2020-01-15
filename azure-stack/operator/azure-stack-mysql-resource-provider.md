@@ -15,18 +15,16 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: b66a72ce872d64f8fde3cb80ced5e6ad33d80b4d
-ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
+ms.openlocfilehash: ceda705c4a06ac9465c3f017a87986ba6e20e4b3
+ms.sourcegitcommit: e57a53caac50d1f8762307e065fe886fcda7eadf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993775"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75190868"
 ---
 # <a name="use-mysql-databases-on-microsoft-azure-stack"></a>Использование баз данных MySQL в Microsoft Azure Stack
 
-Базы данных MySQL обычно используются на веб-сайтах и поддерживают множество платформ веб-сайтов. Например, можно создавать веб-сайты WordPress с помощью надстройки поставщика ресурсов служб приложений (PaaS).
-
-Когда вы развернете поставщик ресурсов и подключите его к одному или нескольким экземплярам сервера MySQL, вы сможете:
+Чтобы предоставлять базы данных MySQL как услуги в [Azure Stack](azure-stack-overview.md), используйте поставщик ресурсов MySQL. Когда вы развернете поставщик ресурсов и подключите его к одному или нескольким экземплярам сервера MySQL, вы сможете:
 
 * создавать базы данных MySQL, используя шаблоны развертывания Azure Resource Manager;
 * предоставлять базы данных MySQL как службу.  
@@ -59,6 +57,6 @@ ms.locfileid: "74993775"
 * **база данных** — создание, удаление;
 * **имя для входа** — создание, установка параметров, удаление, предоставление разрешений, отмена.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Развертывание поставщика ресурсов MySQL](azure-stack-mysql-resource-provider-deploy.md)

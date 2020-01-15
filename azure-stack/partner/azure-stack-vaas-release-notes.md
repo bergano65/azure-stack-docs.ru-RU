@@ -14,12 +14,12 @@ ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: 963944f2ade4db168c1b7f9070e72fe503bdfcf9
-ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
+ms.openlocfilehash: eb676d914a345c5fe36e063ee08ea226cd1e3209
+ms.sourcegitcommit: 1cb84d8417367b553194614d53a477a94a8e9be9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954474"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75755170"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Заметки о выпуске для проверки как службы
 
@@ -28,6 +28,17 @@ ms.locfileid: "74954474"
 Эта статья содержит заметки о выпуске для проверки как службы Azure Stack.
 
 ## <a name="version-4421"></a>Версия 4.4.2.1
+
+9 января 2020 г.
+
+- Проверка обновлений содержимого
+  - Рабочий процесс проверки OEM (версия 5.1.52.0 -> 5.1.53.0). Уменьшено количество необходимых параметров на панели "расписание тестирования". 
+  - Исправление ошибки в тесте вычислений (TestVMOperations)
+    
+- Известные проблемы
+  - Обратитесь по адресу vaashelp@microsoft.com, если во время рабочего процесса проверки OEM не удается выполнить следующие тестовые случаи:
+    - Test101LinuxEmptyAttachedDiskManagedDisk;
+    - Test101WindowsEmptyAttachedDiskManagedDisk.
 
 3 декабря 2019 г.
 
@@ -180,6 +191,6 @@ ms.locfileid: "74954474"
 
     Теперь в рабочем процессе тестового прохода доступна возможность отправки целевых отзывов по определенным функциям. Тест `OEM Update on Azure Stack 1806 RC Validation 5.1.4.0` проверяет, правильно ли применены определенные обновления, и собирает отзывы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Проверка как услуга: устранение неполадок](azure-stack-vaas-troubleshoot.md)

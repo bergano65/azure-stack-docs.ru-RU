@@ -8,12 +8,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ddc8218aadbf3940ea18ce80012441c5e43c7472
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: 3bd29e8625fac818d05954720d84d572b684c92e
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640241"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718017"
 ---
 # <a name="cross-cloud-scaling-pattern"></a>Шаблон масштабирования в нескольких облаках
 
@@ -36,7 +36,7 @@ ms.locfileid: "73640241"
 > [!NOTE]
 > Этот шаблон применяется только к компонентам приложения без отслеживания состояния.
 
-## <a name="components"></a>Компоненты
+## <a name="components"></a>Components
 
 Шаблон масштабирования в нескольких облаках состоит из следующих компонентов.
 
@@ -48,7 +48,7 @@ ms.locfileid: "73640241"
 
 Служба доменных имен, или DNS, отвечает за преобразование (или разрешение) имени веб-сайта или службы в IP-адрес.
 
-### <a name="cloud"></a>Облако
+### <a name="cloud"></a>Cloud
 
 **Размещенный сервер сборки**  
 Среда для размещения конвейера сборки.
@@ -106,7 +106,7 @@ ms.locfileid: "73640241"
 - В сети возникают обычные узкие места, которые ограничивают эффективность масштабирования.
 - Ваша среда отключена от Интернета и не может подключиться к общедоступному облаку.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения по темам, описанным в этой статье:
 - Дополнительные сведения о работе балансировщика нагрузки трафика на основе DNS см. в статье с [общими сведениями о диспетчере трафика Azure](/azure/traffic-manager/traffic-manager-overview).

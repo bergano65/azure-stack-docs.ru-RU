@@ -15,22 +15,22 @@ ms.date: 08/23/2019
 ms.author: mabrigg
 ms.lastreviewed: 08/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: a724320bd066e6d46e33e6bdc9c80687cfb97736
-ms.sourcegitcommit: 55ec59f831a98c42a4e9ff0dd954bf10adb98ff1
+ms.openlocfilehash: f14b4180e567df13e576b520cdac01a676c101ea
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540278"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75717949"
 ---
-# <a name="monitor-updates-in-azure-stack-using-powershell"></a>Мониторинг обновлений в Azure Stack с помощью PowerShell
+# <a name="monitor-updates-in-azure-stack-hub-using-powershell"></a>Мониторинг обновлений в Azure Stack Hub с помощью PowerShell
 
-*Область применения: интегрированные системы Azure Stack*
+*Область применения: интегрированные системы Azure Stack Hub*
 
-Для наблюдения за обновлениями и управления ими можно использовать конечные точки администрирования Azure Stack. Они доступны посредством PowerShell. Инструкции по настройке PowerShell для Azure Stack см. в статье [Install PowerShell for Azure Stack](azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack).
+Для наблюдения за обновлениями и управления ими можно использовать конечные точки администрирования Azure Stack Hub. Они доступны посредством PowerShell. Инструкции по настройке PowerShell для Azure Stack Hub см. в статье [Install PowerShell for Azure Stack Hub](azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack Hub).
 
 Для управления обновлениями можно использовать следующий командлет PowerShell.
 
-| Командлет | ОПИСАНИЕ |
+| Командлет | Description |
 |------------------------------------------------------|-------------|
 | [Get-AzsUpdate](https://docs.microsoft.com/powershell/module/azs.update.admin/Get-AzsUpdate?view=azurestackps-1.8.0) | Получение списка доступных обновлений. |
 | [Get-AzsUpdateLocation](https://docs.microsoft.com/powershell/module/azs.update.admin/Get-AzsUpdateLocation?view=azurestackps-1.8.0)| Получение списка расположений обновлений. |
@@ -54,6 +54,6 @@ Get-AzsUpdateRun -UpdateName Microsoft1.0.180302.1
 Get-AzsUpdateRun -Name 5173e9f4-3040-494f-b7a7-738a6331d55c -UpdateName Microsoft1.0.180305.1 | Resume-AzsUpdateRun
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 -   [Общие сведения об управлении обновлениями в Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates)

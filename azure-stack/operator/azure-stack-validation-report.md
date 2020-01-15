@@ -1,6 +1,6 @@
 ---
-title: Отчет о проверке для Azure Stack | Документация Майкрософт
-description: Узнайте результаты проверки готовности Azure Stack с помощью отчета.
+title: Отчет о проверке для Azure Stack Hub | Документация Майкрософт
+description: Получение результатов проверки готовности Azure Stack с помощью отчета.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -12,20 +12,20 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/13/2019
+ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: c00ce005ac72fcde34b58a1afe7e134c27274247
-ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
+ms.openlocfilehash: e699ab75225e0590d287ddadd8b35b67bfac8479
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991723"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718391"
 ---
-# <a name="azure-stack-validation-report"></a>Отчет о проверке Azure Stack
+# <a name="azure-stack-hub-validation-report"></a>Отчет о проверке Azure Stack Hub
 
-Используйте *средство проверки готовности Azure Stack*, чтобы определить, выполнены ли условия, необходимые для поддержки развертывания и обслуживания окружения Azure Stack. Результаты сохраняются в JSON-файле отчета. В отчете отображаются подробные и сводные данные о состоянии компонентов, необходимых для развертывания Azure Stack. Этот отчет также содержит сведения о смене секретов для существующих развертываний Azure Stack.  
+Используйте *средство проверки готовности Azure Stack Hub*, чтобы определить, выполнены ли условия, необходимые для поддержки развертывания и обслуживания окружения Azure Stack Hub. Результаты сохраняются в JSON-файле отчета. В отчете отображаются подробные и сводные данные о состоянии компонентов, необходимых для развертывания Azure Stack Hub. Этот отчет также содержит сведения о смене секретов для существующих развертываний Azure Stack Hub.  
 
 ## <a name="where-to-find-the-report"></a>Где найти отчет
 
@@ -96,7 +96,7 @@ PSBoundParameters :
 
 ## <a name="view-the-report-summary"></a>Просмотр сводного отчета
 
-Чтобы просмотреть сводную информацию из отчета, добавьте параметр `-summary` в конец командной строки PowerShell. Например:
+Чтобы просмотреть сводную информацию из отчета, добавьте параметр `-summary` в конец командной строки PowerShell. Пример:
 
 ```powershell
 Read-AzsReadinessReport -ReportPath .\Contoso-AzsReadinessReport.json -summary
@@ -138,7 +138,7 @@ Azure Stack ADFS Validation results not available.
 - График
 - ADFS
 - Задания
-- Все  
+- All  
 
 Например, для извлечения из отчета сводной информации только о сертификатах выполните следующую команду PowerShell:
 

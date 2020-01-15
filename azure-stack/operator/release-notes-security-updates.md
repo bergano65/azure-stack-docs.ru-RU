@@ -1,6 +1,6 @@
 ---
-title: Заметки о выпуске Azure Stack: обновления системы безопасности в выпуске 1910 | Документация Майкрософт
-description: Узнайте об обновлениях системы безопасности в выпуске 1909 для Azure Stack.
+title: Заметки о выпуске Azure Stack Hub: обновления системы безопасности в выпуске 1910 | Документация Майкрософт
+description: Узнайте об обновлениях системы безопасности в выпуске 1910 для Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -16,21 +16,21 @@ ms.date: 11/21/2019
 ms.author: sethm
 ms.reviewer: fiseraci
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 9294e0fad863345758527fb622fd5f3e753a29d1
-ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
+ms.openlocfilehash: 9766c1fb0c5186f33038716f0d56d1ccac9d90cb
+ms.sourcegitcommit: c3be6b2e962c5905eb3c54f9555e13095f6b4d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74299088"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303677"
 ---
-# <a name="azure-stack-security-updates"></a>Обновления для системы безопасности Azure Stack
+# <a name="azure-stack-hub-security-updates"></a>Обновления безопасности в Azure Stack Hub
 
-В этой статье перечислены все обновления для системы безопасности в последних четырех обновлениях Azure Stack. Сведения предоставляются исключительно в справочных целях.
+В этой статье перечислены все обновления для системы безопасности в последних четырех обновлениях Azure Stack Hub. Сведения предоставляются исключительно в справочных целях.
 
 ::: moniker range="azs-1910"
 ## <a name="1910-update"></a>Обновление 1910
 
-Это обновление Azure Stack не включает обновления системы безопасности для базовой операционной системы, в которой размещается Azure Stack. Это обновление содержит обновление для системы безопасности компонента инфраструктуры Azure Stack:
+Это обновление Azure Stack Hub не включает обновления системы безопасности для базовой операционной системы, в которой размещается Azure Stack Hub. Это обновление содержит обновление для системы безопасности компонента инфраструктуры Azure Stack Hub.
 
 - [CVE-2019-1234](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1234).
 
@@ -252,7 +252,7 @@ ms.locfileid: "74299088"
 Это обновление Azure Stack не включает обновления системы безопасности для базовой операционной системы, в которой размещается Azure Stack.
 ::: moniker-end
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Контрольный список действий по обновлению Azure Stack](release-notes-checklist.md)
 - [Ознакомьтесь со списком известных проблем](known-issues.md)

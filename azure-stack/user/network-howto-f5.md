@@ -9,12 +9,12 @@ ms.date: 11/06/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: c1166b1755b33687757b4587942c5472413e2b3e
-ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
+ms.openlocfilehash: 60e6330aa492539a3b4e89a390ddcad5650cac92
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74780887"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718425"
 ---
 # <a name="how-to-deploy-f5-across-two-azure-stack-hub-instances"></a>Как выполнить развертывание F5 на двух экземплярах Azure Stack Hub
 
@@ -140,9 +140,9 @@ ms.locfileid: "74780887"
 
     ![](./media/network-howto-f5/image11.png)
     
-    | Ключ | Значение |
+    | Клавиши | Значение |
     | --- | --- |
-    | ИМЯ | NGINX_Pool |
+    | Имя | NGINX_Pool |
     | Монитор работоспособности | HTTPS |
     | Имя узла | NGINX |
     | Адрес | \<частный IP-адрес NGINX> |
@@ -160,9 +160,9 @@ ms.locfileid: "74780887"
 
 13. Создайте новый виртуальный сервер. Для этого перейдите в раздел **Локальный трафик** > **Виртуальные серверы** > **Список виртуальных серверов**, а затем щелкните **+** . Настройте пул, используя значения из этой таблицы. Для других полей сохраните значения по умолчанию.
 
-    | Ключ | Значение |
+    | Клавиши | Значение |
     | --- | --- |
-    |ИМЯ | NGINX |
+    |Имя | NGINX |
     |Адрес назначения | \<собственный IP-адрес BIG-IP> |
     |Порт службы | 443 |
     |Профиль SSL (клиент) | clientssl |
@@ -193,6 +193,6 @@ ms.locfileid: "74780887"
 - [Deploying the BIG-IP System with HTTP Applications](https://www.f5.com/content/dam/f5/corp/global/pdf/deployment-guides/iapp-http-dg.pdf) (Развертывание системы BIG-IP с приложениями HTTP)
 - [Creating a WIP for GSLB](https://clouddocs.f5.com/training/community/big-iq-cloud-edition/html/class10/module2/lab1.html) (Создание WIP для GSLB)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Сети Azure Stack: различия и рекомендации](azure-stack-network-differences.md) 

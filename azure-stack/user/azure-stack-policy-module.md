@@ -1,39 +1,38 @@
 ---
-title: Использование модуля политики Azure Stack | Документация Майкрософт
+title: Использование модуля политики Azure Stack Hub | Документация Майкрософт
 description: Сведения о том,как ограничить подписку Azure, чтобы ее поведение было аналогично подписке Azure Stack
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
 manager: femila
 editor: ''
-ms.assetid: 937ef34f-14d4-4ea9-960b-362ba986f000
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/13/2019
+ms.date: 01/07/2020
 ms.author: sethm
 ms.lastreviewed: 03/26/2019
-ms.openlocfilehash: c0872c598cc621250c3b2c5d39aca0e392f71b29
-ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
+ms.openlocfilehash: 1df2cf3eb403aabf320a226b5c184654b0b6169a
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991600"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718442"
 ---
-# <a name="manage-azure-policy-using-the-azure-stack-policy-module"></a>Управление политикой Azure с использованием модуля политики Azure Stack
+# <a name="manage-azure-policy-using-the-azure-stack-hub-policy-module"></a>Управление политикой Azure с использованием модуля политики Azure Stack Hub
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Модуль политики Azure Stack позволяет настроить подписку Azure с такими же возможностями управления версиями и доступными службами, как и в Azure Stack. Модуль использует командлет PowerShell [New-AzureRmPolicyDefinition](/powershell/module/azurerm.resources/new-azurermpolicydefinition) для создания политики Azure, которая ограничивает типы ресурсов и службы, доступные в подписке. Затем создайте назначение политики в соответствующей области с помощью командлета [New-AzureRmPolicyAssignment](/powershell/module/azurerm.resources/new-azurermpolicyassignment). После настройки политики подписку Azure можно использовать для разработки приложений, предназначенных для Azure Stack.
+Модуль политики Azure Stack Hub позволяет настроить в подписке Azure такую же доступность служб и управления версиями, как и в Azure Stack Hub. Этот модуль использует командлет PowerShell [**New-AzureRmPolicyDefinition**](/powershell/module/azurerm.resources/new-azurermpolicydefinition) для создания политики Azure, которая ограничивает типы ресурсов и службы, доступные в подписке. Затем создайте назначение политики в соответствующей области с помощью командлета [**New-AzureRmPolicyAssignment**](/powershell/module/azurerm.resources/new-azurermpolicyassignment). После настройки политики подписку Azure можно использовать для разработки приложений, предназначенных для Azure Stack Hub.
 
 ## <a name="install-the-module"></a>Установка модуля
 
-1. Установите необходимую версию модуля PowerShell AzureRM, как описано в шаге 1 руководства по [установке PowerShell для Azure Stack](../operator/azure-stack-powershell-install.md).
-2. [Скачайте средства Azure Stack из GitHub](../operator/azure-stack-powershell-download.md).
-3. [Настройте PowerShell для использования с Azure Stack](azure-stack-powershell-configure-user.md).
-4. Импортируйте модуль *AzureStack.Policy.psm1*.
+1. Установите необходимую версию модуля PowerShell AzureRM, как описано в шаге 1 руководства по [установке PowerShell для Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+2. [Скачайте средства Azure Stack Hub из GitHub](../operator/azure-stack-powershell-download.md).
+3. [Настройте PowerShell для использования с Azure Stack Hub](azure-stack-powershell-configure-user.md).
+4. Импортируйте модуль **AzureStack.Policy.psm1**.
 
    ```powershell
    Import-Module .\Policy\AzureStack.Policy.psm1
@@ -41,7 +40,7 @@ ms.locfileid: "68991600"
 
 ## <a name="apply-policy-to-azure-subscription"></a>Применение политики к подписке Azure
 
-Следующая команда позволяет применить используемую по умолчанию политику Azure Stack к подписке Azure. Перед выполнением этих команд замените `Azure subscription name` именем своей подписки Azure.
+Следующая команда позволяет применить политику Azure Stack Hub по умолчанию к подписке Azure. Перед выполнением этих команд замените `Azure subscription name` именем своей подписки Azure.
 
 ```powershell
 Add-AzureRmAccount
@@ -53,7 +52,7 @@ New-AzureRmPolicyAssignment -Name AzureStack -PolicyDefinition $policy -Scope /s
 
 ## <a name="apply-policy-to-a-resource-group"></a>Применение политики к группе ресурсов
 
-Возможно, вам потребуется применить политики для выборочного управления. Например, у вас могут быть другие ресурсы, выполняющиеся в той же подписке. Областью действия приложения политики можно задать определенную группу ресурсов, которая позволит тестировать приложения для работы с Azure Stack с использованием ресурсов Azure. Перед выполнением следующих команд замените `Azure subscription name` именем своей подписки Azure.
+Возможно, вам потребуется применить политики для выборочного управления. Например, у вас могут быть другие ресурсы, выполняющиеся в той же подписке. Областью действия приложения политики можно задать определенную группу ресурсов, которая позволит тестировать приложения для работы с по умолчанию с использованием ресурсов Azure. Перед выполнением следующих команд замените `Azure subscription name` именем своей подписки Azure.
 
 ```powershell
 Add-AzureRmAccount
@@ -70,7 +69,7 @@ New-AzureRmPolicyAssignment -Name AzureStack -PolicyDefinition $policy -Scope /s
 
 ![Результат сбоя развертывания ресурса из-за ограничения политики](./media/azure-stack-policy-module/image1.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание шаблонов с помощью PowerShell](azure-stack-deploy-template-powershell.md)
 * [Развертывание шаблонов с помощью интерфейса командной строки Azure](azure-stack-deploy-template-command-line.md)

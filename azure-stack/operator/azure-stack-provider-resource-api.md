@@ -1,7 +1,6 @@
 ---
-title: API использования ресурсов для поставщиков | Документация Майкрософт
-titleSuffix: Azure Stack
-description: Справочные сведения об API использования ресурсов, который получает сведения об использовании Azure Stack.
+title: API использования ресурсов для поставщиков Azure Stack Hub | Документация Майкрософт
+description: Справочные сведения об API использования ресурсов, который получает сведения об использовании Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -12,20 +11,20 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/16/2019
+ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/25/2018
-ms.openlocfilehash: 75a4adca6d9265314c74cdebe642d43b8c2f11ef
-ms.sourcegitcommit: ca358ea5c91a0441e1d33f540f6dbb5b4d3c92c5
+ms.openlocfilehash: 914f363efa5800c331239a547ee3edd577806188
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73802390"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718119"
 ---
 # <a name="provider-resource-usage-api"></a>API использования ресурсов для поставщиков
 
-Термин *поставщик* обозначает администраторов служб и любых делегированных поставщиков. Операторы Azure Stack и делегированные поставщики с помощью API использования ресурсов для поставщиков могут просматривать данные об использовании ресурсов их непосредственными клиентами. Например, как показано на следующей схеме, с помощью API для поставщиков P0 может получить сведения о прямом использовании ресурсов для P1 и P2, а P1 — для P3 и P4.
+Термин *поставщик* обозначает администраторов служб и любых делегированных поставщиков. Операторы Azure Stack Hub и делегированные поставщики с помощью API использования ресурсов для поставщиков могут просматривать данные об использовании ресурсов их непосредственными клиентами. Например, как показано на следующей схеме, с помощью API для поставщиков P0 может получить сведения о прямом использовании ресурсов для P1 и P2, а P1 — для P3 и P4.
 
 ![Концептуальная модель иерархии поставщиков](media/azure-stack-provider-resource-api/image1.png)
 
@@ -39,13 +38,13 @@ ms.locfileid: "73802390"
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ |`https://{armendpoint}/subscriptions/{subId}/providers/Microsoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={reportedStartTime}&reportedEndTime={reportedEndTime}&aggregationGranularity={granularity}&subscriberId={sub1.1}&api-version=2015-06-01-preview&continuationToken={token-value}` |
+| GET |`https://{armendpoint}/subscriptions/{subId}/providers/Microsoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={reportedStartTime}&reportedEndTime={reportedEndTime}&aggregationGranularity={granularity}&subscriberId={sub1.1}&api-version=2015-06-01-preview&continuationToken={token-value}` |
 
 ### <a name="arguments"></a>Аргументы
 
-| Аргумент | ОПИСАНИЕ |
+| Аргумент | Description |
 | --- | --- |
-| `armendpoint` |Конечная точка Azure Resource Manager среды Azure Stack. В соответствии с соглашением Azure Stack имя конечной точки Azure Resource Manager должно быть в формате `https://adminmanagement.{domain-name}`. Например, если для пакета средств разработки Azure Stack (ASDK) доменное имя — *local.azurestack.external*, то конечная точка Azure Resource Manager — `https://adminmanagement.local.azurestack.external`. |
+| `armendpoint` |Конечная точка Azure Resource Manager среды Azure Stack. В соответствии с соглашением Azure Stack Hub имя конечной точки Azure Resource Manager должно иметь формат `https://adminmanagement.{domain-name}`. Например, если для пакета средств разработки Azure Stack (ASDK) доменное имя — *local.azurestack.external*, то конечная точка Azure Resource Manager — `https://adminmanagement.local.azurestack.external`. |
 | `subId` |Идентификатор подписки пользователя, который выполняет вызов. |
 | `reportedStartTime` |Время начала выполнения запроса. Значение `DateTime` должно быть в формате UTC и соответствовать началу нужного часа (например, 13:00). Для сбора сведений за сутки это значение должно соответствовать полуночи в формате UTC. В этом формате используется экранирование символов ISO 8601. Например, значение `2015-06-16T18%3a53%3a11%2b00%3a00Z` можно использовать в составе URI, так как символ двоеточия преобразован в `%3a`, а плюс — в `%2b`. |
 | `reportedEndTime` |Время завершения выполнения запроса. Действуют те же ограничения, что и для аргумента `reportedStartTime`. Значение `reportedEndTime` не может относиться ни к будущему, ни к текущему дню. В противном случае возвращается результат "Обработка не завершена". |
@@ -89,12 +88,12 @@ meterID1",
 
 ### <a name="response-details"></a>Сведения об ответе
 
-| Аргумент | ОПИСАНИЕ |
+| Аргумент | Description |
 | --- | --- |
 |`id` |Уникальный идентификатор статистического выражения использования. |
 |`name` |Имя статистического выражения использования. |
 |`type` |Определение ресурса. |
-|`subscriptionId` |Идентификатор подписки пользователя Azure Stack. |
+|`subscriptionId` |Идентификатор подписки пользователя Azure Stack Hub. |
 |`usageStartTime`|Начальное время включения в контейнер использования, к которому относится статистическое выражение использования (в формате UTC).|
 |`usageEndTime`|Конечное время включения в контейнер использования, к которому относится статистическое выражение использования (в формате UTC). |
 |`instanceData` |Пары "ключ-значение" из сведений об экземпляре (в новом формате):<br> `resourceUri`: полный идентификатор ресурса, который содержит группы ресурсов и имя экземпляра. <br> `location`: регион, в котором выполнялась эта служба. <br> `tags`: теги ресурсов, которые указываются пользователем. <br> `additionalInfo`: Подробные сведения об использованном ресурсе, например, версия ОС или тип образа. |
@@ -105,10 +104,10 @@ meterID1",
 
 ### <a name="powershell"></a>PowerShell
 
-Чтобы данные об использовании создавались, должны существовать активно работающие ресурсы, например, действующая виртуальная машина или учетная запись хранения, содержащая некоторые данные. Если вы не знаете, есть ли у вас активные ресурсы в Azure Stack Marketplace, разверните виртуальную машину, откройте для нее колонку мониторинга и проверьте, выполняется ли виртуальная машина. Следующие командлеты PowerShell позволяют просмотреть данные о потреблении:
+Чтобы данные об использовании создавались, должны существовать активно работающие ресурсы, например, действующая виртуальная машина или учетная запись хранения, содержащая некоторые данные. Если вы не знаете, есть ли у вас активные ресурсы в Azure Stack Hub Marketplace, разверните виртуальную машину, откройте для нее колонку мониторинга и проверьте выполнение. Следующие командлеты PowerShell позволяют просмотреть данные о потреблении:
 
-1. [Установите PowerShell для Azure Stack](azure-stack-powershell-install.md).
-2. [Настройка пользователя](../user/azure-stack-powershell-configure-user.md) или [оператора Azure Stack](azure-stack-powershell-configure-admin.md) в среде PowerShell.
+1. [Установка PowerShell для Azure Stack Hub](azure-stack-powershell-install.md).
+2. [Настройка пользователя Azure Stack Hub](../user/azure-stack-powershell-configure-user.md) или [оператора Azure Stack Hub](azure-stack-powershell-configure-admin.md) в среде PowerShell.
 3. Чтобы получить данные об использовании, вызовите PowerShell [Get-AzsSubscriberUsage](/powershell/module/azs.commerce.admin/get-azssubscriberusage).
 
    ```powershell
@@ -117,21 +116,21 @@ meterID1",
 
 ### <a name="rest-api"></a>REST API
 
-Вы можете собирать сведения об использовании для удаленных подписок путем вызова службы Microsoft.Commerce.Admin.
+Вы можете собирать сведения об использовании для удаленных подписок путем вызова службы **Microsoft.Commerce.Admin**.
 
 #### <a name="return-all-tenant-usage-for-deleted-for-active-users"></a>Возврат данных об использовании по всем клиентам для удаленных подписок для активных пользователей
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ | `https://{armendpoint}/subscriptions/{subId}/providersMicrosoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={start-time}&reportedEndTime={end-endtime}&aggregationGranularity=Hourly&api-version=2015-06-01-preview` |
+| GET | `https://{armendpoint}/subscriptions/{subId}/providersMicrosoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={start-time}&reportedEndTime={end-endtime}&aggregationGranularity=Hourly&api-version=2015-06-01-preview` |
 
 #### <a name="return-usage-for-deleted-or-active-tenant"></a>Возврат данных об использовании по удаленному или активному клиенту
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ |`https://{armendpoint}/subscriptions/{subId}/providersMicrosoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={start-time}&reportedEndTime={end-endtime}&aggregationGranularity=Hourly&subscriberId={subscriber-id}&api-version=2015-06-01-preview` |
+| GET |`https://{armendpoint}/subscriptions/{subId}/providersMicrosoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={start-time}&reportedEndTime={end-endtime}&aggregationGranularity=Hourly&subscriberId={subscriber-id}&api-version=2015-06-01-preview` |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [API-интерфейс использования для клиентов](azure-stack-tenant-resource-usage-api.md)
 - [Часто задаваемые вопросы об использовании](azure-stack-usage-related-faq.md)

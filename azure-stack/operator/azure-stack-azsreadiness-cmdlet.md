@@ -1,6 +1,6 @@
 ---
 title: Справочник по командлету Start-AzsReadinessChecker | Документация Майкрософт
-description: Справка по командлету PowerShell для модуля средства проверки готовности Azure Stack.
+description: Справка по командлету PowerShell для модуля средства проверки готовности Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -12,22 +12,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/13/2019
+ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: f60ee96673b5574f0cd0393dc6a53a2d7937c04f
-ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
+ms.openlocfilehash: d6b7525657696792bd72d968e8888bd8f7bc62fb
+ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71159161"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75727451"
 ---
 # <a name="start-azsreadinesschecker-cmdlet-reference"></a>Справочник по командлету Start-AzsReadinessChecker
 
 Модуль: **Microsoft.AzureStack.ReadinessChecker**
 
-Этот модуль содержит только один командлет. С его помощью выполняется выполняет одна или более функций перед развертыванием или обслуживанием Azure Stack.
+Этот модуль содержит только один командлет. Он выполняет одну или несколько функций перед развертыванием или обслуживанием Azure Stack Hub.
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -164,9 +164,9 @@ Start-AzsReadinessChecker
        [<CommonParameters>]
 ```
 
-## <a name="description"></a>ОПИСАНИЕ
+## <a name="description"></a>Description
 
-Командлет **Start-AzsReadinessChecker** проверяет сертификаты, учетные записи Azure, подписки Azure и Azure Active Directory (AAD). Выполните проверку перед развертыванием Azure Stack или перед такими действиями по обслуживанию Azure Stack, как смена секрета. С помощью командлета также можно создавать запросы на подпись для сертификатов инфраструктуры и, при необходимости, сертификатов PaaS. Наконец, командлет может распаковать сертификаты PFX для устранения общих проблем с упаковкой.
+Командлет **Start-AzsReadinessChecker** проверяет сертификаты, учетные записи Azure, подписки Azure и Azure Active Directory (AAD). Выполните проверку перед развертыванием Azure Stack Hub или перед такими действиями по обслуживанию Azure Stack Hub, как смена секрета. С помощью командлета также можно создавать запросы на подпись для сертификатов инфраструктуры и, при необходимости, сертификатов PaaS. Наконец, командлет может распаковать сертификаты PFX для устранения общих проблем с упаковкой.
 
 ## <a name="examples"></a>Примеры
 
@@ -179,7 +179,7 @@ $subjectHash = [ordered]@{"OU"="AzureStack";"O"="Microsoft";"L"="Redmond";"ST"="
 Start-AzsReadinessChecker -regionName $regionName -externalFQDN $externalFQDN -subject $subjectHash -IdentitySystem ADFS -requestType MultipleCSR
 ```
 
-В этом примере с помощью `Start-AzsReadinessChecker` создается несколько запросов на подпись сертификатов (CSR), которые подходят для развертывания Azure Stack ADFS с именем региона **east** и внешним полным доменным именем **azurestack.contoso.com**.
+В этом примере с помощью `Start-AzsReadinessChecker` создается несколько запросов на подпись сертификатов (CSR), которые подходят для развертывания Azure Stack Hub ADFS с именем региона **east** и внешним полным доменным именем **azurestack.contoso.com**.
 
 ### <a name="example-validate-certificates"></a>Пример. Проверка сертификатов
 
@@ -257,7 +257,7 @@ $subscriptionID = "<subscription ID"
 Start-AzsReadinessChecker -RegistrationAccount $registrationCredential -RegistrationSubscriptionID $subscriptionID -AzureEnvironment "<environment name>"
 ```
 
-В этом примере в целях безопасности запрашиваются учетные данные владельца подписки, а затем `Start-AzsReadinessChecker` проверяет учетную запись и подписку, чтобы убедиться, что их можно использовать для регистрации в Azure Stack.
+В этом примере для обеспечения безопасности запрашиваются учетные данные владельца подписки, а затем `Start-AzsReadinessChecker` проверяет учетную запись и подписку, чтобы убедиться, что их можно использовать для регистрации в Azure Stack Hub.
 
 ### <a name="example-validate-azure-registration-with-deployment-data-deployment-team"></a>Пример. Проверка регистрации Azure с помощью данных развертывания (группа развертывания)
 
@@ -267,7 +267,7 @@ $subscriptionID = "<subscription ID>"
 Start-AzsReadinessChecker -RegistrationAccount $registrationCredential -RegistrationSubscriptionID $subscriptionID -DeploymentDataJSONPath .\contoso-deploymentdata.json
 ```
 
-В этом примере в целях безопасности запрашиваются учетные данные владельца подписки, а затем `Start-AzsReadinessChecker` проверяет учетную запись и подписку, чтобы убедиться, что их можно использовать для регистрации в Azure Stack. При этом дополнительные сведения считываются из JSON-файла с данными развертывания, созданного для развертывания.
+В этом примере для обеспечения безопасности запрашиваются учетные данные владельца подписки, а затем `Start-AzsReadinessChecker` проверяет учетную запись и подписку, чтобы убедиться, что их можно использовать для регистрации в Azure Stack Hub. При этом дополнительные сведения считываются из JSON-файла с данными о развертывании, созданного для развертывания.
 
 ### <a name="example-importexport-pfx-package"></a>Пример. Импорт и экспорт пакета PFX
 
@@ -298,40 +298,40 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 ### <a name="-regionname"></a>-RegionName
 
-Определяет имя региона развертывания Azure Stack.
+Определяет имя региона развертывания Azure Stack Hub
 
 |  |  |
 |----------------------------|--------------|
-|Тип:                       |Строка,        |
+|Тип:                       |String        |
 |Позиция:                   |именованная         |
-|Значение по умолчанию:              |Нет          |
-|Принимает входные данные конвейера:      |Ложь         |
-|Принимает подстановочные знаки: |Ложь         |
+|Значение по умолчанию:              |None          |
+|Принимает входные данные конвейера:      |False         |
+|Принимает подстановочные знаки: |False         |
 
 ### <a name="-fqdn"></a>-FQDN
 
-Определяет внешнее имя FQDN развертывания Azure Stack, которое также имеет псевдонимы **ExternalFQDN** и **ExternalDomainName**.
+Определяет внешнее полное доменное имя для развертывания Azure Stack Hub, которое также имеет псевдонимы **ExternalFQDN** и **ExternalDomainName**.
 
 |  |  |
 |----------------------------|--------------|
-|Тип:                       |Строка,        |
+|Тип:                       |String        |
 |Позиция:                   |именованная         |
 |Значение по умолчанию:              |ExternalFQDN, ExternalDomainName |
-|Принимает входные данные конвейера:      |Ложь         |
-|Принимает подстановочные знаки: |Ложь         |
+|Принимает входные данные конвейера:      |False         |
+|Принимает подстановочные знаки: |False         |
 
 ### <a name="-identitysystem"></a>-IdentitySystem
 
-Указывает допустимые значения идентификационной системы развертывания Azure Stack, AAD или ADFS для Azure Active Directory и федеративных служб Active Directory соответственно.
+Указывает допустимые значения идентификационной системы развертывания Azure Stack Hub, AAD или ADFS для Azure Active Directory и федеративных служб Active Directory соответственно.
 
 |  |  |
 |----------------------------|--------------|
-|Тип:                       |Строка,        |
+|Тип:                       |String        |
 |Позиция:                   |именованная         |
-|Значение по умолчанию:              |Нет          |
+|Значение по умолчанию:              |None          |
 |Допустимые значения:               |'AAD','ADFS'  |
-|Принимает входные данные конвейера:      |Ложь         |
-|Принимает подстановочные знаки: |Ложь         |
+|Принимает входные данные конвейера:      |False         |
+|Принимает подстановочные знаки: |False         |
 
 ### <a name="-pfxpassword"></a>-PfxPassword
 
@@ -341,9 +341,9 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |SecureString |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Нет     |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Значение по умолчанию:              |None     |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-paascertificates"></a>-PaaSCertificates
 
@@ -353,21 +353,21 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |Хэш-таблицы |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Нет     |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Значение по умолчанию:              |None     |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-deploymentdatajsonpath"></a>-DeploymentDataJSONPath
 
-Указывает JSON-файл конфигурации с данными развертывания Azure Stack. Этот файл создается для развертывания.
+Указывает JSON-файл конфигурации с данными о развертывании Azure Stack Hub. Этот файл создается для развертывания.
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка,   |
+|Тип:                       |String   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Нет     |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Значение по умолчанию:              |None     |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-pfxpath"></a>-PfxPath
 
@@ -375,11 +375,11 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка,   |
+|Тип:                       |String   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Нет     |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Значение по умолчанию:              |None     |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-exportpfxpath"></a>-ExportPFXPath  
 
@@ -387,11 +387,11 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка,   |
+|Тип:                       |String   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Нет     |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Значение по умолчанию:              |None     |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-subject"></a>-Subject
 
@@ -401,9 +401,9 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|---------|
 |Тип:                       |OrderedDictionary   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Нет     |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Значение по умолчанию:              |None     |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-requesttype"></a>-RequestType
 
@@ -414,12 +414,12 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка,   |
+|Тип:                       |String   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Нет     |
+|Значение по умолчанию:              |None     |
 |Допустимые значения:               |'MultipleCSR','SingleCSR' |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-outputrequestpath"></a>-OutputRequestPath
 
@@ -427,72 +427,72 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка,   |
+|Тип:                       |String   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Нет     |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Значение по умолчанию:              |None     |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-aadserviceadministrator"></a>-AADServiceAdministrator
 
-Указывает администратора службы AAD, который будет использоваться в развертывании Azure Stack.
+Указывает администратора службы Azure AD, который будет использоваться в развертывании Azure Stack Hub.
 
 |  |  |
 |----------------------------|---------|
 |Тип:                       |PSCredential   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Нет     |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Значение по умолчанию:              |None     |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-aaddirectorytenantname"></a>-AADDirectoryTenantName
 
-Указывает имя службы AAD, которое будет использоваться в развертывании Azure Stack.
+Указывает имя службы Azure AD, которое будет использоваться в развертывании Azure Stack Hub.
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка,   |
+|Тип:                       |String   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Нет     |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Значение по умолчанию:              |None     |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-azureenvironment"></a>-AzureEnvironment
 
-Указывает экземпляр служб Azure с учетными записями, каталогами и подписками для развертывания и регистрации Azure Stack.
+Указывает экземпляр служб Azure с учетными записями, каталогами и подписками для развертывания и регистрации Azure Stack Hub.
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка,   |
+|Тип:                       |String   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Нет     |
+|Значение по умолчанию:              |None     |
 |Допустимые значения:               |AzureCloud, AzureChinaCloud, AzureGermanCloud |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-registrationaccount"></a>-RegistrationAccount
 
-Указывает учетную запись для регистрации в Azure Stack.
+Указывает учетную запись для регистрации в Azure Stack Hub.
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка,   |
+|Тип:                       |String   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Нет     |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Значение по умолчанию:              |None     |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-registrationsubscriptionid"></a>-RegistrationSubscriptionID
 
-Указывает идентификатор подписки для регистрации в Azure Stack.
+Указывает идентификатор подписки для регистрации в Azure Stack Hub.
 
 |  |  |
 |----------------------------|---------|
 |Тип:                       |Guid     |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Нет     |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Значение по умолчанию:              |None     |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-reportpath"></a>-ReportPath
 
@@ -500,11 +500,11 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка,   |
+|Тип:                       |String   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Все      |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Значение по умолчанию:              |All      |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ## <a name="optional-parameters"></a>Необязательные параметры
 
@@ -512,21 +512,21 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 Указывает путь, по которому присутствуют только необходимые папки с сертификатами.
 
-Необходимые папки для развертывания Azure Stack с системой идентификации AAD:
+Необходимые папки для развертывания Azure Stack Hub с системой идентификации Azure AD:
 
 - ACSBlob, ACSQueue, ACSTable, Admin Portal, ARM Admin, ARM Public, KeyVault, KeyVaultInternal, Public Portal
 
-Необходимые папки для развертывания Azure Stack с системой идентификации службы федерации Active Directory (AD FS):
+Необходимые папки для развертывания Azure Stack Hub с системой идентификации службы федерации Active Directory:
 
 - ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, KeyVault, KeyVaultInternal, Public Portal
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка,   |
+|Тип:                       |String   |
 |Позиция:                   |именованная    |
 |Значение по умолчанию:              |.\Certificates |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-includepaas"></a>-IncludePaaS  
 
@@ -536,9 +536,9 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|------------------|
 |Тип:                       |SwitchParameter   |
 |Позиция:                   |именованная             |
-|Значение по умолчанию:              |Ложь             |
-|Принимает входные данные конвейера:      |Ложь             |
-|Принимает подстановочные знаки: |Ложь             |
+|Значение по умолчанию:              |False             |
+|Принимает входные данные конвейера:      |False             |
+|Принимает подстановочные знаки: |False             |
 
 ### <a name="-reportsections"></a>-ReportSections
 
@@ -546,12 +546,12 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|---------|
-|Тип:                       |Строка,   |
+|Тип:                       |String   |
 |Позиция:                   |именованная    |
-|Значение по умолчанию:              |Все      |
+|Значение по умолчанию:              |All      |
 |Допустимые значения:               |'Certificate','AzureRegistration','AzureIdentity','Jobs','All' |
-|Принимает входные данные конвейера:      |Ложь    |
-|Принимает подстановочные знаки: |Ложь    |
+|Принимает входные данные конвейера:      |False    |
+|Принимает подстановочные знаки: |False    |
 
 ### <a name="-summary"></a>-Summary
 
@@ -561,9 +561,9 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |----------------------------|------------------|
 |Тип:                       |SwitchParameter   |
 |Позиция:                   |именованная             |
-|Значение по умолчанию:              |Ложь             |
-|Принимает входные данные конвейера:      |Ложь             |
-|Принимает подстановочные знаки: |Ложь             |
+|Значение по умолчанию:              |False             |
+|Принимает входные данные конвейера:      |False             |
+|Принимает подстановочные знаки: |False             |
 
 ### <a name="-cleanreport"></a>-CleanReport
 
@@ -574,9 +574,9 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Тип:                       |SwitchParameter   |
 |Псевдонимы:                    |CF                |
 |Позиция:                   |именованная             |
-|Значение по умолчанию:              |Ложь             |
-|Принимает входные данные конвейера:      |Ложь             |
-|Принимает подстановочные знаки: |Ложь             |
+|Значение по умолчанию:              |False             |
+|Принимает входные данные конвейера:      |False             |
+|Принимает подстановочные знаки: |False             |
 
 ### <a name="-outputpath"></a>-OutputPath
 
@@ -584,11 +584,11 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 |  |  |
 |----------------------------|------------------|
-|Тип:                       |Строка,            |
+|Тип:                       |String            |
 |Позиция:                   |именованная             |
 |Значение по умолчанию:              |$ENV:TEMP\AzsReadinessChecker  |
-|Принимает входные данные конвейера:      |Ложь             |
-|Принимает подстановочные знаки: |Ложь             |
+|Принимает входные данные конвейера:      |False             |
+|Принимает подстановочные знаки: |False             |
 
 ### <a name="-confirm"></a>-Confirm
 
@@ -599,9 +599,9 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Тип:                       |SwitchParameter   |
 |Псевдонимы:                    |CF                |
 |Позиция:                   |именованная             |
-|Значение по умолчанию:              |Ложь             |
-|Принимает входные данные конвейера:      |Ложь             |
-|Принимает подстановочные знаки: |Ложь             |
+|Значение по умолчанию:              |False             |
+|Принимает входные данные конвейера:      |False             |
+|Принимает подстановочные знаки: |False             |
 
 ### <a name="-whatif"></a>-WhatIf
 
@@ -612,6 +612,6 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Тип:                       |SwitchParameter   |
 |Псевдонимы:                    |wi                |
 |Позиция:                   |именованная             |
-|Значение по умолчанию:              |Ложь             |
-|Принимает входные данные конвейера:      |Ложь             |
-|Принимает подстановочные знаки: |Ложь             |
+|Значение по умолчанию:              |False             |
+|Принимает входные данные конвейера:      |False             |
+|Принимает подстановочные знаки: |False             |

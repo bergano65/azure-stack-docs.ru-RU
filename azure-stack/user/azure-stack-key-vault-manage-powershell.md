@@ -1,32 +1,31 @@
 ---
-title: Управление Key Vault в Azure Stack с помощью PowerShell | Документация Майкрософт
-description: Узнайте, как управлять Key Vault в Azure Stack с помощью PowerShell.
+title: Управление Key Vault в Azure Stack Hub с использованием PowerShell | Документация Майкрософт
+description: Узнайте, как управлять Key Vault в Azure Stack Hub с помощью PowerShell.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
 manager: femila
 editor: ''
-ms.assetid: 22B62A3B-B5A9-4B8C-81C9-DA461838FAE5
 ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/13/2019
+ms.date: 01/07/2020
 ms.author: sethm
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: f3f2b715206c834d2c24685b57c068b53cc7020a
-ms.sourcegitcommit: aefcf9c61bd8089a0aaa569af7643e5e15f4947c
+ms.openlocfilehash: 4762cb77583d0a8e026528c47ffce6bc93c7b005
+ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991696"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75727604"
 ---
-# <a name="manage-key-vault-in-azure-stack-using-powershell"></a>Управление Key Vault в Azure Stack с помощью PowerShell
+# <a name="manage-key-vault-in-azure-stack-hub-using-powershell"></a>Управление Key Vault в Azure Stack Hub с использованием PowerShell
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+*Область применения: интегрированные системы Azure Stack Hub и Пакет средств разработки Azure Stack*
 
-В этой статье объясняется, как создать и администрировать хранилище ключей в Azure Stack с помощью PowerShell. Вы узнаете, как с помощью командлетов PowerShell для Key Vault выполнять следующие задачи:
+В этой статье объясняется, как создать и администрировать хранилище ключей в Azure Stack Hub с помощью PowerShell. Вы узнаете, как с помощью командлетов PowerShell для Key Vault выполнять следующие задачи:
 
 * Создать хранилище ключей.
 * сохранение криптографических ключей и секретов, а также управление ими;
@@ -35,11 +34,11 @@ ms.locfileid: "68991696"
 >[!NOTE]
 >Командлеты PowerShell для Key Vault, описанные в этой статье, доступны в пакете SDK для Azure PowerShell.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Необходимо подписаться на предложение, включающее службу Azure Key Vault.
-* [Установите PowerShell для Azure Stack](../operator/azure-stack-powershell-install.md).
-* [Настройка пользовательской среды PowerShell в Azure Stack](azure-stack-powershell-configure-user.md).
+* [Установка PowerShell для Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+* [Настройка среды PowerShell в Azure Stack Hub](azure-stack-powershell-configure-user.md).
 
 ## <a name="enable-your-tenant-subscription-for-key-vault-operations"></a>Включение операций с Key Vault для клиентской подписки
 
@@ -53,7 +52,7 @@ Get-AzureRmResourceProvider -ProviderNamespace Microsoft.KeyVault | ft -Autosize
 
 ![Состояние регистрации Key Vault в PowerShell](media/azure-stack-key-vault-manage-powershell/image1.png)
 
-Если операции с хранилищем не разрешены, выполните следующую команду, чтобы зарегистрировать службу Key Vault в своей подписке:
+Если операции с хранилищем не разрешены, выполните следующую команду, чтобы зарегистрировать службу Key Vault в своей подписке.
 
 ```powershell
 Register-AzureRmResourceProvider -ProviderNamespace Microsoft.KeyVault
@@ -89,7 +88,7 @@ New-AzureRmKeyVault -VaultName "Vault01" -ResourceGroupName "VaultRG" -Location 
 
 ### <a name="active-directory-federation-services-ad-fs-deployment"></a>Развертывание на основе служб федерации Active Directory (AD FS)
 
-При развертывании AD FS может появиться предупреждение: "Политика доступа не установлена. "Access policy is not set. No user or application has access permission to use this vault" (Политика доступа не установлена. Нет пользователей или приложений с правами на использование этого хранилища). Чтобы устранить эту проблему, создайте для хранилища политику доступа с помощью команды [Set-AzureRmKeyVaultAccessPolicy](#authorize-an-app-to-use-a-key-or-secret):
+При развертывании AD FS может появиться предупреждение: "Политика доступа не установлена. "Access policy is not set. No user or application has access permission to use this vault" (Политика доступа не установлена. Нет пользователей или приложений с правами на использование этого хранилища). Чтобы устранить эту проблему, создайте для хранилища политику доступа с помощью команды [**Set-AzureRmKeyVaultAccessPolicy**](#authorize-an-app-to-use-a-key-or-secret):
 
 ```powershell
 # Obtain the security identifier(SID) of the active directory user
@@ -106,24 +105,24 @@ Set-AzureRmKeyVaultAccessPolicy -VaultName "{key vault name}" -ResourceGroupName
 
 ### <a name="create-a-key"></a>Создание ключа
 
-Используйте команду **Add-AzureKeyVaultKey**, чтобы создать или импортировать ключ с программной защитой в хранилище ключей.
+Используйте командлет **Add-AzureKeyVaultKey**, чтобы создать или импортировать ключ с программной защитой в хранилище ключей.
 
 ```powershell
 Add-AzureKeyVaultKey -VaultName "Vault01" -Name "Key01" -verbose -Destination Software
 ```
 
-Параметр **Destination** позволяет указать, что ключ имеет программную защиту. После создания ключа команда выводит сведения об успешном выполнении операции.
+Параметр `-Destination` позволяет указать, что ключ имеет программную защиту. После создания ключа команда выводит сведения об успешном выполнении операции.
 
 ![Ключ хранилища ключей, созданный в PowerShell](media/azure-stack-key-vault-manage-powershell/image5.png)
 
-Теперь вы можете использовать созданный ключ, указывая его URI. Если вы создаете или импортируете ключ, имя которого совпадает с именем существующего ключа, все указанные для нового ключа параметры сохраняются в исходном ключе. Информацию о предыдущей версии ключа можно получить с помощью URI для конкретной версии. Например:
+Теперь вы можете использовать созданный ключ, указывая его URI. Если вы создаете или импортируете ключ, имя которого совпадает с именем существующего ключа, все указанные для нового ключа параметры сохраняются в исходном ключе. Информацию о предыдущей версии ключа можно получить с помощью URI для конкретной версии. Пример:
 
 * `https://vault10.vault.local.azurestack.external:443/keys/key01` всегда предоставляет текущую версию.
 * `https://vault010.vault.local.azurestack.external:443/keys/key01/d0b36ee2e3d14e9f967b8b6b1d38938a` позволяет получить конкретную версию.
 
 ### <a name="get-a-key"></a>Получение ключа
 
-Используйте команду **Get-AzureKeyVaultKey**, чтобы считать ключ и сведения о нем.
+Используйте командлет **Get-AzureKeyVaultKey**, чтобы получить ключ и сведения о нем.
 
 ```powershell
 Get-AzureKeyVaultKey -VaultName "Vault01" -Name "Key01"
@@ -131,7 +130,7 @@ Get-AzureKeyVaultKey -VaultName "Vault01" -Name "Key01"
 
 ### <a name="create-a-secret"></a>Создание секрета
 
-Используйте команду **Set-AzureKeyVaultSecret**, чтобы создать или обновить секрет в хранилище. Если секрет еще не существует, создается новый секрет. Если секрет уже существует, создается новая версия этого секрета.
+Используйте командлет **Set-AzureKeyVaultSecret**, чтобы создать или обновить секрет в хранилище. Если секрет еще не существует, создается новый. Если секрет уже существует, создается новая версия этого секрета.
 
 ```powershell
 $secretvalue = ConvertTo-SecureString "User@123" -AsPlainText -Force
@@ -142,7 +141,7 @@ Set-AzureKeyVaultSecret -VaultName "Vault01" -Name "Secret01" -SecretValue $secr
 
 ### <a name="get-a-secret"></a>Получение секрета
 
-Используйте команду **Get-AzureKeyVaultSecret**, чтобы считать секрет из хранилища ключей. Эта команда может возвращать все версии секрета или только конкретные версии.
+Используйте командлет **Get-AzureKeyVaultSecret**, чтобы считать секрет из хранилища ключей. Эта команда может возвращать все версии секрета или только конкретные версии.
 
 ```powershell
 Get-AzureKeyVaultSecret -VaultName "Vault01" -Name "Secret01"
@@ -152,7 +151,7 @@ Get-AzureKeyVaultSecret -VaultName "Vault01" -Name "Secret01"
 
 ## <a name="authorize-an-app-to-use-a-key-or-secret"></a>Авторизация приложения для использования ключа или секрета
 
-Используйте команду **Set-AzureRmKeyVaultAccessPolicy**, чтобы разрешить приложению обращаться к ключу или секрету в хранилище ключей.
+Используйте командлет **Set-AzureRmKeyVaultAccessPolicy**, чтобы разрешить приложению обращаться к ключу или секрету в хранилище ключей.
 
 В следующем примере хранилище имеет имя **ContosoKeyVault**. Вам нужно разрешить приложению с идентификатором клиента **8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed** обращаться к этому хранилищу. Для этого выполните следующую команду. Кроме того, вы можете предоставить разрешения пользователю, приложению или группе безопасности с помощью параметра **PermissionsToKeys**.
 
@@ -166,7 +165,7 @@ Set-AzureRmKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalNa
 Set-AzureRmKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 8f8c4bbd-485b-45fd-98f7-ec6300 -PermissionsToKeys Get
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание виртуальной машины с помощью пароля, хранящегося в хранилище ключей](azure-stack-key-vault-deploy-vm-with-secret.md).
 * [Создание виртуальной машины и добавление сертификатов, полученных из хранилища ключей](azure-stack-key-vault-push-secret-into-vm.md).

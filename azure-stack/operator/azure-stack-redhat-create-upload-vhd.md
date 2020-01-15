@@ -18,12 +18,12 @@ ms.date: 12/11/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 12/11/2019
-ms.openlocfilehash: deea66ed257ecab933c294022fbdd07d1ccb137b
-ms.sourcegitcommit: ae9d29c6a158948a7dbc4fd53082984eba890c59
+ms.openlocfilehash: be51964d4416e632f5ef3462c3c42861a82e47d5
+ms.sourcegitcommit: a6c02421069ab9e72728aa9b915a52ab1dd1dbe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2019
-ms.locfileid: "75007968"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75654905"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure-stack"></a>Подготовка виртуальной машины на основе Red Hat для Azure Stack
 
@@ -44,7 +44,7 @@ ms.locfileid: "75007968"
 * Требуется поддержка ядра для подключения файловых систем UDF. При первой загрузке UDF-носитель, подключенный к гостевой машине, передает конфигурацию подготовки на виртуальную машину Linux. Агент Azure Linux должен подключить файловую систему UDF для считывания конфигурации и подготовки виртуальной машины.
 * Не настраивайте раздел swap на диске операционной системы. Вы можете настроить агент Linux для создания файла подкачки на временном диске ресурсов. Дополнительные сведения описаны ниже.
 * Размер виртуальной памяти всех виртуальных жестких дисков в Azure должен быть округлен до 1 МБ. Перед конвертацией диска RAW в формат VHD убедитесь, что размер диска RAW в несколько раз превышает 1 МБ. Дополнительные сведения можно найти в инструкциях ниже.
-* Azure Stack поддерживает cloud-init. [Пакет cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/using-cloud-init) — широко используемое средство, используемое для настройки виртуальной машины Linux при ее первой загрузке. Вы можете использовать cloud-init для установки пакетов, записи файлов или настройки пользователей и параметров безопасности. Так как cloud-init вызывается при начальной загрузке, к вашей конфигурации не нужно применять какие-либо дополнительные действия или агентов.
+* Azure Stack поддерживает cloud-init. [Пакет cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/using-cloud-init) — широко используемое средство, используемое для настройки виртуальной машины Linux при ее первой загрузке. Вы можете использовать cloud-init для установки пакетов, записи файлов или настройки пользователей и параметров безопасности. Так как cloud-init вызывается при начальной загрузке, к вашей конфигурации не нужно применять какие-либо дополнительные действия или агентов. См. инструкции по [подготовке существующего образа виртуальной машины Azure Linux к использованию с cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/cloudinit-prepare-custom-image).
 
 ### <a name="prepare-an-rhel-7-vm-from-hyper-v-manager"></a>Подготовка виртуальной машины RHEL 7 с помощью диспетчера Hyper-V
 
@@ -84,7 +84,7 @@ ms.locfileid: "75007968"
     sudo subscription-manager register --auto-attach --username=XXX --password=XXX
     ```
 
-1. Измените строку загрузки ядра в конфигурации grub, чтобы включить дополнительные параметры ядра для Azure. Для этого откройте файл `/etc/default/grub` в текстовом редакторе и измените параметр `GRUB_CMDLINE_LINUX`. Например:
+1. Измените строку загрузки ядра в конфигурации grub, чтобы включить дополнительные параметры ядра для Azure. Для этого откройте файл `/etc/default/grub` в текстовом редакторе и измените параметр `GRUB_CMDLINE_LINUX`. Пример:
 
     ```sh
     GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0 net.ifnames=0"
@@ -104,7 +104,7 @@ ms.locfileid: "75007968"
     sudo grub2-mkconfig -o /boot/grub2/grub.cfg
     ```
 
-1. Остановка и удаление cloud-init:
+1. [Необязательно, начиная с выпуска 1910] Остановите и удалите cloud-init:
 
     ```bash
     systemctl stop cloud-init
@@ -117,18 +117,59 @@ ms.locfileid: "75007968"
     ClientAliveInterval 180
     ```
 
-1. Пакет WALinuxAgent `WALinuxAgent-<version>` был отправлен в репозиторий дополнений Red Hat. Включите репозиторий дополнений, выполнив следующую команду:
+1. При создании пользовательского VHD-файла для Azure Stack имейте в виду, что WALinuxAgent версий 2.2.20–2.2.35 (монопольный доступ) не работает в средах Azure Stack до выпуска 1910. Для подготовки образа вы можете использовать версии 2.2.20/2.2.35. Чтобы использовать для подготовки пользовательского образа версии выше 2.2.35, обновите Azure Stack до выпуска 1903 и выше или установите исправление 1901/1902.
+
+    [До выпуска 1910] Выполните следующие инструкции, чтобы скачать совместимую версию WALinuxAgent.
+
+    1. Скачайте setuptools.
+
+    ```bash
+    wget https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz --no-check-certificate
+    tar xzf setuptools-7.0.tar.gz
+    cd setuptools-7.0
+    ```
+
+    1. Скачайте и распакуйте версию 2.2.20 агента из нашего репозитория GitHub.
+
+    ```bash
+    wget https://github.com/Azure/WALinuxAgent/archive/v2.2.20.zip
+    unzip v2.2.20.zip
+    cd WALinuxAgent-2.2.20
+    ```
+
+    1. Установите setup.py.
+
+    ```bash
+    sudo python setup.py install
+    ```
+
+    1. Перезапустите waagent.
+
+    ```bash
+    sudo systemctl restart waagent
+    ```
+
+    1. Проверьте, совпадает ли версия агента со скачанной версией. В нашем примере это должна быть версия 2.2.20.
+
+    ```bash
+    waagent -version
+    ```
+    
+    [После выпуска 1910] Выполните следующие инструкции, чтобы скачать совместимую версию WALinuxAgent:
+    
+    1. Пакет WALinuxAgent `WALinuxAgent-<version>` был отправлен в репозиторий дополнений Red Hat. Включите репозиторий дополнений, выполнив следующую команду:
 
     ```bash
     subscription-manager repos --enable=rhel-7-server-extras-rpms
     ```
 
-1. Установите агент Linux для Azure, выполнив следующую команду:
+    1. Установите агент Linux для Azure, выполнив следующую команду.
 
     ```bash
     sudo yum install WALinuxAgent
     sudo systemctl enable waagent.service
     ```
+
 
 1. Не создавайте пространство подкачки на диске ОС.
 
@@ -221,7 +262,7 @@ ms.locfileid: "75007968"
     subscription-manager register --auto-attach --username=XXX --password=XXX
     ```
 
-1. Измените строку загрузки ядра в конфигурации grub, чтобы включить дополнительные параметры ядра для Azure. Для этого откройте файл `/etc/default/grub` в текстовом редакторе и измените параметр `GRUB_CMDLINE_LINUX`. Например:
+1. Измените строку загрузки ядра в конфигурации grub, чтобы включить дополнительные параметры ядра для Azure. Для этого откройте файл `/etc/default/grub` в текстовом редакторе и измените параметр `GRUB_CMDLINE_LINUX`. Пример:
 
     ```sh
     GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0 net.ifnames=0"
@@ -255,7 +296,7 @@ ms.locfileid: "75007968"
     dracut -f -v
     ```
 
-1. Остановка и удаление cloud-init:
+1. [Необязательно, начиная с выпуска 1910] Остановите и удалите cloud-init:
 
     ```bash
     systemctl stop cloud-init
@@ -275,11 +316,11 @@ ms.locfileid: "75007968"
     ClientAliveInterval 180
     ```
 
-1. При создании пользовательского VHD-файла для Azure Stack имейте в виду, что WALinuxAgent версий 2.2.20–2.2.35 (монопольный доступ) не работает в средах Azure Stack. Для подготовки образа вы можете использовать версии 2.2.20/2.2.35. Чтобы использовать для подготовки пользовательского образа версии выше 2.2.35, обновите Azure Stack до выпуска версии 1903 или установите исправление 1901/1902.
+1. При создании пользовательского VHD-файла для Azure Stack имейте в виду, что WALinuxAgent версий 2.2.20–2.2.35 (монопольный доступ) не работает в средах Azure Stack до выпуска 1910. Для подготовки образа вы можете использовать версии 2.2.20/2.2.35. Чтобы использовать для подготовки пользовательского образа версии выше 2.2.35, обновите Azure Stack до выпуска 1903 и выше или установите исправление 1901/1902.
 
-    Выполните такие действия, чтобы скачать WALinuxAgent:
+    [До выпуска 1910] Выполните следующие инструкции, чтобы скачать совместимую версию WALinuxAgent.
 
-    a. Скачайте setuptools.
+    1. Скачайте setuptools.
 
     ```bash
     wget https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz --no-check-certificate
@@ -287,7 +328,7 @@ ms.locfileid: "75007968"
     cd setuptools-7.0
     ```
 
-   b. Скачайте и распакуйте версию 2.2.20 агента из нашего репозитория GitHub.
+    1. Скачайте и распакуйте версию 2.2.20 агента из нашего репозитория GitHub.
 
     ```bash
     wget https://github.com/Azure/WALinuxAgent/archive/v2.2.20.zip
@@ -295,22 +336,37 @@ ms.locfileid: "75007968"
     cd WALinuxAgent-2.2.20
     ```
 
-    c. Установите setup.py.
+    1. Установите setup.py.
 
     ```bash
     sudo python setup.py install
     ```
 
-    d. Перезапустите waagent.
+    1. Перезапустите waagent.
 
     ```bash
     sudo systemctl restart waagent
     ```
 
-    д. Проверьте, совпадает ли версия агента со скачанной версией. В нашем примере это должна быть версия 2.2.20.
+    1. Проверьте, совпадает ли версия агента со скачанной версией. В нашем примере это должна быть версия 2.2.20.
 
     ```bash
     waagent -version
+    ```
+    
+    [После выпуска 1910] Выполните следующие инструкции, чтобы скачать совместимую версию WALinuxAgent:
+    
+    1. Пакет WALinuxAgent `WALinuxAgent-<version>` был отправлен в репозиторий дополнений Red Hat. Включите репозиторий дополнений, выполнив следующую команду:
+
+    ```bash
+    subscription-manager repos --enable=rhel-7-server-extras-rpms
+    ```
+
+    1. Установите агент Linux для Azure, выполнив следующую команду.
+
+    ```bash
+    sudo yum install WALinuxAgent
+    sudo systemctl enable waagent.service
     ```
 
 1. Не создавайте пространство подкачки на диске ОС.
@@ -418,7 +474,7 @@ ms.locfileid: "75007968"
     sudo subscription-manager register --auto-attach --username=XXX --password=XXX
     ```
 
-1. Измените строку загрузки ядра в конфигурации grub, чтобы включить дополнительные параметры ядра для Azure. Для этого откройте файл `/etc/default/grub` в текстовом редакторе и измените параметр `GRUB_CMDLINE_LINUX`. Например:
+1. Измените строку загрузки ядра в конфигурации grub, чтобы включить дополнительные параметры ядра для Azure. Для этого откройте файл `/etc/default/grub` в текстовом редакторе и измените параметр `GRUB_CMDLINE_LINUX`. Пример:
 
     ```sh
     GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0 net.ifnames=0"
@@ -452,7 +508,7 @@ ms.locfileid: "75007968"
     dracut -f -v
     ```
 
-1. Остановите и удалите cloud-init:
+1. [Необязательно, начиная с выпуска 1910] Остановите и удалите cloud-init:
 
     ```bash
     systemctl stop cloud-init
@@ -465,13 +521,53 @@ ms.locfileid: "75007968"
     ClientAliveInterval 180
     ```
 
-1. Пакет WALinuxAgent `WALinuxAgent-<version>` был отправлен в репозиторий дополнений Red Hat. Включите репозиторий дополнений, выполнив следующую команду:
+1. При создании пользовательского VHD-файла для Azure Stack имейте в виду, что WALinuxAgent версий 2.2.20–2.2.35 (монопольный доступ) не работает в средах Azure Stack до выпуска 1910. Для подготовки образа вы можете использовать версии 2.2.20/2.2.35. Чтобы использовать для подготовки пользовательского образа версии выше 2.2.35, обновите Azure Stack до выпуска 1903 и выше или установите исправление 1901/1902.
+
+    [До выпуска 1910] Выполните следующие инструкции, чтобы скачать совместимую версию WALinuxAgent.
+
+    1. Скачайте setuptools.
+
+    ```bash
+    wget https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz --no-check-certificate
+    tar xzf setuptools-7.0.tar.gz
+    cd setuptools-7.0
+    ```
+
+    1. Скачайте и распакуйте версию 2.2.20 агента из нашего репозитория GitHub.
+
+    ```bash
+    wget https://github.com/Azure/WALinuxAgent/archive/v2.2.20.zip
+    unzip v2.2.20.zip
+    cd WALinuxAgent-2.2.20
+    ```
+
+    1. Установите setup.py.
+
+    ```bash
+    sudo python setup.py install
+    ```
+
+    1. Перезапустите waagent.
+
+    ```bash
+    sudo systemctl restart waagent
+    ```
+
+    1. Проверьте, совпадает ли версия агента со скачанной версией. В нашем примере это должна быть версия 2.2.20.
+
+    ```bash
+    waagent -version
+    ```
+    
+    [После выпуска 1910] Выполните следующие инструкции, чтобы скачать совместимую версию WALinuxAgent:
+    
+    1. Пакет WALinuxAgent `WALinuxAgent-<version>` был отправлен в репозиторий дополнений Red Hat. Включите репозиторий дополнений, выполнив следующую команду:
 
     ```bash
     subscription-manager repos --enable=rhel-7-server-extras-rpms
     ```
 
-1. Установите агент Linux для Azure, выполнив следующую команду:
+    1. Установите агент Linux для Azure, выполнив следующую команду.
 
     ```bash
     sudo yum install WALinuxAgent
@@ -541,7 +637,7 @@ ms.locfileid: "75007968"
 
 ## <a name="prepare-a-red-hat-based-vm-from-an-iso-by-using-a-kickstart-file-automatically"></a>Подготовка виртуальной машины под управлением Red Hat из ISO-образа с помощью автоматического использования файла kickstart
 
-1. Создайте файл kickstart, который будет включать содержимое ниже, и сохраните его. Дополнительные сведения об установке kickstart см. [здесь](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html).
+1. Создайте файл kickstart, который будет включать содержимое ниже, и сохраните его. Остановка и удаление cloud-init является необязательными (начиная с выпуска 1910, cloud-init поддерживается в Azure Stack). Установите агент из репозитория RedHat только для выпуска 1910 и выше. До выпуска 1910 используйте репозиторий Azure, как в предыдущем разделе. Дополнительные сведения об установке kickstart см. [здесь](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html).
 
     ```sh
     Kickstart for provisioning a RHEL 7 Azure VM
@@ -674,7 +770,7 @@ ms.locfileid: "75007968"
 
 1. Откройте параметры виртуальной машины:
 
-    a. Загрузите новый виртуальный жесткий диск на виртуальную машину. Выберите параметры **VHD Format** (Формат VHD) и **Фиксированный размер**.
+    а. Загрузите новый виртуальный жесткий диск на виртуальную машину. Выберите параметры **VHD Format** (Формат VHD) и **Фиксированный размер**.
 
     b. Подключите установочный ISO-образ к DVD-дисководу.
 
@@ -710,7 +806,7 @@ dracut -f -v
 
 Дополнительные сведения см. в разделе о [повторном создании initramfs](https://access.redhat.com/solutions/1958).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь виртуальный жесткий диск Red Hat Enterprise Linux можно использовать для создания новых виртуальных машин в Azure Stack. Если вы впервые отправляете VHD-файл в Azure Stack, ознакомьтесь со статьей [Создание и публикация элемента Marketplace](azure-stack-create-and-publish-marketplace-item.md).
 

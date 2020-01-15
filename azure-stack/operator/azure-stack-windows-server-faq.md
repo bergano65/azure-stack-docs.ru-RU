@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/29/2019
+ms.date: 12/27/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 08/29/2019
-ms.openlocfilehash: b71065d4a5af880fe5fb9a48d78a0e2821822b56
-ms.sourcegitcommit: 5efa09034a56eb2f3dc0c9da238fe60cff0c67ac
+ms.openlocfilehash: 8110f48ef9e42ef2ee89b4766164b5005c7d51fa
+ms.sourcegitcommit: df8de80b8c295495edc091e0a12012ccc7a96594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70143986"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75503612"
 ---
 # <a name="windows-server-in-azure-stack-marketplace-faq"></a>Windows Server в Azure Stack Marketplace: вопросы и ответы
 
@@ -56,7 +56,7 @@ ms.locfileid: "70143986"
 Можно изменить атрибут модели лицензии, чтобы перейти с использования собственной лицензии (BYOL) на оплату по мере использования (PAYG), выполнив следующий сценарий.
 
 ```powershell
-vm= Get-Azurermvm -ResourceGroup "<your RG>" -Name "<your VM>"
+$vm= Get-Azurermvm -ResourceGroup "<your RG>" -Name "<your VM>"
 $vm.LicenseType = "None"
 Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
 ```
@@ -80,6 +80,8 @@ Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
 ### <a name="what-about-other-vms-that-use-windows-server-such-as-sql-or-machine-learning-server"></a>Что будет с другими виртуальными машинами, которые используют Windows Server, например SQL Server или Machine Learning Server?
 
 В этих образах применяется параметр **licenseType**, поэтому они оплачиваются по мере использования. Вы можете настраивать этот параметр (см. ответ на предыдущий вопрос). Это относится только к программному обеспечению Windows Server, но не к многоуровневым продуктам. Например, для SQL придется использовать собственную лицензию. Лицензирование с оплатой по мере использования не применяется к многоуровневым программным продуктам.
+
+Обратите внимание, что свойство **licenseType** для образов SQL Server из Marketplace можно изменить только в том случае, если используется версия XX.X.20190410 или более поздняя. Если вы используете более раннюю версию образа SQL Server из Marketplace, вы не сможете изменить атрибут **licenseType**, и вам придется повторно развернуть систему из свежих образов SQL Server из Marketplace.
 
 ### <a name="i-have-an-enterprise-agreement-ea-and-will-be-using-my-ea-windows-server-license-how-do-i-make-sure-images-are-billed-correctly"></a>У меня есть Соглашение Enterprise (EA), и я буду использовать лицензию EA для Windows Server. Как можно убедиться, что образы оплачиваются правильно?
 
@@ -128,7 +130,7 @@ slmgr /ipk <AVMA key>
 
 [Автоматическая активация виртуальной машины](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v=ws.11)) не поддерживается для более ранних версий Windows Server. Такие виртуальные машины следует активировать вручную.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях:
 

@@ -15,13 +15,13 @@ ms.topic: article
 ms.date: 08/29/2019
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.lastreviewed: 03/11/2019
-ms.openlocfilehash: 0fbb57771976b896f8f6b37b62780e34d6635d78
-ms.sourcegitcommit: e2aec63cacfdc830a20a02ee40e715e3c5dfdf22
+ms.lastreviewed: 01/08/2020
+ms.openlocfilehash: 759e25155abcc65bd2d671b310d6b93900b832db
+ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70386239"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75756973"
 ---
 # <a name="prerequisites-for-deploying-app-service-on-azure-stack"></a>Предварительные условия для развертывания Службы приложений в Azure Stack
 
@@ -70,7 +70,7 @@ ms.locfileid: "70386239"
 
 #### <a name="get-azurestackrootcertps1-script-parameters"></a>Параметры скрипта Get-AzureStackRootCert.ps1
 
-| Параметр | Обязательный или необязательный | Значение по умолчанию | ОПИСАНИЕ |
+| Параметр | Обязательный или необязательный | Значение по умолчанию | Description |
 | --- | --- | --- | --- |
 | PrivilegedEndpoint | Обязательно | AzS-ERCS01 | Привилегированная конечная точка |
 | CloudAdminCredential | Обязательно | AzureStack\CloudAdmin | Учетные данные домена администратора облака Azure Stack |
@@ -95,9 +95,9 @@ ms.locfileid: "70386239"
 
 #### <a name="create-appservicecertsps1-script-parameters"></a>Параметры скрипта Create-AppServiceCerts.ps1
 
-| Параметр | Обязательный или необязательный | Значение по умолчанию | ОПИСАНИЕ |
+| Параметр | Обязательный или необязательный | Значение по умолчанию | Description |
 | --- | --- | --- | --- |
-| pfxPassword | Обязательно | Null | Пароль, который помогает защитить закрытый ключ сертификата |
+| pfxPassword | Обязательно | NULL | Пароль, который помогает защитить закрытый ключ сертификата |
 | DomainName | Обязательно | local.azurestack.external | Суффикс региона и домена для Azure Stack |
 
 ### <a name="certificates-required-for-azure-stack-production-deployment-of-azure-app-service"></a>Сертификаты, необходимые для рабочего развертывания Службы приложений Azure в Azure Stack
@@ -152,7 +152,7 @@ ms.locfileid: "70386239"
 
 ### <a name="validate-certificates"></a>Проверка сертификатов
 
-Прежде чем развертывать поставщик ресурсов Службы приложений, [проверьте сертификаты, которые будут использоваться](azure-stack-validate-pki-certs.md#perform-platform-as-a-service-certificate-validation), с помощью средства проверки готовности Azure Stack, которое доступно в [коллекции PowerShell](https://aka.ms/AzsReadinessChecker). Средство проверки готовности Azure Stack проверяет, подходят ли созданные сертификаты PKI для развертывания Службы приложений.
+Прежде чем развертывать поставщик ресурсов Службы приложений, [проверьте сертификаты, которые будут использоваться](azure-stack-validate-pki-certs.md#using-validated-certificates), с помощью средства проверки готовности Azure Stack, которое доступно в [коллекции PowerShell](https://aka.ms/AzsReadinessChecker). Средство проверки готовности Azure Stack проверяет, подходят ли созданные сертификаты PKI для развертывания Службы приложений.
 
 При работе с любым требуемым [сертификатом Azure Stack PKI](azure-stack-pki-certs.md) рекомендуется все спланировать так, чтобы у вас было достаточно времени на тестирование и повторную выдачу сертификатов, если это потребуется.
 
@@ -345,7 +345,7 @@ GO
 - включить расширенные средства разработчиков в рамках службы приложений (Kudu);
 - включить использование портала Функций Azure.
 
-Выполните следующие действия.
+Выполните следующие действия, чтобы создать субъект-службу в клиенте Azure Active Directory.
 
 1. Откройте экземпляр PowerShell с правами azurestack\AzureStackAdmin.
 2. Перейдите к расположению скриптов, скачанных и извлеченных на [этапе подготовки](azure-stack-app-service-before-you-get-started.md).
@@ -353,27 +353,27 @@ GO
 4. Запустите скрипт **Create-AADIdentityApp.ps1**. Когда появится запрос, введите идентификатор клиента Azure AD, используемый для развертывания Azure Stack. Например, введите **myazurestack.onmicrosoft.com**.
 5. В окне **Учетные данные** введите учетную запись администратора службы Azure AD и пароль. Нажмите кнопку **ОК**.
 6. Введите путь к файлу сертификата и пароль для [сертификата, созданного ранее](azure-stack-app-service-before-you-get-started.md). Для этого шага по умолчанию создается сертификат **sso.appservice.local.azurestack.external.pfx**.
-7. Этот скрипт создаст приложение в экземпляре клиента Azure AD. Запишите идентификатор приложения, который возвращается в выходных данных PowerShell. Он вам понадобится при установке.
+7. Запишите идентификатор приложения, который возвращается в выходных данных PowerShell. Этот идентификатор используется в следующих шагах, чтобы предоставить согласие на разрешения приложения, и во время установки. 
 8. Откройте новое окно в браузере и войдите на портал Azure в качестве [администратора службы Azure Active Directory](https://portal.azure.com).
-9. Откройте поставщик ресурсов Azure AD.
-10. Выберите **Регистрация приложений**.
-11. Выполните поиск идентификатора приложения, возвращенного на шаге 7. Вы увидите приложение службы приложений.
-12. Выберите **Приложение** в списке.
-13. Выберите элемент **Параметры**.
-14. Последовательно выберите **Необходимые разрешения** > **Предоставление разрешений** > **Да**.
+9. Откройте службу Azure Active Directory.
+10. В области слева щелкните **Регистрация приложений**.
+11. Выполните поиск по идентификатору приложения, который вы сохранили на шаге 7. 
+12. Выберите регистрацию приложения службы приложений из списка.
+13. В области слева щелкните **Разрешения API**.
+14. Щелкните **Предоставить согласие администратора для \<tenant\>** , где \<tenant\>обозначает имя вашего клиента Azure AD. Подтвердите предоставление согласия, щелкнув **Да**.
 
 ```powershell
     Create-AADIdentityApp.ps1
 ```
 
-| Параметр | Обязательный или необязательный | Значение по умолчанию | ОПИСАНИЕ |
+| Параметр | Обязательный или необязательный | Значение по умолчанию | Description |
 | --- | --- | --- | --- |
-| DirectoryTenantName | Обязательно | Null | Идентификатор клиента Azure AD. Введите идентификатор GUID или строку. Пример: myazureaaddirectory.onmicrosoft.com. |
-| AdminArmEndpoint | Обязательно | Null | Конечная точка Azure Resource Manager администратора. Пример: adminmanagement.local.azurestack.external. |
-| TenantARMEndpoint | Обязательно | Null | Конечная точка Azure Resource Manager клиента. Пример: management.local.azurestack.external. |
-| AzureStackAdminCredential | Обязательно | Null | Учетные данные администратора службы Azure AD. |
-| CertificateFilePath | Обязательно | Null | **Полный путь** к файлу сертификата приложения идентификации, созданному ранее. |
-| CertificatePassword | Обязательно | Null | Пароль, который помогает защитить закрытый ключ сертификата. |
+| DirectoryTenantName | Обязательно | NULL | Идентификатор клиента Azure AD. Введите идентификатор GUID или строку. Пример: myazureaaddirectory.onmicrosoft.com. |
+| AdminArmEndpoint | Обязательно | NULL | Конечная точка Azure Resource Manager администратора. Пример: adminmanagement.local.azurestack.external. |
+| TenantARMEndpoint | Обязательно | NULL | Конечная точка Azure Resource Manager клиента. Пример: management.local.azurestack.external. |
+| AzureStackAdminCredential | Обязательно | NULL | Учетные данные администратора службы Azure AD. |
+| CertificateFilePath | Обязательно | NULL | **Полный путь** к файлу сертификата приложения идентификации, созданному ранее. |
+| CertificatePassword | Обязательно | NULL | Пароль, который помогает защитить закрытый ключ сертификата. |
 | Среда | Необязательно | AzureCloud; | Имя поддерживаемой облачной среды, в которой доступна целевая служба Azure Active Directory Graph.  Допустимые значения: AzureCloud, AzureChinaCloud, AzureUSGovernment, AzureGermanCloud.|
 
 ## <a name="create-an-active-directory-federation-services-app"></a>Создание приложения служб федерации Active Directory
@@ -402,14 +402,14 @@ GO
     Create-ADFSIdentityApp.ps1
 ```
 
-| Параметр | Обязательный или необязательный | Значение по умолчанию | ОПИСАНИЕ |
+| Параметр | Обязательный или необязательный | Значение по умолчанию | Description |
 | --- | --- | --- | --- |
-| AdminArmEndpoint | Обязательно | Null | Конечная точка Azure Resource Manager администратора. Пример: adminmanagement.local.azurestack.external. |
-| PrivilegedEndpoint | Обязательно | Null | Привилегированная конечная точка. Пример: AzS-ERCS01. |
-| CloudAdminCredential | Обязательно | Null | Учетные данные домена администратора облака Azure Stack. Пример: Azurestack\CloudAdmin. |
-| CertificateFilePath | Обязательно | Null | **Полный путь** к PFX-файлу сертификата приложения идентификации. |
-| CertificatePassword | Обязательно | Null | Пароль, который помогает защитить закрытый ключ сертификата. |
+| AdminArmEndpoint | Обязательно | NULL | Конечная точка Azure Resource Manager администратора. Пример: adminmanagement.local.azurestack.external. |
+| PrivilegedEndpoint | Обязательно | NULL | Привилегированная конечная точка. Пример: AzS-ERCS01. |
+| CloudAdminCredential | Обязательно | NULL | Учетные данные домена администратора облака Azure Stack. Пример: Azurestack\CloudAdmin. |
+| CertificateFilePath | Обязательно | NULL | **Полный путь** к PFX-файлу сертификата приложения идентификации. |
+| CertificatePassword | Обязательно | NULL | Пароль, который помогает защитить закрытый ключ сертификата. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Установка поставщика ресурсов Службы приложений Azure](azure-stack-app-service-deploy.md)

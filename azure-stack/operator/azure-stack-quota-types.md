@@ -1,7 +1,6 @@
 ---
-title: Типы квот в Azure Stack | Документация Майкрософт
-titleSuffix: Azure Stack
-description: Просмотр и редактирование разных типов квот, доступных для служб и ресурсов в Azure Stack.
+title: Типы квот в Azure Stack Hub | Документация Майкрософт
+description: Просмотр и редактирование разных типов квот, доступных для служб и ресурсов в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -13,18 +12,18 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/13/2019
+ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: xiaofmao
 ms.lastreviewed: 12/07/2018
-ms.openlocfilehash: 049e4577541dea4f41a8ad18fc7f61875109153e
-ms.sourcegitcommit: 3a8e116fd0b16e1201e55e2088dde2e581004045
+ms.openlocfilehash: d6068ef98d4fe2d575f5501ad6760d4b408385cd
+ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74557547"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718102"
 ---
-# <a name="quota-types-in-azure-stack"></a>Типы квот в Azure Stack
+# <a name="quota-types-in-azure-stack-hub"></a>Типы квот в Azure Stack Hub
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
@@ -80,7 +79,7 @@ ms.locfileid: "74557547"
 3. В открывшейся колонке выберите **Services and quotas** (Службы и квоты).
 4. Выберите квоту, которую нужно просмотреть, щелкнув ее в столбце **Имя**.
 
-    [![Квоты на портале администрирования Azure Stack](media/azure-stack-quota-types/quotas1sm.png "Просмотр квот на портале администрирования")](media/azure-stack-quota-types/quotas1.png#lightbox)
+    [![Квоты на портале администрирования Azure Stack Hub](media/azure-stack-quota-types/quotas1sm.png "Просмотр квот на портале администрирования")](media/azure-stack-quota-types/quotas1.png#lightbox)
 
 ### <a name="resource-providers"></a>Поставщики ресурсов
 
@@ -99,11 +98,11 @@ ms.locfileid: "74557547"
 3. В открывшейся колонке выберите **Services and quotas** (Службы и квоты).
 4. Выберите квоту, которую нужно изменить, щелкнув ее в столбце **Имя**.
 
-    [![Квоты на портале администрирования Azure Stack](media/azure-stack-quota-types/quotas1sm.png "Просмотр квот на портале администрирования")](media/azure-stack-quota-types/quotas1.png#lightbox)
+    [![Квоты на портале администрирования Azure Stack Hub](media/azure-stack-quota-types/quotas1sm.png "Просмотр квот на портале администрирования")](media/azure-stack-quota-types/quotas1.png#lightbox)
 
 5. В открывшейся колонке выберите **Edit in Compute** (Изменить в вычислениях), **Edit in Network** (Изменить в сети) или **Edit in Storage** (Изменить в хранилище).
 
-    ![Изменение плана на портале администрирования Azure Stack](media/azure-stack-quota-types/quotas3.png "Изменение плана на портале администрирования Azure Stack")
+    ![Изменение плана на портале администрирования Azure Stack Hub](media/azure-stack-quota-types/quotas3.png "Изменение плана на портале администрирования Azure Stack Hub")
 
 Кроме того, необходимо выполнить эту процедуру, чтобы изменить квоту:
 
@@ -118,7 +117,7 @@ ms.locfileid: "74557547"
 
 Новые значения для квоты применяются глобально ко всем планам, использующим измененную квоту, и всем имеющимся подпискам, использующим эти планы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Дополнительные сведения о службах, планах, предложениях и квотах.](service-plan-offer-subscription-overview.md)
 - [Create a plan in Azure Stack](azure-stack-create-plan.md) (Создание плана в Azure Stack)

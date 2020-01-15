@@ -15,20 +15,30 @@ ms.date: 09/23/2019
 ms.author: mabrigg
 ms.lastreviewed: 09/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: d5606e7904fe311a54d792a18e5d4029c709b33c
-ms.sourcegitcommit: 0866555e0ed240a65595052899ef1b836dd07fbc
+ms.openlocfilehash: b9e8012e71e5211921a35792cb3e2e1039e5d9e1
+ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72257739"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75756810"
 ---
-# <a name="troubleshooting-patch-and-update-issues-for-azure-stack"></a>Устранение проблем с исправлениями и обновлениями в Azure Stack
+# <a name="best-practices-for-troubleshooting-azure-stack-hub-patch-and-update-issues"></a>Рекомендации по устранению неполадок с исправлением и обновлением в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack*
+В этой статье приводятся общие рекомендации по устранению неполадок с исправлением и обновлением в Azure Stack Hub, а также сведения об известных проблемах.
 
-Рекомендации, приведенные в этой статье, можно использовать для устранения проблем, возникающих при обновлении Azure Stack.
 
-## <a name="preparationfailed"></a>PreparationFailed
+Процесс исправления и обновления Azure Stack Hub позволяет операторам единообразно и стабильно применять пакеты обновления. В редких случаях в ходе исправления и обновления могут возникать проблемы. Мы рекомендуем выполнить следующие действия, если вы столкнетесь с проблемой при исправлении или обновлении.
+
+0. **Предварительные требования**: Убедитесь, что вы выполнили [контрольный список действий по обновлению](release-notes-checklist.md) и [настроили автоматический сбор журналов](azure-stack-configure-automatic-diagnostic-log-collection.md).
+1. Следуйте инструкциям по исправлению, которые будут включены в оповещение об ошибке, которая произошла при обновлении.
+2. Изучите [распространенные проблемы с исправлением и обновлением в Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates-troubleshoot#common-azure-stack-hub-patch-and-update-issues) и выполните рекомендуемые действия, если ваша проблема описана.
+3. Если указанные действия не помогают решить проблему, создайте [запрос в службу поддержки Azure Stack](azure-stack-help-and-support-overview.md). Убедитесь, что у вас есть [собранные журналы](https://docs.microsoft.com/azure-stack/operator/azure-stack-configure-on-demand-diagnostic-log-collection) за тот период времени, в который возникла проблема.
+
+## <a name="common-azure-stack-hub-patch-and-update-issues"></a>Типичные проблемы с исправлением и обновлением в Azure Stack Hub
+
+*Область применения: интегрированные системы Azure Stack Hub*
+
+### <a name="preparationfailed"></a>PreparationFailed
 
 **Применимо**. Данная проблема касается всех поддерживаемых выпусков.
 
@@ -36,9 +46,9 @@ ms.locfileid: "72257739"
 
 **Исправление**. Чтобы устранить эту ошибку, щелкните **Install now** (Установить сейчас) снова. Если проблема не будет устранена, рекомендуем вручную загрузить пакет обновления, следуя инструкциям по [установке обновлений](azure-stack-apply-updates.md?#install-updates-and-monitor-progress).
 
-**Периодичность**. Common
+**Периодичность**. Распространенные
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Обновление Azure Stack](azure-stack-updates.md)  
-- [Справка и поддержка по Microsoft Azure Stack](azure-stack-help-and-support-overview.md)
+- [Обновление Azure Stack Hub](azure-stack-updates.md)  
+- [Справка и поддержка по Microsoft Azure Stack Hub](azure-stack-help-and-support-overview.md)

@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/25/2019
+ms.date: 01/03/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: d03049fd6dea5f5d7a10a61a25639cb1de3d67ad
-ms.sourcegitcommit: 58e1911a54ba249a82fa048c7798dadedb95462b
+ms.openlocfilehash: 5740ff6bc550aa27f15761e6be2c69247eecaf03
+ms.sourcegitcommit: a6c02421069ab9e72728aa9b915a52ab1dd1dbe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73057781"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75654888"
 ---
 # <a name="create-and-publish-a-custom-azure-stack-marketplace-item"></a>Создание и публикация пользовательского элемента Azure Stack Marketplace
 
@@ -35,11 +35,11 @@ ms.locfileid: "73057781"
 ## <a name="create-a-marketplace-item"></a>Создание элемента Marketplace
 
 > [!IMPORTANT]
-> Прежде чем создавать элемент Marketplace для виртуальной машины, отправьте пользовательский образ виртуальной машины на портал Azure Stack по инструкциям из статьи в разделе [Добавление образа виртуальной машины в Azure Stack](azure-stack-add-vm-image.md#add-a-vm-image-as-an-azure-stack-operator-using-the-portal). Затем по инструкциям в этой статье упакуйте образ и передайте созданный AZPKG-файл в Azure Stack Marketplace.
+> Прежде чем создавать элемент Marketplace для виртуальной машины, отправьте пользовательский образ виртуальной машины на портал Azure Stack по инструкциям из статьи в разделе [Добавление образа виртуальной машины в Azure Stack](azure-stack-add-vm-image.md). Затем по инструкциям в этой статье упакуйте образ и передайте созданный AZPKG-файл в Azure Stack Marketplace.
 
 Чтобы создать пользовательский элемент Marketplace, выполните следующие действия.
 
-1. Скачайте средство [Azure Gallery Packager](https://aka.ms/azsmarketplaceitem) и пример пакета коллекции Azure Stack. В комплект для скачивания входят пользовательские шаблоны виртуальных машин. Извлеките ZIP-файл и переименуйте папку **SimpleVMTemplate** , чтобы ее имя совпадало с именем элемента, который будет отображаться на портале Azure Stack.
+1. Скачайте средство [Azure Gallery Packager](https://aka.ms/azsmarketplaceitem) и пример пакета коллекции Azure Stack. В комплект для скачивания входят пользовательские шаблоны виртуальных машин. Извлеките ZIP-файл и примените доступные шаблоны Linux или Windows, которые доступны в папке **Custom VMs** (Пользовательские виртуальные машины). Вы можете повторно использовать готовые шаблоны, изменяя соответствующие параметры с информацией об элементе, которая будет отображаться на портале Azure Stack. Также вы можете просто повторно использовать AZPKG-файл, пропустив следующие шаги, чтобы настроить собственный пакет коллекции.
 
 2. Создайте шаблон Azure Resource Manager или выберите готовый пример шаблона для Windows или Linux. Эти примеры шаблонов размещены в ZIP-файле средства, который вы скачали на шаге 1. Вы можете изменить текстовые значения в полях шаблона либо скачать уже настроенный шаблон с сайта GitHub. Дополнительную информацию о шаблонах Resource Manager см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](/azure/azure-resource-manager/resource-group-authoring-templates).
 
@@ -51,7 +51,7 @@ ms.locfileid: "73057781"
 
    ![Снимок экрана: структура шаблонов развертывания](media/azure-stack-create-and-publish-marketplace-item/gallerypkg2.png)
 
-4. Замените следующие выделенные значения (обозначенные числами) в шаблоне Manifest.json значением, которое вы указали при [отправке пользовательского образа](azure-stack-add-vm-image.md#add-a-vm-image-as-an-azure-stack-operator-using-the-portal).
+4. Замените следующие выделенные значения (обозначенные числами) в шаблоне Manifest.json значением, которое вы указали при [отправке пользовательского образа](azure-stack-add-vm-image.md).
 
    > [!NOTE]  
    > В шаблоне Azure Resource Manager нельзя жестко задавать секреты, такие как ключи продуктов, пароли или персональные данные клиентов. После публикации в коллекции JSON-файлы шаблонов доступны без аутентификации. Храните все секреты в хранилище [Key Vault](/azure/azure-resource-manager/resource-manager-keyvault-parameter) и обращайтесь к ним из шаблона.
@@ -141,7 +141,7 @@ ms.locfileid: "73057781"
     }
     ```
 
-    ![Отображение пакета](media/azure-stack-create-and-publish-marketplace-item/pkg1.png) ![Отображение пакета](media/azure-stack-create-and-publish-marketplace-item/pkg2.png)
+    ![Отображение пакета](media/azure-stack-create-and-publish-marketplace-item/pkg1.png)![Отображение пакета](media/azure-stack-create-and-publish-marketplace-item/pkg2.png)
 
 6. Проверьте, можно ли с помощью [API-интерфейсов Azure Stack](../user/azure-stack-profiles-azure-resource-manager-versions.md) развернуть ресурс из этого шаблона.
 
@@ -201,7 +201,7 @@ ms.locfileid: "73057781"
    `https://adminportal.[Region].[external FQDN]:30015/artifact/20161101/[Template Name]/DeploymentTemplates/Template.json`
    `https://portal.[Region].[external FQDN]:30015/artifact/20161101/[Template Name]/DeploymentTemplates/Template.json`
 
-6. Чтобы удалить элемент Marketplace, используйте командлет **Remove-AzureRMGalleryItem**. Например:
+6. Чтобы удалить элемент Marketplace, используйте командлет **Remove-AzureRMGalleryItem**. Пример:
 
    ```powershell
    Remove-AzsGalleryItem -Name <Gallery package name> -Verbose
@@ -216,28 +216,28 @@ ms.locfileid: "73057781"
 
 ### <a name="identity-information"></a>Сведения об удостоверении
 
-| ИМЯ | Обязательно | type | Ограничения | ОПИСАНИЕ |
+| Имя | Обязательно | Тип | Ограничения | Description |
 | --- | --- | --- | --- | --- |
-| ИМЯ |X |Строка, |[A–Z, a–z, 0–9] + | |
-| ИЗДАТЕЛЬ |X |Строка, |[A–Z, a–z, 0–9] + | |
-| Version (версия) |X |Строка, |[SemVer v2](https://semver.org/) | |
+| Имя |X |String |[A–Z, a–z, 0–9] + | |
+| Издатель |X |String |[A–Z, a–z, 0–9] + | |
+| Версия |X |String |[SemVer v2](https://semver.org/) | |
 
 ### <a name="metadata"></a>Метаданные
 
-| ИМЯ | Обязательно | type | Ограничения | ОПИСАНИЕ |
+| Имя | Обязательно | Тип | Ограничения | Description |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |Строка, |Рекомендуется использовать 80 символов. |Портал может неправильно отображать имя элемента, если его длина превышает 80 символов. |
-| PublisherDisplayName |X |Строка, |Рекомендуется использовать 30 символов. |Портал может неправильно отображать имя издателя, если его длина превышает 30 символов. |
-| PublisherLegalName |X |Строка, |Не более 256 символов | |
-| Сводка |X |Строка, |60–100 знаков. | |
-| LongSummary |X |Строка, |140–256 знаков. |Пока не применяется в Azure Stack. |
-| ОПИСАНИЕ |X |[HTML](https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md#gallery-item-metadata-html-sanitization) |От 500 до 5000 символов. | |
+| DisplayName |X |String |Рекомендуется использовать 80 символов. |Портал может неправильно отображать имя элемента, если его длина превышает 80 символов. |
+| PublisherDisplayName |X |String |Рекомендуется использовать 30 символов. |Портал может неправильно отображать имя издателя, если его длина превышает 30 символов. |
+| PublisherLegalName |X |String |Не более 256 символов | |
+| Сводка |X |String |60–100 знаков. | |
+| LongSummary |X |String |140–256 знаков. |Пока не применяется в Azure Stack. |
+| Description |X |[HTML](https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md#gallery-item-metadata-html-sanitization) |От 500 до 5000 символов. | |
 
-### <a name="images"></a>Образы
+### <a name="images"></a>Изображения
 
 В Marketplace используются следующие значки:
 
-| ИМЯ | Ширина | Высота: | Примечания |
+| Имя | Ширина | Высота: | Примечания |
 | --- | --- | --- | --- |
 | Широкий |255 пикселей |115 пикселей |Обязательный |
 | большой |115 пикселей |115 пикселей |Обязательный |
@@ -253,19 +253,19 @@ ms.locfileid: "73057781"
 
 Каждый элемент Marketplace может содержать разные ссылки на дополнительное содержимое. Ссылки указываются в виде списка имен и универсальных кодов ресурса (URI).
 
-| ИМЯ | Обязательно | type | Ограничения | ОПИСАНИЕ |
+| Имя | Обязательно | Тип | Ограничения | Description |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |Строка, |Длина не должна превышать 64 символов. | |
+| DisplayName |X |String |Длина не должна превышать 64 символов. | |
 | URI |X |URI | | |
 
 ### <a name="additional-properties"></a>Дополнительные свойства
 
 Помимо приведенных выше метаданных авторы Marketplace могут предоставить пользовательские данные в формате "ключ-значение", как показано далее.
 
-| ИМЯ | Обязательно | type | Ограничения | ОПИСАНИЕ |
+| Имя | Обязательно | Тип | Ограничения | Description |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |Строка, |Длина не должна превышать 25 символов. | |
-| Значение |X |Строка, |Длина не должна превышать 30 символов. | |
+| DisplayName |X |String |Длина не должна превышать 25 символов. | |
+| Значение |X |String |Длина не должна превышать 30 символов. | |
 
 ### <a name="html-sanitization"></a>Очистка HTML
 
@@ -285,7 +285,7 @@ ms.locfileid: "73057781"
 
 ![Колонка информации об элементе Marketplace для Azure Stack](media/azure-stack-create-and-publish-marketplace-item/image3.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения об Azure Stack Marketplace](azure-stack-marketplace.md)
 - [Скачивание элементов marketplace](azure-stack-download-azure-marketplace-item.md)
