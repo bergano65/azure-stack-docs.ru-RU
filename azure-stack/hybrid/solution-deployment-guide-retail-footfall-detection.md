@@ -8,16 +8,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 41166490ef2a79bc61375479d8c83e0205ab44a6
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: c2e043630e601098e0b2abbb1bacbffe44808495
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73639989"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881456"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Развертывание решения определения посещаемости на основе искусственного интеллекта с использованием Azure и Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack Hub и Пакет средств разработки Azure Stack Hub*
 
 В статье описывается, как развернуть решение, которое создает полезные сведения на основе реальных действий, используя Azure, Azure Stack Hub и комплект SDK для искусственного интеллекта Пользовательского визуального распознавания.
 
@@ -34,7 +32,7 @@ ms.locfileid: "73639989"
 > 
 > В статье [Hybrid cloud design patterns for Azure Stack](overview-app-design-considerations.md) (Рекомендации по проектированию гибридных приложений) описаны основные аспекты качественного программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность), которые следует учитывать при разработке, развертывании и использовании гибридных приложений. Эти рекомендации помогут оптимизировать разработку гибридных приложений и предотвратить появление проблем с рабочими средами.
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 
 Прежде чем приступить к работе с этим руководством по развертыванию, не забудьте выполнить следующие действия:
 
@@ -194,7 +192,7 @@ porter uninstall footfall-cloud –tag intelligentedge/footfall-cloud-deployment
 
 porter uninstall footfall-camera –tag intelligentedge/footfall-camera-deployment:0.1.0 –creds footfall-camera-deployment –param-file "path-to-camera-parameters-file.txt"
 ```
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [рекомендациях по проектированию гибридных облачных приложений](overview-app-design-considerations.md).
 - Изучите и предложите улучшения для [кода в этом примере на сайте GitHub](https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/footfall-analysis).

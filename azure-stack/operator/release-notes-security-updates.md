@@ -16,12 +16,12 @@ ms.date: 11/21/2019
 ms.author: sethm
 ms.reviewer: fiseraci
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 9766c1fb0c5186f33038716f0d56d1ccac9d90cb
-ms.sourcegitcommit: c3be6b2e962c5905eb3c54f9555e13095f6b4d40
+ms.openlocfilehash: 6487f3380f39d6e321771a23714e99d8f65dd836
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303677"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821024"
 ---
 # <a name="azure-stack-hub-security-updates"></a>Обновления безопасности в Azure Stack Hub
 
@@ -243,13 +243,13 @@ ms.locfileid: "75303677"
 ::: moniker range="azs-1907"
 ## <a name="1907-update"></a>Обновление 1907
 
-Это обновление Azure Stack не включает обновления системы безопасности для базовой операционной системы, в которой размещается Azure Stack.
+Это обновление Azure Stack Hub не включает обновления системы безопасности для базовой операционной системы, в которой размещается Azure Stack Hub.
 ::: moniker-end
 
 ::: moniker range="azs-1906"
 ## <a name="1906-update"></a>Обновление 1906
 
-Это обновление Azure Stack не включает обновления системы безопасности для базовой операционной системы, в которой размещается Azure Stack.
+Это обновление Azure Stack Hub не включает обновления системы безопасности для базовой операционной системы, в которой размещается Azure Stack Hub.
 ::: moniker-end
 
 ## <a name="next-steps"></a>Дальнейшие действия

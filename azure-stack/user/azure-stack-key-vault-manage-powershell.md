@@ -14,16 +14,14 @@ ms.topic: article
 ms.date: 01/07/2020
 ms.author: sethm
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 4762cb77583d0a8e026528c47ffce6bc93c7b005
-ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
+ms.openlocfilehash: 64ff69f87daa2451ab61fd2e950c5688903a955e
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75727604"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883683"
 ---
 # <a name="manage-key-vault-in-azure-stack-hub-using-powershell"></a>Управление Key Vault в Azure Stack Hub с использованием PowerShell
-
-*Область применения: интегрированные системы Azure Stack Hub и Пакет средств разработки Azure Stack*
 
 В этой статье объясняется, как создать и администрировать хранилище ключей в Azure Stack Hub с помощью PowerShell. Вы узнаете, как с помощью командлетов PowerShell для Key Vault выполнять следующие задачи:
 

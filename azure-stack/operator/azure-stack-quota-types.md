@@ -16,16 +16,15 @@ ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: xiaofmao
 ms.lastreviewed: 12/07/2018
-ms.openlocfilehash: d6068ef98d4fe2d575f5501ad6760d4b408385cd
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: 5f4d29a95ab56ee4728109f5b74494c39d8b1c98
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718102"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882068"
 ---
 # <a name="quota-types-in-azure-stack-hub"></a>Типы квот в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 [Квоты](service-plan-offer-subscription-overview.md#plans) определяют ограничения ресурсов, которые может подготовить или использовать пользователь в рамках подписки. Например, квота может разрешать пользователю создать до пяти виртуальных машин. Каждый ресурс может иметь собственные типы квот.
 

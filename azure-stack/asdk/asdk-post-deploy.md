@@ -16,12 +16,12 @@ ms.date: 07/31/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 07/31/2019
-ms.openlocfilehash: 88b92ce80475ba48b2570dc58082fa75983fdd9b
-ms.sourcegitcommit: 55ec59f831a98c42a4e9ff0dd954bf10adb98ff1
+ms.openlocfilehash: 9408fb5ba7ffa181acc28e78576c9eda2262dc81
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540272"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804560"
 ---
 # <a name="post-deployment-configurations-for-asdk"></a>Настройка ASDK после его развертывания
 
@@ -42,7 +42,7 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 Последнюю версию модуля PowerShell для Azure Stack можно установить в двух режимах: с подключением главного компьютера ASDK к Интернету или без него.
 
 > [!IMPORTANT]
-> Прежде чем устанавливать нужную версию, обязательно [удалите все установленные модули Azure PowerShell](../operator/azure-stack-powershell-install.md#3-uninstall-existing-versions-of-the-azure-stack-powershell-modules).
+> Прежде чем устанавливать нужную версию, обязательно [удалите все установленные модули Azure PowerShell](../operator/azure-stack-powershell-install.md#3-uninstall-existing-versions-of-the-azure-stack-hub-powershell-modules).
 
 - **При наличии подключения к Интернету** с главного компьютера ASDK. Выполните следующий сценарий PowerShell, чтобы установить эти модули в экземпляр ASDK.
 
@@ -113,8 +113,8 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 
 1. Войдите на главный компьютер ASDK с учетной записью AzureStack\AzureStackAdmin.
 2. Откройте PowerShell с правами администратора (не путайте с интегрированной средой сценариев Windows PowerShell).
-3. Выполните команду `Enter-PSSession -ComputerName AzS-ERCS01 -ConfigurationName PrivilegedEndpoint`
-4. Выполните команду `Test-AzureStack`
+3. Выполните `Enter-PSSession -ComputerName AzS-ERCS01 -ConfigurationName PrivilegedEndpoint`.
+4. Выполните `Test-AzureStack`.
 
 Выполнение тестов может занять несколько минут. Если установка выполнена успешно, выходные данные выглядят примерно так:
 
@@ -129,6 +129,6 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 > [!NOTE]
 > Если для входа на портал Azure Stack используются учетные записи администратора или пользователя из доменов, отличных от того, который использовался для регистрации Azure Stack, то доменное имя, использованное для регистрации Azure Stack, необходимо добавить в URL-адрес портала. Например, если вы зарегистрировали Azure Stack с использованием fabrikam.onmicrosoft.com, а учетная запись для входа является admin@contoso.com, URL-адрес для входа на портал пользователей будет следующим: https\:/portal.local.azurestack.external/fabrikam.onmicrosoft.com.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Регистрация ASDK в Azure AD](asdk-register.md)

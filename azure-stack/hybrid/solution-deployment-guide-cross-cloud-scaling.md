@@ -8,16 +8,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: d6adbc374cbd2472ceed1895fe7efb34ab5b9d64
-ms.sourcegitcommit: a6c02421069ab9e72728aa9b915a52ab1dd1dbe2
+ms.openlocfilehash: 3a8edb749ba995636f8e2fe626063ff4c495bb7b
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75654922"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881762"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Развертывание приложения, которое выполняет масштабирование в нескольких облаках с помощью Azure и Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack Hub и Пакет средств разработки Azure Stack Hub*
 
 Из этой статьи вы узнаете, как создать решение в нескольких облаках, чтобы обеспечить активируемый вручную процесс переключения с веб-приложения, размещенного в Azure Stack Hub, на веб-приложение, размещенное в Azure, с автоматическим масштабированием с помощью диспетчера трафика. Это позволит вам получить гибкую и масштабируемую облачную служебную программу для работы под нагрузкой.
 

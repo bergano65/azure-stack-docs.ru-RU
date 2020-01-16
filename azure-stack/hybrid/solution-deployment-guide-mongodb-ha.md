@@ -8,23 +8,21 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 627e6a6092a93161b2d6b216178b84ce056e36e4
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: e850cde0196d496d6d854822ee0cd1a679bccca0
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640409"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881507"
 ---
 # <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack-hub"></a>Развертывание высокодоступного решения MongoDB в Azure и Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack Hub*
 
 В этой статье описано, как автоматически развернуть базовый высокодоступный кластер MongoDB с сайтом аварийного восстановления в двух средах Azure Stack Hub. Подробные сведения о MongoDB и высоком уровне доступности см. в руководстве по [элементам набора реплик](https://docs.mongodb.com/manual/core/replica-set-members/).
 
 В этом решении вы создадите среду, чтобы затем выполнить в ней следующие действия:
 
 > [!div class="checklist"]
-> - Оркестрация развертывания в двух экземплярах Azure Stack Hub
+> - Оркестрация развертывания в двух экземплярах Azure Stack Hub.
 > - Использование Docker для предотвращения возникновения проблем с зависимостями с помощью профилей API Azure
 > - Развертывание основных высокодоступных кластеров MongoDB с сайта аварийного восстановления
 
@@ -48,7 +46,7 @@ ms.locfileid: "73640409"
       - **Запомните или запишите идентификатор каждой подписки и конечной точки Azure Resource Manager для каждого экземпляра Azure Stack Hub.**
   - Субъект-служба Azure Active Directory (Azure AD) с разрешениями для подписки клиента в каждом экземпляре Azure Stack Hub. Вам может потребоваться создать два субъекта-службы, если экземпляры Azure Stack Hub развертываются в разных клиентах Azure AD. См. сведения о создании субъекта-службы для Azure Stack Hub в руководстве по [предоставлению приложениям доступа к Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).    
       - **Запомните или запишите идентификатор приложения каждого субъекта-службы, секрет клиента и имя клиента (xxxxx.onmicrosoft.com).**
-  - Для Ubuntu 16.04 выполняется синдикация со всеми экземплярами Marketplace в Azure Stack Hub. См. сведения о синдикации Marketplace в руководстве по [скачиванию элементов Marketplace из Azure в Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item).
+  - Для Ubuntu 16.04 выполняется синдикация со всеми экземплярами Marketplace в Azure Stack Hub. См. сведения о синдикации Marketplace в [руководстве по скачиванию элементов Marketplace из Azure в Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item).
   - Приложение [Docker для Windows](https://docs.docker.com/docker-for-windows/), установленное на локальном компьютере.
 
 ## <a name="get-the-docker-image"></a>Получение образа Docker
@@ -106,7 +104,7 @@ docker pull intelligentedge/mongodb-hadr:1.0.0
   exit
   ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
   - Если вы включили виртуальную машину инсталляционного сервера в Azure Stack Hub DR, вы можете подключиться по протоколу SSH для взаимодействия с кластером MongoDB, установив Mongo CLI. Подробные сведения о взаимодействии с MongoDB с помощью Mongo см. в статье об [оболочке Mongo](https://docs.mongodb.com/manual/mongo/).
 

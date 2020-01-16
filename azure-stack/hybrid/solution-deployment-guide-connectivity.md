@@ -8,16 +8,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 88355951ea5cffc147ef9644a6e35b78bb80a02c
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: 26895aeaf55c466d5800e52c7c482d4516f3f244
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640049"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881643"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Настройка подключения к гибридному облаку с помощью Azure и Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack Hub и Пакет средств разработки Azure Stack Hub*
 
 Доступ к ресурсам безопасности в глобальных Azure и Azure Stack Hub можно получить, используя модель гибридного подключения.
 
@@ -34,7 +32,7 @@ ms.locfileid: "73640049"
 > В статье [Hybrid cloud design patterns for Azure Stack](overview-app-design-considerations.md) (Рекомендации по проектированию гибридных приложений) описаны основные аспекты качественного программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность), которые следует учитывать при разработке, развертывании и использовании гибридных приложений. Эти рекомендации помогут оптимизировать разработку гибридных приложений и предотвратить появление проблем с рабочими средами.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для развертывания гибридного подключения требуется несколько компонентов. Подготовка некоторых из них требует определенного времени, и это необходимо учитывать при планировании.
 
@@ -62,11 +60,11 @@ ms.locfileid: "73640049"
    >[!Note]
    >Развертывание ASDK может занять 7 часов. Учитывайте это при планировании.
 
- - Разверните службы PaaS [службы приложений](../operator/azure-stack-app-service-deploy.md) в Azure Stack Hub.
+ - Разверните службы PaaS [Службы приложений](../operator/azure-stack-app-service-deploy.md) в Azure Stack Hub.
  - [Создайте планы и предложения](../operator/service-plan-offer-subscription-overview.md) в среде Azure Stack Hub.
  - [Создайте подписку клиента](../operator/azure-stack-subscribe-plan-provision-vm.md) в рамках среды Azure Stack Hub.
 
-### <a name="before-you-begin"></a>Перед началом работы
+### <a name="before-you-begin"></a>Перед началом
 
 Перед началом настройки гибридного облачного подключения убедитесь, что выполняются следующие условия:
 
@@ -90,7 +88,7 @@ ms.locfileid: "73640049"
 
 IP-адреса сетей и подсетей:
 
-| Подключение Azure или Azure Stack Hub | ИМЯ | Подсеть | IP-адрес |
+| Подключение Azure или Azure Stack Hub | Имя | Подсеть | IP-адрес |
 |-------------------------------------|---------------------------------------------|---------------------------------------|-----------------------------|
 | Виртуальная сеть Azure | ApplicationvNet<br>10.100.102.9/23 | ApplicationSubnet<br>10.100.102.0/24 |  |
 |  |  | Подсеть шлюза<br>10.100.103.0/24 |  |
@@ -216,6 +214,6 @@ IP-адреса сетей и подсетей:
 
 Данные созданного подключения появятся на странице **Подключения** для шлюза виртуальной сети. Состояние изменится с *Unknown* (Неизвестно) на *Подключение*, а затем — *Успешно*.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о шаблонах для облака Azure см. в статье [Конструктивные шаблоны облачных решений](https://docs.microsoft.com/azure/architecture/patterns).

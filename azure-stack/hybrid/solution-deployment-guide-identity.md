@@ -8,16 +8,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: a38a7541d4184e89cb0a821db04a2fcb8c267a31
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: 813dbe66b2b2c1850430dbe167f0a14227856aee
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73639971"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881490"
 ---
 # <a name="configure-hybrid-cloud-identity-for-azure-and-azure-stack-hub-applications"></a>Настройка идентификатора гибридного облака для приложений Azure и Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack Hub и Пакет средств разработки Azure Stack Hub*
 
 Из этой статьи вы узнаете, как настроить идентификатор гибридного облака для приложений Azure и Azure Stack Hub.
 
@@ -59,7 +57,7 @@ ms.locfileid: "73639971"
 
 Краткое руководство [Установка PowerShell для Azure Stack](../operator/azure-stack-powershell-install.md) поможет выполнить действия, необходимые для установки Azure PowerShell, и подключиться к установке Azure Stack Hub.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 
 Установленная среда Azure Stack Hub с подключением к Azure Active Directory и доступной подпиской. Если вы не установили Azure Stack Hub, воспользуйтесь инструкциями по установке [Пакета средств разработки Azure Stack Hub](../asdk/asdk-install.md).
 
@@ -70,7 +68,7 @@ ms.locfileid: "73639971"
 >[!Note]
 >Если пакет Azure SDK для используемого языка не поддерживает профили API Azure, вы не можете использовать его для работы с Azure Stack Hub. Дополнительные сведения о профилях API Azure см. в статье [Управление профилями версий API](../user/azure-stack-version-profiles.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
  - Дополнительные сведения о работе с идентификаторами в Azure Stack Hub см. в [этой статье](../operator/azure-stack-identity-architecture.md).
  - Дополнительные сведения о шаблонах для облака Azure см. в статье [Конструктивные шаблоны облачных решений](https://docs.microsoft.com/azure/architecture/patterns).
