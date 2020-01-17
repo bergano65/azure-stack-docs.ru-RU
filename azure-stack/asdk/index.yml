@@ -24,12 +24,12 @@ sections:
         style: ordered
         items:
           - html: <a href="/azure-stack/asdk/asdk-install">Развертывание пакета ASDK</a>
-          - html: <a href="/azure-stack/operator/azure-stack-create-and-publish-marketplace-item">Добавление элемента Marketplace для Azure Stack</a>
+          - html: <a href="/azure-stack/operator/azure-stack-create-and-publish-marketplace-item">Добавление элемента Marketplace для Azure Stack Hub</a>
           - html: <a href="/azure-stack/operator/azure-stack-tutorial-tenant-vm">Предложение служб IaaS</a>
           - html: <a href="/azure-stack/user/azure-stack-subscribe-services">Подписка на предложение</a>
           - html: <a href="/azure-stack/operator/create-add-on-plan">Обновление предложений и планов</a>
           - html: <a href="/azure-stack/user/azure-stack-create-vm-template">Создание виртуальной машины на основе шаблона</a>
-  - title: Справочные материалы
+  - title: Справочник
     items:
       - type: list
         style: cards
