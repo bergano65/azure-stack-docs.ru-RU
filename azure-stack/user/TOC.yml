@@ -21,14 +21,14 @@
       href: azure-stack-quick-create-vm-linux-cli.md
 - name: Учебники
   items:
+    - name: Подписка на предложение
+      href: azure-stack-subscribe-services.md
     - name: Создание виртуальной машины на основе шаблона
       href: azure-stack-create-vm-template.md
 - name: Практические руководства
   items:
     - name: Как приступить к созданию решений для гибридного облака
       items:
-        - name: Подписка на предложение
-          href: azure-stack-subscribe-services.md
         - name: Работа с поставщиком облачных решений
           href: azure-stack-csp-enable-billing-usage-tracking.md
         - name: Использование портала Azure Stack Hub
