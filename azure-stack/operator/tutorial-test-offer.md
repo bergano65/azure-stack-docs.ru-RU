@@ -1,5 +1,5 @@
 ---
-title: Протестируйте предложение службы в Azure Stack.
+title: Протестируйте предложение службы в Azure Stack Hub.
 description: Сведения о том, как провести тест предложения службы путем создания подписки и развертывания ресурсов.
 author: BryanLa
 ms.author: bryanla
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/13/2019
 ms.reviewer: shriramnat
 ms.lastreviewed: 10/06/2019
-ms.openlocfilehash: 9e41cae53612cdf412840eb63d648a9c73260fa6
-ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
+ms.openlocfilehash: fd14a6099c9906a0b37c8227164b213235dcfee3
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75727468"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820939"
 ---
 # <a name="tutorial-test-a-service-offering"></a>Руководство. Тестирование предложения услуги
 
@@ -31,7 +31,7 @@ ms.locfileid: "75727468"
 
 - Выполните процедуру, описанную в руководстве [Предложение службы пользователям](tutorial-offer-services.md). Из него вы узнаете, как создать предложение, которое мы применим в этом руководстве.
 
-- Предложение, для которого вы оформите здесь подписку, разрешает развертывание ресурса виртуальной машины. Если вы хотите проверить развертывание виртуальной машины, для начала нужно сделать образ виртуальной машины доступным в Azure Stack Marketplace, скачав его из Azure Marketplace. Этот процесс описан в статье [Скачивание элементов Marketplace из Azure в Azure Stack](azure-stack-download-azure-marketplace-item.md). 
+- Предложение, для которого вы оформите здесь подписку, разрешает развертывание ресурса виртуальной машины. Если вы хотите проверить развертывание виртуальной машины, для начала нужно сделать образ виртуальной машины доступным в Azure Stack Hub Marketplace, скачав его из Azure Marketplace. Этот процесс описан в статье [Скачивание элементов Marketplace из Azure в Azure Stack Hub](azure-stack-download-azure-marketplace-item.md). 
 
 ## <a name="subscribe-to-the-offer"></a>Оформление подписки на предложение
 
@@ -141,6 +141,6 @@ ms.locfileid: "75727468"
 
 Далее вы узнаете о развертывании поставщиков ресурсов для дополнительных служб. Они позволят вам предлагать пользователям еще больше служб в ваших планах:
 
-- [Предложение SQL в Azure Stack](azure-stack-sql-resource-provider.md)
-- [Предложение MySQL в Azure Stack](azure-stack-mysql-resource-provider.md)
-- [Предложение Службы приложений в Azure Stack](azure-stack-app-service-overview.md)
+- [Предложение SQL в Azure Stack Hub](azure-stack-sql-resource-provider.md)
+- [Предложение MySQL в Azure Stack Hub](azure-stack-mysql-resource-provider.md)
+- [Предложение Службы приложений в Azure Stack Hub](azure-stack-app-service-overview.md)

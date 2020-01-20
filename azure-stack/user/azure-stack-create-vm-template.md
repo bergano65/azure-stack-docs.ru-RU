@@ -17,38 +17,38 @@ ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 11/13/2018
-ms.openlocfilehash: 02300ae5c3a6ef7fd104dfb59e179b557e0c8778
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: b709d51a430530c50cf9a6e06896d405c435383e
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961709"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023240"
 ---
-# <a name="tutorial-create-a-vm-using-a-community-template"></a>Руководство по Создание виртуальной машины с использованием шаблона сообщества
+# <a name="tutorial-create-a-vm-using-a-community-template"></a>Руководство. Создание виртуальной машины с использованием шаблона сообщества
 
-Оператор или пользователь Azure Stack может создать виртуальную машину с помощью [настраиваемых шаблонов GitHub для быстрого запуска](https://github.com/Azure/AzureStack-QuickStart-Templates), а не развертывать шаблоны вручную из Azure Stack Marketplace.
+Оператор или пользователь Azure Stack Hub может создать виртуальную машину с помощью [настраиваемых шаблонов GitHub для быстрого запуска](https://github.com/Azure/AzureStack-QuickStart-Templates), а не развертывать шаблоны вручную из Azure Stack Hub Marketplace.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
-> * Использование шаблонов быстрого запуска Azure Stack.
+> * Использование шаблонов быстрого запуска Azure Stack Hub
 > * Создание виртуальной машины с помощью настраиваемого шаблона GitHub
 > * Запуск Minikube и установка приложения
 
-## <a name="azure-stack-quickstart-templates"></a>Шаблоны быстрого запуска Azure Stack
+## <a name="azure-stack-hub-quickstart-templates"></a>Шаблоны быстрого запуска Azure Stack Hub
 
-Шаблоны быстрого запуска Azure Stack хранятся в [глобальном репозитории шаблонов быстрого запуска Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates) в GitHub. Этот репозиторий содержит шаблоны развертывания Azure Resource Manager, которые были протестированы с помощью Пакета средств разработки Microsoft Azure Stack (ASDK). Вы можете использовать их для упрощения оценки Azure Stack и использования среды ASDK.
+Шаблоны быстрого запуска Azure Stack Hub хранятся в [соответствующем глобальном репозитории](https://github.com/Azure/AzureStack-QuickStart-Templates) в GitHub. Этот репозиторий содержит шаблоны развертывания Azure Resource Manager, которые были протестированы с помощью Пакета средств разработки Microsoft Azure Stack (ASDK). С их помощью вы можете упростить оценку Azure Stack Hub и использование среды ASDK.
 
-Многие пользователи GitHub в течение некоторого времени пополняли репозиторий, в результате чего мы имеем коллекцию из более чем 400 шаблонов развертывания. Это хорошая отправная точка, которая поможет вам понять, как развертывать различные среды в Azure Stack.
+Многие пользователи GitHub в течение некоторого времени пополняли репозиторий, в результате чего мы имеем коллекцию из более чем 400 шаблонов развертывания. Это хорошая отправная точка, которая поможет вам понять, как развертывать различные среды в Azure Stack Hub.
 
 >[!IMPORTANT]
 > Некоторые из этих шаблонов создаются членами сообщества, а не корпорацией Майкрософт. Каждый шаблон лицензирован для вас в соответствии с условиями лицензионного соглашения с владельцем, а не с корпорацией Майкрософт. Корпорация Майкрософт не несет ответственности за шаблоны и не отслеживает их безопасность, совместимость или производительность. Шаблоны, созданные сообществом, не поддерживаются ни в соответствии с какой-либо программой поддержки Майкрософт, ни какими-либо службами поддержки Майкрософт и предоставляются КАК ЕСТЬ без каких-либо гарантий.
 
-Если вы хотите добавить шаблоны Azure Resource Manager на сайт GitHub, воспользуйтесь репозиторием [AzureStack-QuickStart-Templates](https://github.com/Azure/AzureStack-QuickStart-Templates). Чтобы узнать больше об этом репозитории и о том, как пополнять его, изучите [файл сведений](https://github.com/Azure/AzureStack-QuickStart-Templates/blob/master/README.md).
+Если вы хотите добавить шаблоны Azure Resource Manager на сайт GitHub, воспользуйтесь репозиторием [AzureStack-QuickStart-Templates](https://github.com/Azure/AzureStack-QuickStart-Templates). Чтобы узнать больше об этом репозитории и о том, как пополнять его, изучите [файл сведений](https://aka.ms/aa6zktg).
 
 ## <a name="create-a-vm-using-a-custom-github-template"></a>Создание виртуальной машины с помощью настраиваемого шаблона GitHub
 
-В этом руководстве используется шаблон быстрого запуска Azure Stack [101-vm-linux-minikube](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-linux-minikube) для развертывания виртуальной машины с Ubuntu 16.04 в AzureStack, которая использует Minikube для управления кластером Kubernetes.
+В рамках этого руководстве используется шаблон быстрого запуска Azure Stack Hub [101-vm-linux-minikube](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-vm-linux-minikube) для развертывания виртуальной машины с Ubuntu 16.04 в Azure Stack Hub, которая использует Minikube для управления кластером Kubernetes.
 
 Minikube — это средство, которое позволяет легко запускать Kubernetes локально. Minikube запускает одноузловой кластер Kubernetes внутри виртуальной машины, это позволяет опробовать Kubernetes или использовать его для ежедневной разработки. Он поддерживает простой кластер Kubernetes с одним узлом, работающий на виртуальной машине Linux. Minikube — это самый быстрый и прямой способ получить полностью функциональный кластер Kubernetes. Он позволяет разрабатывать и тестировать развертывания приложений на основе Kubernetes на своих локальных машинах. С точки зрения архитектуры компоненты главного узла и узла агента выполняются локально на виртуальной машине Minikube:
 
@@ -60,12 +60,12 @@ Minikube — это средство, которое позволяет легк
 * виртуальная машина Ubuntu 16.04 LTS;
 * [Docker-CE](https://download.docker.com/linux/ubuntu);
 * [Kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.8.0/bin/linux/amd64/kubectl)
-* [Minikube](https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64);
+* [Minikube](https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64)
 * xFCE4;
 * xRDP.
 
 > [!IMPORTANT]
-> Прежде чем приступить к выполнению этих шагов, убедитесь, что образ виртуальной машины Ubuntu (Ubuntu Server 16.04 LTS в этом примере) уже добавлен в Azure Stack Marketplace.
+> Прежде чем приступить к выполнению этих шагов, убедитесь, что образ виртуальной машины Ubuntu (Ubuntu Server 16.04 LTS в этом примере) уже добавлен в Azure Stack Hub Marketplace.
 
 1. Выберите **Создать ресурс**, а затем — **Пользовательский** и **Развертывание шаблона**.
 
@@ -112,7 +112,7 @@ Minikube — это средство, которое позволяет легк
 
 2. В командной строке с повышенными привилегиями запустите файл **mstsc.exe**, чтобы открыть подключение к удаленному рабочему столу и подключиться к общедоступному IP-адресу виртуальной машины Linux, обнаруженному на предыдущем шаге. При появлении запроса на вход в xRDP используйте учетные данные, указанные при создании виртуальной машины.
 
-    ![Удаленное подключение](media/azure-stack-create-vm-template/10.PNG)
+    ![Remote](media/azure-stack-create-vm-template/10.PNG)
 
 3. Откройте эмулятор терминала и введите следующие команды для запуска Minikube:
 
@@ -126,15 +126,15 @@ Minikube — это средство, которое позволяет легк
 
 4. Откройте веб-браузер и перейдите на страницу панели мониторинга Kubernetes. Поздравляем! Теперь у вас есть полностью работающая установка Kubernetes, использующая Minikube!
 
-    ![панель мониторинга](media/azure-stack-create-vm-template/12.PNG)
+    ![Панель мониторинга](media/azure-stack-create-vm-template/12.PNG)
 
 5. Чтобы развернуть пример приложения, зайдите на официальную страницу документации по Kubernetes и пропустите раздел "Create Minikube Cluster" (Создание кластера Minikube), так как вы уже создали его. Перейдите в раздел "Create your Node.js application" (Создание приложения Node.js) на странице https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Сведения о шаблонах быстрого запуска Azure Stack
-> * Создать виртуальную машину с помощью настраиваемого шаблона GitHub.
+> * Сведения о шаблонах быстрого запуска Azure Stack Hub
+> * Создание виртуальной машины с помощью настраиваемого шаблона GitHub
 > * Запуск minikube и установка приложения

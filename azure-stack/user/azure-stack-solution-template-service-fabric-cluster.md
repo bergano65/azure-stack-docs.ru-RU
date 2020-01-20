@@ -1,6 +1,6 @@
 ---
-title: Развертывание защищенного кластера Service Fabric в Azure Stack | Документация Майкрософт
-description: Сведения о развертывании защищенного кластера Service Fabric в Azure Stack
+title: Развертывание защищенного кластера Service Fabric в Azure Stack Hub | Документация Майкрософт
+description: Сведения о развертывании защищенного кластера Service Fabric в Azure Stack Hub
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,22 +15,22 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: shnatara
 ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: e8b7809908bf09cdc60017c8944e26461aa6f07d
-ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
+ms.openlocfilehash: bb0e9fdb3e1ce1c3778d1167ca76cddae3d67aa7
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993847"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819205"
 ---
-# <a name="deploy-a-service-fabric-cluster-in-azure-stack"></a>Развертывание кластера Service Fabric в Azure Stack
+# <a name="deploy-a-service-fabric-cluster-in-azure-stack-hub"></a>Развертывание кластера Service Fabric в Azure Stack Hub
 
-Используйте элемент **Кластер Service Fabric** из Azure Marketplace для развертывания защищенного кластера Service Fabric в Azure Stack. 
+Используйте элемент **Кластер Service Fabric** в Azure Marketplace для развертывания защищенного кластера Service Fabric в Azure Stack Hub. 
 
 Дополнительные сведения о [работе с Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) и [сценариях защиты кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) можно найти в документации Azure.
 
-Кластер Service Fabric в Azure Stack не использует поставщик ресурсов Microsoft.ServiceFabric. Вместо этого в Azure Stack кластер Service Fabric представляет собой масштабируемый набор виртуальных машин с ПО, предустановленным с помощью платформы [Desired State Configuration (DSC)](https://docs.microsoft.com/powershell/scripting/dsc/overview/overview).
+Кластер Service Fabric в Azure Stack Hub не использует поставщик ресурсов Microsoft.ServiceFabric. Вместо этого в Azure Stack Hub кластер Service Fabric представляет собой масштабируемый набор виртуальных машин с ПО, предустановленным с помощью платформы [Desired State Configuration (DSC)](https://docs.microsoft.com/powershell/scripting/dsc/overview/overview).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Ниже перечислены необходимые условия для развертывания кластера Service Fabric.
 1. **Сертификат кластера**  
@@ -45,7 +45,7 @@ ms.locfileid: "74993847"
 1. **Сертификат клиента администрирования.**  
    Это сертификат, который клиент использует для проверки подлинности в кластере Service Fabric. Он может быть самозаверяющим. Дополнительные сведения см. в разделе с [требованиями](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) для создания клиентского сертификата.
 
-1. **Следующие компоненты должны быть доступны в Azure Stack Marketplace:**
+1. **Следующие компоненты должны быть доступны в Azure Stack Hub Marketplace.**
     - **Windows Server 2016** — этот шаблон использует образ Windows Server 2016 для создания кластера.  
     - **Расширение для пользовательских скриптов** — расширение виртуальной машины от корпорации Майкрософт.  
     - **Настройка требуемого состояния PowerShell** — расширение виртуальной машины от корпорации Майкрософт.
@@ -120,7 +120,7 @@ ms.locfileid: "74993847"
    ``` 
 
 
-См. дополнительные сведения об [управлении Key Vault в Azure Stack с помощью PowerShell](azure-stack-key-vault-manage-powershell.md).
+См. дополнительные сведения об [управлении Key Vault в Azure Stack Hub с помощью PowerShell](azure-stack-key-vault-manage-powershell.md).
 
 ## <a name="deploy-the-marketplace-item"></a>Развертывание элемента Marketplace
 
@@ -130,13 +130,13 @@ ms.locfileid: "74993847"
 
 2. Для каждой страницы, например *Основные сведения*, заполните форму развертывания. Используйте значения по умолчанию, если вы не знаете нужные значения.
 
-    Чтобы выполнить развертывание в отключенной инфраструктуре Azure Stack или развертывание другой версии Service Fabric, скачайте пакет развертывания Service Fabric и соответствующий пакет среды выполнения и разместите их в большом двоичном объекте Azure Stack. Укажите эти значения в полях **URL-адреса пакета развертывания Service Fabric** и **URL-адреса пакета среды выполнения Service Fabric**.
+    Чтобы выполнить развертывание в отключенной инфраструктуре Azure Stack Hub или развертывание другой версии Service Fabric, скачайте пакет развертывания Service Fabric и соответствующий пакет среды выполнения и разместите их в большом двоичном объекте Azure Stack Hub. Укажите эти значения в полях **URL-адреса пакета развертывания Service Fabric** и **URL-адреса пакета среды выполнения Service Fabric**.
     > [!NOTE]  
     > У последних выпусков Service Fabric и соответствующих пакетов SDK существуют проблемы с совместимостью. Пока они не устранены, укажите следующие параметры для URL-адреса пакета развертывания и URL-адреса пакета среды выполнения. Иначе развертывание завершится сбоем.
     > - URL-адрес пакета развертывания Service Fabric: <https://download.microsoft.com/download/8/3/6/836E3E99-A300-4714-8278-96BC3E8B5528/6.5.641.9590/Microsoft.Azure.ServiceFabric.WindowsServer.6.5.641.9590.zip>.
     > - URL-адрес пакета среды выполнения Service Fabric: <https://download.microsoft.com/download/B/0/B/B0BCCAC5-65AA-4BE3-AB13-D5FF5890F4B5/6.5.641.9590/MicrosoftAzureServiceFabric.6.5.641.9590.cab>.
     >
-    > Для отключенных развертываний скачайте эти пакеты из указанного расположения и разместите их локально в большом двоичном объекте Azure Stack.
+    > Для отключенных развертываний скачайте эти пакеты из указанного расположения и разместите их локально в большом двоичном объекте Azure Stack Hub.
 
    ![Основы](media/azure-stack-solution-template-service-fabric-cluster/image3.png)
 
@@ -158,7 +158,7 @@ ms.locfileid: "74993847"
 
    ![Выходные данные скрипта](media/azure-stack-solution-template-service-fabric-cluster/image5.png)
 
-   ![Безопасность](media/azure-stack-solution-template-service-fabric-cluster/image6.png)
+   ![безопасность](media/azure-stack-solution-template-service-fabric-cluster/image6.png)
 
 5. Завершите работу мастера, а затем нажмите кнопку **Создать** для развертывания кластера Service Fabric.
 
@@ -171,7 +171,7 @@ ms.locfileid: "74993847"
 ### <a name="use-service-fabric-explorer"></a>Использование Service Fabric Explorer
 1.  Удостоверьтесь, что веб-браузер имеет доступ к сертификату клиента администрирования и может пройти проверку подлинности в кластере Service Fabric.  
 
-    a. Откройте Internet Explorer и последовательно выберите **Свойства обозревателя** > **Содержимое** > **Сертификаты**.
+    а. Откройте Internet Explorer и последовательно выберите **Свойства обозревателя** > **Содержимое** > **Сертификаты**.
   
     b. На странице сертификатов выберите **Импорт** для запуска *мастера импорта сертификатов*, а затем нажмите кнопку **Далее**. На странице *File to Import* (Файл для импорта) щелкните **Обзор** и выберите **сертификат клиента администрирования**, который вы указали в шаблоне Azure Resource Manager.
         
@@ -186,7 +186,7 @@ ms.locfileid: "74993847"
        ![Хранилище сертификатов](media/azure-stack-solution-template-service-fabric-cluster/image9.png)  
 1. Чтобы найти FQDN кластера Service Fabric, выполните следующие действия.  
 
-    a. Перейдите к группе ресурсов, связанной с кластером Service Fabric, и найдите ресурс *общедоступного IP-адреса*. Выберите объект, связанный с общедоступным IP-адресом, чтобы открыть колонку *Общедоступный IP-адрес*.  
+    а. Перейдите к группе ресурсов, связанной с кластером Service Fabric, и найдите ресурс *общедоступного IP-адреса*. Выберите объект, связанный с общедоступным IP-адресом, чтобы открыть колонку *Общедоступный IP-адрес*.  
 
       ![Общедоступный IP-адрес](media/azure-stack-solution-template-service-fabric-cluster/image10.png)   
 
@@ -201,7 +201,7 @@ ms.locfileid: "74993847"
 
 1. Для проверки подлинности на сайте нужно выбрать используемый сертификат. Выберите **More choices** (Дополнительные варианты), выберите соответствующий сертификат и нажмите кнопку **ОК** для подключения к Service Fabric Explorer. 
 
-   ![Проверка подлинности](media/azure-stack-solution-template-service-fabric-cluster/image14.png)
+   ![Authenticate](media/azure-stack-solution-template-service-fabric-cluster/image14.png)
 
 
 
@@ -211,7 +211,7 @@ ms.locfileid: "74993847"
 
 1. После завершения установки настройте системные переменные среды, чтобы убедиться, что командлеты Service Fabric доступны в PowerShell.  
     
-    a. Последовательно выберите **Панель управления** > **Система и безопасность** > **Система**, а затем выберите **Дополнительные параметры системы**.  
+    а. Последовательно выберите **Панель управления** > **Система и безопасность** > **Система**, а затем выберите **Дополнительные параметры системы**.  
     
       ![Панель управления](media/azure-stack-solution-template-service-fabric-cluster/image15.png) 
 
@@ -239,6 +239,6 @@ ms.locfileid: "74993847"
    > [!NOTE]  
    > В скрипте отсутствует *https://* перед именем кластера. Требуется порт 19000.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Развертывание Kubernetes в Azure Stack](azure-stack-solution-template-kubernetes-deploy.md)
+[Развертывание Kubernetes в Azure Stack Hub](azure-stack-solution-template-kubernetes-deploy.md)

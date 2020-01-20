@@ -1,6 +1,6 @@
 ---
-title: Создание виртуальной машины Linux с помощью Azure CLI в Azure Stack | Документация Майкрософт
-description: Создание виртуальной машины Linux с помощью Azure CLI в Azure Stack.
+title: Создание виртуальной машины Linux с помощью Azure CLI в Azure Stack Hub | Документация Майкрософт
+description: Создание виртуальной машины Linux с помощью Azure CLI в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,16 +15,14 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 84689e45bff8150616f37205eaa4a9bd9b25ff04
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: c82dc8dce4f2d72ee5d30379c554c495cfdec28f
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824251"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883479"
 ---
-# <a name="quickstart-create-a-linux-server-vm-by-using-the-azure-cli-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины с сервером Linux с помощью Azure CLI в Azure Stack
-
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+# <a name="quickstart-create-a-linux-server-vm-by-using-the-azure-cli-in-azure-stack-hub"></a>Краткое руководство. Создание виртуальной машины с сервером Linux с помощью Azure CLI в Azure Stack Hub
 
 Вы можете создать виртуальную машину под управлением Ubuntu Server 16.04 LTS с помощью Azure CLI. В этой статье описано, как создать и использовать виртуальную машину. Здесь также объясняется, как выполнить следующие задачи:
 
@@ -32,19 +30,19 @@ ms.locfileid: "71824251"
 * установить веб-сервер NGINX и открыть его стандартную домашнюю страницу;
 * очистить неиспользуемые ресурсы.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-* Образ Linux в Azure Stack Marketplace
+* Образ Linux в Azure Stack Hub Marketplace.
 
-   По умолчанию Azure Stack Marketplace не содержит образ Linux. Обратитесь к оператору Azure Stack, чтобы он предоставил нужный образ Ubuntu Server 16.04 LTS. Для этого оператор может выполнить инструкции из статьи [Скачивание элементов Marketplace из Azure в Azure Stack](../operator/azure-stack-download-azure-marketplace-item.md).
+   По умолчанию Azure Stack Hub Marketplace не содержит образ Linux. Обратитесь к оператору Azure Stack Hub, чтобы он предоставил нужный образ Ubuntu Server 16.04 LTS. Для этого оператор может выполнить инструкции из статьи [Скачивание элементов Marketplace из Azure в Azure Stack Hub](../operator/azure-stack-download-azure-marketplace-item.md).
 
-* Для создания ресурсов и управления ими Azure Stack требуется определенная версия Azure CLI. Если вы не настраивали Azure CLI для Azure Stack, войдите в [Пакет средств разработки Azure Stack](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) (или внешний клиент на базе Windows, [если вы подключаетесь через VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn)) и выполните инструкции по [установке и настройке Azure CLI](azure-stack-version-profiles-azurecli2.md).
+* Для создания ресурсов и управления ими Azure Stack Hub требуется определенная версия Azure CLI. Если вы не настраивали Azure CLI для Azure Stack Hub, войдите в среду [Пакет средств разработки Azure Stack](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) (или внешний клиент на базе Windows, [если вы подключаетесь через VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn)) и выполните инструкции по [установке и настройке Azure CLI](azure-stack-version-profiles-azurecli2.md).
 
 * Открытый ключ SSH с именем *id_rsa.pub* сохраняется в каталоге (с расширением *.ssh*) вашего профиля пользователя Windows. Дополнительные сведения о создании ключей SSH см. в статье [Использование открытого ключа SSH](azure-stack-dev-start-howto-ssh-public-key.md).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов — это логический контейнер, в котором вы можете развертывать ресурсы Azure Stack и управлять ими. Из пакета средств разработки или интегрированной системы Azure Stack выполните команду [az group create](/cli/azure/group#az-group-create), чтобы создать группу ресурсов.
+Группа ресурсов — это логический контейнер, в котором вы можете развертывать ресурсы Azure Stack Hub и управлять ими. Из пакета средств разработки или интегрированной системы Azure Stack Hub выполните команду [az group create](/cli/azure/group#az-group-create), чтобы создать группу ресурсов.
 
 > [!NOTE]
 > В приведенных ниже примерах кода всем переменным уже присвоены значения. Но вы можете присвоить собственные значения.
@@ -115,6 +113,6 @@ apt-get -y install nginx
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-С помощью этого краткого руководства вы развернули простую виртуальную машину с сервером Linux и веб-сервером. Дополнительные сведения о виртуальных машинах Azure Stack см. в [этих рекомендациях](azure-stack-vm-considerations.md).
+С помощью этого краткого руководства вы развернули простую виртуальную машину с сервером Linux и веб-сервером. Дополнительные сведения о виртуальных машинах Azure Stack Hub см. в [этих рекомендациях](azure-stack-vm-considerations.md).

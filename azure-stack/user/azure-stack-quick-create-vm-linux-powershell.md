@@ -1,6 +1,6 @@
 ---
-title: Создание виртуальной машины Linux с помощью PowerShell в Azure Stack | Документация Майкрософт
-description: Создание виртуальной машины Linux с помощью PowerShell в Azure Stack.
+title: Создание виртуальной машины Linux с помощью PowerShell в Azure Stack Hub | Документация Майкрософт
+description: Создание виртуальной машины Linux с помощью PowerShell в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,18 +15,16 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 2bd72ad2de570eeb3089645c5ee7c9dd3784e83c
-ms.sourcegitcommit: bbe1048682c7dccc6cebde542462c14ee1f3d0d1
+ms.openlocfilehash: 7a7d47eaf8bf415f61b9d2b78087204027404270
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75677677"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023113"
 ---
-# <a name="quickstart-create-a-linux-server-vm-by-using-powershell-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины с сервером Linux с помощью PowerShell в Azure Stack
+# <a name="quickstart-create-a-linux-server-vm-by-using-powershell-in-azure-stack-hub"></a>Краткое руководство. Создание виртуальной машины с сервером Linux с помощью PowerShell в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-Вы можете создать виртуальную машину Ubuntu Server 16.04 LTS с помощью PowerShell в Azure Stack. В этой статье описано, как создать и использовать виртуальную машину. Здесь также объясняется, как выполнить следующие задачи:
+Вы можете создать виртуальную машину Ubuntu Server 16.04 LTS с помощью PowerShell в Azure Stack Hub. В этой статье описано, как создать и использовать виртуальную машину. Здесь также объясняется, как выполнить следующие задачи:
 
 * подключиться к виртуальной машине через удаленный клиент;
 * установить веб-сервер NGINX и открыть его стандартную домашнюю страницу;
@@ -34,17 +32,17 @@ ms.locfileid: "75677677"
 
 ## <a name="prerequisites"></a>предварительные требования
 
-* Образ Linux в Azure Stack Marketplace. По умолчанию Azure Stack Marketplace не содержит образа Linux. Обратитесь к оператору Azure Stack, чтобы он предоставил нужный образ Ubuntu Server 16.04 LTS. Для этого оператор может выполнить инструкции из статьи [Скачивание элементов Marketplace из Azure в Azure Stack](../operator/azure-stack-download-azure-marketplace-item.md).
+* Образ Linux в Azure Stack Hub Marketplace. По умолчанию Azure Stack Hub Marketplace не содержит образа Linux. Обратитесь к оператору Azure Stack Hub, чтобы он предоставил нужный образ Ubuntu Server 16.04 LTS. Для этого оператор может выполнить инструкции из статьи [Скачивание элементов Marketplace из Azure в Azure Stack Hub](../operator/azure-stack-download-azure-marketplace-item.md).
 
-* Для создания ресурсов и управления ими Azure Stack требуется определенная версия Azure CLI. 
-  * Если вы еще не настроили PowerShell для Azure Stack, см. статью [Подключение к Azure Stack в роли пользователя с помощью PowerShell](../operator/azure-stack-powershell-install.md). 
-  * Настроив PowerShell для Azure Stack, подключитесь к среде Azure Stack. Инструкции см. в статье [Подключение к Azure Stack в роли пользователя с помощью PowerShell](azure-stack-powershell-configure-user.md).
+* Для создания ресурсов и управления ими Azure Stack Hub требуется определенная версия Azure CLI. 
+  * Если вы еще не настроили PowerShell для Azure Stack Hub, см. руководство по [установке PowerShell для Azure Stack Hub](../operator/azure-stack-powershell-install.md). 
+  * Настроив PowerShell для Azure Stack Hub, подключитесь к среде Azure Stack Hub. Инструкции см. в статье [Подключение к Azure Stack Hub в роли пользователя с помощью PowerShell](azure-stack-powershell-configure-user.md).
 
 * Открытый ключ SSH с именем *id_rsa.pub* сохраняется в каталоге (с расширением *.ssh*) вашего профиля пользователя Windows. Дополнительные сведения о создании ключей SSH см. в статье [Использование открытого ключа SSH](azure-stack-dev-start-howto-ssh-public-key.md).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов — это логический контейнер, в котором вы можете развертывать ресурсы Azure Stack и управлять ими. Чтобы создать группу ресурсов, выполните следующий блок кода из Пакета средств разработки или интегрированной системы Azure Stack: 
+Группа ресурсов — это логический контейнер, в котором вы можете развертывать ресурсы Azure Stack Hub и управлять ими. Выполните следующий блок кода, чтобы создать группу ресурсов. 
 
 > [!NOTE]
 > В приведенных ниже примерах кода всем переменным уже присвоены значения. Но вы можете присвоить собственные значения.
@@ -212,7 +210,7 @@ New-AzureRmVM `
 ## Create a resource group
 
 <#
-A resource group is a logical container where you can deploy and manage Azure Stack resources. From your development kit or the Azure Stack integrated system, run the following code block to create a resource group. Though we've assigned values for all the variables in this article, you can use these values or assign new ones.
+A resource group is a logical container where you can deploy and manage Azure Stack Hub resources. From your development kit or the Azure Stack Hub integrated system, run the following code block to create a resource group. Though we've assigned values for all the variables in this article, you can use these values or assign new ones.
 #>
 
 # Edit your variables, if required
@@ -418,4 +416,4 @@ Remove-AzureRmResourceGroup -Name myResourceGroup
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-С помощью этого краткого руководства вы развернули простую виртуальную машину с сервером Linux. Дополнительные сведения о виртуальных машинах Azure Stack см. в статье [Рекомендации по использованию виртуальных машин в Azure Stack](azure-stack-vm-considerations.md).
+С помощью этого краткого руководства вы развернули простую виртуальную машину с сервером Linux. Дополнительные сведения о виртуальных машинах Azure Stack Hub см. в статье [Рекомендации по использованию виртуальных машин в Azure Stack Hub](azure-stack-vm-considerations.md).

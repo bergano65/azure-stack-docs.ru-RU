@@ -1,6 +1,6 @@
 ---
-title: Создание виртуальной машины Windows Server с помощью PowerShell в Azure Stack | Документация Майкрософт
-description: Создайте виртуальную машину Windows Server с помощью PowerShell в Azure Stack.
+title: Создание виртуальной машины Windows Server с помощью PowerShell в Azure Stack Hub | Документация Майкрософт
+description: Создайте виртуальную машину Windows Server с помощью PowerShell в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,18 +16,16 @@ ms.author: mabrigg
 ms.custom: mvc
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: e31edd266c16fa51855efa3259c86ecf9b53660b
-ms.sourcegitcommit: bbe1048682c7dccc6cebde542462c14ee1f3d0d1
+ms.openlocfilehash: a6b051245821f3def20c20af41301d584b10eb0d
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75677694"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023174"
 ---
-# <a name="quickstart-create-a-windows-server-vm-by-using-powershell-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины Windows Server с помощью PowerShell в Azure Stack
+# <a name="quickstart-create-a-windows-server-vm-by-using-powershell-in-azure-stack-hub"></a>Краткое руководство. Создание виртуальной машины Windows Server с помощью PowerShell в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-Вы можете создать виртуальную машину Windows Server 2016 с помощью PowerShell в Azure Stack. Чтобы создать и использовать виртуальную машину, выполните действия, описанные в этой статье. В этой статье приведены инструкции, которые помогут вам:
+Вы можете создать виртуальную машину Windows Server 2016 с помощью PowerShell в Azure Stack Hub. Чтобы создать и использовать виртуальную машину, выполните действия, описанные в этой статье. В этой статье приведены инструкции, которые помогут вам:
 
 * подключиться к виртуальной машине через удаленный клиент;
 * установить веб-сервер IIS и открыть его стандартную домашнюю страницу;
@@ -38,15 +36,15 @@ ms.locfileid: "75677694"
 
 ## <a name="prerequisites-for-windows-server-vm"></a>Предварительные требования для виртуальной машины Windows Server
 
-* Убедитесь, что оператор Azure Stack добавил образ **Windows Server 2016** в Azure Stack Marketplace.
+* Убедитесь, что оператор Azure Stack Hub добавил образ **Windows Server 2016** в Azure Stack Hub Marketplace.
 
-* Для создания и администрирования ресурсов в Azure Stack требуется определенная версия Azure PowerShell. Если вы еще не настроили PowerShell для Azure Stack, выполните действия по [установке](../operator/azure-stack-powershell-install.md) PowerShell.
+* Для создания и администрирования ресурсов в Azure Stack Hub требуется определенная версия Azure PowerShell. Если вы еще не настроили PowerShell для Azure Stack Hub, выполните действия по [установке](../operator/azure-stack-powershell-install.md) PowerShell.
 
-* Настроив PowerShell для Azure Stack, подключитесь к среде Azure Stack. Инструкции см. в статье [Настройка пользовательской среды PowerShell в Azure Stack](azure-stack-powershell-configure-user.md).
+* Настроив PowerShell для Azure Stack Hub, подключитесь к среде Azure Stack Hub. Инструкции см. в руководстве по [настройке пользовательской среды PowerShell в Azure Stack Hub](azure-stack-powershell-configure-user.md).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов — это логический контейнер, в котором выполняется развертывание и администрирование ресурсов Azure Stack. Из пакета средств разработки или интегрированной системы Azure Stack выполните следующий блок кода, чтобы создать группу ресурсов. 
+Группа ресурсов — это логический контейнер, в котором выполняется развертывание и администрирование ресурсов Azure Stack Hub. Из пакета средств разработки или интегрированной системы Azure Stack Hub выполните следующий блок кода, чтобы создать группу ресурсов. 
 
 > [!NOTE]
 > В примерах кода всем переменным уже присвоены значения. Но вы можете изменить эти значения, если потребуется.
@@ -248,4 +246,4 @@ Remove-AzureRmResourceGroup `
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В рамках этого краткого руководстве вы развернули простую виртуальную машину Windows. Дополнительные сведения о виртуальных машинах Azure Stack см. в статье [Рекомендации по использованию виртуальных машин в Azure Stack](azure-stack-vm-considerations.md).
+В рамках этого краткого руководстве вы развернули простую виртуальную машину Windows. Дополнительные сведения о виртуальных машинах Azure Stack Hub см. в статье [Рекомендации по использованию виртуальных машин в Azure Stack Hub](azure-stack-vm-considerations.md).

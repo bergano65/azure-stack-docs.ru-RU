@@ -1,6 +1,6 @@
 ---
-title: Создание виртуальной машины Windows в Azure Stack с помощью Azure CLI | Документация Майкрософт
-description: Создание виртуальной машины Windows в Azure Stack с помощью Azure CLI
+title: Создание виртуальной машины Windows в Azure Stack Hub с помощью Azure CLI | Документация Майкрософт
+description: Создание виртуальной машины Windows в Azure Stack Hub с помощью Azure CLI
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,35 +15,33 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: b88d65806abfe83dfff59307d3bdcd4e99adf96d
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 6a5a389082fa89162023205a2784457b15ccca6b
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824262"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023085"
 ---
-# <a name="quickstart-create-a-windows-server-virtual-machine-using-azure-cli-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины Windows Server с помощью Azure CLI в Azure Stack
+# <a name="quickstart-create-a-windows-server-virtual-machine-using-azure-cli-in-azure-stack-hub"></a>Краткое руководство. Создание виртуальной машины Windows Server с помощью Azure CLI в Azure Stack Hub
 
-‎*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-Вы можете создать виртуальную машину Windows Server 2016 с помощью Azure CLI. Выполните описанные в этой статье действия, чтобы создать и использовать виртуальную машину. В этой статье представлены инструкции, которые помогут вам:
+Вы можете создать виртуальную машину Windows Server 2016 с помощью Azure CLI. Чтобы создать и использовать виртуальную машину, выполните описанные в этой статье действия. В этой статье представлены инструкции, которые помогут вам:
 
 * подключиться к виртуальной машине через удаленный клиент;
 * установить веб-сервер IIS и открыть его стандартную домашнюю страницу;
 * очистить использованные ресурсы.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-* Убедитесь, что ваш оператор Azure Stack добавил в Azure Stack Marketplace **образ Windows Server 2016**.
+* Убедитесь, что оператор Azure Stack Hub добавил образ **Windows Server 2016** в Azure Stack Hub Marketplace.
 
-* Для создания ресурсов и управления ими в Azure CLI требуется определенная версия Azure Stack. Если вы еще не настроили Azure CLI для Azure Stack, выполните действия по [установке и настройке](azure-stack-version-profiles-azurecli2.md) Azure CLI.
+* Для создания ресурсов и управления ими в Azure CLI требуется определенная версия Azure Stack Hub. Если вы еще не настроили Azure CLI для Azure Stack Hub, выполните инструкции по [установке и настройке](azure-stack-version-profiles-azurecli2.md) Azure CLI.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов — это логический контейнер, в котором вы можете развертывать ресурсы Azure Stack и управлять ими. В окружении Azure Stack выполните команду [az group create](/cli/azure/group#az-group-create), чтобы создать группу ресурсов.
+Группа ресурсов — это логический контейнер, в котором вы можете развертывать ресурсы Azure Stack Hub и управлять ими. В окружении Azure Stack Hub выполните команду [az group create](/cli/azure/group#az-group-create), чтобы создать группу ресурсов.
 
 > [!NOTE]
->  Во примерах кода всем переменным уже присвоены значения. Но вы можете изменить эти значения, если потребуется.
+>  В примерах кода всем переменным уже присвоены значения. Но вы можете изменить эти значения, если потребуется.
 
 В следующем примере создается группа ресурсов с именем myResourceGroup в локальном расположении.
 
@@ -77,7 +75,7 @@ az vm create \
 az vm open-port --port 80 --resource-group myResourceGroup --name myVM
 ```
 
-## <a name="connect-to-the-virtual-machine"></a>Подключение к виртуальной машине
+## <a name="connect-to-the-virtual-machine"></a>Подключитесь к виртуальной машине
 
 Используйте следующую команду для создания подключения удаленного рабочего стола к виртуальной машине. Замените "Общедоступный IP-адрес" IP-адресом виртуальной машины. При появлении запроса введите имя пользователя и пароль, которые вы указали для виртуальной машины.
 
@@ -107,6 +105,6 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы развернули простую виртуальную машину Windows Server. Дополнительные сведения о виртуальных машинах Azure Stack см. в [рекомендациях по работе с виртуальными машинами в Azure Stack](azure-stack-vm-considerations.md).
+В этом кратком руководстве вы развернули простую виртуальную машину Windows Server. Дополнительные сведения о виртуальных машинах Azure Stack Hub см. в [рекомендациях по работе с виртуальными машинами в Azure Stack Hub](azure-stack-vm-considerations.md).
