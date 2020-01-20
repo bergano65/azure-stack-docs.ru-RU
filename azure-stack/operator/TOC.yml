@@ -161,7 +161,11 @@
                 - name: Применение обновлений для изготовителей оборудования
                   href: azure-stack-update-oem.md
             - name: Мониторинг состояния обновления
-              href: azure-stack-update-monitor.md
+              items:
+                - name: Использование PowerShell
+                  href: azure-stack-update-monitor.md
+                - name: Использование привилегированной конечной точки
+                  href: azure-stack-monitor-update.md
             - name: Устранение неполадок при обновлении
               href: azure-stack-updates-troubleshoot.md
         - name: Мониторинг работоспособности и оповещений
