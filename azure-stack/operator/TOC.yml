@@ -4,7 +4,7 @@
   items:
     - name: Что такое Azure Stack Hub?
       href: azure-stack-overview.md
-    - name: Что такое Azure Stack Hub HCI?
+    - name: Что такое Azure Stack HCI?
       href: azure-stack-hci-overview.md
     - name: 'Сравнение возможностей, предоставляемых в экосистеме Azure'
       href: compare-azure-azure-stack.md
