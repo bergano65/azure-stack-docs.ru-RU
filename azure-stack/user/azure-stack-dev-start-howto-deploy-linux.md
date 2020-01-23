@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 10/02/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: f87c25cd1955f3d0122ea716b2a7a1084af443c7
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: 65bff945a9a55452632e14436381a14b9b29dbff
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76023286"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76536306"
 ---
 # <a name="deploy-a-linux-vm-to-host-a-web-app-in-azure-stack-hub"></a>Развертывание виртуальной машины Linux для размещения веб-приложения в Azure Stack Hub
 
@@ -35,7 +35,7 @@ ms.locfileid: "76023286"
 
 Перед началом работы убедитесь, что у вас есть все, что нужно.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure Stack Hub с доступом к образу ​​Ubuntu Server 16.04 LTS. Вы можете использовать более позднюю версию образа, но эти инструкции написаны с учетом версии 16.04 LTS. Если у вас нет этого образа, обратитесь к оператору облака, чтобы получить образ в Marketplace Azure Stack Hub.
 
@@ -108,7 +108,7 @@ ms.locfileid: "76023286"
 
     k. Чтобы указать учетную запись хранения для хранения данных метрик, выберите **Учетная запись хранения диагностики**. Данные метрик записываются в учетную запись хранения, чтобы вы могли анализировать их с помощью собственных инструментов. 
 
-    l. Нажмите кнопку **ОК**.
+    l. Щелкните **ОК**.
 
 1. Просмотрите сведения на странице **4. Сводка**.
     - Портал проверит ваши параметры.

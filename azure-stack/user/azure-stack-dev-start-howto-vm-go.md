@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 10/02/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: 1f05b147af4ddd72e9d70eab69150ce442b7b458
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: a06fa482914a45ea53cb88ac09dae54f26bb7558
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75820650"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76536238"
 ---
 # <a name="deploy-a-go-web-app-to-a-vm-in-azure-stack-hub"></a>Развертывание веб-приложения Go на виртуальной машине в Azure Stack Hub
 
@@ -26,7 +26,7 @@ ms.locfileid: "75820650"
 
 2. В области сети виртуальных машин разрешите доступ к следующим портам:
 
-    | Порт | Протокол | Description |
+    | Порт | Протокол | Описание |
     | --- | --- | --- |
     | 80 | HTTP | HTTP — это протокол, который используется для доставки веб-страниц с серверов. Клиенты подключаются по протоколу HTTP, используя DNS-имя или IP-адрес. |
     | 443 | HTTPS | HTTPS — это безопасная версия протокола HTTP, которая использует сертификат безопасности и обеспечивает передачу данных в зашифрованном виде. |

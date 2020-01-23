@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 10/02/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: shnatara
 ms.lastreviewed: 09/25/2019
-ms.openlocfilehash: bb0e9fdb3e1ce1c3778d1167ca76cddae3d67aa7
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 11a80f5ae4c256cd49724f6b508d160bf9145a06
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75819205"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76536510"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack-hub"></a>Развертывание кластера Service Fabric в Azure Stack Hub
 
@@ -30,7 +30,7 @@ ms.locfileid: "75819205"
 
 Кластер Service Fabric в Azure Stack Hub не использует поставщик ресурсов Microsoft.ServiceFabric. Вместо этого в Azure Stack Hub кластер Service Fabric представляет собой масштабируемый набор виртуальных машин с ПО, предустановленным с помощью платформы [Desired State Configuration (DSC)](https://docs.microsoft.com/powershell/scripting/dsc/overview/overview).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже перечислены необходимые условия для развертывания кластера Service Fabric.
 1. **Сертификат кластера**  

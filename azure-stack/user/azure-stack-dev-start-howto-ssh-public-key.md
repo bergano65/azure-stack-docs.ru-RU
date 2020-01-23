@@ -5,16 +5,16 @@ services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: overview
-ms.date: 10/02/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: b40fb92eefa696369ed57aabefb4e8298dad3eea
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 160427b6cdef6bcb5927aad4999ed4c213fc3be3
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75820701"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76536340"
 ---
 # <a name="use-an-ssh-public-key"></a>Использование открытого ключа SSH
 
@@ -110,14 +110,14 @@ BvpmONCSR3YnyUtgWV27N6zC7U1OBdmv7TN6M7g01uOYQKI/GQ==
 1. В поле **Host** (Узел) укажите общедоступный IP-адрес виртуальной машины.
 1. В поле **Logon Type** (Тип входа) выберите **Normal** (Обычный).
 1. Введите имя пользователя и пароль.
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 1. Выберите **Изменить** > **Параметры**.
 
     ![Окно настроек FileZilla](media/azure-stack-dev-start-howto-ssh-public-key/006-filezilla-add-private-key.png)
 
 1. В дереве **Select page** (Выбор страницы) разверните узел **Connection** (Подключение) и выберите **SFTP**.
 1. Нажмите кнопку **Add key file** (Добавить файл ключа) и выберите файл своего закрытого ключа( *\<filename>.ppk*).
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 ### <a name="open-your-connection"></a>Открытие подключения
 
