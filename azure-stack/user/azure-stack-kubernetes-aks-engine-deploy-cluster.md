@@ -1,6 +1,6 @@
 ---
-title: Развертывание кластера Kubernetes с обработчиком AKS в Azure Stack | Документация Майкрософт
-description: Узнайте, как развернуть кластер Kubernetes в Azure Stack из клиентской виртуальной машины, на которой выполняется обработчик AKS.
+title: Развертывание кластера Kubernetes с обработчиком AKS в Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как развернуть кластер Kubernetes в Azure Stack Hub из клиентской виртуальной машины, на которой выполняется обработчик AKS.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,22 +11,20 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 01/10/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 8018b4637dadfbca948b2caa0528b113755dc6dd
-ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
+ms.openlocfilehash: 34fc30c13cf365560fbd30234a60af4cc4f9a594
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310304"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883578"
 ---
-# <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack"></a>Развертывание кластера Kubernetes с обработчиком AKS в Azure Stack
+# <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Развертывание кластера Kubernetes с обработчиком AKS в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-Вы можете развернуть кластер Kubernetes в Azure Stack из клиентской виртуальной машины, на которой выполняется обработчик AKS. В этой статье мы рассмотрим создание спецификации для кластера, развертывание кластера из файла `apimodel.json` и проверку кластера путем развертывания MySQL с помощью Helm.
+Вы можете развернуть кластер Kubernetes в Azure Stack Hub из клиентской виртуальной машины, на которой выполняется обработчик AKS. В этой статье мы рассмотрим создание спецификации для кластера, развертывание кластера из файла `apimodel.json` и проверку кластера путем развертывания MySQL с помощью Helm.
 
 ## <a name="define-a-cluster-specification"></a>Определение спецификации кластера
 
@@ -36,7 +34,7 @@ ms.locfileid: "74310304"
 
 В этом разделе рассматривается создание модели API для кластера.
 
-1.  Для начала примените [пример](https://github.com/Azure/aks-engine/tree/master/examples/azure-stack) файла модели API для Azure Stack и создайте локальную копию для своего развертывания. На виртуальной машине с установленным обработчиком AKS выполните следующую команду:
+1.  Для начала примените [пример](https://github.com/Azure/aks-engine/tree/master/examples/azure-stack) файла модели API для Azure Stack Hub и создайте локальную копию для своего развертывания. На виртуальной машине с установленным обработчиком AKS выполните следующую команду:
 
     ```bash
     curl -o kubernetes-azurestack.json https://raw.githubusercontent.com/Azure/aks-engine/master/examples/azure-stack/kubernetes-azurestack.json
@@ -78,38 +76,40 @@ ms.locfileid: "74310304"
 
 7.  В массиве `masterProfile` заполните следующие поля:
 
-    | Поле | ОПИСАНИЕ |
+    | Поле | Description |
     | --- | --- |
     | dnsPrefix | Введите уникальную строку, которая будет определять имя узла для виртуальных машин. Например, можно создать имя на основе имени группы ресурсов. |
     | count |  Введите число главных серверов для развертывания. Минимальное значение для развертывания высокого уровня доступности — 3, а для развертываний без высокого уровня доступности — 1. |
-    | vmSize |  Введите [размер, поддерживаемый Azure](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes), например `Standard_D2_v2`. |
-    | distro | Укажите `aks-ubuntu-16.04`. |
+    | vmSize |  Введите [размер, поддерживаемый Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes), например `Standard_D2_v2`. |
+    | distro | Введите `aks-ubuntu-16.04`. |
 
 8.  В массиве `agentPoolProfiles` измените следующие данные:
 
-    | Поле | ОПИСАНИЕ |
+    | Поле | Description |
     | --- | --- |
     | count | Введите число агентов для развертывания. |
-    | vmSize | Введите [размер, поддерживаемый Azure](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes), например `Standard_D2_v2`. |
-    | distro | Укажите `aks-ubuntu-16.04`. |
+    | vmSize | Введите [размер, поддерживаемый Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes), например `Standard_D2_v2`. |
+    | distro | Введите `aks-ubuntu-16.04`. |
 
 9.  В массиве `linuxProfile` измените следующие данные:
 
-    | Поле | ОПИСАНИЕ |
+    | Поле | Description |
     | --- | --- |
     | adminUsername | Имя пользователя для администратора виртуальной машины. |
-    | ssh | Введите открытый ключ, который будет использоваться для аутентификации SSH-соединений с виртуальными машинами. |
+    | ssh | Введите открытый ключ, который будет использоваться для аутентификации SSH-соединений с виртуальными машинами. При использовании Putty откройте генератор ключей PuTTY, чтобы загрузить закрытый ключ Putty и открытый ключ, который начинается с ssh-rsa, как показано в следующем примере. Вы можете использовать ключ, сгенерированный при создании клиента Linux, но **вам необходимо скопировать открытый ключ, чтобы он представлял собой однострочный текст, как показано в примере**.|
+
+    ![Генератор ключей PuTTY](media/azure-stack-kubernetes-aks-engine-deploy-cluster/putty-key-generator.png)
 
 ### <a name="more-information-about-the-api-model"></a>Дополнительные сведения о модели API
 
 - Полный справочник по всем параметрам, доступным в модели API, см. в описании [определений кластера](https://github.com/Azure/aks-engine/blob/master/docs/topics/clusterdefinitions.md).  
-- Основные сведения о параметрах, имеющих прямое отношение к Azure Stack, вы найдете в [этой статье](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#cluster-definition-aka-api-model).  
+- Основные сведения о параметрах, имеющих прямое отношение к Azure Stack Hub, вы найдете в [этой статье](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#cluster-definition-aka-api-model).  
 
 ## <a name="deploy-a-kubernetes-cluster"></a>Развертывание кластера Kubernetes
 
 Собрав в модели API все необходимые значения, переходите к созданию кластера. На этом этапе нужно выполнить следующие действия.
 
-Попросите оператора Azure Stack:
+Попросите оператора Azure Stack Hub:
 
 - Проверить работоспособность системы, например с помощью `Test-AzureStack` и средства мониторинга оборудования вашего поставщика вычислительной техники.
 - Убедиться в наличии надлежащего объема ресурсов в системе, в том числе памяти, хранилища и общедоступных IP-адресов.
@@ -117,21 +117,21 @@ ms.locfileid: "74310304"
 
 Переходите к развертыванию кластера:
 
-1.  Проверьте доступные параметры для [флагов CLI](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#cli-flags) обработчика AKS в Azure Stack.
+1.  Проверьте доступные параметры для [флагов CLI](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#cli-flags) обработчика AKS в Azure Stack Hub.
 
-    | Параметр | Пример | ОПИСАНИЕ |
+    | Параметр | Пример | Description |
     | --- | --- | --- |
-    | azure-env | AzureStackCloud | Чтобы сообщить обработчику AKS, что целевой платформой является Azure Stack, используйте `AzureStackCloud`. |
-    | identity-system | adfs | Необязательный элемент. Укажите решение по управлению удостоверениями, если используются службы федерации Active Directory (AD FS). |
-    | location | local | Название региона для Azure Stack. Для ASDK параметр региона нужно настроить как `local`. |
+    | azure-env | AzureStackCloud | Используйте `AzureStackCloud`, чтобы сообщить обработчику AKS, что целевой платформой является Azure Stack Hub. |
+    | identity-system | adfs | Необязательный параметр. Укажите решение по управлению удостоверениями, если используются службы федерации Active Directory (AD FS). |
+    | location | local | Название региона для Azure Stack Hub. Для ASDK параметр региона нужно настроить как `local`. |
     | resource-group | kube-rg | Введите имя новой группы ресурсов или выберите существующую. Имя ресурса должно содержать буквенно-цифровые символы. Оно вводится в нижнем регистре. |
     | api-model | ./kubernetes-azurestack.json | Путь к файлу конфигурации кластера или модели API. |
     | output-directory | kube-rg | Введите имя каталога, в котором будет содержаться выходной файл `apimodel.json` и другие созданные файлы. |
-    | client-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Введите GUID субъекта-службы. Идентификатор клиента определяется как идентификатор приложения, когда администратор Azure Stack создает субъект-службу. |
+    | client-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Введите GUID субъекта-службы. Идентификатор клиента определяется как идентификатор приложения, когда администратор Azure Stack Hub создает субъект-службу. |
     | client-secret | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Введите секрет субъекта-службы. Это секрет клиента, который вы настроили при создании службы. |
     | subscription-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Введите идентификатор подписки. Дополнительные сведения см. в разделе [Подписка на предложение](https://docs.microsoft.com/azure-stack/user/azure-stack-subscribe-services#subscribe-to-an-offer). |
 
-    Вот пример:
+    Например:
 
     ```bash  
     aks-engine deploy \
@@ -160,9 +160,9 @@ ms.locfileid: "74310304"
 
 Чтобы проверить кластер, разверните в нем MySQL с помощью Helm.
 
-1. Получите общедоступный IP-адрес одного из главных узлов с помощью портала Azure Stack.
+1. Получите общедоступный IP-адрес одного из главных узлов с помощью портала Azure Stack Hub.
 
-2. С любого компьютера, который имеет доступ к экземпляру Azure Stack, подключитесь по протоколу SSH к новому главному узлу из любого клиента, например PuTTY или MobaXterm. 
+2. С любого компьютера, который имеет доступ к экземпляру Azure Stack Hub, подключитесь по протоколу SSH к новому главному узлу из любого клиента, например PuTTY или MobaXterm. 
 
 3. В качестве имени пользователя SSH укажите "azureuser" и предоставьте файл закрытого ключа из той пары ключей, которую вы указали для развертывания кластера.
 
@@ -193,7 +193,7 @@ ms.locfileid: "74310304"
     release "wintering-rodent" deleted
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Устранение неполадок с обработчиком AKS в Azure Stack](azure-stack-kubernetes-aks-engine-troubleshoot.md)
+> [Устранение неполадок с обработчиком AKS в Azure Stack Hub](azure-stack-kubernetes-aks-engine-troubleshoot.md)

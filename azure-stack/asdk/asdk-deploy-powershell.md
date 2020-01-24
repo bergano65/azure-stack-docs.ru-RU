@@ -17,18 +17,18 @@ ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: 0ba8723b9d0f03006b52ecd016c3713280b63dea
-ms.sourcegitcommit: 3af71025e85fc53ce529de2f6a5c396b806121ed
+ms.openlocfilehash: 0bced4d75b70b05eea42de763066f1d5b05e1976
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71159293"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022914"
 ---
 # <a name="deploy-asdk-from-the-command-line-using-powershell"></a>Развертывание ASDK из командной строки с помощью PowerShell
 
 Пакет средств разработки Azure Stack (ASDK) — это среда тестирования и разработки, которую можно развернуть для оценки и демонстрации функций и служб Azure Stack. Для ее установки и запуска необходимо подготовить аппаратное обеспечение среды и выполнить ряд сценариев. Выполнение сценариев занимает несколько часов. После этого вы сможете войти на портал администратора и портал пользователя, чтобы приступить к работе с Azure Stack.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Подготовьте главный компьютер ASDK. Составьте план относительно структуры оборудования, программного обеспечения и сети. Компьютер, на котором размещается ASDK, должен соответствовать требованиям к оборудованию, программному обеспечению и сети. Выберите, что будете использовать: Azure Active Directory (Azure AD) или службы федерации Active Directory (AD FS). Прежде чем начинать развертывание, убедитесь в том, что выполнены предварительные требования, чтобы процесс установки прошел без проблем.
 
@@ -54,12 +54,12 @@ ms.locfileid: "71159293"
 Настройка главного компьютера с ASDK для загрузки с CloudBuilder.vhdx:
 
   1. Запустите командную строку от имени администратора.
-  2. Запустите `bcdedit /copy {current} /d "Azure Stack"`.
+  2. Выполните `bcdedit /copy {current} /d "Azure Stack"`.
   3. Скопируйте (клавишами CTRL+C) возвращенное значение CLSID, включая обязательные круглые скобки (`{}`). Это значение называется `{CLSID}`. Его нужно будет вставить (с помощью клавиш CTRL+V или щелчком правой кнопкой мыши) на оставшихся шагах.
-  4. Запустите `bcdedit /set {CLSID} device vhd=[C:]\CloudBuilder.vhdx`.
-  5. Запустите `bcdedit /set {CLSID} osdevice vhd=[C:]\CloudBuilder.vhdx`.
-  6. Запустите `bcdedit /set {CLSID} detecthal on`.
-  7. Запустите `bcdedit /default {CLSID}`.
+  4. Выполните `bcdedit /set {CLSID} device vhd=[C:]\CloudBuilder.vhdx`.
+  5. Выполните `bcdedit /set {CLSID} osdevice vhd=[C:]\CloudBuilder.vhdx`.
+  6. Выполните `bcdedit /set {CLSID} detecthal on`.
+  7. Выполните `bcdedit /default {CLSID}`.
   8. Чтобы проверить параметры загрузки, запустите `bcdedit`.
   9. Убедитесь, что файл CloudBuilder.vhdx перемещен в корень диска C:\ (`C:\CloudBuilder.vhdx`), и перезапустите главный компьютер ASDK. После перезапуска главный компьютер ASDK должен загрузиться с жесткого диска виртуальной машины CloudBuilder.vhdx, чтобы начать развертывание ASDK.
 
@@ -141,7 +141,7 @@ $aadcred = Get-Credential "<Azure AD global administrator account name>" #Exampl
 
 ### <a name="asdk-installazurestackpocps1-optional-parameters"></a>Необязательные параметры ASDK InstallAzureStackPOC.ps1
 
-|Параметр|Обязательный/необязательный|ОПИСАНИЕ|
+|Параметр|Обязательный/необязательный|Description|
 |-----|-----|-----|
 |AdminPassword|Обязательно|Задает учетную запись локального администратора и другие учетные записи пользователей на всех виртуальных машинах, созданных в процессе развертывания ASDK. Этот пароль должен совпадать с текущим паролем локального администратора на узле.|
 |InfraAzureDirectoryTenantName|Обязательно|Задает каталог клиента. Используйте этот параметр, чтобы указать конкретный каталог, где у учетной записи Azure AD есть разрешения на управление несколькими каталогами. Полное имя клиента Azure AD в формате .onmicrosoft.com или имя проверенного личного домена Azure AD.|
@@ -158,7 +158,7 @@ $aadcred = Get-Credential "<Azure AD global administrator account name>" #Exampl
 Рекомендуется сбросить политику срока действия паролей, чтобы срок действия пароля для главного компьютера ASDK не завершился до окончания периода ознакомления.
 
 > [!NOTE]
-> Кроме того, *после* установки ASDK при необходимости можно настроить [параметры телеметрии Azure Stack](asdk-telemetry.md#enable-or-disable-telemetry-after-deployment).
+> Кроме того, при необходимости можно также настроить [параметры телеметрии Azure Stack](asdk-telemetry.md#enable-or-disable-telemetry-after-deployment) *после* установки ASDK.
 
 **[Задачи, выполняемые после развертывания ASDK](asdk-post-deploy.md)**
 
@@ -167,7 +167,7 @@ Azure Stack необходимо зарегистрировать в Azure, чт
 
 **[Регистрация Azure Stack в Azure](asdk-register.md)**
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Поздравляем! После выполнения этих действий вы получите среду ASDK с порталом [администрирования](https://adminportal.local.azurestack.external) и [пользовательским](https://portal.local.azurestack.external) порталом. 
 
 [Настройка, выполняемая после установки ASDK](asdk-post-deploy.md)

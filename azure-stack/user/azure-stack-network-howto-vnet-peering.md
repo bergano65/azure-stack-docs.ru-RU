@@ -1,28 +1,26 @@
 ---
-title: Подключение двух экземпляров Azure Stack с помощью пиринга виртуальных сетей | Документация Майкрософт
-description: Инструкции по подключению двух экземпляров Azure Stack с помощью пиринга виртуальных сетей.
+title: Подключение двух экземпляров Azure Stack Hub с помощью пиринга виртуальных сетей | Документация Майкрософт
+description: Инструкции по подключению двух экземпляров Azure Stack Hub с помощью пиринга виртуальных сетей.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
 ms.topic: how-to
-ms.date: 10/03/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/03/2019
-ms.openlocfilehash: 9eb4780a80e5cedd595950813d5cb5029e1b1857
-ms.sourcegitcommit: ed44d477b9fd11573d1e0d1ed3a3c0ef4512df53
+ms.openlocfilehash: bf855be0ec6fc63be4ab816dac4dde170b24fdad
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73845842"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76536085"
 ---
-# <a name="vnet-peering-in-azure-stack-with-vms"></a>Пиринг виртуальных сетей в Azure Stack с виртуальными машинами
+# <a name="vnet-peering-in-azure-stack-hub-with-vms"></a>Пиринг виртуальных сетей в Azure Stack Hub с виртуальными машинами
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+Вы можете подключить две виртуальные сети Azure Stack Hub друг к другу в одной среде Azure Stack Hub. В настоящее время невозможно подключить виртуальные сети Azure Stack Hub с помощью встроенного [шлюза виртуальной сети](https://docs.microsoft.com/azure-stack/user/azure-stack-network-differences). Для создания туннеля VPN между двумя виртуальными сетями Azure Stack Hub следует использовать устройства NVA. В этой статье в ссылках на шаблоны, мы рассмотрим установку двух виртуальных машин Windows Server 2016 с установленным RRAS. Для внедрения туннеля S2SVPN по протоколу IKEv2 между двумя виртуальными сетями настроено два сервера RRAS. Соответствующие правила NSG и UDR созданы для обеспечения маршрутизации между подсетями на каждой виртуальной сети, обозначенной как **внутренняя**. 
 
-Вы можете подключить две виртуальные сети Azure Stack друг к другу в одной среде Azure Stack. В настоящее время невозможно подключить виртуальные сети Azure Stack с помощью встроенного [шлюза виртуальной сети](https://docs.microsoft.com/azure-stack/user/azure-stack-network-differences). Для создания туннеля VPN между двумя виртуальными сетями Azure Stack следует использовать устройства NVA. В этой статье в ссылках на шаблоны, мы рассмотрим установку двух виртуальных машин Windows Server 2016 с установленным RRAS. Для внедрения туннеля S2SVPN по протоколу IKEv2 между двумя виртуальными сетями настроено два сервера RRAS. Соответствующие правила NSG и UDR созданы для обеспечения маршрутизации между подсетями на каждой виртуальной сети, обозначенной как **внутренняя**. 
-
-Такой шаблон развертывания является основой, которая позволит создавать туннели VPN не только в экземпляре Azure Stack, но и между экземплярами Azure Stack и другими ресурсами, такими как локальные сети с использованием VPN туннелей S2S на Windows RRAS. 
+Такой шаблон развертывания является основой, которая позволит создавать туннели VPN не только в экземпляре Azure Stack Hub, но и между экземплярами Azure Stack Hub и другими ресурсами, такими как локальные сети с использованием VPN туннелей S2S на Windows RRAS. 
 
 Вы можете найти шаблоны в репозитории [шаблонов интеллектуальных границ Azure](https://github.com/Azure-Samples/azure-intelligent-edge-patterns
 ) на сайте GitHub. Шаблон находится в папке **S2SVPNTunnel**.
@@ -31,8 +29,8 @@ ms.locfileid: "73845842"
 
 ## <a name="requirements"></a>Требования
 
-- Интегрированная система ASDK или Azure Stack с последними обновлениями. 
-- Необходимые элементы Marketplace для Azure Stack:
+- Развертывание с применением последних обновлений. 
+- Необходимые элементы Marketplace для Azure Stack Hub:
     -  Windows Server 2016 Datacenter (рекомендуется последняя сборка).
     -  Расширение пользовательских сценариев
 
@@ -57,6 +55,6 @@ ms.locfileid: "73845842"
 
 ![замещающий текст](./media/azure-stack-network-howto-vnet-peering/s2svpntunnels2.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Сети Azure Stack: различия и рекомендации](azure-stack-network-differences.md)  
+[Сети Azure Stack Hub: различия и рекомендации](azure-stack-network-differences.md)  

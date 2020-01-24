@@ -1,6 +1,6 @@
 ---
-title: Развертывание VM с сертификатом, безопасно хранящимся в Azure Stack | Документация Майкрософт
-description: Узнайте, как развернуть виртуальную машину и отправить в нее сертификат с помощью хранилища ключей в Azure Stack.
+title: Развертывание VM с сертификатом, безопасно хранящимся в Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как развернуть виртуальную машину и отправить в нее сертификат с помощью хранилища ключей в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,22 +15,20 @@ ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 8741d63dbbcefde950fc10c0917d87bc4e9718f7
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: a65615e03e6e7fcda84ec16c6323e9fa2c2f6221
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961522"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75879093"
 ---
-# <a name="deploy-a-vm-with-a-securely-stored-certificate-on-azure-stack"></a>Развертывание VM с сертификатом, безопасно хранящимся в Azure Stack 
+# <a name="deploy-a-vm-with-a-securely-stored-certificate-on-azure-stack-hub"></a>Развертывание VM с сертификатом, безопасно хранящимся в Azure Stack Hub 
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-В этой статье описано, как развернуть виртуальную машину (VM) Azure Stack с установленным сертификатом Key Vault.
+В этой статье описано, как развернуть виртуальную машину (VM) Azure Stack Hub с установленным сертификатом Key Vault.
 
 ## <a name="overview"></a>Обзор
 
-Сертификаты используются во многих сценариях, например для аутентификации в Active Directory или шифрования веб-трафика. Вы можете безопасно хранить сертификаты в виде секретов в хранилище ключей Azure Stack. Хранилище ключей Azure Stack обеспечивает следующие преимущества:
+Сертификаты используются во многих сценариях, например для аутентификации в Active Directory или шифрования веб-трафика. Вы можете безопасно хранить сертификаты в виде секретов в хранилище ключей Azure Stack Hub. Хранилище ключей Azure Stack обеспечивает следующие преимущества:
 
 * сертификаты не предоставляются в скриптах, журналах командной строки или шаблонах;
 * упрощенное управление сертификатами;
@@ -47,11 +45,11 @@ ms.locfileid: "71961522"
 > [!NOTE]
 > Эти шаги можно выполнить из Пакета средств разработки Azure Stack (ASDK) или из внешнего клиента при подключении через VPN.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Необходимо подписаться на предложение, включающее службу Key Vault.
-* [Установите PowerShell для Azure Stack](../operator/azure-stack-powershell-install.md).
-* [Настройка пользовательской среды PowerShell в Azure Stack](azure-stack-powershell-configure-user.md).
+* [Установка PowerShell для Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+* [Подключение к Azure Stack Hub в роли пользователя с помощью PowerShell](azure-stack-powershell-configure-user.md).
 
 ## <a name="create-a-key-vault-secret"></a>Создание секрета хранилища ключей
 
@@ -177,7 +175,7 @@ New-AzureRmResourceGroupDeployment `
 
 ![Результаты развертывания шаблона](media/azure-stack-key-vault-push-secret-into-vm/deployment-output.png)
 
-При развертывании этой VM Azure Stack отправляет на нее сертификат. Расположение сертификата зависит от операционной системы VM.
+При развертывании этой ВМ Azure Stack Hub отправляет на нее сертификат. Расположение сертификата зависит от операционной системы VM.
 
 * В Windows сертификат добавляется в расположение сертификата **LocalMachine** с помощью хранилища сертификатов, предоставленного пользователем.
 * В Linux сертификат размещается в каталоге **/var/lib/waagent**: файл сертификата X509 с именем **UppercaseThumbprint.crt** и файл закрытого ключа с именем **UppercaseThumbprint.prv**.
@@ -192,7 +190,7 @@ New-AzureRmResourceGroupDeployment `
 Set-AzureKeyVaultSecretAttribute -VaultName contosovault -Name servicecert -Version e3391a126b65414f93f6f9806743a1f7 -Enable 0
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание виртуальной машины с помощью пароля из хранилища ключей](azure-stack-key-vault-deploy-vm-with-secret.md)
 * [Пример приложения, использующего ключи и секретные данные, хранящиеся в хранилище ключей](azure-stack-key-vault-sample-app.md)

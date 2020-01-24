@@ -1,6 +1,6 @@
 ---
-title: Развертывание виртуальной машины Azure Stack с помощью пароля, хранящегося в Key Vault | Документация Майкрософт
-description: Узнайте, как развернуть виртуальную машину с помощью пароля, хранящегося в хранилище ключей Azure Stack.
+title: Развертывание виртуальной машины Azure Stack Hub с помощью пароля, хранящегося в Key Vault | Документация Майкрософт
+description: Узнайте, как развернуть виртуальную машину с помощью пароля, хранящегося в хранилище ключей Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,26 +11,24 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/02/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 2a75ee1794e9ebfeb995ea03137d12c6c50cce4f
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.openlocfilehash: 866862f237490a9d59211ed6a87fc1cff2fe7c11
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909512"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76536153"
 ---
-# <a name="deploy-an-azure-stack-vm-using-a-password-stored-in-key-vault"></a>Развертывание виртуальной машины Azure Stack с помощью пароля, хранящегося в Key Vault
+# <a name="deploy-an-azure-stack-hub-vm-using-a-password-stored-in-key-vault"></a>Развертывание виртуальной машины Azure Stack Hub с помощью пароля, хранящегося в Key Vault
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-В этой статье описано, как развернуть виртуальную машину Windows Server с помощью пароля, хранящегося в Key Vault в Azure Stack. Использовать пароль из Key Vault безопаснее, чем передавать незашифрованный пароль.
+В этой статье описано, как развернуть виртуальную машину Windows Server с помощью пароля, хранящегося в Key Vault в Azure Stack Hub. Использовать пароль из Key Vault безопаснее, чем передавать незашифрованный пароль.
 
 ## <a name="overview"></a>Обзор
 
-Такие значения, как пароль, можно хранить в Key Vault Azure Stack в виде секрета. После создания секрета на него можно ссылаться в шаблонах Azure Resource Manager. Использование секретов в Resource Manager обеспечивает следующие преимущества:
+Такие значения, как пароль, можно хранить в Key Vault Azure Stack Hub в виде секрета. После создания секрета на него можно ссылаться в шаблонах Azure Resource Manager. Использование секретов в Resource Manager обеспечивает следующие преимущества:
 
 * не нужно вручную вводить секрет при каждом развертывании ресурса;
 * можно указать, какие пользователи или субъекты-службы могут получить доступ к секрету.
@@ -38,7 +36,7 @@ ms.locfileid: "71909512"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Необходимо подписаться на предложение, включающее службу Key Vault.
-* [Установите PowerShell для Azure Stack](../operator/azure-stack-powershell-install.md).
+* [Установка PowerShell для Azure Stack Hub](../operator/azure-stack-powershell-install.md).
 * [Настройте среду PowerShell.](azure-stack-powershell-configure-user.md)
 
 Ниже описано, как создать виртуальную машину путем извлечения пароля, хранящегося в Key Vault:
@@ -131,7 +129,7 @@ New-AzureRmResourceGroupDeployment `
 
 ![Выходные данные развертывания](media/azure-stack-key-vault-deploy-vm-with-secret/deployment-output.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Sample application that uses keys and secrets stored in a key vault](azure-stack-key-vault-sample-app.md) (Пример приложения, использующего ключи и секреты из хранилища ключей)
 * [Create a virtual machine and include certificate retrieved from a key vault](azure-stack-key-vault-push-secret-into-vm.md) (Создание виртуальной машины с сертификатом хранилища ключей)

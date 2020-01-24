@@ -1,6 +1,6 @@
 ---
-title: Создание баз данных MySQL в Azure Stack | Документация Майкрософт
-description: Сведения о создании баз данных MySQL, подготовленных с помощью поставщика ресурсов адаптера MySQL, и управление ими в Azure Stack.
+title: Создание баз данных MySQL в Azure Stack Hub | Документация Майкрософт
+description: Сведения о создании баз данных MySQL, подготовленных с помощью поставщика ресурсов адаптера MySQL, и управление ими в Azure Stack Hub.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -11,23 +11,23 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/02/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 9daaea395ee28da79da1d6fd553d2e0b30e28156
-ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
+ms.openlocfilehash: 1d983ec9bf05efd05f151dea964617194bb7a2d0
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72682235"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76535048"
 ---
-# <a name="create-mysql-databases-in-azure-stack"></a>Создание баз данных MySQL в Azure Stack
-Пользователь Azure Stack с подпиской на предложение, включающее службу базы данных MySQL, может самостоятельно создавать обслуживаемые базы данных MySQL и управлять ими на портале для пользователей.
+# <a name="create-mysql-databases-in-azure-stack-hub"></a>Создание баз данных MySQL в Azure Stack Hub
+Пользователь Azure Stack Hub с подпиской на предложение, включающее службу базы данных MySQL, может самостоятельно создавать обслуживаемые базы данных MySQL и управлять ими на портале для пользователей.
 
 ## <a name="create-a-mysql-database"></a>Создание базы данных MySQL
 
-1. Войдите на портал пользователя Azure Stack.
+1. Войдите на портал пользователя Azure Stack Hub.
 2. Выберите **+ Создать ресурс** > **Данные + хранилище** > **База данных SQL** > **Добавить**.
 3. В разделе **Создание базы данных MySQL** введите имя базы данных и другие параметры в соответствии с условиями своей среды.
 
@@ -38,7 +38,7 @@ ms.locfileid: "72682235"
     ![Выбор номера SKU для MySQL](./media/azure-stack-mysql-rp-deploy/mysql-select-sku.png)
 
     >[!Note]
-    >По мере добавления серверов размещения в Azure Stack им назначаются номера SKU. Базы данных создаются в пуле серверов размещения, который относится к соответствующему номеру SKU.
+    >По мере добавления серверов размещения в Azure Stack Hub им назначаются номера SKU. Базы данных создаются в пуле серверов размещения, который относится к соответствующему номеру SKU.
 
 5. В разделе **Вход** выберите ***Настроить обязательные параметры***.
 6. В разделе **Select a Login** (Выбор имени для входа) вы можете выбрать имя существующей учетной записи или щелкнуть **+Новая учетная запись** и создать ее.  Введите **Database login** (Имя для входа в базу данных) и **Пароль**, затем щелкните **ОК**.
@@ -64,6 +64,6 @@ ms.locfileid: "72682235"
 
 ![Обновление пароля администратора](./media/azure-stack-mysql-rp-deploy/mysql-update-password.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о [предоставлении баз данных MySQL с высоким уровнем доступности](azure-stack-tutorial-mysql.md).

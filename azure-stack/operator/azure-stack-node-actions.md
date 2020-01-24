@@ -1,6 +1,6 @@
 ---
-title: Действия с узлами единицы масштабирования в Azure Stack | Документация Майкрософт
-description: Сведения о действиях узла единицы масштабирования, в том числе включение, выключение питания, отключение, возобновление и просмотр состояния узла в интегрированных системах Azure Stack.
+title: Действия с узлами единицы масштабирования в Azure Stack Hub | Документация Майкрософт
+description: Сведения о действиях узла единицы масштабирования, в том числе включение, выключение питания, отключение, возобновление и просмотр состояния узла в интегрированных системах Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,16 +15,14 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 5bc65418c1dd098dc8784cb9bf306676a1cd79ed
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: de0ec0d68b3d63cc0661fe7c4684304d83878a45
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955273"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882357"
 ---
-# <a name="scale-unit-node-actions-in-azure-stack"></a>Действия с узлами единицы масштабирования в Azure Stack
-
-*Область применения: интегрированные системы Azure Stack*
+# <a name="scale-unit-node-actions-in-azure-stack-hub"></a>Действия с узлами единицы масштабирования в Azure Stack Hub
 
 В этой статье описывается, как просмотреть состояние единицы масштабирования. Вы можете просматривать узлы отдельной единицы. С узлами можно выполняться такие действия, как включение и отключение питания, выключение, очистка, возобновление и восстановление. Обычно эти действия с узлами выполняются при оперативной замене компонентов или для восстановления работоспособности узла.
 
@@ -56,13 +54,13 @@ ms.locfileid: "73955273"
 
 ### <a name="node-operational-states"></a>Состояния работоспособности узлов
 
-| Status | ОПИСАНИЕ |
+| Состояние | Description |
 |----------------------|-------------------------------------------------------------------|
-| Выполнение | Узел активно участвует в единице масштабирования. |
-| Остановлено | Узел недоступен. |
+| Запущен | Узел активно участвует в единице масштабирования. |
+| Остановлена | Узел недоступен. |
 | Добавление | Узел активно добавляется в единицу масштабирования. |
 | Восстановление | Восстановление узла активно выполняется. |
-| Обслуживание, | Узел приостановлен, и нет запущенных активных пользовательских рабочих нагрузок. |
+| Обслуживание | Узел приостановлен, и нет запущенных активных пользовательских рабочих нагрузок. |
 | Требуется исправление | Обнаружена ошибка, требующая восстановления узла. |
 
 ## <a name="scale-unit-node-actions"></a>Действия для узла единицы масштабирования
@@ -76,7 +74,7 @@ ms.locfileid: "73955273"
 
 Доступные действия зависят от текущего рабочего состояния узла.
 
-Необходимо установить модули PowerShell для Azure Stack. Эти командлеты находятся в модуле **Azs.Fabric.Admin**. Инструкции по установке или проверке установки PowerShell для Azure Stack см. в разделе [Установка PowerShell для Azure Stack](azure-stack-powershell-install.md).
+Необходимо установить модули PowerShell для Azure Stack Hub. Эти командлеты находятся в модуле **Azs.Fabric.Admin**. Инструкции по установке или проверке установки PowerShell для Azure Stack Hub см. в разделе [Установка PowerShell для Azure Stack Hub](azure-stack-powershell-install.md).
 
 ## <a name="stop"></a>Остановить
 
@@ -94,7 +92,7 @@ ms.locfileid: "73955273"
 
 Дополнительные сведения см. в разделе [Stop-AzsScaleUnitNode](https://docs.microsoft.com/powershell/module/azs.fabric.admin/stop-azsscaleunitnode).
 
-## <a name="start"></a>Начало
+## <a name="start"></a>Запуск
 
 Действие **запуска** приводит к включению узла. Результат аналогичен нажатию на кнопку питания.
 
@@ -140,18 +138,18 @@ ms.locfileid: "73955273"
 ## <a name="repair"></a>Восстановление
 
 > [!CAUTION]  
-> Согласование встроенного ПО является критически важным для успешного выполнения операции, описанной в этой статье. Пропуск этого шага может привести к нестабильной работе системы, снижению производительности, потокам безопасности или сбою, когда автоматизация Azure Stack развертывает операционную систему. При замене оборудования всегда следует обращаться к документации вашего партнера, предоставляющего оборудование, чтобы гарантировать, что применяемое встроенное ПО соответствует версии OEM, отображаемой на [портале администрирования Azure Stack](azure-stack-updates.md).<br><br>
+> Согласование встроенного ПО является критически важным для успешного выполнения операции, описанной в этой статье. Пропуск этого шага может привести к нестабильной работе системы, снижению производительности, потокам безопасности или сбою, когда автоматизация Azure Stack Hub развертывает операционную систему. При замене оборудования всегда следует обращаться к документации вашего партнера, предоставляющего оборудование, чтобы гарантировать, что применяемое встроенное ПО соответствует версии OEM, отображаемой на [портале администрирования Azure Stack Hub](azure-stack-updates.md).<br><br>
 Дополнительные сведения и ссылки на документацию партнеров доступны в разделе [Замена компонента оборудования на узле единицы масштабирования Azure Stack](azure-stack-replace-component.md).
 
 | Партнер по оборудованию | Регион | URL-адрес |
 |------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cisco | Все | [Руководство по эксплуатации интегрированной системы Cisco для Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Заметки о выпуске интегрированной системы Cisco для Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
-| Dell EMC | Все | [Облако для Microsoft Azure Stack 14G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Облако для Microsoft Azure Stack 13G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
+| Cisco | All | [Руководство по эксплуатации интегрированной системы Cisco для Microsoft Azure Stack Hub](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Заметки о выпуске интегрированной системы Cisco для Microsoft Azure Stack Hub](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
+| Dell EMC | All | [Облако для Microsoft Azure Stack Hub 14G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Облако для Microsoft Azure Stack Hub 13G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
 | Fujitsu | Япония | [Служба технической поддержки Fujitsu (требуется учетная запись и имя для входа)](https://eservice.fujitsu.com/supportdesk-web/) |
 |  | Европа, Ближний Восток и Африка | [Fujitsu: поддержка продуктов и систем ИТ](https://support.ts.fujitsu.com/IndexContact.asp?lng=COM&ln=no&LC=del) |
 |  |  | [Сайт MySupport Fujitsu (требуется учетная запись и имя для входа)](https://support.ts.fujitsu.com/IndexMySupport.asp) |
-| HPE | Все | [HPE ProLiant для Microsoft Azure Stack](http://www.hpe.com/info/MASupdates) |
-| Lenovo | Все | [Лучшие рецепты для ThinkAgile SXM](https://datacentersupport.lenovo.com/us/en/solutions/ht505122) |
+| HPE | All | [HPE ProLiant для Microsoft Azure Stack Hub](http://www.hpe.com/info/MASupdates) |
+| Lenovo | All | [Лучшие рецепты для ThinkAgile SXM](https://datacentersupport.lenovo.com/us/en/solutions/ht505122) |
 
 Действие **восстановления** восстанавливает узел. Его следует применять только в следующих сценариях:
 
@@ -183,6 +181,6 @@ ms.locfileid: "73955273"
   Stop-AzsScaleUnitNode -Location <RegionName> -Name <NodeName> -Shutdown
   ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Сведения о модуле оператора Azure Stack Fabric](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0).
+[Сведения о модуле оператора Azure Stack Hub Fabric](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0).

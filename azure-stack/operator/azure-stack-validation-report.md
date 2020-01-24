@@ -1,6 +1,6 @@
 ---
 title: Отчет о проверке для Azure Stack Hub | Документация Майкрософт
-description: Получение результатов проверки готовности Azure Stack с помощью отчета.
+description: Узнайте результаты проверки готовности Azure Stack Hub с помощью отчета.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -16,12 +16,12 @@ ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: e699ab75225e0590d287ddadd8b35b67bfac8479
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: 426c7d9070fd0e1b7d194ae27cd9f0b9ab91e4cc
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718391"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75812796"
 ---
 # <a name="azure-stack-hub-validation-report"></a>Отчет о проверке Azure Stack Hub
 
@@ -76,13 +76,13 @@ Error Details                 :
 
 Azure Identity Validation found no errors or warnings.
 
-############### Azure Stack Graph Validation Summary ###############
+############### Azure Stack Hub Graph Validation Summary ###############
 
-Azure Stack Graph Validation results not available.
+Azure Stack Hub Graph Validation results not available.
 
-############### Azure Stack ADFS Validation Summary ###############
+############### Azure Stack Hub ADFS Validation Summary ###############
 
-Azure Stack ADFS Validation results not available.
+Azure Stack Hub ADFS Validation results not available.
 
 ############### AzsReadiness Job Summary ###############
 
@@ -119,13 +119,13 @@ Registration Validation found no errors or warnings.
 
 Azure Identity Validation found no errors or warnings.
 
-############### Azure Stack Graph Validation Summary ###############
+############### Azure Stack Hub Graph Validation Summary ###############
 
-Azure Stack Graph Validation results not available.
+Azure Stack Hub Graph Validation results not available.
 
-############### Azure Stack ADFS Validation Summary ###############
+############### Azure Stack Hub ADFS Validation Summary ###############
 
-Azure Stack ADFS Validation results not available.
+Azure Stack Hub ADFS Validation results not available.
 ```
 
 ## <a name="view-a-filtered-report"></a>Просмотр отчета с фильтром

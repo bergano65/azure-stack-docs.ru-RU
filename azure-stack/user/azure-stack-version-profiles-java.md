@@ -1,6 +1,6 @@
 ---
-title: Использование профилей версий API с помощью Java в Azure Stack | Документация Майкрософт
-description: Узнайте, как использовать профили версий API с помощью Java в Azure Stack
+title: Использование профилей версий API с помощью Java в Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как использовать профили версий API с помощью Java в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -16,22 +16,20 @@ ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 7d2a98656671a5e6f59d46054e074e45bb9d3c89
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: 37481cee1e7bc5b9bee0e68878077e084369ca39
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282893"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883190"
 ---
-# <a name="use-api-version-profiles-with-java-in-azure-stack"></a>Использование профилей версий API с помощью Java в Azure Stack
+# <a name="use-api-version-profiles-with-java-in-azure-stack-hub"></a>Использование профилей версий API с помощью Java в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+Пакет SDK для Resource Manager Azure Stack Hub для Java предоставляет средства для создания и администрирования инфраструктуры. В этом пакете SDK представлены поставщики ресурсов вычислений, сети, хранилища, служб приложений и [Key Vault](/azure/key-vault/key-vault-whatis).
 
-Пакет SDK для Resource Manager Azure Stack для Java предоставляет средства для создания и администрирования инфраструктуры. В этом пакете SDK представлены поставщики ресурсов вычислений, сети, хранилища, служб приложений и [Key Vault](/azure/key-vault/key-vault-whatis).
+Пакет SDK для Java добавляет профили API, включая зависимости в файл **Pom.xml**, который загружает правильные модули из **JAVA-файла**. Но вы можете указать в качестве зависимостей несколько профилей Azure, например **2019-03-01-hybrid** или **latest**. Применение этих зависимостей позволяет загрузить правильный модуль, чтобы при создании типа ресурса вы могли выбрать из этих профилей версию API, которую нужно использовать. Это позволяет использовать в Azure последние стабильные версии, а для разработки — самые свежие версии API для Azure Stack Hub.
 
-Пакет SDK для Java добавляет профили API, включая зависимости в файл **Pom.xml**, который загружает правильные модули из **JAVA-файла**. Но вы можете указать в качестве зависимостей несколько профилей Azure, например **2019-03-01-hybrid** или **latest**. Применение этих зависимостей позволяет загрузить правильный модуль, чтобы при создании типа ресурса вы могли выбрать из этих профилей версию API, которую нужно использовать. Это позволяет использовать в Azure последние стабильные версии, а для разработки — самые свежие версии API для Azure Stack.
-
-Пакет SDK для Java позволяет создать полноценную гибридную облачную среду. Профили API в пакете SDK для Java позволяют выполнять разработку гибридных облачных приложений, легко переключаясь между глобальными ресурсами Azure и ресурсами в Azure Stack.
+Пакет SDK для Java позволяет создать полноценную гибридную облачную среду. Профили API в пакете SDK для Java позволяют выполнять разработку гибридных облачных приложений, легко переключаясь между глобальными ресурсами Azure и ресурсами в Azure Stack Hub.
 
 ## <a name="java-and-api-version-profiles"></a>Использование профилей версии API с помощью Java
 
@@ -41,7 +39,7 @@ ms.locfileid: "72282893"
 
   - Чтобы использовать самый новый профиль, укажите зависимость **com.microsoft.azure**.
 
-  - Чтобы использовать последние службы, поддерживаемые Azure Stack, укажите профиль **com.microsoft.azure.profile\_2019\_03\_01\_hybrid**.
+  - Чтобы использовать последние службы, поддерживаемые Azure Stack Hub, укажите профиль **com.microsoft.azure.profile\_2019\_03\_01\_hybrid**.
 
     - Этот профиль значение нужно указать в качестве зависимости в файле **Pom.xml**, чтобы модули загружались автоматически при выборе нужного класса из раскрывающегося списка, как в .NET.
 
@@ -83,26 +81,26 @@ ms.locfileid: "72282893"
    - **com.microsoft.azure**
      - **Актуальная**
 
-5. При необходимости создайте подписку и сохраните ее идентификатор, чтобы использовать его позднее. Инструкции по созданию подписки см. в статье [Создание подписок для предложений в Azure Stack](../operator/azure-stack-subscribe-plan-provision-vm.md).
+5. При необходимости создайте подписку и сохраните ее идентификатор, чтобы использовать его позднее. Инструкции по созданию подписки для предложений в Azure Stack Hub см. в [этой статье](../operator/azure-stack-subscribe-plan-provision-vm.md).
 
-6. Создайте субъект-службу и сохраните идентификатор клиента и секрет клиента. Инструкции по созданию субъекта-службы для Azure Stack см. в статье [Предоставление приложениям доступа к Azure Stack](../operator/azure-stack-create-service-principals.md). Идентификатор клиента при создании субъекта-службы называется идентификатором приложения.
+6. Создайте субъект-службу и сохраните идентификатор клиента и секрет клиента. Инструкции по созданию субъекта-службы для Azure Stack Hub см. в руководстве по [предоставлению приложениям доступа к Azure Stack Hub](../operator/azure-stack-create-service-principals.md). Идентификатор клиента при создании субъекта-службы называется идентификатором приложения.
 
-7. Убедитесь, что субъект-служба имеет роль участника или владельца в вашей подписке. Сведения о том, как назначить роль субъекту-службе, см. в статье [Предоставление приложениям доступа к Azure Stack](../operator/azure-stack-create-service-principals.md).
+7. Убедитесь, что субъект-служба имеет роль участника или владельца в вашей подписке. Сведения о том, как назначить роль субъекту-службе, см. в статье о [предоставлении приложениям доступа к Azure Stack Hub](../operator/azure-stack-create-service-principals.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-Чтобы использовать пакет SDK Azure для Java и Azure Stack, укажите следующие значения и задайте значения для переменных среды. Чтобы настроить переменные среды, воспользуйтесь инструкциями, которые указаны после таблицы для соответствующей операционной системы.
+Чтобы использовать пакет SDK Azure для Java и Azure Stack Hub, укажите следующие значения и задайте значения для переменных среды. Чтобы настроить переменные среды, воспользуйтесь инструкциями, которые указаны после таблицы для соответствующей операционной системы.
 
-| Значение                     | Переменные среды | ОПИСАНИЕ                                                                                                                                                                                                          |
+| Значение                     | Переменные среды | Description                                                                                                                                                                                                          |
 | ------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Tenant ID                 | `AZURE_TENANT_ID`            | [Идентификатор клиента](../operator/azure-stack-identity-overview.md) Azure Stack.                                                          |
+| Tenant ID                 | `AZURE_TENANT_ID`            | [Идентификатор клиента](../operator/azure-stack-identity-overview.md) Azure Stack Hub.                                                          |
 | Идентификатор клиента                 | `AZURE_CLIENT_ID`             | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы в предыдущем разделе.                                                                                              |
-| Идентификатор подписки           | `AZURE_SUBSCRIPTION_ID`      | [Идентификатор подписки](../operator/service-plan-offer-subscription-overview.md#subscriptions) используется для доступа к предложениям в Azure Stack.                |
+| Идентификатор подписки           | `AZURE_SUBSCRIPTION_ID`      | [Идентификатор подписки](../operator/service-plan-offer-subscription-overview.md#subscriptions) используется для доступа к предложениям в Azure Stack Hub.                |
 | Секрет клиента             | `AZURE_CLIENT_SECRET`        | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы.                                                                                                                                   |
-| Конечная точка Resource Manager | `ARM_ENDPOINT`              | Дополнительные сведения см. в статье [Конечная точка Resource Manager для Azure Stack](../user/azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint). |
-| Location                  | `RESOURCE_LOCATION`    | **Локальное значение** для Azure Stack.                                                                                                                                                                                                |
+| Конечная точка Resource Manager | `ARM_ENDPOINT`              | Дополнительные сведения см. в разделе о [конечной точке Resource Manager для Azure Stack Hub](../user/azure-stack-version-profiles-ruby.md#the-azure-stack-hub-resource-manager-endpoint). |
+| Location                  | `RESOURCE_LOCATION`    | **Локальное значение** для Azure Stack Hub.                                                                                                                                                                                                |
 
-Чтобы узнать идентификатор клиента для Azure Stack, выполните приведенные [здесь](../operator/azure-stack-csp-ref-operations.md) инструкции. Чтобы настроить переменные среды, выполните процедуры из следующих разделов.
+Чтобы узнать идентификатор клиента для Azure Stack Hub, выполните приведенные [здесь](../operator/azure-stack-csp-ref-operations.md) инструкции. Чтобы настроить переменные среды, выполните процедуры из следующих разделов.
 
 ### <a name="microsoft-windows"></a>Microsoft Windows
 
@@ -120,13 +118,13 @@ Set AZURE_TENANT_ID=<Your_Tenant_ID>
 Export AZURE_TENANT_ID=<Your_Tenant_ID>
 ```
 
-### <a name="trust-the-azure-stack-ca-root-certificate"></a>Доверие для корневого сертификата ЦС Azure Stack
+### <a name="trust-the-azure-stack-hub-ca-root-certificate"></a>Установка доверия для корневого сертификата ЦС Azure Stack Hub
 
-Если вы используете Пакет средств разработки Azure Stack (ASDK), нужно настроить доверите корневому сертификату ЦС на удаленном компьютере. Для интегрированных систем Azure Stack доверие корневому сертификату ЦС не требуется.
+Если вы используете Пакет средств разработки Azure Stack (ASDK), нужно настроить доверите корневому сертификату ЦС на удаленном компьютере. Для интегрированных систем Azure Stack Hub доверие корневому сертификату ЦС не требуется.
 
 #### <a name="windows"></a>Windows
 
-1. Экспортируйте самозаверяющий сертификат Azure Stack на компьютер.
+1. Экспортируйте самозаверяющий сертификат Azure Stack Hub на компьютер.
 
 1. В командной строке перейдите в каталог `%JAVA_HOME%\bin`.
 
@@ -136,7 +134,7 @@ Export AZURE_TENANT_ID=<Your_Tenant_ID>
    .\keytool.exe -importcert -noprompt -file <location of the exported certificate here> -alias root -keystore %JAVA_HOME%\lib\security\cacerts -trustcacerts -storepass changeit
    ```
 
-### <a name="the-azure-stack-resource-manager-endpoint"></a>Конечная точка Resource Manager для Azure Stack
+### <a name="the-azure-stack-hub-resource-manager-endpoint"></a>Конечная точка Resource Manager для Azure Stack Hub
 
 Azure Resource Manager — это платформа управления, которая дает администраторам возможность развертывать, администрировать и отслеживать ресурсы Azure. Azure Resource Manager может обрабатывать эти задачи в рамках одной операции как группы, а не по отдельности.
 
@@ -167,17 +165,17 @@ Azure Resource Manager — это платформа управления, ко
 
 ## <a name="existing-api-profiles"></a>Существующие профили API
 
-- **com.microsoft.azure.profile\_2019\_03\_01\_hybrid**: последний профиль, созданный для Azure Stack. Используйте этот профиль, чтобы обеспечить наибольшую совместимость служб и Azure Stack с версией 1904 или более поздней.
+- **com.microsoft.azure.profile\_2019\_03\_01\_hybrid**: последний профиль, созданный для Azure Stack Hub. Используйте этот профиль, чтобы обеспечить наибольшую совместимость служб и Azure Stack Hub с версией 1904 или более поздней.
 
-- **com.microsoft.azure.profile\_2018\_03\_01\_hybrid**: Профиль, созданный для Azure Stack. Используйте этот профиль, чтобы обеспечить совместимость служб и Azure Stack для версии 1808 или более поздней.
+- **com.microsoft.azure.profile\_2018\_03\_01\_hybrid**: профиль, созданный для Azure Stack Hub. Используйте этот профиль, чтобы обеспечить совместимость служб и Azure Stack Hub для версии 1808 или более поздней.
 
 - **com.microsoft.azure**: профиль с новейшими версиями всех служб. Используйте последние версии всех служб.
 
-См. дополнительные сведения о [профилях API и Azure Stack](../user/azure-stack-version-profiles.md#summary-of-api-profiles).
+См. дополнительные сведения об [Azure Stack Hub и профилях API](../user/azure-stack-version-profiles.md#summary-of-api-profiles).
 
 ## <a name="azure-java-sdk-api-profile-usage"></a>Использование профиля API пакета SDK Azure для Java
 
-Следующий код выполняет аутентификацию субъекта-службы в Azure Stack. Для этого создается маркер с использованием идентификатора клиента и базы аутентификации для Azure Stack.
+Следующий код выполняет проверку подлинности субъекта-службы в Azure Stack Hub. Для этого создается маркер с использованием идентификатора клиента и базы проверки подлинности для Azure Stack Hub:
 
 ```java
 AzureTokenCredentials credentials = new ApplicationTokenCredentials(client, tenant, key, AZURE_STACK)
@@ -187,14 +185,14 @@ Azure azureStack = Azure.configure()
                     .authenticate(credentials, credentials.defaultSubscriptionID());
 ```
 
-Этот код дает возможность использовать зависимости профиля API для успешного развертывания приложения в Azure Stack.
+Этот код дает возможность использовать зависимости профиля API для успешного развертывания приложения в Azure Stack Hub.
 
-## <a name="define-azure-stack-environment-setting-functions"></a>Определение функций параметров среды Azure Stack
+## <a name="define-azure-stack-hub-environment-setting-functions"></a>Определение функций параметров среды Azure Stack Hub
 
-Чтобы зарегистрировать облако Azure Stack с правильными конечными точками, используйте следующий код:
+Чтобы зарегистрировать облако Azure Stack Hub с правильными конечными точками, используйте следующий код:
 
 ```java
-// Get Azure Stack cloud endpoints
+// Get Azure Stack Hub cloud endpoints
 final HashMap<String, String> settings = getActiveDirectorySettings(armEndpoint);
 
 AzureEnvironment AZURE_STACK = new AzureEnvironment(new HashMap<String, String>() {
@@ -259,7 +257,7 @@ public static HashMap<String, String> getActiveDirectorySettings(String armEndpo
 
 ## <a name="samples-using-api-profiles"></a>Примеры с профилями API
 
-Используйте примеры из репозитория GitHub в качестве рекомендаций при создании решений с профилями API Azure Stack и .NET.
+Используйте примеры из репозитория GitHub в качестве рекомендаций при создании решений с профилями API Azure Stack Hub и .NET:
 
 - [Getting Started with Resources - Manage Resource Group - in .Net](https://github.com/Azure-Samples/Hybrid-resources-java-manage-resource-group) (Начало работы с ресурсами: управление группами ресурсов — .Net)
 
@@ -292,19 +290,19 @@ public static HashMap<String, String> getActiveDirectorySettings(String armEndpo
    - `export AZURE_CLIENT_ID={your client ID}`
    - `export AZURE_CLIENT_SECRET={your client secret}`
    - `export AZURE_SUBSCRIPTION_ID={your subscription ID}`
-   - `export ARM_ENDPOINT={your Azure Stack Resource Manager URL}`
-   - `export RESOURCE_LOCATION={location of Azure Stack}`
+   - `export ARM_ENDPOINT={your Azure Stack Hub Resource Manager URL}`
+   - `export RESOURCE_LOCATION={location of Azure Stack Hub}`
 
    В Windows используйте **set** вместо **export**.
 
 5. Используйте функцию `getActiveDirectorySettings` для получения сведений о конечных точках метаданных Azure Resource Manager.
 
     ```java
-    // Get Azure Stack cloud endpoints
+    // Get Azure Stack Hub cloud endpoints
     final HashMap<String, String> settings = getActiveDirectorySettings(armEndpoint);
     ```
 
-6. В файл **Pom.xml** добавьте указанную ниже зависимость, чтобы использовать профиль **2019-03-01-hybrid** для Azure Stack. Зависимость позволяет установить связанные с этим профилем модули поставщиков ресурсов вычислений, сети, хранилища, Key Vault и Службы приложений.
+6. В файл **Pom.xml** добавьте указанную ниже зависимость, чтобы использовать профиль **2019-03-01-hybrid** для Azure Stack Hub. Зависимость позволяет установить связанные с этим профилем модули поставщиков ресурсов вычислений, сети, хранилища, Key Vault и Службы приложений.
 
    ```xml
    <dependency>
@@ -320,9 +318,9 @@ public static HashMap<String, String> getActiveDirectorySettings(String armEndpo
    mvn clean compile exec:java
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о профилях API:
 
-- [Профили версий в Azure Stack](azure-stack-version-profiles.md)
+- [Управление профилями версий API в Azure Stack Hub](azure-stack-version-profiles.md)
 - [Версии API поставщика ресурсов, поддерживаемые профилями в Azure Stack](azure-stack-profiles-azure-resource-manager-versions.md)

@@ -1,6 +1,6 @@
 ---
-title: Подготовка пакета обновления Azure Stack | Документация Майкрософт
-description: Узнайте, как подготовить пакет обновления Azure Stack.
+title: Подготовка пакета обновления Azure Stack Hub | Документация Майкрософт
+description: Сведения о подготовке пакета обновления Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,25 +11,23 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/10/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 1984aa10a0dd53cb66ae21895af7f153bedbc6a6
-ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
+ms.openlocfilehash: 2039ad04cc1970167091194da019fa77d3ac582a
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75756905"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76535541"
 ---
 # <a name="prepare-an-azure-stack-hub-update-package"></a>Подготовка пакета обновления Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack Hub*
 
 В этой статье приводятся общие сведения о подготовке пакетов обновления Azure Stack Hub, чтобы их можно было использовать для обновления среды Azure Stack Hub. Эта процедура состоит из следующих шагов:
 
 - [Скачивание пакета обновления](#download-the-update-package).
-- [Импорт пакета обновления в среду Azure Stack через портал администрирования Azure Stack Hub](#import-and-install-updates).
+- [Импорт пакета обновления в среду Azure Stack Hub через портал администрирования Azure Stack Hub](#import-and-install-updates).
 
 В системах, которые могут подключаться к конечным точкам автоматического обновления, обновления программного обеспечения и исправления Azure Stack Hub скачиваются и подготавливаются автоматически. В системах без подключения и при любом обновлении от изготовителя оборудования необходимо подготовить пакет обновления, как описано в этом разделе.  
 
@@ -45,7 +43,7 @@ ms.locfileid: "75756905"
 | Обновления пакета от изготовителя оборудования | Отсутствующее или ненадежное подключение | Пакет обновления нужно подготовить. Выполните шаги, приведенные в этой статье. |
 
 ## <a name="download-the-update-package"></a>Скачивание пакета обновлений
-Пакет обновления с обновлениями и исправлениями для Azure Stack Hub доступен в колонке "Обновление" для подключенных систем. Необходимо скачать этот пакет и переместить его в расположение, доступное экземпляру Azure Stack, если выполняется установка обновления пакета от изготовителя оборудования или если обслуживается отключенная система (без подключения к Интернету). Может также потребоваться скачать и передать пакет в доступное расположение, если используется система с прерывистым подключением.
+Пакет обновления с обновлениями и исправлениями для Azure Stack Hub доступен в колонке "Обновление" для подключенных систем. Необходимо скачать этот пакет и переместить его в расположение, доступное экземпляру Azure Stack Hub, если выполняется установка обновления пакета от изготовителя оборудования или если обслуживается отключенная система (без подключения к Интернету). Может также потребоваться скачать и передать пакет в доступное расположение, если используется система с прерывистым подключением.
 
 Проверьте содержимое пакета. Обычно пакет обновлений содержит следующие файлы:
 
@@ -53,22 +51,22 @@ ms.locfileid: "75756905"
 - **Файл Metadata.xml**. Этот файл содержит важные сведения об обновлении, например название издателя, имя пакета, необходимые компоненты, размер и URL-адрес для поддержки.
 
 ### <a name="automatic-download-and-preparation-for-update-packages"></a>Автоматическое скачивание и подготовка пакетов обновления
-Обновления программного обеспечения и исправления для Azure Stack Hub подготавливаются автоматически для систем с подключением к **конечным точкам автоматического обновления Azure Stack Hub**: https://*.azureedge.net и https://aka.ms/azurestackautomaticupdate. Дополнительные сведения о настройке подключения к **конечным точкам автоматического обновления Azure Stack** см. в разделе о конечных точках **исправлений и обновлений** в статье [Интеграция центра обработки данных Azure Stack. Публикация служб Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-integrate-endpoints#ports-and-urls-outbound).
+Обновления программного обеспечения и исправления для Azure Stack Hub подготавливаются автоматически для систем с подключением к **конечным точкам автоматического обновления Azure Stack Hub**: https://*.azureedge.net и https://aka.ms/azurestackautomaticupdate. Дополнительные сведения о настройке подключения к **конечным точкам автоматического обновления Azure Stack Hub** см. в разделе о конечных точках **исправлений и обновлений** в статье [Публикация служб Azure Stack Hub в центре обработки данных](https://docs.microsoft.com/azure-stack/operator/azure-stack-integrate-endpoints#ports-and-urls-outbound).
 
 ### <a name="where-to-download-azure-stack-hub-update-packages"></a>Откуда скачивать пакеты обновления Azure Stack Hub
 
-Файлы [полных и экспресс-обновлений](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates#update-package-types) для Azure Stack Hub размещаются на защищенной конечной точке Azure. Операторы Azure Stack с подключенными экземплярами увидят, что [обновления для Azure Stack Hub будут автоматически появляться на портале администрирования](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#automatic-download-and-preparation-for-update-packages). Для отключенных от Интернета систем или систем с ненадежным подключением к Интернету пакеты обновления [можно скачать с помощью загрузчика обновлений для Azure Stack Hub](https://aka.ms/azurestackupdatedownload). Пакеты обновления программного обеспечения Azure Stack Hub могут содержать обновления служб Azure Stack, а также обновления операционной системы единиц масштабирования Azure Stack Hub.
+Файлы [полных и экспресс-обновлений](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates#update-package-types) для Azure Stack Hub размещаются на защищенной конечной точке Azure. Операторы Azure Stack Hub с подключенными экземплярами увидят, что [обновления для Azure Stack Hub будут автоматически появляться на портале администрирования](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#automatic-download-and-preparation-for-update-packages). Для отключенных от Интернета систем или систем с ненадежным подключением к Интернету пакеты обновления [можно скачать с помощью загрузчика обновлений для Azure Stack Hub](https://aka.ms/azurestackupdatedownload). Пакеты обновления программного обеспечения Azure Stack Hub могут содержать обновления служб Azure Stack Hub, а также обновления операционной системы единиц масштабирования Azure Stack Hub.
 
 >[!NOTE]
 >Сам пакет обновления и его содержимое (например, двоичные файлы, скрипты PowerShell и т. д.) подписываются с помощью сертификатов, принадлежащих корпорации Майкрософт. Незаконное изменение пакета сделает подпись недействительной.
 
 
-### <a name="where-to-download-azure-stack-hotfix-packages"></a>Откуда скачивать исправления Azure Stack
+### <a name="where-to-download-azure-stack-hub-hotfix-packages"></a>Откуда скачивать исправления Azure Stack Hub
 
-Пакет с [исправлениями для Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates#update-package-types) размещается на той же защищенной конечной точке Azure, на которой хранятся обновления для Azure Stack Hub. Операторы Azure Stack с подключенными экземплярами увидят, что [обновления для Azure Stack Hub будут автоматически появляться на портале администрирования](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#automatic-download-and-preparation-for-update-packages). Вы можете скачать их, используя встроенные ссылки в каждой соответствующей статье базы знаний об исправлении (например, об [исправлении Azure Stack Hub 1.1906.11.52](https://support.microsoft.com/help/4515650)). Исправления можно найти в заметках о выпуске, соответствующих версии Azure Stack.
+Пакет с [исправлениями для Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates#update-package-types) размещается на той же защищенной конечной точке Azure, на которой хранятся обновления для Azure Stack Hub. Операторы Azure Stack Hub с подключенными экземплярами увидят, что [обновления для Azure Stack Hub будут автоматически появляться на портале администрирования](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-prepare-package#automatic-download-and-preparation-for-update-packages). Вы можете скачать их, используя встроенные ссылки в каждой соответствующей статье базы знаний об исправлении (например, об [исправлении Azure Stack Hub 1.1906.11.52](https://support.microsoft.com/help/4515650)). Исправления можно найти в заметках о выпуске, соответствующих версии Azure Stack Hub.
 
 ### <a name="where-to-download-oem-update-packages"></a>Откуда скачивать пакеты обновления от изготовителя оборудования
-Поставщиком изготовителя оборудования также будут выпускаться обновления, например обновления драйверов и встроенного ПО. Хотя эти обновления предоставляются поставщиком оборудования как отдельные [пакеты обновления от изготовителя оборудования](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates#update-package-types), их импорт, установка и управление ими аналогичны соответствующим процедурам для пакетов обновления от корпорации Майкрософт. Список контактных данных поставщиков можно найти в разделе [Применение обновлений изготовителя оборудования для Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-oem#oem-contact-information).
+Поставщиком изготовителя оборудования также будут выпускаться обновления, например обновления драйверов и встроенного ПО. Хотя эти обновления предоставляются поставщиком оборудования как отдельные [пакеты обновления от изготовителя оборудования](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates#update-package-types), их импорт, установка и управление ими аналогичны соответствующим процедурам для пакетов обновления от корпорации Майкрософт. Список контактных данных поставщиков можно найти в разделе [Контактные данные изготовителей оборудования](https://docs.microsoft.com/azure-stack/operator/azure-stack-update-oem#oem-contact-information).
 
 ## <a name="import-and-install-updates"></a>Импорт и установка обновлений
 
@@ -79,27 +77,27 @@ ms.locfileid: "75756905"
 
 1.  На портале администратора щелкните **Все службы**. После этого в категории **Данные+хранилище** выберите **Учетные записи хранения**. (Или начните вводить текст **учетные записи хранения** в поле ввода и выберите найденный элемент.)
 
-    ![Обновление Azure Stack](./media/azure-stack-update-prepare-package/image1.png) 
+    ![Обновление Azure Stack Hub](./media/azure-stack-update-prepare-package/image1.png) 
 
 1.  В поле фильтра введите текст **update** и выберите учетную запись хранения **updateadminaccount**.
 
 2.  В разделе **Службы** сведений об учетной записи хранения выберите **BLOB-объекты**.
 
-    ![Обновление Azure Stack: большой двоичный объект](./media/azure-stack-update-prepare-package/image2.png)
+    ![Обновление Azure Stack Hub: большой двоичный объект](./media/azure-stack-update-prepare-package/image2.png)
 
 1.  В разделе **Служба BLOB-объектов** выберите **+ Контейнер**, чтобы создать контейнер. Введите имя (например, *update-1811*) и щелкните **ОК**.
 
-    ![Обновление Azure Stack: контейнер](./media/azure-stack-update-prepare-package/image3.png)
+    ![Обновление Azure Stack Hub: контейнер](./media/azure-stack-update-prepare-package/image3.png)
 
 1.  После создания контейнера щелкните его имя и нажмите кнопку **Отправить**, чтобы отправить в контейнер файлы пакета.
 
-    ![Обновление Azure Stack: передача](./media/azure-stack-update-prepare-package/image4.png)
+    ![Обновление Azure Stack Hub: отправка](./media/azure-stack-update-prepare-package/image4.png)
 
 1.  В разделе **Отправка большого двоичного объекта** щелкните значок папки, найдите ZIP-файл пакета обновления и щелкните **Открыть** в окне обозревателя файлов.
 
 2.  В разделе **Отправка большого двоичного объекта** щелкните **Отправить**.
 
-    ![Обновление Azure Stack: передача большого двоичного объекта](./media/azure-stack-update-prepare-package/image5.png)
+    ![Обновление Azure Stack Hub: отправка большого двоичного объекта](./media/azure-stack-update-prepare-package/image5.png)
 
 1.  Повторите шаги 6 и 7 для файла Metadata.xml и всех дополнительных ZIP-файлов в пакете обновления. Не импортируйте файл Supplemental Notice.txt, если он включен.
 
@@ -111,9 +109,9 @@ ms.locfileid: "75756905"
 
 5.  Щелкнув пакет обновления, вы можете просмотреть его состояние в области **Update run details** (Сведения о выполнении обновления). Здесь вы можете также щелкнуть **Скачивание сводки**, чтобы скачать файлы журнала. Журналы установки обновлений доступны в течение 6 месяцев после завершения попытки.
 
-6.  Когда обновление завершится, в колонке "Обновление" отобразится номер обновленной версии Azure Stack.
+6.  Когда обновление завершится, в колонке "Обновление" отобразится номер обновленной версии Azure Stack Hub.
 
-Вы можете вручную удалить пакеты обновлений из учетной записи хранения после их установки в Azure Stack. Azure Stack периодически проверяет наличие устаревших пакетов обновлений и удаляет их из хранилища. Azure Stack может понадобится две недели, чтобы удалить устаревшие пакеты.
+Вы можете вручную удалить пакеты обновлений из учетной записи хранения после их установки в Azure Stack Hub. Azure Stack Hub периодически проверяет наличие устаревших пакетов обновлений и удаляет их из хранилища. Azure Stack Hub может понадобиться две недели, чтобы удалить устаревшие пакеты.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

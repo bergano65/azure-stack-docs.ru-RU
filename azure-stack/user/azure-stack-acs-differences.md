@@ -1,6 +1,6 @@
 ---
-title: Хранилище Azure Stack. Особенности и рекомендации | Документация Майкрософт
-description: Сведения о различиях между хранилищем Azure Stack и службой хранилища Azure, а также рекомендации по развертыванию Azure Stack.
+title: Хранилище Azure Stack Hub. Отличия и рекомендации | Документация Майкрософт
+description: Сведения о различиях между хранилищем Azure Stack Hub и службой хранилища Azure, а также рекомендации по развертыванию Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,24 +15,22 @@ ms.date: 10/2/2019
 ms.author: mabrigg
 ms.reviwer: xiaofmao
 ms.lastreviewed: 01/30/2019
-ms.openlocfilehash: e2680a91aa2b9232eb86de4338d1198fb515e6d3
-ms.sourcegitcommit: 28c8567f85ea3123122f4a27d1c95e3f5cbd2c25
+ms.openlocfilehash: 9b945f4cbb5e955c38b18c4bacd18726bbcb5e89
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71824729"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883870"
 ---
-# <a name="azure-stack-storage-differences-and-considerations"></a>Объем хранилища для Azure Stack. Отличия и рекомендации
+# <a name="azure-stack-hub-storage-differences-and-considerations"></a>Хранилище Azure Stack Hub. Отличия и рекомендации
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+Хранилище Azure Stack Hub — это набор облачных служб хранилища в Microsoft Azure Stack Hub. Хранилище Azure Stack Hub предоставляет согласованные с Azure функции управления большими двоичными объектами, таблицами, очередями и учетными записями.
 
-Хранилище Azure Stack — это набор облачных служб хранилища в Microsoft Azure Stack. Хранилище Azure Stack предоставляет согласованные с Azure функции управления большими двоичными объектами, таблицами, очередями и учетными записями.
-
-В этой статье перечислены известные различия между хранилищем Azure Stack и службой хранилища Azure. Кроме того, статья содержит рекомендации по развертыванию Azure Stack. См. дополнительные сведения о [ключевых различиях](azure-stack-considerations.md) между глобальной средой Azure и Azure Stack.
+В этой статье перечислены известные различия между хранилищем Azure Stack Hub и службой хранилища Azure. Кроме того, статья содержит рекомендации по развертыванию Azure Stack Hub. См. дополнительные сведения о [ключевых различиях](azure-stack-considerations.md) между глобальной средой Azure и Azure Stack Hub.
 
 ## <a name="cheat-sheet-storage-differences"></a>Краткий справочник. Различия хранилищ
 
-| Функция | Azure (глобальная) | Azure Stack |
+| Компонент | Azure (глобальная) | Azure Stack Hub |
 | --- | --- | --- |
 |Хранилище файлов|Поддерживаются облачные общие папки с файлами SMB|Еще не поддерживается
 |Шифрование службы хранилища Azure для неактивных данных|256-битное шифрование AES. Поддерживается шифрование с использованием управляемых пользователем ключей в Key Vault.|128-битное шифрование AES BitLocker. Не поддерживается шифрование с использованием управляемых пользователем ключей.
@@ -62,7 +60,7 @@ ms.locfileid: "71824729"
 
 ## <a name="api-version"></a>Версия API
 
-Хранилище Azure Stack поддерживает следующие версии:
+Служба хранилища Azure Stack Hub поддерживает следующие версии:
 
 API-интерфейсы служб хранилища Azure.
 
@@ -102,10 +100,20 @@ API управления службами хранилища Azure:
 - [2015-06-15](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN);
 - [2015-05-01-preview](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN);
 
-Дополнительные сведения о поддерживаемых клиентских библиотеках службы хранилища Azure Stack см. в статье: [Начало работы со средствами разработки хранилища Azure Stack](azure-stack-storage-dev.md).
+## <a name="powershell-version"></a>Версия PowerShell
 
-## <a name="next-steps"></a>Дополнительная информация
+Для модуля хранилища PowerShell необходимо знать версию, совместимую с REST API. 
 
-* [Приступая к работе со средствами разработки хранилища Azure Stack](azure-stack-storage-dev.md)
-* [Использование средств передачи данных в хранилище Azure Stack](azure-stack-storage-transfer.md)
-* [Общие сведения о хранилище Azure Stack](azure-stack-storage-overview.md)
+| Модуль | Поддерживаемая версия | Использование |
+|----------------|-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Azure.Storage; | [4.5.0](https://www.powershellgallery.com/packages/Azure.Storage/4.5.0) | Управляет BLOB-объектами, очередями, таблицами в учетных записях хранения Azure Stack Hub |
+| AzureRM.Storage | [5.0.4](https://www.powershellgallery.com/packages/AzureRM.Storage/5.0.4) | Создает учетную запись в Azure Stack Hub и управляет ей |
+
+
+Дополнительные сведения о поддерживаемых клиентских библиотеках службы хранилища Azure Stack Hub см. в статье: [Начало работы со средствами разработки хранилища Azure Stack Hub](azure-stack-storage-dev.md).
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* [Начало работы со средствами разработки хранилища Azure Stack Hub](azure-stack-storage-dev.md)
+* [Использование средств передачи данных в хранилище Azure Stack Hub](azure-stack-storage-transfer.md)
+* [Общие сведения о хранилище Azure Stack Hub](azure-stack-storage-overview.md)

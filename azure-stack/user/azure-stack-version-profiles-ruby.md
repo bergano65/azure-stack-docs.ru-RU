@@ -1,6 +1,6 @@
 ---
-title: Использование профилей версий API с помощью Ruby в Azure Stack | Документация Майкрософт
-description: Узнайте, как использовать профили версий API с помощью Ruby в Azure Stack
+title: Использование профилей версий API с помощью Ruby в Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как использовать профили версий API с помощью Ruby в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -16,25 +16,23 @@ ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 32a81fc86399c44362d82f1dc602f87b16d16484
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: d1109d2b0e8e8cffc1bf03c2e897c6c0230084c4
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282851"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878346"
 ---
-# <a name="use-api-version-profiles-with-ruby-in-azure-stack"></a>Использование профилей версий API с помощью Ruby в Azure Stack
-
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+# <a name="use-api-version-profiles-with-ruby-in-azure-stack-hub"></a>Использование профилей версий API с помощью Ruby в Azure Stack Hub
 
 ## <a name="ruby-and-api-version-profiles"></a>Использование профилей версии API с помощью Ruby
 
-Пакет SDK Ruby для Resource Manager Azure Stack предоставляет средства для создания и администрирования инфраструктуры. Поставщики ресурсов в пакете SDK включают в себя вычисления, виртуальные сети и хранилища на языке Ruby. Профили API в пакете SDK Ruby позволяют выполнять разработку гибридных облаков приложений, помогая переключаться между глобальными ресурсами Azure и ресурсами в Azure Stack.
+Пакет SDK Ruby для Resource Manager Azure Stack Hub предоставляет средства для создания и администрирования инфраструктуры. Поставщики ресурсов в пакете SDK включают в себя вычисления, виртуальные сети и хранилища на языке Ruby. Профили API в пакете SDK Ruby позволяют выполнять разработку гибридных облаков приложений, помогая переключаться между глобальными ресурсами Azure и ресурсами в Azure Stack Hub.
 
 Профиль API состоит из поставщиков ресурсов и версий службы. Профиль API можно использовать для объединения разных типов ресурсов.
 
 - Чтобы получить последние версии всех служб, используйте **последний** профиль накопительного пакета Azure SDK.
-- Чтобы использовать службы, совместимые с Azure Stack, используйте профиль версии **V2019_03_01_Hybrid** или **V2018_03_01** накопительного пакета Azure SDK.
+- Чтобы использовать службы, совместимые с Azure Stack Hub, используйте профиль версии **V2019_03_01_Hybrid** или **V2018_03_01** накопительного пакета Azure SDK.
 - Чтобы использовать последнюю **версию API** службы, используйте **последний** профиль определенного пакета. Например, чтобы использовать только последнюю **версию API** службы вычислений, используйте профиль **Latest** пакета **Compute**.
 - Чтобы использовать определенную **версию API** для службы, используйте нужные версии API, определенные в пакете.
 
@@ -53,8 +51,8 @@ ms.locfileid: "72282851"
        Gem install bundler
        ```
 
-- Создайте подписку, если ее еще нет, и сохраните ее идентификатор для дальнейшего использования. Инструкции по созданию подписки см. в статье [Создание подписок для предложений в Azure Stack](../operator/azure-stack-subscribe-plan-provision-vm.md).
-- Создайте субъект-службу и сохраните его идентификатор и секрет. Инструкции по созданию субъекта-службы для Azure Stack см. в [этой статье](../operator/azure-stack-create-service-principals.md).
+- Создайте подписку, если ее еще нет, и сохраните ее идентификатор для дальнейшего использования. Инструкции по созданию подписки см. в статье [Создание подписок для предложений в Azure Stack Hub](../operator/azure-stack-subscribe-plan-provision-vm.md).
+- Создайте субъект-службу и сохраните его идентификатор и секрет. Инструкции по созданию субъекта-службы для Azure Stack Hub см. в статье [Использование удостоверения приложения для доступа к ресурсам Azure Stack Hub](../operator/azure-stack-create-service-principals.md).
 - Убедитесь, что субъекту-службе назначена роль участника или владельца в вашей подписке. Инструкции по назначению роли субъекту-службе см. в [этой статье](../operator/azure-stack-create-service-principals.md).
 
 ## <a name="install-the-rubygem-packages"></a>Установка пакетов RubyGem
@@ -81,7 +79,7 @@ gem 'azure_mgmt_network'
 
 ## <a name="use-the-azure_sdk-gem"></a>Использование пакета azure_sdk
 
-Пакет **azure_sdk** — это коллекция всех поддерживаемых пакетов в составе SDK для Ruby. Этот пакет включает  **последний**  профиль, который поддерживает последнюю версию всех служб. Он включает профиль версий  **V2017_03_09** и **V2019_03_01_Hybrid**, созданный для Azure Stack.
+Пакет **azure_sdk** — это коллекция всех поддерживаемых пакетов в составе SDK для Ruby. Этот пакет включает  **последний**  профиль, который поддерживает последнюю версию всех служб. Он включает профиль версий  **V2017_03_09** и **V2019_03_01_Hybrid**, созданный для Azure Stack Hub.
 
 Чтобы установить накопительный пакет azure_sdk, выполните следующую команду:  
 
@@ -89,19 +87,19 @@ gem 'azure_mgmt_network'
 gem install 'azure_sdk'
 ```
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-Чтобы использовать пакет SDK Azure для Ruby и Azure Stack, укажите следующие значения и задайте значения для переменных среды. Чтобы настроить переменные среды, воспользуйтесь инструкциями, которые указаны после таблицы для используемой операционной системы.
+Чтобы использовать пакет SDK Azure для Ruby и Azure Stack Hub, укажите следующие значения и задайте значения для переменных среды. Чтобы настроить переменные среды, воспользуйтесь инструкциями, которые указаны после таблицы для используемой операционной системы.
 
-| Значение | Переменные среды | ОПИСАНИЕ |
+| Значение | Переменные среды | Description |
 | --- | --- | --- |
-| Tenant ID | `AZURE_TENANT_ID` | [Идентификатор клиента](../operator/azure-stack-identity-overview.md) Azure Stack. |
+| Tenant ID | `AZURE_TENANT_ID` | [Идентификатор клиента](../operator/azure-stack-identity-overview.md) Azure Stack Hub. |
 | Идентификатор клиента | `AZURE_CLIENT_ID` | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы в предыдущем разделе этой статьи.  |
-| Идентификатор подписки | `AZURE_SUBSCRIPTION_ID` | [Идентификатор подписки](../operator/service-plan-offer-subscription-overview.md#subscriptions) используется для доступа к предложениям в Azure Stack. |
+| Идентификатор подписки | `AZURE_SUBSCRIPTION_ID` | [Идентификатор подписки](../operator/service-plan-offer-subscription-overview.md#subscriptions) используется для доступа к предложениям в Azure Stack Hub. |
 | Секрет клиента | `AZURE_CLIENT_SECRET` | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы. |
-| Конечная точка Resource Manager | `ARM_ENDPOINT` | Дополнительные сведения см. в разделе [Конечная точка Resource Manager для Azure Stack](#the-azure-stack-resource-manager-endpoint).  |
+| Конечная точка Resource Manager | `ARM_ENDPOINT` | Дополнительные сведения см. в разделе [Конечная точка Resource Manager для Azure Stack Hub](#the-azure-stack-hub-resource-manager-endpoint).  |
 
-### <a name="the-azure-stack-resource-manager-endpoint"></a>Конечная точка Resource Manager для Azure Stack
+### <a name="the-azure-stack-hub-resource-manager-endpoint"></a>Конечная точка Resource Manager для Azure Stack Hub
 
 Microsoft Azure Resource Manager — это платформа управления, которая дает администраторам возможность развертывать, администрировать и отслеживать ресурсы Azure. Azure Resource Manager может обрабатывать эти задачи в рамках одной операции как группы, а не по отдельности.
 
@@ -147,15 +145,15 @@ export AZURE_TENANT_ID=<YOUR_TENANT_ID>
 
 Накопительный пакет **Azure_sdk** содержит следующие 3 профиля.
 
-- **V2019_03_01_Hybrid**. Профиль, созданный для Azure Stack. Используйте этот профиль для всех последних версий служб, доступных в Azure Stack с версией 1904 или более поздней.
-- **V2017_03_09**. Профиль, созданный для Azure Stack. Используйте этот профиль, чтобы обеспечить наибольшую совместимость служб и Azure Stack с версией 1808 или более ранней.
+- **V2019_03_01_Hybrid**. профиль, созданный для Azure Stack Hub. Используйте этот профиль для всех последних версий служб, доступных в Azure Stack Hub с версией 1904 или более поздней.
+- **V2017_03_09**. профиль, созданный для Azure Stack Hub. Используйте этот профиль, чтобы обеспечить наибольшую совместимость служб и Azure Stack Hub с версией 1808 или более ранней.
 - **Latest**: Этот профиль включает последние версии всех служб. Используйте последние версии всех служб.
 
-Получите дополнительные сведения о профилях API и Azure Stack, ознакомившись с разделом [Сводка по профилям API](azure-stack-version-profiles.md#summary-of-api-profiles).
+Получите дополнительные сведения о профилях API и Azure Stack Hub, ознакомившись с разделом [Сводка по профилям API](azure-stack-version-profiles.md#summary-of-api-profiles).
 
 ## <a name="azure-ruby-sdk-api-profile-usage"></a>Использование профиля API пакета SDK Azure для Ruby
 
-Чтобы создать экземпляр профиля клиента, используйте следующий код. Этот параметр требуется только для Azure Stack и других частных облаков. В глобальной среде Azure эти параметры используются по умолчанию.
+Чтобы создать экземпляр профиля клиента, используйте следующий код. Этот параметр требуется только для Azure Stack Hub и других частных облаков. В глобальной среде Azure эти параметры используются по умолчанию.
 
 ```Ruby  
 active_directory_settings = get_active_directory_settings(ENV['ARM_ENDPOINT'])
@@ -174,7 +172,7 @@ options = {
   base_url: ENV['ARM_ENDPOINT']
 }
 
-# Target profile built for Azure Stack
+# Target profile built for Azure Stack Hub
 client = Azure::Resources::Profiles::V2019_03_01_Hybrid::Mgmt::Client.new(options)
 ```
 
@@ -192,9 +190,9 @@ purchase_plan_obj = profile_client.compute.model_classes.purchase_plan.new
 purchase_plan_obj = Azure::Profiles::V2019_03_01_Hybrid::Compute::Mgmt::Models::PurchasePlan.new
 ```
 
-## <a name="define-azure-stack-environment-setting-functions"></a>Определение функций параметров среды Azure Stack
+## <a name="define-azure-stack-hub-environment-setting-functions"></a>Определение функций параметров среды Azure Stack Hub
 
-Для проверки подлинности субъекта-службы в среде Azure Stack определите конечные точки с помощью `get_active_directory_settings()`. Этот метод использует переменную среды **ARM_Endpoint**, которую вы задали ранее.
+Для проверки подлинности субъекта-службы в среде Azure Stack Hub определите конечные точки с помощью `get_active_directory_settings()`. Этот метод использует переменную среды **ARM_Endpoint**, которую вы задали ранее.
 
 ```Ruby  
 # Get Authentication endpoints using Arm Metadata Endpoints
@@ -205,7 +203,7 @@ def get_active_directory_settings(armEndpoint)
   response_content = response.body
   unless status_code == "200"
     error_model = JSON.load(response_content)
-    fail MsRestAzure::AzureOperationError.new("Getting Azure Stack Metadata Endpoints", response, error_model)
+    fail MsRestAzure::AzureOperationError.new("Getting Azure Stack Hub Metadata Endpoints", response, error_model)
   end
   result = JSON.load(response_content)
   settings.authentication_endpoint = result['authentication']['loginEndpoint'] unless result['authentication']['loginEndpoint'].nil?
@@ -216,10 +214,10 @@ end
 
 ## <a name="samples-using-api-profiles"></a>Примеры с профилями API
 
-Вы можете использовать следующие примеры из репозитория GitHub в качестве рекомендаций при создании решений с профилями API Azure Stack и Ruby.
+Вы можете использовать следующие примеры из репозитория GitHub в качестве рекомендаций при создании решений с профилями API Azure Stack Hub и Ruby.
 
 - [Управление ресурсами и группами ресурсов Azure на Ruby](https://github.com/Azure-Samples/Hybrid-Resource-Manager-Ruby-Resources-And-Groups).
-- [Управление виртуальными машинами с помощью Ruby](https://github.com/Azure-Samples/Hybrid-Compute-Ruby-Manage-VM) (Пример, использующий версию 2019-03-01-hybrid, которая предназначена для последних версий API, поддерживаемых Azure Stack).
+- [Управление виртуальными машинами с помощью Ruby](https://github.com/Azure-Samples/Hybrid-Compute-Ruby-Manage-VM) (пример, использующий версию 2019-03-01-hybrid, которая предназначена для последних версий API, поддерживаемых Azure Stack Hub).
 - [Развертывание виртуальной машины с включенным протоколом SSH на основе шаблона на Ruby](https://github.com/Azure-Samples/Hybrid-Resource-Manager-Ruby-Template-Deployment).
 
 ### <a name="sample-resource-manager-and-groups"></a>Пример с Resource Manager и группами
@@ -260,20 +258,20 @@ end
    - `export AZURE_CLIENT_ID={your client ID}`
    - `export AZURE_CLIENT_SECRET={your client secret}`
    - `export AZURE_SUBSCRIPTION_ID={your subscription ID}`
-   - `export ARM_ENDPOINT={your Azure Stack Resource Manager URL}`
+   - `export ARM_ENDPOINT={your Azure Stack Hub Resource Manager URL}`
 
    > [!NOTE]  
    > В ОС Windows используйте `set` вместо `export`.
 
-4. Убедитесь, что в качестве переменной расположения задано расположение Azure Stack, например `LOCAL="local"`.
+4. Убедитесь, что в качестве переменной расположения задано расположение Azure Stack Hub, например `LOCAL="local"`.
 
-5. Чтобы использовать правильные активные конечные точки при работе с Azure Stack или другими частными облаками, добавьте следующую строку кода.
+5. Чтобы использовать правильные активные конечные точки при работе с Azure Stack Hub или другими частными облаками, добавьте следующую строку кода.
 
    ```Ruby  
    active_directory_settings = get_active_directory_settings(ENV['ARM_ENDPOINT'])
    ```
 
-6. В переменную `options` добавьте параметры Active Directory и базовый URL-адрес для работы с Azure Stack.
+6. В переменную `options` добавьте параметры Active Directory и базовый URL-адрес для работы с Azure Stack Hub.
 
    ```ruby  
    options = {
@@ -284,13 +282,13 @@ end
    }
    ```
 
-7. Создайте профиль клиента, который предназначен для профиля Azure Stack.
+7. Создайте профиль клиента, который предназначен для профиля Azure Stack Hub.
 
    ```ruby  
    client = Azure::Resources::Profiles::V2019_03_01_Hybrid::Mgmt::Client.new(options)
    ```
 
-8. Для аутентификации субъекта-службы в среде Azure Stack определите конечные точки с помощью **get_active_directory_settings()** . Этот метод использует переменную среды **ARM_Endpoint**, которую вы задали ранее.
+8. Для проверки подлинности субъекта-службы в среде Azure Stack Hub определите конечные точки с помощью **get_active_directory_settings()** . Этот метод использует переменную среды **ARM_Endpoint**, которую вы задали ранее.
 
    ```ruby  
    def get_active_directory_settings(armEndpoint)
@@ -300,7 +298,7 @@ end
      response_content = response.body
      unless status_code == "200"
        error_model = JSON.load(response_content)
-       fail MsRestAzure::AzureOperationError.new("Getting Azure Stack Metadata Endpoints", response, error_model)
+       fail MsRestAzure::AzureOperationError.new("Getting Azure Stack Hub Metadata Endpoints", response, error_model)
      end
      result = JSON.load(response_content)
      settings.authentication_endpoint = result['authentication']['loginEndpoint'] unless result['authentication']['loginEndpoint'].nil?
@@ -309,13 +307,13 @@ end
    end
    ```
 
-9. Запустите пример.
+9. Запустите образец.
 
    ```Ruby
    bundle exec ruby example.rb
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Install PowerShell for Azure Stack](../operator/azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack)
-- [Configure the Azure Stack user's PowerShell environment](azure-stack-powershell-configure-user.md) (Настройка пользовательской среды PowerShell в Azure Stack)  
+- [Установка PowerShell для Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+- [Подключение к Azure Stack Hub в роли пользователя с помощью PowerShell](azure-stack-powershell-configure-user.md)  

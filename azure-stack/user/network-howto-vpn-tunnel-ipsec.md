@@ -1,6 +1,6 @@
 ---
-title: Создание VPN-туннеля с помощью IPSEC в Azure Stack | Документация Майкрософт
-description: Узнайте как создавать VPN-туннель с помощью IPSEC в Azure Stack.
+title: Создание VPN-туннеля с помощью IPSEC в Azure Stack Hub | Документация Майкрософт
+description: Узнайте как создавать VPN-туннель с помощью IPSEC в Azure Stack Hub.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,20 +9,18 @@ ms.date: 09/19/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: 762d3f631823d1acb8445148a164a18605fa3762
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.openlocfilehash: a0716d4997a49c2146d64c23defdd6b2f36c0b95
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73168231"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878464"
 ---
-# <a name="how-to-create-a-vpn-tunnel-using-ipsec--in-azure-stack"></a>Создание VPN-туннеля с помощью IPSEC в Azure Stack
+# <a name="how-to-create-a-vpn-tunnel-using-ipsec--in-azure-stack-hub"></a>Создание VPN-туннеля с помощью IPSEC в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+В этом решении шаблон Resource Manager Azure Stack Hub можно использовать для подключения двух виртуальных сетей Azure Stack Hub в одной среде Azure Stack Hub. Вы [не можете подключить виртуальные сети Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-network-differences) с помощью встроенного шлюза виртуальной сети. Сейчас для создания VPN-туннеля между двумя виртуальными сетями Azure Stack Hub следует использовать сетевые виртуальные устройства (NVA). Шаблон решения развертывает две виртуальные машины Windows Server 2016 с установленным RRAS. Решение настраивает два сервера RRAS для использования туннеля S2SVPN IKEv2 между двумя виртуальными сетями. Соответствующие правила NSG и UDR созданы для обеспечения маршрутизации между подсетями на каждой виртуальной сети, обозначенной как **внутренняя** 
 
-В этом решении шаблон Resource Manager Azure Stack можно использовать для подключения двух виртуальных сетей Azure Stack в одной среде Azure Stack. Вы [не можете подключить виртуальные сети Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-network-differences) с помощью встроенного шлюза виртуальной сети. Сейчас для создания VPN-туннеля между двумя виртуальными сетями Azure Stack следует использовать сетевые виртуальные устройства (NVA). Шаблон решения развертывает две виртуальные машины Windows Server 2016 с установленным RRAS. Решение настраивает два сервера RRAS для использования туннеля S2SVPN IKEv2 между двумя виртуальными сетями. Соответствующие правила NSG и UDR созданы для обеспечения маршрутизации между подсетями на каждой виртуальной сети, обозначенной как **внутренняя** 
-
-Такое решение является основой, которая позволит создавать туннели VPN не только в экземпляре Azure Stack, но и между экземплярами Azure Stack и другими ресурсами, такими как локальные сети с использованием VPN туннелей S2S на Windows RRAS.
+Такое решение является основой, которая позволит создавать туннели VPN не только в экземпляре Azure Stack Hub, но и между экземплярами Azure Stack Hub и другими ресурсами, такими как локальные сети с использованием VPN туннелей типа "сеть — сеть" на Windows RRAS.
 
 Вы можете найти шаблоны в разделе [Шаблоны интеллектуальных границ Azure](https://github.com/Azure-Samples/azure-intelligent-edge-patterns) репозитория GitHub. Шаблон находится в папке**rras-gre-vnet-vnet**. 
 
@@ -30,8 +28,8 @@ ms.locfileid: "73168231"
 
 ## <a name="requirements"></a>Требования
 
-- Интегрированная система ASDK или Azure Stack с последними обновлениями. 
-- Необходимые элементы Marketplace для Azure Stack:
+- Система, развернутая с применением последних обновлений. 
+- Необходимые элементы Marketplace для Azure Stack Hub:
     -  Windows Server 2016 Datacenter или Windows Server 2019 Datacenter (рекомендуется последняя сборка)
     -  Расширение пользовательских сценариев
 
@@ -56,8 +54,8 @@ ms.locfileid: "73168231"
 
 ![замещающий текст](./media/azure-stack-network-howto-vpn-tunnel-ipsec/s2svpntunnel.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Сети Azure Stack: различия и рекомендации](azure-stack-network-differences.md)  
+[Сети Azure Stack Hub: различия и рекомендации](azure-stack-network-differences.md)  
 [Сведения о настройке нескольких VPN-туннелей типа "сеть — сеть"](network-howto-vpn-tunnel.md)  
 [How to create a VPN tunnel using GRE](network-howto-vpn-tunnel-gre.md) (Создание VPN-туннеля с помощью GRE)

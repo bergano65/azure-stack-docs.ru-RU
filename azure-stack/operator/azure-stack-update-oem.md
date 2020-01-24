@@ -1,6 +1,6 @@
 ---
-title: Применение обновления изготовителя оборудования к Azure Stack | Документация Майкрософт
-description: Узнайте, как применить обновление изготовителя оборудования к Azure Stack.
+title: Применение обновления изготовителя оборудования к Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как применить обновление изготовителя оборудования к Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,22 +15,20 @@ ms.date: 10/15/2019
 ms.author: mabrigg
 ms.lastreviewed: 08/15/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 7c2ddd8c692efa423083b95eb7fb107dd763bab6
-ms.sourcegitcommit: 1cb84d8417367b553194614d53a477a94a8e9be9
+ms.openlocfilehash: 3ca1d375e5d819e93813c9f6d0fa9baf5619f563
+ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75755157"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75924375"
 ---
 # <a name="apply-azure-stack-hub-original-equipment-manufacturer-oem-updates"></a>Применение обновлений изготовителя оборудования для Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack Hub*
 
 Вы можете применять обновления изготовителя оборудования к аппаратным компонентам Azure Stack Hub, чтобы устанавливать улучшения драйверов и встроенного ПО, а также исправления безопасности, минимально влияя на работу пользователей. В этой статье описываются обновления изготовителя оборудования, приведены контактные данных изготовителей оборудования и рассматривается применение обновлений.
 
 ## <a name="overview-of-oem-updates"></a>Обзор обновлений изготовителя оборудования
 
-Помимо обновлений Microsoft Azure Stack, многие изготовители оборудования также выпускают регулярные обновления для оборудования Azure Stack, например обновления драйверов и встроенного ПО. Они называются **обновлениями пакета изготовителя оборудования**. Чтобы узнать, выпускает ли изготовитель оборудования обновления пакета, обратитесь к [документации по Azure Stack от изготовителя оборудования](#oem-contact-information).
+Помимо обновлений Microsoft Azure Stack Hub, многие изготовители оборудования также выпускают регулярные обновления для оборудования Azure Stack Hub, например обновления драйверов и встроенного ПО. Они называются **обновлениями пакета изготовителя оборудования**. Чтобы узнать, выпускает ли изготовитель оборудования обновления пакета, обратитесь к [документации по Azure Stack Hub от изготовителя оборудования](#oem-contact-information).
 
 Эти обновления пакета передаются в учетную запись хранения **updateadminaccount** и применяются через портал администрирования Azure Stack Hub. Дополнительные сведения см. в разделе [Применение обновлений для изготовителей оборудования](#apply-oem-updates).
 
@@ -40,17 +38,17 @@ ms.locfileid: "75755157"
 
 ## <a name="oem-contact-information"></a>Контактные данные изготовителей оборудования 
 
-В этом разделе содержатся контактные данные изготовителей оборудования и ссылки на справочные материалы по Azure Stack от изготовителя оборудования.
+В этом разделе содержатся контактные данные изготовителей оборудования и ссылки на справочные материалы по Azure Stack Hub от изготовителя оборудования.
 
 | Партнер по оборудованию | Регион | URL-адрес |
 |------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cisco | All | [Руководство по эксплуатации интегрированной системы Cisco для Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_01000.html)<br><br>[UCS C-Series Rack-Mount UCS-Managed Server Software](https://software.cisco.com/download/home/283862063/type/286320368/release/2.0(0)) (Программное обеспечение для управляемых стоечных серверов Cisco UCS серии C) |
-| Dell EMC | All | [Облако для Microsoft Azure Stack 14G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Облако для Microsoft Azure Stack 13G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
+| Cisco | All | [Руководство по эксплуатации интегрированной системы Cisco для Microsoft Azure Stack Hub](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_01000.html)<br><br>[UCS C-Series Rack-Mount UCS-Managed Server Software](https://software.cisco.com/download/home/283862063/type/286320368/release/2.0(0)) (Программное обеспечение для управляемых стоечных серверов Cisco UCS серии C) |
+| Dell EMC | All | [Облако для Microsoft Azure Stack Hub 14G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Облако для Microsoft Azure Stack Hub 13G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
 | Fujitsu | Япония | [Служба технической поддержки Fujitsu (требуется учетная запись и имя для входа)](https://eservice.fujitsu.com/supportdesk-web/) |
 |  | Европа, Ближний Восток, Африка и США | [Fujitsu: поддержка продуктов и систем ИТ](https://support.ts.fujitsu.com/IndexContact.asp?lng=COM&ln=no&LC=del) |
-| HPE | All | [HPE ProLiant для Microsoft Azure Stack](http://www.hpe.com/info/MASupdates) |
+| HPE | All | [HPE ProLiant для Microsoft Azure Stack Hub](http://www.hpe.com/info/MASupdates) |
 | Lenovo | All | [Лучшие рецепты для ThinkAgile SXM](https://datacentersupport.lenovo.com/us/en/solutions/ht505122)
-| Wortmann |  | [Пакет OEM или встроенное ПО](https://drive.terracloud.de/dl/fiTdTb66mwDAJWgUXUW8KNsd/OEM)<br>[Документация по TERRA для Azure Stack (включая FRU)](https://drive.terracloud.de/dl/fiWGZwCySZSQyNdykXCFiVCR/TerraAzSDokumentation)
+| Wortmann |  | [Пакет OEM или встроенное ПО](https://aka.ms/AA6z600)<br>[Документация по TERRA для Azure Stack Hub (включая FRU)](https://aka.ms/aa6zktc)
 
 ## <a name="apply-oem-updates"></a>Применение обновлений для изготовителей оборудования
 
@@ -59,7 +57,7 @@ ms.locfileid: "75755157"
 1. Потребуется обратиться к изготовителю оборудования для следующего:
       - определить текущую версию пакета изготовителя оборудования;  
       - найти лучший способ скачивания пакета изготовителя оборудования.  
-2. Перед применением обновления пакета OEM следует всегда применять последнее исправление Azure Stack, доступное в текущей версии Azure Stack Hub в вашей системе. См. сведения об [исправлениях Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-servicing-policy).
+2. Перед применением обновления пакета OEM следует всегда применять последнее исправление Azure Stack Hub, доступное в текущей версии Azure Stack Hub в вашей системе. См. сведения об [исправлениях Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-servicing-policy).
 3. Подготовьте пакет изготовителя оборудования, выполнив действия, описанные в разделе [Загрузка пакетов обновлений для интегрированных систем](azure-stack-servicing-policy.md).
 4. Установите обновления, выполнив действия, описанные в разделе [Применение обновлений в Azure Stack Hub](azure-stack-apply-updates.md).
 
@@ -67,7 +65,7 @@ ms.locfileid: "75755157"
 
 Некоторым поставщикам оборудования может потребоваться виртуальная машина для установки обновлений изготовителя оборудования. Поставщик оборудования будет отвечать за создание этих виртуальных машин и составление документации, если при выполнении командлета **Set-OEMExternalVM** вам нужно указать `ProxyVM` или `HardwareManager` для параметра **-VMType**, а также за указание учетных данных, которые нужно задать для параметра **-Credential**. После создания виртуальных машин настройте их, выполнив командлет **Set-OEMExternalVM** на привилегированной конечной точке.
 
-Дополнительные сведения о привилегированной конечной точке в Azure Stack см. в разделе [Использование привилегированной конечной точки в Azure Stack](azure-stack-privileged-endpoint.md).
+Дополнительные сведения о привилегированной конечной точке в Azure Stack Hub см. в разделе [Использование привилегированной конечной точки в Azure Stack Hub](azure-stack-privileged-endpoint.md).
 
 1.  Получите доступ к привилегированной конечной точке.
 
@@ -77,7 +75,7 @@ ms.locfileid: "75755157"
     -ConfigurationName PrivilegedEndpoint -Credential $cred
     ```
 
-2. Настройте виртуальную машину поставщика оборудования с помощью командлета **Set-OEMExternalVM**. Командлет проверяет IP-адрес и учетные данные для виртуальной машины, заданной параметром **-VMType** `ProxyVM`. Командлет не проверяет входные значения **-VMType** `HardwareManager`. Параметр **-Credential** для командлета **Set-OEMExternalVM** должен быть четко указан в документации поставщика оборудования.  Это НЕ учетные данные CloudAdmin, используемые для привилегированной конечной точки, или любые другие существующие учетные данные Azure Stack.
+2. Настройте виртуальную машину поставщика оборудования с помощью командлета **Set-OEMExternalVM**. Командлет проверяет IP-адрес и учетные данные для виртуальной машины, заданной параметром **-VMType** `ProxyVM`. Командлет не проверяет входные значения **-VMType** `HardwareManager`. Параметр **-Credential** для командлета **Set-OEMExternalVM** должен быть четко указан в документации поставщика оборудования.  Это НЕ учетные данные CloudAdmin, используемые для привилегированной конечной точки, или любые другие существующие учетные данные Azure Stack Hub.
 
     ```powershell  
     $VmCred = Get-Credential

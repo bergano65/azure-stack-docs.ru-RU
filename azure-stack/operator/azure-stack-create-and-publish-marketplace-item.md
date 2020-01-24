@@ -1,6 +1,6 @@
 ---
-title: Создание и публикация элемента Marketplace в Azure Stack | Документация Майкрософт
-description: Узнайте, как создать и опубликовать элемент Marketplace в Azure Stack.
+title: Создание и публикация элемента Marketplace в Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как создать и опубликовать элемент Marketplace в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,18 +15,16 @@ ms.date: 01/03/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: 5740ff6bc550aa27f15761e6be2c69247eecaf03
-ms.sourcegitcommit: a6c02421069ab9e72728aa9b915a52ab1dd1dbe2
+ms.openlocfilehash: aa308690caa875d2ab22ca0b987634c2d29795fa
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75654888"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882765"
 ---
-# <a name="create-and-publish-a-custom-azure-stack-marketplace-item"></a>Создание и публикация пользовательского элемента Azure Stack Marketplace
+# <a name="create-and-publish-a-custom-azure-stack-hub-marketplace-item"></a>Создание и публикация пользовательского элемента Azure Stack Hub Marketplace
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-Каждый элемент, опубликованный в Azure Stack Marketplace, доступен в формате пакета коллекции Azure (AZPKG-файл). Средство *Azure Gallery Packager* позволяет создать пользовательский пакет коллекции Azure, который можно отправить в Azure Stack Marketplace для последующего скачивания пользователями. В процессе развертывания используется шаблон Azure Resource Manager.
+Каждый элемент, опубликованный в Azure Stack Hub Marketplace, доступен в формате пакета коллекции Azure (AZPKG-файл). Средство *Azure Gallery Packager* позволяет создать пользовательский пакет коллекции Azure, который можно отправить в Azure Stack Hub Marketplace для последующего скачивания пользователями. В процессе развертывания используется шаблон Azure Resource Manager.
 
 ## <a name="marketplace-items"></a>Элементы Marketplace
 
@@ -35,11 +33,11 @@ ms.locfileid: "75654888"
 ## <a name="create-a-marketplace-item"></a>Создание элемента Marketplace
 
 > [!IMPORTANT]
-> Прежде чем создавать элемент Marketplace для виртуальной машины, отправьте пользовательский образ виртуальной машины на портал Azure Stack по инструкциям из статьи в разделе [Добавление образа виртуальной машины в Azure Stack](azure-stack-add-vm-image.md). Затем по инструкциям в этой статье упакуйте образ и передайте созданный AZPKG-файл в Azure Stack Marketplace.
+> Прежде чем создавать элемент Marketplace для виртуальной машины, отправьте пользовательский образ виртуальной машины на портал Azure Stack Hub, следуя инструкциям в статье [Добавление пользовательского образа виртуальной машины в Azure Stack Hub](azure-stack-add-vm-image.md). Затем по инструкциям в этой статье упакуйте образ и передайте созданный AZPKG-файл в Azure Stack Hub Marketplace.
 
 Чтобы создать пользовательский элемент Marketplace, выполните следующие действия.
 
-1. Скачайте средство [Azure Gallery Packager](https://aka.ms/azsmarketplaceitem) и пример пакета коллекции Azure Stack. В комплект для скачивания входят пользовательские шаблоны виртуальных машин. Извлеките ZIP-файл и примените доступные шаблоны Linux или Windows, которые доступны в папке **Custom VMs** (Пользовательские виртуальные машины). Вы можете повторно использовать готовые шаблоны, изменяя соответствующие параметры с информацией об элементе, которая будет отображаться на портале Azure Stack. Также вы можете просто повторно использовать AZPKG-файл, пропустив следующие шаги, чтобы настроить собственный пакет коллекции.
+1. Скачайте средство [Azure Gallery Packager](https://aka.ms/azsmarketplaceitem) и пример пакета коллекции Azure Stack Hub. В комплект для скачивания входят пользовательские шаблоны виртуальных машин. Извлеките ZIP-файл и примените доступные шаблоны Linux или Windows, которые доступны в папке **Custom VMs** (Пользовательские виртуальные машины). Вы можете повторно использовать готовые шаблоны, изменяя соответствующие параметры с информацией об элементе, которая будет отображаться на портале Azure Stack Hub. Также вы можете просто повторно использовать AZPKG-файл, пропустив следующие шаги, чтобы настроить собственный пакет коллекции.
 
 2. Создайте шаблон Azure Resource Manager или выберите готовый пример шаблона для Windows или Linux. Эти примеры шаблонов размещены в ZIP-файле средства, который вы скачали на шаге 1. Вы можете изменить текстовые значения в полях шаблона либо скачать уже настроенный шаблон с сайта GitHub. Дополнительную информацию о шаблонах Resource Manager см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](/azure/azure-resource-manager/resource-group-authoring-templates).
 
@@ -143,9 +141,9 @@ ms.locfileid: "75654888"
 
     ![Отображение пакета](media/azure-stack-create-and-publish-marketplace-item/pkg1.png)![Отображение пакета](media/azure-stack-create-and-publish-marketplace-item/pkg2.png)
 
-6. Проверьте, можно ли с помощью [API-интерфейсов Azure Stack](../user/azure-stack-profiles-azure-resource-manager-versions.md) развернуть ресурс из этого шаблона.
+6. Проверьте, можно ли с помощью [API-интерфейсов Azure Stack Hub](../user/azure-stack-profiles-azure-resource-manager-versions.md) развернуть ресурс из этого шаблона.
 
-7. Если шаблон использует образ виртуальной машины, [добавьте этот образ виртуальной машины в Azure Stack](azure-stack-add-vm-image.md).
+7. Если шаблон использует образ виртуальной машины, [добавьте этот образ виртуальной машины в Azure Stack Hub](azure-stack-add-vm-image.md).
 
 8. Сохраните шаблон Azure Resource Manager в папке **/Contoso.TodoList/DeploymentTemplates/** .
 
@@ -169,9 +167,9 @@ ms.locfileid: "75654888"
 
 ## <a name="publish-a-marketplace-item"></a>Публикация элемента Marketplace
 
-1. Передайте созданный элемент Marketplace (файл AZPKG) в хранилище больших двоичных объектов Azure с помощью PowerShell или обозревателя службы хранилища Azure. Вы можете использовать локальное хранилище Azure Stack или службу хранилища Azure, которая является временным хранилищем для пакета. Убедитесь, что используемый большой двоичный объект является общедоступным.
+1. Передайте созданный элемент Marketplace (файл AZPKG) в хранилище больших двоичных объектов Azure с помощью PowerShell или обозревателя службы хранилища Azure. Вы можете использовать локальное хранилище Azure Stack Hub или службу хранилища Azure, которая является временным хранилищем для пакета. Убедитесь, что используемый большой двоичный объект является общедоступным.
 
-2. Чтобы импортировать пакет коллекции в Azure Stack, сначала выполните удаленное подключение (RDP) к клиентской виртуальной машине, чтобы скопировать файл, который вы только что создали в Azure Stack.
+2. Чтобы импортировать пакет коллекции в Azure Stack Hub, сначала выполните удаленное подключение (RDP) к клиентской виртуальной машине, чтобы скопировать файл, который вы только что создали в Azure Stack Hub.
 
 3. Добавьте контекст.
 
@@ -188,7 +186,7 @@ ms.locfileid: "75654888"
     https://sample.blob.core.windows.net/<temporary blob name>/<offerName.publisherName.version>.azpkg –Verbose
     ```
 
-5. Убедитесь, что у вас есть допустимая учетная запись хранения, в которой можно сохранить этот элемент. Значение `GalleryItemURI` можно получить на портале администрирования Azure Stack. Выберите **Учетная запись хранения —> Свойства большого двоичного объекта > URL** с расширением .azpkg. Учетная запись хранения используется непродложительно, только для публикации в Marketplace.
+5. Убедитесь, что у вас есть допустимая учетная запись хранения, в которой можно сохранить этот элемент. Значение `GalleryItemURI` можно получить на портале администрирования Azure Stack Hub. Выберите **Учетная запись хранения —> Свойства большого двоичного объекта > URL** с расширением .azpkg. Учетная запись хранения используется непродложительно, только для публикации в Marketplace.
 
    После того, как вы подготовите пакет коллекции и отправите его командой **Add-AzsGalleryItem**, пользовательская виртуальная машина появится в Marketplace и в представлении **Создание ресурсов**. Обратите внимание, что пользовательский пакет коллекции не отображается в разделе **управления Marketplace**.
 
@@ -230,7 +228,7 @@ ms.locfileid: "75654888"
 | PublisherDisplayName |X |String |Рекомендуется использовать 30 символов. |Портал может неправильно отображать имя издателя, если его длина превышает 30 символов. |
 | PublisherLegalName |X |String |Не более 256 символов | |
 | Сводка |X |String |60–100 знаков. | |
-| LongSummary |X |String |140–256 знаков. |Пока не применяется в Azure Stack. |
+| LongSummary |X |String |140–256 знаков. |Пока не применяется в Azure Stack Hub. |
 | Description |X |[HTML](https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md#gallery-item-metadata-html-sanitization) |От 500 до 5000 символов. | |
 
 ### <a name="images"></a>Изображения
@@ -247,7 +245,7 @@ ms.locfileid: "75654888"
 
 ### <a name="categories"></a>Категории
 
-Каждый элемент Marketplace должен снабжаться тегами категорий, которые определяют, где отображается этот элемент в пользовательском интерфейсе портала. Вы можете выбрать любую из имеющихся категорий Azure Stack (**Вычисления**, **Данные + хранилище** и т. д.) или создать новую.
+Каждый элемент Marketplace должен снабжаться тегами категорий, которые определяют, где отображается этот элемент в пользовательском интерфейсе портала. Вы можете выбрать любую из имеющихся категорий Azure Stack Hub (**Вычисления**, **Данные + хранилище** и т. д.) или создать новую.
 
 ### <a name="links"></a>Ссылки
 
@@ -275,18 +273,18 @@ ms.locfileid: "75654888"
 
 ## <a name="reference-marketplace-item-ui"></a>Справочные материалы. Пользовательский интерфейс элемента Marketplace
 
-Для элемента Marketplace на портале Azure Stack используются следующие значки и текстовые данные.
+Для элемента Marketplace на портале Azure Stack Hub используются следующие значки и текстовые данные.
 
 ### <a name="create-blade"></a>Колонка "Создание"
 
-![Колонка "Создание" — элементы Marketplace для Azure Stack](media/azure-stack-create-and-publish-marketplace-item/image1.png)
+![Колонка "Создание" — элементы Marketplace для Azure Stack Hub](media/azure-stack-create-and-publish-marketplace-item/image1.png)
 
 ### <a name="marketplace-item-details-blade"></a>Колонка информации об элементе Marketplace
 
-![Колонка информации об элементе Marketplace для Azure Stack](media/azure-stack-create-and-publish-marketplace-item/image3.png)
+![Колонка информации об элементе Marketplace для Azure Stack Hub](media/azure-stack-create-and-publish-marketplace-item/image3.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Общие сведения об Azure Stack Marketplace](azure-stack-marketplace.md)
+- [Общие сведения об Azure Stack Hub Marketplace](azure-stack-marketplace.md)
 - [Скачивание элементов marketplace](azure-stack-download-azure-marketplace-item.md)
 - [Описание структуры и синтаксиса шаблонов Azure Resource Manager](/azure/azure-resource-manager/resource-group-authoring-templates)

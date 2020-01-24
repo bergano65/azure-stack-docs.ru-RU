@@ -1,6 +1,6 @@
 ---
-title: Добавление пользовательского образа виртуальной машины в Azure Stack | Документация Майкрософт
-description: Сведения о добавлении и удалении пользовательского образа виртуальной машины в Azure Stack.
+title: Добавление пользовательского образа виртуальной машины в Azure Stack Hub | Документация Майкрософт
+description: Сведения о добавлении и удалении пользовательского образа виртуальной машины в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: Justinha
@@ -15,18 +15,16 @@ ms.date: 10/16/2019
 ms.author: Justinha
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: 44bb9701e27bc98abbc1a353c8ada9fafddf0bbe
-ms.sourcegitcommit: a6c02421069ab9e72728aa9b915a52ab1dd1dbe2
+ms.openlocfilehash: 738c9aad910e558f883e3474b248a8271beb30a3
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75654851"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75880895"
 ---
-# <a name="add-a-custom-vm-image-to-azure-stack"></a>Добавление пользовательского образа виртуальной машины в Azure Stack
+# <a name="add-a-custom-vm-image-to-azure-stack-hub"></a>Добавление пользовательского образа виртуальной машины в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-Azure Stack позволяет добавить пользовательский образ виртуальной машины в Marketplace и сделать его доступным для пользователей. Образы виртуальной машины можно также добавить в Azure Stack Hub Marketplace через портал администрирования или Windows PowerShell. Используйте образ из глобального магазина Azure Marketplace в качестве основы для пользовательского образа или создайте его с нуля с помощью Hyper-V.
+Azure Stack Hub позволяет добавить пользовательский образ виртуальной машины в Marketplace и сделать его доступным для пользователей. Образы виртуальной машины можно также добавить в Azure Stack Hub Marketplace через портал администрирования или Windows PowerShell. Используйте образ из глобального магазина Azure Marketplace в качестве основы для пользовательского образа или создайте его с нуля с помощью Hyper-V.
 
 ## <a name="step-1-create-the-custom-vm-image"></a>Шаг 1. Создание пользовательского образа виртуальной машины
 
@@ -34,7 +32,7 @@ Azure Stack позволяет добавить пользовательский
 
 Создайте обобщенный пользовательский VHD. Если этот виртуальный жесткий диск находится не в Azure, выполните действия из статьи [Отправка универсального диска VHD и создание виртуальных машин с его помощью в Azure](/azure/virtual-machines/windows/upload-generalized-managed), чтобы правильно подготовить VHD с помощью **Sysprep** и сделать его обобщенным.
 
-Если виртуальный жесткий диск находится в Azure, выполните инструкции из [этого документа](/azure/virtual-machines/windows/download-vhd), чтобы подготовить и скачать виртуальный жесткий диск перед его переносом в Azure Stack.
+Если виртуальный жесткий диск находится в Azure, выполните инструкции из [этого документа](/azure/virtual-machines/windows/download-vhd), чтобы подготовить и скачать виртуальный жесткий диск перед его переносом в Azure Stack Hub.
 
 ### <a name="linux"></a>Linux
 
@@ -56,7 +54,7 @@ Azure Stack позволяет добавить пользовательский
    logout
    ```
 
-   Возьмите себе на заметку версии агента Linux для Azure, которые работают с Azure Stack [как описано здесь](azure-stack-linux.md#azure-linux-agent). Убедитесь, что образ, обработанный командой Sysprep, имеет версию агента Linux для Azure, совместимую с Azure Stack.
+   Возьмите себе на заметку версии агента Linux для Azure, которые работают с Azure Stack Hub [как описано здесь](azure-stack-linux.md#azure-linux-agent). Убедитесь, что образ, обработанный командой Sysprep, имеет версию агента Linux для Azure, совместимую с Azure Stack Hub.
 
 2. Остановите виртуальную машину и отмените ее выделение.
 
@@ -82,21 +80,21 @@ Azure Stack позволяет добавить пользовательский
 
 Перед отправкой образа необходимо принять во внимание следующие факторы.
 
-- Azure Stack поддерживает только виртуальные машины первого поколения на дисках фиксированного размера в формате VHD. Фиксированный формат структурирует логический диск в файле линейно, то есть смещение *X* на диске соответствует смещению *X* в BLOB-объекте. Небольшой колонтитул в конце BLOB-объекта описывает свойства VHD-файла. Чтобы убедиться, что вы используете диск фиксированного размера, выполните командлет PowerShell **Get-VHD**.
+- Azure Stack Hub поддерживает только виртуальные машины первого поколения на дисках фиксированного размера в формате VHD. Фиксированный формат структурирует логический диск в файле линейно, то есть смещение *X* на диске соответствует смещению *X* в BLOB-объекте. Небольшой колонтитул в конце BLOB-объекта описывает свойства VHD-файла. Чтобы убедиться, что вы используете диск фиксированного размера, выполните командлет PowerShell **Get-VHD**.
 
-- Azure Stack не поддерживает динамические диски VHD. 
+- Azure Stack Hub не поддерживает динамические диски VHD. 
 
 ## <a name="step-2-upload-the-vm-image-to-a-storage-account"></a>Шаг 2. Отправка образа виртуальной машины в учетную запись хранения
 
-1. [Установите PowerShell для Azure Stack](azure-stack-powershell-install.md).  
+1. [Установка PowerShell для Azure Stack Hub](azure-stack-powershell-install.md).  
 
-2. Войдите в Azure Stack с правами оператора. Этот процесс описан в статье [Configure the Azure Stack PowerShell environment](azure-stack-powershell-configure-admin.md) (Настройка окружения Azure Stack PowerShell).
+2. Войдите в Azure Stack Hub с правами оператора. Этот процесс описан в статье [Подключение к Azure Stack Hub с помощью PowerShell](azure-stack-powershell-configure-admin.md).
 
-3. Нужно предоставить возможность ссылаться на образы через URI хранилища BLOB-объектов. Подготовьте образ операционной системы Windows или Linux в формате VHD (не VHDX), а затем отправьте образ в учетную запись хранения в Azure Stack.
+3. Нужно предоставить возможность ссылаться на образы через URI хранилища BLOB-объектов. Подготовьте образ операционной системы Windows или Linux в формате VHD (не VHDX), а затем отправьте образ в учетную запись хранения в Azure Stack Hub.
 
-   - Если виртуальный жесткий диск находится в Azure и вы используете подключенную среду Azure Stack, вы можете использовать средство [Azcopy](/azure/storage/common/storage-use-azcopy) или его аналоги, чтобы напрямую передать виртуальный жесткий диск из Azure в учетную запись хранения Azure Stack.
+   - Если виртуальный жесткий диск находится в Azure и вы используете подключенную среду Azure Stack Hub, вы можете использовать средство [Azcopy](/azure/storage/common/storage-use-azcopy) или его аналоги, чтобы напрямую передать виртуальный жесткий диск из Azure в учетную запись хранения Azure Stack Hub.
 
-   - Если виртуальный жесткий диск находится в Azure и вы используете автономную среду Azure Stack, придется скачать VHD на компьютер, который подключен одновременно к Azure и Azure Stack. Скопируйте VHD-файл из Azure на этот компьютер, а затем переносите его в Azure Stack с помощью любого стандартного [средств передачи данных в хранилище](../user/azure-stack-storage-transfer.md), которые поддерживает работу с Azure и Azure Stack.
+   - Если виртуальный жесткий диск находится в Azure и вы используете автономную среду Azure Stack Hub, придется скачать VHD на компьютер, который подключен одновременно к Azure и Azure Stack Hub. Скопируйте VHD-файл из Azure на этот компьютер, а затем переносите его в Azure Stack Hub с помощью любого стандартного [средства передачи данных в хранилище](../user/azure-stack-storage-transfer.md), которое поддерживает работу с Azure и Azure Stack Hub.
 
      Например, виртуальный жесткий диск в учетную запись хранения можно передать с помощью команды Add-AzureRmVHD на портале администрирования Azure Stack.  
 
@@ -115,9 +113,9 @@ Azure Stack позволяет добавить пользовательский
    ![Установка общего доступа к большим двоичным объектам](./media/azure-stack-add-vm-image/tca3.png)
    
 
-## <a name="step-3-option-1-add-the-vm-image-as-an-azure-stack-operator-using-the-portal"></a>Шаг 3, вариант 1. Добавление образа виртуальной машины от имени оператора Azure Stack с помощью портала
+## <a name="step-3-option-1-add-the-vm-image-as-an-azure-stack-hub-operator-using-the-portal"></a>Шаг 3, вариант 1. Добавление образа виртуальной машины от имени оператора Azure Stack Hub с помощью портала
 
-1. Войдите в Azure Stack как оператор. Выберите **Все службы** > **Вычисления** в разделе меню **Образы виртуальных машин** > **Добавить**.
+1. Войдите в Azure Stack Hub с правами оператора. Выберите **Все службы** > **Вычисления** в разделе меню **Образы виртуальных машин** > **Добавить**.
 
    ![Пользовательский интерфейс для загрузки неопубликованных пользовательских образов](./media/azure-stack-add-vm-image/tca4.png)
 
@@ -129,11 +127,11 @@ Azure Stack позволяет добавить пользовательский
    
 3. Добавленный образ будет доступен только для шаблонов на базе Azure Resource Manager и развертываний PowerShell. Чтобы обеспечить пользователям доступ к образу в Marketplace, опубликуйте его в качестве элемента Marketplace, как описывается в статье [Создание и публикация элемента Marketplace](azure-stack-create-and-publish-marketplace-item.md) Запишите значения **Издатель**, **Предложение**, **Номер SKU** и **Версия**. Они понадобятся при редактировании шаблона Resource Manager и Manifest.json в пользовательском AZPKG-файле.
 
-## <a name="step-3-option-2-add-a-vm-image-as-an-azure-stack-operator-using-powershell"></a>Шаг 3, вариант 2. Добавление образа виртуальной машины от имени оператора Azure Stack с помощью PowerShell
+## <a name="step-3-option-2-add-a-vm-image-as-an-azure-stack-hub-operator-using-powershell"></a>Шаг 3, вариант 2. Добавление образа виртуальной машины от имени оператора Azure Stack Hub с помощью PowerShell
 
-1. [Установите PowerShell для Azure Stack](azure-stack-powershell-install.md).  
+1. [Установка PowerShell для Azure Stack Hub](azure-stack-powershell-install.md).  
 
-2. Войдите в Azure Stack с правами оператора. Этот процесс описан в статье [Configure the Azure Stack PowerShell environment](azure-stack-powershell-configure-admin.md) (Настройка окружения Azure Stack PowerShell).
+2. Войдите в Azure Stack Hub с правами оператора. Этот процесс описан в статье [Подключение к Azure Stack Hub с помощью PowerShell](azure-stack-powershell-configure-admin.md).
 
 3. Откройте PowerShell с помощью командной строки с повышенными привилегиями и выполните следующую команду:
 
@@ -170,9 +168,9 @@ Azure Stack позволяет добавить пользовательский
      
 4. Добавленный образ будет доступен только для шаблонов на базе Azure Resource Manager и развертываний PowerShell. Чтобы обеспечить пользователям доступ к образу в Marketplace, опубликуйте его в качестве элемента Marketplace, как описывается в статье [Создание и публикация элемента Marketplace](azure-stack-create-and-publish-marketplace-item.md) Запишите значения **Издатель**, **Предложение**, **Номер SKU** и **Версия**. Они понадобятся при редактировании шаблона Resource Manager и Manifest.json в пользовательском AZPKG-файле.
 
-## <a name="remove-the-vm-image-as-an-azure-stack-operator-using-the-portal"></a>Удаление образа виртуальной машины от имени оператора Azure Stack с помощью портала
+## <a name="remove-the-vm-image-as-an-azure-stack-hub-operator-using-the-portal"></a>Удаление образа виртуальной машины от имени оператора Azure Stack Hub с помощью портала
 
-1. Войдите на [портал администрирования Azure Stack](https://adminportal.local.azurestack.external).
+1. Откройте [портал администрирования](https://adminportal.local.azurestack.external) Azure Stack Hub.
 
 2. Если образ виртуальной машины имеет связанный элемент Marketplace, щелкните **Управление Marketplace** и выберите элемент Marketplace, который требуется удалить.
 
@@ -180,13 +178,13 @@ Azure Stack позволяет добавить пользовательский
 
 4. Выберите команду **Удалить**.
 
-## <a name="remove-a-vm-image-as-an-azure-stack-operator-using-powershell"></a>Удаление образа виртуальной машины от имени оператора Azure Stack с помощью PowerShell
+## <a name="remove-a-vm-image-as-an-azure-stack-hub-operator-using-powershell"></a>Удаление образа виртуальной машины от имени оператора Azure Stack Hub с помощью PowerShell
 
 Если отправленный образ виртуальной машины больше не требуется, вы можете удалить его из Marketplace с помощью следующего командлета:
 
-1. [Установите PowerShell для Azure Stack](azure-stack-powershell-install.md).
+1. [Установка PowerShell для Azure Stack Hub](azure-stack-powershell-install.md).
 
-2. Войдите в Azure Stack с правами оператора.
+2. Войдите в Azure Stack Hub с правами оператора.
 
 3. Откройте PowerShell с помощью командной строки с повышенными привилегиями и выполните следующую команду:
 
@@ -212,9 +210,9 @@ Azure Stack позволяет добавить пользовательский
      Например: `1.0.0`  
      Версия виртуальной машины, которая применяется пользователями при развертывании образа виртуальной машины. Эта версия имеет формат *\#.\#.\#* . Не используйте в этом поле пробел или другие специальные символы.  
 
-     Дополнительные сведения о командлете **Remove-AzsPlatformImage** см. в [документации по модулю оператора Azure Stack](/powershell/module/) для Microsoft PowerShell.
+     Дополнительные сведения о командлете **Remove-AzsPlatformImage** см. в [документации по модулю оператора Azure Stack Hub](/powershell/module/) для Microsoft PowerShell.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создание и публикация пользовательского элемента Azure Stack Marketplace](azure-stack-create-and-publish-marketplace-item.md)
+- [Создание и публикация пользовательского элемента Azure Stack Hub Marketplace](azure-stack-create-and-publish-marketplace-item.md)
 - [Подготовка виртуальной машины](../user/azure-stack-create-vm-template.md)

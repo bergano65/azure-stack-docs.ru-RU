@@ -1,6 +1,6 @@
 ---
-title: Использование Azure Monitor в Azure Stack | Документация Майкрософт
-description: Узнайте, как использовать Azure Monitor в Azure Stack.
+title: Использование Azure Monitor в Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как использовать Azure Monitor в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -14,47 +14,45 @@ ms.topic: article
 ms.date: 08/27/2019
 ms.author: mabrigg
 ms.lastreviewed: 12/01/2018
-ms.openlocfilehash: e36f7c7f80de3cf0b822c4d145af411584ea38e4
-ms.sourcegitcommit: 4e48f1e5af74712a104eda97757dc5f50a591936
+ms.openlocfilehash: e78b8ead05fbb4a95488c077935277429a34e018
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71224993"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878804"
 ---
-# <a name="use-azure-monitor-on-azure-stack"></a>Использование Azure Monitor в Azure Stack
+# <a name="use-azure-monitor-on-azure-stack-hub"></a>Использование Azure Monitor в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack*.
+В этой статье приведены общие сведения о службе Azure Monitor в Azure Stack Hub. В ней рассматривается принцип работы Azure Monitor, а также дополнительная информация о том, как использовать Azure Monitor в Azure Stack Hub. 
 
-В этой статье приведены общие сведения о службе Azure Monitor в Azure Stack. В ней рассматривается принцип работы Azure Monitor, а также дополнительная информация о том, как использовать Azure Monitor в Azure Stack. 
+Общие сведения о работе с Azure Monitor в Azure Stack Hub см. в [этой статье](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-get-started).
 
-Общие сведения об Azure Monitor приведены в статье [Общие сведения о службе Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-get-started).
+![Колонка Monitor в Azure Stack Hub](./media/azure-stack-metrics-azure-data/azs-monitor.png)
 
-![Колонка Monitor в Azure Stack](./media/azure-stack-metrics-azure-data/azs-monitor.png)
-
-Azure Monitor — служба платформы, которая предоставляет единый источник данных для наблюдения за ресурсами Azure. С помощью Azure Monitor можно визуализировать, запрашивать, маршрутизировать, архивировать метрики и журналы, полученные от ресурсов Azure, а также выполнять с ними другие действия. Эти операции можно выполнять с помощью портала администрирования Azure Stack, командлетов Monitor PowerShell, кроссплатформенного интерфейса командной строки и интерфейсов REST API Azure Monitor. Дополнительные сведения об определенных подключениях, поддерживаемых Azure Stack, см. в статье [Использование данных мониторинга из Azure Stack](azure-stack-metrics-monitor.md).
+Azure Monitor — служба платформы, которая предоставляет единый источник данных для наблюдения за ресурсами Azure. С помощью Azure Monitor можно визуализировать, запрашивать, маршрутизировать, архивировать метрики и журналы, полученные от ресурсов Azure, а также выполнять с ними другие действия. Эти операции можно выполнять с помощью портала администрирования Azure Stack Hub, командлетов Monitor PowerShell, кроссплатформенного интерфейса командной строки и интерфейсов REST API Azure Monitor. Дополнительные сведения об определенных подключениях, поддерживаемых Azure Stack Hub, см. в статье [Использование данных мониторинга из Azure Stack Hub](azure-stack-metrics-monitor.md).
 
 > [!Note]
 > Метрики и журналы диагностики недоступны для Пакета средств разработки Azure Stack.
 
-## <a name="prerequisites-for-azure-monitor-on-azure-stack"></a>Предварительные требования для Azure Monitor в Azure Stack
+## <a name="prerequisites-for-azure-monitor-on-azure-stack-hub"></a>Предварительные требования для Azure Monitor в Azure Stack Hub
 
 Зарегистрируйте поставщик ресурсов **Microsoft.insights** в параметрах поставщика ресурсов для предложения подписки. Убедитесь, что поставщик ресурсов доступен в предложении, связанном с подпиской:
 
-1. Откройте пользовательский портал Azure Stack.
+1. Откройте портал пользователя Azure Stack Hub.
 2. Выберите **Подписки**.
 3. Выберите подписку, которую нужно зарегистрировать.
 4. В разделе **Параметры** выберите **Поставщики ресурсов**. 
 5. Найдите компонент **Microsoft.Insights** в списке и убедитесь, что он находится в состоянии **Зарегистрировано**.
 
-## <a name="overview-of-azure-monitor-on-azure-stack"></a>Обзор Azure Monitor в Azure Stack
+## <a name="overview-of-azure-monitor-on-azure-stack-hub"></a>Обзор Azure Monitor в Azure Stack Hub
 
-Как и Azure Monitor в Azure, Azure Monitor в Azure Stack предоставляет метрики инфраструктуры базового уровня, а также журналы для большинства служб.
+Как и Azure Monitor в Azure, Azure Monitor в Azure Stack Hub предоставляет метрики инфраструктуры базового уровня, а также журналы для большинства служб.
 
 ## <a name="azure-monitor-sources-compute-subset"></a>Источники Azure Monitor: подмножество вычислений
 
-![Источники Azure Monitor в Azure Stack: подмножество вычислений](media//azure-stack-metrics-azure-data/azs-monitor-computersubset.png)
+![Источники Azure Monitor в Azure Stack Hub: подмножество вычислений](media//azure-stack-metrics-azure-data/azs-monitor-computersubset.png)
 
-Поставщик ресурсов **Microsoft.Compute** в Azure Stack включает в себя:
+Поставщик ресурсов **Microsoft.Compute** в Azure Stack Hub включает в себя:
  - Виртуальные машины 
  - Масштабируемые наборы виртуальных машин
 
@@ -73,24 +71,24 @@ Azure Monitor — служба платформы, которая предост
  - пользовательские журналы ошибок.
 
 > [!Note]  
-> Расширение диагностики для Linux не поддерживается в Azure Stack.
+> Расширение диагностики для Linux не поддерживается в Azure Stack Hub.
 
 ### <a name="host-and-guest-vm-metrics"></a>Метрики виртуальной машины узла и гостевой виртуальной машины
 
-Перечисленные выше вычислительные ресурсы имеют выделенную виртуальную машину узла и гостевую ОС. Виртуальная машина узла и гостевая ОС являются эквивалентом корневой и гостевой виртуальной машины в гипервизоре Hyper-V. Собирать метрики можно как для виртуальной машины узла, так и для гостевой ОС. Вы можете также собирать журналы диагностики для гостевой ОС. Список собираемых службой Azure Monitor метрик виртуальных машин узлов и гостевых виртуальных машин в Azure Stack приведен в разделе [Метрики, поддерживаемые Azure Monitor в Azure Stack](azure-stack-metrics-supported.md). 
+Перечисленные выше вычислительные ресурсы имеют выделенную виртуальную машину узла и гостевую ОС. Виртуальная машина узла и гостевая ОС являются эквивалентом корневой и гостевой виртуальной машины в гипервизоре Hyper-V. Собирать метрики можно как для виртуальной машины узла, так и для гостевой ОС. Вы можете также собирать журналы диагностики для гостевой ОС. Список собираемых службой Azure Monitor метрик виртуальных машин узлов и гостевых виртуальных машин в Azure Stack Hub приведен в статье [Метрики, поддерживаемые Azure Monitor в Azure Stack Hub](azure-stack-metrics-supported.md). 
 
 ### <a name="activity-log"></a>Журнал действий
 
-В журналах действий вы можете искать информацию о ресурсах вычисления в контексте инфраструктуры Azure Stack. Эти журналы содержат такие сведения, как время создания или удаления ресурсов. Журналы действий в Azure Stack согласовываются с Azure. Дополнительные сведения см. в статье [Мониторинг действий подписки с помощью журнала действий Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs). 
+В журналах действий вы можете искать информацию о ресурсах вычисления в контексте инфраструктуры Azure Stack Hub. Эти журналы содержат такие сведения, как время создания или удаления ресурсов. Журналы действий в Azure Stack Hub согласовываются с Azure. Дополнительные сведения см. в статье [Мониторинг действий подписки с помощью журнала действий Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs). 
 
 
 ## <a name="azure-monitor-sources-everything-else"></a>Источники мониторинга Azure: все остальное
 
-![Источники Azure Monitor в Azure Stack: все остальное](media//azure-stack-metrics-azure-data/azs-monitor-othersubset.png)
+![Источники Azure Monitor в Azure Stack Hub: все остальное](media//azure-stack-metrics-azure-data/azs-monitor-othersubset.png)
 
 ### <a name="resources---metrics-and-diagnostics-logs"></a>Ресурсы — метрики и журналы диагностики
 
-Доступные для сбора метрики и журналы диагностики отличаются в зависимости от типа ресурса. Список доступных для сбора метрик для каждого ресурса в Azure Stack можно найти на странице сведений о поддерживаемых метриках. Дополнительные сведения см. в статье [Метрики, поддерживаемые Azure Monitor в Azure Stack](azure-stack-metrics-supported.md).
+Доступные для сбора метрики и журналы диагностики отличаются в зависимости от типа ресурса. Список доступных для сбора метрик для каждого ресурса в Azure Stack Hub можно найти на странице сведений о поддерживаемых метриках. Дополнительные сведения см. в статье [Метрики, поддерживаемые Azure Monitor в Azure Stack Hub](azure-stack-metrics-supported.md).
 
 ### <a name="activity-log"></a>Журнал действий
 
@@ -115,15 +113,15 @@ Azure Monitor — служба платформы, которая предост
 Визуализация данных мониторинга на графиках и диаграммах помогает находить тенденции намного быстрее, чем при просмотре самих данных. 
 
 Ниже представлены некоторые способы визуализации.
- - Использование порталов пользователя и администрирования Azure Stack.
+ - Использование порталов пользователя и администрирования Azure Stack Hub.
  - Отправка данных в Microsoft Power BI.
  - Отправка данных в стороннее средство визуализации с помощью потоковой трансляции или использования инструмента для чтения из архива в службе хранилища Azure.
 
-## <a name="methods-of-accessing-azure-monitor-on-azure-stack"></a>Методы получения доступа к Azure Monitor в Azure Stack
+## <a name="methods-of-accessing-azure-monitor-on-azure-stack-hub"></a>Методы получения доступа к Azure Monitor в Azure Stack Hub
 
 Вы можете использовать отслеживание, маршрутизацию и извлечение данных с помощью одного из следующих методов. Не все методы доступны для всех действий или типов данных. 
 
- - [Пользовательский портал Azure Stack](azure-stack-use-portal.md)
+ - [Пользовательский портал Azure Stack Hub](azure-stack-use-portal.md)
  - [PowerShell](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-powershell-samples)
  - [Кроссплатформенный интерфейс командной строки](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-cli-samples)
  - [REST API](https://docs.microsoft.com/rest/api/monitor)
@@ -132,6 +130,6 @@ Azure Monitor — служба платформы, которая предост
 > [!Important]  
 > Если при просмотре диаграммы производительности виртуальной машины возникнет ошибка с сообщением о том, что **ресурс не найден**, убедитесь, что вы зарегистрировали Microsoft.insights в подписке, связанной с этой виртуальной машиной.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об использовании данных мониторинга в Azure Stack см. в статье [Использование данных мониторинга из Azure](azure-stack-metrics-monitor.md).
+Дополнительные сведения об использовании данных мониторинга в Azure Stack Hub см. в [этой статье](azure-stack-metrics-monitor.md).

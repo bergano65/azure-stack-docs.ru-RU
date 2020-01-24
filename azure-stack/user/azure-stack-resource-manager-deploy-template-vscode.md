@@ -1,6 +1,6 @@
 ---
-title: Развертывание в Azure Stack с помощью Visual Studio Code | Документация Майкрософт
-description: Я, как пользователь, хочу создать шаблон Azure Resource Manager в Visual Studio Code и применить схему развертывания для подготовки шаблона, совместимого с моей версией Azure Stack.
+title: Развертывание в Azure Stack Hub с помощью Visual Studio Code | Документация Майкрософт
+description: Я, как пользователь, хочу создать шаблон Azure Resource Manager в Visual Studio Code и применить схему развертывания для подготовки шаблона, совместимого с моей версией Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,37 +15,37 @@ ms.date: 09/30/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/30/2019
-ms.openlocfilehash: 914e3e8db57009d58a14aa87d24ff86a8291e52b
-ms.sourcegitcommit: e8aa26b078a9bab09c8fafd888a96785cc7abb4d
+ms.openlocfilehash: 9fe2d71d72f4075dd22658d2a769b3558e9ab7ce
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71711105"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819324"
 ---
-# <a name="deploy-with-visual-studio-code-to-azure-stack"></a>Развертывание в Azure Stack с помощью Visual Studio Code
+# <a name="deploy-with-visual-studio-code-to-azure-stack-hub"></a>Развертывание в Azure Stack Hub с помощью Visual Studio Code
 
-Вы можете использовать Visual Studio Code и расширение средств Azure Resource Manager для создания и изменения шаблонов Azure Resource Manager, которые будут работать в вашей версии Azure Stack. Шаблоны Resource Manager в Visual Studio Code можно создавать и без расширения. Но расширение предоставляет варианты автозаполнения, которые упрощают разработку шаблона. Кроме того, вы можете указать схему развертывания, которая поможет вам оценить доступные ресурсы Azure Stack.
+Вы можете использовать Visual Studio Code и расширение средств Azure Resource Manager для создания и изменения шаблонов Azure Resource Manager, которые будут работать в вашей версии Azure Stack Hub. Шаблоны Resource Manager в Visual Studio Code можно создавать и без расширения. Но расширение предоставляет варианты автозаполнения, которые упрощают разработку шаблона. Кроме того, вы можете указать схему развертывания, которая поможет вам оценить доступные ресурсы Azure Stack Hub.
 
 С помощью инструкций в этой статье вы развернете виртуальную машину Windows.
 
-## <a name="concepts-for-azure-stack-resource-manager"></a>Концепции Resource Manager в Azure Stack
+## <a name="concepts-for-azure-stack-hub-resource-manager"></a>Понятия, связанные с Resource Manager в Azure Stack Hub
 
-### <a name="azure-stack-resource-manager"></a>Resource Manager для Azure Stack
+### <a name="azure-stack-hub-resource-manager"></a>Resource Manager для Azure Stack Hub
 
-Основные понятия, связанные с развертыванием решений Azure и управлением ими в Azure Stack, описаны в статье [об использовании шаблонов Azure Resource Manager в Azure Stack](azure-stack-arm-templates.md).
+Основные понятия, связанные с развертыванием решений Azure и управлением ими в Azure Stack Hub, описаны в статье [об использовании шаблонов Azure Resource Manager в Azure Stack Hub](azure-stack-arm-templates.md).
 
 ### <a name="api-profiles"></a>Профили API
-Основные понятия, связанные с координацией поставщиков ресурсов в Azure Stack, описаны в статье [об управлении профилями версий API в Azure Stack](azure-stack-version-profiles.md).
+Основные понятия, связанные с координацией поставщиков ресурсов в Azure Stack Hub, описаны в статье [об управлении профилями версий API в Azure Stack Hub](azure-stack-version-profiles.md).
 
 ### <a name="the-deployment-schema"></a>Схема развертывания
 
-Схема развертывания Azure Stack поддерживает гибридные профили на основе шаблонов Azure Resource Manager в Visual Studio Code. Вы можете изменить одну строку в шаблоне JSON, чтобы она ссылалась на схему, а затем использовать IntelliSense для оценки ресурса, совместимого с Azure. Изучите в этой схеме поставщиков ресурсов, типы и версии API, поддерживаемые вашей версией Azure Stack. Эта схема использует профиль API для получения конкретных версий конечных точек API из поставщиков ресурсов, поддерживаемых в вашей версии Azure Stack. Для заполнения значений type и apiVersion вы можете использовать функцию завершения слов. Кроме того, здесь будут доступны только типы ресурсов и версии API для соответствующего профиля API.
+Схема развертывания Azure Stack Hub поддерживает гибридные профили на основе шаблонов Azure Resource Manager в Visual Studio Code. Вы можете изменить одну строку в шаблоне JSON, чтобы она ссылалась на схему, а затем использовать IntelliSense для оценки ресурса, совместимого с Azure. Изучите в этой схеме поставщиков ресурсов, типы и версии API, поддерживаемые вашей версией Azure Stack Hub. Эта схема использует профиль API для получения конкретных версий конечных точек API из поставщиков ресурсов, поддерживаемых в вашей версии Azure Stack Hub. Для заполнения значений type и apiVersion вы можете использовать функцию завершения слов. Кроме того, здесь будут доступны только типы ресурсов и версии API для соответствующего профиля API.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - [Visual Studio Code](https://code.visualstudio.com/)
-- Доступ к Azure Stack.
-- [Azure Stack PowerShell](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-install?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fbreadcrumb%2Ftoc.json), установленный на компьютере, который обращается к конечным точкам управления.
+- Доступ к Azure Stack Hub.
+- [Azure Stack Hub PowerShell](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-install?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fbreadcrumb%2Ftoc.json), установленный на компьютере, который обращается к конечным точкам управления.
 
 ## <a name="install-resource-manager-tools-extension"></a>Установка расширения для средств Resource Manager
 
@@ -58,13 +58,13 @@ ms.locfileid: "71711105"
 
 ## <a name="get-a-template"></a>Получение шаблона
 
-Чтобы не создавать шаблон с нуля, откройте готовую версию из AzureStack-QuickStart-Templates (https://github.com/Azure/AzureStack-QuickStart-Templates). AzureStack-QuickStart-Templates — это репозиторий для шаблонов Resource Manager, которые развертывают ресурсы в Azure Stack. 
+Чтобы не создавать шаблон с нуля, откройте готовую версию из AzureStack-QuickStart-Templates (https://github.com/Azure/AzureStack-QuickStart-Templates). AzureStack-QuickStart-Templates — это репозиторий для шаблонов Resource Manager, которые развертывают ресурсы в Azure Stack Hub. 
 
-В этой статье используется шаблон с именем `101-vm-windows-create`. Этот шаблон определяет несложное развертывание виртуальной машины Windows для Azure Stack.  Этот шаблон также развертывает виртуальную сеть (с DNS), группу безопасности сети и сетевой интерфейс.
+В этой статье используется шаблон с именем `101-vm-windows-create`. Этот шаблон определяет несложное развертывание виртуальной машины Windows для Azure Stack Hub.  Этот шаблон также развертывает виртуальную сеть (с DNS), группу безопасности сети и сетевой интерфейс.
 
 1. Откройте Visual Studio Code и перейдите в рабочую папку на локальном компьютере.
 2. Откройте терминал Git bash в Visual Studio Code.
-3. Выполните приведенную ниже команду, чтобы получить репозиторий быстрого начала работы в Azure Stack.
+3. Выполните приведенную ниже команду, чтобы получить репозиторий быстрого начала работы в Azure Stack Hub.
     ```bash  
     Git clone https://github.com/Azure/AzureStack-QuickStart-Templates.git
     ```
@@ -79,14 +79,14 @@ ms.locfileid: "71711105"
     ```JSON  
     "apiProfile": ""
     ```
-9. Поместите курсор в пустое пространство между кавычками и нажмите клавиши CTRL+ПРОБЕЛ. Вы можете выбрать любой из допустимых профилей API в схеме развертывания для Azure Stack. Эту операцию можно выполнить для каждого поставщика ресурсов в шаблоне.
+9. Поместите курсор в пустое пространство между кавычками и нажмите клавиши CTRL+ПРОБЕЛ. Вы можете выбрать любой из допустимых профилей API в схеме развертывания для Azure Stack Hub. Эту операцию можно выполнить для каждого поставщика ресурсов в шаблоне.
 
-    ![Схема развертывания Resource Manager в Azure Stack](./media/azure-stack-resource-manager-deploy-template-vscode/azure-stack-resource-manager-vscode-schema.png)
+    ![Схема развертывания Resource Manager в Azure Stack Hub](./media/azure-stack-resource-manager-deploy-template-vscode/azure-stack-resource-manager-vscode-schema.png)
 
 10. Когда все будет готово, вы сможете развернуть шаблон с помощью PowerShell. Следуйте указаниям из статьи [о развертывании с помощью PowerShell](azure-stack-deploy-template-powershell.md). Укажите в скрипте расположение шаблона.
-11. Завершив развертывание виртуальной машины Windows, перейдите на портал Azure Stack и найдите группу ресурсов. Если вы хотите удалить из Azure Stack результаты выполнения этого упражнения, удалите группу ресурсов.
+11. Завершив развертывание виртуальной машины Windows, перейдите на портал Azure Stack Hub и найдите группу ресурсов. Если вы хотите удалить из Azure Stack Hub результаты выполнения этого упражнения, удалите группу ресурсов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения [о шаблонах Azure Stack Resource Manager](azure-stack-arm-templates.md).  
-- Дополнительные сведения [о профилях API в Azure Stack](azure-stack-version-profiles.md).
+- Дополнительные сведения [о шаблонах Resource Manager для Azure Stack Hub](azure-stack-arm-templates.md).  
+- Дополнительные сведения [о профилях API в Azure Stack Hub](azure-stack-version-profiles.md).

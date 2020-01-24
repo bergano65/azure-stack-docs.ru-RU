@@ -1,6 +1,6 @@
 ---
-title: Удаление поставщика ресурсов MySQL в Azure Stack | Документация Майкрософт
-description: Сведения об удалении поставщика ресурсов MySQL из развертывания Azure Stack.
+title: Удаление поставщика ресурсов MySQL в Azure Stack Hub | Документация Майкрософт
+description: Сведения об удалении поставщика ресурсов MySQL из развертывания Azure Stack Hub.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -15,14 +15,14 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2018
-ms.openlocfilehash: a2b55707bc05aecf8681cb866c58b0ed34fb87cd
-ms.sourcegitcommit: a23b80b57668615c341c370b70d0a106a37a02da
+ms.openlocfilehash: c1551badd87ba55432ff416aae1230abf317e1b3
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72682161"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75811045"
 ---
-# <a name="remove-the-mysql-resource-provider-in-azure-stack"></a>Удаление поставщика ресурсов MySQL в Azure Stack
+# <a name="remove-the-mysql-resource-provider-in-azure-stack-hub"></a>Удаление поставщика ресурсов MySQL в Azure Stack Hub
 
 Прежде чем удалить поставщик ресурсов MySQL, необходимо удалить все его зависимости. Кроме того, потребуется скопировать пакет развертывания, который был использован для установки поставщика ресурсов.
 
@@ -35,7 +35,7 @@ ms.locfileid: "72682161"
 
 Есть несколько задач очистки, которые нужно запустить перед выполнением скрипта DeployMySqlProvider.ps1 для удаления поставщика ресурсов.
 
-Эти задачи очистки выполняет Оператор Azure Stack:
+Эти задачи очистки выполняет оператор Azure Stack Hub:
 
 * Удаление всех планов, которые ссылаются на этот адаптер MySQL.
 * Удаление всех квот, которые связаны с этим адаптером MySQL.
@@ -52,11 +52,11 @@ ms.locfileid: "72682161"
 4. Запустите скрипт DeployMySqlProvider.ps1 со следующими параметрами:
     - **Uninstall**: Удаляет поставщик ресурсов и все связанные с ним ресурсы.
     - **PrivilegedEndpoint**: IP-адрес или DNS-имя привилегированной конечной точки.
-    - **AzureEnvironment**: Среда Azure, используемая для развертывания Azure Stack. Требуется только для развертываний Azure AD.
+    - **AzureEnvironment**: Среда Azure, используемая для развертывания Azure Stack Hub. Требуется только для развертываний Azure AD.
     - **CloudAdminCredential**: Учетные данные администратора облака, необходимые для доступа к привилегированной конечной точке.
     - **DirectoryTenantID**
-    - **AzCredential**: Учетные данные администратора службы Azure Stack. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack.
+    - **AzCredential**: Учетные данные администратора службы Azure Stack Hub. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack Hub.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Предложение служб приложений как PaaS](azure-stack-app-service-overview.md)

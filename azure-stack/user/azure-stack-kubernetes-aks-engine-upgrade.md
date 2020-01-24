@@ -1,6 +1,6 @@
 ---
-title: Обновление кластера Kubernetes в Azure Stack | Документация Майкрософт
-description: Сведения о том, как обновить кластер Kubernetes в Azure Stack.
+title: Обновление кластера Kubernetes в Azure Stack Hub | Документация Майкрософт
+description: Сведения о том, как обновить кластер Kubernetes в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,16 +15,14 @@ ms.date: 01/02/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 01/02/2020
-ms.openlocfilehash: fb51e49f449896fde6262790972c958b230d3175
-ms.sourcegitcommit: a37d3d78ed683e783681c567c989cb2b9ad0de0c
+ms.openlocfilehash: de2774a9cdbdbc8461b05db5dbf1f80b0854fbc7
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75605880"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883615"
 ---
-# <a name="upgrade-a-kubernetes-cluster-on-azure-stack"></a>Обновление кластера Kubernetes в Azure Stack
-
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+# <a name="upgrade-a-kubernetes-cluster-on-azure-stack-hub"></a>Обновление кластера Kubernetes в Azure Stack Hub
 
 ## <a name="upgrade-a-cluster"></a>Обновление кластера
 
@@ -37,7 +35,7 @@ ms.locfileid: "75605880"
 Для развернутого кластера обновляются следующие компоненты:
 
 -   Kubernetes
--   поставщик Kubernetes в Azure Stack;
+-   поставщик Kubernetes в Azure Stack Hub;
 -   базовая операционная система.
 
 При обновлении рабочего кластера учитывайте следующее:
@@ -45,7 +43,7 @@ ms.locfileid: "75605880"
 -   Используете ли вы правильную спецификацию кластера (`apimodel.json`) и группу ресурсов для целевого кластера?
 -   Надежен ли компьютер, который вы используете в качестве клиентского, то есть на котором выполняется обработчик AKS и операции обновления?
 -   Убедитесь, что у вас есть и нормально работает резервный кластер.
--   Если это возможно, выполняйте команду на виртуальной машине в среде Azure Stack, чтобы снизить число сетевых прыжков и риск сбоев подключения.
+-   Если это возможно, выполняйте команду на виртуальной машине в среде Azure Stack Hub, чтобы снизить число сетевых прыжков и рисков сбоев подключения.
 -   Убедитесь, что ваша подписка имеет достаточно пространства для завершения процесса. Этот процесс связан с выделением новых виртуальных машин.
 -   Не запланировано обновлений системы или других задач.
 -   Настройте промежуточное обновление в кластере, настройки которого точно совпадают с параметрами рабочего кластера, и проверьте в нем обновление перед тем, как запускать его в рабочем кластере.
@@ -86,12 +84,12 @@ ms.locfileid: "75605880"
 
     | Параметр | Пример | Description |
     | --- | --- | --- |
-    | azure-env | AzureStackCloud | Чтобы сообщить обработчику AKS, что целевой платформой является Azure Stack, используйте `AzureStackCloud`. |
-    | location | local | Название региона для Azure Stack. Для ASDK параметр региона нужно настроить как `local`. |
+    | azure-env | AzureStackCloud | Используйте `AzureStackCloud`, чтобы сообщить обработчику AKS, что целевой платформой является Azure Stack Hub. |
+    | location | local | Название региона для Azure Stack Hub. Для ASDK параметр региона нужно настроить как `local`. |
     | resource-group | kube-rg | Введите имя новой группы ресурсов или выберите существующую. Имя ресурса должно содержать буквенно-цифровые символы. Оно вводится в нижнем регистре. |
     | subscription-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Введите идентификатор подписки. Дополнительные сведения см. в разделе [Подписка на предложение](https://docs.microsoft.com/azure-stack/user/azure-stack-subscribe-services#subscribe-to-an-offer). |
     | api-model | ./kubernetes-azurestack.json | Путь к файлу конфигурации кластера или модели API. |
-    | client-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Введите GUID субъекта-службы. Идентификатор клиента определяется как идентификатор приложения, когда администратор Azure Stack создает субъект-службу. |
+    | client-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Введите GUID субъекта-службы. Идентификатор клиента определяется как идентификатор приложения, когда администратор Azure Stack Hub создает субъект-службу. |
     | client-secret | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Введите секрет субъекта-службы. Это секрет клиента, который вы настроили при создании службы. |
     | identity-system | adfs | Необязательный параметр. Укажите решение по управлению удостоверениями, если используются службы федерации Active Directory (AD FS). |
 
@@ -116,7 +114,7 @@ ms.locfileid: "75605880"
 
 1. Просмотрите [таблицу "supported-kubernetes-versions"](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions) (поддерживаемых версий kubernetes) и определите, есть ли у вас версия aks-engine и базовый образ AKS, которые нужно обновить. Чтобы просмотреть версию aks-engine, запустите: `aks-engine version`.
 2. Обновите обработчик AKS соответствующим образом. На компьютере с установленным aks-engine запустите `./get-akse.sh --version vx.xx.x`, заменив **x.xx.x** целевой версией.
-3. Попросите оператора Azure Stack добавить версию базового образа AKS, необходимого для Azure Stack Marketplace, который нужно использовать.
+3. Попросите вашего оператора Azure Stack Hub добавить необходимую версию базового изображения AKS в Marketplace Azure Stack Hub, который планируете использовать.
 4. Выполните команду `aks-engine upgrade`, используя ту же используемую версию Kubernetes, но добавьте `--force`. Пример можно увидеть в статье [Принудительное выполнение обновления](#forcing-an-upgrade).
 
 
@@ -141,5 +139,5 @@ aks-engine upgrade \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. сведения об [обработчике AKS в Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).
-- [Масштабирование кластера Kubernetes в Azure Stack](azure-stack-kubernetes-aks-engine-scale.md).
+- См. сведения об [обработчике AKS в Azure Stack Hub](azure-stack-kubernetes-aks-engine-overview.md).
+- [Масштабирование кластера Kubernetes в Azure Stack Hub](azure-stack-kubernetes-aks-engine-scale.md)

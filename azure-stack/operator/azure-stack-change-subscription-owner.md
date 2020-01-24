@@ -1,6 +1,6 @@
 ---
-title: Изменение владельца выставления счетов для пользовательских подписок Azure Stack | Документация Майкрософт
-description: Сведения о том, как изменить владельца выставления счетов для пользовательских подписок Azure Stack.
+title: Изменение владельца выставления счетов для пользовательских подписок Azure Stack Hub | Документация Майкрософт
+description: Сведения о том, как изменить владельца выставления счетов для пользовательских подписок Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,16 +16,16 @@ ms.date: 09/17/2019
 ms.author: justinha
 ms.reviewer: shnatara
 ms.lastreviewed: 10/19/2018
-ms.openlocfilehash: 3c4453974092fd1873e5f77b1074c82851fc1be1
-ms.sourcegitcommit: c196463492732218d2474d3a964f88e995272c80
+ms.openlocfilehash: 65a47ac3fa9c146060dc05962c84ca60a17f898e
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094377"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804594"
 ---
-# <a name="change-the-billing-owner-for-an-azure-stack-user-subscription"></a>Изменение владельца выставления счетов для пользовательских подписок Azure Stack
+# <a name="change-the-billing-owner-for-an-azure-stack-hub-user-subscription"></a>Изменение владельца выставления счетов для пользовательских подписок Azure Stack Hub
 
-Операторы Azure Stack могут с помощью PowerShell изменить владельца выставления счетов для пользовательской подписки. Одна из причин для изменения владельца заключается в замене пользователя, который увольняется из организации.
+Операторы Azure Stack Hub могут изменить владельца выставления счетов для пользовательской подписки используя PowerShell. Одна из причин для изменения владельца заключается в замене пользователя, который увольняется из организации.
 
 Существует два вида *владельцев*, назначенных к подписке.
 
@@ -39,10 +39,10 @@ ms.locfileid: "71094377"
 
 ## <a name="change-the-billing-owner"></a>Изменение владельца выставления счетов
 
-Чтобы изменить владельца выставления счетов пользовательской подписки, выполните следующий скрипт. Компьютер, используемый для выполнения сценария, необходимо подключить к Azure Stack и запустить модуль Azure Stack PowerShell версии 1.3.0 или более поздней. Дополнительные сведения см. в статье [Установка PowerShell для Azure Stack](azure-stack-powershell-install.md).
+Чтобы изменить владельца выставления счетов пользовательской подписки, выполните следующий скрипт. Компьютер, используемый для выполнения сценария, необходимо подключить к Azure Stack Hub и запустить модуль Azure Stack Hub PowerShell версии 1.3.0 или более поздней. Дополнительные сведения см. в статье [Установка PowerShell для Azure Stack Hub](azure-stack-powershell-install.md).
 
 >[!NOTE]
->В многопользовательской службе Azure Stack новый владелец должен находиться в том же каталоге, что и существующий. Прежде чем предоставить права владения подпиской пользователю, который находится в другом каталоге, необходимо сначала [пригласить этого пользователя в свой каталог в качестве гостя](/azure/active-directory/b2b/add-users-administrator).
+>В многопользовательской службе Azure Stack Hub новый владелец должен находиться в том же каталоге, что и существующий. Прежде чем предоставить права владения подпиской пользователю, который находится в другом каталоге, необходимо сначала [пригласить этого пользователя в свой каталог в качестве гостя](/azure/active-directory/b2b/add-users-administrator).
 
 Замените в сценарии следующие значения перед выполнением.
 
@@ -52,7 +52,7 @@ ms.locfileid: "71094377"
 - **$OwnerUpn:** учетная запись, например **имя_пользователя\@example.com**, для добавления в качестве нового владельца выставления счетов.
 
 ```powershell
-# Set up Azure Stack admin environment
+# Set up Azure Stack Hub admin environment
 Add-AzureRmEnvironment -ARMEndpoint $ArmEndpoint -Name AzureStack-admin
 Add-AzureRmAccount -Environment AzureStack-admin -TenantId $TenantId
 
@@ -69,6 +69,6 @@ Set-AzsUserSubscription -InputObject $subscription
 
 [!include[Remove Account](../../includes/remove-account.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление доступом на основе ролей](azure-stack-manage-permissions.md)

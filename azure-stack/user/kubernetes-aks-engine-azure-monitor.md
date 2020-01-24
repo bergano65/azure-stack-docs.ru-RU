@@ -15,16 +15,14 @@ ms.date: 11/15/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/15/2019
-ms.openlocfilehash: a3941a3ada52a8588b504884a2d03cb00dd2c850
-ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
+ms.openlocfilehash: 4fa741970a2fb8c82bab3c9f7eb16a3aefd31ecd
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310317"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883122"
 ---
 # <a name="use-azure-monitor-for-containers-on-azure-stack-hub"></a>Использование Azure Monitor для контейнеров в Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 Вы можете использовать [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/), чтобы отслеживать контейнеры в кластере Kubernetes, развернутом в Azure Stack Hub. 
 
@@ -36,7 +34,7 @@ ms.locfileid: "74310317"
 
 Есть два способа включить Azure Monitor для кластера. Для обоих способов нужно настроить в Azure рабочую область Azure Monitor Log Analytics.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для обоих методов нужно выполнить [предварительные требования](https://github.com/Helm/charts/tree/master/incubator/azuremonitor-containers#pre-requisites), которые перечислены в руководстве по [использованию контейнеров в Azure Monitor](https://github.com/Helm/charts/tree/master/incubator/azuremonitor-containers).
 
@@ -66,7 +64,7 @@ ms.locfileid: "74310317"
        }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- См. сведения об [обработчике AKS в Azure Stack](azure-stack-kubernetes-aks-engine-overview.md).  
+- См. сведения об [обработчике AKS в Azure Stack Hub](azure-stack-kubernetes-aks-engine-overview.md).  
 - См. сведения об [использовании службы Azure Monitor для контейнеров](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview).

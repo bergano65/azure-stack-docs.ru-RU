@@ -1,6 +1,6 @@
 ---
-title: Создание плана в Azure Stack | Документация Майкрософт
-description: Узнайте, как создать план в Azure Stack, который позволяет подписчикам подготавливать виртуальные машины.
+title: Создание плана в Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как создать план в Azure Stack Hub, который позволяет подписчикам подготавливать виртуальные машины.
 services: azure-stack
 documentationcenter: ''
 author: bryanla
@@ -16,57 +16,55 @@ ms.date: 06/11/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: 6982409c30fb614a363642ac1e4048a322fd079c
-ms.sourcegitcommit: 1bae55e754d7be75e03af7a4db3ec43fd7ff3e9c
+ms.openlocfilehash: 5fa55edd4c9e089b023cef8b8d0a2adec1606098
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319217"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882986"
 ---
-# <a name="create-a-plan-in-azure-stack"></a>Создание плана в Azure Stack
+# <a name="create-a-plan-in-azure-stack-hub"></a>Создание плана в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-[Планы Azure Stack](azure-stack-overview.md) — это группы, содержащие одну или несколько служб, а также их квоты. Вы как поставщик создаете планы, чтобы предложить их пользователям. В свою очередь, пользователи подписываются на предложения, чтобы использовать содержащиеся в них планы, службы и квоты. В этом примере показано, как создать план, включающий в себя поставщики вычислительных и сетевых ресурсов, а также ресурсов хранилища. Этот план даст подписчикам возможность подготавливать виртуальные машины.
+[Планы Azure Stack Hub](azure-stack-overview.md) — это группы, содержащие одну или несколько служб, а также их квоты. Вы как поставщик создаете планы, чтобы предложить их пользователям. В свою очередь, пользователи подписываются на предложения, чтобы использовать содержащиеся в них планы, службы и квоты. В этом примере показано, как создать план, включающий в себя поставщики вычислительных и сетевых ресурсов, а также ресурсов хранилища. Этот план даст подписчикам возможность подготавливать виртуальные машины.
 
 ::: moniker range=">=azs-1902"
 ## <a name="create-a-plan-1902-and-later"></a>Создание плана (1902 и более поздние версии)
 
-1. Войдите на [портал администратора Azure Stack](https://adminportal.local.azurestack.external).
+1. Войдите на [портал администратора Azure Stack Hub](https://adminportal.local.azurestack.external).
 
 2. Чтобы создать план и предложение, на которое могут подписываться пользователи, щелкните **+Создать ресурс**, **Предложения и планы** и **План**.
   
-   ![Выбор плана на портале администрирования Azure Stack](media/azure-stack-create-plan/select-plan.png)
+   ![Выбор плана на портале администрирования Azure Stack Hub](media/azure-stack-create-plan/select-plan.png)
 
 3. Отобразится пользовательский интерфейс с вкладками, где можно указать имя плана, добавить службы и определить квоты для всех выбранных служб. Что самое важное, вы можете просмотреть сведения о создаваемом предложении перед его созданием.
 
    На вкладке **Основные** в окне **Создать план** заполните поля **Отображаемое имя** и **Имя ресурса**. Отображаемое имя — это понятное имя плана, которое может видеть оператор. На портале администрирования сведения о плане доступны только для операторов.
 
-   ![Указание сведений о новом плане в Azure Stack](media/azure-stack-create-plan/plan-name.png)
+   ![Указание сведений о новом плане в Azure Stack Hub](media/azure-stack-create-plan/plan-name.png)
 
 4. Создайте **группу ресурсов** (или выберите имеющуюся), которая послужит контейнером для плана.
 
-   ![Указание группы ресурсов для нового плана в Azure Stack](media/azure-stack-create-plan/resource-group.png)
+   ![Указание группы ресурсов для нового плана в Azure Stack Hub](media/azure-stack-create-plan/resource-group.png)
 
 5. Выберите вкладку **Службы** или нажмите кнопку **Далее: Службы**, а затем установите флажки для служб **Microsoft.Compute**, **Microsoft.Network** и **Microsoft.Storage**.
   
-   ![Выбор служб для нового плана в Azure Stack](media/azure-stack-create-plan/services.png)
+   ![Выбор служб для нового плана в Azure Stack Hub](media/azure-stack-create-plan/services.png)
 
 6. Выберите вкладку **Квоты** или нажмите кнопку **Далее: Квоты >** . Рядом с **Microsoft.Storage** выберите квоту по умолчанию из раскрывающегося списка или щелкните **Создать**, чтобы создать настраиваемую квоту.
   
-   ![Указание квот для нового плана в Azure Stack](media/azure-stack-create-plan/quotas.png)
+   ![Указание квот для нового плана в Azure Stack Hub](media/azure-stack-create-plan/quotas.png)
 
 7. При создании квоты введите **имя** и задайте значения для квоты. Нажмите кнопку **ОК**, чтобы создать квоту.
 
-   ![Создание квоты для нового плана в Azure Stack](media/azure-stack-create-plan/new-quota.png)
+   ![Создание квоты для нового плана в Azure Stack Hub](media/azure-stack-create-plan/new-quota.png)
 
 8. Повторите шаги 6 и 7, чтобы создать и назначить квоты для **Microsoft.Network** и **Microsoft.Compute** . Когда всем трем службам присвоены квоты, они выглядят как в примере ниже.
 
-   ![Завершение назначения квот для нового плана в Azure Stack](media/azure-stack-create-plan/all-quotas-assigned.png)
+   ![Завершение назначения квот для нового плана в Azure Stack Hub](media/azure-stack-create-plan/all-quotas-assigned.png)
 
 9. Выберите **Review + create** (Просмотреть и создать), чтобы просмотреть план. Просмотрите все значения и квоты, чтобы убедиться, что они правильные. Интерфейс позволяет расширить квоты выбранных планов поочередно, чтобы просмотреть сведения о каждой из квот в плане. Вы также можете вернуться для внесения необходимых изменений.
 
-   ![Создание плана в Azure Stack](media/azure-stack-create-plan/create.png)
+   ![Создание плана в Azure Stack Hub](media/azure-stack-create-plan/create.png)
 
 10. Когда все будет готово, щелкните **Создать**, чтобы создать план.
 
@@ -76,49 +74,49 @@ ms.locfileid: "71319217"
 ::: moniker range="<=azs-1901"
 ## <a name="create-a-plan-1901-and-earlier"></a>Создание плана (1901 и более ранние версии)
 
-1. Войдите на [портал администратора Azure Stack](https://adminportal.local.azurestack.external).
+1. Войдите на [портал администратора Azure Stack Hub](https://adminportal.local.azurestack.external).
 
 2. Чтобы создать план и предложение, на которое могут подписываться пользователи, выберите **+ Создать**, **Предложения и планы** и **План**.
   
-   ![Выбор плана на портале администрирования Azure Stack](media/azure-stack-create-plan/select-plan1901.png)
+   ![Выбор плана на портале администрирования Azure Stack Hub](media/azure-stack-create-plan/select-plan1901.png)
 
 3. В разделе **Новый план**, введите **Отображаемое имя** и **Имя ресурса**. Отображаемое имя — это понятное имя плана, которое могут видеть пользователи. Только администратор может видеть имя ресурса, которое администраторы используют для работы с планом в качестве ресурса Azure Resource Manager.
 
-   ![Указание сведений о новом плане в Azure Stack](media/azure-stack-create-plan/plan-name1901.png)
+   ![Указание сведений о новом плане в Azure Stack Hub](media/azure-stack-create-plan/plan-name1901.png)
 
 4. Создайте **группу ресурсов** (или выберите имеющуюся), которая послужит контейнером для плана.
 
-   ![Указание группы ресурсов для нового плана в Azure Stack](media/azure-stack-create-plan/resource-group1901.png)
+   ![Указание группы ресурсов для нового плана в Azure Stack Hub](media/azure-stack-create-plan/resource-group1901.png)
 
 5. Щелкните **Службы**, а затем установите флажки для служб **Microsoft.Compute**, **Microsoft.Network** и **Microsoft.Storage**. Затем нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию. Флажки появляются при наведении указателя мыши на каждый параметр.
   
-   ![Выбор служб для нового плана в Azure Stack](media/azure-stack-create-plan/services1901.png)
+   ![Выбор служб для нового плана в Azure Stack Hub](media/azure-stack-create-plan/services1901.png)
 
 6. Щелкните **Квоты**, выберите **Microsoft.Storage (local)** (Microsoft.Storage (локальная)), а затем выберите квоту по умолчанию или **Создание квоты**, чтобы создать настраиваемую квоту.
   
-   ![Указание квот для нового плана в Azure Stack](media/azure-stack-create-plan/quotas1901.png)
+   ![Указание квот для нового плана в Azure Stack Hub](media/azure-stack-create-plan/quotas1901.png)
 
 7. При создании квоты введите **имя** для квоты, задайте значения квоты, а затем нажмите кнопку **ОК**. Диалоговое окно **Создание квоты** закроется.
 
-   ![Создание квоты для нового плана в Azure Stack](media/azure-stack-create-plan/new-quota1901.png)
+   ![Создание квоты для нового плана в Azure Stack Hub](media/azure-stack-create-plan/new-quota1901.png)
 
    Выберите созданную новую квоту. При выборе квоты она назначается, а диалоговое окно выбора закрывается.
   
-   ![Назначение квоты для нового плана в Azure Stack](media/azure-stack-create-plan/assign-quota1901.png)
+   ![Назначение квоты для нового плана в Azure Stack Hub](media/azure-stack-create-plan/assign-quota1901.png)
 
 8. Повторите шаги 6 и 7, чтобы создать и назначить квоты для служб **Microsoft.Network (local)** (Microsoft.Network (локальная)) и **Microsoft.Compute (local)** (Microsoft.Compute (локальная)). Когда всем трем службам присвоены квоты, они выглядят как в примере ниже.
 
-   ![Завершение назначения квот для нового плана в Azure Stack](media/azure-stack-create-plan/all-quotas-assigned1901.png)
+   ![Завершение назначения квот для нового плана в Azure Stack Hub](media/azure-stack-create-plan/all-quotas-assigned1901.png)
 
 9. Чтобы создать план, в разделе **Квоты** нажмите кнопку **ОК**, а затем в разделе **Создать план** выберите **Создать**.
 
-    ![Создание плана в Azure Stack](media/azure-stack-create-plan/create1901.png)
+    ![Создание плана в Azure Stack Hub](media/azure-stack-create-plan/create1901.png)
 
 10. Для просмотра нового плана щелкните **Все ресурсы**, а затем найдите план и щелкните его имя. В длинном списке ресурсов план можно найти по имени с помощью **поиска**.
 
-    ![Ознакомьтесь с новым планом в Azure Stack.](media/azure-stack-create-plan/plan-overview1901.png)
+    ![Ознакомьтесь с новым планом в Azure Stack Hub](media/azure-stack-create-plan/plan-overview1901.png)
 ::: moniker-end
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание предложения](azure-stack-create-offer.md)

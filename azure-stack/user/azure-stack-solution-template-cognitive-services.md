@@ -1,6 +1,6 @@
 ---
-title: Развертывание Azure Cognitive Services в Azure Stack | Документация Майкрософт
-description: Сведения о развертывании Azure Cognitive Services в Azure Stack.
+title: Развертывание Azure Cognitive Services в Azure Stack Hub | Документация Майкрософт
+description: Сведения о развертывании Azure Cognitive Services в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,25 +15,23 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: guanghu
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 4323993c76019ffa2b3084679b2587e300094e38
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: d9e98e4d6f8bd1ba2bc2450f91d510da9bfe7d36
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955634"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878447"
 ---
-# <a name="deploy-azure-cognitive-services-to-azure-stack"></a>Развертывание Azure Cognitive Services в Azure Stack
-
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+# <a name="deploy-azure-cognitive-services-to-azure-stack-hub"></a>Развертывание Azure Cognitive Services в Azure Stack Hub
 
 > [!Note]  
-> Azure Cognitive Services предоставляются в Azure Stack в режиме предварительной версии.
+> Azure Cognitive Services предоставляются в Azure Stack Hub в режиме предварительной версии.
 
-В Azure Stack можно использовать Azure Cognitive Services с поддержкой контейнеров. Поддержка контейнеров в Azure Cognitive Services позволяет использовать все многофункциональные интерфейсы API, которые доступны в Azure. Использование контейнеров позволяет гибко выбирать расположения для развертывания и размещения служб, поставляемых в [контейнерах Docker](https://www.docker.com/what-container). Сейчас поддержка контейнеров доступна в виде предварительной версии для нескольких служб Azure Cognitive Services, включая [Компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home), [Распознавание лиц](https://docs.microsoft.com/azure/cognitive-services/face/overview), [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview) и [Распознавание речи](https://docs.microsoft.com/azure/cognitive-services/luis/luis-container-howto) (LUIS).
+В Azure Stack Hub можно использовать Azure Cognitive Services с поддержкой контейнеров. Поддержка контейнеров в Azure Cognitive Services позволяет использовать все многофункциональные интерфейсы API, которые доступны в Azure. Использование контейнеров позволяет гибко выбирать расположения для развертывания и размещения служб, поставляемых в [контейнерах Docker](https://www.docker.com/what-container). Сейчас поддержка контейнеров доступна в виде предварительной версии для нескольких служб Azure Cognitive Services, включая [Компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home), [Распознавание лиц](https://docs.microsoft.com/azure/cognitive-services/face/overview), [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview) и [Распознавание речи](https://docs.microsoft.com/azure/cognitive-services/luis/luis-container-howto) (LUIS).
 
 Контейнеризацией называется такой подход к распространению программного обеспечения, при котором приложение или служба упаковывается в образ контейнера вместе со всеми зависимостями и конфигурациями. Такой образ можно развернуть на узле контейнера с минимальными изменениями. Каждый контейнер изолирован от других контейнеров и базовой операционной системы. Сама система содержит только те компоненты, которые необходимы для запуска образа. Узел контейнера имеет меньший размер, чем виртуальная машина. Из образов вы также можете создавать контейнеры для краткосрочных задач и удалять их сразу, когда они становятся ненужными.
 
-## <a name="use-containers-with-cognitive-services-on-azure-stack"></a>Использование контейнеров для Cognitive Services в Azure Stack
+## <a name="use-containers-with-cognitive-services-on-azure-stack-hub"></a>Использование контейнеров для Cognitive Services в Azure Stack Hub
 
 - **Контроль над данными**  
   Предоставьте пользователям приложения полный контроль над данными при работе с Cognitive Services. Cognitive Services можно предоставить тем пользователям приложений, у которых нет возможности отправлять данные в глобальную среду Azure или в общедоступное облако.
@@ -42,32 +40,32 @@ ms.locfileid: "73955634"
   Предоставьте пользователям приложений обновленные версии моделей, развернутых в их решении.
 
 - **Переносимая архитектура**  
-  Реализуйте возможность создавать переносимую архитектуру приложения, что позволит развернуть решение в общедоступном облаке, локальном частном облаке или пограничной зоне. Контейнеры можно развертывать в Службе Azure Kubernetes, Экземплярах контейнеров Azure или кластере Kubernetes, развернутом в Azure Stack. Дополнительные сведения см. в статье [Развертывание Kubernetes в Azure Stack](azure-stack-solution-template-kubernetes-deploy.md).
+  Реализуйте возможность создавать переносимую архитектуру приложения, что позволит развернуть решение в общедоступном облаке, локальном частном облаке или пограничной зоне. Контейнеры можно развертывать в Службе Azure Kubernetes, Экземплярах контейнеров Azure или кластере Kubernetes, развернутом в Azure Stack Hub. Дополнительные сведения см. в статье [Развертывание Kubernetes в Azure Stack Hub](azure-stack-solution-template-kubernetes-deploy.md).
 
 - **Высокая пропускная способность и минимальные задержки**  
    Предоставьте пользователям приложения возможность масштабировать ресурсы в соответствии с пиковыми колебаниями трафика, чтобы сохранять высокую пропускную способность и низкий уровень задержек. Предоставьте возможность выполнять Cognitive Services в Службе Azure Kubernetes, размещенной в непосредственной физической близости к логике и данным приложений.
 
-Используйте Azure Stack для развертывания контейнеров Cognitive Services в кластере Kubernetes вместе с контейнерами приложений, чтобы обеспечить высокий уровень доступности и гибкое масштабирование. При разработке приложений вы можете сочетать Cognitive Services с компонентами, созданными в Службе приложений и Функциях Azure, или из хранилища BLOB-объектов и баз данных SQL или MySQL.
+Используйте Azure Stack Hub для развертывания контейнеров Cognitive Services в кластере Kubernetes вместе с контейнерами приложений, чтобы обеспечить высокий уровень доступности и гибкое масштабирование. При разработке приложений вы можете сочетать Cognitive Services с компонентами, созданными в Службе приложений и Функциях Azure, или из хранилища BLOB-объектов и баз данных SQL или MySQL.
 
 См. дополнительные сведения о [поддержке контейнеров в Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-container-support).
 
 ## <a name="deploy-the-azure-face-api"></a>Развертывание API распознавания лиц Azure
 
-В этой статье описано, как развернуть API распознавания лиц Azure в кластере Kubernetes в Azure Stack. Этот подход можно использовать для развертывания контейнеров других служб Cognitive Services в кластерах Kubernetes в Azure Stack.
+В этой статье описано, как развернуть API распознавания лиц Azure в кластере Kubernetes в Azure Stack Hub. Этот подход можно использовать для развертывания контейнеров других служб Cognitive Services в кластерах Kubernetes в Azure Stack Hub.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы сделайте следующее:
 
 1.  Запросите доступ к реестру контейнеров для извлечения образов контейнеров Распознавания лиц из Реестра контейнеров Azure Cognitive Services. Подробные сведения см. в разделе о [запросе доступа к частному реестру контейнеров](https://docs.microsoft.com/azure/cognitive-services/face/face-how-to-install-containers#request-access-to-the-private-container-registry).
 
-2.  Подготовьте кластер Kubernetes в Azure Stack. См. дополнительные сведения о [развертывании Kubernetes в Azure Stack](azure-stack-solution-template-kubernetes-deploy.md).
+2.  Подготовьте кластер Kubernetes в Azure Stack Hub. См. дополнительные сведения о [развертывании Kubernetes в Azure Stack Hub](azure-stack-solution-template-kubernetes-deploy.md).
 
 ## <a name="create-azure-resources"></a>Создание ресурсов Azure
 
 Создайте ресурс Cognitive Service в Azure для предварительного просмотра контейнеров Распознавания лиц, Распознавания речи или Распознавания текста. Вам потребуется указать ключ подписки и URL-адрес конечной точки из ресурса, чтобы создать экземпляры контейнеров Cognitive Service.
 
-1. Создайте ресурс Azure на портале Azure. Если вы хотите просмотреть контейнеры Распознавания лиц, необходимо сначала создать ресурс Распознавания лиц на портале Azure. См. дополнительные сведения в руководстве по [ созданию учетной записи Cognitive Services на портале Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
+1. Создайте ресурс Azure на портале Azure. Если вы хотите просмотреть контейнеры Распознавания лиц, необходимо сначала создать ресурс Распознавания лиц на портале Azure. Дополнительные сведения см. в [кратком руководстве Создание учетной записи Cognitive Services на портале Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
 
    > [!Note]
    >  Ресурс Распознавания лиц или Компьютерного зрения должен использовать ценовую категорию F0.
@@ -89,7 +87,7 @@ ms.locfileid: "73955634"
 
 Используйте файл конфигурации YAML для простого развертывания службы Cognitive Services в кластере Kubernetes.
 
-Ниже приведен пример YAML-файла, который настраивает развертывание службы распознавания лиц в Azure Stack:
+Ниже приведен пример YAML-файла, который настраивает развертывание службы распознавания лиц в Azure Stack Hub.
 
 ```Yaml  
 apiVersion: apps/v1beta1
@@ -174,7 +172,7 @@ http:<External IP>:5000/swagger
 
 ## <a name="try-the-services-with-python"></a>Работа со службой с помощью Python
 
-Попробуйте проверить работу службы Cognitive Services в Azure Stack, выполнив некоторые простые скрипты Python. Вы можете воспользоваться официальными примерами Python, которые позволяют начать работу со службами [Компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home), [Распознавание лиц](https://docs.microsoft.com/azure/cognitive-services/face/overview), [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview) и [Распознавание речи](https://docs.microsoft.com/azure/cognitive-services/luis/luis-container-howto) (LUIS).
+Попробуйте проверить работу службы Cognitive Services в Azure Stack Hub, выполнив некоторые простые скрипты Python. Вы можете воспользоваться официальными примерами Python, которые позволяют начать работу со службами [Компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home), [Распознавание лиц](https://docs.microsoft.com/azure/cognitive-services/face/overview), [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview) и [Распознавание речи](https://docs.microsoft.com/azure/cognitive-services/luis/luis-container-howto) (LUIS).
 
 При использовании приложения Python для проверки служб, запущенных в контейнерах, следует учитывать два важных аспекта: 
 1. Службы Cognitive Services в контейнерах не требуют дополнительных ключей для аутентификации, но для пакета SDK необходимо, чтобы этот параметр имел любую строку в качестве значения. 
@@ -190,7 +188,7 @@ import cognitive_face as CF
 KEY = '0'  #  (keeping the quotes in place).
 CF.Key.set(KEY)
 
-# Get your actual Ip Address of service endpoint of your cognitive service on Azure Stack
+# Get your actual Ip Address of service endpoint of your cognitive service on Azure Stack Hub
 BASE_URL = 'http://<svc IP Address>:5000/face/v1.0/'  
 CF.BaseUrl.set(BASE_URL)
 
@@ -201,7 +199,7 @@ print(faces)
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Установка и запуск контейнеров](https://docs.microsoft.com/azure/cognitive-services/computer-vision/computer-vision-how-to-install-containers).
 

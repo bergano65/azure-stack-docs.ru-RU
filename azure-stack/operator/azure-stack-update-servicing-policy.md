@@ -1,6 +1,6 @@
 ---
-title: Применение обновления изготовителя оборудования к Azure Stack | Документация Майкрософт
-description: Узнайте, как применить обновление изготовителя оборудования к Azure Stack.
+title: Применение обновления изготовителя оборудования к Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как применить обновление изготовителя оборудования к Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,22 +15,20 @@ ms.date: 09/10/2019
 ms.author: mabrigg
 ms.lastreviewed: 09/10/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 8065b2905adb5298c23cd7c924ccff28fb778efe
-ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
+ms.openlocfilehash: 889c26089ed6d26adccec200b19191e8ab13c5a7
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75756827"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882629"
 ---
 # <a name="azure-stack-hub-servicing-policy"></a>Политика обслуживания Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack Hub*
 
 В этой статье описаны политика обслуживания интегрированных систем Azure Stack Hub, действия, необходимые для сохранения поддержки системы, а также способы получения поддержки.
 
 ## <a name="keep-your-system-under-support"></a>Сохранение поддержки для вашей системы
 
-Чтобы продолжать получать поддержку, необходимо регулярно обновлять Azure Stack.
+Чтобы и дальше получать поддержку, необходимо регулярно обновлять Azure Stack Hub.
 
 Чтобы сохранить поддержку вашего Azure Stack Hub, он должен использовать последнюю выпущенную версию обновления или одну из двух предыдущих основных версий обновления.
 

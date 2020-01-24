@@ -1,7 +1,7 @@
 ---
-title: Замена компонента оборудования на узле единицы масштабирования Azure Stack
-titleSuffix: Azure Stack
-description: Узнайте, как заменить компонент оборудования в интегрированной системе Azure Stack.
+title: Замена компонента оборудования на узле единицы масштабирования Azure Stack Hub
+titleSuffix: Azure Stack Hub
+description: Узнайте, как заменить компонент оборудования в интегрированной системе Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,32 +15,30 @@ ms.topic: article
 ms.date: 07/18/2019
 ms.author: thoroet
 ms.lastreviewed: 07/18/2019
-ms.openlocfilehash: ff78409ecdbdec8b7a6860db18244a4835351ed8
-ms.sourcegitcommit: 284f5316677c9a7f4c300177d0e2a905df8cb478
+ms.openlocfilehash: 715bd2b3bb5797ff43272a7b721edd03bb2c1b4c
+ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465291"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75924394"
 ---
-# <a name="replace-a-hardware-component-on-an-azure-stack-scale-unit-node"></a>Замена компонента оборудования на узле единицы масштабирования Azure Stack
+# <a name="replace-a-hardware-component-on-an-azure-stack-hub-scale-unit-node"></a>Замена компонента оборудования на узле единицы масштабирования Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack*
-
-В этой статье описывается общий процесс замены компонентов оборудования, не поддерживающих оперативную замену. Фактические шаги по замене варьируются в зависимости от поставщика изготовителя оборудования (OEM). Подробные инструкции, относящиеся к вашей интегрированной системе Azure Stack, приведены в документации поставщика по элементам, заменяемым в условиях эксплуатации (FRU).
+В этой статье описывается общий процесс замены компонентов оборудования, не поддерживающих оперативную замену. Фактические шаги по замене варьируются в зависимости от поставщика изготовителя оборудования (OEM). Подробные инструкции, относящиеся к вашей интегрированной системе Azure Stack Hub, приведены в документации поставщика по элементам, заменяемым в условиях эксплуатации (FRU).
 
 > [!CAUTION]  
-> Согласование встроенного ПО является критически важным для успешного выполнения операции, описанной в этой статье. Если вы пропустите этот шаг, это может привести к нестабильной работе системы, снижению производительности, нарушениям безопасности или может предотвратить выполнение автоматического развертывания операционной системы в Azure Stack. При замене оборудования всегда следует обращаться к документации вашего партнера, предоставляющего оборудование, чтобы гарантировать, что применяемое встроенное ПО соответствует версии OEM, отображаемой на [портале администрирования Azure Stack](azure-stack-updates.md).
+> Согласование встроенного ПО является критически важным для успешного выполнения операции, описанной в этой статье. Если вы пропустите этот шаг, это может привести к нестабильной работе системы, снижению производительности, нарушениям безопасности или может предотвратить выполнение автоматического развертывания операционной системы в Azure Stack Hub. При замене оборудования всегда следует обращаться к документации вашего партнера, предоставляющего оборудование, чтобы гарантировать, что применяемое встроенное ПО соответствует версии OEM, отображаемой на [портале администрирования Azure Stack Hub](azure-stack-updates.md).
 
 | Партнер по оборудованию | Регион | URL-адрес |
 |------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cisco | Все | [Руководство по эксплуатации интегрированной системы Cisco для Microsoft Azure Stack](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Заметки о выпуске интегрированной системы Cisco для Microsoft Azure Stack](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
-| Dell EMC | Все | [Облако для Microsoft Azure Stack 14G (требуется учетная запись и данные для входа)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Облако для Microsoft Azure Stack 13G (требуется учетная запись и данные для входа)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
+| Cisco | All | [Руководство по эксплуатации интегрированной системы Cisco для Microsoft Azure Stack Hub](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_00.html#concept_wks_t1q_wbb)<br><br>[Заметки о выпуске интегрированной системы Cisco для Microsoft Azure Stack Hub](https://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-c-series-rack-mount-ucs-managed-server-software/products-release-notes-list.html) |
+| Dell EMC | All | [Облако для Microsoft Azure Stack Hub 14G (требуется учетная запись и данные для входа)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Облако для Microsoft Azure Stack Hub 13G (требуется учетная запись и данные для входа)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
 | Fujitsu | Япония | [Служба технической поддержки Fujitsu (требуется учетная запись и данные для входа)](https://eservice.fujitsu.com/supportdesk-web/) |
 |  | Европа, Ближний Восток и Африка | [Fujitsu: поддержка продуктов и систем ИТ](https://support.ts.fujitsu.com/IndexContact.asp?lng=COM&ln=no&LC=del) |
 |  | EU | [Сайт MySupport Fujitsu (требуется учетная запись и данные для входа)](https://support.ts.fujitsu.com/IndexMySupport.asp) |
-| HPE | Все | [HPE ProLiant для Microsoft Azure Stack](http://www.hpe.com/info/MASupdates) |
-| Lenovo | Все | [Лучшие рецепты для ThinkAgile SXM](https://datacentersupport.lenovo.com/us/en/solutions/ht505122)
-| Wortmann |  | [Пакет OEM или встроенное ПО](https://drive.terracloud.de/dl/fiTdTb66mwDAJWgUXUW8KNsd/OEM)<br>[Документация по TERRA для Azure Stack (включая FRU)](https://drive.terracloud.de/dl/fiWGZwCySZSQyNdykXCFiVCR/TerraAzSDokumentation)
+| HPE | All | [HPE ProLiant для Microsoft Azure Stack Hub](http://www.hpe.com/info/MASupdates) |
+| Lenovo | All | [Лучшие рецепты для ThinkAgile SXM](https://datacentersupport.lenovo.com/us/en/solutions/ht505122)
+| Wortmann |  | [Пакет OEM или встроенное ПО](https://aka.ms/AA6z600)<br>[Документация по TERRA для Azure Stack Hub (включая FRU)](https://aka.ms/aa6zktc)
 
 Ниже перечислены компоненты, не подлежащие оперативной замене:
 
@@ -64,7 +62,7 @@ ms.locfileid: "74465291"
 
 ## <a name="review-alert-information"></a>Просмотр сведений об оповещении
 
-Система работоспособности и мониторинга Azure Stack отслеживает работоспособность сетевых адаптеров и дисков данных, которые управляются Локальными дисковыми пространствами. Она не отслеживает другие компоненты оборудования. Для всех прочих компонентов оборудования создаются оповещения в решении для мониторинга оборудования от конкретного поставщика, которое работает на узле жизненного цикла оборудования.  
+Система работоспособности и мониторинга Azure Stack Hub отслеживает работоспособность сетевых адаптеров и дисков данных, которые управляются Локальными дисковыми пространствами. Она не отслеживает другие компоненты оборудования. Для всех прочих компонентов оборудования создаются оповещения в решении для мониторинга оборудования от конкретного поставщика, которое работает на узле жизненного цикла оборудования.  
 
 ## <a name="component-replacement-process"></a>Процесс замены компонентов
 
@@ -88,7 +86,7 @@ ms.locfileid: "74465291"
 7. Используйте привилегированную конечную точку, чтобы [проверить состояние восстановления виртуального диска](azure-stack-replace-disk.md#check-the-status-of-virtual-disk-repair-using-the-privileged-endpoint). После установки новых дисков данных задание полного восстановления хранилища может длиться несколько часов, в зависимости от загрузки системы и использованного пространства.
 8. После завершения действия восстановления проверьте, все ли активные оповещения закрылись автоматически.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о замене физического диска с поддержкой оперативной замены см. в разделе [Замена физического диска в Azure Stack](azure-stack-replace-disk.md).
 - Дополнительные сведения о замене физического узла см. в разделе [Замена узла единицы масштабирования в интегрированной системе Azure Stack](azure-stack-replace-node.md).

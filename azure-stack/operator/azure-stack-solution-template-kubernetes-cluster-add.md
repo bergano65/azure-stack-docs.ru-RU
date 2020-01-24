@@ -1,7 +1,7 @@
 ---
-title: Добавление Kubernetes в Azure Stack Marketplace
-titleSuffix: Azure Stack
-description: Узнайте, как добавить Kubernetes в Azure Stack Marketplace.
+title: Добавление Kubernetes в Azure Stack Hub Marketplace
+titleSuffix: Azure Stack Hub
+description: Узнайте, как добавить Kubernetes в Azure Stack Hub Marketplace.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,23 +16,21 @@ ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 10/28/2019
-ms.openlocfilehash: 985d0e33fd5a15329a1a47bd2d6b11e50cd82a1c
-ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
+ms.openlocfilehash: 98fb42ba785469482a34a40867b4060769cfd24b
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74780819"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881949"
 ---
-# <a name="add-kubernetes-to-azure-stack-marketplace"></a>Добавление Kubernetes в Azure Stack Marketplace
-
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+# <a name="add-kubernetes-to-azure-stack-hub-marketplace"></a>Добавление Kubernetes в Azure Stack Hub Marketplace
 
 > [!note]  
-> Используйте элемент Kubernetes Azure Stack Marketplace для развертывания кластеров в качестве проверки концепции. Для поддерживаемых кластеров Kubernetes в Azure Stack используйте[обработчик AKS](azure-stack-aks-engine.md).
+> Используйте элемент Kubernetes Azure Stack Hub Marketplace для развертывания кластеров в качестве проверки концепции. Для поддерживаемых кластеров Kubernetes в Azure Stack Hub используйте [обработчик AKS](azure-stack-aks-engine.md).
 
 Вы можете обеспечить своим пользователям доступ к Kubernetes из Marketplace. Затем развертывание Kubernetes выполняется за одну согласованную операцию.
 
-В этой статье рассматривается развертывание и подготовка ресурсов для автономного кластера Kubernetes с помощью шаблона Azure Resource Manager. Прежде чем начать, проверьте настройки Azure Stack и глобальные параметры клиента Azure. Соберите необходимые сведения об Azure Stack. Добавьте необходимые ресурсы в клиент и Azure Stack Marketplace. Кластер зависит от сервера Ubuntu, настраиваемого скрипта и элемента кластера Kubernetes из Azure Stack Marketplace.
+В этой статье рассматривается развертывание и подготовка ресурсов для автономного кластера Kubernetes с помощью шаблона Azure Resource Manager. Прежде чем начать, проверьте настройки Azure Stack Hub и глобальные параметры клиента Azure. Соберите необходимые сведения об Azure Stack Hub. Добавьте необходимые ресурсы в клиент и Azure Stack Hub Marketplace. Кластер зависит от сервера Ubuntu, настраиваемого скрипта и элемента кластера Kubernetes из Azure Stack Hub Marketplace.
 
 ## <a name="create-a-plan-an-offer-and-a-subscription"></a>Создание плана, предложения и подписки
 
@@ -40,9 +38,9 @@ ms.locfileid: "74780819"
 
 1. Войдите на [портал администрирования](https://adminportal.local.azurestack.external).
 
-1. Создайте базовый план. Инструкции см. в статье [Создание плана в Azure Stack](azure-stack-create-plan.md).
+1. Создайте базовый план. Инструкции см. в статье [Создание плана в Azure Stack Hub](azure-stack-create-plan.md).
 
-1. Создайте предложение. Инструкции см. в статье [Создание предложения в Azure Stack](azure-stack-create-offer.md).
+1. Создайте предложение. Инструкции см. в статье [Создание предложения в Azure Stack Hub](azure-stack-create-offer.md).
 
 1. Выберите **Предложения** и найдите созданное предложение.
 
@@ -52,15 +50,15 @@ ms.locfileid: "74780819"
 
 1. Чтобы создать подписку, последовательно выберите **+ Create a resource**(+ Создать ресурс) > **Offers and Plans**(Предложения и планы) > **Подписка**.
 
-    a. Введите значение в поле **Отображаемое имя**.
+    а. Введите значение в поле **Отображаемое имя**.
 
     b. Введите значение в поле **Пользователь**. Используйте учетную запись Azure AD, связанную с вашим клиентом.
 
     c. **Описание поставщика**
 
-    d. В поле **Клиент каталога** укажите клиент Azure AD для Azure Stack. 
+    d. В поле **Клиент каталога** укажите клиент Azure AD для Azure Stack Hub. 
 
-    д. Выберите **Предложение**. Выберите имя созданного предложения. Запишите идентификатор подписки.
+    д) Выберите **Предложение**. Выберите имя созданного предложения. Запишите идентификатор подписки.
 
 ## <a name="create-a-service-principal-and-credentials-in-ad-fs"></a>Создание субъекта-службы и учетных данных в AD FS
 
@@ -68,7 +66,7 @@ ms.locfileid: "74780819"
 
 ## <a name="add-an-ubuntu-server-image"></a>Добавление образа сервера Ubuntu
 
-Добавьте в Azure Stack Marketplace следующий образ сервера Ubuntu:
+Добавьте в Azure Stack Hub Marketplace следующий образ сервера Ubuntu:
 
 1. Войдите на [портал администрирования](https://adminportal.local.azurestack.external).
 
@@ -76,7 +74,7 @@ ms.locfileid: "74780819"
 
 1. Выберите **+ Add from Azure** (Добавить из Azure).
 
-1. Укажите `Ubuntu Server`.
+1. Введите `Ubuntu Server`.
 
 1. Выберите последнюю версию сервера. Проверьте полный номер версии и убедитесь, что вы используете последнюю версию:
     - **Издатель**: Canonical
@@ -88,7 +86,7 @@ ms.locfileid: "74780819"
 
 ## <a name="add-a-custom-script-for-linux"></a>Добавление настраиваемого скрипта для Linux
 
-Добавьте Kubernetes в Azure Stack Marketplace, выполнив следующие действия:
+Добавьте Kubernetes из Azure Stack Hub Marketplace, выполнив приведенные ниже действия.
 
 1. Откройте [портал администрирования](https://adminportal.local.azurestack.external).
 
@@ -96,7 +94,7 @@ ms.locfileid: "74780819"
 
 1. Выберите **+ Add from Azure** (Добавить из Azure).
 
-1. Укажите `Custom Script for Linux`.
+1. Введите `Custom Script for Linux`.
 
 1. Выберите скрипт со следующим профилем:
    - **Предложение**: Настраиваемый скрипт для Linux 2.0
@@ -116,24 +114,24 @@ ms.locfileid: "74780819"
 
 1. Выберите **+ Add from Azure** (Добавить из Azure).
 
-1. Укажите `Kubernetes`.
+1. Введите `Kubernetes`.
 
 1. Выберите `Kubernetes Cluster`.
 
 1. Выберите **Скачать**.
 
     > [!note]  
-    > Для отображения элемента в Azure Stack Marketplace может потребоваться пять минут.
+    > Для отображения элемента в Azure Stack Hub Marketplace может потребоваться пять минут.
 
-    ![Элемент Kubernetes в Azure Stack Marketplace](../user/media/azure-stack-solution-template-kubernetes-deploy/marketplaceitem.png)
+    ![Элемент Kubernetes в Azure Stack Hub Marketplace](../user/media/azure-stack-solution-template-kubernetes-deploy/marketplaceitem.png)
 
 ## <a name="update-or-remove-the-kubernetes"></a>Обновление или удаление Kubernetes
 
-При обновлении Kubernetes удалите предыдущий элемент в Azure Stack Marketplace. Выполните инструкции из этой статьи по добавлению обновления Kubernetes в Azure Stack Marketplace.
+При обновлении элемента Kubernetes удалите предыдущий элемент в Azure Stack Hub Marketplace. Выполните инструкции из этой статьи по добавлению обновления Kubernetes в Azure Stack Hub Marketplace.
 
 Чтобы удалить Kubernetes, выполните такие действия:
 
-1. Подключитесь к Azure Stack с помощью PowerShell в роли оператора. Инструкции см. в статье [Настройка среды PowerShell в Azure Stack](azure-stack-powershell-configure-admin.md).
+1. Подключитесь к Azure Stack Hub с помощью PowerShell в роли оператора. Инструкции см. в статье [Подключение к Azure Stack Hub с помощью PowerShell](azure-stack-powershell-configure-admin.md).
 
 2. Найдите текущий элемент кластера Kubernetes в коллекции.
 
@@ -151,8 +149,8 @@ ms.locfileid: "74780819"
     Remove-AzsGalleryItem -Name $Itemname
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Развертывание Kubernetes в Azure Stack](../user/azure-stack-solution-template-kubernetes-deploy.md)
+[Статья о развертывании Kubernetes в Azure Stack Hub](../user/azure-stack-solution-template-kubernetes-deploy.md)
 
-[Общие сведения о предложении служб в Azure Stack](service-plan-offer-subscription-overview.md)
+[Общие сведения о предложении служб в Azure Stack Hub](service-plan-offer-subscription-overview.md)

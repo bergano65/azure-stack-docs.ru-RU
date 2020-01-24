@@ -15,12 +15,12 @@ ms.date: 06/14/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 06/14/2019
-ms.openlocfilehash: 2dea14ab5d43aab8deab2632b07277d7094e33c4
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: c12882ea5f26589c18abaf016ba09b17d02bdcab
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974627"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022940"
 ---
 # <a name="register-the-asdk-with-azure"></a>Регистрация ASDK в Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "70974627"
 
 Если не зарегистрировать пакет ASDK, отобразится предупреждение **Требуется активация**. Это значит, что вам необходимо зарегистрировать ASDK. Это ожидаемое поведение.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед выполнением инструкций по регистрации ASDK в Azure установите PowerShell для Azure Stack и скачайте инструменты Azure Stack, как описано в статье о [настройке, выполняемой после установки ASDK](asdk-post-deploy.md).
 
@@ -221,7 +221,7 @@ $ExecutionContext.SessionState.LanguageMode
 
 2. На панели мониторинга выберите плитку **Управление регионами**.
 
-    [![Плитка управления регионами на портале администратора Azure Stack](media/asdk-register/admin1sm.png "Плитка управления регионами")](media/asdk-register/admin1.png#lightbox)
+    [![Плитка Region Management (Управление регионами) на портале администрирования Azure Stack](media/asdk-register/admin1sm.png "Плитка управления регионами")](media/asdk-register/admin1.png#lightbox)
 
 3. Выберите **Свойства**. В этой колонке отображаются данные о состоянии и сведения о вашей среде. Состояние может иметь значение **Зарегистрировано** или **Не зарегистрировано**. Если отображается состояние "Зарегистрировано", вы можете увидеть идентификатор подписки, использовавшийся для регистрации Azure Stack, а также группу и имя ресурса регистрации.
 
@@ -229,6 +229,6 @@ $ExecutionContext.SessionState.LanguageMode
 Перемещение ресурса регистрации между группами ресурсов в одной подписке **поддерживается**. Дополнительные сведения о перемещении ресурсов в новую группу ресурсов см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Добавление элемента Marketplace для Azure Stack](../operator/azure-stack-marketplace.md)
+- [Добавление элемента Marketplace для Azure Stack Hub](../operator/azure-stack-marketplace.md)

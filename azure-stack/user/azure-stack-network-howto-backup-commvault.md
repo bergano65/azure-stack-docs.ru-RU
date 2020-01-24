@@ -1,6 +1,6 @@
 ---
-title: Резервное копирование виртуальной машины в Azure Stack с помощью Commvault | Документация Майкрософт
-description: Узнайте как выполнять резервное копирование виртуальной машины в Azure Stack с помощью Commvault.
+title: Резервное копирование виртуальной машины в Azure Stack Hub с помощью Commvault | Документация Майкрософт
+description: Узнайте как выполнять резервное копирование виртуальной машины в Azure Stack Hub с помощью Commvault.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,20 +9,18 @@ ms.date: 10/30/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/30/2019
-ms.openlocfilehash: 4294f7f1d53f77c55532645de428678cf42be531
-ms.sourcegitcommit: 20d1c0ab3892e9c4c71d5b039457f1e15b1c84c7
+ms.openlocfilehash: b2e9871d48352d2e6a5f6d312a4d98cc3ace37ce
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73618286"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878702"
 ---
-# <a name="back-up-your-vm-on-azure-stack-with-commvault"></a>Резервное копирование виртуальной машины в Azure Stack с помощью Commvault
-
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+# <a name="back-up-your-vm-on-azure-stack-hub-with-commvault"></a>Резервное копирование виртуальной машины в Azure Stack Hub с помощью Commvault
 
 ## <a name="overview-of-backing-up-a-vm-with-commvault"></a>Общие сведения о резервном копировании виртуальной машины с помощью Commvault
 
-В этой статье описано, как настроить Commvault Live Sync для обновления виртуальной машины восстановления, расположенной в отдельной единице масштабирования Azure Stack. В этой статье подробно описано, как настроить общее партнерское решение для защиты и восстановления данных и состояния системы виртуальных машин, развернутых в Azure Stack.
+В этой статье описано, как настроить Commvault Live Sync для обновления виртуальной машины восстановления, расположенной в отдельной единице масштабирования Azure Stack Hub. В этой статье подробно описано, как настроить общее партнерское решение для защиты и восстановления данных и состояния системы виртуальных машин, развернутых в Azure Stack Hub.
 
 На следующей схеме показано общее решение при использовании Commvault для резервного копирования виртуальных машин.
 
@@ -30,15 +28,15 @@ ms.locfileid: "73618286"
 
 В этой статье вы узнаете:
 
-1. Создание виртуальной машины, выполняющей программное обеспечение Commvault на исходном экземпляре Azure Stack.
+1. Создание виртуальной машины, выполняющей программное обеспечение Commvault на исходном экземпляре Azure Stack Hub.
 
-2. Создание учетной записи хранения во вторичном расположении. В статье предполагается, что вы создадите контейнер больших двоичных объектов в учетной записи хранения в отдельном экземпляре Azure Stack и что целевой объект Azure Stack доступен из источника Azure Stack.
+2. Создание учетной записи хранения во вторичном расположении. В статье предполагается, что вы создадите контейнер больших двоичных объектов в учетной записи хранения в отдельном экземпляре Azure Stack Hub (целевом) и что целевой объект Azure Stack Hub доступен из источника Azure Stack Hub.
 
-3. Настройте Commvault на исходном экземпляре Azure Stack и добавьте виртуальные машины в источник Azure Stack в группу виртуальных машин.
+3. Настройте Commvault на исходном экземпляре Azure Stack Hub и добавьте виртуальные машины в источник Azure Stack Hub в группу виртуальных машин.
 
 4. Настройте Commvault LifeSync.
 
-Вы также можете загрузить и предложить совместимые образы виртуальных машин партнеров для защиты своих виртуальных машин Azure Stack в Azure Cloud или другом Azure Stack. В этой статье показано, как защитить виртуальные машины с помощью Commvault Live Sync.
+Вы также можете загрузить и предложить совместимые образы виртуальных машин партнеров для защиты своих виртуальных машин Azure Stack Hub в Azure Cloud или другом Azure Stack Hub. В этой статье показано, как защитить виртуальные машины с помощью Commvault Live Sync.
 
 Топология этого подхода будет выглядеть, как на следующей схеме:
 
@@ -46,7 +44,7 @@ ms.locfileid: "73618286"
 
 ## <a name="create-the-commvault-vm-form-the-commvault-marketplace-item"></a>Создание виртуальной машины Commvault в виде элемента Commvault Marketplace
 
-1. Откройте пользовательский портал Azure Stack.
+1. Откройте портал пользователя Azure Stack Hub.
 
 2. Последовательно выберите **Создать ресурс** > **Вычисления** > **Commvault**.
 
@@ -57,7 +55,7 @@ ms.locfileid: "73618286"
 
 3. Настройте основные параметры в **Создать виртуальную машину, 1 Основы**:
 
-    a. Введите **Имя**.
+    а. Введите **Имя**.
 
     b. Выберите **"Стандартный" HHD**.
     
@@ -65,13 +63,13 @@ ms.locfileid: "73618286"
     
     d. Введите **пароль**.
     
-    д. Подтвердите пароль.
+    д) Подтвердите пароль.
     
-    Е. Выберите **подписку** для резервной копии.
+    е) Выберите **подписку** для резервной копии.
     
     ж. Выберите **группу ресурсов**.
     
-    h. Выберите **расположение** Azure Stack. Если вы используете ASDK, выберите **локальный**.
+    h. Выберите **расположение** Azure Stack Hub. Если вы используете ASDK, выберите **локальный**.
     
     i. Нажмите кнопку **ОК**.
 
@@ -83,7 +81,7 @@ ms.locfileid: "73618286"
 
 5. Выберите параметры виртуальной машины Commvault.
 
-    a. Установите для уровня доступности значение **НЕТ**.
+    а. Установите для уровня доступности значение **НЕТ**.
     
     b. Выберите **Да** для использования управляемых дисков.
     
@@ -91,9 +89,9 @@ ms.locfileid: "73618286"
     
     d. Выберите **Подсеть** по умолчанию.
     
-    д. Выберите **Общедоступный IP-адрес** по умолчанию.
+    д) Выберите **Общедоступный IP-адрес** по умолчанию.
     
-    Е. Оставьте виртуальную машину в **базовой** группе безопасности сети.
+    е) Оставьте виртуальную машину в **базовой** группе безопасности сети.
     
     ж. Откройте порты HTTP (80), HTTPS (443), SSH (22) и RDP (3389).
     
@@ -111,39 +109,39 @@ ms.locfileid: "73618286"
 
 ## <a name="get-your-service-principal"></a>Получение субъекта-службы
 
-Необходимо знать, является ли ваш менеджер идентификатора Azure AD или AD DFS. В следующей таблице содержатся сведения, необходимые для настройки Commvault в Azure Stack.
+Необходимо знать, является ли ваш менеджер идентификатора Azure AD или AD DFS. В следующей таблице содержатся сведения, необходимые для настройки Commvault в Azure Stack Hub.
 
-| Элемент | ОПИСАНИЕ | Источник |
+| Элемент | Description | Источник |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| URL-адрес Azure Resource Manager | Конечная точка Resource Manager для Azure Stack. | https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles-ruby?view=azs-1908#the-azure-stack-resource-manager-endpoint |
+| URL-адрес Azure Resource Manager | Конечная точка Resource Manager для Azure Stack Hub. | https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles-ruby?view=azs-1908#the-azure-stack-hub-resource-manager-endpoint |
 | имя приложения; |  |  |
 | Идентификатор приложения | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы в предыдущем разделе этой статьи. | https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals?view=azs-1908 |
-| Идентификатор подписки | Идентификатор подписки используется для доступа к предложениям в Azure Stack. | https://docs.microsoft.com/azure-stack/operator/service-plan-offer-subscription-overview?view=azs-1908#subscriptions |
-| Идентификатор клиента (идентификатор каталога) | Идентификатор клиента Azure Stack. | https://docs.microsoft.com/azure-stack/operator/azure-stack-identity-overview?view=azs-1908 |
+| Идентификатор подписки | Идентификатор подписки используется для доступа к предложениям в Azure Stack Hub. | https://docs.microsoft.com/azure-stack/operator/service-plan-offer-subscription-overview?view=azs-1908#subscriptions |
+| Идентификатор клиента (идентификатор каталога) | Идентификатор клиента Azure Stack Hub. | https://docs.microsoft.com/azure-stack/operator/azure-stack-identity-overview?view=azs-1908 |
 | Пароль приложения | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы. | https://docs.microsoft.com/azure-stack/operator/azure-stack-create-service-principals?view=azs-1908 |
 
 ## <a name="configure-backup-using-the-commvault-console"></a>Настройка резервного копирования с помощью консоли Commvault
 
-1. Откройте клиент RDP и подключитесь к виртуальной машине Commavult в Azure Stack. Введите свои учетные данные.
+1. Откройте клиент RDP и подключитесь к виртуальной машине Commavult в Azure Stack Hub. Введите свои учетные данные.
 
-2. Установите Azure Stack PowerShell и средства Azure Stack на виртуальной машине Commvault.
+2. Установите Azure Stack Hub PowerShell и средства Azure Stack Hub на виртуальной машине Commvault.
 
-    a. Инструкции по установке Azure Stack PowerShell см. в статье [Установка PowerShell для Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-install?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fbreadcrumb%2Ftoc.json).  
-    b. Инструкции по установке средств Azure Stack приведены в разделе [Скачивание средств Azure Stack из GitHub](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-download?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fuser%2FTOC.json%3Fview%3Dazs-1908&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fbreadcrumb%2Ftoc.json%3Fview%3Dazs-1908&view=azs-1908).
+    а. Инструкции по установке PowerShell для Azure Stack Hub см. в [этой статье](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-install?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fuser%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fbreadcrumb%2Ftoc.json).  
+    b. Инструкции по установке средств Azure Stack Hub приведены в статье [Скачивание средств Azure Stack Hub из GitHub](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-download?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fuser%2FTOC.json%3Fview%3Dazs-1908&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure-stack%2Fbreadcrumb%2Ftoc.json%3Fview%3Dazs-1908&view=azs-1908).
 
 3. После установки Commvault на виртуальной машине Commvault откройте консоль Commcell. На начальной консоли выберите **Commvault** > **Commvault Commcell Console** (Консоль Commvault Commcell).
 
     ![](./media/azure-stack-network-howto-backup-commvault/commcell-console.png)
 
-4. Настройте репозитории файлов резервной копии, чтобы использовать внешнее хранилище для Azure Stack в консоли Commvault Commcell. В браузере CommCell выберите Ресурсы хранилища > Пулы носителей. Щелкните правой кнопкой мыши и выберите **Добавить пул носителей.** Выберите **Облако**.
+4. Настройте репозитории файлов резервной копии, чтобы использовать внешнее хранилище для Azure Stack Hub в консоли Commvault Commcell. В браузере CommCell выберите Ресурсы хранилища > Пулы носителей. Щелкните правой кнопкой мыши и выберите **Добавить пул носителей.** Выберите **Облако**.
 
-5. Добавьте имя пула носителей. Щелкните **Далее**.
+5. Добавьте имя пула носителей. Выберите **Далее**.
 
 6. Выберите **Создать** > **Облачное хранилище**.
 
     ![](./media/azure-stack-network-howto-backup-commvault/commcell-storage-add-storage-device.png)
 
-7. Выберите поставщика облачных услуг. В этой процедуре мы будем использовать вторую Azure Stack в другом месте. Выберите Службу хранилища Microsoft Azure.
+7. Выберите поставщика облачных услуг. В этой процедуре мы будем использовать вторую Azure Stack Hub в другом расположении. Выберите Службу хранилища Microsoft Azure.
 
 8. Выберите виртуальную машину Commvault в качестве MediaAgent.
 
@@ -159,7 +157,7 @@ ms.locfileid: "73618286"
     
     -   **Класс хранения**: Оставьте класс хранения по умолчанию для контейнера пользователя.
 
-10. Создайте клиент Microsoft Azure Stack, следуя инструкциям в разделе [Создание клиента Microsoft Azure Stack](https://documentation.commvault.com/commvault/v11_sp13/article?p=86495.htm)
+10. Создайте клиент Microsoft Azure Stack Hub, следуя инструкциям на [этой странице](https://documentation.commvault.com/commvault/v11_sp13/article?p=86495.htm).
 
     ![](./media/azure-stack-network-howto-backup-commvault/commcell-ceate-client.png)
 
@@ -173,13 +171,13 @@ ms.locfileid: "73618286"
 
 Доступны два параметра. Вы можете реплицировать изменения с основной копии резервных копий или с вторичной копии на виртуальную машину восстановления. Репликация из резервного набора данных исключает влияние операции ввода-вывода на чтение с исходного компьютера.
 
-1. Во время настройки Live Sync необходимо указать источник Azure Stack (агент виртуального сервера) и сведения о целевом объекте Azure Stack.
+1. Во время настройки Live Sync необходимо указать источник Azure Stack Hub (агент виртуального сервера) и сведения о целевом объекте Azure Stack Hub.
 
-2. Действия по настройке Commvault Live Sync см. в разделе [Live Sync Replication for Microsoft Azure Stack](https://documentation.commvault.com/commvault/v11_sp13/article?p=94386.htm) (Репликация Live Sync для Microsoft Azure Stack).
+2. Действия по настройке Commvault Live Sync см. на странице [Live Sync Replication for Microsoft Azure Stack Hub](https://documentation.commvault.com/commvault/v11_sp13/article?p=94386.htm) (Репликация Live Sync для Microsoft Azure Stack Hub).
 
     ![](./media/azure-stack-network-howto-backup-commvault/live-sync-1.png)
  
-3. Во время настройки Live Sync (динамической синхронизации) необходимо указать целевой объект Azure Stack и детали об агенте виртуального сервера.
+3. Во время настройки Live Sync (динамической синхронизации) необходимо указать целевой объект Azure Stack Hub и детали об агенте виртуального сервера.
 
     ![](./media/azure-stack-network-howto-backup-commvault/live-sync-2.png)
 
@@ -189,7 +187,7 @@ ms.locfileid: "73618286"
 
 5. Кроме того, можно изменить размер виртуальной машины и настроить параметры сети, выбрав **Настроить** рядом с каждой виртуальной машиной.
 
-6. Установка частоты репликации целевого объекта Azure Stack
+6. Установка частоты репликации целевого объекта Azure Stack Hub
 
     ![](./media/azure-stack-network-howto-backup-commvault/live-sync-5.png)
 
@@ -198,11 +196,11 @@ ms.locfileid: "73618286"
 
 ## <a name="set-up-failover-behavior-using-live-sync"></a>Настройка режима отработки отказа с помощью Live Sync
 
-Commvault Live Sync позволяет отработку отказа компьютеров с одного Azure Stack на другой и восстановление размещения, чтобы возобновить операции на исходном Azure Stack. Рабочий процесс автоматизирован и регистрируется в журнале.
+Commvault Live Sync позволяет выполнять отработку отказа компьютеров с одного Azure Stack Hub на другой и восстановление размещения, чтобы возобновить операции на исходном Azure Stack Hub. Рабочий процесс автоматизирован и регистрируется в журнале.
 
 ![](./media/azure-stack-network-howto-backup-commvault/back-up-live-sync-panel.png)
 
-Выберите виртуальные машины, для которых требуется выполнить отработку отказа для восстановления Azure Stack, и выберите плановую или внеплановую отработку отказа. Плановая отработка отказа уместна, когда перед возобновлением работы на сайте восстановления есть время для правильного завершения работы рабочей среды. Плановая отработка отказа завершает работу рабочих виртуальных машин, реплицирует окончательные изменения на сайт восстановления, переводит виртуальные машины восстановления в оперативный режим с последними данными и применяет размер виртуальной машины и конфигурацию сети, указанные во время настройки Live Sync. Внеплановая отработка отказа попытается завершить работу виртуальных машин, но продолжит работу, если рабочая среда недоступна, и просто переведет виртуальные машины восстановления в оперативный режим, используя последний полученный набор данных репликации, примененный к виртуальной машине, а также ранее выбранные размер и конфигурацию сети. На приведенных ниже изображениях показана внеплановая отработка отказа, в которой виртуальные машины восстановления были переведены в оперативный режим с помощью Commvault Live Sync.
+Выберите виртуальные машины, для которых требуется выполнить отработку отказа для восстановления Azure Stack Hub, и выберите плановую или внеплановую отработку отказа. Плановая отработка отказа уместна, когда перед возобновлением работы на сайте восстановления есть время для правильного завершения работы рабочей среды. Плановая отработка отказа завершает работу рабочих виртуальных машин, реплицирует окончательные изменения на сайт восстановления, переводит виртуальные машины восстановления в оперативный режим с последними данными и применяет размер виртуальной машины и конфигурацию сети, указанные во время настройки Live Sync. Внеплановая отработка отказа попытается завершить работу виртуальных машин, но продолжит работу, если рабочая среда недоступна, и просто переведет виртуальные машины восстановления в оперативный режим, используя последний полученный набор данных репликации, примененный к виртуальной машине, а также ранее выбранные размер и конфигурацию сети. На приведенных ниже изображениях показана внеплановая отработка отказа, в которой виртуальные машины восстановления были переведены в оперативный режим с помощью Commvault Live Sync.
 
 ![](./media/azure-stack-network-howto-backup-commvault/unplanned-failover.png)
 
@@ -210,6 +208,6 @@ Commvault Live Sync позволяет отработку отказа комп
 
 ![](./media/azure-stack-network-howto-backup-commvault/fail-over-3.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Сети Azure Stack: различия и рекомендации](azure-stack-network-differences.md)  
+[Сети Azure Stack Hub: различия и рекомендации](azure-stack-network-differences.md)  

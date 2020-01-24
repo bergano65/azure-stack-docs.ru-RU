@@ -1,6 +1,6 @@
 ---
-title: Создание резервной копии Службы приложений Azure в Azure Stack | Документация Майкрософт
-description: Узнайте, как выполнять резервное копирование служб приложений в Azure Stack.
+title: Создание резервной копии Службы приложений Azure в Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как выполнять резервное копирование служб приложений в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: bryanla
@@ -16,23 +16,21 @@ ms.date: 04/23/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/21/2019
-ms.openlocfilehash: a41943a598545b1a4c5dbe6325307a8fa3594cd5
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: ba9bff9b63454be8e9f1222d8b63425ad3192724
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70975023"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75881371"
 ---
-# <a name="back-up-app-service-on-azure-stack"></a>Создание резервной копии Службы приложений в Azure Stack
+# <a name="back-up-app-service-on-azure-stack-hub"></a>Создание резервной копии Службы приложений в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*  
-
-Этот документ содержит инструкции по созданию резервной копии службы приложений в Azure Stack.
+Этот документ содержит инструкции по созданию резервной копии службы приложений в Azure Stack Hub.
 
 > [!IMPORTANT]
-> Резервная копия службы приложений в Azure Stack не создается при [резервном копировании инфраструктуры Azure Stack](azure-stack-backup-infrastructure-backup.md). Как оператор Azure Stack, вы должны выполнить шаги, чтобы убедиться, что при необходимости Службу приложений можно успешно восстановить.
+> Резервная копия службы приложений в Azure Stack Hub не создается при [резервном копировании инфраструктуры Azure Stack Hub](azure-stack-backup-infrastructure-backup.md). Как оператор Azure Stack Hub, вы должны выполнить шаги, чтобы убедиться, что при необходимости Службу приложений можно успешно восстановить.
 
-В Службе приложений Azure в Azure Stack есть четыре основных компонента, которые следует учитывать при планировании аварийного восстановления:
+В Службе приложений Azure в Azure Stack Hub есть четыре основных компонента, которые следует учитывать при планировании аварийного восстановления:
 1. Инфраструктура поставщика ресурсов, роли сервера, уровни рабочей роли и т. д. 
 2. Секреты службы приложений.
 3. Базы данных размещения и измерений службы приложений SQL Server.
@@ -43,17 +41,17 @@ ms.locfileid: "70975023"
 
 Для создания резервной копии секретов Службы приложений используйте портал администрирования, выполнив следующие шаги: 
 
-1. Войдите на портал администрирования Azure Stack с правами администратора служб.
+1. Войдите на портал администрирования Azure Stack Hub с правами администратора служб.
 
 2. Последовательно выберите **Служба приложений** -> **Секреты**. 
 
 3. Выберите **Загрузка секретов**.
 
-   ![Скачивание секретов на портале администратора Azure Stack](./media/app-service-back-up/download-secrets.png)
+   ![Скачивание секретов на портале администратора Azure Stack Hub](./media/app-service-back-up/download-secrets.png)
 
 4. Когда секреты будут готовы к скачиванию, щелкните **Сохранить** и сохраните файл секретов Службы приложений (**SystemSecrets.JSON**) в безопасном расположении. 
 
-   ![Сохранение секретов на портале администратора Azure Stack](./media/app-service-back-up/save-secrets.png)
+   ![Сохранение секретов на портале администратора Azure Stack Hub](./media/app-service-back-up/save-secrets.png)
 
 > [!NOTE]
 > Повторяйте эти шаги после каждой смены секретов Службы приложений.
@@ -91,5 +89,5 @@ robocopy $source $destination
 net use $destination /delete
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
-[Recovery of App Service on Azure Stack](app-service-recover.md) (Восстановление Службы приложений в Azure Stack)
+## <a name="next-steps"></a>Дальнейшие действия
+[Восстановление Службы приложений в Azure Stack Hub](app-service-recover.md)

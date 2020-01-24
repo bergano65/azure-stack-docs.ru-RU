@@ -1,7 +1,7 @@
 ---
 title: Обновление антивирусной программы "Защитник Windows"
-titleSuffix: Azure Stack
-description: Сведения об обновлении антивирусной программы "Защитник Windows" в Azure Stack
+titleSuffix: Azure Stack Hub
+description: Сведения об обновлении антивирусной программы "Защитник Windows" в Azure Stack Hub
 services: azure-stack
 author: justinha
 manager: femila
@@ -11,22 +11,22 @@ ms.date: 12/04/2019
 ms.author: justinha
 ms.reviewer: fiseraci
 ms.lastreviewed: 12/04/2019
-ms.openlocfilehash: fb6271114f27b16b9cb7a660deb7d6bcee197ca2
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: a631d700bc83e4fabeca4472f5d2a81c411ddc9b
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718136"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821092"
 ---
 # <a name="update-windows-defender-antivirus-on-azure-stack-hub"></a>Обновление антивирусной программы "Защитник Windows" в Azure Stack Hub
 
-[Антивирусная программа "Защитник Windows"](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10) — это решение для защиты от вредоносных программ, которое обеспечивает безопасность и защиту от вирусов. Каждый компонент инфраструктуры в Azure Stack (узлы Hyper-V и виртуальные машины) защищен с помощью антивирусной программы "Защитник Windows". Для актуальной защиты требуется периодически обновлять определения, модуль и платформу антивирусной программы "Защитник Windows". Применение обновлений зависит от конфигурации.
+[Антивирусная программа "Защитник Windows"](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10) — это решение для защиты от вредоносных программ, которое обеспечивает безопасность и защиту от вирусов. Каждый компонент инфраструктуры в Azure Stack Hub (узлы Hyper-V и виртуальные машины) защищен с помощью антивирусной программы "Защитник Windows". Для актуальной защиты требуется периодически обновлять определения, модуль и платформу антивирусной программы "Защитник Windows". Применение обновлений зависит от конфигурации.
 
 ## <a name="connected-scenario"></a>Сценарий с подключением
 
-[Поставщик ресурсов "Обновление"](azure-stack-updates.md#the-update-resource-provider) в Azure Stack Hub загружает обновления определений и модуля защиты от вредоносных программ несколько раз в день. Каждый компонент инфраструктуры в Azure Stack получает обновление из поставщика ресурсов "Обновление" и применяет его автоматически.
+[Поставщик ресурсов "Обновление"](azure-stack-updates.md#the-update-resource-provider) в Azure Stack Hub загружает обновления определений и модуля защиты от вредоносных программ несколько раз в день. Каждый компонент инфраструктуры в Azure Stack Hub получает обновление из поставщика ресурсов "Обновление" и применяет его автоматически.
 
-Для развертываний Azure Stack Hub, подключенных к общедоступному Интернету, примените [ежемесячное обновление Azure Stack](azure-stack-apply-updates.md). Ежемесячное обновление Azure Stack Hub содержит обновления платформы антивирусной программы "Защитник Windows" за текущий месяц.
+Для развертываний Azure Stack Hub c подключением к общедоступному Интернету примените [ежемесячное обновление Azure Stack Hub](azure-stack-apply-updates.md). Ежемесячное обновление Azure Stack Hub содержит обновления платформы антивирусной программы "Защитник Windows" за текущий месяц.
 
 ## <a name="disconnected-scenario"></a>Сценарии без подключения
 

@@ -1,6 +1,6 @@
 ---
-title: Использование профилей версий API с помощью Go в Azure Stack | Документация Майкрософт
-description: Узнайте, как использовать профили версий API с помощью Go в Azure Stack
+title: Использование профилей версий API с помощью Go в Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как использовать профили версий API с помощью Go в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -14,25 +14,23 @@ ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/26/2019
-ms.openlocfilehash: 0636f3069db80613f02e979b5a102a471f12efad
-ms.sourcegitcommit: 3d14ae30ce3ee44729e5419728cce14b3000e968
+ms.openlocfilehash: 543279763592fe482ea7e18c74a7e51ce8b92146
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71814454"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878277"
 ---
-# <a name="use-api-version-profiles-with-go-in-azure-stack"></a>Использование профилей версий API и Go в Azure Stack
-
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+# <a name="use-api-version-profiles-with-go-in-azure-stack-hub"></a>Использование профилей версий API с помощью Go в Azure Stack Hub
 
 ## <a name="go-and-version-profiles"></a>Профили версий и Go
 
 Профиль — это сочетание разных типов ресурсов с разными версиями от различных служб. С помощью профиля можно комбинировать и сопоставлять разные типы ресурсов. Профили обеспечивают следующие преимущества:
 
 - стабильность приложения за счет блокировки определенных версий API;
-- совместимость приложения с Azure Stack и региональными центрами обработки данных Azure.
+- совместимость приложения с Azure Stack Hub и региональными центрами обработки данных Azure.
 
-В пакете SDK для Go профили доступны в пути к профилям. Номера версий профилей имеют следующий формат: **ГГГГ-ММ-ДД**. **2019-03-01** — это последняя версия профиля API Azure Stack для Azure Stack выпусков 1904 и более поздних. Чтобы импортировать данную службу из профиля, импортируйте из профиля ее соответствующий модуль. Например, чтобы импортировать службу **вычислений** из профиля версии **2019-03-01**, используйте следующий код:
+В пакете SDK для Go профили доступны в пути к профилям. Номера версий профилей имеют следующий формат: **ГГГГ-ММ-ДД**. **2019-03-01** — это последняя версия профиля API для Azure Stack Hub выпусков 1904 и более поздних. Чтобы импортировать данную службу из профиля, импортируйте из профиля ее соответствующий модуль. Например, чтобы импортировать службу **вычислений** из профиля версии **2019-03-01**, используйте следующий код:
 
 ```go
 import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compute"
@@ -59,9 +57,9 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compu
 
 Для отправки запросов REST конечным точкам Azure Resource Manager пакету SDK для Go необходимы модули Azure **Go-AutoRest**. Вам нужно импортировать зависимости модуля Azure **Go-AutoRest** из репозитория [Go-AutoRest Azure на сайте GitHub](https://github.com/Azure/go-autorest). Команды Bash для установки можно найти в разделе **установки**.
 
-## <a name="how-to-use-go-sdk-profiles-on-azure-stack"></a>Использование профилей пакета SDK для GO в Azure Stack
+## <a name="how-to-use-go-sdk-profiles-on-azure-stack-hub"></a>Использование профилей пакета SDK для Go в Azure Stack Hub
 
-Чтобы запустить пример кода GO в Azure Stack, сделайте следующее:
+Чтобы запустить пример кода Go в Azure Stack Hub, сделайте следующее:
 
 1. Установите пакет Azure SDK для Go и его зависимости. Инструкции см. в предыдущем разделе: [Установка пакета Azure SDK для Go](#install-the-azure-sdk-for-go).
 2. Получите метаданные из конечной точки Resource Manager. Конечная точка возвращает JSON-файл со сведениями, необходимыми для запуска кода Go.
@@ -84,11 +82,11 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compu
    }
    ```
 
-3. Создайте подписку, если ее еще нет, и сохраните ее идентификатор для дальнейшего использования. См. сведения о [создании подписок для предложений в Azure Stack](../operator/azure-stack-subscribe-plan-provision-vm.md).
+3. Создайте подписку, если ее еще нет, и сохраните ее идентификатор для дальнейшего использования. Сведения о создании подписки в Azure Stack Hub см. в [этой статье](../operator/azure-stack-subscribe-plan-provision-vm.md).
 
-4. Создайте субъект-службу, которая использует секрет клиента, с областью **Подписка** и ролью **Владелец**. Сохраните идентификатор и секрет субъекта-службы. Сведения о создании субъекта-службы для Azure Stack см. в статье [Предоставление приложениям доступа к Azure Stack](../operator/azure-stack-create-service-principals.md). Среда Azure Stack теперь настроена.
+4. Создайте субъект-службу, которая использует секрет клиента, с областью **Подписка** и ролью **Владелец**. Сохраните идентификатор и секрет субъекта-службы. Сведения о создании субъекта-службы для Azure Stack Hub см. в статье [Использование удостоверения приложения для доступа к ресурсам Azure Stack Hub](../operator/azure-stack-create-service-principals.md). Среда Azure Stack Hub теперь настроена.
 
-5. Импортируйте модуль службы из профиля пакета SDK для Go в код. Текущая версия профиля Azure Stack — **2019-03-01**. Например, чтобы импортировать модуль сети из профиля версии **2019-03-01**, используйте следующий код:
+5. Импортируйте модуль службы из профиля пакета SDK для Go в код. Текущая версия профиля Azure Stack Hub — **2019-03-01**. Например, чтобы импортировать модуль сети из профиля версии **2019-03-01**, используйте следующий код:
 
    ```go
    package main
@@ -124,13 +122,13 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compu
    vnetClient .CreateOrUpdate( )
    ```
 
-Полный пример создания виртуальной сети в Azure Stack с использованием профиля пакета SDK для Go см. [здесь](#example).
+Полный пример создания виртуальной сети в Azure Stack Hub с использованием профиля пакета SDK для Go см. [здесь](#example).
 
 ## <a name="authentication"></a>Аутентификация
 
 Чтобы получить свойство **авторизации** из Azure Active Directory с помощью пакета SDK для Go, установите модули **Go-AutoRest**. Эти модули должны быть уже установлены с компонентом "Пакет SDK для Go". Если это не так, установите [пакет аутентификации с сайта GitHub](https://github.com/Azure/go-autorest/tree/master/autorest/adal).
 
-Свойство авторизации необходимо задать в качестве авторизации для клиента ресурсов. Здесь представлены различные способы получения токенов авторизации в Azure Stack с использованием учетных данных клиента:
+Свойство авторизации необходимо задать в качестве авторизации для клиента ресурсов. Здесь представлены различные способы получения токенов авторизации в Azure Stack Hub с использованием учетных данных клиента:
 
 1. Если в подписке доступен субъект-служба с ролью владельца, пропустите этот шаг. Если это не так, см. сведения о [предоставлении доступа к ресурсам](../operator/azure-stack-create-service-principals.md), чтобы создать субъект-службу, который использует секрет клиента, и назначить ему роли "Владелец" в пределах вашей подписки. Обязательно сохраните идентификатор приложения и секрет субъекта-службы.
 
@@ -154,7 +152,7 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compu
    }
    ```
 
-   Задайте для параметра `<activeDirectoryEndpoint>` значение свойства `loginEndpoint` из метаданных `ResourceManagerUrl`, полученных при работе с предыдущим разделом этого документа. Задайте для параметра `<tenantID>` идентификатор клиента в Azure Stack.
+   Задайте для параметра `<activeDirectoryEndpoint>` значение свойства `loginEndpoint` из метаданных `ResourceManagerUrl`, полученных при работе с предыдущим разделом этого документа. Задайте значение `<tenantID>` для идентификатора клиента Azure Stack Hub.
 
 4. Наконец, создайте токен субъекта-службы с помощью метода `NewServicePrincipalToken` из модуля **adal**.
 
@@ -180,12 +178,12 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compu
 
 ## <a name="example"></a>Пример
 
-В этом примере показан код Go, который создает виртуальную сеть в Azure Stack. Полные примеры с использованием пакета SDK для Go см. в [этом репозитории](https://github.com/Azure-Samples/azure-sdk-for-go-samples). Примеры Azure Stack можно найти в пути hybrid внутри папок службы репозитория.
+В этом примере показан код Go, который создает виртуальную сеть в Azure Stack Hub. Полные примеры с использованием пакета SDK для Go см. в [этом репозитории](https://github.com/Azure-Samples/azure-sdk-for-go-samples). Примеры Azure Stack Hub можно найти в пути hybrid внутри папок службы репозитория.
 
 > [!NOTE]  
-> Чтобы запустить код в этом примере, убедитесь, что в используемой подписке для **поставщика сетевых ресурсов** указано **Зарегистрирован**. Чтобы проверить это, найдите подписку на портале Azure Stack и щелкните **Поставщики ресурсов**.
+> Чтобы запустить код в этом примере, убедитесь, что в используемой подписке для **поставщика сетевых ресурсов** указано **Зарегистрирован**. Чтобы проверить это, найдите подписку на портале Azure Stack Hub и щелкните **Поставщики ресурсов**.
 
-1. Импортируйте необходимые пакеты в свой код. Для импорта модуля сети необходима последняя версия профиля Azure Stack.
+1. Импортируйте необходимые пакеты в свой код. Для импорта модуля сети необходима последняя версия профиля Azure Stack Hub:
 
    ```go
    package main
@@ -300,13 +298,13 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2019-03-01/compute/mgmt/compu
    }
    ```
 
-Вот несколько примеров кода для Azure Stack с использованием пакета SDK для Go:
+Вот несколько примеров кода для Azure Stack Hub с использованием пакета SDK для Go:
 
 - [Создание виртуальной машины](https://github.com/Azure-Samples/Hybrid-Compute-Go-Create-VM)
 - [Плоскость данных хранилища](https://github.com/Azure-Samples/Hybrid-Storage-Go-Dataplane)
-- [Использование Управляемых дисков ](https://github.com/Azure-Samples/Hybrid-Compute-Go-ManagedDisks) (пример с использованием профиля 2019-03-01, который предназначен для последних версий API, поддерживаемых Azure Stack).
+- [Использование Управляемых дисков](https://github.com/Azure-Samples/Hybrid-Compute-Go-ManagedDisks) (пример с использованием профиля 2019-03-01, который предназначен для последних версий API, поддерживаемых Azure Stack Hub)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Install PowerShell for Azure Stack](../operator/azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack)
-- [Configure the Azure Stack user's PowerShell environment](azure-stack-powershell-configure-user.md) (Настройка пользовательской среды PowerShell в Azure Stack)
+- [Установка PowerShell для Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+- [Подключение к Azure Stack Hub в роли пользователя с помощью PowerShell](azure-stack-powershell-configure-user.md)

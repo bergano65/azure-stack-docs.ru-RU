@@ -1,6 +1,6 @@
 ---
-title: Проверка регистрации Azure для Azure Stack | Документация Майкрософт
-description: Применение средства проверки готовности Azure Stack для проверки регистрации Azure.
+title: Проверка регистрации Azure для Azure Stack Hub | Документация Майкрософт
+description: Применение средства проверки готовности Azure Stack Hub для проверки регистрации Azure.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -16,27 +16,27 @@ ms.date: 10/03/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: c959a2553d6b298ef4a815890de6f717838361de
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.openlocfilehash: a1ac34b39bc1628314c1ba2f05202c4a1454c189
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961863"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75812847"
 ---
 # <a name="validate-azure-registration"></a>Проверка регистрации в Azure
 
-Средство проверки готовности Azure Stack (**AzsReadinessChecker**) позволяет убедиться, что ваша подписка Azure готова к использованию Azure Stack, до начала развертывания Azure Stack. Средство проверки готовности позволяет проверить следующее:
+Средство проверки готовности Azure Stack Hub (**AzsReadinessChecker**) позволяет убедиться, что ваша подписка Azure готова к использованию Azure Stack Hub, до начала развертывания Azure Stack Hub. Средство проверки готовности позволяет проверить следующее:
 
 - Используемая вами подписка Azure является поддерживаемой. Подписки должны соответствовать уровню поставщика облачных решений (CSP) или Соглашения Enterprise.
 - Учетная запись, используемая для регистрации подписки в Azure, может войти в Azure и является владельцем подписки.
 
-Дополнительные сведения о регистрации Azure Stack см. в [этой статье](azure-stack-registration.md).
+Дополнительные сведения о регистрации Azure Stack Hub см. в [этой статье](azure-stack-registration.md).
 
 ## <a name="get-the-readiness-checker-tool"></a>Получение средства проверки готовности
 
 Скачайте последнюю версию **AzsReadinessChecker** из [коллекции PowerShell](https://aka.ms/AzsReadinessChecker).  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Ниже перечислены необходимые компоненты.
 
@@ -49,12 +49,12 @@ ms.locfileid: "71961863"
   $PSVersionTable.PSVersion
   ```
 
-- [Среда PowerShell, настроенная для Azure Stack](azure-stack-powershell-install.md).
-- Последняя версия средства [проверки готовности Microsoft Azure Stack](https://aka.ms/AzsReadinessChecker).  
+- [Среда PowerShell, настроенная для Azure Stack Hub](azure-stack-powershell-install.md).
+- Необходимо установить последнюю версию средства [проверки готовности Microsoft Azure Stack Hub](https://aka.ms/AzsReadinessChecker).  
 
 ### <a name="azure-active-directory-environment"></a>Среда Azure Active Directory
 
-- Определите имя пользователя и пароль для учетной записи, которая является владельцем подписки Azure, которую вы будете использовать с Azure Stack.  
+- Определите имя пользователя и пароль для учетной записи, которая является владельцем подписки Azure, которую вы будете использовать с Azure Stack Hub.  
 - Определите идентификатор подписки Azure, которая будет использоваться.
 - Задайте параметр **AzureEnvironment**, который будет использоваться. Поддерживаемые значения для параметра имени среды: **AzureCloud**, **AzureChinaCloud** или **AzureUSGovernment** (в зависимости от используемой подписки Azure).
 
@@ -104,14 +104,14 @@ ms.locfileid: "71961863"
 
 При каждом запуске проверки все результаты сохраняются в файлах **AzsReadinessChecker.log** и **AzsReadinessCheckerReport.json**. Расположение этих файлов указывается в PowerShell вместе с результатами проверки.
 
-Эти файлы помогут передать сведения о состоянии проверки другим заинтересованным лицам перед развертыванием Azure Stack или для исследования проблем, обнаруженных при проверке. В обоих файлах сохраняются результаты каждой очередной проверки. В отчете содержатся подтверждения команды развертывания по конфигурации удостоверений. Файл журнала поможет командам развертывания или поддержки диагностировать проблемы с проверкой.
+Эти файлы помогут передать сведения о состоянии проверки другим заинтересованным лицам перед развертыванием Azure Stack Hub или для исследования проблем, обнаруженных при проверке. В обоих файлах сохраняются результаты каждой очередной проверки. В отчете содержатся подтверждения команды развертывания по конфигурации удостоверений. Файл журнала поможет командам развертывания или поддержки диагностировать проблемы с проверкой.
 
 По умолчанию оба файла сохраняются в расположении **C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
 
 - Используйте параметр `-OutputPath <path>` в конце командной строки, чтобы задать другое расположение для отчетов.
 - Используйте параметр `-CleanReport` в конце команды, чтобы удалить из файла **AzsReadinessCheckerReport.json** сведения о предыдущих запусках средства.
 
-Дополнительные сведения об отчетах проверки Azure Stack можно найти [здесь](azure-stack-validation-report.md).
+Дополнительные сведения об отчетах проверки Azure Stack Hub можно найти [здесь](azure-stack-validation-report.md).
 
 ## <a name="validation-failures"></a>Ошибки при проверке
 
@@ -135,7 +135,7 @@ Invoke-AzsRegistrationValidation Completed
 
 **Причина** — текущая учетная запись не имеет прав администратора подписки Azure.
 
-**Разрешение**. Используйте учетную запись администратора подписки Azure, которой будет выставлен счет за использование развертывания Azure Stack.
+**Разрешение**. Используйте учетную запись администратора подписки Azure, которой будет выставлен счет за использование развертывания Azure Stack Hub.
 
 ### <a name="expired-or-temporary-password"></a>Пароль с истекшим сроком действия или временный пароль
 
@@ -184,8 +184,8 @@ Invoke-AzsRegistrationValidation Completed
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 - [Проверка удостоверения Azure](azure-stack-validate-identity.md)
 - [Просмотр отчета о готовности](azure-stack-validation-report.md)
-- [Общие рекомендации по интеграции Azure Stack](azure-stack-datacenter-integration.md)
+- [Планирование интеграции центра обработки данных для интегрированных систем Azure Stack Hub](azure-stack-datacenter-integration.md)

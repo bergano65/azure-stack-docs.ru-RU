@@ -1,6 +1,6 @@
 ---
 title: Удаление квот, планов, предложений и подписки | Документация Майкрософт
-description: Узнайте, как удалить квоты Azure Stack, планы, предложения и подписки.
+description: Узнайте, как удалить квоты, планы, предложения и подписки Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: bryanla
@@ -15,16 +15,14 @@ ms.date: 08/13/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 04/25/2019
-ms.openlocfilehash: e89fcb3c218ab8b7228b63211b9f94c7e03d9865
-ms.sourcegitcommit: 1bae55e754d7be75e03af7a4db3ec43fd7ff3e9c
+ms.openlocfilehash: 7184972e6b486ee696b4edb621046d1b41f677a9
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319132"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882544"
 ---
 # <a name="delete-quotas-plans-offers-and-subscriptions"></a>Удалить квоты, планы, предложения и подписки
-
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 В этой статье описывается, как удалить квоты, планы, предложения и подписки, которые больше не требуются. Как правило, можно удалить только то, что не используется. Например, удаление предложения является возможным, только если нет подписок, принадлежащих к этому предложению.
 
@@ -70,13 +68,13 @@ ms.locfileid: "71319132"
 Кроме того, вы можете удалить некоторые квоты с помощью этих интерфейсов REST API:
 
 - [Среда выполнения приложений](/rest/api/azurestack/quotas%20(compute)/delete)
-- [Сеть](/rest/api/azurestack/quotas%20(network)/delete)
-- [Хранилище](/rest/api/azurestack/storagequotas/delete)
+- [Network](/rest/api/azurestack/quotas%20(network)/delete)
+- [Память](/rest/api/azurestack/storagequotas/delete)
 
 > [!NOTE]
 > Квоту нельзя удалить, если существуют текущие планы, которые ее используют. Кроме того, необходимо сначала удалить план, который ссылается на квоту.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание подписок](azure-stack-subscribe-plan-provision-vm.md)
 - [Подготовка виртуальной машины](../user/azure-stack-create-vm-template.md)

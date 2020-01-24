@@ -1,6 +1,6 @@
 ---
 title: Использование модуля политики Azure Stack Hub | Документация Майкрософт
-description: Сведения о том,как ограничить подписку Azure, чтобы ее поведение было аналогично подписке Azure Stack
+description: Сведения о том, как ограничить подписку Azure, чтобы ее поведение было аналогично подписке Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -14,16 +14,14 @@ ms.topic: article
 ms.date: 01/07/2020
 ms.author: sethm
 ms.lastreviewed: 03/26/2019
-ms.openlocfilehash: 1df2cf3eb403aabf320a226b5c184654b0b6169a
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: aedc2915f3e2be473b74766c4274197112ecf6fe
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718442"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878753"
 ---
 # <a name="manage-azure-policy-using-the-azure-stack-hub-policy-module"></a>Управление политикой Azure с использованием модуля политики Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 Модуль политики Azure Stack Hub позволяет настроить в подписке Azure такую же доступность служб и управления версиями, как и в Azure Stack Hub. Этот модуль использует командлет PowerShell [**New-AzureRmPolicyDefinition**](/powershell/module/azurerm.resources/new-azurermpolicydefinition) для создания политики Azure, которая ограничивает типы ресурсов и службы, доступные в подписке. Затем создайте назначение политики в соответствующей области с помощью командлета [**New-AzureRmPolicyAssignment**](/powershell/module/azurerm.resources/new-azurermpolicyassignment). После настройки политики подписку Azure можно использовать для разработки приложений, предназначенных для Azure Stack Hub.
 

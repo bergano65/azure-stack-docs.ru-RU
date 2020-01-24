@@ -1,6 +1,6 @@
 ---
 title: Настройка разрешений на доступ с помощью управления доступом на основе ролей | Документация Майкрософт
-description: Узнайте, как настроить разрешения на доступ с помощью управления доступом на основе ролей (RBAC) в Azure Stack.
+description: Узнайте, как настроить права доступа с помощью управления доступом на основе ролей (RBAC) в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -15,18 +15,16 @@ ms.date: 12/23/2019
 ms.author: justinha
 ms.reviewer: thoroet
 ms.lastreviewed: 12/23/2019
-ms.openlocfilehash: ae5b167ca807fc1e28c13c553e13ea89c7e6fe49
-ms.sourcegitcommit: dc3d0b77ee77742525fa0cd72d8547d25393022f
+ms.openlocfilehash: 7630579591b7d6e4c4179964d522dceb1023f55e
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75492781"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882374"
 ---
 # <a name="set-access-permissions-using-role-based-access-control"></a>Настройка разрешений на доступ с помощью управления доступом на основе ролей
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-Пользователь в Azure Stack может быть читателем, владельцем или участником каждого экземпляра подписки, группы ресурсов или службы. Например, пользователь A может иметь разрешения на чтение подписки 1, но иметь права владельца виртуальной машины 7.
+Пользователь в Azure Stack Hub может быть читателем, владельцем или участником каждого экземпляра подписки, группы ресурсов или службы. Например, пользователь A может иметь разрешения на чтение подписки 1, но иметь права владельца виртуальной машины 7.
 
  - Читатель. Может просматривать все, но не может вносить изменения.
  - Участник. Может управлять всем, кроме доступа к ресурсам.
@@ -54,4 +52,4 @@ ms.locfileid: "75492781"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Добавление клиента Azure Stack](azure-stack-add-new-user-aad.md)
+[Добавление клиента Azure Stack Hub](azure-stack-add-new-user-aad.md)

@@ -1,6 +1,6 @@
 ---
-title: Операции поддержки для поставщиков ресурсов MySQL в Azure Stack | Документация Майкрософт
-description: Сведения о поддержке службы поставщика ресурсов MySQL в Azure Stack.
+title: Операции поддержки для поставщиков ресурсов MySQL в Azure Stack Hub | Документация Майкрософт
+description: Сведения о поддержке службы поставщика ресурсов MySQL в Azure Stack Hub.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -15,14 +15,14 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: fea4d8abcb0b8bb4f541105d782d2adbdc1f0f4c
-ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
+ms.openlocfilehash: aaa352dedeed36335302a990b6a3bc3f37851f47
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75756871"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75811097"
 ---
-# <a name="mysql-resource-provider-maintenance-operations-in-azure-stack"></a>Операции поддержки для поставщиков ресурсов MySQL в Azure Stack
+# <a name="mysql-resource-provider-maintenance-operations-in-azure-stack-hub"></a>Операции поддержки для поставщиков ресурсов MySQL в Azure Stack Hub
 
 Поставщик ресурсов MySQL выполняется на заблокированной виртуальной машине. Чтобы включить операции обслуживания, вам нужно обновить систему безопасности виртуальной машины. Чтобы применить для этого принцип предоставления минимальных прав (POLP), можно использовать конечную точку DBAdapterMaintenance PowerShell Just Enough Administration (JEA). Пакет установки поставщика ресурсов содержит сценарий для этой операции.
 
@@ -93,9 +93,9 @@ $session | Remove-PSSession
 
 ## <a name="secrets-rotation"></a>Смена секретов
 
-*Эти инструкции применяются только к интегрированным системам Azure Stack.*
+*Эти инструкции применяются только к интегрированным системам Azure Stack Hub.*
 
-При использовании поставщиков ресурсов SQL и MySQL в интегрированных системах Azure Stack оператор Azure Stack отвечает за смену следующих секретов инфраструктуры поставщика ресурсов, чтобы обеспечить их актуальность:
+При использовании поставщиков ресурсов SQL и MySQL в интегрированных системах Azure Stack Hub оператор Azure Stack Hub отвечает за смену следующих секретов инфраструктуры поставщика ресурсов, чтобы обеспечить их актуальность:
 
 - внешний SSL-сертификат, [предоставленный во время развертывания](azure-stack-pki-certs.md);
 - пароль учетной записи локального администратора виртуальной машины поставщика ресурсов, предоставленный во время развертывания;
@@ -155,8 +155,8 @@ $session | Remove-PSSession
 
 |Параметр|Description|
 |-----|-----|
-|AzCredential|Учетные данные учетной записи администратора службы Azure Stack.|
-|CloudAdminCredential|Учетные данные учетной записи домена администратора облака Azure Stack.|
+|AzCredential|Учетные данные учетной записи администратора службы Azure Stack Hub.|
+|CloudAdminCredential|Учетные данные учетной записи домена администратора облака Azure Stack Hub.|
 |PrivilegedEndpoint|Привилегированная конечная точка для получения информации о метке Azure Stack (Get-AzureStackStampInformation).|
 |DiagnosticsUserPassword|Пароль учетной записи для пользователя диагностики.|
 |VMLocalCredential|Учетная запись локального администратора на виртуальной машине MySQLAdapter.|

@@ -1,6 +1,6 @@
 ---
-title: Проверка сертификатов инфраструктуры открытых ключей Azure Stack для развертывания интегрированных систем Azure Stack | Документация Майкрософт
-description: В этой статье описано, как проверить сертификаты PKI Azure Stack для интегрированных систем Azure Stack. В статье описывается использование средства проверки сертификатов Azure Stack.
+title: Проверка сертификатов инфраструктуры открытых ключей Azure Stack Hub для развертывания интегрированных систем Azure Stack Hub | Документация Майкрософт
+description: Сведения о проверке сертификатов PKI Azure Stack Hub для интегрированных систем Azure Stack Hub. В этой статье описывается использование средства проверки сертификатов Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,16 +15,16 @@ ms.date: 07/23/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: 61e79fb581b18825d2bde1e2838d8b653ad00da6
-ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
+ms.openlocfilehash: 23225b21d1dc3074c69cefa2af23a99b634a7a73
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75727536"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75812864"
 ---
-# <a name="validate-azure-stack-pki-certificates"></a>Проверка сертификатов PKI Azure Stack
+# <a name="validate-azure-stack-hub-pki-certificates"></a>Проверка сертификатов PKI Azure Stack Hub
 
-Инструмент проверки готовности Azure Stack, описанный в этой статье, доступен в [коллекции PowerShell](https://aka.ms/AzsReadinessChecker). Вы можете использовать этот инструмент, чтобы проверить, что [сгенерированные сертификаты PKI](azure-stack-get-pki-certs.md) подходят для предварительного развертывания. Проверьте сертификаты, оставив достаточно времени для проверки и повторной выдачи сертификатов при необходимости.
+Инструмент проверки готовности Azure Stack Hub, описанный в этой статье, доступен в [коллекции PowerShell](https://aka.ms/AzsReadinessChecker). Вы можете использовать этот инструмент, чтобы проверить, что [сгенерированные сертификаты PKI](azure-stack-get-pki-certs.md) подходят для предварительного развертывания. Проверьте сертификаты, оставив достаточно времени для проверки и повторной выдачи сертификатов при необходимости.
 
 Средство проверки готовности выполняет следующие проверки сертификата:
 
@@ -54,16 +54,16 @@ ms.locfileid: "75727536"
 
 ## <a name="prerequisites"></a>предварительные требования
 
-Прежде чем начать проверку сертификатов PKI для развертывания Azure Stack, необходимо убедиться, что в системе присутствуют следующие компоненты и установлена нужная ОС.
+Прежде чем начать проверку сертификатов PKI для развертывания Azure Stack Hub, необходимо убедиться, что в системе присутствуют следующие компоненты и установлена нужная ОС.
 
-- Инструмент проверки готовности Microsoft Azure Stack
+- Инструмент проверки готовности Microsoft Azure Stack Hub
 - Сертификаты SSL, экспортированные в соответствии с [инструкциями по подготовке](azure-stack-prepare-pki-certs.md).
 - Файл DeploymentData.json.
 - Windows 10 или Windows Server 2016;
 
 ## <a name="perform-core-services-certificate-validation"></a>Выполнение проверки сертификата основных служб
 
-Чтобы подготовить и проверить сертификаты PKI Azure Stack для развертывания и смены секретов, выполните следующие действия:
+Чтобы подготовить и проверить сертификаты PKI Azure Stack Hub для развертывания и смены секретов, выполните следующие действия:
 
 1. Установите **AzsReadinessChecker** из командной строки PowerShell (версии 5.1 или более поздней), выполнив следующий командлет:
 
@@ -94,7 +94,7 @@ ms.locfileid: "75727536"
         - `C:\Certificates\Deployment\Admin Portal\CustomerCertificate.pfx`
         - `C:\Certificates\Deployment\ARM Admin\CustomerCertificate.pfx`
 
-3. В окне PowerShell измените значения **RegionName** и **FQDN** в соответствии со средой Azure Stack и выполните команду ниже:
+3. В окне PowerShell измените значения **RegionName** и **FQDN** в соответствии со средой Azure Stack Hub и выполните команду ниже:
 
     ```powershell  
     $pfxPassword = Read-Host -Prompt "Enter PFX Password" -AsSecureString 
@@ -148,7 +148,7 @@ ms.locfileid: "75727536"
     Invoke-AzsCertificateValidation Completed
     ```
 
-    Чтобы проверить сертификаты для других служб Azure Stack, измените значение ```-CertificateType```. Пример:
+    Чтобы проверить сертификаты для других служб Azure Stack Hub, измените значение ```-CertificateType```. Пример:
 
     ```powershell  
     # App Services
@@ -257,11 +257,11 @@ ms.locfileid: "75727536"
 
 ## <a name="using-validated-certificates"></a>Использование проверенных сертификатов
 
-Как только ваши сертификаты будут проверены с помощью AzsReadinessChecker, их можно использовать в развертывании Azure Stack или для смены секретов Azure Stack. 
+Как только ваши сертификаты будут проверены с помощью AzsReadinessChecker, их можно использовать в развертывании Azure Stack Hub или для смены секретов Azure Stack Hub. 
 
- - В целях развертывания безопасно передайте свои сертификаты специалисту по развертыванию, чтобы он смог скопировать их на узел развертывания, как указано в [документации по требованиям PKI для Azure Stack](azure-stack-pki-certs.md).
- - В целях смены секретов вы можете использовать сертификаты, чтобы обновить старые сертификаты для общедоступных конечных точек инфраструктуры среды Azure Stack, следуя инструкциям, приведенным в статье о [смене секретов в Azure Stack](azure-stack-rotate-secrets.md).
- - Для служб PaaS можно использовать сертификаты для установки поставщиков ресурсов SQL, MySQL и служб приложений в Azure Stack, ознакомившись со статьей [Общие сведения о предложении служб в Azure Stack](service-plan-offer-subscription-overview.md).
+ - В целях развертывания безопасно передайте свои сертификаты специалистам по развертыванию, чтобы они могли скопировать их на узел развертывания, как указано в [документации по требованиям PKI для Azure Stack Hub](azure-stack-pki-certs.md).
+ - В целях смены секретов вы можете использовать сертификаты, чтобы обновить старые сертификаты для общедоступных конечных точек инфраструктуры среды Azure Stack Hub, следуя инструкциям, приведенным в [документации по смене секретов в Azure Stack Hub](azure-stack-rotate-secrets.md).
+ - Если вы используете службы PaaS, вы можете применить сертификаты для установки поставщиков ресурсов SQL, MySQL и Служб приложений в Azure Stack Hub, выполнив инструкции из [документации по обзору предложения служб в Azure Stack Hub](service-plan-offer-subscription-overview.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

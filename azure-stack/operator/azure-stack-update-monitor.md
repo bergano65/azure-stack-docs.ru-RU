@@ -1,6 +1,6 @@
 ---
-title: Мониторинг обновлений в Azure Stack с помощью PowerShell | Документация Майкрософт
-description: Узнайте, как отслеживать обновления в Azure Stack с помощью PowerShell.
+title: Мониторинг обновлений в Azure Stack Hub с помощью PowerShell | Документация Майкрософт
+description: Узнайте, как отслеживать обновления в Azure Stack Hub с помощью PowerShell.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,16 +15,14 @@ ms.date: 08/23/2019
 ms.author: mabrigg
 ms.lastreviewed: 08/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: f14b4180e567df13e576b520cdac01a676c101ea
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: 5f4f469c6652bdb492d9c7365fb128b0461093a4
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75717949"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882850"
 ---
 # <a name="monitor-updates-in-azure-stack-hub-using-powershell"></a>Мониторинг обновлений в Azure Stack Hub с помощью PowerShell
-
-*Область применения: интегрированные системы Azure Stack Hub*
 
 Для наблюдения за обновлениями и управления ими можно использовать конечные точки администрирования Azure Stack Hub. Они доступны посредством PowerShell. Инструкции по настройке PowerShell для Azure Stack Hub см. в статье [Install PowerShell for Azure Stack Hub](azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack Hub).
 
@@ -56,4 +54,4 @@ Get-AzsUpdateRun -Name 5173e9f4-3040-494f-b7a7-738a6331d55c -UpdateName Microsof
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
--   [Общие сведения об управлении обновлениями в Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates)
+-   [Общие сведения об управлении обновлениями в Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates)

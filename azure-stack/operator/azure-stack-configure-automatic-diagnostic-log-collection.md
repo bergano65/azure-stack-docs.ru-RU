@@ -1,6 +1,6 @@
 ---
-title: Настройка автоматического сбора журналов Azure Stack | Документация Майкрософт
-description: Как настроить автоматической сбор журналов в разделе "Справка и поддержка" в Azure Stack.
+title: Настройка автоматического сбора журналов Azure Stack Hub | Документация Майкрософт
+description: Как настроить автоматической сбор журналов в разделе "Справка и поддержка" в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,32 +16,30 @@ ms.date: 10/08/2019
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 10/08/2019
-ms.openlocfilehash: 087698b4f12c646422fda05cc4c707ad135b150a
-ms.sourcegitcommit: 5eae057cb815f151e6b8af07e3ccaca4d8e4490e
+ms.openlocfilehash: 63ee429c37d5ec7bf9258e3e940d9dbfa3786907
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72310596"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882595"
 ---
-# <a name="configure-automatic-azure-stack-diagnostic-log-collection"></a>Настройка автоматического сбора журналов диагностики Azure Stack
-
-*Область применения: интегрированные системы Azure Stack*
+# <a name="configure-automatic-azure-stack-hub-diagnostic-log-collection"></a>Настройка автоматического сбора журналов диагностики Azure Stack Hub
 
 Рекомендуется настроить функцию автоматического сбора журналов диагностики, чтобы оптимизировать сбор журналов и поддержку пользователей. Если необходимо исследовать состояния работоспособности системы, журналы могут автоматически передаваться для анализа службой поддержки пользователей Майкрософт (CSS). 
 
 ## <a name="create-an-azure-blob-container-sas-url"></a>Создание подписанного URL-адреса контейнера больших двоичных объектов Azure 
 
-Прежде чем можно будет настроить автоматический сбор журналов, необходимо получить подписанный URL-адрес (SAS) для контейнера больших двоичных объектов. С помощью SAS можно предоставить доступ к ресурсам в учетной записи хранения, не предоставляя ее ключей. Можно сохранить файлы журнала Azure Stack в контейнере больших двоичных объектов в Azure, а затем указать подписанный URL-адрес, по которому CSS сможет собирать журналы. 
+Прежде чем можно будет настроить автоматический сбор журналов, необходимо получить подписанный URL-адрес (SAS) для контейнера больших двоичных объектов. С помощью SAS можно предоставить доступ к ресурсам в учетной записи хранения, не предоставляя ее ключей. Можно сохранить файлы журнала Azure Stack Hub в контейнере больших двоичных объектов в Azure, а затем указать подписанный URL-адрес, по которому CSS сможет собирать журналы. 
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 
 Вы можете использовать новый или имеющийся контейнер больших двоичных объектов в Azure. Чтобы создать контейнер больших двоичных объектов в Azure, требуется по крайней мере роль [Участник для данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) или [определенное разрешение](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). У глобальных администраторов также есть необходимое разрешение. 
 
-Рекомендации по выбору параметров учетной записи хранения для автоматической сбора журналов см. в разделе [Рекомендации по автоматическому сбору журналов Azure Stack](azure-stack-best-practices-automatic-diagnostic-log-collection.md). Дополнительные сведения о типах учетных записей хранения см. в разделе [Общие сведения об учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-overview).
+Рекомендации по выбору параметров учетной записи хранения для автоматического сбора журналов см. в разделе [Рекомендации по автоматическому сбору журналов Azure Stack Hub](azure-stack-best-practices-automatic-diagnostic-log-collection.md). Дополнительные сведения о типах учетных записей хранения см. в разделе [Общие сведения об учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-overview).
 
 ### <a name="create-a-blob-storage-account"></a>Создание учетной записи хранения больших двоичных объектов
  
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Щелкните **Учетные записи хранения** > **Добавить**. 
 1. Создайте контейнер больших двоичных объектов со следующими параметрами.
    - **Подписка**: Выберите подписку Azure.
@@ -73,7 +71,7 @@ ms.locfileid: "72310596"
    - "Время начала". При необходимости можно сместить время начала. 
    - "Время окончания срока действия". Укажите два года.
    - "Часовой пояс". Формат UTC.
-   - Разрешения. Чтение, запись и список
+   - Разрешения: Чтение, запись и список
 
    ![Снимок экрана, показывающий свойства подписанного URL-адреса](media/azure-stack-automatic-log-collection/sas-properties.png) 
 
@@ -86,7 +84,7 @@ ms.locfileid: "72310596"
 
 Чтобы добавить подписанный URL-адрес в пользовательский интерфейс сбора журналов, выполните следующие действия. 
 
-1. Войдите на портал администратора Azure Stack.
+1. Войдите на портал администратора Azure Stack Hub.
 1. Откройте **Help and support Overview** (Обзор справки и поддержки).
 1. Щелкните **Automatic collection settings** (Параметры автоматического сбора).
 
@@ -102,7 +100,7 @@ ms.locfileid: "72310596"
 
 ## <a name="view-log-collection"></a>Просмотр коллекции журналов
 
-Журнал сбора журналов из Azure Stack отображается на странице **Log collection** (Сбор журналов) в разделе "Справка и поддержка" со следующими значениями даты и времени.
+Журнал сбора журналов из Azure Stack Hub отображается на странице **Log collection** (Сбор журналов) в разделе "Справка и поддержка" со следующими значениями даты и времени.
 
 - **Collection time** (Время сбора). Время начала операции сбора журналов. 
 - **From Date** (Дата начала). Начало периода времени сбора журналов.
@@ -149,13 +147,13 @@ ms.locfileid: "72310596"
 |The scheduled backup was skipped due to a conflict with failed operations (Запланированное резервное копирование пропущено из-за конфликта с неудачными операциями)  | AzureStack.BackupController.BackupSkippedWithFailedOperationFault |   
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-[Обработка журнала Azure Stack и данных клиента](https://docs.microsoft.com/azure-stack/operator/azure-stack-data-collection)
+[Обработка журнала Azure Stack Hub и данных клиента](https://docs.microsoft.com/azure-stack/operator/azure-stack-data-collection)
 
 [Использование подписанных URL-адресов (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
 
-[Рекомендации по автоматическому сбору журналов Azure Stack](azure-stack-best-practices-automatic-diagnostic-log-collection.md)
+[Рекомендации по автоматическому сбору журналов Azure Stack Hub](azure-stack-best-practices-automatic-diagnostic-log-collection.md)
 
 
 

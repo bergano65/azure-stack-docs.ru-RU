@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок с обновлениями в Azure Stack | Документация Майкрософт
-description: Узнайте, как оператор Azure Stack может устранять проблемы с обновлением, чтобы как можно скорее вернуть Azure Stack в эксплуатацию.
+title: Устранение неполадок с обновлениями в Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как оператор Azure Stack Hub может устранять проблемы с обновлением, чтобы как можно скорее вернуть Azure Stack Hub в эксплуатацию.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,12 +15,12 @@ ms.date: 09/23/2019
 ms.author: mabrigg
 ms.lastreviewed: 09/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: b9e8012e71e5211921a35792cb3e2e1039e5d9e1
-ms.sourcegitcommit: b2418661bfa3a791e65b9b487e20982dba3e4c41
+ms.openlocfilehash: f2bbcf10feb47ba42bb6133bd4ab4320e120b283
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75756810"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75813323"
 ---
 # <a name="best-practices-for-troubleshooting-azure-stack-hub-patch-and-update-issues"></a>Рекомендации по устранению неполадок с исправлением и обновлением в Azure Stack Hub
 
@@ -31,8 +31,8 @@ ms.locfileid: "75756810"
 
 0. **Предварительные требования**: Убедитесь, что вы выполнили [контрольный список действий по обновлению](release-notes-checklist.md) и [настроили автоматический сбор журналов](azure-stack-configure-automatic-diagnostic-log-collection.md).
 1. Следуйте инструкциям по исправлению, которые будут включены в оповещение об ошибке, которая произошла при обновлении.
-2. Изучите [распространенные проблемы с исправлением и обновлением в Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates-troubleshoot#common-azure-stack-hub-patch-and-update-issues) и выполните рекомендуемые действия, если ваша проблема описана.
-3. Если указанные действия не помогают решить проблему, создайте [запрос в службу поддержки Azure Stack](azure-stack-help-and-support-overview.md). Убедитесь, что у вас есть [собранные журналы](https://docs.microsoft.com/azure-stack/operator/azure-stack-configure-on-demand-diagnostic-log-collection) за тот период времени, в который возникла проблема.
+2. Изучите [распространенные проблемы с исправлением и обновлением в Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates-troubleshoot#Common-azure-stack-hub-patch-and-update-issues) и выполните рекомендуемые действия, если ваша проблема описана.
+3. Если указанные действия не помогают решить проблему, создайте [запрос в службу поддержки Azure Stack Hub](azure-stack-help-and-support-overview.md). Убедитесь, что у вас есть [собранные журналы](https://docs.microsoft.com/azure-stack/operator/azure-stack-configure-on-demand-diagnostic-log-collection) за тот период времени, в который возникла проблема.
 
 ## <a name="common-azure-stack-hub-patch-and-update-issues"></a>Типичные проблемы с исправлением и обновлением в Azure Stack Hub
 
@@ -42,7 +42,7 @@ ms.locfileid: "75756810"
 
 **Применимо**. Данная проблема касается всех поддерживаемых выпусков.
 
-**Причина.** При попытке установить обновление для Azure Stack может произойти сбой состояния обновления, после чего его состояние изменится на `PreparationFailed`. В системах, подключенных к Интернету, обычно это указывает на то, что не удается правильно скачать пакет обновления из-за слабого подключения к Интернету. 
+**Причина.** При попытке установить обновление для Azure Stack Hub может произойти сбой состояния обновления, после чего его состояние изменится на `PreparationFailed`. В системах, подключенных к Интернету, обычно это указывает на то, что не удается правильно скачать пакет обновления из-за слабого подключения к Интернету. 
 
 **Исправление**. Чтобы устранить эту ошибку, щелкните **Install now** (Установить сейчас) снова. Если проблема не будет устранена, рекомендуем вручную загрузить пакет обновления, следуя инструкциям по [установке обновлений](azure-stack-apply-updates.md?#install-updates-and-monitor-progress).
 

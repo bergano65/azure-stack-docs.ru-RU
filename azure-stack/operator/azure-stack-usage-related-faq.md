@@ -1,6 +1,6 @@
 ---
 title: Часто задаваемые вопросы об API использования | Документация Майкрософт
-description: Список средств измерения в Azure Stack, сравнение с API использования в Azure, время использования и время сообщения, коды ошибок.
+description: Список средств измерения в Azure Stack Hub, сравнение с API использования в Azure, время использования и время сообщения, коды ошибок.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,16 +15,16 @@ ms.date: 09/25/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 02/26/2019
-ms.openlocfilehash: b4780077f015c060c63abc3abd33bd3e71c63e15
-ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
+ms.openlocfilehash: dea410ab514f095f7ed68a0617b2dd7816544f80
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72019318"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75813068"
 ---
-# <a name="frequently-asked-questions-about-azure-stack-usage"></a>Часто задаваемые вопросы об использовании в Azure Stack
+# <a name="frequently-asked-questions-about-azure-stack-hub-usage"></a>Часто задаваемые вопросы об использовании в Azure Stack Hub
 
-В этой статье содержатся ответы на некоторые часто задаваемые вопросы об использовании в Azure Stack и API использования в Azure Stack.
+В этой статье содержатся ответы на некоторые часто задаваемые вопросы об использовании в Azure Stack Hub и API использования в Azure Stack Hub.
 
 ## <a name="what-meter-ids-can-i-see"></a>Какие доступны идентификаторы средств измерения?
 
@@ -42,7 +42,7 @@ ms.locfileid: "72019318"
 **Единица измерения**: IP-адреса  
 **Примечания** Число используемых IP-адресов. При вызове API использования с детализацией до дней индикатор возвращает число IP-адресов, умноженное на количество часов.  
   
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Память
   
 **Идентификатор единицы измерения**. B4438D5D-453B-4EE1-B42A-DC72E377F1E4  
 **Имя единицы измерения**. TableCapacity  
@@ -322,7 +322,7 @@ ms.locfileid: "72019318"
 **Идентификатор единицы измерения**. 190C935E-9ADA-48FF-9AB8-56EA1CF9ADAA  
 **Имя единицы измерения**. Служба приложений  
 **Единица измерения**: Виртуальные ядра, в часах  
-**Примечания** Количество виртуальных ядер, используемых для запуска службы приложений Примечание. На основе этой метрики корпорация Майкрософт взимает плату за использование Службы приложений в Azure Stack. Поставщики облачных решений могут определять использование ресурсов своими клиентами на основе других метрик Службы приложений (см. ниже)  
+**Примечания** Количество виртуальных ядер, используемых для запуска службы приложений Примечание. На основе этой метрики корпорация Майкрософт взимает плату за использование Службы приложений в Azure Stack Hub. Поставщики облачных решений могут определять использование ресурсов своими клиентами на основе других метрик Службы приложений (см. ниже)  
   
 **Идентификатор единицы измерения**. 67CC4AFC-0691-48E1-A4B8-D744D1FEDBDE  
 **Имя единицы измерения**. Functions Requests  
@@ -383,21 +383,21 @@ ms.locfileid: "72019318"
   
 **Идентификатор единицы измерения**. 5887D39B-0253-4E12-83C7-03E1A93DFFD9  
 **Имя единицы измерения**. External Egress Bandwidth  
-**Единица измерения**: GB  
+**Единица измерения**: ГБ  
 **Примечания** Общее количество байт ответа на входящий запрос + общее количество байт ответа на исходящий запрос + общее количество байт ответа на входящий запрос FTP + общее количество байт ответа на запросы веб-развертывания  
   
-## <a name="how-do-the-azure-stack-usage-apis-compare-to-the-azure-usage-apihttpsdocsmicrosoftcomazurebillingbilling-usage-rate-card-overviewazure-resource-usage-api-preview-currently-in-public-preview"></a>Какие различия между API использования в Azure Stack и [API использования в Azure](https://docs.microsoft.com/azure/billing/billing-usage-rate-card-overview#azure-resource-usage-api-preview) (в настоящее время в общедоступной предварительной версии)?
+## <a name="how-do-the-azure-stack-hub-usage-apis-compare-to-the-azure-usage-apihttpsdocsmicrosoftcomazurebillingbilling-usage-rate-card-overviewazure-resource-usage-api-preview-currently-in-public-preview"></a>Какие различия между API использования в Azure Stack Hub и [API использования в Azure](https://docs.microsoft.com/azure/billing/billing-usage-rate-card-overview#azure-resource-usage-api-preview) (в настоящее время в общедоступной предварительной версии)?
 
-* API использования для клиента полностью совпадает с аналогичным API в Azure, за одним исключением: в настоящее время флаг *showDetails* в Azure Stack не поддерживается.
-* API использования для поставщика относится только к Azure Stack.
-* В настоящее время в Azure Stack недоступен [API RateCard](/azure/billing/billing-usage-rate-card-overview#azure-resource-ratecard-api-preview), который используется в Azure.
+* API использования для клиента полностью совпадает с аналогичным API в Azure, за одним исключением: в настоящее время флаг *showDetails* в Azure Stack Hub не поддерживается.
+* API использования для поставщика относится только к Azure Stack Hub.
+* В настоящее время в Azure Stack Hub недоступен [API RateCard](/azure/billing/billing-usage-rate-card-overview#azure-resource-ratecard-api-preview), который используется в Azure.
 
 ## <a name="what-is-the-difference-between-usage-time-and-reported-time"></a>В чем различия между временем использования и временем сообщения?
 
 В отчетах об использовании учитываются два показателя времени:
 
 * **Время сообщения**. Время, когда информация о событии использования поступила в систему учета использования.
-* **Время использования**. Время, когда происходило использование ресурса Azure Stack.
+* **Время использования**. Время, когда происходило использование ресурса Azure Stack Hub.
 
 Для некоторых событий использования вы можете заметить расхождения между временем использования временем сообщения. Задержка в любой среде может длиться до нескольких часов.
 
@@ -419,18 +419,18 @@ ms.locfileid: "72019318"
 
 Работающие и остановленные виртуальные машины создают данные об использовании. В соответствии с требованиями Azure, чтобы остановить отправку данных об использовании, необходимо выполнить освобождение. Если портал недоступен, но поставщик ресурсов вычислений по-прежнему выполняется, данные об использовании все равно передаются.
 
-## <a name="how-do-i-extract-usage-data-from-the-azure-stack-usage-apis"></a>Как извлечь данные об использовании из API-интерфейсов использования в Azure Stack?
+## <a name="how-do-i-extract-usage-data-from-the-azure-stack-hub-usage-apis"></a>Как извлечь данные об использовании из API-интерфейсов использования в Azure Stack Hub?
 
-Самый простой способ извлечь данные об использовании из локальных API-интерфейсов использования в Azure Stack — применить [сценарий сводки по потреблению в GitHub](https://github.com/Azure/AzureStack-Tools/blob/master/Usage/Usagesummary.ps1). Для сценария требуются даты начала и окончания в качестве входных параметров.
+Самый простой способ извлечь данные об использовании из локальных API-интерфейсов использования в Azure Stack Hub — применить [сценарий сводки по потреблению в GitHub](https://github.com/Azure/AzureStack-Tools/blob/master/Usage/Usagesummary.ps1). Для сценария требуются даты начала и окончания в качестве входных параметров.
 
 Кроме того, можно применить REST API, как описано в статьях [API использования ресурсов для поставщиков](azure-stack-provider-resource-api.md) и [API использования ресурсов для клиентов](azure-stack-tenant-resource-usage-api.md).
 
-## <a name="how-can-i-associate-usage-extracted-from-azure-usage-apis-to-a-specific-azure-stack-user-subscription"></a>Как можно связать сведения об использовании, извлеченные из API использования Azure, с определенной пользовательской подпиской Azure Stack?
+## <a name="how-can-i-associate-usage-extracted-from-azure-usage-apis-to-a-specific-azure-stack-hub-user-subscription"></a>Как связать сведения об использовании, извлеченные из API использования Azure, с определенной пользовательской подпиской Azure Stack Hub?
 
-Записи об использовании включают в себя контейнер свойств с именем **additionalinfo**, который содержит идентификатор подписки Azure Stack. Это пользовательская подписка, создающая соответствующую запись об использовании.
+Записи об использовании включают в себя контейнер свойств с именем **additionalinfo**, который содержит идентификатор подписки Azure Stack Hub. Это пользовательская подписка, создающая соответствующую запись об использовании.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Выставление счетов клиентам и начисление платы за использование Azure Stack](azure-stack-billing-and-chargeback.md)
+* [Выставление счетов клиентам и начисление платы за использование Azure Stack Hub](azure-stack-billing-and-chargeback.md)
 * [Provider Resource Usage API](azure-stack-provider-resource-api.md) (API использования ресурсов для поставщиков)
 * [Tenant Resource Usage API](azure-stack-tenant-resource-usage-api.md) (API использования ресурсов для клиентов)

@@ -1,6 +1,6 @@
 ---
-title: Разрешение приложениям получать доступ к секретам из хранилища ключей Azure Stack | Документация Майкрософт
-description: Из этой статьи вы узнаете, как запустить пример приложения, которое извлекает ключи и секреты из хранилища ключей в Azure Stack.
+title: Разрешение приложениям получать доступ к секретам из хранилища ключей Azure Stack Hub | Документация Майкрософт
+description: Из этой статьи вы узнаете, как запустить пример приложения, которое извлекает ключи и секреты из хранилища ключей в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,31 +15,29 @@ ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: sethm
 ms.lastreviewed: 04/08/2019
-ms.openlocfilehash: 97299ec47908325f7d3eddb7cf57ca891e145a8d
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: f73af34f3069b0fe550c8266253dce32efcb6b90
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718493"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883632"
 ---
-# <a name="allow-apps-to-access-azure-stack-key-vault-secrets"></a>Разрешение приложениям получать доступ к секретам из хранилища ключей Azure Stack
+# <a name="allow-apps-to-access-azure-stack-hub-key-vault-secrets"></a>Разрешение приложениям получать доступ к секретам из хранилища ключей Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-Выполните шаги в этой статье, чтобы запустить пример приложения **HelloKeyVault**, которое извлекает ключи и секреты из хранилища ключей в Azure Stack.
+Выполните шаги в этой статье, чтобы запустить пример приложения **HelloKeyVault**, которое извлекает ключи и секреты из хранилища ключей в Azure Stack Hub.
 
 ## <a name="prerequisites"></a>предварительные требования
 
 Вы можете установить следующие обязательные компоненты из [Пакета средств разработки Azure Stack](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) или из внешнего клиента Windows, если вы [используете VPN-подключение](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn):
 
-* Установите [совместимые с Azure Stack модули Azure PowerShell](../operator/azure-stack-powershell-install.md).
-* Скачайте [средства, необходимые для работы с Azure Stack](../operator/azure-stack-powershell-download.md).
+* Установите [совместимые с Azure Stack Hub модули Azure PowerShell](../operator/azure-stack-powershell-install.md).
+* Скачайте [средства, необходимые для работы с Azure Stack Hub](../operator/azure-stack-powershell-download.md).
 
 ## <a name="create-a-key-vault-and-register-an-app"></a>Создание хранилища ключей и регистрация приложения
 
 Чтобы подготовить пример приложения, выполните следующие действия:
 
-* Создайте хранилище ключей в Azure Stack.
+* Создайте хранилище ключей в Azure Stack Hub.
 * Зарегистрируйте приложение в Azure Active Directory (Azure AD).
 
 С помощью портала Azure или PowerShell выполните действия для подготовки к установке примера приложения.
@@ -67,12 +65,12 @@ Function GenerateSymmetricKey()
     return [System.Convert]::ToBase64String($key)
 }
 
-Write-Host 'Please log into your Azure Stack user environment' -foregroundcolor Green
+Write-Host 'Please log into your Azure Stack Hub user environment' -foregroundcolor Green
 
 $tenantARM = "https://management.local.azurestack.external"
 $aadTenantName = "FILL THIS IN WITH YOUR AAD TENANT NAME. FOR EXAMPLE: myazurestack.onmicrosoft.com"
 
-# Configure the Azure Stack operator's PowerShell environment.
+# Configure the Azure Stack Hub operator's PowerShell environment.
 Add-AzureRMEnvironment `
   -Name "AzureStackUser" `
   -ArmEndpoint $tenantARM
@@ -161,7 +159,7 @@ Write-Host
 
 ## <a name="run-the-app"></a>Запустите приложение
 
-При запуске приложение **HelloKeyVault** входит в Azure AD и применяет маркер `AuthClientSecret` для аутентификации в хранилище ключей Azure Stack.
+При запуске приложение **HelloKeyVault** входит в Azure AD и применяет маркер `AuthClientSecret` для аутентификации в хранилище ключей Azure Stack Hub.
 
 Пример **HelloKeyVault** позволяет выполнить следующие действия:
 

@@ -1,7 +1,7 @@
 ---
 title: Удаление поставщика ресурсов SQL
-titleSuffix: Azure Stack
-description: Сведения об удалении поставщика ресурсов SQL из развертывания Azure Stack.
+titleSuffix: Azure Stack Hub
+description: Сведения об удалении поставщика ресурсов SQL из развертывания Azure Stack Hub.
 services: azure-stack
 documentationCenter: ''
 author: mattbriggs
@@ -16,12 +16,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2018
-ms.openlocfilehash: a172b56c43dafd637a66fa8354c2e06e06a67b98
-ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
+ms.openlocfilehash: 15178627cbc58cd466a09f7ef534e7ec115d9c1a
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954457"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75814411"
 ---
 # <a name="remove-the-sql-resource-provider"></a>Удаление поставщика ресурсов SQL
 
@@ -36,7 +36,7 @@ ms.locfileid: "74954457"
 
 Есть несколько задач очистки, которые нужно выполнить перед запуском скрипта DeploySqlProvider.ps1 для удаления поставщика ресурсов.
 
-Эти задачи очистки выполняет оператор Azure Stack:
+Эти задачи очистки выполняет оператор Azure Stack Hub:
 
 * удаление всех планов, которые ссылаются на адаптер SQL;
 * удаление всех квот, которые связаны с адаптером SQL.
@@ -56,10 +56,10 @@ ms.locfileid: "74954457"
 
     * **Uninstall**: Удаляет поставщик ресурсов и все связанные с ним ресурсы.
     * **PrivilegedEndpoint**: IP-адрес или DNS-имя привилегированной конечной точки.
-    * **AzureEnvironment**: Среда Azure, используемая для развертывания Azure Stack. Требуется только для развертываний Azure AD.
+    * **AzureEnvironment**: Среда Azure, используемая для развертывания Azure Stack Hub. Требуется только для развертываний Azure AD.
     * **CloudAdminCredential**: Учетные данные администратора облака, необходимые для доступа к привилегированной конечной точке.
-    * **AzCredential**: Учетные данные администратора службы Azure Stack. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack.
+    * **AzCredential**: Учетные данные администратора службы Azure Stack Hub. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack Hub.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Предложение служб приложений как PaaS](azure-stack-app-service-overview.md)

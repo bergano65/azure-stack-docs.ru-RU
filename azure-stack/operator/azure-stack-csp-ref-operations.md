@@ -1,6 +1,6 @@
 ---
-title: Регистрация клиентов для отслеживания использования Azure Stack | Документация Майкрософт
-description: Из этой статьи вы узнаете о том, как регистрировать клиентов и отслеживать использование клиентов в Azure Stack.
+title: Регистрация клиентов для отслеживания использования Azure Stack Hub | Документация Майкрософт
+description: Сведения о регистрации клиентов и отслеживании использования клиентов в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,16 +15,14 @@ ms.date: 10/14/2019
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/14/2019
-ms.openlocfilehash: 72310e813d0dd0a64575f1b2452bf4a5191638ef
-ms.sourcegitcommit: 97d41b3ebed07aa85a50087b6076671fd37e08c5
+ms.openlocfilehash: 981a80692e087cfcb733e73ec43d70fe67516e69
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72350182"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882578"
 ---
-# <a name="register-tenants-for-usage-tracking-in-azure-stack"></a>Регистрация клиентов для отслеживания использования в Azure Stack
-
-*Область применения: интегрированные системы Azure Stack*
+# <a name="register-tenants-for-usage-tracking-in-azure-stack-hub"></a>Регистрация клиентов для отслеживания использования в Azure Stack Hub
 
 В этой статье содержатся сведения об операциях регистрации. Они позволяют выполнить такие задачи:
 
@@ -41,25 +39,25 @@ ms.locfileid: "72350182"
 
 ### <a name="use-api-profiles"></a>Использование профилей API
 
-Указанные ниже командлеты регистрации требуют указывать профиль API при выполнении PowerShell. Профили API представляют набор поставщиков ресурсов Azure и их версий API. Они помогают использовать правильную версию API при взаимодействии с несколькими облаками Azure. Например, если вы используете несколько облаков при работе с глобальной средой Azure и Azure Stack, профили API определяют имя, соответствующее их дате выпуска. Вы используете профиль **2017-09-03**.
+Указанные ниже командлеты регистрации требуют указывать профиль API при выполнении PowerShell. Профили API представляют набор поставщиков ресурсов Azure и их версий API. Они помогают использовать правильную версию API при взаимодействии с несколькими облаками Azure. Например, если вы используете несколько облаков при работе с глобальной средой Azure и Azure Stack Hub, профили API определяют имя, соответствующее их дате выпуска. Вы используете профиль **2017-09-03**.
 
-Дополнительные сведения о профилях API и Azure Stack см. в статье [Управление профилями версий API в Azure Stack](../user/azure-stack-version-profiles.md).
+Дополнительные сведения о профилях API и Azure Stack Hub см. в статье [Управление профилями версий API в Azure Stack Hub](../user/azure-stack-version-profiles.md).
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр                  | ОПИСАНИЕ |
+| Параметр                  | Description |
 |---                         | --- |
 | registrationSubscriptionID | Подписка Azure, которая использовалась для первоначальной регистрации. |
-| customerSubscriptionID     | Подписка Azure (не Azure Stack), принадлежащая клиенту, для которого выполняется регистрация. Ее нужно создать в предложении поставщика облачных решений через Центр партнеров. Если у пользователя имеется несколько клиентов, подписку нужно создать в клиенте, который будет использоваться для входа в Azure Stack. |
+| customerSubscriptionID     | Подписка Azure (не Azure Stack Hub), принадлежащая клиенту, для которого выполняется регистрация. Ее нужно создать в предложении поставщика облачных решений через Центр партнеров. Если у пользователя имеется несколько клиентов, подписку нужно создать в клиенте, который будет использоваться для входа в Azure Stack Hub. |
 | resourceGroup              | Группа ресурсов Azure, в которой хранятся данные об этой регистрации. |
-| registrationName           | Имя регистрации Azure Stack. Это объект, который хранится в Azure. Имя обычно представлено в формате **azurestack-CloudID**, где **CloudID** — это идентификатор облака для развертывания Azure Stack. |
+| registrationName           | Имя регистрации Azure Stack Hub. Это объект, который хранится в Azure. Имя обычно представлено в формате **azurestack-CloudID**, где **CloudID** — это идентификатор облака для развертывания Azure Stack Hub. |
 
 > [!NOTE]  
-> Клиенты должны быть зарегистрированы в каждом используемом ими экземпляре Azure Stack. Если клиент использует несколько экземпляров Azure Stack, внесите в первоначальные регистрации каждого развертывания данные о подписке клиента.
+> Клиенты должны быть зарегистрированы в каждом используемом ими экземпляре Azure Stack Hub. Если клиент использует несколько экземпляров Azure Stack Hub, внесите в первоначальные регистрации каждого развертывания данные о подписке клиента.
 
 ### <a name="powershell"></a>PowerShell
 
-Для добавления клиента используйте командлет **New-AzureRmResource**. [Подключитесь к Azure Stack](azure-stack-powershell-configure-admin.md), а затем в командной строке с повышенными привилегиями выполните следующий командлет:
+Для добавления клиента используйте командлет **New-AzureRmResource**. [Подключитесь к Azure Stack Hub](azure-stack-powershell-configure-admin.md), а затем в командной строке с повышенными привилегиями выполните следующий командлет:
 
 ```powershell  
 New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
@@ -81,15 +79,15 @@ New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/reso
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр                  | ОПИСАНИЕ          |
+| Параметр                  | Description          |
 |---                         | ---                  |
 | registrationSubscriptionId | Подписка Azure, которая использовалась для первоначальной регистрации.   |
 | resourceGroup              | Группа ресурсов Azure, в которой хранятся данные об этой регистрации.    |
-| registrationName           | Имя регистрации для развертывания Azure Stack. Это объект, который хранится в Azure. Имя обычно представлено в формате **azurestack-CloudID**, где **CloudID** — это идентификатор облака для развертывания Azure Stack.   |
+| registrationName           | Имя регистрации для развертывания Azure Stack Hub. Это объект, который хранится в Azure. Имя обычно представлено в формате **azurestack-CloudID**, где **CloudID** — это идентификатор облака для развертывания Azure Stack Hub.   |
 
 ### <a name="powershell"></a>PowerShell
 
-Для перечисления всех зарегистрированных клиентов воспользуйтесь командлетом **Get-AzureRmResource**. [Подключитесь к Azure Stack](azure-stack-powershell-configure-admin.md), а затем в командной строке с повышенными привилегиями выполните следующий командлет:
+Для перечисления всех зарегистрированных клиентов воспользуйтесь командлетом **Get-AzureRmResource**. [Подключитесь к Azure Stack Hub](azure-stack-powershell-configure-admin.md), а затем в командной строке с повышенными привилегиями выполните следующий командлет:
 
 ```powershell
 Get-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions" -ApiVersion 2017-06-01
@@ -99,7 +97,7 @@ Get-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/reso
 
 Список всех сопоставлений арендатора можно получить с помощью операции GET.
 
-**Operation:** ПОЛУЧЕНИЕ  
+**Operation:** GET  
 **URI запроса**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions?api-version=2017-06-01 HTTP/1.1`  
 **Ответ**: 200  
 **Текст ответа**:
@@ -125,11 +123,11 @@ Get-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/reso
 
 ## <a name="remove-a-tenant-mapping"></a>Удаление сопоставления клиента
 
-Вы можете удалить клиент, добавленный в регистрацию. Если этот клиент по-прежнему использует ресурсы Azure Stack, их использование относится на счет подписки, которая применялась при первоначальной регистрации Azure Stack.
+Вы можете удалить клиент, добавленный в регистрацию. Если этот клиент по-прежнему использует ресурсы Azure Stack Hub, их использование относится на счет подписки, которая применялась при первоначальной регистрации Azure Stack Hub.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр                  | ОПИСАНИЕ          |
+| Параметр                  | Description          |
 |---                         | ---                  |
 | registrationSubscriptionId | Идентификатор подписки для регистрации.   |
 | resourceGroup              | Группа ресурсов для регистрации.   |
@@ -138,7 +136,7 @@ Get-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/reso
 
 ### <a name="powershell"></a>PowerShell
 
-Для удаления клиента используйте командлет **Remove-AzureRmResource**. [Подключитесь к Azure Stack](azure-stack-powershell-configure-admin.md), а затем в командной строке с повышенными привилегиями выполните следующий командлет:
+Для удаления клиента используйте командлет **Remove-AzureRmResource**. [Подключитесь к Azure Stack Hub](azure-stack-powershell-configure-admin.md), а затем в командной строке с повышенными привилегиями выполните следующий командлет:
 
 ```powershell
 Remove-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01
@@ -148,11 +146,11 @@ Remove-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/r
 
 Вы можете удалить сопоставления клиента с помощью операции DELETE.
 
-**Operation:** УДАЛИТЬ  
+**Operation:** DELETE  
 **URI запроса**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}?api-version=2017-06-01 HTTP/1.1`  
 **Ответ**: 204 No Content (содержимое отсутствует)  
 **Текст ответа**: Empty
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Как получить сведения о потреблении ресурсов в Azure Stack](azure-stack-billing-and-chargeback.md)
+- [Потребление ресурсов и выставление счетов в Azure Stack Hub](azure-stack-billing-and-chargeback.md)

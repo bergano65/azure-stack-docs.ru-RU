@@ -1,6 +1,6 @@
 ---
-title: Развертывание Kubernetes в Azure Stack с помощью Azure Active Directory (Azure AD) | Документация Майкрософт
-description: Узнайте, как развернуть Kubernetes в Azure Stack с помощью Azure Active Directory (Azure AD).
+title: Развертывание Kubernetes в Azure Stack Hub с помощью Azure Active Directory (Azure AD) | Документация Майкрософт
+description: Узнайте, как развернуть Kubernetes в Azure Stack Hub с помощью Azure Active Directory (Azure AD).
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,63 +15,61 @@ ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 902645ffcb6fda4afad76a1a258b55f0ace2b189
-ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
+ms.openlocfilehash: 52b94a95c525ac4a327282380c241229e8bd7117
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73047241"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878481"
 ---
-# <a name="deploy-kubernetes-to-azure-stack-using-azure-active-directory"></a>Развертывание Kubernetes в Azure Stack с помощью Azure Active Directory
-
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+# <a name="deploy-kubernetes-to-azure-stack-hub-using-azure-active-directory"></a>Развертывание Kubernetes в Azure Stack Hub с помощью Azure Active Directory
 
 > [!Note]  
 > Используйте элемент Kubernetes Azure Stack Marketplace для развертывания кластеров в качестве проверки концепции. Для поддерживаемых кластеров Kubernetes в Azure Stack используйте [обработчик AKS](azure-stack-kubernetes-aks-engine-overview.md).
 
 Вы можете выполнить действия, описанные в этой статье, чтобы развернуть и настроить ресурсы для Kubernetes при использовании Azure Active Directory (Azure AD) в качестве службы управления удостоверениями в одной скоординированной операции.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-Прежде чем начать работу, убедитесь в наличии необходимых разрешений и в готовности Azure Stack.
+Прежде чем начать работу, убедитесь в наличии необходимых разрешений и в готовности Azure Stack Hub.
 
 1. Проверьте, можете ли вы создавать приложения в клиенте Azure Active Directory (Azure AD). Эти разрешения потребуются для развертывания Kubernetes.
 
     Инструкции по проверке разрешений см. в разделе [Check Azure Active Directory permissions](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal) (Проверка разрешений Azure Active Directory).
 
-1. Создайте пару открытого и закрытого ключей SSH для входа на виртуальную машину Linux в Azure Stack. Открытый ключ потребуется при создании кластера.
+1. Создайте пару открытого и закрытого ключей SSH для входа на виртуальную машину Linux в Azure Stack Hub. Открытый ключ потребуется при создании кластера.
 
     Инструкции по создания ключа см. в разделе [SSH Key Generation](azure-stack-dev-start-howto-ssh-public-key.md) (Создание ключа SSH).
 
-1. Убедитесь в наличии действующей подписки на портале клиента Azure Stack, а также достаточного количества общедоступных IP-адресов для добавления новых приложений.
+1. Убедитесь в наличии действующей подписки на портале клиента Azure Stack Hub, а также достаточного количества общедоступных IP-адресов для добавления новых приложений.
 
-    Кластер не может быть развернут в подписке **администратора** Azure Stack. Необходимо использовать подписку **пользователя**. 
+    Кластер не может быть развернут в подписке **администратора** Azure Stack Hub. Необходимо использовать подписку **пользователя**. 
 
-1. Если в Marketplace нет кластера Kubernetes, обратитесь к администратору Azure Stack.
+1. Если в Marketplace нет кластера Kubernetes, обратитесь к администратору Azure Stack Hub.
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
-Настройка субъекта-службы в Azure AD Субъект-служба предоставляет приложению доступ к ресурсам Azure Stack.
+Настройка субъекта-службы в Azure AD Субъект-служба предоставляет приложению доступ к ресурсам Azure Stack Hub.
 
 1. Войдите на глобальный [портал Azure](https://portal.azure.com).
 
-1. Убедитесь, что при входе используется клиент Azure AD, связанный с экземпляром Azure Stack. Вы можете переключиться для входа, щелкнув значок фильтра на панели инструментов Azure.
+1. Убедитесь, что при входе используется клиент Azure AD, связанный с экземпляром Azure Stack Hub. Вы можете переключиться для входа, щелкнув значок фильтра на панели инструментов Azure.
 
     ![Выбор клиента AD](media/azure-stack-solution-template-kubernetes-deploy/tenantselector.png)
 
 1. Создадим приложение Azure AD.
 
-    a. Войдите в учетную запись Azure через [портал Azure](https://portal.azure.com).  
+    а. Войдите в учетную запись Azure через [портал Azure](https://portal.azure.com).  
     b. Последовательно выберите элементы **Azure Active Directory** > **Регистрация приложений** > **Новая регистрация**.  
     c. Укажите имя и URL-адрес для приложения.  
     d. Выберите **Поддерживаемые типы учетных записей**.  
-    д.  Добавьте `http://localhost` в качестве URI для приложения. В качестве типа создаваемого приложения выберите **Веб-приложение**. Выбрав нужные значения, нажмите кнопку **Зарегистрировать**.
+    д)  Добавьте `http://localhost` в качестве URI для приложения. В качестве типа создаваемого приложения выберите **Веб-приложение**. Выбрав нужные значения, нажмите кнопку **Зарегистрировать**.
 
 1. Запишите значение **идентификатора приложения**. Идентификатор потребуется при создании кластера. Этот идентификатор называется **идентификатором клиента для субъекта-службы**.
 
 1. В колонке для субъекта-службы выберите **Новый секрет клиента**. **Параметры** > **Ключи**. Необходимо создать ключ аутентификации для субъекта-службы.
 
-    a. Введите **описание**.
+    а. Введите **описание**.
 
     b. Выберите для параметра **Срок действия** значение **Срок действия неограничен**.
 
@@ -81,7 +79,7 @@ ms.locfileid: "73047241"
 
 Предоставьте субъекту-службе доступ к вашей подписке, чтобы субъект мог создать ресурсы.
 
-1.  Войдите на [портал Azure Stack](https://portal.local.azurestack.external/).
+1.  Войдите на [портал Azure Stack Hub](https://portal.local.azurestack.external/).
 
 1. Выберите **Все службы** > **Подписки**.
 
@@ -97,7 +95,7 @@ ms.locfileid: "73047241"
 
 ## <a name="deploy-kubernetes"></a>Развертывание Kubernetes
 
-1. Откройте [портал Azure Stack](https://portal.local.azurestack.external).
+1. Откройте [портал Azure Stack Hub](https://portal.local.azurestack.external).
 
 1. Выберите **+Создать ресурс** > **Служба вычислений** > **Кластер Kubernetes**. Нажмите кнопку **Создать**.
 
@@ -113,7 +111,7 @@ ms.locfileid: "73047241"
 
 1. Введите имя новой группы ресурсов или выберите существующую. Имя ресурса должно содержать буквенно-цифровые символы. Оно вводится в нижнем регистре.
 
-1. Выберите **расположение** группы ресурсов. Это регион, выбранный для установки Azure Stack.
+1. Выберите **расположение** группы ресурсов. Это регион, выбранный для установки Azure Stack Hub.
 
 ### <a name="2-kubernetes-cluster-settings"></a>2. Параметры кластера Kubernetes
 
@@ -138,13 +136,13 @@ ms.locfileid: "73047241"
 
 1. Выберите **The VMSize of the Kubernetes master VMs** (Размер виртуальных машин узлов Kubernetes). Так указывается размер виртуальных машин узлов Kubernetes. 
 
-1. Выберите **Azure AD** в качестве **системы удостоверений Azure Stack** для установки Azure Stack.
+1. Выберите **Azure AD** в качестве **системы удостоверений Azure Stack Hub** для установки Azure Stack Hub.
 
-1. Введите **идентификатор клиента субъекта-службы**. Он используется поставщиком облачных служб Azure для Kubernetes. Идентификатор клиента определяется как идентификатор приложения, когда администратор Azure Stack создает субъект-службу.
+1. Введите **идентификатор клиента субъекта-службы**. Он используется поставщиком облачных служб Azure для Kubernetes. Идентификатор клиента определяется как идентификатор приложения, когда администратор Azure Stack Hub создает субъект-службу.
 
 1. Введите **секрет клиента субъекта-службы**. Это секрет клиента, который вы настроили при создании службы.
 
-1. Введите **версию Kubernetes**. Это версия поставщика Azure для Kubernetes. Azure Stack выпускает специальную сборку Kubernetes для каждой версии Azure Stack.
+1. Введите **версию Kubernetes**. Это версия поставщика Azure для Kubernetes. Azure Stack Hub выпускает специальную сборку Kubernetes для каждой версии Azure Stack Hub.
 
 ### <a name="3-summary"></a>3. Сводка
 
@@ -157,10 +155,10 @@ ms.locfileid: "73047241"
 3. Щелкните **ОК**, чтобы развернуть кластер.
 
 > [!TIP]  
->  Если у вас есть вопросы о развертывании, вы можете разместить свой вопрос или поискать ответы на вопрос на [форуме Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack).
+>  Если у вас есть вопросы о развертывании, вы можете разместить свой вопрос или поискать ответы на вопрос на [форуме Azure Stack Hub](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Подключение к кластеру](azure-stack-solution-template-kubernetes-deploy.md#connect-to-your-cluster)
 

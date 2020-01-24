@@ -1,6 +1,6 @@
 ---
-title: Общие сведения о хранилище Azure Stack | Документация Майкрософт
-description: Узнайте о службах хранилища Azure Stack.
+title: Общие сведения о хранилище Azure Stack Hub | Документация Майкрософт
+description: Узнайте о службах хранилища Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,27 +11,25 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/02/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: dfa9666387093f60dfd41e371707dff23119dc9a
-ms.sourcegitcommit: a7207f4a4c40d4917b63e729fd6872b3dba72968
+ms.openlocfilehash: cb58b2edc8a7a9ec96317a902ad79b8bacce89ec
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71909590"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76536425"
 ---
-# <a name="introduction-to-azure-stack-storage"></a>Общие сведения о хранилище Azure Stack
-
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+# <a name="introduction-to-azure-stack-hub-storage"></a>Общие сведения о хранилище Azure Stack Hub
 
 ## <a name="overview"></a>Обзор
 
-Хранилище Azure Stack — это набор служб облачного хранения, совместимых со службами, предоставляемыми службой хранилища Azure. К ним относятся службы больших двоичных объектов, таблиц и очередей.
+Хранилище Azure Stack Hub — это набор служб облачного хранения, совместимых со службами, предоставляемыми службой хранилища Azure. К ним относятся службы больших двоичных объектов, таблиц и очередей.
 
-## <a name="azure-stack-storage-services"></a>Службы хранилища Azure Stack
+## <a name="azure-stack-hub-storage-services"></a>Служба хранилища Azure Stack Hub
 
-Хранилище Azure Stack обеспечивает следующие три службы.
+Хранилище Azure Stack Hub обеспечивает следующие три службы.
 
 - **Хранилище BLOB-объектов**
 
@@ -45,9 +43,9 @@ ms.locfileid: "71909590"
 
     Хранилище очередей обеспечивает надежный обмен сообщениями для обработки рабочего процесса и для взаимодействия между компонентами облачных служб.
 
-Учетная запись хранения Azure Stack — это безопасная учетная запись, которая предоставляет доступ к службам хранилища Azure Stack. Учетная запись хранения предоставляет уникальное пространство имен для хранения ваших ресурсов. На схеме ниже показано взаимодействие ресурсов хранилища Azure Stack в рамках учетной записи хранения.
+Учетная запись хранения Azure Stack Hub — это безопасная учетная запись, которая предоставляет доступ к службам хранилища Azure Stack Hub. Учетная запись хранения предоставляет уникальное пространство имен для хранения ваших ресурсов. На схеме ниже показано взаимодействие ресурсов хранилища Azure Stack Hub в рамках учетной записи хранения.
 
-![Обзор хранилища Azure Stack](media/azure-stack-storage-overview/AzureStackStorageOverview.png)
+![Обзор хранилища Azure Stack Hub](media/azure-stack-storage-overview/AzureStackStorageOverview.png)
 
 ### <a name="blob-storage"></a>Хранилище BLOB-объектов
 
@@ -74,7 +72,7 @@ ms.locfileid: "71909590"
 
 - **Страничные BLOB-объекты**
 
-    Страничные BLOB-объекты оптимизированы для представления дисков IaaS и поддержки произвольных записей размером до 1 ТБ. Диск IaaS, присоединенный к виртуальной машине Azure Stack, представляет собой виртуальный жесткий диск (VHD), хранящийся в виде страничного BLOB-объекта.
+    Страничные BLOB-объекты оптимизированы для представления дисков IaaS и поддержки произвольных записей размером до 1 ТБ. Диск IaaS, присоединенный к виртуальной машине Azure Stack Hub, представляет собой виртуальный жесткий диск (VHD), хранящийся в виде страничного BLOB-объекта.
 
 ### <a name="table-storage"></a>Хранилище таблиц
 
@@ -92,7 +90,7 @@ ms.locfileid: "71909590"
 
 В учетной записи хранения может содержаться любое количество очередей, а в очереди может быть любое количество сообщений в пределах емкости учетной записи. Отдельные сообщения могут иметь размер до 64 КБ.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Хранилище Azure Stack. Отличия и рекомендации](azure-stack-acs-differences.md)
 

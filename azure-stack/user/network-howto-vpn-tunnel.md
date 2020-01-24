@@ -1,6 +1,6 @@
 ---
-title: Сведения о настройке нескольких VPN-туннелей типа "сеть — сеть" в Azure Stack | Документация Майкрософт
-description: Узнайте как настроить несколько VPN-туннелей типа "сеть — сеть" в Azure Stack | Документация Майкрософт.
+title: Сведения о настройке нескольких VPN-туннелей типа "сеть — сеть" в Azure Stack Hub | Документация Майкрософт
+description: Узнайте как настроить несколько VPN-туннелей типа "сеть — сеть" в Azure Stack Hub.
 services: azure-stack
 author: mattbriggs
 ms.service: azure-stack
@@ -9,18 +9,16 @@ ms.date: 09/19/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: d85de1892e2e6620249ff3a95ee2debb01b81981
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.openlocfilehash: 4593898a1ea70b2001c252f885b12db2f16e922e
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73168285"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883054"
 ---
-# <a name="how-to-set-up-a-multiple-site-to-site-vpn-tunnel-in-azure-stack"></a>Сведения о настройке нескольких VPN-туннелей типа "сеть — сеть" в Azure Stack
+# <a name="how-to-set-up-a-multiple-site-to-site-vpn-tunnel-in-azure-stack-hub"></a>Сведения о настройке нескольких VPN-туннелей типа "сеть — сеть" в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-В этой статье показано, как использовать шаблон Azure Stack Resource Manager для развертывания решения. Решение создает несколько групп ресурсов с соответствующими виртуальными сетями и способами подключения этих систем.
+В этой статье показано, как использовать шаблон Resource Manager в Azure Stack Hub для развертывания решения. Решение создает несколько групп ресурсов с соответствующими виртуальными сетями и способами подключения этих систем.
 
 Вы можете найти шаблоны в разделе [Шаблоны интеллектуальных границ Azure](https://github.com/Azure-Samples/azure-intelligent-edge-patterns) репозитория GitHub. Шаблон находится в папке**rras-gre-vnet-vnet**. 
 
@@ -34,7 +32,7 @@ ms.locfileid: "73168285"
 
 -  Развертывание приложения трех уровней, веб-приложений, поиска в Интернете и баз данных.
 
--  Разверните два первых шаблона на отдельных экземплярах Azure Stack.
+-  Разверните два первых шаблона на отдельных экземплярах Azure Stack Hub.
 
 -  Уровень **WebTier** будет размещен на PPE1, а уровень **AppTier** — на PPE2.
 
@@ -44,15 +42,15 @@ ms.locfileid: "73168285"
 
 ## <a name="steps-to-deploy-multiple-vpns"></a>Действия по развертыванию нескольких VPN
 
-Это процесс с несколькими шагами. Для этого решения вы будете использовать портал Azure Stack. Однако вы можете использовать PowerShell, Azure CLI или другие цепочки средств как кода для сбора выходных данных, а затем использовать их в качестве входных.
+Это процесс с несколькими шагами. Для этого решения вы будете использовать портал Azure Stack Hub. Однако вы можете использовать PowerShell, Azure CLI или другие цепочки средств как кода для сбора выходных данных, а затем использовать их в качестве входных.
 
 ![замещающий текст](./media/azure-stack-network-howto-vpn-tunnel/image2.png)
 
 ## <a name="walkthrough"></a>Пошаговое руководство
 
-### <a name="deploy-web-tier-to-azure-stack-instances-ppe1"></a>Развертывание веб-уровня в экземплярах Azure Stack PPE1
+### <a name="deploy-web-tier-to-azure-stack-hub-instances-ppe1"></a>Развертывание веб-уровня в экземплярах Azure Stack Hub PPE1
 
-1.  Откройте портал пользователя Azure Stack и выберите **Создать ресурс**.
+1.  Откройте портал пользователя Azure Stack Hub и выберите **Создать ресурс**.
 
 2.  Выберите **Развертывание шаблона**.
 
@@ -69,7 +67,7 @@ ms.locfileid: "73168285"
 
     ![](./media/azure-stack-network-howto-vpn-tunnel/image5.png)
 
-### <a name="deploy-app-tier-to-the-second-azure-stack-instances"></a>Развертывание уровня приложений во втором экземпляре Azure Stack
+### <a name="deploy-app-tier-to-the-second-azure-stack-hub-instances"></a>Развертывание уровня приложений во втором экземпляре Azure Stack Hub
 
 Вы можете использовать тот же процесс, что и **WebTier**, но другие параметры, как показано ниже:
 
@@ -96,7 +94,7 @@ ms.locfileid: "73168285"
 
 ### <a name="create-tunnel-from-web-tier-to-app-tier"></a>Создание туннеля от веб-уровня до уровня приложения
 
-1.  Откройте портал пользователя Azure Stack и выберите **Создать ресурс**.
+1.  Откройте портал пользователя Azure Stack Hub и выберите **Создать ресурс**.
 
 2.  Выберите **Развертывание шаблона**.
 
@@ -108,7 +106,7 @@ ms.locfileid: "73168285"
 
 ### <a name="create-tunnel-from-app-tier-to-web-tier"></a>Создание туннеля из уровня приложения в веб-уровень
 
-1.  Откройте портал пользователя Azure Stack и выберите **Создать ресурс**.
+1.  Откройте портал пользователя Azure Stack Hub и выберите **Создать ресурс**.
 
 2.  Выберите **Развертывание шаблона**.
 
@@ -163,7 +161,7 @@ ms.locfileid: "73168285"
 
 ### <a name="configure-app-tier-to-db-tier"></a>Настройка уровня приложения для уровня базы данных
 
-1.  Откройте портал пользователя Azure Stack и выберите **Создать ресурс**.
+1.  Откройте портал пользователя Azure Stack Hub и выберите **Создать ресурс**.
 
 2.  Выберите **Развертывание шаблона**.
 
@@ -201,7 +199,7 @@ ms.locfileid: "73168285"
     > Вы можете тестировать RDP как с одной машины на другую, так и со второй на первую.
 
     > [!Note]  
-    > Для локальной реализации этого решения вам потребуется развернуть маршруты к удаленной сети Azure Stack в коммутационной инфраструктуре или, как минимум, на определенных виртуальных машинах
+    > Для локальной реализации этого решения вам потребуется развернуть маршруты к удаленной сети Azure Stack Hub в коммутационной инфраструктуре или, как минимум, на определенных виртуальных машинах
 
 ### <a name="deploying-a-gre-tunnel"></a>Развертывание туннеля GRE
 
@@ -211,8 +209,8 @@ ms.locfileid: "73168285"
 
 ![](./media/azure-stack-network-howto-vpn-tunnel/image24.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Сети Azure Stack: различия и рекомендации](azure-stack-network-differences.md)  
+[Сети Azure Stack Hub: различия и рекомендации](azure-stack-network-differences.md)  
 [How to create a VPN tunnel using GRE](network-howto-vpn-tunnel-gre.md) (Создание VPN-туннеля с помощью GRE)  
 [How to create a VPN Tunnel using IPSEC](network-howto-vpn-tunnel-ipsec.md) (Создание VPN-туннеля с помощью IPSEC)

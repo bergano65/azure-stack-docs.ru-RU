@@ -1,6 +1,6 @@
 ---
-title: Использование средства проверки Azure Stack для оценки состояния системы | Документация Майкрософт
-description: Из этой статьи вы узнаете, как использовать средство проверки Azure Stack для оценки состояния системы
+title: Использование средства проверки Azure Stack Hub для оценки состояния системы | Документация Майкрософт
+description: Из этой статьи вы узнаете, как использовать средство проверки Azure Stack Hub для оценки состояния системы.
 services: azure-stack
 author: justinha
 manager: femila
@@ -10,26 +10,32 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 06/26/2019
+ms.date: 01/10/2020
 ms.author: justinha
 ms.reviewer: adshar
-ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 98732c3eb5933e1fd6d7ce42d726d3f5019c97eb
-ms.sourcegitcommit: 53f7daf295783a30feb284d4c48c30c6936557c5
+ms.lastreviewed: 01/10/2020
+ms.openlocfilehash: 778f38f0ed3d1b1801b162624daa365ed6d1f09c
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830961"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882510"
 ---
-# <a name="validate-azure-stack-system-state"></a>Проверка состояния системы Azure Stack
+# <a name="validate-azure-stack-hub-system-state"></a>Проверка состояния системы Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-Для оператора Azure Stack очень важна возможность по запросу определять работоспособность и состояние системы. Средство проверки Azure Stack (**Test-AzureStack**) представляет собой командлет PowerShell, который позволяет выполнить в системе ряд тестов для выявления сбоев. Обычно при обращении в службу поддержки клиентов служб Майкрософт (CSS) для устранения проблем вам будут предлагать запустить это средство из [привилегированной конечной точки (PEP)](azure-stack-privileged-endpoint.md). Получив сведения о работоспособности и состоянии всей системы, служба поддержки клиентов переходит к сбору и анализу подробных журналов по тем областям, где произошла ошибка, и при вашем участии устраняет проблему.
+Для оператора Azure Stack Hub очень важна возможность по запросу определять работоспособность и состояние системы. Средство проверки Azure Stack Hub (**Test-AzureStack**) представляет собой командлет PowerShell, который позволяет выполнить в системе ряд тестов для выявления сбоев. Обычно при обращении в службу поддержки клиентов служб Майкрософт (CSS) для устранения проблем вам будут предлагать запустить это средство из [привилегированной конечной точки (PEP)](azure-stack-privileged-endpoint.md). Получив сведения о работоспособности и состоянии всей системы, служба поддержки клиентов переходит к сбору и анализу подробных журналов по тем областям, где произошла ошибка, и при вашем участии устраняет проблему.
 
 ## <a name="running-the-validation-tool-and-accessing-results"></a>Запуск средства проверки и доступ к результатам
 
 Как уже упоминалось выше, средство проверки запускается из привилегированной конечной точки. Каждый тест возвращает состояние **успеха или сбоя** в окне PowerShell. Ниже приводится описание полного процесса проверочного тестирования.
+
+1. Установите доверие. В интегрированной системе выполните указанную ниже команду из сеанса Windows PowerShell с повышенными правами, чтобы добавить PEP в качестве доверенного узла на защищенную виртуальную машину, работающую на узле жизненного цикла оборудования, или на рабочую станцию с привилегированным доступом.
+
+   ```powershell
+   winrm s winrm/config/client '@{TrustedHosts="<IP Address of Privileged Endpoint>"}'
+   ```
+
+   Если вы используете Пакет средств разработки Azure Stack Hub (ASDK), войдите на узел комплекта разработки.
 
 1. Войдите на привилегированную конечную точку. Выполните следующие команды, чтобы создать сеанс подключения к привилегированной конечной точке:
 
@@ -40,7 +46,7 @@ ms.locfileid: "74830961"
    > [!TIP]
    > Чтобы обратиться к привилегированной конечной точке на компьютере с Пакетом средств разработки Azure Stack (ASDK), укажите значение AzS-ERCS01 для параметра -ComputerName.
 
-2. После подключения к привилегированной конечной точке выполните следующую команду:
+1. После подключения к привилегированной конечной точке выполните следующую команду:
 
    ```powershell
    Test-AzureStack
@@ -48,11 +54,11 @@ ms.locfileid: "74830961"
 
    Подробные сведения см. в разделах [Рекомендации по настройке параметров](azure-stack-diagnostic-test.md#parameter-considerations) и [Примеры использования](azure-stack-diagnostic-test.md#use-case-examples).
 
-3. Если любой из тестов вернет состояние **FAIL** (Сбой), выполните команду `Get-AzureStackLog`. Инструкции для интегрированной системы см. в статье о [запуске Get-AzureStackLog в интегрированных системах Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs), а инструкции для ASDK — в статье о [запуске Get-AzureStackLog в системе с ASDK](azure-stack-configure-on-demand-diagnostic-log-collection.md#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system).
+1. Если любой из тестов вернет состояние **FAIL** (Сбой), выполните команду `Get-AzureStackLog`. Инструкции для интегрированной системы см. в статье о [запуске Get-AzureStackLog в интегрированных системах Azure Stack Hub](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs), а инструкции для ASDK — в статье о [запуске Get-AzureStackLog в системе с ASDK](azure-stack-configure-on-demand-diagnostic-log-collection.md#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system).
 
    Этот командлет собирает журналы, созданные командлетом Test-AzureStack. Если тест возвратит результат **WARN** (Предупреждение), мы рекомендуем не собирать журналы, а сразу связаться со службой поддержки.
 
-4. Если вы запускаете средство проверки по просьбе службы поддержки пользователей, нужно будет передать сотруднику службы поддержки собранные журналы для продолжения работы по устранению проблемы.
+1. Если вы запускаете средство проверки по просьбе службы поддержки пользователей, нужно будет передать сотруднику службы поддержки собранные журналы для продолжения работы по устранению проблемы.
 
 ## <a name="tests-available"></a>Доступные тесты
 
@@ -64,32 +70,32 @@ ms.locfileid: "74830961"
 
 | Категория тестов                                        | Аргумент для параметров -Include (Включить) и -Ignore (Игнорировать) |
 | :--------------------------------------------------- | :-------------------------------- |
-| Сводка по ACS для Azure Stack                              | AzsAcsSummary                     |
-| Сводка по Azure Active Directory в Azure Stack                 | AzsAdSummary                      |
-| Сводка по оповещениям Azure Stack                            | AzsAlertSummary                   |
-| Сводка о сбое приложения Azure Stack                | AzsApplicationCrashSummary        |
-| Сводка по доступу к общему ресурсу резервных копий Azure Stack       | AzsBackupShareAccessibility       |
-| Сводка по BMC для Azure Stack                              | AzsStampBMCSummary                |
-| Сводка по инфраструктуре, размещающей облако Azure Stack     | AzsHostingInfraSummary            |
-| Использование инфраструктуры, размещающей облако Azure Stack | AzsHostingInfraUtilization        |
-| Сводка по плоскости управления Azure Stack                    | AzsControlPlane                   |
-| Сводка по Защитнику Azure Stack                         | AzsDefenderSummary                |
-| Сводка по встроенному ПО для инфраструктуры размещения Azure Stack  | AzsHostingInfraFWSummary          |
-| Производительность инфраструктуры Azure Stack                  | AzsInfraCapacity                  |
-| Производительность инфраструктуры Azure Stack               | AzsInfraPerformance               |
-| Сводка по роли инфраструктуры Azure Stack              | AzsInfraRoleSummary               |
-| Сетевая инфраструктура Azure Stack                            | AzsNetworkInfra                   |
-| Сводка по API и порталу Azure Stack                   | AzsPortalAPISummary               |
-| События виртуальной машины для единицы масштабирования Azure Stack                     | AzsScaleUnitEvents                |
-| Ресурсы виртуальной машины для единицы масштабирования Azure Stack                  | AzsScaleUnitResources             |
-| Сценарии Azure Stack                                | AzsScenarios                      |
-| Сводка по проверке SDN для Azure Stack                   | AzsSDNValidation                  |
-| Сводка по роли Service Fabric для Azure Stack              | AzsSFRoleSummary                  |
-| Плоскость данных хранилища Azure Stack                       | AzsStorageDataPlane               |
-| Сводка по службам хранилища Azure Stack                 | AzsStorageSvcsSummary             |
-| Сводка по хранилищу SQL для Azure Stack                        | AzsStoreSummary                   |
-| Сводка по обновлению Azure Stack                           | AzsInfraUpdateSummary             |
-| Сводка по размещению виртуальных машин для Azure Stack                     | AzsVmPlacement                    |
+| Сводка по ACS для Azure Stack Hub                              | AzsAcsSummary                     |
+| Сводка по Azure Active Directory в Azure Stack Hub                 | AzsAdSummary                      |
+| Сводка по оповещениям Azure Stack Hub                            | AzsAlertSummary                   |
+| Сводка о сбое приложения Azure Stack Hub                | AzsApplicationCrashSummary        |
+| Сводка по доступу к общему ресурсу резервных копий Azure Stack Hub       | AzsBackupShareAccessibility       |
+| Сводка по BMC для Azure Stack Hub                              | AzsStampBMCSummary                |
+| Сводка по инфраструктуре, размещающей облако Azure Stack Hub     | AzsHostingInfraSummary            |
+| Использование инфраструктуры, размещающей облако Azure Stack Hub | AzsHostingInfraUtilization        |
+| Сводка по уровню управления Azure Stack Hub                    | AzsControlPlane                   |
+| Сводка по Защитнику Azure Stack Hub                         | AzsDefenderSummary                |
+| Сводка по встроенному ПО для инфраструктуры размещения Azure Stack Hub  | AzsHostingInfraFWSummary          |
+| Емкость инфраструктуры Azure Stack Hub                  | AzsInfraCapacity                  |
+| Производительность инфраструктуры Azure Stack Hub               | AzsInfraPerformance               |
+| Сводка по роли инфраструктуры Azure Stack Hub              | AzsInfraRoleSummary               |
+| Сетевая инфраструктура Azure Stack Hub                            | AzsNetworkInfra                   |
+| Сводка по API и порталу Azure Stack Hub                   | AzsPortalAPISummary               |
+| События виртуальной машины для единицы масштабирования Azure Stack Hub                     | AzsScaleUnitEvents                |
+| Ресурсы виртуальной машины для единицы масштабирования Azure Stack Hub                  | AzsScaleUnitResources             |
+| Сценарии Azure Stack Hub                                | AzsScenarios                      |
+| Сводка по проверке SDN для Azure Stack Hub                   | AzsSDNValidation                  |
+| Сводка по роли Service Fabric для Azure Stack Hub              | AzsSFRoleSummary                  |
+| Плоскость данных хранилища Azure Stack Hub                       | AzsStorageDataPlane               |
+| Сводка по службам хранилища Azure Stack Hub                 | AzsStorageSvcsSummary             |
+| Сводка по хранилищу SQL для Azure Stack Hub                        | AzsStoreSummary                   |
+| Сводка по обновлению Azure Stack Hub                           | AzsInfraUpdateSummary             |
+| Сводка по размещению виртуальных машин для Azure Stack Hub                     | AzsVmPlacement                    |
 
 ### <a name="cloud-scenario-tests"></a>Тесты облачных сценариев
 
@@ -167,13 +173,13 @@ Test-AzureStack -ServiceAdminCredential "<Cloud administrator user name>" -Inclu
 Чтобы улучшить эффективность операции, был добавлен параметр **Group**, который используется для одновременного выполнения нескольких категорий тестов. На данный момент определены 3 группы: **Default** (По умолчанию), **UpdateReadiness** (Готовность к обновлению) и **SecretRotationReadiness** (Готовность к ротации секретов).
 
 - **По умолчанию**: Это следует рассматривать как стандартный запуск **Test-AzureStack**. Если другие группы не выбраны, эта группа выполняется по умолчанию.
-- **UpdateReadiness**. Проверка возможности обновить экземпляр Azure Stack. При выполнении группы **UpdateReadiness** могут отображаться предупреждения в виде ошибок в выходных данных консоли, которые следует рассматривать как условия, препятствующие обновлению. Начиная с версии Azure Stack 1910, следующие категории входят в группу **UpdateReadiness**:
+- **UpdateReadiness**. Проверка возможности обновить экземпляр Azure Stack Hub. При выполнении группы **UpdateReadiness** могут отображаться предупреждения в виде ошибок в выходных данных консоли, которые следует рассматривать как условия, препятствующие обновлению. Начиная с версии Azure Stack Hub 1910, следующие категории входят в группу **UpdateReadiness**:
 
   - **AzsInfraFileValidation**;
   - **AzsActionPlanStatus**;
   - **AzsStampBMCSummary**.
 
-- **SecretRotationReadiness**. Эта проверка помогает узнать, позволяет ли текущее состояние экземпляра Azure Stack выполнять ротацию секретов. При выполнении группы **SecretRotationReadiness** могут отображаться предупреждения в виде ошибок в выходных данных консоли, которые следует рассматривать как условия, препятствующие ротации секретов. К группе SecretRotationReadiness принадлежат следующие категории.
+- **SecretRotationReadiness**. Эта проверка помогает узнать, позволяет ли текущее состояние экземпляра Azure Stack Hub выполнять ротацию секретов. При выполнении группы **SecretRotationReadiness** могут отображаться предупреждения в виде ошибок в выходных данных консоли, которые следует рассматривать как условия, препятствующие ротации секретов. К группе SecretRotationReadiness принадлежат следующие категории.
 
   - **AzsAcsSummary**
   - **AzsDefenderSummary**
@@ -187,13 +193,13 @@ Test-AzureStack -ServiceAdminCredential "<Cloud administrator user name>" -Inclu
 
 #### <a name="group-parameter-example"></a>Пример параметра группы
 
-В приведенном ниже примере мы выполняем **Test-AzureStack**, чтобы проверить готовность системы перед установкой обновления или исправления с помощью **Group**. Прежде чем устанавливать обновление или исправление, запустите **Test-AzureStack** для проверки состояния Azure Stack.
+В приведенном ниже примере мы выполняем **Test-AzureStack**, чтобы проверить готовность системы перед установкой обновления или исправления с помощью **Group**. Прежде чем устанавливать обновление или исправление, запустите **Test-AzureStack** для проверки состояния Azure Stack Hub.
 
 ```powershell
 Test-AzureStack -Group UpdateReadiness
 ```
 
-Если используется версия Azure Stack ниже, чем 1811, для выполнения **Test-AzureStack** используйте следующие команды PowerShell:
+Если используется версия Azure Stack Hub ниже, чем 1811, для выполнения **Test-AzureStack** используйте следующие команды PowerShell:
 
 ```powershell
 New-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName PrivilegedEndpoint -Credential $localcred 
@@ -225,7 +231,7 @@ Test-AzureStack -Include AzsControlPlane, AzsDefenderSummary, AzsHostingInfraSum
 
 ### <a name="run-validation-tool-to-test-network-infrastructure"></a>Запуск средства проверки для тестирования сетевой инфраструктуры
 
-Этот тест проверяет подключения сетевой инфраструктуры, выполняя обход программно-определяемой сети (SDN) Azure Stack. Он демонстрирует подключение с общедоступного виртуального IP-адреса к настроенным DNS-серверам пересылки, NTP-серверам и конечным точкам аутентификации. Сюда входит подключение к Azure при использовании Azure AD в качестве поставщика удостоверений или к федеративному серверу при использовании AD FS в качестве поставщика удостоверений.
+Этот тест проверяет подключения сетевой инфраструктуры, выполняя обход программно-определяемой сети (SDN) Azure Stack Hub. Он демонстрирует подключение с общедоступного виртуального IP-адреса к настроенным DNS-серверам пересылки, NTP-серверам и конечным точкам аутентификации. Сюда входит подключение к Azure при использовании Azure AD в качестве поставщика удостоверений или к федеративному серверу при использовании AD FS в качестве поставщика удостоверений.
 
 Добавьте параметр debug, чтобы получить подробные выходные данные команды.
 
@@ -233,8 +239,8 @@ Test-AzureStack -Include AzsControlPlane, AzsDefenderSummary, AzsHostingInfraSum
 Test-AzureStack -Include AzsNetworkInfra -Debug
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о средствах диагностики Azure Stack и ведении журналов проблем см. в статье [Средства диагностики Azure Stack](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
+Дополнительные сведения о средствах диагностики Azure Stack Hub и ведении журналов проблем см. в разделе [Сбор журналов диагностики с помощью привилегированной конечной точки (PEP)](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
 
-Дополнительные сведения об устранении неполадок см. в статье [Устранение неполадок, связанных с Microsoft Azure Stack](azure-stack-troubleshooting.md).
+Дополнительные сведения об устранении неполадок с Microsoft Azure Stack Hub см. в [этой статье](azure-stack-troubleshooting.md).

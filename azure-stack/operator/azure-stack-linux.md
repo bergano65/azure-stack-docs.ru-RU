@@ -1,6 +1,6 @@
 ---
-title: Добавление образов Linux в Azure Stack Marketplace | Документация Майкрософт
-description: Из этой статьи вы узнаете, как добавлять образы Linux в Azure Stack Marketplace.
+title: Добавление образов Linux в Azure Stack Hub Marketplace | Документация Майкрософт
+description: Из этой статьи вы узнаете, как добавлять образы Linux в Azure Stack Hub Marketplace.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,34 +15,32 @@ ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 11/16/2018
-ms.openlocfilehash: 208e632634c59be0338c70020e7fc0fdae846797
-ms.sourcegitcommit: cefba8d6a93efaedff303d3c605b02bd28996c5d
+ms.openlocfilehash: d8714901bc8ac8f8c20b9b2649527f8e6f6627fc
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74299009"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882408"
 ---
-# <a name="add-linux-images-to-azure-stack-marketplace"></a>Добавление образов Linux в Azure Stack Marketplace
+# <a name="add-linux-images-to-azure-stack-hub-marketplace"></a>Добавление образов Linux в Azure Stack Hub Marketplace
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-Виртуальные машины Linux можно развернуть в Azure Stack, добавив образ на базе Linux в Azure Stack Marketplace. Проще всего добавить образ Linux в Azure Stack с помощью управления Marketplace. Эти образы были подготовлены и протестированы на совместимость с Azure Stack.
+Виртуальные машины Linux можно развернуть в Azure Stack Hub, добавив образ на базе Linux в Azure Stack Hub Marketplace. Проще всего добавить образ Linux в Azure Stack Hub с помощью управления Marketplace. Эти образы были подготовлены и протестированы на совместимость с Azure Stack Hub.
 
 ## <a name="marketplace-management"></a>Управление Marketplace
 
-Сведения о том, как скачать образы Linux из Azure Marketplace, см. в статье [Скачивание элементов Marketplace из Azure и их публикация в Azure Stack](azure-stack-download-azure-marketplace-item.md). Выберите образы Linux, которые вы хотите предложить пользователям в Azure Stack.
+Сведения о том, как скачать образы Linux из Azure Marketplace, см. в статье [Скачивание элементов Marketplace в Azure Stack Hub](azure-stack-download-azure-marketplace-item.md). Выберите образы Linux, которые вы хотите предложить пользователям в Azure Stack Hub.
 
 Эти образы часто обновляются, поэтому чаще посещайте портал управления Marketplace, чтобы обеспечить их актуальное состояние.
 
 ## <a name="prepare-your-own-image"></a>Подготовка собственного образа
 
-По возможности скачивайте образы, доступные на портале управления Marketplace. Они будут подготовлены и протестированы для Azure Stack.
+По возможности скачивайте образы, доступные на портале управления Marketplace. Они были подготовлены и протестированы для Azure Stack Hub.
 
 ### <a name="azure-linux-agent"></a>Агент Linux для Azure
 
-Агент Linux для Azure (обычно называется **WALinuxAgent** или **walinuxagent**) использовать обязательно, при этом не все версии агента будут работать с Azure Stack. Версии с 2.2.21 по 2.2.34 (включительно) не поддерживаются в Azure Stack. Для использования последней версии агента выше 2.2.35 примените исправления 1901 и 1902 или обновите Azure Stack до выпуска 1903 (или последующего). Обратите внимание, что [cloud-init](https://cloud-init.io/) поддерживается в выпусках Azure Stack, более поздних, чем версия 1910.
+Агент Linux для Azure (обычно называется **WALinuxAgent** или **walinuxagent**) использовать обязательно, при этом не все версии агента будут работать с Azure Stack Hub. Версии с 2.2.21 по 2.2.34 (включительно) не поддерживаются в Azure Stack Hub. Для использования последней версии агента выше 2.2.35 примените исправления 1901 и 1902 или обновите Azure Stack Hub до выпуска 1903 (или последующего). Обратите внимание, что [cloud-init](https://cloud-init.io/) поддерживается в выпусках Azure Stack Hub, более поздних, чем версия 1910.
 
-| Сборка Azure Stack | Сборка агента Linux для Azure |
+| Сборка Azure Stack Hub | Сборка агента Linux для Azure |
 | ------------- | ------------- |
 | 1.1901.0.99 или предыдущая | 2.2.20 |
 | 1.1902.0.69  | 2.2.20  |
@@ -63,7 +61,7 @@ ms.locfileid: "74299009"
 
 ## <a name="cloud-init"></a>Cloud-init
 
-[Cloud-init](https://cloud-init.io/) поддерживается в выпусках Azure Stack более поздних, чем версия 1910. Чтобы использовать cloud-init для настройки виртуальной машины Linux, выполните следующие инструкции для PowerShell: 
+[Cloud-init](https://cloud-init.io/) поддерживается в выпусках Azure Stack Hub, более поздних, чем версия 1910. Чтобы использовать cloud-init для настройки виртуальной машины Linux, выполните следующие инструкции для PowerShell: 
 
 ### <a name="step-1-create-a-cloud-inittxt-file-with-your-cloud-config"></a>Шаг 1. Создание файла cloud-init.txt с облачной конфигурацией
 
@@ -113,8 +111,8 @@ runcmd:
   
 ### <a name="step-2-reference-the-cloud-inittxt-during-the-linux-vm-deployment"></a>Шаг 2. Добавление ссылки на cloud-init.txt во время развертывания виртуальной машины Linux
 
-Отправьте файл в учетную запись хранения Azure, учетную запись хранения Azure Stack или репозиторий GitHub, доступный для виртуальной машины Azure Stack в Linux.
-В настоящее время использование cloud-init для развертывания виртуальных машин поддерживается только в REST, PowerShell и CLI. В Azure Stack нет связанного пользовательского интерфейса портала.
+Отправьте файл в учетную запись хранения Azure, учетную запись хранения Azure Stack Hub или репозиторий GitHub, доступный для виртуальной машины Azure Stack Hub в Linux.
+В настоящее время использование cloud-init для развертывания виртуальных машин поддерживается только в REST, PowerShell и CLI. В Azure Stack Hub нет связанного пользовательского интерфейса портала.
 
 Чтобы создать виртуальную машину Linux с помощью PowerShell, выполните [эти](../user/azure-stack-quick-create-vm-linux-powershell.md) инструкции, но обязательно добавьте ссылку на файл cloud-init.txt в рамках флага `-CustomData`:
 
@@ -131,7 +129,7 @@ $VirtualMachine =Set-AzureRmVMOperatingSystem -VM $VirtualMachine `
 
 После добавления образа в Marketplace создается элемент Marketplace, и пользователи могут развернуть виртуальную машину Linux.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Скачивание элементов Marketplace из Azure в Azure Stack](azure-stack-download-azure-marketplace-item.md)
-* [Общие сведения об Azure Stack Marketplace](azure-stack-marketplace.md)
+* [Скачивание элементов Marketplace из Azure в Azure Stack Hub](azure-stack-download-azure-marketplace-item.md)
+* [Общие сведения об Azure Stack Hub Marketplace](azure-stack-marketplace.md)

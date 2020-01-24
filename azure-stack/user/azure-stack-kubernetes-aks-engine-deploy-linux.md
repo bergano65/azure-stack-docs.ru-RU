@@ -1,6 +1,6 @@
 ---
-title: Установка обработчика AKS в Azure Stack в Linux | Документация Майкрософт
-description: Из этой статьи вы узнаете, как разместить обработчик AKS на компьютере под управлением Linux в Azure Stack для развертывания кластера Kubernetes и управления им.
+title: Установка обработчика AKS в Azure Stack Hub в Linux | Документация Майкрософт
+description: Из этой статьи вы узнаете, как разместить обработчик AKS на компьютере под управлением Linux в Azure Stack Hub для развертывания кластера Kubernetes и управления им.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,26 +11,24 @@ ms.workload: na
 pms.tgt_pltfrm: na (Kubernetes)
 ms.devlang: nav
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 01/10/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 3095ede91ce8ac98f1571307c61b28e80aa90fba
-ms.sourcegitcommit: 0b783e262ac87ae67929dbd4c366b19bf36740f0
+ms.openlocfilehash: d9f56d8d40d4f4420e073516678017c4904dd7d1
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310277"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878957"
 ---
-# <a name="install-the-aks-engine-on-linux-in-azure-stack"></a>Установка обработчика AKS в Azure Stack в Linux
+# <a name="install-the-aks-engine-on-linux-in-azure-stack-hub"></a>Установка обработчика AKS в Azure Stack Hub в Linux
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-Вы можете разместить обработчик AKS на компьютере под управлением Linux в Azure Stack для развертывания кластера Kubernetes и управления им. В этой статье мы опишем процессы подготовки клиентской виртуальной машины для управления кластером в подключенных и отключенных экземплярах Azure Stack, а также проверки установки и настройки клиентской виртуальной машины на ASDK.
+Вы можете разместить обработчик AKS на компьютере под управлением Linux в Azure Stack Hub для развертывания кластера Kubernetes и управления им. В этой статье мы опишем процессы подготовки клиентской виртуальной машины для управления кластером в подключенных и отключенных экземплярах Azure Stack Hub, а также проверки установки и настройки клиентской виртуальной машины на ASDK.
 
 ## <a name="prepare-the-client-vm"></a>Подготовка клиентской виртуальной машины
 
-Обработчик AKS представляет собой средство командной строки, предназначенное для развертывания кластера Kubernetes и управления им. Вы можете запустить обработчик на компьютере в Azure Stack. С этого компьютера через работающий обработчик AKS вы сможете развернуть ресурсы IaaS и программное обеспечение, необходимые для запуска кластера. Затем с того же компьютера, на котором выполняется обработчик, вы сможете выполнять задачи управления для этого кластера.
+Обработчик AKS представляет собой средство командной строки, предназначенное для развертывания кластера Kubernetes и управления им. Вы можете запустить обработчик на компьютере в Azure Stack Hub. С этого компьютера через работающий обработчик AKS вы сможете развернуть ресурсы IaaS и программное обеспечение, необходимые для запуска кластера. Затем с того же компьютера, на котором выполняется обработчик, вы сможете выполнять задачи управления для этого кластера.
 
 При выборе клиентского компьютера учитывайте следующее:
 
@@ -39,11 +37,11 @@ ms.locfileid: "74310277"
 
 ## <a name="install-in-a-connected-environment"></a>Установка в подключенной среде
 
-Вы можете установить клиентскую виртуальную машину для управления кластером Kubernetes в среде Azure Stack, подключенной к Интернету.
+Вы можете установить клиентскую виртуальную машину для управления кластером Kubernetes в среде Azure Stack Hub, подключенной к Интернету.
 
-1. Создайте виртуальную машину Linux в Azure Stack. Инструкции см. в статье [Краткое руководство. Создание виртуальной машины с сервером Linux с помощью портала Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-linux-portal).
+1. Создайте виртуальную машину Linux в Azure Stack Hub. Инструкции см. в статье [Краткое руководство. Создание виртуальной машины с сервером Linux с помощью портала Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-linux-portal).
 2. Подключитесь к виртуальной машине.
-3. Найдите версию обработчика AKS в таблице [поддерживаемых версий Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). Базовый обработчик AKS должен быть доступен в Azure Stack Marketplace. При выполнении этой команды укажите версию `--version v0.43.0`. Если вы ее не укажете, команда попытается установить последнюю версию, для которой может понадобиться образ VHD, недоступный в вашем marketplace.
+3. Найдите версию обработчика AKS в таблице [поддерживаемых версий Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). Базовый обработчик AKS должен быть доступен в Azure Stack Hub Marketplace. При выполнении этой команды укажите версию `--version v0.43.0`. Если вы ее не укажете, команда попытается установить последнюю версию, для которой может понадобиться образ VHD, недоступный в вашем marketplace.
 4. Выполните следующую команду:
 
     ```bash  
@@ -57,15 +55,15 @@ ms.locfileid: "74310277"
 
 ## <a name="install-in-a-disconnected-environment"></a>Установка в отключенной среде
 
-Вы можете установить клиентскую виртуальную машину для управления кластером Kubernetes в среде Azure Stack, не подключенной к Интернету.
+Вы можете установить клиентскую виртуальную машину для управления кластером Kubernetes в среде Azure Stack Hub, не подключенной к Интернету.
 
 1.  На компьютере с доступом к Интернету откройте репозиторий [Azure/aks-engine](https://github.com/Azure/aks-engine/releases/latest) на сайте GitHub. Скачайте архив (*.tar.gz) для компьютера Linux, например `aks-engine-v0.xx.x-linux-amd64.tar.gz`.
 
-2.  Создайте учетную запись хранения в экземпляре Azure Stack, чтобы передать в нее файл архива (*.tar.gz) с двоичным файлом обработчика AKS. Инструкции по использованию Обозревателя службы хранилища Azure см. в статье [Подключение обозревателя службы хранилища к подписке Azure Stack или к учетной записи хранения](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-connect-se).
+2.  Создайте учетную запись хранения в экземпляре Azure Stack Hub, чтобы передать в нее файл архива (*.tar.gz) с двоичным файлом обработчика AKS. Инструкции по использованию Обозревателя службы хранилища Azure см. в статье [Подключение обозревателя службы хранилища к подписке Azure Stack Hub или к учетной записи хранения](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-connect-se).
 
-3. Создайте виртуальную машину Linux в Azure Stack. Инструкции см. в статье [Краткое руководство. Создание виртуальной машины с сервером Linux с помощью портала Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-linux-portal).
+3. Создайте виртуальную машину Linux в Azure Stack Hub. Инструкции см. в статье [Краткое руководство. Создание виртуальной машины с сервером Linux с помощью портала Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-linux-portal).
 
-3.  Используя URL-адрес большого двоичного объекта в учетной записи хранения Azure Stack, на который вы отправили файл архива (*.tar.gz), скачайте этот файл на виртуальную машину управления. Извлеките архив в каталог `/usr/local/bin`.
+3.  Используя URL-адрес большого двоичного объекта в учетной записи хранения Azure Stack Hub, на который вы отправили файл архива (*.tar.gz), скачайте этот файл на виртуальную машину управления. Извлеките архив в каталог `/usr/local/bin`.
 
 4. Подключитесь к виртуальной машине.
 
@@ -83,9 +81,16 @@ ms.locfileid: "74310277"
 1. Подключитесь к клиентской виртуальной машине.
 2. Выполните следующую команду:
 
-    ```bash  
-    aks-engine version
-    ```
+   ```bash  
+   aks-engine version
+   ```
+
+3. Если конечная точка Azure Resource Manager использует самозаверяющий сертификат, нужно явно добавить корневой сертификат в хранилище доверенных сертификатов компьютера. Корневой сертификат можно найти на виртуальной машине в этом каталоге: /var/lib/waagent/Certificates.pem. Скопируйте файл сертификата с помощью следующей команды: 
+
+   ```bash
+   sudo cp /var/lib/waagent/Certificates.pem /usr/local/share/ca-certificates/azurestackca.crt 
+   sudo update-ca-certificates
+   ```
 
 Если вам не удастся подтвердить установку обработчика AKS на клиентской виртуальной машине, воспользуйтесь инструкциями [по устранению проблем при установке обработчика AKS](azure-stack-kubernetes-aks-engine-troubleshoot.md).
 
@@ -104,7 +109,7 @@ sudo cp /var/lib/waagent/Certificates.pem /usr/local/share/ca-certificates/azure
 sudo update-ca-certificates
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Развертывание кластера Kubernetes с обработчиком AKS в Azure Stack](azure-stack-kubernetes-aks-engine-deploy-cluster.md)
+> [Развертывание кластера Kubernetes с обработчиком AKS в Azure Stack Hub](azure-stack-kubernetes-aks-engine-deploy-cluster.md)

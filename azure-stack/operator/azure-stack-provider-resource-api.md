@@ -15,12 +15,12 @@ ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/25/2018
-ms.openlocfilehash: 914f363efa5800c331239a547ee3edd577806188
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: e1d2e350079ab3d58802c8490da30a4c9555885d
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718119"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023255"
 ---
 # <a name="provider-resource-usage-api"></a>API использования ресурсов для поставщиков
 
@@ -44,7 +44,7 @@ ms.locfileid: "75718119"
 
 | Аргумент | Description |
 | --- | --- |
-| `armendpoint` |Конечная точка Azure Resource Manager среды Azure Stack. В соответствии с соглашением Azure Stack Hub имя конечной точки Azure Resource Manager должно иметь формат `https://adminmanagement.{domain-name}`. Например, если для пакета средств разработки Azure Stack (ASDK) доменное имя — *local.azurestack.external*, то конечная точка Azure Resource Manager — `https://adminmanagement.local.azurestack.external`. |
+| `armendpoint` |Конечная точка Azure Resource Manager среды Azure Stack Hub. В соответствии с соглашением Azure Stack Hub имя конечной точки Azure Resource Manager должно иметь формат `https://adminmanagement.{domain-name}`. Например, если для пакета средств разработки Azure Stack (ASDK) доменное имя — *local.azurestack.external*, то конечная точка Azure Resource Manager — `https://adminmanagement.local.azurestack.external`. |
 | `subId` |Идентификатор подписки пользователя, который выполняет вызов. |
 | `reportedStartTime` |Время начала выполнения запроса. Значение `DateTime` должно быть в формате UTC и соответствовать началу нужного часа (например, 13:00). Для сбора сведений за сутки это значение должно соответствовать полуночи в формате UTC. В этом формате используется экранирование символов ISO 8601. Например, значение `2015-06-16T18%3a53%3a11%2b00%3a00Z` можно использовать в составе URI, так как символ двоеточия преобразован в `%3a`, а плюс — в `%2b`. |
 | `reportedEndTime` |Время завершения выполнения запроса. Действуют те же ограничения, что и для аргумента `reportedStartTime`. Значение `reportedEndTime` не может относиться ни к будущему, ни к текущему дню. В противном случае возвращается результат "Обработка не завершена". |

@@ -1,6 +1,6 @@
 ---
-title: Управление Key Vault в Azure Stack с помощью портала | Документация Майкрософт
-description: Узнайте, как использовать портал Azure Stack для управления Key Vault в Azure Stack.
+title: Управление хранилищем ключей в Azure Stack Hub с помощью портала | Документация Майкрософт
+description: Узнайте, как использовать портал Azure Stack Hub для управления хранилищем ключей в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -12,21 +12,21 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/03/2019
+ms.date: 01/10/2020
 ms.author: sethm
-ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: fc0907ffb905012043a3e446fcc29cc9e06f6932
-ms.sourcegitcommit: b2d19e12a50195bb8925879ee75c186c9604f313
+ms.lastreviewed: 1/10/2020
+ms.openlocfilehash: 1ba2be2d37cfa0b0d850f67124440fb9de13a23f
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961503"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75879161"
 ---
-# <a name="manage-key-vault-in-azure-stack-using-the-portal"></a>Управление Key Vault в Azure Stack с помощью портала
+# <a name="manage-key-vault-in-azure-stack-hub-using-the-portal"></a>Управление хранилищем ключей в Azure Stack Hub с помощью портала
 
-В этой статье описывается, как создать и администрировать хранилище ключей в Azure Stack с помощью портала Azure Stack.
+В этой статье описывается, как создать и администрировать хранилище ключей в Azure Stack Hub с помощью портала Azure Stack Hub.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Необходимо подписаться на предложение, включающее службу Azure Key Vault.
 
@@ -58,11 +58,11 @@ ms.locfileid: "71961503"
 
 ### <a name="create-a-key"></a>Создание ключа
 
-1. Войдите на [портал пользователя](https://portal.local.azurestack.external).
+1. Войдите на [портал пользователя](https://portal.local.azurestack.external) Azure Stack Hub.
 
 2. На панели мониторинга щелкните **Все ресурсы**, выберите созданное ранее хранилище ключей и щелкните плитку **Ключи**.
 
-3. На панели **Ключи** выберите действие **Добавить**.
+3. На панели **Ключи** выберите **Generate/Import** (Создать или импортировать).
 
 4. В области **Создание ключа** откройте список **Параметры** и выберите метод создания ключа. Вы можете **создать** новый ключ, **отправить** существующий или **восстановить резервную копию** ключа.
 
@@ -96,7 +96,7 @@ ms.locfileid: "71961503"
 
 ![URI секрета](media/azure-stack-key-vault-manage-portal/image5.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание виртуальной машины с извлечением пароля, хранящегося в хранилище ключей](azure-stack-key-vault-deploy-vm-with-secret.md).
 * [Развертывание виртуальной машины с помощью сертификата, хранящегося в Key Vault](azure-stack-key-vault-push-secret-into-vm.md).

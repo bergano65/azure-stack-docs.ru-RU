@@ -1,6 +1,6 @@
 ---
-title: Новые возможности в Azure Stack Marketplace | Документация Майкрософт
-description: Изменения и обновления в Azure Stack Marketplace.
+title: Новые возможности в Azure Stack Hub Marketplace | Документация Майкрософт
+description: Изменения и обновления в Azure Stack Hub Marketplace.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,18 +15,18 @@ ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: ihcherie
 ms.lastreviewed: 10/01/2019
-ms.openlocfilehash: 49b3ac4123a385b468d5eb995ac00bb768347d5d
-ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
+ms.openlocfilehash: 3dbd177f080067283ba22d661e08d54c23e642ff
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72534070"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022783"
 ---
-# <a name="azure-stack-marketplace-changes"></a>Изменения в Azure Stack Marketplace
+# <a name="azure-stack-hub-marketplace-changes"></a>Изменения в Azure Stack Hub Marketplace
 
-В этой статье описываются последние добавленные, обновленные, измененные и удаленные [элементы Azure Stack Marketplace](azure-stack-marketplace-azure-items.md) (примерно за последние три месяца). Сведения в этом разделе часто обновляются, поэтому регулярно проверяйте наличие изменений.
+В этой статье описываются последние добавленные, обновленные, измененные и удаленные [элементы Azure Stack Hub Marketplace](azure-stack-marketplace-azure-items.md) (примерно за последние 3 месяца). Сведения в этом разделе часто обновляются, поэтому регулярно проверяйте наличие изменений.
 
-Статья [Элементы Marketplace для Azure Stack](azure-stack-marketplace-azure-items.md) всегда содержит самый актуальный список доступных элементов Azure Stack Marketplace.
+Статья [Элементы Marketplace для Azure Stack Hub](azure-stack-marketplace-azure-items.md) всегда содержит самый актуальный список доступных элементов Azure Stack Hub Marketplace.
 
 ## <a name="new-marketplace-items"></a>Новые элементы Marketplace
 
@@ -105,7 +105,7 @@ ms.locfileid: "72534070"
 - 30.07.2019: SQLIaaSExtension — версия 1.3.20180.
 - 08.08.2019: расширение CloudLink SecureVM для Linux — версия 6.8
 - 08.08.2019: расширение CloudLink SecureVM для Windows — версия 6.8
-- 30.08.2019: кластер Kubernetes в Azure Stack — версия 0.5.1
+- 30.08.2019: кластер Kubernetes в Azure Stack Hub — версия 0.5.1
 - 02.09.2019: базовый образ AKS — версия 2019.08.09 и версия 2019.08.21
 - 12.09.2019: Service Fabric — версия 1.0.3
 - 24.09.2019: F5-Networks Big-IP Virtual Edition — версия 14.1.200000
@@ -113,10 +113,10 @@ ms.locfileid: "72534070"
 - 01.10.2019.  Расширение Microsoft JsonADDomain — версия 1.3.4
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure Stack Marketplace см. в следующих статьях:
+См. сведения об Azure Stack Hub Marketplace в следующих статьях:
 
 - [Обзор Azure Marketplace](azure-stack-marketplace.md)
-- [Элементы Azure Marketplace, доступные для Azure Stack](azure-stack-marketplace-azure-items.md)
-- [Создание и публикация элемента Marketplace](azure-stack-create-and-publish-marketplace-item.md)
+- [Элементы Azure Marketplace, доступные для Azure Stack Hub](azure-stack-marketplace-azure-items.md)
+- [Создание и публикация пользовательского элемента Azure Stack Marketplace](azure-stack-create-and-publish-marketplace-item.md)

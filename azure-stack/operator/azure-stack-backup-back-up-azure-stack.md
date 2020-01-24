@@ -1,6 +1,6 @@
 ---
-title: Резервное копирование для Azure Stack | Документация Майкрософт
-description: Сведения о том, как выполнять резервное копирование по требованию для Azure Stack.
+title: Резервное копирование для Azure Stack Hub | Документация Майкрософт
+description: Сведения о том, как выполнять резервное копирование по требованию для Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,20 +16,18 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 09/05/2018
-ms.openlocfilehash: 01a4ff62b7cc340a0cf0f98298ee28425d6df892
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: 04f07af2860518174bf1f2e65ed17e85c34b4692
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974729"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882680"
 ---
-# <a name="back-up-azure-stack"></a>Резервное копирование для Azure Stack
+# <a name="back-up-azure-stack-hub"></a>Резервное копирование для Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+В этой статье рассказывается о том, как выполнять резервное копирование по требованию для Azure Stack Hub. Инструкции по настройке среды PowerShell приведены в статье [Установка PowerShell для Azure Stack Hub](azure-stack-powershell-install.md). Чтобы войти в Azure Stack Hub, см. [Использование портала администрирования в Azure Stack Hub](azure-stack-manage-portals.md).
 
-В этой статье рассказывается о том, как выполнять резервное копирование по требованию для Azure Stack. Инструкции по настройке среды PowerShell приведены в статье [Установка PowerShell для Azure Stack](azure-stack-powershell-install.md). Чтобы войти в Azure Stack, см. [Использование портала администрирования в Azure Stack](azure-stack-manage-portals.md).
-
-## <a name="start-azure-stack-backup"></a>Запуск резервного копирования Azure Stack
+## <a name="start-azure-stack-hub-backup"></a>Запуск резервного копирования Azure Stack Hub
 
 ### <a name="start-a-new-backup-without-job-progress-tracking"></a>Запуск нового резервного копирования без отслеживания хода выполнения задания
 Используйте команду Start-AzSBackup для немедленного запуска нового резервного копирования без отслеживания прогресса выполнения задания.
@@ -38,7 +36,7 @@ ms.locfileid: "70974729"
    Start-AzsBackup -Force
 ```
 
-### <a name="start-azure-stack-backup-with-job-progress-tracking"></a>Запуск резервного копирования Azure Stack с отслеживанием хода выполнения задания
+### <a name="start-azure-stack-hub-backup-with-job-progress-tracking"></a>Запуск резервного копирования Azure Stack Hub с отслеживанием хода выполнения задания
 Запустите новое резервное копирование с помощью команды Start-AzSBackup с параметром **-AsJob** и сохраните его в качестве переменной, позволяющей отслеживать ход выполнения создания резервной копии.
 
 > [!NOTE]
@@ -112,13 +110,13 @@ ms.locfileid: "70974729"
 ```
 
 ### <a name="confirm-backup-has-completed-in-the-administrator-portal"></a>Подтверждение завершения резервного копирования с помощью портала администрирования
-Используйте портал администрирования Azure Stack для проверки успешного завершения резервного копирования, выполнив следующие шаги:
+Используйте портал администрирования Azure Stack Hub для проверки успешности завершения резервного копирования, выполнив следующие шаги:
 
-1. Войдите на [портал администрирования Azure Stack](azure-stack-manage-portals.md).
+1. Откройте [портал администрирования Azure Stack Hub](azure-stack-manage-portals.md).
 2. Выберите **Все службы**, а затем в категории **Администрирование** выберите пункт **Инфраструктура резервного копирования**. Выберите **Конфигурация** в колонке **Резервное копирование инфраструктуры**.
 3. Найти **имя** и **дату завершения** резервного копирования в списке **доступных резервных копий**.
 4. Убедитесь, что для **состояния** отображается значение **Выполнено**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о рабочем процессе по [восстановлению после потери данных](azure-stack-backup-recover-data.md).

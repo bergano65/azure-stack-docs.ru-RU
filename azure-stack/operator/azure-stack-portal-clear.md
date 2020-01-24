@@ -1,6 +1,6 @@
 ---
-title: Удаление данных пользователя портала из Azure Stack по запросу | Документация Майкрософт
-description: Узнайте, как оператор Azure Stack может удалять данные пользователей портала по запросу пользователей Azure Stack.
+title: Удаление данных пользователя портала из Azure Stack Hub по запросу. | Документы Майкрософт
+description: Узнайте, как оператор Azure Stack Hub может удалять данные пользователей портала по запросу пользователей Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -17,18 +17,18 @@ ms.author: sethm
 ms.reviewer: troettinger
 ms.lastreviewed: 09/10/2019
 monikerRange: azs-1802
-ms.openlocfilehash: 2dd88656491a474e4082ff4e8321af836776b1f0
-ms.sourcegitcommit: 451cfaa24b349393f36ae9d646d4d311a14dd1fd
+ms.openlocfilehash: ac28a67f7b1409ebc5a786a88e8b9702df94c2ff
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72019118"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022772"
 ---
-# <a name="clear-portal-user-data-from-azure-stack"></a>Удаление данных пользователя портала из Azure Stack
+# <a name="clear-portal-user-data-from-azure-stack-hub"></a>Удаление данных пользователя портала из Azure Stack Hub
 
-Операторы Azure Stack могут удалять данные пользователей портала по запросу. Пользователи Azure Stack могут настраивать портал, закрепляя плитки и изменяя макет панели мониторинга. Пользователи также могут изменять тему и выбирать язык по умолчанию. 
+Операторы Azure Stack Hub могут удалять данные пользователей портала по запросу. Пользователи Azure Stack Hub могут настраивать портал, закрепляя плитки и изменяя макет панели мониторинга. Пользователи также могут изменять тему и выбирать язык по умолчанию. 
 
-Данные пользователя портала — это элементы из категории "Избранное" и недавно использовавшиеся ресурсы на пользовательском портале Azure Stack. В статье описано, как удалить данные пользователя портала.
+Данные пользователя портала — это элементы из категории "Избранное" и недавно использовавшиеся ресурсы на пользовательском портале Azure Stack Hub. В статье описано, как удалить данные пользователя портала.
 
 Удалять пользовательские настройки портала нужно только после удаления пользовательской подписки.
 
@@ -37,10 +37,10 @@ ms.locfileid: "72019118"
 
 ## <a name="requirements"></a>Требования
 
-- [Установите PowerShell для Azure Stack](azure-stack-powershell-install.md).
-- [Скачайте средства Azure Stack последней версии](azure-stack-powershell-download.md) на сайте GitHub.
+- [Установка PowerShell для Azure Stack Hub](azure-stack-powershell-install.md).
+- [Скачайте средства Azure Stack Hub последней версии](azure-stack-powershell-download.md) на сайте GitHub.
 - Включите учетную запись пользователя в каталог.
-- Настройте учетные данные администратора Azure Stack для доступа к конечной точке администратора Resource Manager.
+- Настройте учетные данные администратора Azure Stack Hub для доступа к конечной точке администратора Resource Manager.
 
 > [!NOTE]
 > Если вам нужно удалить данные пользователя, который был приглашен из гостевого каталога (мультитенантного), вам понадобится разрешение на чтение для этого каталога. Дополнительные сведения см. далее в разделе о [сценарии для поставщика облачных служб](#clear-portal-user-data-in-guest-directory).
@@ -49,9 +49,9 @@ ms.locfileid: "72019118"
 
 В этом сценарии предполагается, что подписка поставщика по умолчанию и пользователь принадлежат к одному каталогу или что у вас есть доступ на чтение к каталогу, с которым связан пользователь.
 
-Обязательно [скачайте средства Azure Stack последней версии](azure-stack-powershell-download.md) на сайте GitHub, прежде чем продолжать.
+Обязательно [скачайте средства Azure Stack Hub последней версии](azure-stack-powershell-download.md) на сайте GitHub, прежде чем продолжать.
 
-Для выполнения этой процедуры используйте компьютер, который может взаимодействовать с конечной точкой администратора Resource Manager в Azure Stack.
+Для выполнения этой процедуры используйте компьютер, который может взаимодействовать с конечной точкой администратора Resource Manager в Azure Stack Hub.
 
 1. Откройте сеанс Windows PowerShell с повышенными привилегиями (запуск от имени администратора), перейдите в корневую папку в каталоге **AzureStack-Tools-master** и импортируйте необходимый модуль PowerShell:
 
@@ -66,7 +66,7 @@ ms.locfileid: "72019118"
 
    $adminARMEndpoint = "https://adminmanagement.local.azurestack.external"
 
-   ## Replace the following value with the Azure Stack directory tenant ID.
+   ## Replace the following value with the Azure Stack Hub directory tenant ID.
    $azureStackDirectoryTenantId = "f5025bf2-547f-4b49-9693-6420c1d5e4ca"
 
    ## Replace the following value with the user directory tenant ID.
@@ -82,15 +82,15 @@ ms.locfileid: "72019118"
    ```
 
    > [!NOTE]
-   > `azureStackDirectoryTenantId` является необязательным. Если это значение не указано, скрипт выполняет поиск имени участника-пользователя во всех каталогах клиентов, зарегистрированных в Azure Stack, а затем удаляет данные всех соответствующих пользователей портала.
+   > Аргумент `azureStackDirectoryTenantId` является необязательным. Если это значение не указано, скрипт выполняет поиск имени участника-пользователя во всех каталогах клиентов, зарегистрированных в Azure Stack Hub, а затем удаляет данные всех соответствующих пользователей портала.
 
 ## <a name="clear-portal-user-data-in-guest-directory"></a>Удаление данных пользователя портала в гостевом каталоге
 
-В этом сценарии оператор Azure Stack не имеет доступа к гостевому каталогу, с которым связан пользователь. Это распространенный сценарий для поставщиков облачных решений (CSP).
+В этом сценарии оператор Azure Stack Hub не имеет доступа к гостевому каталогу, с которым связан пользователь. Это распространенный сценарий для поставщиков облачных решений (CSP).
 
-Чтобы оператор Azure Stack мог удалить данные пользователя портала, ему необходим по крайней мере идентификатор объекта пользователя.
+Чтобы оператор Azure Stack Hub мог удалить данные пользователя портала, ему необходим по крайней мере идентификатор объекта пользователя.
 
-Пользователь должен запросить идентификатор объекта и предоставить его оператору Azure Stack. Оператор не имеет доступа к каталогу, в котором находится пользователь.
+Пользователь должен запросить идентификатор объекта и предоставить его оператору Azure Stack Hub. Оператор не имеет доступа к каталогу, в котором находится пользователь.
 
 ### <a name="user-retrieves-the-user-object-id"></a>Получение пользователем идентификатора объекта пользователя
 
@@ -118,11 +118,11 @@ ms.locfileid: "72019118"
    ```
 
    > [!NOTE]
-   > Пользователь должен передать оператору Azure Stack идентификатор объекта пользователя, возвращаемый указанным скриптом.
+   > Пользователь должен передать оператору Azure Stack Hub идентификатор объекта пользователя, возвращаемый указанным скриптом.
 
-## <a name="azure-stack-operator-removes-the-portal-user-data"></a>Удаление данных пользователя портала оператором Azure Stack
+## <a name="azure-stack-hub-operator-removes-the-portal-user-data"></a>Удаление данных пользователя портала оператором Azure Stack Hub
 
-После получения идентификатора объекта пользователя оператор Azure Stack выполняет следующие команды, чтобы удалить данные пользователя портала:
+После получения идентификатора объекта пользователя оператор Azure Stack Hub выполняет следующие команды, чтобы удалить данные пользователя портала:
 
 1. Откройте сеанс Windows PowerShell с повышенными привилегиями (запуск от имени администратора), перейдите в корневую папку в каталоге **AzureStack-Tools-master** и импортируйте необходимый модуль PowerShell.
 
@@ -136,7 +136,7 @@ ms.locfileid: "72019118"
    ## The following Azure Resource Manager endpoint is for the ASDK. If you are in a multinode environment, contact your operator or service provider to get the endpoint.
    $AzsAdminARMEndpoint = "https://adminmanagement.local.azurestack.external"
 
-   ## Replace the following value with the Azure Stack directory tenant ID.
+   ## Replace the following value with the Azure Stack Hub directory tenant ID.
    $AzsAdminDirectoryTenantId = "f5025bf2-547f-4b49-9693-6420c1d5e4ca"
    
    ## Replace the following value with the directory tenant ID of the user to clear.
@@ -150,6 +150,6 @@ ms.locfileid: "72019118"
     -UserObjectID $userObjectID `
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Регистрация Azure Stack в Azure](azure-stack-registration.md) и заполнение [Azure Stack Marketplace](azure-stack-marketplace.md) элементами, которые можно предложить пользователям.
+- [Зарегистрируйте Azure Stack Hub в Azure](azure-stack-registration.md) и заполните [Azure Stack Hub Marketplace](azure-stack-marketplace.md) элементами, которые можно предложить пользователям.

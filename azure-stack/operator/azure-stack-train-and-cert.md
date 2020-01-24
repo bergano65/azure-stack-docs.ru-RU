@@ -1,6 +1,7 @@
 ---
-title: Обучение и сертификация Azure Stack
-description: Дополнительные сведения о сертификации и обучении Azure Stack
+title: Обучение и сертификация
+titleSuffix: Azure Stack
+description: Дополнительные сведения о возможностях сертификации и обучения Azure Stack Hub.
 services: azure-stack
 author: mattbriggs
 manager: femila
@@ -10,38 +11,38 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.lastreviewed: 11/11/2019
 ms.reviewer: efemmano
-ms.openlocfilehash: 89b200acfe87f5e4f30896104cb8c3eb5ebef67f
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 3fdba0792ffb00d7685089a6629a563a6687502e
+ms.sourcegitcommit: c4368652f0dd68c432aa1dabddbabf161a4a6399
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955229"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75914665"
 ---
-# <a name="azure-stack-training-and-certification"></a>Обучение и сертификация Azure Stack
+# <a name="azure-stack-hub-training-and-certification"></a>Обучение и сертификация Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack*
+*Область применения: интегрированные системы Azure Stack Hub*
 
-Следующие возможности обучения и сертификации помогут вам изучить Azure Stack и продемонстрировать свои знания об Azure Stack.
+Хотите узнать о Azure Stack Hub и продемонстрировать свое мастерство в работе с Azure Stack Hub? Ознакомьтесь со следующими возможностями для обучения и сертификации.
 
 ## <a name="training"></a>Обучение
 
-- Официальные курсы Microsoft по запросу
-   - [ODX20537: Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack (180 Day)](https://www.microsoft.com/en-us/learning/course.aspx?cid=ODX20537) (Курс ODX20537. Настройка и эксплуатация гибридного облака с помощью Microsoft Azure Stack (180 дней)
-   - [OD20537: Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack (90 Day)](https://www.microsoft.com/en-us/learning/course.aspx?cid=OD20537) (Курс ODX20537. Настройка и эксплуатация гибридного облака с помощью Microsoft Azure Stack (90 дней)
+- Официальные курсы Microsoft по запросу:
+   - [ODX20537: Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack Hub (180 Day)](https://www.microsoft.com/learning/course.aspx?cid=ODX20537) (Курс 20537A. Настройка и эксплуатация гибридного облака с помощью Microsoft Azure Stack Hub (180 дней))
+   - [OD20537: Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack Hub (90 Day)](https://www.microsoft.com/learning/course.aspx?cid=OD20537) (Курс 20537A. Настройка и эксплуатация гибридного облака с помощью Microsoft Azure Stack Hub (90 дней))
 
-- Учебный курс Microsoft по ИТ
-   - [Course 20537A: Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack](https://aka.ms/azsmoc) (Курс 20537A. Настройка и эксплуатация гибридного облака с помощью Microsoft Azure Stack)
+- Учебный курс Microsoft по ИТ:
+   - [Course 20537A: Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack Hub](https://aka.ms/azsmoc) (Курс 20537A. Настройка и эксплуатация гибридного облака с помощью Microsoft Azure Stack Hub)
 
-- Open edX
-   - [edX: Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack](https://aka.ms/AzureStackMOOC) (Настройка и эксплуатация гибридного облака с помощью Microsoft Azure Stack)
+- Open edx:
+   - [edX: Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack Hub](https://aka.ms/AzureStackMOOC) (Настройка и эксплуатация гибридного облака с помощью Microsoft Azure Stack Hub)
    
-- Схемы обучения Майкрософт
+- Схемы обучения Майкрософт:
    - [Роли и схемы обучения](https://azure.microsoft.com/training/learning-paths/)
 
 ## <a name="certification"></a>Сертификация
 
-*Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack certification*, [Exam 70-537](https://www.microsoft.com/learning/exam-70-537.aspx) (Сертификация по настройке и эксплуатации гибридного облака с помощью Microsoft Azure Stack. Экзамен 70-537)
+*Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack Hub certification*, [Exam 70-537](https://www.microsoft.com/learning/exam-70-537.aspx) (Сертификация по настройке и эксплуатации гибридного облака с помощью Microsoft Azure Stack Hub. Экзамен 70-537)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Документация оператора по Azure Stack](/azure-stack/operator)
+[документация по Azure Stack Hub](/azure-stack/operator)

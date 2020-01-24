@@ -1,6 +1,6 @@
 ---
-title: Управление учетными записями хранения Azure Stack | Документация Майкрософт
-description: Сведения о поиске, восстановлении, освобождении учетных записей хранения Azure Stack и управлении ими.
+title: Управление учетными записями хранения Azure Stack Hub | Документация Майкрософт
+description: Сведения о поиске, восстановлении, освобождении учетных записей хранения Azure Stack Hub и управлении ими.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,30 +15,30 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: 9af79442a0fb56e4d6a9cef99741b0180e84304c
-ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
+ms.openlocfilehash: 888d34441af672dfcfa27e8f48237c41105ce629
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72534184"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817131"
 ---
-# <a name="manage-azure-stack-storage-accounts"></a>Управление учетными записями хранения Azure Stack
+# <a name="manage-azure-stack-hub-storage-accounts"></a>Управление учетными записями хранения Azure Stack Hub
 
-Сведения об управлении учетными записями хранения Azure Stack. Выполняйте поиск, восстановление и освобождение емкости хранилища в соответствии с бизнес-потребностями.
+Сведения об управлении учетными записями хранения Azure Stack Hub. Выполняйте поиск, восстановление и освобождение емкости хранилища в соответствии с бизнес-потребностями.
 
 ## <a name="find-a-storage-account"></a>Поиск учетной записи хранения
 
-Чтобы просмотреть список учетных записей хранения в регионе в Azure Stack, сделайте следующее:
+Чтобы просмотреть список учетных записей хранения в регионе в Azure Stack Hub, выполните приведенные ниже действия.
 
 1. Войдите на [портал администрирования](https://adminportal.local.azurestack.external).
 
 2. Выберите **Все службы** > **Хранилище** > **Учетные записи хранения**.
 
-   ![Учетные записи хранения Azure Stack](media/azure-stack-manage-storage-accounts/image4.png)
+   ![Учетные записи хранения Azure Stack Hub](media/azure-stack-manage-storage-accounts/image4.png)
 
 По умолчанию отображаются первые 10 учетных записей. Чтобы просмотреть другие учетные записи, щелкните ссылку **Загрузить еще** в нижней части списка.
 
-Или
+OR
 
 Если вам требуется определенная учетная запись хранения, **отфильтруйте список, чтобы отобразить требуемые учетные записи**.
 
@@ -48,7 +48,7 @@ ms.locfileid: "72534184"
 2. На панели "Фильтр" можно указать **имя учетной записи**, **идентификатор подписки** или **состояние**, чтобы на основе этих критериев отобразить список учетных записей хранения. Укажите нужные значения.
 3. По мере ввода в списке автоматически применяется фильтр.
 
-    ![Фильтрация учетных записей хранения Azure Stack](media/azure-stack-manage-storage-accounts/image5.png)
+    ![Фильтрация учетных записей хранения Azure Stack Hub](media/azure-stack-manage-storage-accounts/image5.png)
 
 4. Чтобы сбросить фильтр, выберите **Фильтр**, очистите выбранные элементы и нажмите кнопку "Обновить".
 
@@ -56,7 +56,7 @@ ms.locfileid: "72534184"
 
 Вы можете ввести здесь любой текст, чтобы найти нужную учетную запись.
 
-![Поиск учетных записей хранения Azure Stack](media/azure-stack-manage-storage-accounts/image6.png)
+![Поиск учетных записей хранения Azure Stack Hub](media/azure-stack-manage-storage-accounts/image6.png)
 
 ## <a name="look-at-account-details"></a>Просмотр сведений учетной записи
 Выбрав нужные учетные записи, вы можете щелкнуть любую из них, чтобы просмотреть определенные сведения. Откроется новая панель со сведениями об учетной записи. Эти сведения включают в себя тип учетной записи, время создания, расположение и т. д.
@@ -66,7 +66,7 @@ ms.locfileid: "72534184"
 ## <a name="recover-a-deleted-account"></a>Восстановление удаленной учетной записи
 В некоторых ситуациях вам, возможно, потребуется восстановить удаленную учетную запись.
 
-В Azure Stack это сделать довольно просто:
+В Azure Stack Hub это сделать довольно просто:
 
 1. Перейдите к списку учетных записей хранения. Дополнительные сведения см. в разделе [Поиск учетной записи хранения](azure-stack-manage-storage-accounts.md) в начале этой статьи.
 2. Найдите эту конкретную учетную запись в списке. Вам, возможно, потребуется отфильтровать его.
@@ -143,10 +143,10 @@ ms.locfileid: "72534184"
     Start-AzsReclaimStorageCapacity -FarmName $farm_name
 ```
 
-Дополнительные сведения см. в [документации по PowerShell для Azure Stack](https://docs.microsoft.com/powershell/azure/azure-stack/overview).
+Дополнительные сведения см. в [документации по PowerShell для Azure Stack Hub](https://docs.microsoft.com/powershell/azure/azure-stack/overview).
  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
  - Сведения об управлении разрешениями см. в разделе [Настройка разрешений на доступ с помощью управления доступом на основе ролей](azure-stack-manage-permissions.md).
- - Сведения об управлении емкостью хранилища для Azure Stack см. в [этой статье](azure-stack-manage-storage-shares.md).
+ - Сведения об управлении емкостью хранилища для Azure Stack Hub см. в [этой статье](azure-stack-manage-storage-shares.md).

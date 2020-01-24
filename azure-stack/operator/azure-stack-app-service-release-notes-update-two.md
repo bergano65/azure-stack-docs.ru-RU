@@ -1,6 +1,6 @@
 ---
-title: Заметки о выпуске обновления 2 для Службы приложений в Azure Stack | Документация Майкрософт
-description: Узнайте об улучшениях, исправлениях и известных проблемах в обновлении 2 для Службы приложений в Azure Stack.
+title: Заметки о выпуске обновления 2 для Службы приложений в Azure Stack Hub | Документация Майкрософт
+description: Узнайте об улучшениях, исправлениях и известных проблемах в обновлении 2 для Службы приложений в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: bryanla
@@ -16,38 +16,36 @@ ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 05/18/2018
-ms.openlocfilehash: f427a31001f8f486fd231af7e59ef2bb30592661
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: b21ff443ff9f5cea95ea772e201f1e9804798024
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974812"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75880045"
 ---
-# <a name="app-service-on-azure-stack-update-2-release-notes"></a>Заметки о выпуске обновления 2 для Службы приложений Azure в Azure Stack
+# <a name="app-service-on-azure-stack-hub-update-2-release-notes"></a>Заметки о выпуске обновления 2 для Службы приложений Azure в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-В этих заметках о выпуске описаны улучшения, исправления и известные проблемы в обновлении 2 для Службы приложений Azure в Azure Stack. Известные проблемы можно разделить на три категории: проблемы, которые непосредственно относятся к процессу развертывания, проблемы с обновлением и проблемы со сборкой (после установки).
+В этих заметках о выпуске описаны улучшения, исправления и известные проблемы в обновлении 2 для Службы приложений Azure в Azure Stack Hub. Известные проблемы можно разделить на три категории: проблемы, которые непосредственно относятся к процессу развертывания, проблемы с обновлением и проблемы со сборкой (после установки).
 
 > [!IMPORTANT]
-> Прежде чем развертывать Службу приложений Azure 1.2, примените обновление 1804 к интегрированной системе Azure Stack или разверните последнюю версию Пакета средств разработки Azure Stack (ASDK).
+> Прежде чем развертывать Службу приложений Azure 1.2, примените обновление 1804 к интегрированной системе Azure Stack Hub или разверните последнюю версию Пакета средств разработки Azure Stack (ASDK).
 
 ## <a name="build-reference"></a>Указание сборки
 
-Номер сборки обновления 2 для Службы приложений Azure в Azure Stack — **72.0.13698.10**.
+Номер сборки обновления 2 для Службы приложений Azure в Azure Stack Hub — **72.0.13698.10**.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 
 > [!IMPORTANT]
-> Теперь для новых развертываний Службы приложений Azure в Azure Stack нужен [трехсубъектный групповой сертификат](azure-stack-app-service-before-you-get-started.md#get-certificates). Это связано с улучшением обработки единого входа для Kudu в Службе приложений Azure. Новый субъект — **\*.sso.appservice.\<регион\>.\<доменное_имя\>.\<расширение\>** .
+> Теперь для новых развертываний Службы приложений Azure в Azure Stack Hub нужен [трехсубъектный групповой сертификат](azure-stack-app-service-before-you-get-started.md#get-certificates). Это связано с улучшением обработки единого входа для Kudu в Службе приложений Azure. Новый субъект — **\*.sso.appservice.\<регион\>.\<доменное_имя\>.\<расширение\>** .
 
-Ознакомьтесь с [предварительными условиями для развертывания Службы приложений в Azure Stack](azure-stack-app-service-before-you-get-started.md) перед началом развертывания.
+Ознакомьтесь с [предварительными условиями для развертывания Службы приложений в Azure Stack Hub](azure-stack-app-service-before-you-get-started.md) перед началом развертывания.
 
 ### <a name="new-features-and-fixes"></a>Новые функции и исправления
 
-Обновление 2 службы приложений Azure в Azure Stack включает в себя следующие улучшения и исправления.
+Обновление 2 для Службы приложений Azure в Azure Stack Hub включает приведенные ниже улучшения и исправления.
 
-- Обновления для **клиента, администратора службы приложений, портала функций и средств Kudu**. Они согласованы с версией пакета SDK для портала Azure Stack.
+- Обновления для **клиента, администратора службы приложений, портала функций и средств Kudu**. Они согласованы с версией пакета SDK для портала Azure Stack Hub.
 
 - Обновления **среды выполнения Функций Azure** до версии **v1.0.11612**.
 
@@ -89,15 +87,15 @@ ms.locfileid: "70974812"
 * Диапазон конечных IP-адресов: диапазон IP-адресов для файлового сервера
 * Диапазон конечных портов: 445
 * Протокол: TCP
-* Действие: РАЗРЕШИТЬ
+* Действие: Allow
 * Приоритет: 700
 * Имя: Outbound_Allow_SMB445
 
-### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack"></a>Известные проблемы, с которыми сталкиваются облачные администраторы, работающие со службой приложений Azure в Azure Stack
+### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack-hub"></a>Известные проблемы, с которыми сталкиваются администраторы облака, работающие со службой приложений Azure в Azure Stack Hub
 
-Обратитесь к документации в разделе [Обновление 1804 для Azure Stack](azure-stack-update-1903.md).
+Обратитесь к документации в статье [Azure Stack Hub 1804 Release Notes](azure-stack-update-1903.md) (Заметки о выпуске обновления 1804 для Службы приложений Azure в Azure Stack Hub)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Обзор службы приложений Azure в Azure Stack см. в [этой статье](azure-stack-app-service-overview.md).
-- См. сведения о том, как [подготовиться к развертыванию Службы приложений Azure в Azure Stack](azure-stack-app-service-before-you-get-started.md).
+- Общие сведения о Службе Приложений Azure в Azure Stack Hub см. в [этой статье](azure-stack-app-service-overview.md).
+- Дополнительные сведения о том, как подготовиться к развертыванию Службы приложений Azure в Azure Stack Hub, см. в [этой статье](azure-stack-app-service-before-you-get-started.md).

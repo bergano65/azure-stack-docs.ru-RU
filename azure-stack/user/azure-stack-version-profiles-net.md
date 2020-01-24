@@ -1,6 +1,6 @@
 ---
-title: Использование профилей версий API с помощью .NET в Azure Stack | Документация Майкрософт
-description: Узнайте, как использовать профили версий API с помощью пакета SDK для .NET в Azure Stack.
+title: Использование профилей версий API с помощью .NET в Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как использовать профили версий API с помощью пакета SDK для .NET в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -16,18 +16,16 @@ ms.date: 09/17/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 6c2fd698efb6990862887a758ce1b44021bd13a7
-ms.sourcegitcommit: d159652f50de7875eb4be34c14866a601a045547
+ms.openlocfilehash: ec22eea76e2ab0188c1c7a57ef58b4625dec2fcf
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282879"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75878498"
 ---
-# <a name="use-api-version-profiles-with-net-in-azure-stack"></a>Использование профилей версий API и .NET в Azure Stack
+# <a name="use-api-version-profiles-with-net-in-azure-stack-hub"></a>Использование профилей версий API и .NET в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-Пакет SDK .NET для Azure Stack Resource Manager предоставляет средства для создания и администрирования инфраструктуры. В этом пакете SDK представлены поставщики ресурсов вычислений, сети, хранилища, служб приложений и [Key Vault](/azure/key-vault/key-vault-whatis). Пакет SDK для .NET включает в себя 14 пакетов NuGet. Эти пакеты необходимо скачивать в решение каждый раз при компиляции проекта. Но вы можете явным образом указать поставщика ресурсов, который будет использоваться для версии **2019-03-01-hybrid** или **2018-03-01-hybrid**, чтобы оптимизировать использование памяти приложением. Каждый пакет содержит поставщик ресурсов, соответствующую версию API и профиль API, к которой она принадлежит. Профили API в пакете SDK .NET упрощают разработку гибридных облачных приложений, помогая переключаться между глобальными ресурсами Azure и ресурсами в Azure Stack.
+Пакет SDK .NET для Azure Stack Hub Resource Manager предоставляет средства для создания и администрирования инфраструктуры. В этом пакете SDK представлены поставщики ресурсов вычислений, сети, хранилища, служб приложений и [Key Vault](/azure/key-vault/key-vault-whatis). Пакет SDK для .NET включает в себя 14 пакетов NuGet. Эти пакеты необходимо скачивать в решение каждый раз при компиляции проекта. Но вы можете явным образом указать поставщика ресурсов, который будет использоваться для версии **2019-03-01-hybrid** или **2018-03-01-hybrid**, чтобы оптимизировать использование памяти приложением. Каждый пакет содержит поставщик ресурсов, соответствующую версию API и профиль API, к которой она принадлежит. Профили API в пакете SDK .NET упрощают разработку гибридных облачных приложений, помогая переключаться между глобальными ресурсами Azure и ресурсами в Azure Stack Hub.
 
 ## <a name="net-and-api-version-profiles"></a>Профили версии API и .NET
 
@@ -35,7 +33,7 @@ ms.locfileid: "72282879"
 
 - Чтобы получить последние версии всех служб, используйте профиль **latest** в пакете. Этот профиль входит в пакет NuGet **Microsoft.Azure.Management**.
 
-- Чтобы использовать службы, совместимые с Azure Stack, используйте один из следующих пакетов:
+- Чтобы использовать службы, совместимые с Azure Stack Hub, воспользуйтесь одним из следующих пакетов:
   - **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg** 
   - **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
 
@@ -61,26 +59,26 @@ ms.locfileid: "72282879"
 
 - Чтобы установить правильные пакеты NuGet для Visual Studio Code, скачайте [NuGet Package Manager instructions][].
 
-- Создайте подписку, если ее еще нет, и сохраните ее идентификатор для дальнейшего использования. Сведения о создании подписки см. в статье [Create subscriptions to offers in Azure Stack][].
+- Создайте подписку, если ее еще нет, и сохраните ее идентификатор для дальнейшего использования. Сведения о создании подписок для предложений в Azure Stack Hub см. в [Создание подписок для предложений в Azure Stack Hub][].
 
-- Создайте субъект-службу и сохраните идентификатор клиента и секрет клиента. Информацию о создании субъекта-службы для Azure Stack см. в статье о [Provide applications access to Azure Stack][]. Идентификатор клиента при создании субъекта-службы называется идентификатором приложения.
+- Создайте субъект-службу и сохраните идентификатор клиента и секрет клиента. Информацию о создании субъекта-службы для Azure Stack Hub см. в статье [Предоставление приложениям доступа к Azure Stack Hub][]. Идентификатор клиента при создании субъекта-службы называется идентификатором приложения.
 
-- Убедитесь, что субъект-служба имеет роль участника или владельца в вашей подписке. Сведения о том, как назначить роль субъекту-службе, см. в статье [Provide applications access to Azure Stack][].
+- Убедитесь, что субъект-служба имеет роль участника или владельца в вашей подписке. Сведения о том, как назначить роль субъекту-службе, см. в статье [Предоставление приложениям доступа к Azure Stack Hub][].
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-Чтобы использовать пакет SDK Azure для .NET и Azure Stack, укажите следующие значения и задайте значения для переменных среды. Чтобы настроить переменные среды, воспользуйтесь инструкциями, которые указаны после таблицы для используемой операционной системы.
+Чтобы использовать пакет SDK Azure для .NET и Azure Stack Hub, укажите следующие значения и задайте значения для переменных среды. Чтобы настроить переменные среды, воспользуйтесь инструкциями, которые указаны после таблицы для используемой операционной системы.
 
-| Значение                     | Переменные среды   | ОПИСАНИЕ                                                                                                             |
+| Значение                     | Переменные среды   | Description                                                                                                             |
 |---------------------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------|
-| Tenant ID                 | `AZURE_TENANT_ID `      | Значение [*идентификатора клиента*][] Azure Stack.                                                                          |
+| Tenant ID                 | `AZURE_TENANT_ID `      | Значение [*идентификатора клиента*][] Azure Stack Hub.                                                                          |
 | Идентификатор клиента                 | `AZURE_CLIENT_ID `      | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы в предыдущем разделе этой статьи. |
-| Идентификатор подписки           | `AZURE_SUBSCRIPTION_ID` | [*Идентификатор подписки*][] для доступа к предложениям в Azure Stack.                                                      |
+| Идентификатор подписки           | `AZURE_SUBSCRIPTION_ID` | [*Идентификатор подписки*][] для доступа к предложениям в Azure Stack Hub.                                                      |
 | Секрет клиента             | `AZURE_CLIENT_SECRET`   | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы.                                      |
-| Конечная точка Resource Manager | `ARM_ENDPOINT`          | См. дополнительные сведения о [*конечной точке Resource Manager для Azure Stack*][].                                                                    |
-| Location                  | `RESOURCE_LOCATION`     | Расположение Azure Stack.
+| Конечная точка Resource Manager | `ARM_ENDPOINT`          | Дополнительные сведения см. в разделе [*Конечная точка Resource Manager для Azure Stack Hub*][].                                                                    |
+| Location                  | `RESOURCE_LOCATION`     | Расположение Azure Stack Hub.
 
-Чтобы узнать идентификатор клиента для Azure Stack, выполните приведенные [в этой статье](../operator/azure-stack-csp-ref-operations.md) инструкции. Чтобы настроить переменные среды, сделайте следующее:
+Чтобы узнать идентификатор клиента для Azure Stack Hub, выполните приведенные [в этой статье](../operator/azure-stack-csp-ref-operations.md) инструкции. Чтобы настроить переменные среды, сделайте следующее:
 
 ### <a name="windows"></a>Windows
 
@@ -98,7 +96,7 @@ Set Azure_Tenant_ID=Your_Tenant_ID
 Export Azure_Tenant_ID=Your_Tenant_ID
 ```
 
-### <a name="the-azure-stack-resource-manager-endpoint"></a>Конечная точка Resource Manager для Azure Stack
+### <a name="the-azure-stack-hub-resource-manager-endpoint"></a>Конечная точка Resource Manager для Azure Stack Hub
 
 Azure Resource Manager — это платформа управления, которая позволяет администраторам развертывать, администрировать и отслеживать ресурсы Azure. Azure Resource Manager может обрабатывать эти задачи в рамках одной операции как группы, а не по отдельности.
 
@@ -128,13 +126,13 @@ Azure Resource Manager — это платформа управления, ко
 
 ## <a name="existing-api-profiles"></a>Существующие профили API
 
-- **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**: последний профиль, созданный для Azure Stack. Используйте этот профиль, чтобы обеспечить максимальную совместимость служб и Azure Stack, если вы используете версию 1904 или более позднюю.
+- **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**: последний профиль, созданный для Azure Stack Hub. Используйте этот профиль, чтобы обеспечить максимальную совместимость служб и Azure Stack Hub, если вы используете версию 1904 или более позднюю.
 
-- **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**: Используйте этот профиль, чтобы обеспечить совместимость служб и Azure Stack для версии 1808 или более поздней.
+- **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**: Используйте этот профиль, чтобы обеспечить совместимость служб и Azure Stack Hub для версии 1808 или более поздней.
 
 - **Latest**: профиль с новейшими версиями всех служб. Используйте последние версии всех служб. Этот профиль входит в пакет NuGet **Microsoft.Azure.Management**.
 
-См. дополнительные сведения о [Summary of API profiles][].
+См. дополнительные сведения об [Summary of API profiles][].
 
 ## <a name="azure-net-sdk-api-profile-usage"></a>Использование профиля API пакета SDK Azure для .NET
 
@@ -154,7 +152,7 @@ var azureStackSettings = getActiveDirectoryServiceSettings(armEndpoint);
 var credentials = ApplicationTokenProvider.LoginSilentAsync(tenantId, servicePrincipalId, servicePrincipalSecret, azureStackSettings).GetAwaiter().GetResult();
 ```
 
-Вызов `getActiveDirectoryServiceSettings` в этом коде извлекает конечные точки Azure Stack из конечной точки метаданных. Он использует переменные среды из выполняемого вызова.
+Вызов `getActiveDirectoryServiceSettings` в этом коде извлекает конечные точки Azure Stack Hub из конечной точки метаданных. Он использует переменные среды из выполняемого вызова.
 
 ```csharp
 public static ActiveDirectoryServiceSettings getActiveDirectoryServiceSettings(string armEndpoint)
@@ -189,31 +187,31 @@ public static ActiveDirectoryServiceSettings getActiveDirectoryServiceSettings(s
 }
 ```
 
-Эти шаги позволяют использовать пакеты NuGet профиля API для успешного развертывания приложения в Azure Stack.
+Эти шаги позволяют использовать пакеты NuGet профиля API для успешного развертывания приложения в Azure Stack Hub.
 
 ## <a name="samples-using-api-profiles"></a>Примеры с профилями API
 
-Вы можете использовать следующие примеры в качестве образцов при создании решений с профилями API для Azure Stack и .NET:
+Вы можете использовать следующие примеры в качестве образцов при создании решений с профилями API для Azure Stack Hub и .NET:
 
 - [Управление группами ресурсов](https://github.com/Azure-Samples/hybrid-resources-dotnet-manage-resource-group)
 - [Управление учетными записями хранения](https://github.com/Azure-Samples/hybird-storage-dotnet-manage-storage-accounts)
-- [Управление виртуальной машиной.](https://github.com/Azure-Samples/hybrid-compute-dotnet-manage-vm) В этом примере используется профиль версии **2019-03-01-hybrid**, поддерживаемый Azure Stack.
+- [Управление виртуальной машиной.](https://github.com/Azure-Samples/hybrid-compute-dotnet-manage-vm) В этом примере используется профиль версии **2019-03-01-hybrid**, поддерживаемый Azure Stack Hub.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о профилях API:
 
-- [Manage API version profiles in Azure Stack](azure-stack-version-profiles.md) (Управление профилями версий API в Azure Stack).
+- [Управление профилями версий API в Azure Stack Hub](azure-stack-version-profiles.md)
 - [Версии API поставщика ресурсов, поддерживаемые профилями в Azure Stack](azure-stack-profiles-azure-resource-manager-versions.md)
 
   [Getting Started - Installing Git]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git (Приступая к работе — установка Git)
   [Finding and installing a package]: /nuget/tools/package-manager-ui (Поиск и установка пакета)
   [NuGet Package Manager instructions]: https://marketplace.visualstudio.com/items?itemName=jmrog.vscode-nuget-package-manager (Инструкции по диспетчеру пакетов NuGet)
-  [Create subscriptions to offers in Azure Stack]: ../operator/azure-stack-subscribe-plan-provision-vm.md (Создание подписок для предложений в Azure Stack)
-  [Provide applications access to Azure Stack]: ../operator/azure-stack-create-service-principals.md (Предоставление приложениям доступа к Azure Stack)
+  [Создание подписок для предложений в Azure Stack Hub]: ../operator/azure-stack-subscribe-plan-provision-vm.md
+  [Предоставление приложениям доступа к Azure Stack Hub]: ../operator/azure-stack-create-service-principals.md
   [*идентификатора клиента*]: ../operator/azure-stack-identity-overview.md
   [*Идентификатор подписки*]: ../operator/service-plan-offer-subscription-overview.md#subscriptions
-  [*конечной точке Resource Manager для Azure Stack*]: ../user/azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint (Конечная точка Resource Manager для Azure Stack)
+  [*Конечная точка Resource Manager для Azure Stack Hub*]: ../user/azure-stack-version-profiles-ruby.md#the-azure-stack-hub-resource-manager-endpoint
   [Summary of API profiles]: ../user/azure-stack-version-profiles.md#summary-of-api-profiles (Сводка по профилям API)
   [Test Project to Virtual Machine, vNet, resource groups, and storage account]: https://github.com/seyadava/azure-sdk-for-net-samples/tree/master/TestProject
   [Use Azure PowerShell to create a service principal with a certificate]: ../operator/azure-stack-create-service-principals.md

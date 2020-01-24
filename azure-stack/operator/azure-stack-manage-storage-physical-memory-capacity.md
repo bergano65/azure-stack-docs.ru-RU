@@ -1,6 +1,6 @@
 ---
-title: Управление емкостью физической памяти в Azure Stack | Документация Майкрософт
-description: Узнайте, как отслеживать емкость и физическую память и управлять ими в Azure Stack.
+title: Управление емкостью физической памяти в Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как отслеживать емкость и физическую память и управлять ими в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,18 +16,16 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: f72ad1b86bf8ef84e64f79603c27d14571b00838
-ms.sourcegitcommit: b5eb024d170f12e51cc852aa2c72eabf26792d8d
+ms.openlocfilehash: cfacebb9c4589332b57d3140b6ef43c1156ea55c
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72534152"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882340"
 ---
-# <a name="manage-physical-memory-capacity-in-azure-stack"></a>Управление емкостью физической памяти в Azure Stack
+# <a name="manage-physical-memory-capacity-in-azure-stack-hub"></a>Управление емкостью физической памяти в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack*
-
-Чтобы увеличить общую емкость доступной памяти в Azure Stack, можно добавить дополнительный объем памяти. Физический сервер в Azure Stack также называется *узлом единицы масштабирования*. Все узлы единиц масштабирования, входящие в одну единицу масштабирования, должны иметь одинаковый объем памяти.
+Чтобы увеличить общую емкость доступной памяти в Azure Stack Hub, можно добавить дополнительный объем памяти. Физический сервер в Azure Stack Hub также называется *узлом единицы масштабирования*. Все узлы единиц масштабирования, входящие в одну единицу масштабирования, должны иметь одинаковый объем памяти.
 
 > [!note]  
 > Прежде чем продолжить, обратитесь к документации изготовителя оборудования, чтобы узнать, поддерживается ли в этом оборудовании физическое обновление памяти. По контракту на поддержку с поставщиком оборудования OEM от поставщика может требоваться выполнять физическую замену серверной стойки и обновление встроенного ПО устройства.
@@ -45,11 +43,11 @@ ms.locfileid: "72534152"
 > [!Warning]
 > Вся единица масштабирования должна быть отключена, так как последовательное обновление памяти не поддерживается.
 
-1. Остановите Azure Stack, следуя инструкциям, приведенным в статье [Запуск и остановка Azure Stack](azure-stack-start-and-stop.md).
+1. Остановите Azure Stack Hub, следуя инструкциям, приведенным в статье [Запуск и остановка Azure Stack Hub](azure-stack-start-and-stop.md).
 2. Обновите память на каждом физическом компьютере, используя документацию изготовителя оборудования.
-3. Запустите Azure Stack, следуя инструкциям, приведенным в статье [Запуск и остановка Azure Stack](azure-stack-start-and-stop.md).
+3. Запустите Azure Stack Hub, следуя инструкциям, приведенным в статье [Запуск и остановка Azure Stack Hub](azure-stack-start-and-stop.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
- - Сведения об управлении учетными записями хранения в Azure Stack см. в разделе [Управление учетными записями хранения в Azure Stack](azure-stack-manage-storage-accounts.md).
- - Сведения об отслеживании емкости хранилища Azure Stack и управления ею, см. в разделе [Управление емкостью хранилища для Azure Stack](azure-stack-manage-storage-shares.md).
+ - Сведения об управлении учетными записями хранения в Azure Stack Hub см. в разделе [Управление учетными записями хранения Azure Stack Hub](azure-stack-manage-storage-accounts.md).
+ - Сведения об отслеживании емкости хранилища Azure Stack Hub и управления ею, см. в разделе [Управление емкостью хранилища для Azure Stack Hub](azure-stack-manage-storage-shares.md).

@@ -1,7 +1,7 @@
 ---
 title: Добавление физического диска
-titleSuffix: Azure Stack
-description: Узнайте, как заменить физический диск в Azure Stack.
+titleSuffix: Azure Stack Hub
+description: Узнайте, как заменить физический диск в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -17,32 +17,30 @@ ms.date: 12/02/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
 ms.lastreviewed: 12/02/2019
-ms.openlocfilehash: 3c7808374621d3b60b1884df8ad44e27c244bfc5
-ms.sourcegitcommit: 62283e9826ea78b218f5d2c6c555cc44196b085d
+ms.openlocfilehash: ca16ffe2f3a72cbdd9a3cc22ee9b5f3acdf2c119
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74780853"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75882000"
 ---
-# <a name="replace-a-physical-disk-in-azure-stack"></a>Замена физического диска в Azure Stack
+# <a name="replace-a-physical-disk-in-azure-stack-hub"></a>Замена физического диска в Azure Stack Hub
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
-
-В этой статье описывается общий процесс замены физического диска в Azure Stack. Если физический диск выйдет из строя, его следует как можно скорее заменить.
+В этой статье описывается общий процесс замены физического диска в Azure Stack Hub. Если физический диск выйдет из строя, его следует как можно скорее заменить.
 
 > [!Note]  
-> При замене физического диска данных **не** требуется переводить узел единиц масштабирования в режим обслуживания (остановка) заранее. Кроме того, после замены физического диска узел единицы масштабирования не нужно восстанавливать с помощью портала администратора Azure Stack Hub. В следующей статье содержатся дополнительные сведения о [замене аппаратного компонента на узле единиц масштабирования Azure Stack](azure-stack-replace-component.md).
+> При замене физического диска данных **не** требуется переводить узел единиц масштабирования в режим обслуживания (остановка) заранее. Кроме того, после замены физического диска узел единицы масштабирования не нужно восстанавливать с помощью портала администратора Azure Stack Hub. В следующей статье содержатся дополнительные сведения о [замене аппаратного компонента на узле единиц масштабирования Azure Stack Hub](azure-stack-replace-component.md).
 
-Эту процедуру можно использовать для интегрированных систем, а также для развертываний Пакета средств разработки Azure Stack (ASDK), содержащих диски с возможностью оперативной замены.
+Эту процедуру можно использовать для развертываний, содержащих диски с возможностью оперативной замены.
 
 Фактические шаги по замене диска будут варьироваться в зависимости от поставщика изготовителя оборудования (OEM). Подробные инструкции, относящиеся к вашей системе, см. в документации поставщика по элементам, заменяемым в условиях эксплуатации (FRU).
 
 ## <a name="review-disk-alert-information"></a>Просмотр сведений оповещения о диске
 Когда диск выходит из строя, вы получаете оповещение о том, что соединение с физическим диском потеряно.
 
-![Оповещение, показывающее потерянное соединение с физическим диском в разделе администрирования Azure Stack](media/azure-stack-replace-disk/DiskAlert.png)
+![Оповещение, показывающее потерянное соединение с физическим диском в разделе администрирования Azure Stack Hub](media/azure-stack-replace-disk/DiskAlert.png)
 
-Если открыть оповещение, в его описании будет содержаться узел единицы масштабирования и точное расположение физического слота диска, который необходимо заменить. Azure Stack дополнительно помогает идентифицировать неисправный диск, используя возможности светодиодного индикатора.
+Если открыть оповещение, в его описании будет содержаться узел единицы масштабирования и точное расположение физического слота диска, который необходимо заменить. Azure Stack Hub дополнительно помогает идентифицировать неисправный диск, используя возможности светодиодного индикатора.
 
 ## <a name="replace-the-physical-disk"></a>Замена физического диска
 
@@ -53,14 +51,14 @@ ms.locfileid: "74780853"
 
 Чтобы предотвратить использование неподдерживаемого диска в интегрированной системе, система блокирует диски, которые не поддерживаются вашим поставщиком. Если вы пытаетесь использовать неподдерживаемый диск, новое предупреждение сообщит вам, что диск был помещен на карантин из-за неподдерживаемой модели или встроенного ПО.
 
-После замены диска Azure Stack автоматически обнаруживает новый диск и начинает процесс восстановления виртуального диска.
+После замены диска Azure Stack Hub автоматически обнаруживает новый диск и начинает процесс восстановления виртуального диска.
 
-## <a name="check-the-status-of-virtual-disk-repair-using-azure-stack-powershell"></a>Проверка состояния восстановления виртуального диска с помощью Azure Stack PowerShell
+## <a name="check-the-status-of-virtual-disk-repair-using-azure-stack-hub-powershell"></a>Проверка состояния восстановления виртуального диска с помощью Azure Stack Hub PowerShell
 
-После замены диска можно отслеживать состояние работоспособности виртуального диска и ход выполнения задания восстановления с помощью Azure Stack PowerShell.
+После замены диска можно отслеживать состояние работоспособности виртуального диска и ход выполнения задания восстановления с помощью Azure Stack Hub PowerShell.
 
-1. Для этого нужно установить Azure Stack PowerShell. Дополнительные сведения см. в статье [Install PowerShell for Azure Stack](azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack).
-2. Подключитесь к Azure Stack с помощью PowerShell в роли оператора. См. подробнее о [подключении к Azure Stack с помощью PowerShell в качестве оператора](azure-stack-powershell-configure-admin.md).
+1. Для этого нужно установить Azure Stack Hub PowerShell. Дополнительные сведения об установке PowerShell для Azure Stack Hub см. в [этой статье](azure-stack-powershell-install.md).
+2. Подключитесь к Azure Stack Hub с помощью PowerShell в роли оператора. Ознакомьтесь с дополнительными сведениями о [подключении к Azure Stack Hub с помощью PowerShell в качестве оператора](azure-stack-powershell-configure-admin.md).
 3. Выполните следующие командлеты, чтобы проверить состояние работоспособности и восстановления виртуального диска:
 
     ```powershell  
@@ -69,9 +67,9 @@ ms.locfileid: "74780853"
     Get-AzsVolume -StorageSubSystem $StorageSubSystem.Name -ScaleUnit $scaleunit.name | Select-Object VolumeLabel, OperationalStatus, RepairStatus
     ```
 
-    ![Работоспособность томов Azure Stack в Powershell](media/azure-stack-replace-disk/get-azure-stack-volumes-health.png)
+    ![Работоспособность томов Azure Stack Hub в PowerShell](media/azure-stack-replace-disk/get-azure-stack-volumes-health.png)
 
-4. Проверьте состояние системы Azure Stack. См. подробнее о [проверке состояния системы Azure Stack](azure-stack-diagnostic-test.md).
+4. Проверьте состояние системы Azure Stack Hub. Дополнительные сведения см. в статье о [проверке состояния системы Azure Stack Hub](azure-stack-diagnostic-test.md).
 5. При необходимости можно выполнить следующую команду, чтобы проверить состояние замененного физического диска.
 
     ```powershell  
@@ -81,7 +79,7 @@ ms.locfileid: "74780853"
     Get-AzsDrive -StorageSubSystem $StorageSubSystem.Name -ScaleUnit $scaleunit.name | Sort-Object StorageNode,MediaType,PhysicalLocation | Format-Table Storagenode, Healthstatus, PhysicalLocation, Model, MediaType,  CapacityGB, CanPool, CannotPoolReason
     ```
 
-    ![Физические диски, замененные в Azure Stack с помощью PowerShell](media/azure-stack-replace-disk/check-replaced-physical-disks-azure-stack.png)
+    ![Физические диски, замененные в Azure Stack Hub с помощью PowerShell](media/azure-stack-replace-disk/check-replaced-physical-disks-azure-stack.png)
 
 ## <a name="check-the-status-of-virtual-disk-repair-using-the-privileged-endpoint"></a>Проверка состояния восстановления виртуального диска с помощью привилегированной конечной точки
 
@@ -111,7 +109,7 @@ ms.locfileid: "74780853"
 
     ![Выходные данные команды PowerShell Get-StorageJob](media/azure-stack-replace-disk/GetStorageJobOutput.png)
 
-4. Проверьте состояние системы Azure Stack. См. подробнее о [проверке состояния системы Azure Stack](azure-stack-diagnostic-test.md).
+4. Проверьте состояние системы Azure Stack Hub. Дополнительные сведения см. в статье о [проверке состояния системы Azure Stack Hub](azure-stack-diagnostic-test.md).
 
 ## <a name="troubleshoot-virtual-disk-repair-using-the-privileged-endpoint"></a>Устранение неполадок с виртуальным диском с помощью привилегированной конечной точки
 

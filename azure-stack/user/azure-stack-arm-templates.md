@@ -1,6 +1,6 @@
 ---
-title: Использование шаблонов Azure Resource Manager в Azure Stack | Документация Майкрософт
-description: Узнайте, как использовать шаблоны Azure Resource Manager в Azure Stack для подготовки ресурсов.
+title: Использование шаблонов Azure Resource Manager в Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как использовать шаблоны Azure Resource Manager в Azure Stack Hub для подготовки ресурсов.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -12,24 +12,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/07/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: justini
 ms.lastreviewed: 11/14/2018
-ms.openlocfilehash: df7a6e7c42a8863117faaccfd4108c4ffd806a5a
-ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
+ms.openlocfilehash: 86981e41495e628571977c3b438a3b57eb0b3c2c
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993764"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76535881"
 ---
-# <a name="use-azure-resource-manager-templates-in-azure-stack"></a>Использование шаблонов диспетчера ресурсов Azure в Azure Stack
-
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+# <a name="use-azure-resource-manager-templates-in-azure-stack-hub"></a>Использование шаблонов Azure Resource Manager в Azure Stack Hub
 
 Используя шаблоны Azure Resource Manager, можно развернуть и подготовить все ресурсы для приложения в рамках одной скоординированной операции. Кроме того, можно повторно развернуть шаблоны, чтобы внести изменения в ресурсы в группе ресурсов.
 
-Эти шаблоны можно развертывать с помощью портала Microsoft Azure Stack, PowerShell, командной строки и Visual Studio.
+Эти шаблоны можно развертывать с помощью портала Microsoft Azure Stack Hub, PowerShell, командной строки и Visual Studio.
 
 На сайте [GitHub](https://aka.ms/azurestackgithub) доступны следующие шаблоны для быстрого запуска:
 
@@ -73,13 +71,13 @@ ms.locfileid: "74993764"
 
 ## <a name="basic-virtual-machine"></a>Виртуальная машина уровня "Базовый"
 
-[Разверните виртуальную машину Windows](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/101-simple-windows-vm) с виртуальной сетью (с DNS), общедоступным IP-адресом и сетевым интерфейсом.
+[Разверните виртуальную машину Windows](https://aka.ms/aa6zdzx) с виртуальной сетью (с DNS), общедоступным IP-адресом и сетевым интерфейсом.
 
 ## <a name="cancel-a-running-template-deployment"></a>Отмена выполняющегося развертывания шаблона
 
 Чтобы отменить выполняющееся развертывание шаблона, используйте [командлет](/powershell/scripting/developer/cmdlet/cmdlet-overview) PowerShell [Stop-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/stop-azurermresourcegroupdeployment).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание шаблонов с помощью портала](azure-stack-deploy-template-portal.md)
 * [Развертывание шаблонов с помощью PowerShell](azure-stack-deploy-template-powershell.md)

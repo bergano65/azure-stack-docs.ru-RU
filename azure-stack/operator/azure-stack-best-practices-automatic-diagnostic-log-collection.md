@@ -1,6 +1,6 @@
 ---
-title: Рекомендации по автоматическому сбору журналов Azure Stack | Документация Майкрософт
-description: Рекомендации по автоматическому сбору журналов в разделе "Справка и поддержка" в Azure Stack.
+title: Рекомендации по автоматическому сбору журналов Azure Stack Hub | Документация Майкрософт
+description: Рекомендации по автоматическому сбору журналов в разделе "Справка и поддержка" в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: justinha
@@ -16,23 +16,20 @@ ms.date: 07/25/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 07/25/2019
-ms.openlocfilehash: 03fb0550bfaa41a3336ff17dd1c44e03bcea1402
-ms.sourcegitcommit: b752f4e6733d9ebe56dbd171a14528dcb9a693fd
+ms.openlocfilehash: 7baa7440fec1c29ee43c5d3f80282bd6a58a3242
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68522047"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883037"
 ---
-# <a name="best-practices-for-automatic-azure-stack-log-collection"></a>Рекомендации по автоматическому сбору журналов Azure Stack 
+# <a name="best-practices-for-automatic-azure-stack-hub-log-collection"></a>Рекомендации по автоматическому сбору журналов Azure Stack Hub 
 
-*Область применения: интегрированные системы Azure Stack*
+В этом разделе приводятся рекомендации по управлению автоматическим сбором журналов диагностики для Azure Stack Hub. 
 
+## <a name="collecting-logs-from-multiple-azure-stack-hub-systems"></a>Сбор журналов из нескольких систем Azure Stack Hub
 
-В этом разделе приводятся рекомендации по управлению автоматическим сбором журналов диагностики для Azure Stack. 
-
-## <a name="collecting-logs-from-multiple-azure-stack-systems"></a>Сбор журналов из нескольких систем Azure Stack
-
-Настройте один контейнер больших двоичных объектов для каждой единицы масштабирования Azure Stack, из которой вы хотите получать журналы. Дополнительные сведения о том, как настроить контейнер больших двоичных объектов, см. в разделе [Настройка автоматического сбора журналов диагностики Azure Stack](azure-stack-configure-automatic-diagnostic-log-collection.md). Рекомендуется сохранять в одном контейнере больших двоичных объектов только журналы диагностики из одной единицы масштабирования Azure Stack. 
+Настройте один контейнер больших двоичных объектов для каждой единицы масштабирования Azure Stack Hub, из которой вы хотите получать журналы. Дополнительные сведения о том, как настроить контейнер больших двоичных объектов, см. в разделе [Настройка автоматического сбора журналов диагностики Azure Stack Hub](azure-stack-configure-automatic-diagnostic-log-collection.md). Рекомендуется сохранять в одном контейнере больших двоичных объектов только журналы диагностики из одной единицы масштабирования Azure Stack Hub. 
 
 ## <a name="retention-policy"></a>Политика хранения
 
@@ -72,9 +69,9 @@ ms.locfileid: "68522047"
 
 [Плата за хранилище BLOB-объектов](https://azure.microsoft.com/pricing/details/storage/blobs/) Azure зависит от объема данных, сохраняемых каждый месяц, и других факторов, таких как избыточность данных. Если у вас нет учетной записи хранения, вы можете войти на портал Azure, щелкнуть **Учетные записи хранения** и [создать подписанный URL-адрес контейнера больших двоичных объектов Azure](azure-stack-configure-automatic-diagnostic-log-collection.md).
 
-Рекомендуется создать [политику управления жизненным циклом](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts) хранилища BLOB-объектов Azure, чтобы сократить текущие затраты на хранилище. Дополнительные сведения о том, как настроить учетную запись хранения, см. в разделе [Настройка автоматического сбора журналов диагностики Azure Stack](azure-stack-configure-automatic-diagnostic-log-collection.md).
+Рекомендуется создать [политику управления жизненным циклом](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts) хранилища BLOB-объектов Azure, чтобы сократить текущие затраты на хранилище. Дополнительные сведения о том, как настроить учетную запись хранения, см. в разделе [Настройка автоматического сбора журналов диагностики Azure Stack Hub](azure-stack-configure-automatic-diagnostic-log-collection.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-[Настройка автоматического сбора журналов Azure Stack](azure-stack-best-practices-automatic-diagnostic-log-collection.md)
+[Настройка автоматического сбора журналов Azure Stack Hub](azure-stack-best-practices-automatic-diagnostic-log-collection.md)
 

@@ -9,30 +9,30 @@ ms.date: 12/13/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/13/2019
-ms.openlocfilehash: 624f0fb87b84ee06284185a521a68bebeb695362
-ms.sourcegitcommit: 7dd9d7bc2b86cca3be5118da149c1d422b2fb09d
+ms.openlocfilehash: d10fbc7ad009456459a8719fbc6e6c8ce51529f1
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2019
-ms.locfileid: "75034009"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816485"
 ---
 # <a name="how-to-get-authentication-information-for-azure-stack-hub"></a>Как получить сведения о проверке подлинности для Azure Stack Hub
 
-Для проверки подлинности в Azure Stack Hub необходимо указать идентификатор подписки, идентификатор клиента и расположение, а также конечную точку Resource Manager для Azure Stack Hub. Эти значения можно получить из [конечной точки Resource Manager для Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles-ruby?view=azs-1910#the-azure-stack-resource-manager-endpoint). Их также можно получить, выполнив действия, описанные в этой статье.
+Для проверки подлинности в Azure Stack Hub необходимо указать идентификатор подписки, идентификатор клиента и расположение, а также конечную точку Resource Manager для Azure Stack Hub. Эти значения можно получить из [конечной точки Resource Manager для Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles-ruby?view=azs-1910#the-azure-stack-hub-resource-manager-endpoint). Их также можно получить, выполнив действия, описанные в этой статье.
 
 ## <a name="values-needed-to-authenticate"></a>Значения, необходимые для проверки подлинности
 
-Вам понадобятся следующие сведения:
+Потребуются следующие сведения:
 
 -   **Идентификатор подписки**  
 
-    Идентификатор подписки используется для доступа к предложениям в Azure Stack.
+    Идентификатор подписки используется для доступа к предложениям в Azure Stack Hub.
 
 -   **Идентификатор клиента**
 
     Каталог — это контейнер, который содержит информацию о пользователях, приложениях, группах и субъектах-службах. Клиент каталога — это организация, например корпорация Майкрософт или ваша компания.
 
--   **Местоположение.**
+-   **Местоположение**
 
     Расположение или регион — это набор центров обработки данных, развернутых в пределах периметра, определяемого задержкой, и соединенных между собой выделенной региональной сетью с низкой задержкой. При использовании Azure Stack Hub ваше расположение может включать в себя локальный центр обработки данных, а не регион Azure.
 
@@ -74,6 +74,6 @@ ms.locfileid: "75034009"
 
 Для получения конечной точки метаданных, указывающей на такие свойства, как конечная точка коллекции, конечная точка графа, конечная точка портала, конечная точка входа и аудитории, URL-адрес будет следующим: `<ResourceManager>/metadata/endpoints?api-version=1.0`
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше об использовании [Azure Stack Resource Manager](https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles?view=azs-1910) с помощью Azure Stack Hub.
+Узнайте больше об использовании [Azure Stack Hub Resource Manager](https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles?view=azs-1910) в Azure Stack Hub.

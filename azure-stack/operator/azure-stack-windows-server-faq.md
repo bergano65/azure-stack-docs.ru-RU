@@ -1,6 +1,6 @@
 ---
-title: Вопросы и ответы по Windows Server для Azure Stack | Документация Майкрософт
-description: Список статей в Azure Stack Marketplace с вопросами и ответами по Windows Server
+title: Вопросы и ответы по Windows Server для Azure Stack Hub | Документация Майкрософт
+description: Список статей в Azure Stack Hub Marketplace с вопросами и ответами по Windows Server
 services: azure-stack
 documentationcenter: ''
 author: sethmanheim
@@ -15,16 +15,16 @@ ms.date: 12/27/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 08/29/2019
-ms.openlocfilehash: 8110f48ef9e42ef2ee89b4766164b5005c7d51fa
-ms.sourcegitcommit: df8de80b8c295495edc091e0a12012ccc7a96594
+ms.openlocfilehash: ae3a1d602347a4cb4dcb6199075cd1e3dce9cb29
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75503612"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023224"
 ---
-# <a name="windows-server-in-azure-stack-marketplace-faq"></a>Windows Server в Azure Stack Marketplace: вопросы и ответы
+# <a name="windows-server-in-azure-stack-hub-marketplace-faq"></a>Windows Server в Azure Stack Hub Marketplace: вопросы и ответы
 
-В этой статье даются ответы на распространенные вопросы об образах Windows Server в [Azure Stack Marketplace](azure-stack-marketplace.md).
+В этой статье даются ответы на распространенные вопросы об образах Windows Server в [Azure Stack Hub Marketplace](azure-stack-marketplace.md).
 
 ## <a name="marketplace-items"></a>Элементы Marketplace
 
@@ -34,16 +34,16 @@ ms.locfileid: "75503612"
 
 Во-вторых, если любой из масштабируемых наборов виртуальных машин ссылается на конкретную версию, оцените вероятность масштабирования этого набора в будущем и на основе этой оценки решите, не лучше ли сохранить старые версии. Если ни одно из этих условий не применимо, удалите старые образы из Marketplace, прежде чем скачивать новые. Если для их скачивания ранее применялось управление Marketplace, используйте его и для удаления. Теперь скачайте более новую версию.
 
-### <a name="what-are-the-licensing-options-for-windows-server-marketplace-images-on-azure-stack"></a>Какие варианты лицензирования существуют для образов Marketplace Windows Server в Azure Stack?
+### <a name="what-are-the-licensing-options-for-windows-server-marketplace-images-on-azure-stack-hub"></a>Какие варианты лицензирования существуют для образов Marketplace Windows Server в Azure Stack Hub?
 
-Корпорация Майкрософт предлагает две версии образов Windows Server в Azure Stack Marketplace. В среде Azure Stack можно использовать только одну версию этого образа.  
+Корпорация Майкрософт предлагает две версии образов Windows Server в Azure Stack Hub Marketplace. В среде Azure Stack Hub можно использовать только одну версию этого образа.  
 
 - **Оплата по мере использования**. В таких образах используются единицы измерения полной цены для Windows.
    Предназначены для: клиентов с Соглашением Enterprise (EA), которые используют *модель выставления счетов за потребление*; поставщиков облачных решений, которые не хотят использовать лицензирование SPLA.
 - **С использованием собственной лицензии (BYOL)** . Эти образы выполняют базовые единицы измерения.
    Предназначены для: клиентов EA с лицензией Windows Server; поставщиков облачных решений с лицензированием SPLA.
 
-Преимущество гибридного использования Azure (AHUB) в Azure Stack не поддерживается. Клиенты, которые приобрели лицензию по модели "Производительность", должны использовать образ BYOL. При тестировании с помощью Пакета средств разработки Azure Stack (ASDK) можно использовать любой из этих вариантов.
+Преимущество гибридного использования Azure (AHUB) в Azure Stack Hub не поддерживается. Клиенты, которые приобрели лицензию по модели "Производительность", должны использовать образ BYOL. При тестировании с помощью Пакета средств разработки Azure Stack (ASDK) можно использовать любой из этих вариантов.
 
 ### <a name="what-if-i-downloaded-the-wrong-version-to-offer-my-tenantsusers"></a>Что делать, если я скачаю неправильную версию для своих клиентов или пользователей?
 
@@ -89,10 +89,10 @@ Update-AzureRmVM -ResourceGroupName "<your RG>" -VM $vm
 
 ## <a name="activation"></a>Активация
 
-Чтобы активировать виртуальную машину Windows Server в Azure Stack, должны выполняться следующие условия:
+Чтобы активировать виртуальную машину Windows Server в Azure Stack Hub, должны выполняться следующие условия:
 
-- Изготовитель оборудования указал правильное значение маркера BIOS на каждой хост-системе в Azure Stack.
-- В Windows Server 2012 R2 и Windows Server 2016 используется [автоматическая активация виртуальной машины](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v=ws.11)). Служба управления ключами (KMS) и другие службы активации не поддерживаются в Azure Stack.
+- Изготовитель оборудования указал правильное значение маркера BIOS на каждой хост-системе в Azure Stack Hub.
+- В Windows Server 2012 R2 и Windows Server 2016 используется [автоматическая активация виртуальной машины](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v=ws.11)). Служба управления ключами (KMS) и другие службы активации не поддерживаются в Azure Stack Hub.
 
 ### <a name="how-can-i-verify-that-my-virtual-machine-is-activated"></a>Как убедиться, что моя виртуальная машина активирована?
 
@@ -134,5 +134,5 @@ slmgr /ipk <AVMA key>
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Общие сведения об Azure Stack Marketplace](azure-stack-marketplace.md)
-- [Скачивание элементов Marketplace из Azure в Azure Stack](azure-stack-download-azure-marketplace-item.md)
+- [Общие сведения об Azure Stack Hub Marketplace](azure-stack-marketplace.md)
+- [Скачивание элементов Marketplace из Azure в Azure Stack Hub](azure-stack-download-azure-marketplace-item.md)

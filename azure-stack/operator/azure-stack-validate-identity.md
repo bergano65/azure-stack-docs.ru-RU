@@ -1,6 +1,6 @@
 ---
-title: Проверка удостоверений Azure для Azure Stack | Документация Майкрософт
-description: Проверки удостоверений Azure с помощью средства Azure Stack для проверки готовности к работе.
+title: Проверка удостоверений Azure для Azure Stack Hub | Документация Майкрософт
+description: Проверки удостоверений Azure с помощью средства проверки готовности Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: PatAltimore
@@ -16,29 +16,29 @@ ms.date: 06/24/2019
 ms.author: patricka
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 9f455d6614917c0365b2143f0523ff2a44b3c05d
-ms.sourcegitcommit: fdeb2760845c9760ea7df1414b8e140b0624a823
+ms.openlocfilehash: e38e0462bc9b30783ff0932a16e2e997f64df0fd
+ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67334417"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75812898"
 ---
 # <a name="validate-azure-identity"></a>Проверка удостоверения Azure
 
-Средство проверки готовности Azure Stack (**AzsReadinessChecker**) позволяет убедиться, что ваша служба Azure Active Directory (Azure AD) готова к работе с Azure Stack. Прежде чем развертывать Azure Stack, проверьте решение для работы с удостоверениями Azure.  
+Средство проверки готовности Azure Stack Hub (**AzsReadinessChecker**) позволяет убедиться, что ваша служба Azure Active Directory (Azure AD) готова к работе с Azure Stack Hub. Прежде чем развертывать Azure Stack Hub, проверьте решение для работы с удостоверениями Azure.  
 
 Средство проверки готовности позволяет определить:
 
-- является ли Azure Active Directory (Azure AD) поставщиком удостоверений для Azure Stack;
+- является ли Azure Active Directory (Azure AD) поставщиком удостоверений для Azure Stack Hub;
 - предоставляет ли учетная запись Azure AD, которую вы намерены использовать, права глобального администратора в службе Azure Active Directory.
 
-Проверка гарантирует, что настроенное окружение обеспечивает все необходимое для того, чтобы инфраструктура Azure Stack сохраняла в Azure AD сведения о пользователях, приложениях, группах и субъектах-службах.
+Проверка гарантирует, что настроенное окружение обеспечивает все необходимое для того, чтобы инфраструктура Azure Stack Hub сохраняла в Azure AD сведения о пользователях, приложениях, группах и субъектах-службах.
 
 ## <a name="get-the-readiness-checker-tool"></a>Получение средства проверки готовности
 
-Скачайте последнюю версию средства проверки готовности Azure Stack (AzsReadinessChecker) из [коллекции PowerShell](https://aka.ms/AzsReadinessChecker).  
+Скачайте последнюю версию средства проверки готовности Azure Stack Hub (AzsReadinessChecker) из [коллекции PowerShell](https://aka.ms/AzsReadinessChecker).  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Ниже перечислены необходимые компоненты.
 
@@ -51,12 +51,12 @@ ms.locfileid: "67334417"
   $PSVersionTable.PSVersion
   ```
 
-- [Среда PowerShell, настроенная для Azure Stack](azure-stack-powershell-install.md).
-- Необходимо установить последнюю версию средства [ проверки готовности Microsoft Azure Stack](https://aka.ms/AzsReadinessChecker).
+- [Среда PowerShell, настроенная для Azure Stack Hub](azure-stack-powershell-install.md).
+- Необходимо установить последнюю версию средства [проверки готовности Microsoft Azure Stack Hub](https://aka.ms/AzsReadinessChecker).
 
 **В среде Azure Active Directory:**
 
-- Определите учетную запись Azure AD, которую вы намерены использовать для Azure Stack, и убедитесь, что она предоставляет права глобального администратора Azure Active Directory.
+- Определите учетную запись Azure AD, которую вы намерены использовать для Azure Stack Hub, и убедитесь, что она предоставляет права глобального администратора Azure Active Directory.
 - Определите имя клиента Azure AD. Это имя должно совпадать с основным доменным именем в Azure Active Directory (например, **contoso.onmicrosoft.com**).
 - Укажите среду Azure, которая будет использоваться. Поддерживаемые значения для параметра имени среды: **AzureCloud**, **AzureChinaCloud** или **AzureUSGovernment** (в зависимости от используемой подписки Azure).
 
@@ -102,14 +102,14 @@ ms.locfileid: "67334417"
 
 При каждом запуске проверки все результаты сохраняются в файлах **AzsReadinessChecker.log** и **AzsReadinessCheckerReport.json**. Расположение этих файлов указывается в PowerShell вместе с результатами проверки.
 
-Эти файлы помогут передать сведения о состоянии проверки другим заинтересованным лицам перед развертыванием Azure Stack или для исследования проблем, обнаруженных при проверке. В обоих файлах сохраняются результаты каждой очередной проверки. В отчете содержатся подтверждения команды развертывания по конфигурации удостоверений. Файл журнала поможет командам развертывания или поддержки диагностировать проблемы с проверкой.
+Эти файлы помогут передать сведения о состоянии проверки другим заинтересованным лицам перед развертыванием Azure Stack Hub или для исследования проблем, обнаруженных при проверке. В обоих файлах сохраняются результаты каждой очередной проверки. В отчете содержатся подтверждения команды развертывания по конфигурации удостоверений. Файл журнала поможет командам развертывания или поддержки диагностировать проблемы с проверкой.
 
 По умолчанию оба файла сохраняются в расположении **C:\Users\<имя_пользователя>\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
 
 - Чтобы задать другое расположение отчетов, при запуске проверки можно указать в конце командной строки параметр **-OutputPath** ***&lt;путь&gt;***.
 - Укажите параметр **-CleanReport** в конце команды, чтобы удалить из файла **AzsReadinessCheckerReport.json** сведения о предыдущих запусках средства.
 
-Дополнительные сведения об отчетах проверки Azure Stack можно найти [здесь](azure-stack-validation-report.md).
+Дополнительные сведения об отчетах проверки Azure Stack Hub можно найти [здесь](azure-stack-validation-report.md).
 
 ## <a name="validation-failures"></a>Ошибки при проверке
 
@@ -193,10 +193,10 @@ Invoke-AzsAzureIdentityValidation Completed
 
 **Решение**. Войдите на [портал Azure](https://portal.azure.com) с этой учетной записью от имени владельца учетной записи, поочередно выберите элементы **Azure Active Directory**, **Пользователи**, **Select the User** (Выбор пользователя), **Роль каталога**. Пользователь здесь должен быть обозначен как **глобальный администратор**. Если учетная запись предоставляет права **пользователя**, последовательно выберите **Azure Active Directory** > **Имена личных доменов** и убедитесь, что указанное в качестве значения **AADDirectoryTenantName** имя домена здесь отмечено как основное имя домена для каталога. В нашем примере это **contoso.onmicrosoft.com**.
 
-В Azure Stack требуется, чтобы доменное имя являлось основным.
+В Azure Stack Hub требуется, чтобы доменное имя являлось основным.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 [Validate Azure registration](azure-stack-validate-registration.md) (Проверка регистрации в Azure)  
 [Просмотр отчета о готовности](azure-stack-validation-report.md)  
-[Общие рекомендации по интеграции Azure Stack](azure-stack-datacenter-integration.md)  
+[Планирование интеграции центра обработки данных для интегрированных систем Azure Stack Hub](azure-stack-datacenter-integration.md)  

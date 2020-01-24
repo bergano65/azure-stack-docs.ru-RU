@@ -1,6 +1,6 @@
 ---
-title: Получение доступа к панели мониторинга Kubernetes в Azure Stack | Документация Майкрософт
-description: Сведения о получении доступа к панели мониторинга Kubernetes в Azure Stack
+title: Получение доступа к панели мониторинга Kubernetes в Azure Stack Hub | Документация Майкрософт
+description: Сведения о получении доступа к панели мониторинга Kubernetes в Azure Stack Hub
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,26 +15,25 @@ ms.date: 10/10/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: fdda72e215590c7bbd7d739e2eb46b085fc55405
-ms.sourcegitcommit: 0d27456332031ab98ba2277117395ae5ffcbb79f
+ms.openlocfilehash: 3a872a60f32b46540f6b55f65555ca9958e67c38
+ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73047197"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883292"
 ---
-# <a name="access-the-kubernetes-dashboard-in-azure-stack"></a>Получение доступа к панели мониторинга Kubernetes в Azure Stack 
+# <a name="access-the-kubernetes-dashboard-in-azure-stack-hub"></a>Получение доступа к панели мониторинга Kubernetes в Azure Stack Hub 
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack* 
 > [!Note]   
 > Используйте элемент Kubernetes Azure Stack Marketplace для развертывания кластеров в качестве проверки концепции. Для поддерживаемых кластеров Kubernetes в Azure Stack используйте [обработчик AKS](azure-stack-kubernetes-aks-engine-overview.md).
 
-Служба Kubernetes включает в себя веб-панель мониторинга, которую можно использовать для выполнения базовых операций управления. Эта панель мониторинга позволяет просматривать базовое состояние работоспособности и метрики для приложений, создавать и развертывать службы, а также изменять существующие приложения. В этой статье показано, как настроить панель мониторинга Kubernetes в Azure Stack.
+Служба Kubernetes включает в себя веб-панель мониторинга, которую можно использовать для выполнения базовых операций управления. Эта панель мониторинга позволяет просматривать базовое состояние работоспособности и метрики для приложений, создавать и развертывать службы, а также изменять существующие приложения. В этой статье показано, как настроить панель мониторинга Kubernetes в Azure Stack Hub.
 
 ## <a name="prerequisites-for-kubernetes-dashboard"></a>Необходимые компоненты для настройки доступа к панели мониторинга Kubernetes
 
-* Кластер Kubernetes в Azure Stack.
+* кластер Kubernetes в Azure Stack Hub
 
-    Вам нужно будет развернуть кластер Kubernetes в Azure Stack. Дополнительные сведения см. в статье [Развертывание Kubernetes в Azure Stack](azure-stack-solution-template-kubernetes-deploy.md).
+    Вам нужно будет развернуть кластер Kubernetes в Azure Stack Hub. Дополнительные сведения см. в статье [Развертывание Kubernetes в Azure Stack](azure-stack-solution-template-kubernetes-deploy.md).
 
 * Клиент SSH.
 
@@ -42,21 +41,21 @@ ms.locfileid: "73047197"
 
 * Протокол FTP (PSCP).
 
-    Вам также может понадобиться FTP-клиент, который поддерживает SSH и протокол передачи файлов SSH для передачи сертификатов с главного узла на ваш компьютер для управления Azure Stack. Вы можете использовать [FileZilla](https://filezilla-project.org/download.php?type=client). Вам понадобится закрытый ключ, используемый при развертывании кластера Kubernetes.
+    Вам также может понадобиться FTP-клиент, который поддерживает SSH и протокол передачи файлов SSH для передачи сертификатов с главного узла на ваш компьютер для управления Azure Stack Hub. Вы можете использовать [FileZilla](https://filezilla-project.org/download.php?type=client). Вам понадобится закрытый ключ, используемый при развертывании кластера Kubernetes.
 
 ## <a name="overview-of-steps-to-enable-dashboard"></a>Обзор шагов для включения панели мониторинга
 
 1.  Экспорт сертификатов Kubernetes с главного узла в кластере. 
-2.  Импорт сертификатов на компьютер для управления Azure Stack.
+2.  Импорт сертификатов на компьютер для управления Azure Stack Hub.
 2.  Открытие веб-панели мониторинга Kubernetes. 
 
 ## <a name="export-certificate-from-the-master"></a>Экспорт сертификата с главного узла 
 
 Вы можете извлечь URL-адрес для панели мониторинга с главного узла в вашем кластере.
 
-1. Получите общедоступный IP-адрес и имя пользователя для главного узла в кластере на панели мониторинга Azure Stack. Для этого сделайте следующее:
+1. Получите общедоступный IP-адрес и имя пользователя для главного кластера на панели мониторинга Azure Stack Hub. Для этого сделайте следующее:
 
-    - Войдите на [портал Azure Stack](https://portal.local.azurestack.external/).
+    - Войдите на [портал Azure Stack Hub](https://portal.local.azurestack.external/)
     - Выберите **Все службы** > **Все ресурсы**. Найдите главный узел в группе кластерных ресурсов. Имя главного узла —`k8s-master-<sequence-of-numbers>`. 
 
 2. Откройте главный узел на портале. Скопируйте **общедоступный IP-адрес**. Щелкните **Подключиться**, чтобы имя пользователя отобразилось в поле **Вход с использованием локальной учетной записи ВМ**. Это имя пользователя вы указали при создании кластера. Используйте общедоступный IP-адрес вместо частного адреса, указанного в колонке подключения.
@@ -70,7 +69,7 @@ ms.locfileid: "73047197"
     ```Bash   
     kubectl cluster-info 
     ``` 
-    Найдите URL-адрес для панели мониторинга. Например: `https://k8-1258.local.cloudapp.azurestack.external/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy`
+    Найдите URL-адрес для панели мониторинга. Например:  `https://k8-1258.local.cloudapp.azurestack.external/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy`
 
 6.  Извлеките самозаверяющий сертификат и преобразуйте его в формат PFX. Выполните следующую команду:
 
@@ -102,7 +101,7 @@ ms.locfileid: "73047197"
     - секрет;
     - **протокол SFTP (протокол передачи файлов SSH)** .
 
-2. Скопируйте `/etc/kubernetes/certs/client.pfx` и `/etc/kubernetes/certs/ca.crt` на свой компьютер для управления Azure Stack.
+2. Скопируйте `/etc/kubernetes/certs/client.pfx` и `/etc/kubernetes/certs/ca.crt` на свой компьютер для управления Azure Stack Hub.
 
 3. Запишите расположения файлов. Обновите сценарий, указав эти расположения, а затем откройте PowerShell в командной строке с повышенными привилегиями. Выполните обновленный сценарий.  
 
@@ -129,12 +128,12 @@ ms.locfileid: "73047197"
 
 Теперь вы можете использовать панель мониторинга. Дополнительные сведения о панели мониторинга Kubernetes см. [в этой статье](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/). 
 
-![Панель мониторинга Kubernetes в Azure Stack](media/azure-stack-solution-template-kubernetes-dashboard/azure-stack-kub-dashboard.png)
+![Панель мониторинга Kubernetes в Azure Stack Hub](media/azure-stack-solution-template-kubernetes-dashboard/azure-stack-kub-dashboard.png)
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 
-[Развертывание Kubernetes в Azure Stack](azure-stack-solution-template-kubernetes-deploy.md)  
+[Развертывание Kubernetes в Azure Stack Hub](azure-stack-solution-template-kubernetes-deploy.md)  
 
-[Добавление Kubernetes в Azure Stack Marketplace](../operator/azure-stack-solution-template-kubernetes-cluster-add.md)  
+[Добавление кластера Kubernetes в Marketplace (для оператора Azure Stack Hub)](../operator/azure-stack-solution-template-kubernetes-cluster-add.md)  
 
 [Kubernetes в Azure](https://docs.microsoft.com/azure/container-service/kubernetes/container-service-kubernetes-walkthrough)  

@@ -1,6 +1,6 @@
 ---
-title: Автоматизация обновления виртуальной машины и управления ею в Azure Stack | Документация Майкрософт
-description: Узнайте, как использовать решения Azure Monitor для виртуальных машин, "Управление обновлениями", "Отслеживание изменений" и инвентаризации в службе автоматизации Azure для управления виртуальными машинами Windows и Linux, развернутыми в Azure Stack.
+title: Автоматизация обновления виртуальной машины и управления ею в Azure Stack Hub | Документация Майкрософт
+description: Узнайте, как использовать решения Azure Monitor для виртуальных машин, "Управление обновлениями", "Отслеживание изменений" и инвентаризации в службе автоматизации Azure для управления виртуальными машинами Windows и Linux, развернутыми в Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -16,35 +16,35 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 87549d27418f787b0e173cfda1ca835dc1c181e4
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 580e1e724a1d03183091ce4e59b779fc30cfb92c
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955945"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023125"
 ---
-# <a name="vm-update-and-management-automation-in-azure-stack"></a>Автоматизация обновления виртуальной машины и управления ею в Azure Stack
-Для управления виртуальными машинами Windows и Linux, развернутыми с помощью Azure Stack, можно использовать следующие функции решения службы автоматизации Azure.
+# <a name="vm-update-and-management-automation-in-azure-stack-hub"></a>Автоматизация обновления виртуальной машины и управления ею в Azure Stack Hub
+Для управления виртуальными машинами Windows и Linux, развернутыми с помощью Azure Stack Hub, можно использовать следующие функции решения службы автоматизации Azure.
 
 - **[Управление обновлениями](https://docs.microsoft.com/azure/automation/automation-update-management)** . Благодаря решению "Управление обновлениями" можно быстро оценить состояние доступных обновлений на всех компьютерах агентов и управлять установкой необходимых обновлений для виртуальных машин Windows и Linux.
 
 - **[Отслеживание изменений](https://docs.microsoft.com/azure/automation/automation-change-tracking)** . Данные об изменениях установленного ПО, служб, файлов и реестра Windows и управляющих программ Linux на наблюдаемых серверах отправляются в службу Azure Monitor в облаке для обработки. К полученным данным применяется логика и облачная служба записывает данные. С помощью сведений на панели мониторинга "Отслеживание изменений" можно без труда обнаружить изменения, внесенные в инфраструктуру серверов.
 
-- **[Инвентаризация](https://docs.microsoft.com/azure/automation/automation-vm-inventory)** . Отслеживание данных для виртуальной машины Azure Stack предоставляет браузерный пользовательский интерфейс для установки и настройки сбора данных инвентаризации.
+- **[Инвентаризация](https://docs.microsoft.com/azure/automation/automation-vm-inventory)** . Отслеживание данных для виртуальной машины Azure Stack Hub предоставляет браузерный пользовательский интерфейс для установки и настройки сбора данных инвентаризации.
 
-- **[Azure Monitor для виртуальных машин](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview)** . Azure Monitor для виртуальных машин отслеживают виртуальные машины Azure и Azure Stack и масштабируемые наборы виртуальных машин в соответствующем масштабе. Это решение анализирует производительность и работоспособность виртуальных машин Windows и Linux, отслеживает их процессы и зависимости от других ресурсов и внешних процессов.
+- **[Azure Monitor для виртуальных машин](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview)** . Azure Monitor для виртуальных машин отслеживает виртуальные машины Azure и Azure Stack Hub и масштабируемые наборы виртуальных машин в соответствующем масштабе. Это решение анализирует производительность и работоспособность виртуальных машин Windows и Linux, отслеживает их процессы и зависимости от других ресурсов и внешних процессов.
 
 > [!IMPORTANT]
-> Эти решения идентичны тем, которые используются для управления виртуальными машинами Azure. Управление виртуальными машинами Azure и Azure Stack осуществляется одинаково с помощью одного и того же интерфейса и инструментов. При использовании решений "Управление обновлениями", "Отслеживание изменений", инвентаризации и Azure Monitor для виртуальных машин в Azure Stack для виртуальных машин Azure Stack действует такая же цена, как и для виртуальных машин Azure.
+> Эти решения идентичны тем, которые используются для управления виртуальными машинами Azure. Управление виртуальными машинами Azure и Azure Stack Hub осуществляется одинаково с помощью одного и того же интерфейса и инструментов. При использовании решений "Управление обновлениями", "Отслеживание изменений", инвентаризации и Azure Monitor для виртуальных машин в Azure Stack Hub для виртуальных машин Azure Stack Hub действует такая же цена, как и для виртуальных машин Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
-Прежде чем использовать эти возможности обновления виртуальных машин Azure Stack и управления ими, необходимо выполнить несколько предварительных условий. К ним относятся действия, которые необходимо выполнить на портале Azure, а также на портале администрирования Azure Stack.
+## <a name="prerequisites"></a>предварительные требования
+Прежде чем использовать эти возможности обновления виртуальных машин Azure Stack Hub и управления ими, необходимо выполнить несколько предварительных условий. К ним относятся действия, которые необходимо выполнить на портале Azure, а также на портале администрирования Azure Stack Hub.
 
 ### <a name="in-the-azure-portal"></a>На портале Azure
-Чтобы использовать такие возможности автоматизации, как Azure Monitor для виртуальных машин, инвентаризацию, "Отслеживание изменений" и "Управление обновлениями" для виртуальных машин Azure Stack, необходимо сначала включить эти решения в Azure.
+Чтобы использовать такие возможности автоматизации, как Azure Monitor для виртуальных машин, инвентаризацию, "Отслеживание изменений" и "Управление обновлениями" для виртуальных машин Azure Stack Hub, необходимо сначала включить эти решения в Azure.
 
 > [!TIP]
-> Если эти возможности уже включены для виртуальных машин Azure, можно использовать учетные данные существующей рабочей области Log Analytics. Если уже существует идентификатор рабочей области и первичный ключ LogAnalytics, которые необходимо использовать, сразу перейдите к [следующему разделу](./vm-update-management.md#in-the-azure-stack-administrator-portal). В противном случае оставайтесь в этом разделе, чтобы создать новую рабочую область LogAnalytics и учетную запись службы автоматизации.
+> Если эти возможности уже включены для виртуальных машин Azure, можно использовать учетные данные существующей рабочей области Log Analytics. Если уже существует идентификатор рабочей области и первичный ключ LogAnalytics, которые необходимо использовать, сразу перейдите к [следующему разделу](./vm-update-management.md#in-the-azure-stack-hub-administrator-portal). В противном случае оставайтесь в этом разделе, чтобы создать новую рабочую область LogAnalytics и учетную запись службы автоматизации.
 
 Первый шаг в обеспечении этих решений — [создание рабочей области LogAnalytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace) в подписке Azure. Рабочая область Log Analytics — это уникальная среда журналов Azure Monitor с собственным репозиторием данных, источниками данных и решениями. После создания рабочей области запишите идентификатор и ключ рабочей области. Чтобы просмотреть эти сведения, перейдите к колонке "Рабочая область", щелкните **Дополнительные параметры** и просмотрите значения **Идентификатор рабочей области** и **Первичный ключ**. 
 
@@ -76,8 +76,8 @@ ms.locfileid: "73955945"
 
 После создания рабочей области Log Analytics включите в ней счетчики производительности для сбора данных на виртуальных машинах Windows и Linux. Установите и включите решения ServiceMap и InfrastructureInsights в рабочей области. Этот процесс описан в руководстве [по развертыванию Azure Monitor для виртуальных машин](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-onboard#how-to-enable-azure-monitor-for-vms-preview).
 
-### <a name="in-the-azure-stack-administrator-portal"></a>На портале администратора Azure Stack
-После включения решений службы автоматизации на портале Azure необходимо войти на портал администратора Azure Stack с правами администратора облака и скачать из Azure Stack Marketplace расширения **Azure Monitor, Update and Configuration Management** и **Azure Monitor, Update and Configuration Management for Linux**.
+### <a name="in-the-azure-stack-hub-administrator-portal"></a>На портале администрирования Azure Stack Hub
+После включения решений службы автоматизации на портале Azure необходимо войти на портал администратора Azure Stack Hub с правами администратора облака и скачать из Azure Stack Hub Marketplace расширения **Azure Monitor, Update and Configuration Management** (Управление конфигурацией и обновлениями Azure Monitor) и **Azure Monitor, Update and Configuration Management for Linux** (Управление конфигурацией и обновлениями Azure Monitor для Linux).
 
    ![Элемент Marketplace расширения "Azure Monitor, Управление конфигурацией и обновлением"](media/vm-update-management/2.PNG) 
 
@@ -85,12 +85,12 @@ ms.locfileid: "73955945"
 
    ![Azure Monitor Dependency Agent](media/vm-update-management/2-dependency.PNG) 
 
-## <a name="enable-update-management-for-azure-stack-vms"></a>Включение Управления обновлениями для виртуальных машин Azure Stack
-Чтобы включить управление обновлениями для виртуальных машин в Azure Stack, выполните следующие действия.
+## <a name="enable-update-management-for-azure-stack-hub-vms"></a>Включение решения "Управление обновлениями" для виртуальных машин Azure Stack Hub
+Чтобы включить "Управление обновлениями" для виртуальных машин в Azure Stack Hub, выполните следующие действия.
 
-1. Войдите на портал пользователя Azure Stack.
+1. Войдите на портал пользователя Azure Stack Hub.
 
-2. На пользовательском портале Azure Stack перейдите в колонку "Расширения" виртуальных машин, для которых необходимо включить эти решения, щелкните **+ Добавить**, выберите расширение **Azure Update and Configuration Management** и щелкните **Создать**.
+2. На пользовательском портале Azure Stack Hub перейдите в колонку "Расширения" виртуальных машин, для которых необходимо включить эти решения, щелкните **+ Добавить**, выберите расширение **Azure Update and Configuration Management** (Управление конфигурацией и обновлениями Azure)и щелкните **Создать**.
 
    [![](media/vm-update-management/3-sm.PNG "VM extension blade")](media/vm-update-management/3-lg.PNG#lightbox)
 
@@ -103,7 +103,7 @@ ms.locfileid: "73955945"
    [![](media/vm-update-management/5-sm.PNG "Enable Update Management solution on all machines")](media/vm-update-management/5-lg.PNG#lightbox) 
 
    > [!TIP]
-   > Повторите этот шаг, чтобы включить каждое решение для виртуальных машин Azure Stack, отправляющих отчетные данные в эту рабочую область. 
+   > Повторите этот шаг, чтобы включить каждое решение для виртуальных машин Azure Stack Hub, отправляющих отчетные данные в эту рабочую область. 
   
 После включения расширения "Azure Update and Configuration Management" проверка для каждой управляемой виртуальной машины выполняется дважды в день. Каждые 15 минут вызывается API, чтобы запросить время последнего обновления и определить, изменилось ли состояние. Если состояние изменилось, запускается проверка соответствия.
 
@@ -114,9 +114,9 @@ ms.locfileid: "73955945"
 > [!IMPORTANT]
 > Отображение обновленных данных с управляемых компьютеров на панели мониторинга может занять от 30 минут до 6 часов.
 
-Теперь виртуальные машины Azure Stack можно включить в запланированные развертывания обновлений вместе с виртуальными машинами Azure.
+Теперь виртуальные машины Azure Stack Hub можно включить в запланированные развертывания обновлений вместе с виртуальными машинами Azure.
 
-## <a name="enable-azure-monitor-for-vms-running-on-azure-stack"></a>Включение решения "Azure Monitor для виртуальных машин", выполняющегося в Azure Stack
+## <a name="enable-azure-monitor-for-vms-running-on-azure-stack-hub"></a>Включение решения "Azure Monitor для виртуальных машин", выполняющегося в Azure Stack Hub
 После установки расширений **Azure Monitor, Update and Configuration Management** и **Azure Monitor Dependency Agent** на виртуальной машине она начнет передавать данные в решение [Azure Monitor для виртуальных машин](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview). 
 
 > [!TIP]
@@ -126,7 +126,7 @@ ms.locfileid: "73955945"
 
    ![Вкладка данных о производительности виртуальных машин в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/insights/media/vminsights-performance/vminsights-performance-aggview-01.png)
 
-Обнаруженные компоненты приложений на виртуальных машинах Windows и Linux, работающих в Azure Stack, можно просматривать с помощью Azure Monitor для виртуальных машин двумя способами. Первый способ применяется непосредственно из виртуальной машины, а второй — в группах виртуальных машин из Azure Monitor.
+Обнаруженные компоненты приложений на виртуальных машинах Windows и Linux, работающих в Azure Stack Hub, можно просматривать с помощью Azure Monitor для виртуальных машин двумя способами. Первый способ применяется непосредственно из виртуальной машины, а второй — в группах виртуальных машин из Azure Monitor.
 Дополнительные сведения об использовании двух перспектив и способах применения функции "Сопоставление" см. в статье [Использовать функцию карты Azure Monitor для виртуальных машин (предварительная версия), чтобы понять компоненты приложения](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-maps).
 
    ![Вкладка сопоставления виртуальных машин в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/insights/media/vminsights-maps/map-multivm-azure-monitor-01.png)
@@ -134,7 +134,7 @@ ms.locfileid: "73955945"
 Если [Azure Monitor для виртуальных машин](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview) не отображает данные о производительности, включите их сбор для Windows и Linux в дополнительных параметрах [рабочей области Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-performance-counters).
 
 ## <a name="enable-update-management-using-a-resource-manager-template"></a>Включение Управления обновлениями с помощью шаблона Resource Manager
-При наличии большого количества виртуальных машин Azure Stack можно использовать [этот шаблон Azure Resource Manager](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/MicrosoftMonitoringAgent-ext-win), чтобы упростить развертывание решения на виртуальных машинах. Шаблон развертывает расширение Microsoft Monitoring Agent на имеющейся виртуальной машине Azure Stack и добавляет его в имеющуюся рабочую область LogAnalytics Azure.
+При наличии большого количества виртуальных машин Azure Stack Hub можно использовать [этот шаблон Azure Resource Manager](https://aka.ms/aa6zdzy), чтобы упростить развертывание решения на виртуальных машинах. Шаблон развертывает расширение Microsoft Monitoring Agent на имеющейся виртуальной машине Azure Stack Hub и добавляет его в имеющуюся рабочую область LogAnalytics Azure.
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Оптимизация производительности SQL Server](azure-stack-sql-server-vm-considerations.md)

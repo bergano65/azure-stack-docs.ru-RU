@@ -1,6 +1,6 @@
 ---
-title: Подготовка виртуальной машины на основе Red Hat для Azure Stack | Документация Майкрософт
-titleSuffix: Azure Stack
+title: Подготовка виртуальной машины на основе Red Hat для Azure Stack Hub | Документация Майкрософт
+titleSuffix: Azure Stack Hub
 description: Узнайте, как создать и передать виртуальный жесткий диск (VHD) Azure, содержащий операционную систему RedHat Linux.
 services: azure-stack
 documentationcenter: ''
@@ -18,18 +18,18 @@ ms.date: 12/11/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 12/11/2019
-ms.openlocfilehash: be51964d4416e632f5ef3462c3c42861a82e47d5
-ms.sourcegitcommit: a6c02421069ab9e72728aa9b915a52ab1dd1dbe2
+ms.openlocfilehash: 2ac894211b1ccd8d1537453100879ad695507268
+ms.sourcegitcommit: 320eddb281a36d066ec80d67b103efad7d4f33c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75654905"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145824"
 ---
-# <a name="prepare-a-red-hat-based-virtual-machine-for-azure-stack"></a>Подготовка виртуальной машины на основе Red Hat для Azure Stack
+# <a name="prepare-a-red-hat-based-virtual-machine-for-azure-stack-hub"></a>Подготовка виртуальной машины на основе Red Hat для Azure Stack Hub
 
-В этой статье вы узнаете, как подготовить виртуальную машину Red Hat Enterprise Linux (RHEL) для использования в Azure Stack. В статье рассматривается RHEL 7.1 и более поздние версии. Низкоуровневые оболочки для подготовки, о которых идет речь в этой статье, — это Hyper-V, Kernel-based Virtual Machine (KVM) и VMware.
+В этой статье вы узнаете, как подготовить виртуальную машину Red Hat Enterprise Linux (RHEL) для использования в Azure Stack Hub. В статье рассматривается RHEL 7.1 и более поздние версии. Низкоуровневые оболочки для подготовки, о которых идет речь в этой статье, — это Hyper-V, Kernel-based Virtual Machine (KVM) и VMware.
 
-Сведения о поддержке Red Hat Enterprise Linux приведены в статье [Red Hat и Azure Stack: Red Hat и Azure Stack](https://access.redhat.com/articles/3413531).
+Сведения о поддержке Red Hat Enterprise Linux приведены в статье [о часто задаваемых вопросах о Red Hat и Azure Stack](https://access.redhat.com/articles/3413531).
 
 ## <a name="prepare-a-red-hat-based-vm-from-hyper-v-manager"></a>Подготовка виртуальной машины под управлением Red Hat в диспетчере Hyper-V
 
@@ -37,14 +37,14 @@ ms.locfileid: "75654905"
 
 ### <a name="rhel-installation-notes"></a>Замечания по установке RHEL
 
-* Формат VHDX не поддерживается в Azure Stack. В Azure поддерживается только формат фиксированного виртуального жесткого диска. Вы можете преобразовать диск в формат VHD с помощью диспетчера Hyper-V или командлета convert-vhd. Если вы используете VirtualBox, при создании диска выберите **фиксированный размер** вместо динамически выделяемого (по умолчанию).
-* В Azure Stack поддерживаются только виртуальные машины поколения 1. Виртуальную машину первого поколения можно преобразовать из формата VHDX в формат VHD, а также переключить с динамически расширяемого диска на диск фиксированного размера. Вы не можете изменить поколение виртуальной машины. Дополнительные сведения см. в статье о том, [какое поколение (1 или 2) выбрать для виртуальной машины в Hyper-V](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).
+* Формат VHDX не поддерживается в Azure Stack Hub. В Azure поддерживается только формат фиксированного виртуального жесткого диска. Вы можете преобразовать диск в формат VHD с помощью диспетчера Hyper-V или командлета convert-vhd. Если вы используете VirtualBox, при создании диска выберите **фиксированный размер** вместо динамически выделяемого (по умолчанию).
+* В Azure Stack Hub поддерживаются только виртуальные машины поколения 1. Виртуальную машину первого поколения можно преобразовать из формата VHDX в формат VHD, а также переключить с динамически расширяемого диска на диск фиксированного размера. Вы не можете изменить поколение виртуальной машины. Дополнительные сведения см. в статье о том, [какое поколение (1 или 2) выбрать для виртуальной машины в Hyper-V](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).
 * Максимально допустимый размер виртуального жесткого диска составляет 1023 ГБ.
 * При установке операционной системы Linux рекомендуется использовать стандартные разделы, а не диспетчер логических томов (LVM), который часто используется по умолчанию при установке. Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если нужно подключить диск с OC к другой идентичной виртуальной машине в целях устранения неполадок.
 * Требуется поддержка ядра для подключения файловых систем UDF. При первой загрузке UDF-носитель, подключенный к гостевой машине, передает конфигурацию подготовки на виртуальную машину Linux. Агент Azure Linux должен подключить файловую систему UDF для считывания конфигурации и подготовки виртуальной машины.
 * Не настраивайте раздел swap на диске операционной системы. Вы можете настроить агент Linux для создания файла подкачки на временном диске ресурсов. Дополнительные сведения описаны ниже.
 * Размер виртуальной памяти всех виртуальных жестких дисков в Azure должен быть округлен до 1 МБ. Перед конвертацией диска RAW в формат VHD убедитесь, что размер диска RAW в несколько раз превышает 1 МБ. Дополнительные сведения можно найти в инструкциях ниже.
-* Azure Stack поддерживает cloud-init. [Пакет cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/using-cloud-init) — широко используемое средство, используемое для настройки виртуальной машины Linux при ее первой загрузке. Вы можете использовать cloud-init для установки пакетов, записи файлов или настройки пользователей и параметров безопасности. Так как cloud-init вызывается при начальной загрузке, к вашей конфигурации не нужно применять какие-либо дополнительные действия или агентов. См. инструкции по [подготовке существующего образа виртуальной машины Azure Linux к использованию с cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/cloudinit-prepare-custom-image).
+* Azure Stack Hub поддерживает cloud-init. [Пакет cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/using-cloud-init) — широко используемое средство, используемое для настройки виртуальной машины Linux при ее первой загрузке. Вы можете использовать cloud-init для установки пакетов, записи файлов или настройки пользователей и параметров безопасности. Так как cloud-init вызывается при начальной загрузке, к вашей конфигурации не нужно применять какие-либо дополнительные действия или агентов. См. инструкции по [подготовке существующего образа виртуальной машины Azure Linux к использованию с cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/cloudinit-prepare-custom-image).
 
 ### <a name="prepare-an-rhel-7-vm-from-hyper-v-manager"></a>Подготовка виртуальной машины RHEL 7 с помощью диспетчера Hyper-V
 
@@ -117,59 +117,59 @@ ms.locfileid: "75654905"
     ClientAliveInterval 180
     ```
 
-1. При создании пользовательского VHD-файла для Azure Stack имейте в виду, что WALinuxAgent версий 2.2.20–2.2.35 (монопольный доступ) не работает в средах Azure Stack до выпуска 1910. Для подготовки образа вы можете использовать версии 2.2.20/2.2.35. Чтобы использовать для подготовки пользовательского образа версии выше 2.2.35, обновите Azure Stack до выпуска 1903 и выше или установите исправление 1901/1902.
-
+1. При создании пользовательского VHD-файла для Azure Stack Hub имейте в виду, что WALinuxAgent версий 2.2.20–2.2.35 (монопольный доступ) не работает в средах Azure Stack Hub до выпуска 1910. Для подготовки образа вы можете использовать версии 2.2.20/2.2.35. Чтобы использовать для подготовки пользовательского образа версии выше 2.2.35, обновите Azure Stack Hub до выпуска 1903 и выше или установите исправление 1901/1902.
+    
     [До выпуска 1910] Выполните следующие инструкции, чтобы скачать совместимую версию WALinuxAgent.
-
+    
     1. Скачайте setuptools.
-
-    ```bash
-    wget https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz --no-check-certificate
-    tar xzf setuptools-7.0.tar.gz
-    cd setuptools-7.0
-    ```
-
+        
+        ```bash
+        wget https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz --no-check-certificate
+        tar xzf setuptools-7.0.tar.gz
+        cd setuptools-7.0
+        ```
+    
     1. Скачайте и распакуйте версию 2.2.20 агента из нашего репозитория GitHub.
 
-    ```bash
-    wget https://github.com/Azure/WALinuxAgent/archive/v2.2.20.zip
-    unzip v2.2.20.zip
-    cd WALinuxAgent-2.2.20
-    ```
+        ```bash
+        wget https://github.com/Azure/WALinuxAgent/archive/v2.2.20.zip
+        unzip v2.2.20.zip
+        cd WALinuxAgent-2.2.20
+        ```
 
     1. Установите setup.py.
 
-    ```bash
-    sudo python setup.py install
-    ```
+        ```bash
+        sudo python setup.py install
+        ```
 
     1. Перезапустите waagent.
-
-    ```bash
-    sudo systemctl restart waagent
-    ```
+    
+        ```bash
+        sudo systemctl restart waagent
+        ```
 
     1. Проверьте, совпадает ли версия агента со скачанной версией. В нашем примере это должна быть версия 2.2.20.
 
-    ```bash
-    waagent -version
-    ```
-    
+        ```bash
+        waagent -version
+        ```
+
     [После выпуска 1910] Выполните следующие инструкции, чтобы скачать совместимую версию WALinuxAgent:
     
     1. Пакет WALinuxAgent `WALinuxAgent-<version>` был отправлен в репозиторий дополнений Red Hat. Включите репозиторий дополнений, выполнив следующую команду:
 
-    ```bash
-    subscription-manager repos --enable=rhel-7-server-extras-rpms
-    ```
+        ```bash
+        subscription-manager repos --enable=rhel-7-server-extras-rpms
+        ```
 
-    1. Установите агент Linux для Azure, выполнив следующую команду.
+    1. Установите агент Linux для Azure, выполнив следующую команду:
 
-    ```bash
-    sudo yum install WALinuxAgent
-    sudo systemctl enable waagent.service
-    ```
-
+        ```bash
+        sudo yum install WALinuxAgent
+        sudo systemctl enable waagent.service
+        ```
+    
 
 1. Не создавайте пространство подкачки на диске ОС.
 
@@ -189,7 +189,7 @@ ms.locfileid: "75654905"
     sudo subscription-manager unregister
     ```
 
-1. Если вы используете систему, развернутую с помощью центра сертификации предприятия, виртуальная машина RHEL не будет доверять корневому сертификату Azure Stack. Необходимо поместить его в доверенное корневое хранилище. Дополнительные сведения см. в разделе о [добавлении доверенных корневых сертификатов на сервер](https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html).
+1. Если вы используете систему, развернутую с помощью центра сертификации предприятия, виртуальная машина RHEL не будет доверять корневому сертификату Azure Stack Hub. Необходимо поместить его в доверенное корневое хранилище. Дополнительные сведения см. в разделе о [добавлении доверенных корневых сертификатов на сервер](https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html).
 
 1. Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
 
@@ -316,58 +316,58 @@ ms.locfileid: "75654905"
     ClientAliveInterval 180
     ```
 
-1. При создании пользовательского VHD-файла для Azure Stack имейте в виду, что WALinuxAgent версий 2.2.20–2.2.35 (монопольный доступ) не работает в средах Azure Stack до выпуска 1910. Для подготовки образа вы можете использовать версии 2.2.20/2.2.35. Чтобы использовать для подготовки пользовательского образа версии выше 2.2.35, обновите Azure Stack до выпуска 1903 и выше или установите исправление 1901/1902.
+1. При создании пользовательского VHD-файла для Azure Stack Hub имейте в виду, что WALinuxAgent версий 2.2.20–2.2.35 (монопольный доступ) не работает в средах Azure Stack Hub до выпуска 1910. Для подготовки образа вы можете использовать версии 2.2.20/2.2.35. Чтобы использовать для подготовки пользовательского образа версии выше 2.2.35, обновите Azure Stack Hub до выпуска 1903 и выше или установите исправление 1901/1902.
 
     [До выпуска 1910] Выполните следующие инструкции, чтобы скачать совместимую версию WALinuxAgent.
 
     1. Скачайте setuptools.
-
-    ```bash
-    wget https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz --no-check-certificate
-    tar xzf setuptools-7.0.tar.gz
-    cd setuptools-7.0
-    ```
-
+        
+        ```bash
+        wget https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz --no-check-certificate
+        tar xzf setuptools-7.0.tar.gz
+        cd setuptools-7.0
+        ```
+        
     1. Скачайте и распакуйте версию 2.2.20 агента из нашего репозитория GitHub.
-
-    ```bash
-    wget https://github.com/Azure/WALinuxAgent/archive/v2.2.20.zip
-    unzip v2.2.20.zip
-    cd WALinuxAgent-2.2.20
-    ```
-
+        
+        ```bash
+        wget https://github.com/Azure/WALinuxAgent/archive/v2.2.20.zip
+        unzip v2.2.20.zip
+        cd WALinuxAgent-2.2.20
+        ```
+        
     1. Установите setup.py.
-
-    ```bash
-    sudo python setup.py install
-    ```
-
+        
+        ```bash
+        sudo python setup.py install
+        ```
+        
     1. Перезапустите waagent.
-
-    ```bash
-    sudo systemctl restart waagent
-    ```
-
+        
+        ```bash
+        sudo systemctl restart waagent
+        ```
+        
     1. Проверьте, совпадает ли версия агента со скачанной версией. В нашем примере это должна быть версия 2.2.20.
-
-    ```bash
-    waagent -version
-    ```
-    
+        
+        ```bash
+        waagent -version
+        ```
+        
     [После выпуска 1910] Выполните следующие инструкции, чтобы скачать совместимую версию WALinuxAgent:
     
     1. Пакет WALinuxAgent `WALinuxAgent-<version>` был отправлен в репозиторий дополнений Red Hat. Включите репозиторий дополнений, выполнив следующую команду:
 
-    ```bash
-    subscription-manager repos --enable=rhel-7-server-extras-rpms
-    ```
+        ```bash
+        subscription-manager repos --enable=rhel-7-server-extras-rpms
+        ```
 
-    1. Установите агент Linux для Azure, выполнив следующую команду.
+        1. Установите агент Linux для Azure, выполнив следующую команду.
 
-    ```bash
-    sudo yum install WALinuxAgent
-    sudo systemctl enable waagent.service
-    ```
+            ```bash
+            sudo yum install WALinuxAgent
+            sudo systemctl enable waagent.service
+            ```
 
 1. Не создавайте пространство подкачки на диске ОС.
 
@@ -387,7 +387,7 @@ ms.locfileid: "75654905"
     subscription-manager unregister
     ```
 
-1. Если вы используете систему, развернутую с помощью центра сертификации предприятия, виртуальная машина RHEL не будет доверять корневому сертификату Azure Stack. Необходимо поместить его в доверенное корневое хранилище. Дополнительные сведения см. в разделе о [добавлении доверенных корневых сертификатов на сервер](https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html).
+1. Если вы используете систему, развернутую с помощью центра сертификации предприятия, виртуальная машина RHEL не будет доверять корневому сертификату Azure Stack Hub. Необходимо поместить его в доверенное корневое хранилище. Дополнительные сведения см. в разделе о [добавлении доверенных корневых сертификатов на сервер](https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html).
 
 1. Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
 
@@ -434,7 +434,7 @@ ms.locfileid: "75654905"
 
 ## <a name="prepare-a-red-hat-based-vm-from-vmware"></a>Подготовка виртуальной машины на основе Red Hat с помощью VMware
 
-В этом разделе предполагается, что вы уже установили виртуальную машину RHEL в VMware. Дополнительные сведения об установке операционной системы на виртуальной машине VMware см. [здесь](https://partnerweb.vmware.com/GOSIG/home.html).
+В этом разделе предполагается, что вы уже установили виртуальную машину RHEL в VMware. Дополнительные сведения об установке операционной системы на виртуальной машине VMware см. [здесь](https://aka.ms/aa6z600).
 
 * При установке операционной системы Linux мы рекомендуем использовать стандартные разделы, а не LVM (который зачастую используется по умолчанию при установке). Этот метод позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с операционной системой может быть подключен к другой виртуальной машине в целях устранения неполадок. При желании на дисках с данными можно использовать LVM или RAID.
 * Не настраивайте раздел swap на диске операционной системы. Вы можете настроить агент Linux для создания файла подкачки на временном диске с ресурсами. Дополнительные сведения об этой конфигурации приведены ниже.
@@ -521,44 +521,44 @@ ms.locfileid: "75654905"
     ClientAliveInterval 180
     ```
 
-1. При создании пользовательского VHD-файла для Azure Stack имейте в виду, что WALinuxAgent версий 2.2.20–2.2.35 (монопольный доступ) не работает в средах Azure Stack до выпуска 1910. Для подготовки образа вы можете использовать версии 2.2.20/2.2.35. Чтобы использовать для подготовки пользовательского образа версии выше 2.2.35, обновите Azure Stack до выпуска 1903 и выше или установите исправление 1901/1902.
+1. При создании пользовательского VHD-файла для Azure Stack Hub имейте в виду, что WALinuxAgent версий 2.2.20–2.2.35 (монопольный доступ) не работает в средах Azure Stack Hub до выпуска 1910. Для подготовки образа вы можете использовать версии 2.2.20/2.2.35. Чтобы использовать для подготовки пользовательского образа версии выше 2.2.35, обновите Azure Stack Hub до выпуска 1903 и выше или установите исправление 1901/1902.
 
     [До выпуска 1910] Выполните следующие инструкции, чтобы скачать совместимую версию WALinuxAgent.
 
     1. Скачайте setuptools.
-
-    ```bash
-    wget https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz --no-check-certificate
-    tar xzf setuptools-7.0.tar.gz
-    cd setuptools-7.0
-    ```
-
-    1. Скачайте и распакуйте версию 2.2.20 агента из нашего репозитория GitHub.
-
-    ```bash
-    wget https://github.com/Azure/WALinuxAgent/archive/v2.2.20.zip
-    unzip v2.2.20.zip
-    cd WALinuxAgent-2.2.20
-    ```
-
-    1. Установите setup.py.
-
-    ```bash
-    sudo python setup.py install
-    ```
-
-    1. Перезапустите waagent.
-
-    ```bash
-    sudo systemctl restart waagent
-    ```
-
-    1. Проверьте, совпадает ли версия агента со скачанной версией. В нашем примере это должна быть версия 2.2.20.
-
-    ```bash
-    waagent -version
-    ```
     
+        ```bash
+        wget https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz --no-check-certificate
+        tar xzf setuptools-7.0.tar.gz
+        cd setuptools-7.0
+        ```
+        
+    1. Скачайте и распакуйте версию 2.2.20 агента из нашего репозитория GitHub.
+        
+        ```bash
+        wget https://github.com/Azure/WALinuxAgent/archive/v2.2.20.zip
+        unzip v2.2.20.zip
+        cd WALinuxAgent-2.2.20
+        ```
+        
+    1. Установите setup.py.
+        
+        ```bash
+        sudo python setup.py install
+        ```
+        
+    1. Перезапустите waagent.
+        
+        ```bash
+        sudo systemctl restart waagent
+        ```
+        
+    1. Проверьте, совпадает ли версия агента со скачанной версией. В нашем примере это должна быть версия 2.2.20.
+        
+        ```bash
+        waagent -version
+        ```
+        
     [После выпуска 1910] Выполните следующие инструкции, чтобы скачать совместимую версию WALinuxAgent:
     
     1. Пакет WALinuxAgent `WALinuxAgent-<version>` был отправлен в репозиторий дополнений Red Hat. Включите репозиторий дополнений, выполнив следующую команду:
@@ -568,12 +568,12 @@ ms.locfileid: "75654905"
     ```
 
     1. Установите агент Linux для Azure, выполнив следующую команду.
-
-    ```bash
-    sudo yum install WALinuxAgent
-    sudo systemctl enable waagent.service
-    ```
-
+        
+        ```bash
+        sudo yum install WALinuxAgent
+        sudo systemctl enable waagent.service
+        ```
+        
 1. Не создавайте пространство подкачки на диске ОС.
 
     Агент Linux для Azure может автоматически настраивать размер области подкачки с использованием локального диска с ресурсами, подключенного к виртуальной машине после подготовки в Azure. Следует отметить, что локальный диск ресурсов является временным диском и должен быть очищен при отмене подготовки виртуальной машины. После установки агента Linux для Azure (см. предыдущий шаг) измените соответствующим образом следующие параметры в файле `/etc/waagent.conf`:
@@ -592,7 +592,7 @@ ms.locfileid: "75654905"
     sudo subscription-manager unregister
     ```
 
-1. Если вы используете систему, развернутую с помощью центра сертификации предприятия, виртуальная машина RHEL не будет доверять корневому сертификату Azure Stack. Необходимо поместить его в доверенное корневое хранилище. Дополнительные сведения см. в разделе о [добавлении доверенных корневых сертификатов на сервер](https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html).
+1. Если вы используете систему, развернутую с помощью центра сертификации предприятия, виртуальная машина RHEL не будет доверять корневому сертификату Azure Stack Hub. Необходимо поместить его в доверенное корневое хранилище. Дополнительные сведения см. в разделе о [добавлении доверенных корневых сертификатов на сервер](https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html).
 
 1. Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
 
@@ -637,7 +637,7 @@ ms.locfileid: "75654905"
 
 ## <a name="prepare-a-red-hat-based-vm-from-an-iso-by-using-a-kickstart-file-automatically"></a>Подготовка виртуальной машины под управлением Red Hat из ISO-образа с помощью автоматического использования файла kickstart
 
-1. Создайте файл kickstart, который будет включать содержимое ниже, и сохраните его. Остановка и удаление cloud-init является необязательными (начиная с выпуска 1910, cloud-init поддерживается в Azure Stack). Установите агент из репозитория RedHat только для выпуска 1910 и выше. До выпуска 1910 используйте репозиторий Azure, как в предыдущем разделе. Дополнительные сведения об установке kickstart см. [здесь](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html).
+1. Создайте файл kickstart, который будет включать содержимое ниже, и сохраните его. Остановка и удаление cloud-init являются необязательными (начиная с выпуска 1910, cloud-init поддерживается в Azure Stack Hub). Установите агент из репозитория RedHat только для выпуска 1910 и выше. До выпуска 1910 используйте репозиторий Azure, как в предыдущем разделе. Дополнительные сведения об установке kickstart см. [здесь](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html).
 
     ```sh
     Kickstart for provisioning a RHEL 7 Azure VM
@@ -808,6 +808,6 @@ dracut -f -v
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь виртуальный жесткий диск Red Hat Enterprise Linux можно использовать для создания новых виртуальных машин в Azure Stack. Если вы впервые отправляете VHD-файл в Azure Stack, ознакомьтесь со статьей [Создание и публикация элемента Marketplace](azure-stack-create-and-publish-marketplace-item.md).
+Теперь виртуальный жесткий диск Red Hat Enterprise Linux можно использовать для создания новых виртуальных машин в Azure Stack Hub. Если вы впервые отправляете VHD-файл в Azure Stack Hub, ознакомьтесь со статьей [Создание и публикация пользовательского элемента Azure Stack Hub Marketplace](azure-stack-create-and-publish-marketplace-item.md).
 
 Чтобы получить дополнительные сведения о низкоуровневых оболочках, сертифицированных для запуска Red Hat Enterprise Linux, посетите [веб-сайт Red Hat](https://access.redhat.com/certified-hypervisors).

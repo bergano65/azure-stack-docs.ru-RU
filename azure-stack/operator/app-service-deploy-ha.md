@@ -1,6 +1,6 @@
 ---
-title: Развертывание Службы приложений в Azure Stack с использованием конфигурации с высоким уровнем доступности | Документация Майкрософт
-description: Сведения о развертывании Службы приложений в Azure Stack с использованием конфигурации с высоким уровнем доступности.
+title: Развертывание Службы приложений в Azure Stack Hub с использованием конфигурации с высоким уровнем доступности | Документация Майкрософт
+description: Сведения о развертывании Службы приложений в Azure Stack Hub с использованием конфигурации с высоким уровнем доступности.
 services: azure-stack
 documentationcenter: ''
 author: BryanLa
@@ -16,21 +16,21 @@ ms.date: 01/02/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/02/2020
-ms.openlocfilehash: 9e5b99a5787e6472b2e9d25a509f615a1b02a732
-ms.sourcegitcommit: a6c02421069ab9e72728aa9b915a52ab1dd1dbe2
+ms.openlocfilehash: 0d1912a753ae29eb7a4c0ee8b583c34821962f60
+ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75655064"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76023039"
 ---
 # <a name="deploy-app-service-in-a-highly-available-configuration"></a>Развертывание Службы приложений в конфигурации с высоким уровнем доступности
 
-В этой статье показано, как использовать элементы Azure Stack Marketplace для развертывания Службы приложений для Azure Stack в конфигурации с высоким уровнем доступности. В дополнение к доступным элементам Marketplace это решение также использует шаблон быстрого запуска Azure Stack [appservice-fileshare-sqlserver-ha](https://github.com/Azure/azurestack-quickstart-templates/tree/master/appservice-fileserver-sqlserver-ha). Этот шаблон автоматизирует создание инфраструктуры с высоким уровнем доступности для размещения поставщика ресурсов Службы приложений. Затем в этой инфраструктуре виртуальных машин с высоким уровнем доступности устанавливается Служба приложений. 
+В этой статье показано, как использовать элементы Azure Stack Hub Marketplace для развертывания Службы приложений для Azure Stack Hub в конфигурации с высоким уровнем доступности. В дополнение к доступным элементам Marketplace это решение также использует шаблон быстрого запуска Azure Stack Hub [appservice-fileshare-sqlserver-ha](https://github.com/Azure/azurestack-quickstart-templates/tree/master/appservice-fileserver-sqlserver-ha). Этот шаблон автоматизирует создание инфраструктуры с высоким уровнем доступности для размещения поставщика ресурсов Службы приложений. Затем в этой инфраструктуре виртуальных машин с высоким уровнем доступности устанавливается Служба приложений. 
 
 ## <a name="deploy-the-highly-available-app-service-infrastructure-vms"></a>Развертывание виртуальных машин инфраструктуры Службы приложений с высоким уровнем доступности
-Шаблон быстрого запуска Azure Stack [appservice-fileshare-sqlserver-ha](https://github.com/Azure/azurestack-quickstart-templates/tree/master/appservice-fileserver-sqlserver-ha) упрощает развертывание Службы приложений в конфигурации с высоким уровнем доступности. Службу необходимо развернуть в подписке поставщика по умолчанию. 
+Шаблон быстрого запуска Azure Stack Hub [appservice-fileshare-sqlserver-ha](https://github.com/Azure/azurestack-quickstart-templates/tree/master/appservice-fileserver-sqlserver-ha) упрощает развертывание Службы приложений в конфигурации с высоким уровнем доступности. Службу необходимо развернуть в подписке поставщика по умолчанию. 
 
-При создании настраиваемого ресурса в Azure Stack шаблон создает следующие элементы:
+При создании настраиваемого ресурса в Azure Stack Hub шаблон создает следующие элементы:
 - виртуальную сеть и необходимые подсети;
 - группы безопасности сети для подсетей файлового сервера, SQL Server и доменных служб Active Directory (AD DS);
 - учетные записи хранения для дисков виртуальной машины и облака-свидетеля кластера;
@@ -40,8 +40,8 @@ ms.locfileid: "75655064"
 - кластер файлового сервера из двух узлов;
 - два контроллера домена.
 
-### <a name="required-azure-stack-marketplace-items"></a>Необходимые элементы Marketplace для Azure Stack
-Перед использованием этого шаблона убедитесь, что в вашем экземпляре Azure Stack доступны следующие [элементы Marketplace для Azure Stack](azure-stack-marketplace-azure-items.md):
+### <a name="required-azure-stack-hub-marketplace-items"></a>Необходимые элементы Marketplace для Azure Stack Hub
+Перед использованием этого шаблона убедитесь, что в вашем экземпляре Azure Stack Hub доступны следующие [элементы Marketplace для Azure Stack Hub](azure-stack-marketplace-azure-items.md):
 
 - образ основных компонентов Windows Server 2016 Datacenter (для виртуальных машин файлового сервера и AD DS);
 - SQL Server 2016 с пакетом обновления 2 (SP2) на базе Windows Server 2016 (Enterprise);
@@ -52,7 +52,7 @@ ms.locfileid: "75655064"
 > Дополнительные сведения о требованиях к шаблону и значениях по умолчанию см. в [файле сведений о шаблоне](https://github.com/Azure/azurestack-quickstart-templates/tree/master/appservice-fileserver-sqlserver-ha), доступном на сайте GitHub. 
 
 ### <a name="deploy-the-app-service-infrastructure"></a>Развертывание инфраструктуры Службы приложений
-Выполните действия, описанные в этом разделе, чтобы создать настраиваемое развертывание с помощью шаблона быстрого запуска Azure Stack **appservice-fileshare-sqlserver-ha**.
+Выполните действия, описанные в этом разделе, чтобы создать настраиваемое развертывание с помощью шаблона быстрого запуска Azure Stack Hub **appservice-fileshare-sqlserver-ha**.
 
 1. [!INCLUDE [azs-admin-portal](../includes/azs-admin-portal.md)]
 
@@ -107,7 +107,7 @@ ms.locfileid: "75655064"
 
 
 ## <a name="deploy-app-service-in-a-highly-available-configuration"></a>Развертывание Службы приложений в конфигурации с высоким уровнем доступности
-Выполните действия, описанные в этом разделе, чтобы развернуть Службу приложений для Azure Stack в конфигурации с высоким уровнем доступности на основе шаблона быстрого запуска Azure Stack [appservice-fileshare-sqlserver-ha](https://github.com/Azure/azurestack-quickstart-templates/tree/master/appservice-fileserver-sqlserver-ha). 
+Выполните действия, описанные в этом разделе, чтобы развернуть Службу приложений для Azure Stack Hub в конфигурации с высоким уровнем доступности на основе шаблона быстрого запуска Azure Stack Hub [appservice-fileshare-sqlserver-ha](https://github.com/Azure/azurestack-quickstart-templates/tree/master/appservice-fileserver-sqlserver-ha). 
 
 Установив поставщик ресурсов службы приложений, можно включить его в свои предложения и планы. Затем пользователи смогут подписаться на службу и приступить к созданию приложений.
 
@@ -115,28 +115,28 @@ ms.locfileid: "75655064"
 > Перед запуском установщика поставщика ресурсов обязательно ознакомьтесь с заметками о выпуске, которые прилагаются к каждому выпуску Службы приложений, чтобы узнать о новых функциях, исправлениях и любых известных проблемах, которые могут повлиять на развертывание.
 
 ### <a name="prerequisites"></a>предварительные требования
-Перед запуском установщика Службы приложений необходимо выполнить некоторые шаги, указанные в статье [Подготовка к работе со Службой приложений в Azure Stack](azure-stack-app-service-before-you-get-started.md).
+Перед запуском установщика Службы приложений необходимо выполнить некоторые шаги, указанные в статье [Предварительные условия для развертывания Службы приложений в Azure Stack Hub](azure-stack-app-service-before-you-get-started.md):
 
 > [!TIP]
 > Не все шаги, описанные в статье [Подготовка к работе со службой приложений в Azure Stack](azure-stack-app-service-before-you-get-started.md), являются обязательными, так как при развертывании шаблона виртуальные машины инфраструктуры настраиваются с учетом ваших требований.
 
 - [Скачайте установочный и вспомогательный скрипты для Службы приложений](azure-stack-app-service-before-you-get-started.md#download-the-installer-and-helper-scripts).
-- [Скачивание элементов из Azure Stack Marketplace](azure-stack-app-service-before-you-get-started.md#download-items-from-the-azure-marketplace)
+- [Скачайте элементы из Azure Stack Hub Marketplace](azure-stack-app-service-before-you-get-started.md#download-items-from-the-azure-marketplace).
 - [Создайте необходимые сертификаты](azure-stack-app-service-before-you-get-started.md#get-certificates).
-- Создайте приложение удостоверений на основе поставщика удостоверений, выбранного для Azure Stack. Приложения удостоверений можно создать для [Azure AD](azure-stack-app-service-before-you-get-started.md#create-an-azure-active-directory-app) или [служб федерации Active Directory](azure-stack-app-service-before-you-get-started.md#create-an-active-directory-federation-services-app). После создания запишите идентификатор приложения.
-- Убедитесь, что образ Windows Server 2016 Datacenter добавлен в Azure Stack Marketplace. Этот образ необходим для установки Службы приложений.
+- Создайте приложение удостоверений на основе поставщика удостоверений, выбранного для Azure Stack Hub. Приложения удостоверений можно создать для [Azure AD](azure-stack-app-service-before-you-get-started.md#create-an-azure-active-directory-app) или [служб федерации Active Directory](azure-stack-app-service-before-you-get-started.md#create-an-active-directory-federation-services-app). После создания запишите идентификатор приложения.
+- Убедитесь, что образ Windows Server 2016 Datacenter добавлен в Azure Stack Hub Marketplace. Этот образ необходим для установки Службы приложений.
 
 ### <a name="steps-for-app-service-deployment"></a>Этапы развертывания Службы приложений
 Установка поставщика ресурсов службы приложений занимает не менее часа. Необходимое время зависит от того, сколько экземпляров ролей нужно развернуть. Во время развертывания программа установки выполняет следующие задачи:
 
-- создание контейнера больших двоичных объектов в определенной учетной записи хранения Azure Stack;
+- создание контейнера больших двоичных объектов в указанной учетной записи хранения Azure Stack Hub;
 - создание зоны DNS и записей для службы приложений;
 - регистрацию поставщика ресурсов службы приложений;
 - регистрацию элементов коллекции службы приложений.
 
 Чтобы развернуть поставщик ресурсов Службы приложений, выполните следующие действия.
 
-1. Запустите ранее скачанный установщик Службы приложений (файл **appservice.exe**) от имени администратора с компьютера, который имеет доступ к конечной точке управления ресурсами Azure для администрирования Azure Stack.
+1. Запустите ранее скачанный установщик Службы приложений (файл **appservice.exe**) от имени администратора с компьютера, который имеет доступ к конечной точке управления ресурсами Azure для администрирования Azure Stack Hub.
 
 2. Выберите **Развернуть службу приложений или провести обновление до последней версии**.
 
@@ -150,13 +150,13 @@ ms.locfileid: "75655064"
 
     ![Условия лицензирования Службы приложений от стороннего поставщика](media/app-service-deploy-ha/03.png)
 
-5. Укажите конфигурацию облачной конечной точки Службы приложений для среды Azure Stack.
+5. Укажите конфигурацию облачной конечной точки Службы приложений для среды Azure Stack Hub.
 
     ![Конфигурация облачной конечной точки Службы приложений для Службы приложений](media/app-service-deploy-ha/04.png)
 
-6. **Подключитесь** к подписке Azure Stack, которая будет использоваться для установки, и выберите расположение. 
+6. **Подключитесь** к подписке Azure Stack Hub, которая будет использоваться для установки, и выберите расположение. 
 
-    ![Подключение к подписке Azure Stack для Службы приложений](media/app-service-deploy-ha/05.png)
+    ![Подключение к подписке Azure Stack Hub для Службы приложений](media/app-service-deploy-ha/05.png)
 
 7. Установите переключатель **Использовать существующие виртуальные сети и подсети** и укажите **имя группы ресурсов**, используемой для развертывания шаблона с высоким уровнем доступности.<br><br>Затем выберите виртуальную сеть, созданную как часть развертывания шаблона, и соответствующие подсети ролей из вариантов в раскрывающихся списках. 
 
@@ -188,7 +188,7 @@ ms.locfileid: "75655064"
     ![Сертификат приложения удостоверений и корневой сертификат для Службы приложений](media/app-service-deploy-ha/008.png)
 
 11. Затем предоставьте остальные необходимые сведения для следующих сертификатов и щелкните **Далее**:
-    - SSL-сертификат Azure Stack по умолчанию (в формате **_.appservice.local.azurestack.external.pfx**);
+    - SSL-сертификат Azure Stack Hub по умолчанию (в формате **_.appservice.local.azurestack.external.pfx**);
     - SSL-сертификат API (в формате **api.appservice.local.azurestack.external.pfx**);
     - сертификат издателя (в формате **ftp.appservice.local.azurestack.external.pfx**). 
 
@@ -238,7 +238,7 @@ ms.locfileid: "75655064"
 
 [Добавьте базы данных appservice_hosting и appservice_metering в группу доступности](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), если вы предоставили поставщику ресурсов для Службы приложений экземпляр SQL AlwaysOn. Синхронизируйте базы данных, чтобы избежать недоступности службы при отработке отказа базы данных. Можно также выполнить [скрипт](https://blog.sqlauthority.com/2017/11/30/sql-server-alwayson-availability-groups-script-sync-logins-replicas/) чтобы импортировать имена для входа AppServices с исходного сервера-источника на сервер отработки отказа.
 
-[Масштабирование Службы приложений](azure-stack-app-service-add-worker-roles.md). Возможно, вам потребуется добавить дополнительные рабочие роли инфраструктуры в Службу приложений, чтобы удовлетворить ожидаемый спрос на приложения в вашей среде. По умолчанию Служба приложений в Azure Stack поддерживает бесплатные и общие рабочие уровни. Чтобы добавить другие рабочие уровни, вам потребуется больше рабочих ролей.
+[Масштабирование Службы приложений](azure-stack-app-service-add-worker-roles.md). Возможно, вам потребуется добавить дополнительные рабочие роли инфраструктуры в Службу приложений, чтобы удовлетворить ожидаемый спрос на приложения в вашей среде. По умолчанию Служба приложений в Azure Stack Hub поддерживает бесплатные и общие рабочие уровни. Чтобы добавить другие рабочие уровни, вам потребуется больше рабочих ролей.
 
 [Настройка источников развертывания](azure-stack-app-service-configure-deployment-sources.md). Для поддержки развертывания по запросу требуется дополнительная конфигурация от нескольких поставщиков системы управления версиями, таких как GitHub, BitBucket, OneDrive и DropBox.
 
