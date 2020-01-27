@@ -14,14 +14,14 @@ ms.topic: article
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 066a179df94d9a61b89e5f6679968db7e4dea314
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: e7b7b26afa4cb9a367ea48ef50308568a61db320
+ms.sourcegitcommit: 7dd685fddf2f5d7a0c0a20fb8830ca5a061ed031
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883547"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259755"
 ---
-# <a name="how-to-consume-monitoring-data-from-azure-stack-hub"></a>Использование данных мониторинга из Azure Stack Hub
+# <a name="consume-monitoring-data-from-azure-stack-hub"></a>Использование данных мониторинга из Azure Stack Hub
 
 Данные мониторинга можно найти в одном расположении с помощью конвейера Azure Monitor, как и данные Azure Monitor в глобальной среде Azure. Но не все данные мониторинга, найденные в глобальной среде Azure, доступны в Azure Stack Hub. В этой статье приводятся сводные сведения о различных способах использования данных мониторинга в Azure Stack Hub.
  

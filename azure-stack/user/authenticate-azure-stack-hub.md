@@ -9,14 +9,14 @@ ms.date: 12/13/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/13/2019
-ms.openlocfilehash: d10fbc7ad009456459a8719fbc6e6c8ce51529f1
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: d04fcc37df7b610c85a2ba27a90f288bce5feae3
+ms.sourcegitcommit: 7dd685fddf2f5d7a0c0a20fb8830ca5a061ed031
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816485"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259908"
 ---
-# <a name="how-to-get-authentication-information-for-azure-stack-hub"></a>Как получить сведения о проверке подлинности для Azure Stack Hub
+# <a name="get-authentication-information-for-azure-stack-hub"></a>Получение сведений о проверке подлинности для Azure Stack Hub
 
 Для проверки подлинности в Azure Stack Hub необходимо указать идентификатор подписки, идентификатор клиента и расположение, а также конечную точку Resource Manager для Azure Stack Hub. Эти значения можно получить из [конечной точки Resource Manager для Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles-ruby?view=azs-1910#the-azure-stack-hub-resource-manager-endpoint). Их также можно получить, выполнив действия, описанные в этой статье.
 
@@ -32,7 +32,7 @@ ms.locfileid: "75816485"
 
     Каталог — это контейнер, который содержит информацию о пользователях, приложениях, группах и субъектах-службах. Клиент каталога — это организация, например корпорация Майкрософт или ваша компания.
 
--   **Местоположение**
+-   **Расположение**
 
     Расположение или регион — это набор центров обработки данных, развернутых в пределах периметра, определяемого задержкой, и соединенных между собой выделенной региональной сетью с низкой задержкой. При использовании Azure Stack Hub ваше расположение может включать в себя локальный центр обработки данных, а не регион Azure.
 

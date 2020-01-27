@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: powershell
 ms.topic: article
-ms.date: 10/10/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 07/09/2019
-ms.openlocfilehash: e55fd18babea30d0b004c1219d8ce4842f4750bd
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 410a166d3d13107511a46cfad77c598f9118d026
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75819477"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76536000"
 ---
 # <a name="use-docker-to-run-powershell-in-azure-stack-hub"></a>Использование Docker для запуска PowerShell в Azure Stack Hub
 
@@ -103,5 +103,5 @@ Dockerfile открывает образ Microsoft *microsoft/windowsservercore*
 
 -  Ознакомьтесь с обзором в статье [Начало работы с PowerShell в Azure Stack](azure-stack-powershell-overview.md).
 - См. подробнее об [использовании профилей API для PowerShell](azure-stack-version-profiles.md) в Azure Stack Hub.
-- Установка [PowerShell для Azure Stack Hub](../operator/azure-stack-powershell-install.md).
+- [Установка PowerShell для Azure Stack Hub](../operator/azure-stack-powershell-install.md).
 - Чтобы обеспечить согласованность данных в облаке, см. статью [Рекомендации по использованию шаблона Azure Resource Manager](azure-stack-develop-templates.md).

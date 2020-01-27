@@ -14,12 +14,12 @@ ms.date: 09/10/2019
 ms.author: justinha
 ms.reviewer: ppacent
 ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: 9eba64e86a375f275c159e6d571e3557f2164726
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 4b966ac4faec51dac06e39fab8804e295a9a40b1
+ms.sourcegitcommit: 320eddb281a36d066ec80d67b103efad7d4f33c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75818270"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145841"
 ---
 # <a name="generate-certificate-signing-requests-for-azure-stack-hub"></a>Создание запросов на подписывание сертификатов для Azure Stack Hub
 
@@ -30,7 +30,7 @@ ms.locfileid: "75818270"
 - **Стандартные запросы на сертификаты** согласно инструкциям по [созданию запроса на подпись сертификата](azure-stack-get-pki-certs.md#generate-certificate-signing-requests).
 - **Платформа как услуга (PaaS).** Вы можете запросить имена PaaS для сертификатов, как описано в разделе [Необязательные сертификаты PaaS](azure-stack-pki-certs.md#optional-paas-certificates).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем создать запросы на подпись сертификатов PKI для развертывания Azure Stack Hub, необходимо убедиться, что система отвечает следующим требованиям:
 
@@ -110,8 +110,8 @@ ms.locfileid: "75818270"
     # DBAdapter
     New-AzsCertificateSigningRequest -certificateType DBAdapter -RegionName $regionName -FQDN $externalFQDN -subject $subject -OutputRequestPath $OutputDirectory
 
-    # EventHub
-    New-AzsCertificateSigningRequest -certificateType EventHub -RegionName $regionName -FQDN $externalFQDN -subject $subject -OutputRequestPath $OutputDirectory
+    # EventHubs
+    New-AzsCertificateSigningRequest -certificateType EventHubs -RegionName $regionName -FQDN $externalFQDN -subject $subject -OutputRequestPath $OutputDirectory
 
     # IoTHub
     New-AzsCertificateSigningRequest -certificateType IoTHub -RegionName $regionName -FQDN $externalFQDN -subject $subject -OutputRequestPath $OutputDirectory

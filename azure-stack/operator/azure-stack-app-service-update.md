@@ -15,16 +15,14 @@ ms.date: 01/13/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2019
-ms.openlocfilehash: cf161a3c756042d60a112a7ca2c794e3bb72b297
-ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
+ms.openlocfilehash: 4289009ee20f5e031ae1104b0507faa189e4d1aa
+ms.sourcegitcommit: e47dc5fe9e59010ea3dbb9cb31abe15cfb821262
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75924343"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124809"
 ---
 # <a name="update-azure-app-service-on-azure-stack-hub"></a>Обновление Службы приложений Azure в Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack Hub и Пакет средств разработки Azure Stack Hub*
 
 > [!IMPORTANT]
 > Прежде чем развертывать Службу приложений Azure 1.8, примените обновление 1910 к интегрированной системе Azure Stack Hub или разверните последнюю версию Пакета средств разработки Azure Stack Hub (ASDK).
@@ -71,7 +69,7 @@ ms.locfileid: "75924343"
     1. Выберите предпочитаемый метод подключения — с помощью **учетных данных** или **субъекта-службы**.
         - **Учетные данные**
             - При использовании Azure Active Directory (Azure AD) введите учетную запись администратора Azure AD и пароль, указанный при развертывании Azure Stack Hub Выберите **Подключиться**.
-            - Если вы используете службы федерации Active Directory (AD FS), предоставьте соответствующую учетную запись администратора. Например, cloudadmin@azurestack.local. Введите пароль и затем нажмите кнопку **Подключить**.
+            - Если вы используете службы федерации Active Directory (AD FS), предоставьте соответствующую учетную запись администратора. Например, cloudadmin@azurestack.local. Введите пароль и затем щелкните **Подключить**.
         - **Субъект-служба**
             - Используемый субъект-служба **должен** иметь права **владельца** в **подписке поставщика по умолчанию**.
             - Укажите значения для параметров **Идентификатор субъект-службы**, **Файл сертификата**, **Пароль** и щелкните **Подключить**.

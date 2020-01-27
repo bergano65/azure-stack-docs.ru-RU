@@ -11,21 +11,21 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/10/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 3a872a60f32b46540f6b55f65555ca9958e67c38
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 3a101150ee8dd931a4c13ba68225cfc3785352f4
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883292"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76535949"
 ---
 # <a name="access-the-kubernetes-dashboard-in-azure-stack-hub"></a>Получение доступа к панели мониторинга Kubernetes в Azure Stack Hub 
 
 > [!Note]   
-> Используйте элемент Kubernetes Azure Stack Marketplace для развертывания кластеров в качестве проверки концепции. Для поддерживаемых кластеров Kubernetes в Azure Stack используйте [обработчик AKS](azure-stack-kubernetes-aks-engine-overview.md).
+> Используйте элемент Kubernetes Azure Stack Marketplace для развертывания кластеров в качестве проверки концепции. Для поддерживаемых кластеров Kubernetes в Azure Stack используйте[обработчик AKS](azure-stack-kubernetes-aks-engine-overview.md).
 
 Служба Kubernetes включает в себя веб-панель мониторинга, которую можно использовать для выполнения базовых операций управления. Эта панель мониторинга позволяет просматривать базовое состояние работоспособности и метрики для приложений, создавать и развертывать службы, а также изменять существующие приложения. В этой статье показано, как настроить панель мониторинга Kubernetes в Azure Stack Hub.
 
@@ -132,7 +132,7 @@ ms.locfileid: "75883292"
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 
-[Развертывание Kubernetes в Azure Stack Hub](azure-stack-solution-template-kubernetes-deploy.md)  
+[Развертывание Kubernetes в Azure Stack Hub](azure-stack-solution-template-kubernetes-deploy.md)  
 
 [Добавление кластера Kubernetes в Marketplace (для оператора Azure Stack Hub)](../operator/azure-stack-solution-template-kubernetes-cluster-add.md)  
 

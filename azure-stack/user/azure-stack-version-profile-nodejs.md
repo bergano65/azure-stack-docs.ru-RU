@@ -14,12 +14,12 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: e6e65ebf39ae08b56f02fca437369f4861613ade
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: d235a128e9fc7bb0bdabec58f33ff6de76c50a5e
+ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75878311"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256280"
 ---
 # <a name="use-api-version-profiles-with-nodejs-software-development-kit-sdk-in-azure-stack-hub"></a>Использование профилей версий API с пакетом средств разработки (SDK) для Node.js в Azure Stack Hub
 
@@ -89,7 +89,7 @@ ms.locfileid: "75878311"
 
 Чтобы использовать пакет SDK Azure для Node.js с Azure Stack Hub, укажите следующие значения и задайте значения для переменных среды. Чтобы настроить переменные среды, воспользуйтесь инструкциями, которые указаны после таблицы для соответствующей операционной системы.
 
-| Значение | Переменные среды | Description |
+| Значение | Переменные среды | Описание |
 | --- | --- | --- |
 | Tenant ID | TENANT\_ID | Значение [идентификатора клиента](https://docs.microsoft.com/azure/azure-stack/azure-stack-identity-overview) Azure Stack Hub. |
 | Идентификатор клиента | CLIENT\_ID | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы (см. выше).  |
@@ -120,7 +120,8 @@ Microsoft Azure Resource Manager — это платформа управлен�
 Вы можете получить метаданные из конечной точки Resource Manager. Конечная точка возвращает JSON-файл со сведениями, необходимыми для запуска кода.
 
 > [!Note]  
-> **ResourceManagerUrl** в Пакете средств разработки Azure Stack (ASDK): `https://management.local.azurestack.external`. **ResourceManagerUrl** в интегрированных системах: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com`. Чтобы получить необходимые метаданные, используйте `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`.
+> **ResourceManagerUrl** в Пакете средств разработки Azure Stack (ASDK): `https://management.local.azurestack.external`. **ResourceManagerUrl** в интегрированной системе: `https://management.region.<fqdn>/`, где `<fqdn>` — полное доменное имя.
+Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`.
 
 Пример JSON-файла:
 

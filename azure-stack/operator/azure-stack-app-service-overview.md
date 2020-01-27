@@ -15,16 +15,14 @@ ms.date: 01/13/2020
 ms.author: BryanLa
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: bb34fc2322294f9829a8dea02f0812a6503c0197
-ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
+ms.openlocfilehash: 2b39b4e7bf8f4b7d3e24d2547e187b7e5d81c728
+ms.sourcegitcommit: e47dc5fe9e59010ea3dbb9cb31abe15cfb821262
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75924245"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124758"
 ---
 # <a name="azure-app-service-and-azure-functions-on-azure-stack-hub-overview"></a>Обзор Службы приложений Azure и Функций Azure в Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack Hub и Пакет средств разработки Azure Stack Hub*
 
 Служба приложений Azure в Azure Stack Hub — это предложение Microsoft Azure в формате PaaS (платформа как услуга) для Azure Stack Hub. Эта служба позволяет внутренним и внешним клиентам создавать веб-приложения, API и приложения Функций Azure для любых платформ и устройств. Клиенты получают возможность интегрировать свои приложения с приложениями в локальной среде и автоматизировать бизнес-процессы. Операторы Azure Stack Hub могут запускать клиентские приложения на полностью управляемых виртуальных машинах, в том числе на общих ресурсах для виртуальных машин или на выделенных виртуальных машинах.
 

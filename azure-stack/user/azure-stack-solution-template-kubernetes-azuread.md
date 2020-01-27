@@ -11,25 +11,25 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/10/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: 52b94a95c525ac4a327282380c241229e8bd7117
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 19fecf32cb15e9c320e09b1b2740636ced664496
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75878481"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76536493"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-hub-using-azure-active-directory"></a>Развертывание Kubernetes в Azure Stack Hub с помощью Azure Active Directory
 
 > [!Note]  
-> Используйте элемент Kubernetes Azure Stack Marketplace для развертывания кластеров в качестве проверки концепции. Для поддерживаемых кластеров Kubernetes в Azure Stack используйте [обработчик AKS](azure-stack-kubernetes-aks-engine-overview.md).
+> Используйте элемент Kubernetes Azure Stack Marketplace для развертывания кластеров в качестве проверки концепции. Для поддерживаемых кластеров Kubernetes в Azure Stack используйте[обработчик AKS](azure-stack-kubernetes-aks-engine-overview.md).
 
 Вы можете выполнить действия, описанные в этой статье, чтобы развернуть и настроить ресурсы для Kubernetes при использовании Azure Active Directory (Azure AD) в качестве службы управления удостоверениями в одной скоординированной операции.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать работу, убедитесь в наличии необходимых разрешений и в готовности Azure Stack Hub.
 
@@ -41,11 +41,11 @@ ms.locfileid: "75878481"
 
     Инструкции по создания ключа см. в разделе [SSH Key Generation](azure-stack-dev-start-howto-ssh-public-key.md) (Создание ключа SSH).
 
-1. Убедитесь в наличии действующей подписки на портале клиента Azure Stack Hub, а также достаточного количества общедоступных IP-адресов для добавления новых приложений.
+1. Убедитесь в наличии действующей подписки на портале клиента Azure Stack Hub, а также достаточного количества общедоступных IP-адресов для добавления новых приложений.
 
-    Кластер не может быть развернут в подписке **администратора** Azure Stack Hub. Необходимо использовать подписку **пользователя**. 
+    Кластер не может быть развернут в подписке **администратора** Azure Stack Hub. Необходимо использовать подписку **пользователя**. 
 
-1. Если в Marketplace нет кластера Kubernetes, обратитесь к администратору Azure Stack Hub.
+1. Если в Marketplace нет кластера Kubernetes, обратитесь к администратору Azure Stack Hub.
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
@@ -95,7 +95,7 @@ ms.locfileid: "75878481"
 
 ## <a name="deploy-kubernetes"></a>Развертывание Kubernetes
 
-1. Откройте [портал Azure Stack Hub](https://portal.local.azurestack.external).
+1. Откройте [портал Azure Stack Hub](https://portal.local.azurestack.external).
 
 1. Выберите **+Создать ресурс** > **Служба вычислений** > **Кластер Kubernetes**. Нажмите кнопку **Создать**.
 
@@ -111,7 +111,7 @@ ms.locfileid: "75878481"
 
 1. Введите имя новой группы ресурсов или выберите существующую. Имя ресурса должно содержать буквенно-цифровые символы. Оно вводится в нижнем регистре.
 
-1. Выберите **расположение** группы ресурсов. Это регион, выбранный для установки Azure Stack Hub.
+1. Выберите **расположение** группы ресурсов. Это регион, выбранный для установки Azure Stack Hub.
 
 ### <a name="2-kubernetes-cluster-settings"></a>2. Параметры кластера Kubernetes
 
@@ -142,7 +142,7 @@ ms.locfileid: "75878481"
 
 1. Введите **секрет клиента субъекта-службы**. Это секрет клиента, который вы настроили при создании службы.
 
-1. Введите **версию Kubernetes**. Это версия поставщика Azure для Kubernetes. Azure Stack Hub выпускает специальную сборку Kubernetes для каждой версии Azure Stack Hub.
+1. Введите **версию Kubernetes**. Это версия поставщика Azure для Kubernetes. Azure Stack Hub выпускает специальную сборку Kubernetes для каждой версии Azure Stack Hub.
 
 ### <a name="3-summary"></a>3. Сводка
 
@@ -155,7 +155,7 @@ ms.locfileid: "75878481"
 3. Щелкните **ОК**, чтобы развернуть кластер.
 
 > [!TIP]  
->  Если у вас есть вопросы о развертывании, вы можете разместить свой вопрос или поискать ответы на вопрос на [форуме Azure Stack Hub](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack).
+>  Если у вас есть вопросы о развертывании, вы можете разместить свой вопрос или поискать ответы на вопрос на [форуме Azure Stack Hub](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -11,21 +11,21 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/10/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 06/18/2019
-ms.openlocfilehash: c19cf8a97fa92e0084a5b494fe79a7e45a519cad
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 17d9c16a6ee95672450dcfed1dee66e21390e022
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75878396"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76536442"
 ---
 # <a name="deploy-kubernetes-to-use-containers-with-azure-stack-hub"></a>Развертывание Kubernetes для работы с контейнерами Azure Stack Hub
 
 > [!Note]  
-> Используйте элемент Kubernetes Azure Stack Marketplace для развертывания кластеров в качестве проверки концепции. Для поддерживаемых кластеров Kubernetes в Azure Stack используйте [обработчик AKS](azure-stack-kubernetes-aks-engine-overview.md).
+> Используйте элемент Kubernetes Azure Stack Marketplace для развертывания кластеров в качестве проверки концепции. Для поддерживаемых кластеров Kubernetes в Azure Stack используйте[обработчик AKS](azure-stack-kubernetes-aks-engine-overview.md).
 
 Вы можете следовать инструкциям, описанным в этой статье, чтобы развернуть и настроить ресурсы для Kubernetes за одну согласованную операцию. В этих инструкциях используется шаблон решения Azure Resource Manager. Вам потребуется собрать все необходимые сведения об установке Azure Stack Hub, создать шаблон и выполнить развертывание в облаке. Шаблон Azure Stack Hub не использует управляемую службу AKS, представляемую в глобальной среде Azure.
 

@@ -13,16 +13,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/02/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: 5f629db0c6de0622edf8242a51b29856634c76bf
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: e6baccbd3ae7f2fe01c1ace47ff809d2d1006158
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881915"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76534215"
 ---
 # <a name="sql-resource-provider-11300-release-notes"></a>Заметки о выпуске для поставщика ресурсов SQL 1.1.30.0
 
@@ -31,7 +31,7 @@ ms.locfileid: "75881915"
 ## <a name="build-reference"></a>Указание сборки
 Загрузите двоичный файл поставщика ресурсов SQL и запустите файл для самостоятельного извлечения содержимого во временный каталог. У поставщика ресурсов есть минимальная соответствующая сборка Azure Stack Hub. Минимальная версия выпуска Azure Stack Hub, необходимая для установки этой версии поставщика ресурсов SQL:
 
-> |минимальная версия Azure Stack Hub|Версия поставщика ресурсов SQL|
+> |Минимальная версия Azure Stack Hub|Версия поставщика ресурсов SQL|
 > |-----|-----|
 > |Версия 1808 (1.1808.0.97)|[1.1.30.0](https://aka.ms/azurestacksqlrp11300)|
 > |     |     |

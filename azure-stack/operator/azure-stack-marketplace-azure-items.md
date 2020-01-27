@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/02/2020
+ms.date: 01/21/2020
 ms.author: sethm
 ms.reviewer: ihcherie
-ms.lastreviewed: 01/02/2020
-ms.openlocfilehash: 6cb2421deef1ea0b3c741c1c068e9452bfb2af5f
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.lastreviewed: 01/21/2020
+ms.openlocfilehash: 7a8fb4c500f749bfe58e1adcb7e5a9ce854bb9d0
+ms.sourcegitcommit: 10520f4481c0e3891c9dcd46fb21249ad2a33717
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882731"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76516778"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack-hub"></a>Элементы Azure Marketplace, доступные для Azure Stack Hub
 
@@ -29,7 +29,7 @@ ms.locfileid: "75882731"
 
 Если для используемых расширений виртуальных машин есть обновления, скачайте их. Расширения, поставляемые с продуктом, не обновляются в обычном процессе исправления и обновления. Регулярно проверяйте наличие обновлений. Другие расширения доступны только с использованием служб управления Marketplace.
 
-|  | Имя элемента. | Description | Издатель | Тип ОС |
+|  | Имя элемента. | Описание | Издатель | Тип ОС |
 | --- | --- | --- | --- | --- |
 |![Расширение IaaS SQL (SqlIaasExtension)](media/azure-stack-marketplace-azure-items/cse.png) | [Расширение IaaS SQL (SqlIaasExtension)](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension)| **Скачайте это расширение, чтобы развернуть любой экземпляр SQL Server в элементе Windows Marketplace. Это обязательное расширение.** | Microsoft | Windows |
 |![Расширение пользовательских сценариев](media/azure-stack-marketplace-azure-items/cse.png) | [Расширение пользовательских сценариев](https://docs.microsoft.com/azure/virtual-machines/windows/extensions-customscript)| **Скачайте это обновление для встроенной версии расширения пользовательских скриптов для Windows.** | Microsoft | Windows |
@@ -50,7 +50,7 @@ ms.locfileid: "75882731"
 
 Microsoft Azure Stack Hub поддерживает указанные ниже ВМ и шаблоны решений Azure Marketplace. Скачайте все зависимости по отдельности в соответствии с указаниями. Такие приложения, как SQL Server и Machine Learning Server, требуют надлежащих лицензий. Это не касается версий, которые отмечены как бесплатные или пробные.
 
-|  | Имя элемента. | Description | Издатель |
+|  | Имя элемента. | Описание | Издатель |
 | --- | --- | --- | --- |
 | ![Windows Server](media/azure-stack-marketplace-azure-items/windowsserver.png) | [Windows Server](https://azuremarketplace.microsoft.com/marketplace/apps/MicrosoftWindowsServer.WindowsServer) | Экономичные решения корпоративного уровня для приложений и пользователей, которые легко развертывать. Эти образы регулярно обновляются с установкой последних исправлений. **Важная информация. Образы, скачанные до 18 января 2018 года, необходимо удалить и заменить последними версиями.** | Microsoft |
 | ![Пробная версия SharePoint Server 2013](media/azure-stack-marketplace-azure-items/sharepoint.png) | [Пробная версия SharePoint Server 2013](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftsharepoint.microsoftsharepointserver) | Пробная версия Microsoft SharePoint Server 2013 на Windows Server 2012 Datacenter и Visual Studio 2019 Community Edition. | Microsoft |
@@ -80,7 +80,7 @@ Microsoft Azure Stack Hub поддерживает указанные ниже �
 
 ## <a name="linux-distributions"></a>Дистрибутивы Linux
 
-|  | Имя элемента. | Description | Издатель |
+|  | Имя элемента. | Описание | Издатель |
 | --- | --- | --- | --- |
 | ![Clear Linux OS](media/azure-stack-marketplace-azure-items/clearlinux.png) | [Clear Linux OS](https://azuremarketplace.microsoft.com/marketplace/apps/clear-linux-project.clear-linux-os) | Эталонный дистрибутив Linux, оптимизированный для архитектуры Intel. | Проект Clear Linux |
 | ![CoreOS Linux (стабильная версия)](media/azure-stack-marketplace-azure-items/coreos.png) | [CoreOS Linux (стабильная версия)](https://azuremarketplace.microsoft.com/marketplace/apps/CoreOS.CoreOS) | CoreOS — это современный компактный дистрибутив Linux, обеспечивающий простую работу с контейнерами, удобное управление кластерами и беспроблемное обновление серверов, что очень важно для вычислений промышленного масштаба. | CoreOS |
@@ -98,7 +98,7 @@ Microsoft Azure Stack Hub поддерживает указанные ниже �
 
 ## <a name="third-party-byol-free-trial-images-and-solution-templates"></a>Образы BYOL, бесплатных и пробных версий, а также шаблоны решений сторонних производителей
 
-|  | Имя элемента. | Description | Издатель |
+|  | Имя элемента. | Описание | Издатель |
 | --- | --- | --- | --- |
 | ![A10 vThunder ADC](media/azure-stack-marketplace-azure-items/a10.png) | [A10 vThunder ADC](https://azuremarketplace.microsoft.com/marketplace/apps/a10networks.vthunder-414-gr1) | Контроллер доставки приложений (ADC) A10 Networks vThunder для Microsoft Azure разработан с учетом высокой производительности, гибкости, доставки простых в развертывании приложений, балансировки нагрузки сервера, а также оптимизирован для работы в облаке Azure. | A10 Networks |
 | ![Arista vEOS Router](media/azure-stack-marketplace-azure-items/arista.png) | [Arista vEOS Router](https://azuremarketplace.microsoft.com/marketplace/apps/arista-networks.veos-router) | Arista vEOS Router представляет собой многофункциональный виртуальный маршрутизатор с несколькими облаками и несколькими гипервизорами, который позволяет предприятиям и облачным провайдерам создавать согласованные, надежные и масштабируемые гибридные сети. | Arista Networks |
@@ -259,6 +259,7 @@ Microsoft Azure Stack Hub поддерживает указанные ниже �
 | ![Quest Rapid Recovery](media/azure-stack-marketplace-azure-items/quest.png) | [Quest Rapid Recovery Core](https://azuremarketplace.microsoft.com/marketplace/apps/quest.rapid-recovery-core-vm) | Удобное программное решение Rapid Recovery обеспечивает усиленную защиту данных и объединяет в себе функции резервного копирования, репликации и восстановления. | Quest Software |
 | ![SIOS DataKeeper Cluster Edition](media/azure-stack-marketplace-azure-items/sioslogo.png) | [SIOS DataKeeper Cluster Edition](https://azuremarketplace.microsoft.com/marketplace/apps/sios_datakeeper.sios-datakeeper-8) | SIOS DataKeeper поддерживает высокий уровень доступности и аварийное восстановление в Azure Stack Hub. Просто добавьте программное обеспечение SIOS DataKeeper в качестве компонента для среды отказоустойчивой кластеризации Windows Server (WSFC) в развертывание Azure Stack Hub для исключения необходимости совместного хранения. | SIOS Technology Corp. |
 | ![SUSE Manager 3.1 Proxy (BYOS)](media/azure-stack-marketplace-azure-items/suse.png) | [SUSE Manager 3.1 Proxy (BYOS)](https://azuremarketplace.microsoft.com/marketplace/apps/suse.suse-manager-proxy-byos) | Лучшая в своем классе служба с открытым кодом для управления инфраструктурой. | SUSE |
+| ![Teradici Cloud Access Software](media/azure-stack-marketplace-azure-items/teradici.png) | [Teradici Cloud Access Software](https://azuremarketplace.microsoft.com/marketplace/apps/teradici.teradici_cas_azure_stack) | Программное обеспечение Cloud Access Software на базе технологии PCoIP® предоставляет удаленные рабочие столы и рабочие станции из Azure Stack на любое устройство, размещенное в любом расположении. Консолидируйте хранение данных, улучшите совместную работу, обеспечьте безопасность данных, оптимизируйте управление рабочим столом и многое другое. | Teradici |
 | ![Облачный диспетчер ключей CipherTrust](media/azure-stack-marketplace-azure-items/cckm.png) | [Облачный диспетчер ключей CipherTrust](https://azuremarketplace.microsoft.com/marketplace/apps/thales-vormetric.ciphertrust-ckm) | Используя API-интерфейсы BYOK Microsoft Azure и других поставщиков облачных служб, облачный диспетчер ключей CipherTrust упрощает управление ключами и снижает операционные расходы. Благодаря этому решению вы получаете возможность управления жизненным циклом ключей шифрования в нескольких облаках и полный контроль. | Thales eSecurity |
 | ![Veeam Backup & Replication](media/azure-stack-marketplace-azure-items/veeam.png) | [Veeam Backup & Replication](https://azuremarketplace.microsoft.com/marketplace/apps/veeam.veeam-backup-replication?tab=Overview) | Veeam® Backup & Replication™ позволяет организациям обеспечить комплексную защиту данных для всех рабочих нагрузок — виртуальных, физических и облачных. С помощью одной консоли можно обеспечить быстрые, гибкие и надежные резервное копирование, восстановление и репликацию всех приложений и данных. | Veeam Software |
 | ![ZeroDown Software BCaaS](media/azure-stack-marketplace-azure-items/zerodown.png) | [Непрерывность бизнес-процессов ZeroDown Software как служба](https://azuremarketplace.microsoft.com/marketplace/apps/zerodown_software.bcaasforazure) | Технология ZeroDown® Software предоставляет предприятиям непрерывный доступ к данным через архитектуру непрерывности бизнес-процессов как услуги (BCaaS)™, защищая приложения и транзакции в случае сбоев в работе сети, которые обычно наносят ущерб предприятию. | ZeroDown Software |

@@ -1,6 +1,6 @@
 ---
 title: Подключение Обозревателя службы хранилища к учетной записи хранения или подписке Azure Stack Hub | Документация Майкрософт
-description: Узнайте, как подключить Обозреватель службы хранилища к подписке Azure Stack Hub
+description: Сведения о подключении Обозревателя службы хранилища к подписке Azure Stack Hub
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -14,12 +14,12 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 010722e7152af7e51747870ae5bf26229ad339d6
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 7c01e509dc77e2a036ad640ee5376ffda37f903f
+ms.sourcegitcommit: 7dd685fddf2f5d7a0c0a20fb8830ca5a061ed031
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75878413"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259840"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-hub-subscription-or-a-storage-account"></a>Подключение Обозревателя службы хранилища к учетной записи хранения или подписке Azure Stack Hub
 
@@ -65,7 +65,7 @@ ms.locfileid: "75878413"
 
     После импорта сертификата появится запрос на перезапуск Обозревателя службы хранилища.
 
-    ![Импорт сертификата в обозреватель службы хранилища](./media/azure-stack-storage-connect-se/import-azure-stack-cert-storage-explorer.png)
+    ![Импорт сертификата в Обозреватель службы хранилищ](./media/azure-stack-storage-connect-se/import-azure-stack-cert-storage-explorer.png)
 
 8. Перезапустив Обозреватель службы хранилища, откройте меню **Изменить** и проверьте, выбран ли параметр **Целевые API Azure Stack Hub**. Если он не выбран, установите флажок **Целевые API Azure Stack Hub** и перезапустите Обозреватель службы хранилища, чтобы изменения вступили в силу. Это необходимо для обеспечения совместимости со средой Azure Stack Hub.
 
@@ -159,6 +159,6 @@ ms.locfileid: "75878413"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Начало работы с Обозревателем службы хранилища](/azure/vs-azure-tools-storage-manage-with-storage-explorer)
+* [Начало работы с Обозревателем службы хранилища](/azure/vs-azure-tools-storage-manage-with-storage-explorer).
 * [Хранилище Azure Stack Hub. Отличия и рекомендации](azure-stack-acs-differences.md)
 * Дополнительные сведения о службе хранилища Azure см. в статье [Введение в хранилище Microsoft Azure](/azure/storage/common/storage-introduction).

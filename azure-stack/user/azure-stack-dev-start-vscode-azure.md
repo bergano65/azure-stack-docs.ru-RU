@@ -9,12 +9,12 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 1898b4415519dd8b1e6bf901c69cf67d6a607308
-ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
+ms.openlocfilehash: 5ef1fe95f91c0ceb343bb796c4c31cdefad65e36
+ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75923865"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256229"
 ---
 # <a name="connect-to-azure-stack-hub-using-azure-account-extension-in-visual-studio-code"></a>Подключение к Azure Stack Hub с помощью расширения учетной записи Azure в Visual Studio Code
 
@@ -65,7 +65,7 @@ VS Code — это упрощенный редактор для создани�
     
     Microsoft Azure Resource Manager — это платформа управления, которая позволяет развертывать, администрировать и отслеживать ресурсы Azure.
     - URL-адрес Resource Manager для Пакета средств разработки Azure Stack (ASDK): `https://management.local.azurestack.external/`. 
-    - URL-адрес Resource Manager для интегрированной системы: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/`.
+    - URL-адрес Resource Manager для интегрированной системы: `https://management.region.<fqdn>/`, где `<fqdn>` — полное доменное имя.
     - Добавьте к URL-адресу следующий текст для доступа к метаданным: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`.
 
     Например, URL-адрес для получения метаданных для конечной точки Azure Resource Manager может выглядеть так: `https://management.local.azurestack.external/metadata/endpoints?api-version=1.0`.
@@ -78,7 +78,7 @@ VS Code — это упрощенный редактор для создани�
 
     - Значения:
 
-        | Параметр | Description |
+        | Параметр | Описание |
         | --- | --- |
         | `tenant-ID` | Значение [идентификатора клиента](../operator/azure-stack-identity-overview.md) Azure Stack Hub. |
         | `activeDirectoryEndpointUrl` | Это URL-адрес из свойства loginEndpoint. |

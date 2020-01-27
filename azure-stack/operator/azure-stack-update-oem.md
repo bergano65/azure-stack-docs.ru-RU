@@ -15,12 +15,12 @@ ms.date: 10/15/2019
 ms.author: mabrigg
 ms.lastreviewed: 08/15/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 3ca1d375e5d819e93813c9f6d0fa9baf5619f563
-ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
+ms.openlocfilehash: c21e2a1335b76da2bcd1f4ce88274685d962a299
+ms.sourcegitcommit: 7dd685fddf2f5d7a0c0a20fb8830ca5a061ed031
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75924375"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259925"
 ---
 # <a name="apply-azure-stack-hub-original-equipment-manufacturer-oem-updates"></a>Применение обновлений изготовителя оборудования для Azure Stack Hub
 
@@ -42,7 +42,7 @@ ms.locfileid: "75924375"
 
 | Партнер по оборудованию | Регион | URL-адрес |
 |------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cisco | All | [Руководство по эксплуатации интегрированной системы Cisco для Microsoft Azure Stack Hub](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/azure-stack/b_Azure_Stack_Operations_Guide_4-0/b_Azure_Stack_Operations_Guide_4-0_chapter_01000.html)<br><br>[UCS C-Series Rack-Mount UCS-Managed Server Software](https://software.cisco.com/download/home/283862063/type/286320368/release/2.0(0)) (Программное обеспечение для управляемых стоечных серверов Cisco UCS серии C) |
+| Cisco | All | [Руководство по эксплуатации интегрированной системы Cisco для Microsoft Azure Stack Hub](https://aka.ms/aa708e2)<br><br>[UCS C-Series Rack-Mount UCS-Managed Server Software](https://aka.ms/aa700rq) (Программное обеспечение для управляемых стоечных серверов Cisco UCS серии C) |
 | Dell EMC | All | [Облако для Microsoft Azure Stack Hub 14G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/44615_Cloud-for-Microsoft-Azure-Stack-14G)<br><br>[Облако для Microsoft Azure Stack Hub 13G (требуется учетная запись и имя для входа)](https://support.emc.com/downloads/42238_Cloud-for-Microsoft-Azure-Stack-13G) |
 | Fujitsu | Япония | [Служба технической поддержки Fujitsu (требуется учетная запись и имя для входа)](https://eservice.fujitsu.com/supportdesk-web/) |
 |  | Европа, Ближний Восток, Африка и США | [Fujitsu: поддержка продуктов и систем ИТ](https://support.ts.fujitsu.com/IndexContact.asp?lng=COM&ln=no&LC=del) |
@@ -54,10 +54,13 @@ ms.locfileid: "75924375"
 
 Установите пакеты изготовителя оборудования, выполнив следующие действия.
 
+> [!IMPORTANT]
+> Перед применением обновлений в Azure Stack Hub убедитесь, что вы выполнили **все** шаги в [контрольном списке предварительных требований для обновления](release-notes-checklist.md) и запланировали соответствующий период обслуживания для применяемого типа обновления.
+
 1. Потребуется обратиться к изготовителю оборудования для следующего:
       - определить текущую версию пакета изготовителя оборудования;  
       - найти лучший способ скачивания пакета изготовителя оборудования.  
-2. Перед применением обновления пакета OEM следует всегда применять последнее исправление Azure Stack Hub, доступное в текущей версии Azure Stack Hub в вашей системе. См. сведения об [исправлениях Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-servicing-policy).
+2. Перед применением обновления пакета OEM следует всегда применять последнее исправление Azure Stack Hub, доступное в текущей версии Azure Stack Hub в вашей системе. См. сведения об [исправлениях Azure Stack Hub](azure-stack-servicing-policy.md).
 3. Подготовьте пакет изготовителя оборудования, выполнив действия, описанные в разделе [Загрузка пакетов обновлений для интегрированных систем](azure-stack-servicing-policy.md).
 4. Установите обновления, выполнив действия, описанные в разделе [Применение обновлений в Azure Stack Hub](azure-stack-apply-updates.md).
 

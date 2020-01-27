@@ -16,16 +16,14 @@ ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: e5dffbfd82ab8c23aa3862763f02ae759cf4de08
-ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
+ms.openlocfilehash: a1cd98973bede3382790430dd59e434e135701de
+ms.sourcegitcommit: e47dc5fe9e59010ea3dbb9cb31abe15cfb821262
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75924216"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124741"
 ---
 # <a name="prerequisites-for-deploying-app-service-on-azure-stack-hub"></a>Предварительные требования для развертывания Службы приложений в Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack Hub и Пакет средств разработки Azure Stack Hub*
 
 Перед развертыванием Службы приложений Azure в Azure Stack Hub необходимо выполнить предварительные действия, описанные в этой статье.
 
@@ -70,7 +68,7 @@ ms.locfileid: "75924216"
 
 #### <a name="get-azurestackrootcertps1-script-parameters"></a>Параметры скрипта Get-AzureStackRootCert.ps1
 
-| Параметр | Обязательный или необязательный | Значение по умолчанию | Description |
+| Параметр | Обязательный или необязательный | Значение по умолчанию | Описание |
 | --- | --- | --- | --- |
 | PrivilegedEndpoint | Обязательно | AzS-ERCS01 | Привилегированная конечная точка |
 | CloudAdminCredential | Обязательно | AzureStack\CloudAdmin | Учетные данные домена администратора облака Azure Stack Hub. |
@@ -95,7 +93,7 @@ ms.locfileid: "75924216"
 
 #### <a name="create-appservicecertsps1-script-parameters"></a>Параметры скрипта Create-AppServiceCerts.ps1
 
-| Параметр | Обязательный или необязательный | Значение по умолчанию | Description |
+| Параметр | Обязательный или необязательный | Значение по умолчанию | Описание |
 | --- | --- | --- | --- |
 | pfxPassword | Обязательно | NULL | Пароль, который помогает защитить закрытый ключ сертификата |
 | DomainName | Обязательно | local.azurestack.external | Регион и суффикс домена для Azure Stack Hub. |
@@ -351,7 +349,7 @@ GO
 2. Перейдите к расположению скриптов, скачанных и извлеченных на [этапе подготовки](azure-stack-app-service-before-you-get-started.md).
 3. [Установка PowerShell для Azure Stack Hub](azure-stack-powershell-install.md).
 4. Запустите скрипт **Create-AADIdentityApp.ps1**. Когда появится запрос, введите идентификатор клиента Azure AD, используемый для развертывания Azure Stack Hub. Например, введите **myazurestack.onmicrosoft.com**.
-5. В окне **Учетные данные** введите учетную запись администратора службы Azure AD и пароль. Нажмите кнопку **ОК**.
+5. В окне **Учетные данные** введите учетную запись администратора службы Azure AD и пароль. Щелкните **ОК**.
 6. Введите путь к файлу сертификата и пароль для [сертификата, созданного ранее](azure-stack-app-service-before-you-get-started.md). Для этого шага по умолчанию создается сертификат **sso.appservice.local.azurestack.external.pfx**.
 7. Запишите идентификатор приложения, который возвращается в выходных данных PowerShell. Этот идентификатор используется в следующих шагах, чтобы предоставить согласие на разрешения приложения, и во время установки. 
 8. Откройте новое окно в браузере и войдите на портал Azure в качестве [администратора службы Azure Active Directory](https://portal.azure.com).
@@ -366,7 +364,7 @@ GO
     Create-AADIdentityApp.ps1
 ```
 
-| Параметр | Обязательный или необязательный | Значение по умолчанию | Description |
+| Параметр | Обязательный или необязательный | Значение по умолчанию | Описание |
 | --- | --- | --- | --- |
 | DirectoryTenantName | Обязательно | NULL | Идентификатор клиента Azure AD. Введите идентификатор GUID или строку. Пример: myazureaaddirectory.onmicrosoft.com. |
 | AdminArmEndpoint | Обязательно | NULL | Конечная точка Azure Resource Manager администратора. Пример: adminmanagement.local.azurestack.external. |
@@ -395,14 +393,14 @@ GO
 2. Перейдите к расположению скриптов, скачанных и извлеченных на [этапе подготовки](azure-stack-app-service-before-you-get-started.md).
 3. [Установка PowerShell для Azure Stack Hub](azure-stack-powershell-install.md).
 4. Запустите скрипт **Create-ADFSIdentityApp.ps1**.
-5. В окне **Учетные данные** укажите учетную запись администратора облака AD FS и пароль. Нажмите кнопку **ОК**.
+5. В окне **Учетные данные** укажите учетную запись администратора облака AD FS и пароль. Щелкните **ОК**.
 6. Предоставьте путь к файлу сертификата и пароль для [сертификата, созданного ранее](azure-stack-app-service-before-you-get-started.md). Для этого шага по умолчанию создается сертификат **sso.appservice.local.azurestack.external.pfx**.
 
 ```powershell
     Create-ADFSIdentityApp.ps1
 ```
 
-| Параметр | Обязательный или необязательный | Значение по умолчанию | Description |
+| Параметр | Обязательный или необязательный | Значение по умолчанию | Описание |
 | --- | --- | --- | --- |
 | AdminArmEndpoint | Обязательно | NULL | Конечная точка Azure Resource Manager администратора. Пример: adminmanagement.local.azurestack.external. |
 | PrivilegedEndpoint | Обязательно | NULL | Привилегированная конечная точка. Пример: AzS-ERCS01. |

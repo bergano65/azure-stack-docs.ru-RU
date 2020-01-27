@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/07/2019
+ms.date: 01/16/2020
 ms.author: justinha
 ms.reviewer: shisab
-ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: f30791ec7514a68a6137d2b5d2db3441cf217f58
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.lastreviewed: 01/16/2020
+ms.openlocfilehash: bb7fc0488ea264a83cc93e071b044e6443e97630
+ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883088"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256348"
 ---
 # <a name="collect-azure-stack-hub-diagnostic-logs-on-demand"></a>Сбор журналов диагностики Azure Stack Hub по запросу
 
@@ -108,7 +108,7 @@ if ($session) {
   Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8) -ToDate (Get-Date).AddHours(-2)
   ```
 
-* Соберите журналы из развертываний клиентов, выполняющих самостоятельно управляемые службы Azure Kubernetes Services (AKS) на Azure Stack Hub. Журналы AKS должны храниться в учетной записи хранения клиента в формате, который позволяет применять к ним диапазон времени сбора. 
+* Соберите журналы из развертываний клиентов, выполняющих самостоятельно управляемые кластеры Kubernetes (обработчик AKS) на Azure Stack. Журналы Kubernetes должны храниться в учетной записи хранения клиента в формате, который позволяет применять к ним диапазон времени сбора. 
 
   ```powershell
   Get-AzureStackLog -OutputPath <Path> -InputSasUri "<Blob Service Sas URI>" -FromDate "<Beginning of the time range>" -ToDate "<End of the time range>"
@@ -150,7 +150,7 @@ if ($session) {
   6. Щелкните правой кнопкой мыши новый контейнер, а затем щелкните **Get Shared Access Signature** (Получить подписанный URL-адрес).
   7. Выберите допустимое **Время начала** и **Время окончания**, зависящее от требований.
   8. Чтобы получить необходимые разрешения, выберите **Чтение**, **Запись** и **Список**.
-  9. Нажмите кнопку **Создать**.
+  9. Нажмите кнопку **создания**.
   10. Вы получите подписанный URL-адрес. Скопируйте из него URL-адреса и внесите ее в параметр `-OutputSasUri`.
 
 ### <a name="parameter-considerations-for-both-asdk-and-integrated-systems"></a>Рекомендации по настройке параметров для ASDK и интегрированных систем

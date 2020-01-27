@@ -16,16 +16,14 @@ ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: b07d90f17d1c4380f65c43029215bf8946d209e2
-ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
+ms.openlocfilehash: cb46029fabb81c224716e5e1c5eb8f65cd0cd34e
+ms.sourcegitcommit: e47dc5fe9e59010ea3dbb9cb31abe15cfb821262
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75924206"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124792"
 ---
 # <a name="add-workers-and-infrastructure-in-azure-app-service-on-azure-stack-hub"></a>Добавление рабочих ролей и инфраструктуры в Службе приложений Azure в Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack Hub и Пакет средств разработки Azure Stack Hub*  
 
 Узнайте, как масштабировать рабочие роли и роли инфраструктуры в Службе приложений Azure в Azure Stack Hub. Здесь приведены инструкции по созданию дополнительных рабочих ролей с поддержкой приложений любого размера.
 

@@ -9,14 +9,14 @@ ms.date: 11/07/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: ef492c0e5bf63e73e3b8f59befa642d6d6b854bf
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 411dafa86d0ec61ff431cfea217f3721862b69f4
+ms.sourcegitcommit: 7dd685fddf2f5d7a0c0a20fb8830ca5a061ed031
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816128"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259806"
 ---
-# <a name="how-to-replicate-resources-using-the-azure-stack-hub-subscription-replicator"></a>Сведения о репликации ресурсов с помощью репликатора подписки Azure Stack Hub
+# <a name="replicate-resources-using-the-azure-stack-hub-subscription-replicator"></a>Репликация ресурсов с помощью репликатора подписки Azure Stack Hub
 
 Сценарий PowerShell репликатора подписки Azure Stack Hub можно использовать для копирования ресурсов между подписками Azure Stack Hub, метками Azure Stack Hub или между Azure Stack Hub и Azure. Сценарий репликатора считывает и перестраивает ресурсы Azure Resource Manager из разных подписок Azure и Azure Stack Hub. В этой статье мы рассмотрим, как работает сценарий, как его можно использовать, а также рекомендации для операций в сценарии.
 

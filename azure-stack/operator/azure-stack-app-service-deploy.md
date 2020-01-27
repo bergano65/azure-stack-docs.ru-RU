@@ -16,16 +16,14 @@ ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: eb38d3f237b872e552bd135cbe6b93c905115e30
-ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
+ms.openlocfilehash: 783bed2b6f90a88b815e534da17a953b3c309af2
+ms.sourcegitcommit: e47dc5fe9e59010ea3dbb9cb31abe15cfb821262
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75924260"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124843"
 ---
 # <a name="deploy-app-service-in-azure-stack-hub"></a>Развертывание Службы приложений в Azure Stack Hub
-
-*Область применения: интегрированные системы Azure Stack Hub и Пакет средств разработки Azure Stack Hub*
 
 В этой статье описано, как развернуть Службу приложений в Azure Stack Hub.
 

@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/07/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: a35029865c7b0559a2cc7c54d2d8ff34445b438c
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 6feca120c01704aaf999899c660c64ecfecd3d97
+ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883751"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76536391"
 ---
 # <a name="deploy-a-template-using-the-portal-in-azure-stack-hub"></a>Развертывание шаблонов в Azure Stack Hub с помощью портала
 
@@ -53,7 +53,7 @@ ms.locfileid: "75883751"
 
    ![Выбор группы ресурсов на портале Azure Stack Hub](media/azure-stack-deploy-template-portal/template-deploy6.png)
 
-1. Нажмите кнопку **Создать**. Новый элемент на панели мониторинга отслеживает ход выполнения развертывания вашего шаблона.
+1. Нажмите кнопку **создания**. Новый элемент на панели мониторинга отслеживает ход выполнения развертывания вашего шаблона.
 
    ![Создание шаблона на портале Azure Stack Hub](media/azure-stack-deploy-template-portal/template-deploy7.png)
 

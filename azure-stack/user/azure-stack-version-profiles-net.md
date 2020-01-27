@@ -16,12 +16,12 @@ ms.date: 09/17/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: ec22eea76e2ab0188c1c7a57ef58b4625dec2fcf
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 3af8a06f10322df67d80c489e1d19a7805dd8b2c
+ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75878498"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256399"
 ---
 # <a name="use-api-version-profiles-with-net-in-azure-stack-hub"></a>Использование профилей версий API и .NET в Azure Stack Hub
 
@@ -65,18 +65,18 @@ ms.locfileid: "75878498"
 
 - Убедитесь, что субъект-служба имеет роль участника или владельца в вашей подписке. Сведения о том, как назначить роль субъекту-службе, см. в статье [Предоставление приложениям доступа к Azure Stack Hub][].
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать пакет SDK Azure для .NET и Azure Stack Hub, укажите следующие значения и задайте значения для переменных среды. Чтобы настроить переменные среды, воспользуйтесь инструкциями, которые указаны после таблицы для используемой операционной системы.
 
-| Значение                     | Переменные среды   | Description                                                                                                             |
+| Значение                     | Переменные среды   | Описание                                                                                                             |
 |---------------------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------|
 | Tenant ID                 | `AZURE_TENANT_ID `      | Значение [*идентификатора клиента*][] Azure Stack Hub.                                                                          |
 | Идентификатор клиента                 | `AZURE_CLIENT_ID `      | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы в предыдущем разделе этой статьи. |
 | Идентификатор подписки           | `AZURE_SUBSCRIPTION_ID` | [*Идентификатор подписки*][] для доступа к предложениям в Azure Stack Hub.                                                      |
 | Секрет клиента             | `AZURE_CLIENT_SECRET`   | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы.                                      |
 | Конечная точка Resource Manager | `ARM_ENDPOINT`          | Дополнительные сведения см. в разделе [*Конечная точка Resource Manager для Azure Stack Hub*][].                                                                    |
-| Location                  | `RESOURCE_LOCATION`     | Расположение Azure Stack Hub.
+| Расположение                  | `RESOURCE_LOCATION`     | Расположение Azure Stack Hub.
 
 Чтобы узнать идентификатор клиента для Azure Stack Hub, выполните приведенные [в этой статье](../operator/azure-stack-csp-ref-operations.md) инструкции. Чтобы настроить переменные среды, сделайте следующее:
 
@@ -106,7 +106,7 @@ Azure Resource Manager — это платформа управления, ко
 
 - **ResourceManagerUrl** в Пакете средств разработки Azure Stack (ASDK) имеет значение https://management.local.azurestack.external/.
 
-- **ResourceManagerUrl** в интегрированных системах имеет значение `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/`.
+- **ResourceManagerUrl** в интегрированной системе: `https://management.region.<fqdn>/`, где `<fqdn>` — полное доменное имя.
 Чтобы получить необходимые метаданные, используйте `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`.
 
 Пример JSON-файла:

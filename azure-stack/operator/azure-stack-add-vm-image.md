@@ -15,12 +15,12 @@ ms.date: 10/16/2019
 ms.author: Justinha
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: 738c9aad910e558f883e3474b248a8271beb30a3
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: f0d0b268445d3de95e8f4dcaa0d44cb8d553111c
+ms.sourcegitcommit: 7dd685fddf2f5d7a0c0a20fb8830ca5a061ed031
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75880895"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259823"
 ---
 # <a name="add-a-custom-vm-image-to-azure-stack-hub"></a>Добавление пользовательского образа виртуальной машины в Azure Stack Hub
 
@@ -30,13 +30,22 @@ Azure Stack Hub позволяет добавить пользовательск
 
 ### <a name="windows"></a>Windows
 
-Создайте обобщенный пользовательский VHD. Если этот виртуальный жесткий диск находится не в Azure, выполните действия из статьи [Отправка универсального диска VHD и создание виртуальных машин с его помощью в Azure](/azure/virtual-machines/windows/upload-generalized-managed), чтобы правильно подготовить VHD с помощью **Sysprep** и сделать его обобщенным.
+Создайте обобщенный пользовательский VHD. 
 
-Если виртуальный жесткий диск находится в Azure, выполните инструкции из [этого документа](/azure/virtual-machines/windows/download-vhd), чтобы подготовить и скачать виртуальный жесткий диск перед его переносом в Azure Stack Hub.
+**Если этот виртуальный жесткий диск находится не в Azure**, выполните действия из статьи [Отправка универсального диска VHD и создание виртуальных машин с его помощью в Azure](/azure/virtual-machines/windows/upload-generalized-managed), чтобы правильно подготовить VHD с помощью **Sysprep** и сделать его обобщенным.
+
+**Если виртуальный жесткий диск находится в Azure**, перед обобщением виртуальной машины сделайте следующее:
+1) При подготовке виртуальной машины в Azure используйте PowerShell и не указывайте флаг `-ProvisionVMAgent`. 
+2) Прежде чем выполнять обобщение виртуальной машины в Azure, удалите все ее расширения, выполнив командлет **Remove-AzureRmVMExtension** на этой виртуальной машине. Чтобы узнать, какие расширения виртуальной машины установлены, перейдите по пути "Windows (C:) > WindowsAzure > Журналы > Подключаемые модули".
+
+```Powershell
+Remove-AzureRmVMExtension -ResourceGroupName winvmrg1 -VMName windowsvm -Name "CustomScriptExtension"
+```                       
+Выполните вышеуказанное, выполните инструкции из [этого документа](/azure/virtual-machines/windows/download-vhd), чтобы подготовить и скачать виртуальный жесткий диск перед его переносом в Azure Stack Hub.
 
 ### <a name="linux"></a>Linux
 
-Если виртуальный жесткий диск находится за пределами Azure, выполните соответствующе инструкции по обобщению виртуального жесткого диска.
+**Если виртуальный жесткий диск находится за пределами Azure**, выполните соответствующе инструкции по обобщению виртуального жесткого диска.
 
 - [Подготовка виртуальной машины на основе CentOS для Azure](/azure/virtual-machines/linux/create-upload-centos?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 - [Подготовка виртуального жесткого диска Debian для Azure](/azure/virtual-machines/linux/debian-create-upload-vhd?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
@@ -44,7 +53,7 @@ Azure Stack Hub позволяет добавить пользовательск
 - [SLES и OpenSUSE](/azure/virtual-machines/linux/suse-create-upload-vhd?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 - [Сервер Ubuntu](/azure/virtual-machines/linux/create-upload-ubuntu?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-Если виртуальный жесткий диск находится в Azure, выполните приведенные здесь инструкции по подготовке и скачиванию виртуального жесткого диска.
+**Если виртуальный жесткий диск находится в Azure**, выполните приведенные здесь инструкции по подготовке и скачиванию виртуального жесткого диска.
 
 1. Остановите службу **waagent**:
 

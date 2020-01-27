@@ -16,12 +16,12 @@ ms.date: 10/01/2019
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: d1109d2b0e8e8cffc1bf03c2e897c6c0230084c4
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: ec8c03536cb005de84f35ae7dc534d33f7223354
+ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75878346"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256297"
 ---
 # <a name="use-api-version-profiles-with-ruby-in-azure-stack-hub"></a>Использование профилей версий API с помощью Ruby в Azure Stack Hub
 
@@ -87,11 +87,11 @@ gem 'azure_mgmt_network'
 gem install 'azure_sdk'
 ```
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать пакет SDK Azure для Ruby и Azure Stack Hub, укажите следующие значения и задайте значения для переменных среды. Чтобы настроить переменные среды, воспользуйтесь инструкциями, которые указаны после таблицы для используемой операционной системы.
 
-| Значение | Переменные среды | Description |
+| Значение | Переменные среды | Описание |
 | --- | --- | --- |
 | Tenant ID | `AZURE_TENANT_ID` | [Идентификатор клиента](../operator/azure-stack-identity-overview.md) Azure Stack Hub. |
 | Идентификатор клиента | `AZURE_CLIENT_ID` | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы в предыдущем разделе этой статьи.  |
@@ -106,7 +106,7 @@ Microsoft Azure Resource Manager — это платформа управлен
 Получить метаданные можно из конечной точки Resource Manager. Конечная точка возвращает JSON-файл со сведениями, необходимыми для запуска вашего кода.
 
  > [!NOTE]  
- > **ResourceManagerUrl** в Пакете средств разработки Azure Stack (ASDK): `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/`.  
+ > **ResourceManagerUrl** в Пакете средств разработки Azure Stack (ASDK): `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированной системе: `https://management.region.<fqdn>/`, где `<fqdn>` — полное доменное имя.  
  > Чтобы получить необходимые метаданные, используйте: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`.
   
  Пример JSON-файла:
