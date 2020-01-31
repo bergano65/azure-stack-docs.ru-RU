@@ -1,26 +1,18 @@
 ---
-title: Развертывание Azure Cognitive Services в Azure Stack Hub | Документация Майкрософт
+title: Развертывание Azure Cognitive Services в Azure Stack Hub
 description: Сведения о развертывании Azure Cognitive Services в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: guanghu
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: d9e98e4d6f8bd1ba2bc2450f91d510da9bfe7d36
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: bc8a6745b9c3e4323e37bc3b4a46291955d227a1
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75878447"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883189"
 ---
 # <a name="deploy-azure-cognitive-services-to-azure-stack-hub"></a>Развертывание Azure Cognitive Services в Azure Stack Hub
 
@@ -53,7 +45,7 @@ ms.locfileid: "75878447"
 
 В этой статье описано, как развернуть API распознавания лиц Azure в кластере Kubernetes в Azure Stack Hub. Этот подход можно использовать для развертывания контейнеров других служб Cognitive Services в кластерах Kubernetes в Azure Stack Hub.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы сделайте следующее:
 

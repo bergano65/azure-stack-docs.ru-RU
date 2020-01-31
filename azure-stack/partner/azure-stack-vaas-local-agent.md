@@ -1,26 +1,19 @@
 ---
-title: Развертывание локального агента | Документация Майкрософт
+title: Развертывание локального агента
 description: Разверните локальный агент в рамках проверки как услуги Azure Stack.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9cd13f16df804c674c2901ae0e167e47294f176a
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: a84f2495b0e2195ac143dc8fd9ac4ea4668392b4
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955884"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884086"
 ---
 # <a name="deploy-the-local-agent"></a>Развертывание локального агента
 
@@ -89,11 +82,11 @@ ms.locfileid: "73955884"
 
 **Параметры**
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 | --- | --- |
 | AadServiceAdminUser | Глобальный администратор для клиента Azure AD. Например, это может быть vaasadmin@contoso.onmicrosoft.com. |
 | AadServiceAdminPassword | Пароль для пользователя с правами администратора. |
-| CloudAdminUserName | Администратор облака, который имеет права на запуск разрешенных команд в привилегированной конечной точке и доступ к ним. Например, это может быть AzusreStack\CloudAdmin. Подробнее см. [здесь](azure-stack-vaas-parameters.md). |
+| CloudAdminUserName | Администратор облака, который имеет права на запуск разрешенных команд в привилегированной конечной точке и доступ к ним. Например, это может быть AzusreStack\CloudAdmin. Дополнительные сведения см. в [этом разделе](azure-stack-vaas-parameters.md) . |
 | CloudAdminPassword | Пароль к учетной записи администратора облака.|
 
 ![Скачивание необходимых компонентов](media/installing-prereqs.png)
@@ -134,9 +127,9 @@ ms.locfileid: "73955884"
 
       **Параметры**  
 
-    | Параметр | ОПИСАНИЕ |
+    | Параметр | Описание |
     | --- | --- |
-    | CloudAdminUserName | Администратор облака, который имеет права на запуск разрешенных команд в привилегированной конечной точке и доступ к ним. Например, это может быть AzusreStack\CloudAdmin. Подробнее см. [здесь](azure-stack-vaas-parameters.md). |
+    | CloudAdminUserName | Администратор облака, который имеет права на запуск разрешенных команд в привилегированной конечной точке и доступ к ним. Например, это может быть AzusreStack\CloudAdmin. Дополнительные сведения см. в [этом разделе](azure-stack-vaas-parameters.md) . |
     | CloudAdminPassword | Пароль к учетной записи администратора облака.|
     | VaaSUserId | Идентификатор пользователя, используемый для входа на портал VaaS (например, имя_пользователя\@Contoso.com). |
     | VaaSTenantId | Идентификатор клиента Azure AD для учетной записи Azure, зарегистрированный с помощью проверки как услуги. |
@@ -152,8 +145,8 @@ ms.locfileid: "73955884"
 
 Агент однозначно идентифицируется по имени. По умолчанию используется полное доменное имя (FQDN) компьютера, на котором он был запущен. Уменьшите окно, чтобы случайно не щелкнуть его, так как при изменении фокуса остальные действия приостанавливаются.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Проверка как услуга: устранение неполадок](azure-stack-vaas-troubleshoot.md)
 - [Validation as a Service key concepts](azure-stack-vaas-key-concepts.md) (Проверка как услуга: основные понятия)
-- [Краткое руководство Планирование первого теста](azure-stack-vaas-schedule-test-pass.md);
+- [Краткое руководство. Планирование первого теста](azure-stack-vaas-schedule-test-pass.md);

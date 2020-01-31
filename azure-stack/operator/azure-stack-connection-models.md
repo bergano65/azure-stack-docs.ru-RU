@@ -1,27 +1,18 @@
 ---
 title: Модели подключения интегрированных систем Azure Stack Hub | Документация Майкрософт
 description: Определение моделей подключения и других решений по проектированию для интегрированных систем Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
-author: mattbriggs
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
+author: ihenkel
 ms.topic: article
 ms.date: 1/22/2020
-ms.author: mabrigg
+ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 02/21/2019
-ms.openlocfilehash: 53057c5235422f7d5ec016fcd8f9f3286c41dc58
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: 26a5821f6616390a4657a64d974862ef25c4cbe5
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76534079"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76879420"
 ---
 # <a name="azure-stack-hub-integrated-systems-connection-models"></a>Модели подключения интегрированных систем Azure Stack Hub | Документация Майкрософт
 Если вы заинтересованы в приобретении интегрированной системы Azure Stack Hub, вам следует изучить [некоторые рекомендации по интеграции центра обработки данных](azure-stack-datacenter-integration.md) для развертывания Azure Stack Hub, чтобы определить, как эта система будет внедрена в центр обработки данных. Кроме того, необходимо решить, как Azure Stack Hub будет интегрироваться с гибридной облачной средой. В этой статье представлен обзор основных решений, в том числе по выбору модели подключения к Azure, хранилища удостоверений и модели выставления счетов.

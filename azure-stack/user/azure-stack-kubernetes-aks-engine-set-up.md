@@ -1,26 +1,18 @@
 ---
-title: Установка необходимых компонентов для обработчика AKS в Azure Stack Hub | Документация Майкрософт
+title: Установка необходимых компонентов для обработчика AKS в Azure Stack Hub
 description: Предварительные требования для запуска обработчика ASK в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na (Kubernetes)
-ms.devlang: nav
 ms.topic: article
 ms.date: 1/10/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 1/10/2020
-ms.openlocfilehash: 1516b07cc491ca365f5bc87ad584960818bb537d
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 340b0e9b2b6f4ece2629968128b872282e88c2c0
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75879620"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884752"
 ---
 # <a name="set-up-the-prerequisites-for-the-aks-engine-on-azure-stack-hub"></a>Установка необходимых компонентов для обработчика AKS в Azure Stack Hub
 
@@ -36,7 +28,7 @@ ms.locfileid: "75879620"
 
 Для оператора облака требуются следующие элементы.
 
-| Предварительные требования | Description | Обязательно | Instructions |
+| Предварительные требования | Описание | Обязательно | Instructions |
 | --- | --- | --- | --- | --- |
 | Расширение пользовательских скриптов Linux | Расширение пользовательских скриптов Linux 2.0<br>Предложение: Настраиваемый скрипт для Linux 2.0<br>Версия: 2.0.6 (или последняя версия)<br>Издатель: Корпорация Майкрософт | Обязательно | Если у вас в подписке нет этого элемента, обратитесь к оператору облака. |
 | Базовый образ AKS для Ubuntu | Базовый образ AKS<br>Предложение: aks<br> 2019.10.24 (или более новая версия)<br>Издатель: microsoft-aks<br>SKU: aks-ubuntu-1604-201910 | Обязательно | Если у вас в подписке нет этого элемента, обратитесь к оператору облака. Дополнительные сведения о зависимости версий см. в разделе [Соответствие версий обработчика и базового образа](#matching-engine-to-base-image-version).<br> Если вы являетесь оператором облака для Azure Stack Hub и хотите предложить обработчик AKS, следуйте инструкциям по [добавлению предварительных требований обработчика AKS в Azure Stack Hub Marketplace](../operator/azure-stack-aks-engine.md). |
@@ -45,10 +37,10 @@ ms.locfileid: "75879620"
 
 Вы можете задать следующие элементы.
 
-| Предварительные требования | Description | Обязательно | Instructions |
+| Предварительные требования | Описание | Обязательно | Instructions |
 | --- | --- | --- | --- |
 | Подписка Azure Stack Hub | Доступ к предложениям в Azure Stack Hub осуществляется через подписки. Предложение содержит доступные вам службы. | Обязательно | Чтобы иметь возможность развертывать рабочие нагрузки клиента в Azure Stack Hub, прежде всего нужно получить [подписку Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-subscribe-services). |
-| группа ресурсов. | Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Если вы не укажете существующую группу ресурсов, средство создаст новую. | Необязательно | [Управление группами ресурсов Azure Resource Manager с помощью портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/manage-resource-groups-portal). |
+| Группа ресурсов | Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Если вы не укажете существующую группу ресурсов, средство создаст новую. | Необязательно | [Управление группами ресурсов Azure Resource Manager с помощью портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/manage-resource-groups-portal). |
 | Закрытый и открытый ключи | Чтобы использовать открытое SSH-подключение на компьютере разработки и сервере виртуальной машины в Azure Stack Hub, на котором размещено ваше веб-приложение, вам потребуется создать пару из открытого и закрытого ключей SSH. | Обязательно | Инструкции по создания ключа см. в разделе [SSH Key Generation](https://docs.microsoft.com/azure-stack/user/azure-stack-dev-start-howto-ssh-public-key) (Создание ключа SSH).|
 
 

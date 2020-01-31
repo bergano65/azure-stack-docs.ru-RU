@@ -1,26 +1,19 @@
 ---
-title: Проверка нового решения Azure Stack | Документация Майкрософт
+title: Проверка нового решения Azure Stack
 description: Узнайте, как проверить новое решение Azure Stack с помощью проверки как услуги.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: a29b003dca06ed1b886229f031e90c50fbc8dccb
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: b3e62141988f99706c652124943da0fbabf44439
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955790"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884028"
 ---
 # <a name="validate-a-new-azure-stack-solution"></a>Проверка нового решения Azure Stack
 
@@ -73,13 +66,13 @@ ms.locfileid: "73955790"
 1. [!INCLUDE [azure-stack-vaas-workflow-step_select-agent](includes/azure-stack-vaas-workflow-step_select-agent.md)]
 
 2. Выберите следующие тесты:
-    - Cloud Simulation Engine;
+    - Cloud Simulation Engine (Механизм имитации в облаке).
     - Compute SDK Operational Suite (Операционный набор для пакета SDK для вычислений);
     - Disk Identification Test (Тест на идентификацию диска);
     - KeyVault Extension SDK Operational Suite (Операционный набор для пакета SDK для расширения хранилища ключей);
     - KeyVault SDK Operational Suite (Операционный набор для пакета SDK для хранилища ключей);
     - Network SDK Operational Suite (Операционный набор для пакета SDK для сети);
-    - Storage Account SDK Operational Suite.
+    - Storage Account SDK Operational Suite (Операционный набор для пакета SDK для учетной записи).
 
 3. В контекстном меню выберите **Расписание**, чтобы открыть командную строку для планирования выполнения тестового экземпляра.
 
@@ -87,6 +80,6 @@ ms.locfileid: "73955790"
 
 ![Выполнение теста проверки решений](media/workflow_validation-solution_schedule-test.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Мониторинг теста с помощью проверки как услуги Azure Stack](azure-stack-vaas-monitor-test.md)

@@ -1,26 +1,18 @@
 ---
-title: Интеграция внешнего решения для мониторинга с Azure Stack Hub | Документация Майкрософт
+title: Интеграция внешнего решения для мониторинга с Azure Stack Hub
 description: Узнайте, как интегрировать Azure Stack Hub с внешним решением для мониторинга в центре обработки данных.
-services: azure-stack
-documentationcenter: ''
-author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: PowerShell
+author: ihenkel
 ms.topic: article
 ms.date: 06/05/2019
-ms.author: jeffgilb
+ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 06/05/2019
-ms.openlocfilehash: e9e66908cd42a72629caa12163c0c56790cae82f
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 3e50471201c7207aa68b725daf202d323b836a99
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75811368"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882119"
 ---
 # <a name="integrate-external-monitoring-solution-with-azure-stack-hub"></a>Интеграция внешнего решения для мониторинга с Azure Stack Hub
 
@@ -122,7 +114,7 @@ samples/etc/azurestack_services.cfg
 
 Подробнее о создании имени субъекта-службы см. статью [Использование удостоверения приложения для доступа к ресурсам](azure-stack-create-service-principals.md).
 
-| Параметр | Description | Аутентификация |
+| Параметр | Описание | Аутентификация |
 | --- | --- | --- |
 | **External_domain_fqdn ** | Полное доменное имя внешнего домена |    |
 | **region: ** | Имя региона |    |
@@ -141,7 +133,7 @@ samples/etc/azurestack_services.cfg
 > [!Note]  
 > Проверьте расположение, указанное в файлах azurestack_hosts.cfg и azurestack_services.cfg.
 
-| Конфигурация | Description |
+| Конфигурация | Описание |
 | --- | --- |
 | azurestack_commands.cfg | Конфигурация обработчика, не требующая изменений |
 | azurestack_contacts.cfg | Параметры уведомлений |

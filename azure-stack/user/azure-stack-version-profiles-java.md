@@ -1,27 +1,18 @@
 ---
-title: Использование профилей версий API с помощью Java в Azure Stack Hub | Документация Майкрософт
+title: Использование профилей версий API с помощью Java в Azure Stack Hub
 description: Узнайте, как использовать профили версий API с помощью Java в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/01/2019
+ms.date: 01/23/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 06def59e2ec66f8a3260aaeb008eb05cabb6781e
-ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
+ms.openlocfilehash: da85abeff55d09684c561679bdc0f85e28440ed7
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256263"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884251"
 ---
 # <a name="use-api-version-profiles-with-java-in-azure-stack-hub"></a>Использование профилей версий API с помощью Java в Azure Stack Hub
 

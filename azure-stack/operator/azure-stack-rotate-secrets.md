@@ -2,27 +2,19 @@
 title: Смена секретов
 titleSuffix: Azure Stack Hub
 description: Сведения о смене секретов в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
-author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
+author: ihenkel
 ms.topic: article
 ms.date: 12/13/2019
 ms.reviewer: ppacent
-ms.author: mabrigg
+ms.author: inhenkel
 ms.lastreviewed: 12/13/2019
 monikerRange: '>=azs-1802'
-ms.openlocfilehash: da9ed84f325612aa9b6261daed63a3eba7684f73
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 38e517aef0dcdd60e691d655004a9a807c2789d3
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75815108"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881338"
 ---
 # <a name="rotate-secrets-in-azure-stack-hub"></a>Узнайте о том, как менять секреты в Azure Stack Hub
 
@@ -303,13 +295,13 @@ Start-SecretRotation [-ReRun]
 Start-SecretRotation [-ReRun] [-Internal]
 ```
 
-### <a name="description"></a>Description
+### <a name="description"></a>Описание
 
 Командлет **Start-SecretRotation** меняет секреты инфраструктуры в системе Azure Stack Hub. По умолчанию он сменяет только сертификаты всех конечных точек инфраструктуры внешней сети. При использовании флага -Internal будут сменяться внутренние секреты инфраструктуры. При смене конечных точек инфраструктуры внешней сети командлет **Start-SecretRotation** необходимо выполнить в блоке скрипта **Invoke-Command** в сеансе с привилегированной конечной точкой среды Azure Stack Hub, переданном в параметре **Session**.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Тип | Обязательно | Положение | По умолчанию | Description |
+| Параметр | Тип | Обязательно | Положение | По умолчанию | Описание |
 | -- | -- | -- | -- | -- | -- |
 | `PfxFilesPath` | String  | False  | именованная  | None  | Путь к общей папке в каталоге **\Certificates**, который содержит все сертификаты конечных точек внешней сети. Требуется только при смене внешних секретов. Конечным каталогом должен быть **\Certificates**. |
 | `CertificatePassword` | SecureString | False  | именованная  | None  | Пароль для всех сертификатов, предоставляемых в -PfXFilesPath. Необходимое значение, если PfxFilesPath предоставлен, когда сменяются внешние секреты. |
@@ -387,7 +379,7 @@ Remove-PSSession -Session $PEPSession
 
    **1910 и более поздние версии**. Вам больше не нужно обновлять учетные данные контроллера управления основной платой на физических серверах Azure Stack Hub в соответствии с инструкциями поставщиков OEM. Пароли и имена пользователя для всех контроллеров BMC в среде должны совпадать. Имена пользователей BMC должны содержать не более 16 знаков.
 
-    | Параметр | Description | Штат |
+    | Параметр | Описание | Штат |
     | --- | --- | --- |
     | BypassBMCUpdate | При использовании этого параметра учетные данные в BMC не обновляются. Обновляется только внутреннее хранилище данных Azure Stack Hub. | Необязательно |
 

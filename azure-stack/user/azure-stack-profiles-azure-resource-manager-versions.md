@@ -1,25 +1,18 @@
 ---
-title: Версии API поставщика ресурсов, поддерживаемые профилями в Azure Stack Hub | Документация Майкрософт
+title: Версии API поставщика ресурсов, поддерживаемые профилями в Azure Stack Hub
 description: Из этой статьи вы узнаете о версиях API для Azure Resource Manager, поддерживаемых профилями в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/08/2019
-ms.openlocfilehash: ca8b1dc5fd3b8f7f029498145a692b7a8414c053
-ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
+ms.openlocfilehash: 03ec8b455991a85515793d1098df0f72497299b9
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75727502"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883307"
 ---
 # <a name="resource-provider-api-versions-supported-by-profiles-in-azure-stack-hub"></a>Версии API поставщика ресурсов, поддерживаемые профилями в Azure Stack Hub
 

@@ -1,27 +1,18 @@
 ---
-title: Обработка журнала и данных клиента в Azure Stack Hub | Документация Майкрософт
+title: Обработка журнала Azure Stack Hub и данных клиента
 description: Узнайте, как Azure Stack Hub собирает данные клиента и другую информацию.
-services: azure-stack
-documentationcenter: ''
-author: PatAltimore
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: JustinHall
 ms.topic: article
 ms.date: 06/10/2019
-ms.author: patricka
+ms.author: justinha
 ms.reviewer: chengwei
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: ed092ccf0a7eb3773b0514bc2f96f50bfdff7830
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: ae7e2b092625168718d1d0914e1765006c17659b
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882527"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890363"
 ---
 # <a name="azure-stack-hub-log-and-customer-data-handling"></a>Обработка журнала Azure Stack Hub и данных клиента 
 

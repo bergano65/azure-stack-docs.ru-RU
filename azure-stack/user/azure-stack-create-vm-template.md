@@ -1,34 +1,24 @@
 ---
-title: Создание виртуальной машины с использованием шаблона сообщества | Документация Майкрософт
+title: Создание виртуальной машины с использованием шаблона сообщества
 description: Из этой статьи вы узнаете, как с помощью Пакета средств разработки Azure Stack создать виртуальную машину, используя стандартный шаблон и пользовательский шаблон с сайта GitHub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.custom: mvc
-ms.date: 10/03/2019
+ms.date: 01/23/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 11/13/2018
-ms.openlocfilehash: b709d51a430530c50cf9a6e06896d405c435383e
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: ab2a177c9e2edc1b0362b03023148072fb885fb9
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76023240"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883879"
 ---
 # <a name="tutorial-create-a-vm-using-a-community-template"></a>Руководство. Создание виртуальной машины с использованием шаблона сообщества
 
 Оператор или пользователь Azure Stack Hub может создать виртуальную машину с помощью [настраиваемых шаблонов GitHub для быстрого запуска](https://github.com/Azure/AzureStack-QuickStart-Templates), а не развертывать шаблоны вручную из Azure Stack Hub Marketplace.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Использование шаблонов быстрого запуска Azure Stack Hub

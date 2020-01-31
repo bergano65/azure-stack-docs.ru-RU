@@ -1,21 +1,18 @@
 ---
-title: Общие сведения о виртуальных машинах Azure Stack Hub | Документация Майкрософт
+title: Общие сведения о виртуальных машинах Azure Stack Hub
 description: Из этой статьи вы узнаете о виртуальных машинах Azure Stack Hub.
-services: azure-stack
 author: sethmanheim
-manager: femila
-ms.service: azure-stack
 ms.topic: conceptual
-ms.date: 10/02/2019
+ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/05/2019
-ms.openlocfilehash: 7a7da17dd3b9be99c797b2241ae38bd2d4e6c0d2
-ms.sourcegitcommit: ce01b2cd114ca8ab5b70c6311b66c58ceb054469
+ms.openlocfilehash: c961716a64d3ccc4efcbf2eb36091e611db39be9
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75923983"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883945"
 ---
 # <a name="introduction-to-azure-stack-hub-vms"></a>Общие сведения о виртуальных машинах Azure Stack Hub
 
@@ -64,7 +61,7 @@ Azure Stack Hub предлагает виртуальные машины как 
 
 В таблице ниже указано, как найти сведения об образе.
 
-|Метод|Description|
+|Метод|Описание|
 |---------|---------|
 |Портал Azure Stack Hub|При выборе используемого образа значения задаются автоматически.|
 |PowerShell для Azure Stack Hub|`Get-AzureRMVMImagePublisher -Location "location"`<br>`Get-AzureRMVMImageOffer -Location "location" -Publisher "publisherName"`<br>`Get-AzureRMVMImageSku -Location "location" -Publisher "publisherName" -Offer "offerName"`|
@@ -87,9 +84,9 @@ Azure Stack Hub предлагает виртуальные машины как 
 
 Ресурсы в таблице ниже используются в виртуальной машине. Они должны существовать или создаваться вместе с виртуальной машиной.
 
-|Ресурс|Обязательно|Description|
+|Ресурс|Обязательно|Описание|
 |---------|---------|---------|
-|группа ресурсов.|Да|Виртуальная машина должна входить в группу ресурсов.|
+|Группа ресурсов|Да|Виртуальная машина должна входить в группу ресурсов.|
 |Учетная запись хранения|нет|При использовании управляемых дисков виртуальной машине не требуется учетная запись хранения для хранения виртуальных жестких дисков. <br>При использовании неуправляемых дисков виртуальной машине требуется учетная запись хранения для хранения виртуальных жестких дисков.|
 |Виртуальная сеть|Да|Виртуальная машина должна быть подключена к виртуальной сети.|
 |Общедоступный IP-адрес|нет|Для удаленного доступа к виртуальной машине ей можно назначить общедоступный IP-адрес.|
@@ -120,7 +117,7 @@ Azure Stack Hub предлагает виртуальные машины как 
 
 В таблице ниже представлены некоторые из способов, которыми можно получить сведения о виртуальной машине.
 
-|Метод|Description|
+|Метод|Описание|
 |---------|---------|
 |Портал Azure Stack Hub|В меню концентратора щелкните **Виртуальные машины** и выберите виртуальную машину из списка. На странице виртуальной машины доступны общие сведения, значения параметров и метрики мониторинга.|
 |Azure PowerShell|Управление виртуальными машинами в Azure и Azure Stack Hub аналогично. Дополнительные сведения об использовании PowerShell см. в следующем разделе статьи Azure:<br>[Описание размеров виртуальных машин](/azure/virtual-machines/windows/tutorial-manage-vm#understand-vm-sizes).|

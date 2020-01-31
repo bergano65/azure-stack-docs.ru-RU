@@ -1,20 +1,18 @@
 ---
 title: Добавление новой учетной записи пользователя Azure Stack Hub в Azure Active Directory
 description: Узнайте, как создать учетную запись пользователя в Azure Active Directory, чтобы изучить пользовательский портал.
-author: PatAltimore
-manager: femila
-ms.service: azure-stack
+author: JustinHall
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: patricka
+ms.author: justinha
 ms.reviewer: thoroet
 ms.lastreviewed: 09/17/2018
-ms.openlocfilehash: 3f0ef1b6a61d271541ee894f854639b13e24d699
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: b7bfcf97df22f5ca0d1dcaa7c9687079656af840
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75880997"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890159"
 ---
 # <a name="add-a-new-azure-stack-hub-user-account-in-azure-active-directory-azure-ad"></a>Добавление новой учетной записи пользователя Azure Stack Hub в Azure Active Directory (Azure AD)
 
@@ -37,12 +35,12 @@ ms.locfileid: "75880997"
    - **Имя (обязательно)** . Имя и фамилия нового пользователя. Например, Мэри Паркер.
    - **Имя пользователя (обязательно)** . Имя нового пользователя. Например, mary@contoso.com.
        В доменной части имени пользователя должно использоваться либо начальное доменное имя по умолчанию, <_yourdomainname_>.onmicrosoft.com, либо имя личного домена, например contoso.com. Дополнительные сведения о создании имени личного домена см. в статье [Добавление имени личного домена с помощью портала Azure Active Directory](/azure/active-directory/fundamentals/add-custom-domain).
-   - **Профиль**. При желании вы можете добавить дополнительную информацию о пользователе. Вы можете также добавить информацию о пользователе позже. Дополнительные сведения о добавлении информации о пользователе см. в разделе [Добавление или изменение данных профиля пользователя с помощью Azure Active Directory](/azure/active-directory/fundamentals/active-directory-users-profile-azure-portal).
+   - **Profile** (Профиль). При желании вы можете добавить дополнительную информацию о пользователе. Вы можете также добавить информацию о пользователе позже. Дополнительные сведения о добавлении информации о пользователе см. в разделе [Добавление или изменение данных профиля пользователя с помощью Azure Active Directory](/azure/active-directory/fundamentals/active-directory-users-profile-azure-portal).
    - **Роль каталога**. Выберите **Пользователь**.
 
 5. Установите флажок **Показать пароль** и скопируйте автоматически созданный пароль, указанный в поле **Пароль**. Этот пароль понадобится для начального процесса входа в систему.
 
-6. Нажмите кнопку **Создать**.
+6. Нажмите кнопку **создания**.
 
     Пользователь создан и добавлен к вашему клиенту Azure AD.
 

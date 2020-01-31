@@ -2,21 +2,18 @@
 title: Шифрование неактивных данных
 titleSuffix: Azure Stack Hub
 description: Узнайте, как Azure Stack Hub обеспечивает защиту данных с помощью шифрования неактивных данных.
-services: azure-stack
-author: PatAltimore
-ms.service: azure-stack
+author: ihenkel
 ms.topic: article
 ms.date: 06/17/2019
-ms.author: patricka
+ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 03/11/2019
-keywords: ''
-ms.openlocfilehash: 36ce8984ba8c4dafecaff9d985b223e320a9fa2c
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: f9bd7c223aa02f5ba79be0c9bc54b5d6d96ec4bb
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75815006"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890227"
 ---
 # <a name="data-at-rest-encryption-in-azure-stack-hub"></a>Шифрование неактивных данных в Azure Stack Hub
 
@@ -43,7 +40,7 @@ Get-AzsRecoveryKeys
 
 Необязательные параметры для командлета *Get-AzsRecoveryKeys*:
 
-| Параметр | Description | Тип | Обязательно |
+| Параметр | Описание | Тип | Обязательно |
 |---------|---------|---------|---------|
 |*raw* (Без форматирования) | Возвращает необработанные данные сопоставления между ключом восстановления, именем компьютера и идентификаторами паролей каждого зашифрованного тома  | Параметр | Нет (предназначен для сценариев поддержки)|
 

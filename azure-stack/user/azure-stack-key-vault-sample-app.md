@@ -1,32 +1,23 @@
 ---
-title: Разрешение приложениям получать доступ к секретам из хранилища ключей Azure Stack Hub | Документация Майкрософт
+title: Разрешение приложениям получать доступ к секретам из хранилища ключей Azure Stack Hub
 description: Из этой статьи вы узнаете, как запустить пример приложения, которое извлекает ключи и секреты из хранилища ключей в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.assetid: 3748b719-e269-4b48-8d7d-d75a84b0e1e5
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: sethm
 ms.lastreviewed: 04/08/2019
-ms.openlocfilehash: f73af34f3069b0fe550c8266253dce32efcb6b90
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 11b26d5e079ce16c7450bea0424aa4902c0ff8b3
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883632"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883583"
 ---
 # <a name="allow-apps-to-access-azure-stack-hub-key-vault-secrets"></a>Разрешение приложениям получать доступ к секретам из хранилища ключей Azure Stack Hub
 
 Выполните шаги в этой статье, чтобы запустить пример приложения **HelloKeyVault**, которое извлекает ключи и секреты из хранилища ключей в Azure Stack Hub.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Вы можете установить следующие обязательные компоненты из [Пакета средств разработки Azure Stack](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) или из внешнего клиента Windows, если вы [используете VPN-подключение](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn):
 

@@ -1,27 +1,18 @@
 ---
-title: Автоматизация обновления виртуальной машины и управления ею в Azure Stack Hub | Документация Майкрософт
+title: Автоматизация обновления виртуальной машины и управления ею в Azure Stack Hub
 description: Узнайте, как использовать решения Azure Monitor для виртуальных машин, "Управление обновлениями", "Отслеживание изменений" и инвентаризации в службе автоматизации Azure для управления виртуальными машинами Windows и Linux, развернутыми в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 580e1e724a1d03183091ce4e59b779fc30cfb92c
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: e3595179c4efc5503f8e4315fbe5a419049b2db4
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76023125"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885228"
 ---
 # <a name="vm-update-and-management-automation-in-azure-stack-hub"></a>Автоматизация обновления виртуальной машины и управления ею в Azure Stack Hub
 Для управления виртуальными машинами Windows и Linux, развернутыми с помощью Azure Stack Hub, можно использовать следующие функции решения службы автоматизации Azure.
@@ -37,7 +28,7 @@ ms.locfileid: "76023125"
 > [!IMPORTANT]
 > Эти решения идентичны тем, которые используются для управления виртуальными машинами Azure. Управление виртуальными машинами Azure и Azure Stack Hub осуществляется одинаково с помощью одного и того же интерфейса и инструментов. При использовании решений "Управление обновлениями", "Отслеживание изменений", инвентаризации и Azure Monitor для виртуальных машин в Azure Stack Hub для виртуальных машин Azure Stack Hub действует такая же цена, как и для виртуальных машин Azure.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем использовать эти возможности обновления виртуальных машин Azure Stack Hub и управления ими, необходимо выполнить несколько предварительных условий. К ним относятся действия, которые необходимо выполнить на портале Azure, а также на портале администрирования Azure Stack Hub.
 
 ### <a name="in-the-azure-portal"></a>На портале Azure
