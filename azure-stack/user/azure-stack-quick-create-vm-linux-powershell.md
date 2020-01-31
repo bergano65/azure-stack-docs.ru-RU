@@ -1,26 +1,17 @@
 ---
-title: Создание виртуальной машины Linux с помощью PowerShell в Azure Stack Hub | Документация Майкрософт
+title: Создание виртуальной машины Linux с помощью PowerShell в Azure Stack Hub
 description: Создание виртуальной машины Linux с помощью PowerShell в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 11/11/2019
 ms.author: mabrigg
-ms.custom: mvc
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 7a7d47eaf8bf415f61b9d2b78087204027404270
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: 2404ad1cb352690ab2cb7c9077ee562cf0fdfb94
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76023113"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883272"
 ---
 # <a name="quickstart-create-a-linux-server-vm-by-using-powershell-in-azure-stack-hub"></a>Краткое руководство. Создание виртуальной машины с сервером Linux с помощью PowerShell в Azure Stack Hub
 
@@ -30,7 +21,7 @@ ms.locfileid: "76023113"
 * установить веб-сервер NGINX и открыть его стандартную домашнюю страницу;
 * очистить неиспользуемые ресурсы.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Образ Linux в Azure Stack Hub Marketplace. По умолчанию Azure Stack Hub Marketplace не содержит образа Linux. Обратитесь к оператору Azure Stack Hub, чтобы он предоставил нужный образ Ubuntu Server 16.04 LTS. Для этого оператор может выполнить инструкции из статьи [Скачивание элементов Marketplace из Azure в Azure Stack Hub](../operator/azure-stack-download-azure-marketplace-item.md).
 

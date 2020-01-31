@@ -1,20 +1,18 @@
 ---
-title: Развертывание веб-приложения C# ASP.NET на виртуальной машине в Azure Stack Hub | Документация Майкрософт
+title: Развертывание веб-приложения C# ASP.NET на виртуальной машине в Azure Stack Hub
 description: Развертывание веб-приложения C# ASP.NET на виртуальной машине в Azure Stack Hub.
-services: azure-stack
 author: mattbriggs
-ms.service: azure-stack
 ms.topic: overview
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 070a168b28296e03dfa5e559eb68c40d84afb939
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 8222d102b22b05a3d5d1fd1a7530aeae62cc276d
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816145"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884915"
 ---
 # <a name="deploy-a-c-aspnet-web-app-to-a-vm-in-azure-stack-hub"></a>Развертывание веб-приложения C# ASP.NET на виртуальной машине в Azure Stack Hub
 
@@ -55,7 +53,7 @@ ms.locfileid: "75816145"
 
     д) Добавьте правило безопасности для входящего трафика для следующих портов:
 
-    | Порт | Протокол | Description |
+    | Порт | Протокол | Описание |
     | --- | --- | --- |
     | 80 | HTTP | HTTP — это протокол, который используется для доставки веб-страниц с серверов. Клиенты подключаются по протоколу HTTP, используя DNS-имя или IP-адрес. |
     | 443 | HTTPS | HTTPS — это безопасная версия протокола HTTP, которая использует сертификат безопасности и обеспечивает передачу данных в зашифрованном виде.  |

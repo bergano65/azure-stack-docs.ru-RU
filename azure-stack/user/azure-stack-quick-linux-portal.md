@@ -1,23 +1,18 @@
 ---
-title: Создание виртуальной машины Linux с помощью Azure Stack Hub | Документация Майкрософт
+title: Создание виртуальной машины Linux в Azure Stack Hub
 description: Создание виртуальной машины с сервером Linux с помощью Azure Stack Hub.
-services: azure-stack
-cloud: azure-stack
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
 ms.topic: quickstart
 ms.date: 1/10/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
-ms.custom: mvc
 ms.lastreviewed: 1/10/2020
-ms.openlocfilehash: ff42069837e13a1d4065a5b3f8d829f70ae09725
-ms.sourcegitcommit: c4368652f0dd68c432aa1dabddbabf161a4a6399
+ms.openlocfilehash: 4e4f9eb8d9a1bf0966d75c2d4e47b94a998675f0
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75915049"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884466"
 ---
 # <a name="quickstart-create-a-linux-server-vm-by-using-the-azure-stack-hub-portal"></a>Краткое руководство. Создание виртуальной машины с сервером Linux с помощью портала Azure Stack Hub.
 
@@ -30,7 +25,7 @@ ms.locfileid: "75915049"
 > [!NOTE]  
 > Изображения в этой статье обновлены в соответствии с изменениями, внесенными в Azure Stack Hub версии 1808. В версии 1808 добавлена поддержка *управляемых дисков* в дополнение к неуправляемым дискам. Если вы используете более раннюю версию, изображения для некоторых задач (например, выбор диска) отличаются от экранов пользовательского интерфейса.  
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Образ Linux в Azure Stack Hub Marketplace.
 
@@ -78,7 +73,7 @@ ms.locfileid: "75915049"
 
    ![Создание сервера Linux](media/azure-stack-quick-linux-portal/image1.png)
 
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
    ![Создание сервера Linux — создание](media/azure-stack-quick-linux-portal/image2.png)
 
@@ -151,7 +146,7 @@ sudo apt-get -y install nginx
 
 1. Убедитесь, что для параметра **Диапазон портов** задано значение 80, а для параметра **Действие** — значение **Разрешить**.
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 ## <a name="view-the-welcome-to-nginx-page"></a>Просмотр страницы приветствия NGINX
 

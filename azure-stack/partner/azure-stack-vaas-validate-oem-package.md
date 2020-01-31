@@ -1,26 +1,19 @@
 ---
-title: Проверка пакетов поставщика вычислительной техники (OEM) с помощью проверки как услуги Azure Stack | Документация Майкрософт
+title: Проверка пакетов поставщика вычислительной техники (OEM) с использованием проверки как услуги Azure Stack
 description: Узнайте, как проверить пакеты поставщика вычислительной техники (OEM) с помощью проверки как услуги.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 774778e382526cffb30e2a69d16c32cc1e548225
-ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
+ms.openlocfilehash: ed6d3055e3e5cab0def090d31f907e0fd1deea50
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954559"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885107"
 ---
 # <a name="validate-oem-packages"></a>Проверка пакетов OEM
 
@@ -78,7 +71,7 @@ ms.locfileid: "74954559"
 
 Варианты предоставления доступа к пакетам упорядочены от доступа с наименьшими правами до доступа с наибольшими правами.
 
-#### <a name="option-1-generate-a-blob-sas-url"></a>Вариант 1. Создание URL-адреса SAS большого двоичного объекта
+#### <a name="option-1-generate-a-blob-sas-url"></a>Вариант 1. Создание URL-адреса SAS большого двоичного объекта
 
 Используйте этот вариант, если для уровня доступа контейнера хранилища задано значение **Частный**, где контейнер не разрешает общий доступ для чтения к контейнеру или его большим двоичным объектам.
 
@@ -97,7 +90,7 @@ ms.locfileid: "74954559"
 
 Используйте **URL-адрес SAS BLOB-объекта** при предоставлении URL-адресов больших двоичных объектов пакета.
 
-#### <a name="option-2-construct-a-container-sas-url"></a>Вариант 2. Создание URL-адреса SAS контейнера
+#### <a name="option-2-construct-a-container-sas-url"></a>Вариант 2. Создание URL-адреса SAS контейнера
 
 Используйте этот вариант, если для уровня доступа контейнера хранилища задано значение **Частный** и вам необходимо предоставить URL-адрес большого двоичного объекта пакета для *интерактивного* теста. Этот URL-адрес также может использоваться на уровне рабочего процесса.
 
@@ -118,7 +111,7 @@ ms.locfileid: "74954559"
 
     Используйте эти значения при предоставлении URL-адресов больших двоичных объектов пакета.
 
-#### <a name="option-3-grant-public-read-access"></a>Вариант 3. Предоставление общего доступа на чтение
+#### <a name="option-3-grant-public-read-access"></a>Способ 3. Предоставление общего доступа на чтение
 
 Используйте этот вариант, если допустимо разрешить не прошедшим проверку клиентам доступ к отдельным большим двоичным объектам или, в случае *интерактивных* тестов, к контейнеру.
 
@@ -193,6 +186,6 @@ ms.locfileid: "74954559"
 
 Чтобы отправить запрос на подпись пакета, отправьте имя решения и имя проверки пакета, связанные с этим выполнением, по адресу [vaashelp@microsoft.com](mailto:vaashelp@microsoft.com).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Мониторинг теста с помощью проверки как услуги Azure Stack](azure-stack-vaas-monitor-test.md)

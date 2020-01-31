@@ -1,30 +1,20 @@
 ---
-title: Что такое Пакет средств разработки для Azure Stack Hub (ASDK)? | Документация Майкрософт
-description: Сведения о Пакете средств разработки для Azure Stack Hub и способах его использования для оценки возможностей Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
+title: Общие сведения о Пакете средств разработки Azure Stack (ASDK) | Документы Майкрософт
+description: Узнайте о Пакете средств разработки Azure Stack и способах его использования для оценки возможностей Azure Stack Hub.
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: overview
-ms.custom: mvc
 ms.date: 11/27/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 11/27/2019
-ms.openlocfilehash: fb9dab302e20d436be7f3cf9a76de913bbfe22e3
-ms.sourcegitcommit: 7817d61fa34ac4f6410ce6f8ac11d292e1ad807c
+ms.openlocfilehash: 7d3b4115ea34a185c5535c77cecdddf060ed84eb
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74689825"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76873300"
 ---
-# <a name="what-is-the-azure-stack-hub-development-kit-asdk"></a>Что такое Пакет средств разработки для Azure Stack Hub (ASDK)?
+# <a name="what-is-the-azure-stack-development-kit-asdk"></a>Общие сведения о Пакете средств разработки Azure Stack (ASDK)
 [Интегрированные системы Microsoft Azure Stack Hub](../operator/azure-stack-overview.md) размером от 4 до 16 узлов, которые совместно поддерживаются партнером по оборудованию и корпорацией Майкрософт. Использование интегрированных систем Azure Stack Hub позволяет реализовать новые сценарии в производственных рабочих нагрузках. Если вы оператор Azure Stack Hub, который управляет инфраструктурой интегрированных систем и предлагает службы, ознакомьтесь с нашей [документацией для операторов](/azure-stack/operator).
 
 Пакет средств разработки Azure Stack Hub (ASDK) — это развертывание Azure Stack Hub с использованием одного узла, которое можно скачать и применять **бесплатно**. Все компоненты ASDK устанавливаются на виртуальных машинах, работающих на одном главном компьютере, который должен соответствовать [минимальным требованиям к оборудованию](asdk-deploy-considerations.md#hardware). ASDK предоставляет среду, в которой можно оценить возможности Azure Stack Hub и разрабатывать современные приложения с помощью API-интерфейсов и средств, совместимых с Azure, в *непроизводственной* среде. 
@@ -46,7 +36,7 @@ ASDK предназначен для обеспечения согласован
 ## <a name="asdk-and-multi-node-azure-stack-hub-differences"></a>Разница между ASDK и многоузловой инфраструктурой Azure Stack Hub
 Ниже представлены важные отличия между одноузловыми развертываниями ASDK и многоузловыми развертываниями Azure Stack Hub.
 
-|ОПИСАНИЕ|ASDK|Многоузловой Azure Stack Hub|
+|Описание|ASDK|Многоузловой Azure Stack Hub|
 |-----|-----|-----|
 |**Масштабирование**|Все компоненты установлены на одноузловой серверный компьютер.|Размер варьируется от 4 до 16 узлов.|
 |**Устойчивость**|Конфигурация с одним узлом не обеспечивает высокий уровень доступности.|Поддерживаются возможности высокого уровня доступности.|
@@ -61,7 +51,7 @@ ASDK предназначен для обеспечения согласован
 ### <a name="foundational-services"></a>Базовые службы
 По умолчанию при развертывании ASDK Azure Stack Hub содержит следующие "базовые службы":
 - Службы вычислений
-- Хранилище
+- Память
 - Сеть
 - Key Vault
 
@@ -80,5 +70,5 @@ ASDK предназначен для обеспечения согласован
 Azure Stack Hub будет расширять поддержку дополнительных служб Azure. Дополнительные сведения о нововведениях в Azure Stack Hub см. на странице [Стратегии развития Azure Stack](https://azure.microsoft.com/roadmap/?tag=azure-stack). 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы приступить к оценке Azure Stack Hub, сначала необходимо [скачать последнюю версию ASDK](asdk-download.md) и подготовить главный компьютер с ASDK. После этого вы сможете установить ASDK и войти на портал администратора и портал пользователя, чтобы приступить к работе с Azure Stack Hub.

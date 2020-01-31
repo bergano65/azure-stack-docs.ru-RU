@@ -1,20 +1,18 @@
 ---
-title: Развертывание приложения Node.js на виртуальной машине в Azure Stack Hub | Документация Майкрософт
+title: Развертывание веб-приложения Node.js на виртуальной машине в Azure Stack Hub
 description: Разверните приложение Node.js в Azure Stack Hub.
-services: azure-stack
 author: mattbriggs
-ms.service: azure-stack
 ms.topic: overview
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: c5d254351fab0bb89023dad8928ac32958f63404
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: ab6d3e378c4a6f40e597367f06d9e5c4e31eb0c3
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76536221"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883758"
 ---
 # <a name="deploy-a-nodejs-web-app-to-a-vm-in-azure-stack-hub"></a>Развертывание веб-приложения Node.js на виртуальной машине в Azure Stack Hub
 
@@ -47,7 +45,7 @@ ms.locfileid: "76536221"
 2. [Установите NPM](https://www.npmjs.com/) — диспетчер пакетов для пакетов и модулей Node.js. Не прерывая подключение к виртуальной машине в сеансе SSH, введите следующую команду:
 
     ```bash  
-       go version
+       node --version
     ```
 
 3. [Установите Git](https://git-scm.com) — широко распространенную систему управления версиями и исходным кодом. Не прерывая подключение к виртуальной машине в сеансе SSH, введите следующую команду:

@@ -1,26 +1,19 @@
 ---
-title: Проверочное тестирование функций в интерактивном режиме по модели "проверка как услуга" для Azure Stack | Документация Майкрософт
+title: Проверочное тестирование функций в интерактивном режиме с использованием проверки как услуги Azure Stack
 description: Узнайте, как создать тесты для проверки функций в интерактивном режиме по модели "проверка как услуга" для Azure Stack.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5da64bbd13e2bfde5b469c1ae0de89d85a054e3c
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.openlocfilehash: c957d076fb4d90dc9a19d5b8fbaaddbdb55c789d
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73167253"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884145"
 ---
 # <a name="interactive-feature-verification-testing"></a>Тестирование интерактивной проверки функций  
 
@@ -74,7 +67,7 @@ ms.locfileid: "73167253"
 
     ![Alt text](media/azure-stack-vaas-interactive-feature-verification/image9.png)
 
-1. Щелкните **Далее**.
+1. Выберите **Далее**.
 
     ![Alt text](media/azure-stack-vaas-interactive-feature-verification/image10.png)
 
@@ -112,6 +105,6 @@ ms.locfileid: "73167253"
 
 1. Нажмите кнопку **Submit** (Отправить), чтобы отправить результаты специалистам корпорации Майкрософт.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Мониторинг теста с помощью проверки как услуги Azure Stack](azure-stack-vaas-monitor-test.md)

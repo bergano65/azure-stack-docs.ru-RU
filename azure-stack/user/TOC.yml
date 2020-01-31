@@ -198,7 +198,7 @@
               items:
                 - name: Обработчик AKS
                   items:
-                    - name: Обработчик AKS в Azure Stack Hub
+                    - name: Использование обработчика AKS в Azure Stack Hub
                       href: azure-stack-kubernetes-aks-engine-overview.md
                     - name: Политика поддержки
                       href: azure-stack-kubernetes-aks-engine-support.md
