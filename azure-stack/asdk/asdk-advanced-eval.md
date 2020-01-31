@@ -1,27 +1,18 @@
 ---
-title: Расширенные задачи оценки в ASDK | Документация Майкрософт
+title: Расширенные задачи оценки в ASDK
 description: Узнайте о расширенных задачах оценки в Пакете средств разработки Azure Stack (ASDK).
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 2390f2c21325a059ea6f651e7fcd944d890bf307
-ms.sourcegitcommit: 5ef433aa6b75cdfb557fab0ef9308ff2118e66e5
+ms.openlocfilehash: 5ad405deed93155871afb4793a1d800268ae7d22
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73594767"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76874167"
 ---
 # <a name="advanced-asdk-evaluation-tasks"></a>Расширенные задачи оценки в ASDK
 Ознакомившись с основными функциями и возможностями пакета средств разработки Azure Stack (ASDK), можно подробнее рассмотреть возможности Azure Stack путем тестирования более сложных сценариев. Полный список этих расширенных задач оценки можно найти в документации оператора по Azure Stack.
@@ -44,6 +35,6 @@ ms.locfileid: "73594767"
 
 Разверните поставщик ресурсов Службы приложений, чтобы [предоставить веб-приложения и приложения API пользователям Azure Stack](../operator/azure-stack-tutorial-app-service.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о предоставлении служб с помощью интегрированных систем Azure Stack](../operator/service-plan-offer-subscription-overview.md)

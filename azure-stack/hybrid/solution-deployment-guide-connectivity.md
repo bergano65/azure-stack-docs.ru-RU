@@ -2,18 +2,17 @@
 title: Настройка подключения к гибридному облаку с помощью Azure и Azure Stack Hub
 description: Узнайте, как настроить подключение к гибридному облаку с помощью Azure и Azure Stack Hub.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 26895aeaf55c466d5800e52c7c482d4516f3f244
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 4b65ce6d03ee345b308cd5c5dd594e4dcf56cfec
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881643"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76875510"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Настройка подключения к гибридному облаку с помощью Azure и Azure Stack Hub
 
@@ -32,7 +31,7 @@ ms.locfileid: "75881643"
 > В статье [Hybrid cloud design patterns for Azure Stack](overview-app-design-considerations.md) (Рекомендации по проектированию гибридных приложений) описаны основные аспекты качественного программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность), которые следует учитывать при разработке, развертывании и использовании гибридных приложений. Эти рекомендации помогут оптимизировать разработку гибридных приложений и предотвратить появление проблем с рабочими средами.
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для развертывания гибридного подключения требуется несколько компонентов. Подготовка некоторых из них требует определенного времени, и это необходимо учитывать при планировании.
 
@@ -51,7 +50,7 @@ ms.locfileid: "75881643"
 
 ### <a name="azure"></a>Azure
 
- - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+ - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
  - Создайте [веб-приложение](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?view=vsts&tabs=vsts) в Azure. Запишите URL-адрес веб-приложения для дальнейшего использования в решении.
 
 ### <a name="azure-stack-hub"></a>Azure Stack Hub

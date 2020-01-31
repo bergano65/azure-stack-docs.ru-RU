@@ -1,27 +1,19 @@
 ---
-title: Заметки о выпуске обновления 1 для Службы приложений в Azure Stack Hub | Документация Майкрософт
+title: Заметки о выпуске обновления 1 для Службы приложений Azure в Azure Stack Hub
 description: Узнайте об улучшениях, исправлениях и известных проблемах в обновлении 1 для Службы приложений в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: bryanla
 manager: stefsch
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 03/20/2018
-ms.openlocfilehash: f36a94bbc442913826571fdacd1303b010212d4c
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: d81c0387e26a72865b74a88062c5b7b7588b3281
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75880368"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76875969"
 ---
 # <a name="app-service-on-azure-stack-hub-update-1-release-notes"></a>Заметки о выпуске обновления 1 для Службы приложений Azure в Azure Stack Hub
 
@@ -34,7 +26,7 @@ ms.locfileid: "75880368"
 
 Номер сборки обновления 1 для Службы приложений Azure в Azure Stack Hub — **69.0.13698.9**.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 > [!IMPORTANT]
 > Теперь для новых развертываний Службы приложений Azure в Azure Stack Hub нужен [трехсубъектный групповой сертификат](azure-stack-app-service-before-you-get-started.md#get-certificates). Это связано с улучшением обработки единого входа для Kudu в Службе приложений Azure. Новый субъект — **\*.sso.appservice.\<регион\>.\<доменное_имя\>.\<расширение\>**

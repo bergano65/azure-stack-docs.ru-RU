@@ -2,18 +2,17 @@
 title: Шаблон для создания приложения, которое выполняет масштабирование в нескольких облаках, в Azure и Azure Stack Hub.
 description: Узнайте, как с помощью Azure и Azure Stack Hub создать приложение, выполняющее масштабирование в нескольких облаках.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 3bd29e8625fac818d05954720d84d572b684c92e
-ms.sourcegitcommit: b96a0b151b9c0d3eea59e7c2d39119a913782624
+ms.openlocfilehash: 4bf4a7b868822300c39275b8763798007cdada29
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718017"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76877380"
 ---
 # <a name="cross-cloud-scaling-pattern"></a>Шаблон масштабирования в нескольких облаках
 

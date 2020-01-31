@@ -1,4 +1,4 @@
-- name: Документация по пакету средств разработки Azure Stack Hub
+- name: Документация по Пакету средств разработки Azure Stack
   href: index.yml
 - name: Обзор
   expanded: true
@@ -45,7 +45,7 @@
       href: asdk-connect.md
     - name: Устранение неполадок
       href: asdk-troubleshooting.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: PowerShell для Azure Stack
       href: /powershell/azure/azure-stack/overview?view=azurestackps-1.2.10
