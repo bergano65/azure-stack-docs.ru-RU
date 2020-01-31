@@ -2,18 +2,17 @@
 title: Использование шаблона DevOps для интеллектуальной границы с Azure и Azure Stack Hub
 description: Узнайте об использовании шаблона DevOps для интеллектуальной границы с Azure и Azure Stack Hub.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: f774fb0382409d5674c622f289767ca8ae81effb
-ms.sourcegitcommit: 5c92a669007ab4aaffe4484f1d8836a40340dde1
+ms.openlocfilehash: bf1ae2d8c404f8cc52ab32b22c883ee15934c3b1
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640175"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76877482"
 ---
 # <a name="devops-pattern"></a>Шаблон DevOps
 
@@ -86,7 +85,7 @@ ms.locfileid: "73640175"
 - Если вы не можете автоматизировать инфраструктуру, подготовку ресурсов, настройку, идентификацию и задачи безопасности.
 - Если у команд нет доступа к гибридным облачным ресурсам для реализации непрерывной интеграции и непрерывной разработки (CI/CD).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения по темам, описанным в этой статье:
 - См. сведения об [Azure DevOps и связанных средствах, включая Azure Repos и Azure Pipelines](/azure/devops).

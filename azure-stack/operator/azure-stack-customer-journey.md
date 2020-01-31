@@ -1,27 +1,18 @@
 ---
-title: Руководство. Интеграция центра обработки данных в Azure Stack Hub | Документация Майкрософт
+title: Руководство. Интеграция центра обработки данных в Azure Stack Hub
 description: Из этой статьи вы узнаете, что требуется для успешного развертывания Azure Stack Hub в центре обработки данных, начиная с этапа планирования и заканчивая операциями после развертывания.
-services: azure-stack
-documentationcenter: ''
-author: mattbriggs
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
+author: ihenkel
 ms.topic: article
 ms.date: 11/07/2019
-ms.author: mabrigg
+ms.author: inhenkel
 ms.reviewer: asganesh
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: e5175c11887d3a9afec2c7887f56b605b159f84f
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 6711483384ba9985ced7396d19e025e0ed3240c6
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75818440"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882507"
 ---
 # <a name="azure-stack-hub-datacenter-integration-walkthrough"></a>Руководство. Интеграция центра обработки данных в Azure Stack Hub
 

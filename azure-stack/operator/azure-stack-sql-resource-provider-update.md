@@ -2,26 +2,18 @@
 title: Обновление поставщика ресурсов SQL в Azure Stack Hub
 titleSuffix: Azure Stack Hub
 description: Узнайте, как обновить поставщик ресурсов SQL в Azure Stack Hub.
-services: azure-stack
-documentationCenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 5ae8a125521689a1e07e1207e03df4d981b74704
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 07f372f1974780d2310b12cc8d874808e010ac3c
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881813"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881265"
 ---
 # <a name="update-the-sql-resource-provider"></a>Обновление поставщика ресурсов SQL
 
@@ -51,10 +43,10 @@ ms.locfileid: "75881813"
 
 Следующие параметры можно указать в командной строке при выполнении сценария PowerShell **UpdateSQLProvider.ps1**. Если вы не зададите нужные параметры или их значения не пройдут проверку, вам будет предложено указать требуемые параметры.
 
-| Имя параметра | Description | Комментарий или значение по умолчанию |
+| Имя параметра | Описание | Комментарий или значение по умолчанию |
 | --- | --- | --- |
 | **CloudAdminCredential** | Учетные данные администратора облака, необходимые для доступа к привилегированной конечной точке. | _Обязательно_ |
-| **AzCredential** | Учетные данные администратора службы Azure Stack Hub. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack Hub. | _Обязательно_ |
+| **AzCredential** | Учетные данные администратора службы Azure Stack Hub. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack Hub. | _Обязательно_ |
 | **VMLocalCredential** | Учетные данные для локальной учетной записи администратора виртуальной машины поставщика ресурсов SQL. | _Обязательно_ |
 | **PrivilegedEndpoint** | IP-адрес или DNS-имя привилегированной конечной точки. |  _Обязательно_ |
 | **AzureEnvironment** | Среда Azure учетной записи администратора службы, которая использовалась для развертывания Azure Stack Hub. Требуется только для развертываний Azure AD. Поддерживаемые имена среды — **AzureCloud**, **AzureUSGovernment** или, в случае использования Azure AD для Китая, — **AzureChinaCloud**. | AzureCloud; |

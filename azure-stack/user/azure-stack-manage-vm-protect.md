@@ -1,27 +1,18 @@
 ---
-title: Защита виртуальных машин, развернутых в Azure Stack Hub | Документация Майкрософт
+title: Защита виртуальных машин, развернутых в Azure Stack Hub
 description: Сведения о создании плана восстановления для защиты виртуальных машин, развернутых в Azure Stack Hub, от потери данных и внепланового простоя.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.assetid: 4e5833cf-4790-4146-82d6-737975fb06ba
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: hectorl
 ms.lastreviewed: 3/19/2018
-ms.openlocfilehash: 9211a3221a3c12c91b9d8875c04bbdfbedaf81e2
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: fdcae656e142f8981a41875daada938b5ce360ab
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76536170"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884722"
 ---
 # <a name="protect-vms-deployed-on-azure-stack-hub"></a>Защита виртуальных машин, развернутых в Azure Stack Hub
 

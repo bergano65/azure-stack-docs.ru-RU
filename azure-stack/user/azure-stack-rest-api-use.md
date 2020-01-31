@@ -1,25 +1,18 @@
 ---
-title: Выполнение запросов API к Azure Stack Hub | Документация Майкрософт
+title: Выполнение запросов API к Azure Stack Hub
 description: Узнайте, как получить аутентификацию Azure для отправки запросов через API Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/01/2019
+ms.date: 01/23/2020
 ms.author: sethm
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 3defbf731a2b4b89fce8f9815513456104f80ea6
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 45dd07337aef61a1fcfecb855e0c113315b15271
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883275"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883208"
 ---
 <!--  cblackuk and charliejllewellyn. This is a community contribution by cblackuk-->
 

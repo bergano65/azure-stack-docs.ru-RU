@@ -1,26 +1,18 @@
 ---
-title: Использование Azure Monitor для контейнеров в Azure Stack Hub | Документация Майкрософт
+title: Использование Azure Monitor для контейнеров в Azure Stack Hub
 description: Узнайте, как использовать Azure Monitor для контейнеров в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na (Kubernetes)
-ms.devlang: nav
 ms.topic: article
 ms.date: 11/15/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/15/2019
-ms.openlocfilehash: 4fa741970a2fb8c82bab3c9f7eb16a3aefd31ecd
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 5b3172695fd6e0536360eed2dc4e370dd8bccecc
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883122"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885248"
 ---
 # <a name="use-azure-monitor-for-containers-on-azure-stack-hub"></a>Использование Azure Monitor для контейнеров в Azure Stack Hub
 
@@ -34,7 +26,7 @@ ms.locfileid: "75883122"
 
 Есть два способа включить Azure Monitor для кластера. Для обоих способов нужно настроить в Azure рабочую область Azure Monitor Log Analytics.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для обоих методов нужно выполнить [предварительные требования](https://github.com/Helm/charts/tree/master/incubator/azuremonitor-containers#pre-requisites), которые перечислены в руководстве по [использованию контейнеров в Azure Monitor](https://github.com/Helm/charts/tree/master/incubator/azuremonitor-containers).
 

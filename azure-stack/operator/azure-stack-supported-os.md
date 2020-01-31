@@ -2,26 +2,18 @@
 title: Поддерживаемые гостевые операционные системы для Azure Stack Hub
 titleSuffix: Azure Stack
 description: Узнайте, какие следующие гостевые операционные системы можно использовать в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/06/2019
-ms.openlocfilehash: 8d437425db15fa078c00c973fe50824d0ada58bd
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: 5171b52bc3c85dd5dbcc2c83cf307274ef92d558
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76023315"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890210"
 ---
 # <a name="guest-operating-systems-supported-on-azure-stack-hub"></a>Поддерживаемые гостевые операционные системы для Azure Stack Hub
 
@@ -29,7 +21,7 @@ ms.locfileid: "76023315"
 
 Azure Stack Hub поддерживает гостевые операционные системы Windows, перечисленные в таблице ниже.
 
-| Операционная система | Description | Доступно в центре Marketplace для Azure Stack Hub |
+| Операционная система | Описание | Доступно в центре Marketplace для Azure Stack Hub |
 | --- | --- | --- |
 | Windows Server, версия1709 | 64-разрядная | Core с контейнерами |
 | Windows Server 2019 | 64-разрядная |  Центр обработки данных, ядро центра обработки данных, центр обработки данных с контейнерами |
@@ -56,7 +48,7 @@ Azure Stack Hub поддерживает гостевые операционны
 >
 > [cloud-init](https://cloud-init.io/) поддерживается в Azure Stack Hub 1910 и выше.
 
-| Distribution | Description | Издатель | Azure Stack Hub Marketplace |
+| Distribution | Описание | Издатель | Azure Stack Hub Marketplace |
 | --- | --- | --- | --- |
 | Версия 6.9 на основе CentOS | 64-разрядная | Rogue Wave | Да |
 | Версия 7.5 на основе CentOS | 64-разрядная | Rogue Wave | Да |

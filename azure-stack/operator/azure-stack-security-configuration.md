@@ -1,20 +1,18 @@
 ---
 title: Настройка элементов управления безопасностью в Azure Stack Hub
 description: Узнайте, как настроить элементы управления безопасностью в Azure Stack Hub
-services: azure-stack
-author: PatAltimore
-ms.service: azure-stack
+author: ihenkel
 ms.topic: article
 ms.date: 06/17/2019
-ms.author: patricka
+ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 06/17/2019
-ms.openlocfilehash: 8fe0019dfee098a7ed022ecb20b6443a4be43f53
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: dae9f8822924f37ae9a46d2be71b7525d8bf3982
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881966"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890193"
 ---
 # <a name="configure-azure-stack-hub-security-controls"></a>Настройка элементов управления безопасностью в Azure Stack Hub
 
@@ -53,13 +51,13 @@ Set-TLSPolicy -Version <String>
 
 Параметры командлета *Set-TLSPolicy*:
 
-| Параметр | Description | Тип | Обязательно |
+| Параметр | Описание | Тип | Обязательно |
 |---------|---------|---------|---------|
 | *Версия* | Допустимые версии протокола TLS в Azure Stack Hub | String | да|
 
 Чтобы настроить разрешенные версии протокола TLS на всех конечных точках Azure Stack Hub, используйте следующие значения:
 
-| Значение версии | Description |
+| Значение версии | Описание |
 |---------|---------|
 | *TLS_All* | Конечные точки TLS Azure Stack Hub поддерживают протокол TLS 1.2, но использование версий TLS 1.1 и TLS 1.0 разрешается. |
 | *TLS_1.2* | Конечные точки TLS Azure Stack Hub поддерживают только протокол TLS 1.2. | 

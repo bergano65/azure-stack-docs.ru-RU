@@ -1,27 +1,18 @@
 ---
-title: Использование средства проверки шаблонов в Azure Stack Hub | Документация Майкрософт
+title: Использование средства проверки шаблонов в Azure Stack Hub
 description: Проверка шаблонов для развертывания в Azure Stack Hub с помощью средства проверки шаблонов.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.assetid: d9e6aee1-4cba-4df5-b5a3-6f38da9627a3
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/03/2019
+ms.date: 01/24/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: e3fff62f204ca3903a08ebb8ff0450e2fa4fe7d5
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 1690e191e2aa610e69b1e204b9e685e5d8e90187
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883224"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884296"
 ---
 # <a name="use-the-template-validation-tool-in-azure-stack-hub"></a>Использование средства проверки шаблонов в Azure Stack Hub
 
@@ -81,7 +72,7 @@ ms.locfileid: "75883224"
 
 Командлет средства проверки шаблонов поддерживает следующие параметры.
 
-| Параметр | Description | Обязательно |
+| Параметр | Описание | Обязательно |
 | ----- | -----| ----- |
 | `TemplatePath` | Указывает путь для рекурсивного поиска шаблонов Azure Resource Manager. | Да |
 | `TemplatePattern` | Задает шаблон имени, по которому выбираются файлы. | нет |

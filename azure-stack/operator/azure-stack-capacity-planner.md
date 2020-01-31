@@ -1,27 +1,18 @@
 ---
-title: Планировщик ресурсов Azure Stack Hub | Документация Майкрософт
+title: Планировщик ресурсов Azure Stack Hub
 description: Сведения о планировании емкости для развертываний Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
-author: prchint
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: ihenkel
 ms.topic: article
 ms.date: 05/31/2019
-ms.author: justinha
+ms.author: inhenkel
 ms.reviewer: prchint
 ms.lastreviewed: 05/31/2019
-ms.openlocfilehash: deff6d15374105b56e504da4edf89eecc8f6a640
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 6c5625c3161650d1e764df315b7b2390cd84f3f1
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816859"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76889785"
 ---
 # <a name="azure-stack-hub-capacity-planner"></a>Планировщик ресурсов Azure Stack Hub
 
@@ -30,7 +21,7 @@ ms.locfileid: "75816859"
 ## <a name="worksheet-descriptions"></a>Описания рабочих листов
 В следующей таблице приведено описание для каждого листа в планировщике ресурсов Azure Stack Hub, который можно скачать отсюда: [https://aka.ms/azstackcapacityplanner](https://aka.ms/azstackcapacityplanner). 
 
-|Имя листа|Description|
+|Имя листа|Описание|
 |-----|-----|
 |Version-Disclaimer|Назначение калькулятора, номер версии и дата выпуска.|
 |Instructions|Пошаговые инструкции по моделированию планирования ресурсов для коллекции виртуальных машин.|

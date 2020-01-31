@@ -1,26 +1,18 @@
 ---
-title: Создание хранилища дисков виртуальной машины в Azure Stack Hub | Документация Майкрософт
+title: Создание хранилища дисков виртуальной машины в Azure Stack Hub
 description: Создание дисков для виртуальных машин в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 01/18/2019
-ms.openlocfilehash: 66147be9158726ab9ba01d011ba0fa2fd8f141bc
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: a6f728e69eacab25941ef0640a35243d390fa4c7
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883513"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883475"
 ---
 # <a name="create-vm-disk-storage-in-azure-stack-hub"></a>Создание хранилища дисков виртуальной машины в Azure Stack Hub
 
@@ -111,7 +103,7 @@ ms.locfileid: "75883513"
 
      Стоимость диска цен. категории "Стандартный" увеличивается в зависимости от размера диска. Стоимость и производительность диска цен. категории "Премиум" увеличиваются в зависимости от размера диска. Дополнительные сведения см. в статье [Цены на управляемые диски](https://go.microsoft.com/fwlink/?linkid=843142).
 
-   * Нажмите кнопку **Создать**. Azure Stack Hub создает и проверяет управляемый диск.
+   * Нажмите кнопку **создания**. Azure Stack Hub создает и проверяет управляемый диск.
 
 6. После того как Azure Stack Hub создаст диск и подключит его к виртуальной машине, он появится в параметрах дисков виртуальной машины в разделе **Диски данных**.
 

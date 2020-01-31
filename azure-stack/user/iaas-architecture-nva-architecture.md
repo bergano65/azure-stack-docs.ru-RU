@@ -1,20 +1,18 @@
 ---
-title: Развертывание высокодоступных виртуальных сетевых модулей в Azure Stack Hub | Документация Майкрософт
+title: Развертывание виртуальных сетевых модулей высокой доступности в Azure Stack Hub
 description: Узнайте, как развертывать виртуальные сетевые модули высокой доступности в Azure Stack Hub.
-services: azure-stack
 author: mattbriggs
-ms.service: azure-stack
 ms.topic: how-to
 ms.date: 11/01/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 5bf9434b14c7dfb4abdbe295339c02eb320323ae
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: cdcf4eca724e4b8b215b0fcb32e2b81969ef10d0
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75815499"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884157"
 ---
 # <a name="deploy-highly-available-network-virtual-appliances-on-azure-stack-hub"></a>Развертывание виртуальных сетевых модулей высокой доступности в Azure Stack Hub
 
@@ -85,5 +83,5 @@ ms.locfileid: "75815499"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о виртуальных машинах Azure Stack Hub см. в статье [Возможности виртуальных машин Azure Stack Hub](azure-stack-vm-considerations.md).  
+- Дополнительные сведения о функциях виртуальных машин Azure Stack Hub см. в [этой статье](azure-stack-vm-considerations.md).  
 - Дополнительные сведения о шаблонах для облака Azure см. в статье [Конструктивные шаблоны облачных решений](https://docs.microsoft.com/azure/architecture/patterns).

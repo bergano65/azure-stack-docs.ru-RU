@@ -1,21 +1,18 @@
 ---
-title: Интеграция удостоверения AD FS с центром обработки данных Azure Stack Hub | Документация Майкрософт
+title: Интеграция удостоверения AD FS с центром обработки данных Azure Stack Hub
 description: Сведения об интеграции поставщика удостоверений AD FS Azure Stack Hub с системой AD FS в центре обработки данных.
-services: azure-stack
-author: PatAltimore
-manager: femila
-ms.service: azure-stack
+author: ihenkel
 ms.topic: article
 ms.date: 05/10/2019
-ms.author: patricka
+ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: 4d1ca3a04e838743983a7ed9d68fde5b1b189ff6
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 1e55ae573d67775389e1e8e8ebac1b9ba094e5a7
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817386"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882137"
 ---
 # <a name="integrate-ad-fs-identity-with-your-azure-stack-hub-datacenter"></a>Интеграция удостоверения AD FS с центром обработки данных Azure Stack Hub
 
@@ -55,7 +52,7 @@ Graph поддерживает только интеграцию с отдель
 
 Необходимо указать следующие сведения в качестве входных данных для параметров службы автоматизации.
 
-|Параметр|Параметр листа сведений о развертывании|Description|Пример|
+|Параметр|Параметр листа сведений о развертывании|Описание|Пример|
 |---------|---------|---------|---------|
 |`CustomADGlobalCatalog`|Полное доменное имя леса ADFS|Полное доменное имя целевого леса Active Directory, с которым вы настраиваете интеграцию|Contoso.com|
 |`CustomADAdminCredentials`| |Пользователь с разрешением на чтение LDAP.|ВАШ_ДОМЕН\graphservice|
@@ -105,7 +102,7 @@ Graph поддерживает только интеграцию с отдель
 
 3. Командлет **Register-DirectoryService** имеет необязательные параметры, которые можно использовать в определенных сценариях при сбое существующей проверки Active Directory. При выполнении этот командлет проверяет, что предоставленный домен является корневым доменом, к серверу глобального каталога можно подключиться и предоставленная учетная запись обеспечивает доступ на чтение.
 
-   |Параметр|Description|
+   |Параметр|Описание|
    |---------|---------|
    |`-SkipRootDomainValidation`|Указывает, что вместо рекомендуемого корневого домена следует использовать дочерний домен.|
    |`-Force`|Обход всех проверок.|
@@ -127,7 +124,7 @@ Graph поддерживает только интеграцию с отдель
 
 Необходимо указать следующие сведения в качестве входных для параметров службы автоматизации:
 
-|Параметр|Параметр листа сведений о развертывании|Description|Пример|
+|Параметр|Параметр листа сведений о развертывании|Описание|Пример|
 |---------|---------|---------|---------|
 |CustomAdfsName|Имя поставщика AD FS|Имя поставщика утверждений.<br>Так оно отображается на целевой странице AD FS.|Contoso|
 |CustomAD<br>FSFederationMetadataEndpointUri|URI метаданных AD FS|Ссылка на метаданные федерации.| https:\//ad01.contoso.com/federationmetadata/2007-06/federationmetadata.xml |
@@ -167,7 +164,7 @@ Graph поддерживает только интеграцию с отдель
 Необходимо указать следующие сведения в качестве входных для параметров службы автоматизации:
 
 
-|Параметр|Description|Пример|
+|Параметр|Описание|Пример|
 |---------|---------|---------|
 |CustomAdfsName|Имя поставщика утверждений. Так оно отображается на целевой странице AD FS.|Contoso|
 |CustomADFSFederationMetadataFileContent|Содержимое метаданных.|$using:federationMetadataFileContent|

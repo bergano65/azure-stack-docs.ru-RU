@@ -1,28 +1,19 @@
 ---
-title: Развертывание VM с сертификатом, безопасно хранящимся в Azure Stack Hub | Документация Майкрософт
+title: Развертывание VM с сертификатом, безопасно хранящимся в Azure Stack Hub
 description: Узнайте, как развернуть виртуальную машину и отправить в нее сертификат с помощью хранилища ключей в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.assetid: 46590eb1-1746-4ecf-a9e5-41609fde8e89
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/03/2019
+ms.date: 01/24/2020
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: a65615e03e6e7fcda84ec16c6323e9fa2c2f6221
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 2903a4c9f47b7f3b5d0161069f76d68eb9d19497
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75879093"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883590"
 ---
-# <a name="deploy-a-vm-with-a-securely-stored-certificate-on-azure-stack-hub"></a>Развертывание VM с сертификатом, безопасно хранящимся в Azure Stack Hub 
+# <a name="deploy-a-vm-with-a-securely-stored-certificate-on-azure-stack-hub"></a>Развертывание VM с сертификатом, безопасно хранящимся в Azure Stack Hub
 
 В этой статье описано, как развернуть виртуальную машину (VM) Azure Stack Hub с установленным сертификатом Key Vault.
 
@@ -45,7 +36,7 @@ ms.locfileid: "75879093"
 > [!NOTE]
 > Эти шаги можно выполнить из Пакета средств разработки Azure Stack (ASDK) или из внешнего клиента при подключении через VPN.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Необходимо подписаться на предложение, включающее службу Key Vault.
 * [Установка PowerShell для Azure Stack Hub](../operator/azure-stack-powershell-install.md).

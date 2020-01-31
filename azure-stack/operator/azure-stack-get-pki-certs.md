@@ -1,25 +1,18 @@
 ---
-title: Создание запросов на подписывание сертификатов для Azure Stack Hub | Документация Майкрософт
+title: Создание запросов на подписывание сертификатов для Azure Stack Hub
 description: Сведения о создании запросов на подписывание сертификатов для сертификатов PKI Azure Stack Hub в интегрированных системах Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
-author: justinha
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
+author: ihenkel
 ms.topic: article
 ms.date: 09/10/2019
-ms.author: justinha
+ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 09/10/2019
-ms.openlocfilehash: 4b966ac4faec51dac06e39fab8804e295a9a40b1
-ms.sourcegitcommit: 320eddb281a36d066ec80d67b103efad7d4f33c8
+ms.openlocfilehash: baee1a439129f83013e191db683927cd15cb1d65
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145841"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882249"
 ---
 # <a name="generate-certificate-signing-requests-for-azure-stack-hub"></a>Создание запросов на подписывание сертификатов для Azure Stack Hub
 

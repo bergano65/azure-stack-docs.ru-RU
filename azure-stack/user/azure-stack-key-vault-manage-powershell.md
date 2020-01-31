@@ -1,25 +1,17 @@
 ---
-title: Управление Key Vault в Azure Stack Hub с использованием PowerShell | Документация Майкрософт
+title: Управление Key Vault в Azure Stack Hub с использованием PowerShell
 description: Узнайте, как управлять Key Vault в Azure Stack Hub с помощью PowerShell.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/07/2020
 ms.author: sethm
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 64ff69f87daa2451ab61fd2e950c5688903a955e
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: c9d0f5eda2e4107d0686b8869c005e812268acaa
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883683"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883633"
 ---
 # <a name="manage-key-vault-in-azure-stack-hub-using-powershell"></a>Управление Key Vault в Azure Stack Hub с использованием PowerShell
 
@@ -32,7 +24,7 @@ ms.locfileid: "75883683"
 >[!NOTE]
 >Командлеты PowerShell для Key Vault, описанные в этой статье, доступны в пакете SDK для Azure PowerShell.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Необходимо подписаться на предложение, включающее службу Azure Key Vault.
 * [Установка PowerShell для Azure Stack Hub](../operator/azure-stack-powershell-install.md).

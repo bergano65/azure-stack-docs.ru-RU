@@ -1,26 +1,18 @@
 ---
-title: Изменение определенных параметров в конфигурации коммутатора Azure Stack Hub | Документация Майкрософт
+title: Изменение определенных параметров в конфигурации коммутатора Azure Stack Hub
 description: Узнайте, что можно настроить в конфигурации коммутатора Azure Stack Hub. После того как изготовитель оборудования создаст конфигурацию, не изменяйте ее без согласия изготовителя оборудования или группы разработчиков Microsoft Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
-author: mattbriggs
-manager: Femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
+author: ihenkel
 ms.topic: article
 ms.date: 11/11/2019
-ms.author: mabrigg
+ms.author: inhenkel
 ms.reviewer: wamota
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 730abce4712530c257ebde332ce220fe14cea772
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: ef98624781232e91199ef42ecdeba03725a95085
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75811929"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882529"
 ---
 #  <a name="modify-specific-settings-on-your-azure-stack-hub-switch-configuration"></a>Изменение определенных параметров в конфигурации коммутатора Azure Stack Hub
 

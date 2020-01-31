@@ -1,27 +1,18 @@
 ---
-title: Скачивание ASDK и извлечение его содержимого | Документация Майкрософт
+title: Скачивание ASDK и извлечение его содержимого
 description: Узнайте, как скачать Пакет средств разработки Azure Stack (ASDK) и извлечь его содержимое.
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 08/10/2018
-ms.openlocfilehash: a4d0258d2a7a5168c94159d9eae13605b1269b86
-ms.sourcegitcommit: 4eb1766c7a9d1ccb1f1362ae1211ec748a7d708c
+ms.openlocfilehash: 99c43848af1d140c6698e1f4d1ae992665c0389a
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69579131"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76873844"
 ---
 # <a name="download-and-extract-the-asdk"></a>Скачивание ASDK и извлечение его содержимого
 Удостоверившись, что главный компьютер комплекта SDK соответствует базовым требованиям для установки Пакета средств разработки Azure Stack (ASDK), скачайте установочный пакет ASDK, чтобы получить файл Cloudbuilder.vhdx.
@@ -51,5 +42,5 @@ ms.locfileid: "69579131"
 > После извлечения файлов вы можете удалить EXE- и BIN-файлы, чтобы освободить пространство на диске. Также можно создать резервную копию этих файлов, чтобы не скачивать их снова, если потребуется выполнить повторное развертывание ASDK.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Подготовка компьютера для размещения ASDK](asdk-prepare-host.md)

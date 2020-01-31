@@ -1,25 +1,17 @@
 ---
-title: Хранение учетных данных субъект-службы Azure Stack Hub в Key Vault | Документация Майкрософт
+title: Хранение учетных данных субъект-службы в Key Vault Azure Stack Hub
 description: Узнайте, как Key Vault хранит учетные данные субъект-службы в Azure Stack Hub
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/01/2019
+ms.date: 01/24/2020
 ms.author: sethm
 ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: a953666396b89706b935b73abea0b4d42c1dcc1a
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 6c2943565ca750176bc3bba4ca28084a2b8b100e
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75820276"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883560"
 ---
 # <a name="store-service-principal-credentials-in-azure-stack-hub-key-vault"></a>Хранение учетных данных субъект-службы в Key Vault Azure Stack Hub
 
@@ -27,7 +19,7 @@ ms.locfileid: "75820276"
 
 Подробные сведения о Key Vault см. в статье [Общие сведения о хранилище ключей Azure Stack Hub](azure-stack-key-vault-intro.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка на предложение, включающее службу Azure Key Vault.
 - Среда PowerShell должна быть установлена и настроена для использования с Azure Stack Hub.
@@ -102,4 +94,4 @@ Key Vault в Azure Stack Hub помогает защитить криптогр
 
 - [Предоставление приложениям доступа к ресурсам Azure Stack за счет создания субъектов-служб](azure-stack-create-service-principals.md)
 - [Управление Key Vault в Azure Stack Hub с помощью портала](azure-stack-key-vault-manage-portal.md)  
-- [Управление Key Vault в Azure Stack Hub с использованием PowerShell](azure-stack-key-vault-manage-powershell.md)
+- [Управление Key Vault в Azure Stack Hub с использованием PowerShell](azure-stack-key-vault-manage-powershell.md)

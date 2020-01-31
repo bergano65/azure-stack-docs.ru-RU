@@ -1,25 +1,18 @@
 ---
-title: Подключение Обозревателя службы хранилища к учетной записи хранения или подписке Azure Stack Hub | Документация Майкрософт
+title: Подключение Обозревателя службы хранилища к учетной записи хранения или подписке Azure Stack Hub
 description: Сведения о подключении Обозревателя службы хранилища к подписке Azure Stack Hub
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 7c01e509dc77e2a036ad640ee5376ffda37f903f
-ms.sourcegitcommit: 7dd685fddf2f5d7a0c0a20fb8830ca5a061ed031
+ms.openlocfilehash: 2776443fac5e30b14154e96618a49bd89d16a7c0
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259840"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884393"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-hub-subscription-or-a-storage-account"></a>Подключение Обозревателя службы хранилища к учетной записи хранения или подписке Azure Stack Hub
 
@@ -82,7 +75,7 @@ ms.locfileid: "76259840"
 
     ![Добавление учетной записи Azure Stack Hub](./media/azure-stack-storage-connect-se/add-azure-stack-account.png)
 
-3. В диалоговом окне подключения к службе хранилища Azure в разделе **Окружение Azure** выберите **Azure**, **Azure China 21Vianet** (Azure для Китая через 21Vianet), **Azure для Германии**, **Azure для государственных организаций США** или **Добавить новое окружение** в зависимости от используемой учетной записи Azure Stack Hub. Щелкните **Войти**, чтобы войти в учетную запись Azure Stack Hub, связанную по крайней мере с одной активной подпиской Azure Stack Hub.
+3. В диалоговом окне подключения к службе хранилища Azure в разделе **Окружение Azure** выберите **Azure**, **Azure China 21Vianet** (Azure для Китая через 21Vianet), **Azure для Германии**, **Azure для US Gov организаций** или **Добавить новое окружение** в зависимости от используемой учетной записи Azure Stack Hub. Щелкните **Войти**, чтобы войти в учетную запись Azure Stack Hub, связанную по крайней мере с одной активной подпиской Azure Stack Hub.
 
     ![Подключение к службе хранилища Azure](./media/azure-stack-storage-connect-se/azure-stack-connect-to-storage.png)
 

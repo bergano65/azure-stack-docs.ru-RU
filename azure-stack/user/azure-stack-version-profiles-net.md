@@ -1,27 +1,18 @@
 ---
-title: Использование профилей версий API с помощью .NET в Azure Stack Hub | Документация Майкрософт
+title: Использование профилей версий API и .NET в Azure Stack Hub
 description: Узнайте, как использовать профили версий API с помощью пакета SDK для .NET в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 09/17/2019
+ms.date: 01/27/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 3af8a06f10322df67d80c489e1d19a7805dd8b2c
-ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
+ms.openlocfilehash: 6f8220f9a8683569c23460acf2890c9aa8407f30
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256399"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883088"
 ---
 # <a name="use-api-version-profiles-with-net-in-azure-stack-hub"></a>Использование профилей версий API и .NET в Azure Stack Hub
 
@@ -34,7 +25,7 @@ ms.locfileid: "76256399"
 - Чтобы получить последние версии всех служб, используйте профиль **latest** в пакете. Этот профиль входит в пакет NuGet **Microsoft.Azure.Management**.
 
 - Чтобы использовать службы, совместимые с Azure Stack Hub, воспользуйтесь одним из следующих пакетов:
-  - **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg** 
+  - **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
   - **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
 
   Сегмент **ResourceProvider** в имени пакета NuGet всегда должен соответствовать выбранному поставщику.
@@ -53,9 +44,9 @@ ms.locfileid: "76256399"
 
 - Набор устанавливаемых пакетов зависит от версии профиля, который вы намерены использовать. Имена пакетов для версий профилей:
 
-   - **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
+  - **Microsoft.Azure.Management.Profiles.hybrid\_2019\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
 
-   - **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
+  - **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.<*ResourceProvider*>.0.9.0-preview.nupkg**
 
 - Чтобы установить правильные пакеты NuGet для Visual Studio Code, скачайте [NuGet Package Manager instructions][].
 
@@ -85,7 +76,7 @@ ms.locfileid: "76256399"
 Используйте следующие команды, чтобы настроить переменные среды в командной строке Windows:
 
 ```shell
-Set Azure_Tenant_ID=Your_Tenant_ID
+set Azure_Tenant_ID=Your_Tenant_ID
 ```
 
 ### <a name="macos-linux-and-unix-based-systems"></a>MacOS, Linux и системы на основе Unix
@@ -93,7 +84,7 @@ Set Azure_Tenant_ID=Your_Tenant_ID
 В системах на основе Unix используйте такую команду:
 
 ```shell
-Export Azure_Tenant_ID=Your_Tenant_ID
+export Azure_Tenant_ID=Your_Tenant_ID
 ```
 
 ### <a name="the-azure-stack-hub-resource-manager-endpoint"></a>Конечная точка Resource Manager для Azure Stack Hub

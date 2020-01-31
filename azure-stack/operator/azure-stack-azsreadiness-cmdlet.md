@@ -1,27 +1,18 @@
 ---
-title: Справочник по командлету Start-AzsReadinessChecker | Документация Майкрософт
+title: Справочник по командлету Start-AzsReadinessChecker
 description: Справка по командлету PowerShell для модуля средства проверки готовности Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
-author: sethmanheim
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: ihenkel
 ms.topic: conceptual
 ms.date: 01/07/2020
-ms.author: sethm
+ms.author: inhenkel
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: d6b7525657696792bd72d968e8888bd8f7bc62fb
-ms.sourcegitcommit: b9d520f3b7bc441d43d489e3e32f9b89601051e6
+ms.openlocfilehash: e4794df9c66f1d060b6701d782c0486ddb914b02
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75727451"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76877772"
 ---
 # <a name="start-azsreadinesschecker-cmdlet-reference"></a>Справочник по командлету Start-AzsReadinessChecker
 
@@ -164,7 +155,7 @@ Start-AzsReadinessChecker
        [<CommonParameters>]
 ```
 
-## <a name="description"></a>Description
+## <a name="description"></a>Описание
 
 Командлет **Start-AzsReadinessChecker** проверяет сертификаты, учетные записи Azure, подписки Azure и Azure Active Directory (AAD). Выполните проверку перед развертыванием Azure Stack Hub или перед такими действиями по обслуживанию Azure Stack Hub, как смена секрета. С помощью командлета также можно создавать запросы на подпись для сертификатов инфраструктуры и, при необходимости, сертификатов PaaS. Наконец, командлет может распаковать сертификаты PFX для устранения общих проблем с упаковкой.
 

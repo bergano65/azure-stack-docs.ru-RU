@@ -1,22 +1,18 @@
 ---
-title: Интеграция Azure Stack Hub с решениями для мониторинга с помощью перенаправления системного журнала | Документация Майкрософт
+title: Интеграция Azure Stack Hub с решениями для мониторинга с помощью перенаправления системного журнала
 description: Узнайте, как интегрировать Azure Stack Hub с решениями для мониторинга с помощью перенаправления системного журнала.
-services: azure-stack
-author: justinha
-manager: femila
-ms.service: azure-stack
+author: ihenkel
 ms.topic: article
 ms.date: 01/10/2020
-ms.author: justinha
+ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/10/2020
-keywords: ''
-ms.openlocfilehash: bc484919227fe08293db9ac987bee4d18313d802
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 2b8a6b06b0eca680a42d7c15bfe7fbb43afec29a
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882425"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882092"
 ---
 # <a name="integrate-azure-stack-hub-with-monitoring-solutions-using-syslog-forwarding"></a>Интеграция Azure Stack Hub с решениями для мониторинга с помощью перенаправления системного журнала
 
@@ -61,7 +57,7 @@ Set-SyslogClient [-pfxBinary <Byte[]>] [-CertPassword <SecureString>] [-RemoveCe
 
 Параметры для командлета *Set-SyslogServer*.
 
-| Параметр | Description | Тип | Обязательно |
+| Параметр | Описание | Тип | Обязательно |
 |---------|---------|---------|---------|
 |*ServerName* | Полное доменное имя или IP-адрес сервера системного журнала. | String | да|
 |*ServerPort* | Номер порта, через который сервер системного журнала ожидает передачи данных. | UInt16 | да|
@@ -73,7 +69,7 @@ Set-SyslogClient [-pfxBinary <Byte[]>] [-CertPassword <SecureString>] [-RemoveCe
 
 Параметры для командлета *Set-SyslogClient*.
 
-| Параметр | Description | Тип |
+| Параметр | Описание | Тип |
 |---------|---------| ---------|
 | *pfxBinary* | Содержимое переданного в Byte[] PFX-файла с сертификатом, используемым клиентом в качестве удостоверения для проверки подлинности на сервере системного журнала.  | Byte[] |
 | *CertPassword* |  Пароль для импорта закрытого ключа, связанного с PFX-файлом. | SecureString |

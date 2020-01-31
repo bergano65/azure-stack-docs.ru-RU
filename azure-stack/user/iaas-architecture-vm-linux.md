@@ -1,20 +1,18 @@
 ---
-title: Запуск виртуальной машины Linux в Azure Stack Hub | Документация Майкрософт
+title: Запуск виртуальной машины Linux в Azure Stack Hub
 description: Узнайте, как запустить виртуальную машину Linux в Azure Stack Hub.
-services: azure-stack
 author: mattbriggs
-ms.service: azure-stack
 ms.topic: how-to
 ms.date: 11/01/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 8667274e6684af407ca503c25b2e2348a7649134
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: 97f1b58fc1d36a9cd3f26875625c2ae7ea67abdc
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76023152"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885319"
 ---
 # <a name="run-a-linux-virtual-machine-on-azure-stack-hub"></a>Запуск виртуальной машины Linux в Azure Stack Hub
 
@@ -22,7 +20,7 @@ ms.locfileid: "76023152"
 
 ![Архитектура для виртуальной машины Linux в Azure Stack Hub](./media/iaas-architecture-vm-linux/image1.png)
 
-## <a name="resource-group"></a>группа ресурсов.
+## <a name="resource-group"></a>Группа ресурсов
 
 [Группа ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) представляет собой логический контейнер, содержащий связанные ресурсы Azure Stack Hub. Как правило, группы ресурсов создаются в зависимости от времени существования ресурсов и пользователя, который ими управляет.
 

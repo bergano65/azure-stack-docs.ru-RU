@@ -1,25 +1,18 @@
 ---
-title: Использование профилей версий API и Python в Azure Stack Hub | Документы Майкрософт
+title: Использование профилей версий API и Python в Azure Stack Hub
 description: Узнайте, как использовать профили версий API с помощью Python в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/01/2019
+ms.date: 01/23/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 556933545af27b1fc22241ced3c83389072b3c8f
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 48df6dab5d93e4e9875dc422f90f3f823a4b2ee9
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883207"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884222"
 ---
 # <a name="use-api-version-profiles-with-python-in-azure-stack-hub"></a>Использование профилей версий API и Python в Azure Stack Hub
 
@@ -50,11 +43,11 @@ ms.locfileid: "75883207"
 4. Создайте субъект-службу и сохраните его идентификатор и секрет. Инструкции по созданию субъекта-службы для Azure Stack Hub см. в руководстве по [предоставлению приложениям доступа к Azure Stack Hub](../operator/azure-stack-create-service-principals.md).
 5. Убедитесь, что субъект-служба имеет роль участника или владельца в вашей подписке. Сведения о том, как назначить роль субъекту-службе, см. в статье [Использование удостоверения приложения для доступа к ресурсам Azure Stack Hub](../operator/azure-stack-create-service-principals.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать пакет SDK Azure для Python и Azure Stack Hub, укажите следующие значения и задайте их для переменных среды. Чтобы настроить переменные среды, воспользуйтесь инструкциями для используемой операционной системы, которые приводятся после следующей таблицы.
 
-| Значение | Переменные среды | Description |
+| Значение | Переменные среды | Описание |
 |---------------------------|-----------------------|-------------------------------------------------------------------------------------------------------------------------|
 | Tenant ID | `AZURE_TENANT_ID` | [Идентификатор клиента](../operator/azure-stack-identity-overview.md) Azure Stack Hub. |
 | Идентификатор клиента | `AZURE_CLIENT_ID` | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы в предыдущем разделе этой статьи. |

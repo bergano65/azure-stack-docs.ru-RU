@@ -1,26 +1,18 @@
 ---
-title: Перемещение кластера элементов Marketplace в обработчик AKS в Azure Stack Hub | Документация Майкрософт
+title: Перемещение кластера элементов Marketplace в обработчик AKS в Azure Stack Hub
 description: Узнайте, как переместить кластер элементов Marketplace в обработчик AKS в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na (Kubernetes)
-ms.devlang: nav
 ms.topic: article
 ms.date: 11/21/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: d877250baf60c211005e1dec0149aba74f51e05c
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 34ff02a04523bb53ea849c0ad530dee1106f5e36
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75820191"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883523"
 ---
 # <a name="move-your-marketplace-item-cluster-to-the-aks-engine-on-azure-stack-hub"></a>Перемещение кластера элементов Marketplace в обработчик AKS в Azure Stack Hub
 

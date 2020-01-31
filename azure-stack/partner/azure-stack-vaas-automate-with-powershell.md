@@ -1,26 +1,19 @@
 ---
-title: Автоматизация проверки Azure Stack с помощью PowerShell | Документация Майкрософт
+title: Автоматическая проверка Azure Stack с помощью PowerShell
 description: Проверку Azure Stack можно автоматизировать с помощью PowerShell.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 11/26/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2f048ea1feb7a707c3c52b83fcf7c9e65a1ea58a
-ms.sourcegitcommit: 08d2938006b743b76fba42778db79202d7c3e1c4
+ms.openlocfilehash: d37c1f9027017446c31b0877496c28928d22f92a
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954423"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884995"
 ---
 # <a name="automate-azure-stack-validation-with-powershell"></a>Автоматическая проверка Azure Stack с помощью PowerShell
 
@@ -260,7 +253,7 @@ $scriptParameters = @{
 
 См. дополнительные сведения об [общих параметрах рабочих процессов](azure-stack-vaas-parameters.md).
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 | --- | --- |
 | VaaSAccountUserName | Имя пользователя на портале VaaS. |
 | VaaSAccountPassword | Пароль пользователя на портале VaaS. |
@@ -281,7 +274,7 @@ $scriptParameters = @{
 
 Другие параметры см. в статье [Мониторинг теста с помощью проверки как услуги Azure Stack](azure-stack-vaas-monitor-test.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о PowerShell в Azure Stack, ознакомьтесь с последними версиями модулей.
 

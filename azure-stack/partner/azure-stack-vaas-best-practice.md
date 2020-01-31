@@ -1,26 +1,19 @@
 ---
-title: Рекомендации по проверке Azure Stack. | Документация Майкрософт
+title: Рекомендации по проверке Azure Stack.
 description: В этой статье приведены рекомендации по использованию проверки как услуги.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 930a8ea40fde7a021a893e5289d16fa73398300f
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.openlocfilehash: cdd5d8a2b1933559c204e479f0215e63b6100b33
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73167265"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884114"
 ---
 # <a name="best-practices-for-validation-as-a-service"></a>Рекомендации по использованию проверки как услуги
 
@@ -52,6 +45,6 @@ My Solution XYZ |  All Flash | My Switch X01 | MySolutionXYZ_AllFlash_MySwitchX0
 |---|---|---| ---|
 1808 | 081518 | 4NODE | 1808_081518_4NODE
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье [Проверка как услуга: основные понятия](azure-stack-vaas-key-concepts.md)

@@ -1,26 +1,18 @@
 ---
-title: Создание баз данных MySQL в Azure Stack Hub | Документация Майкрософт
+title: Создание баз данных MySQL в Azure Stack Hub
 description: Сведения о создании баз данных MySQL, подготовленных с помощью поставщика ресурсов адаптера MySQL, и управление ими в Azure Stack Hub.
-services: azure-stack
-documentationCenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 1d983ec9bf05efd05f151dea964617194bb7a2d0
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: 5955dcf6c211f9f431d84227548496af7782a0d7
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76535048"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881843"
 ---
 # <a name="create-mysql-databases-in-azure-stack-hub"></a>Создание баз данных MySQL в Azure Stack Hub
 Пользователь Azure Stack Hub с подпиской на предложение, включающее службу базы данных MySQL, может самостоятельно создавать обслуживаемые базы данных MySQL и управлять ими на портале для пользователей.
