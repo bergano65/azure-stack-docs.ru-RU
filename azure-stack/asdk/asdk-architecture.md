@@ -1,27 +1,18 @@
 ---
-title: Архитектура ASDK | Документация Майкрософт
+title: Архитектура ASDK
 description: Узнайте об архитектуре Пакета средств разработки Azure Stack (ASDK).
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 06/28/2019
-ms.openlocfilehash: 1d740b219b971f85b34ae821d82b97eff7d3d70d
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: 842dab690d8239ca0c4db7622fe7a0bb18347a0c
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974582"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76874150"
 ---
 # <a name="asdk-architecture"></a>Архитектура ASDK
 Пакет средств разработки Azure Stack (ASDK) — это развертывание Azure Stack с использованием одного узла, выполняемое на одном главном компьютере. Компоненты пограничной маршрутизации устанавливаются на главном компьютере для обеспечения возможностей преобразования сетевых адресов (NAT) и VPN в Azure Stack. Инфраструктурные роли Azure Stack выполняются на физическом главном компьютере в слое Hyper-V.
@@ -30,7 +21,7 @@ ms.locfileid: "70974582"
 ## <a name="virtual-machine-roles"></a>Роли виртуальной машины
 Пакет ASDK предлагает службы, которые используют следующие виртуальные машины на компьютере, где размещен пакет средств разработки:
 
-| ИМЯ | ОПИСАНИЕ |
+| Имя | Описание |
 | ----- | ----- |
 | **AzS-ACS01** | Службы хранилища Azure Stack.|
 | **AzS-ADFS01** | Службы федерации Active Directory (AD FS).  |
@@ -46,5 +37,5 @@ ms.locfileid: "70974582"
 | **AzS-XRP01** | Контроллер управления инфраструктурой для Microsoft Azure Stack, включая поставщиков вычислительных и сетевых ресурсов, а также ресурсов хранения.|
 | **AzS-SRNG01** | Поддержка виртуальной машины для вызова, в которой размещена служба сбора журналов для Azure Stack. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Узнайте об основных задачах администрирования ASDK](asdk-admin-basics.md).

@@ -1,25 +1,18 @@
 ---
-title: Восстановление данных в Azure Stack Hub с помощью службы "Резервное копирование инфраструктуры" | Документация Майкрософт
+title: Восстановление данных в Azure Stack Hub с помощью службы "Резервное копирование инфраструктуры"
 description: Сведения о выполнении резервного копирования и восстановления данных конфигурации и службы в Azure Stack Hub с помощью службы "Резервное копирование инфраструктуры".
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 05/16/2019
-ms.openlocfilehash: 101b463f10684e40be5d4e3864c235290713c518
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: a9ebb725bed0472eaacc80e821840746966104dd
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882782"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76874337"
 ---
 # <a name="recover-data-in-azure-stack-hub-with-the-infrastructure-backup-service"></a>Восстановление данных в Azure Stack Hub с помощью службы "Резервное копирование инфраструктуры"
 
@@ -36,7 +29,7 @@ ms.locfileid: "75882782"
 
 Эта служба содержит следующие компоненты:
 
-| Компонент                                            | Description                                                                                                                                                |
+| Компонент                                            | Описание                                                                                                                                                |
 |----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Службы резервного копирования инфраструктуры                     | Управление резервным копированием для ряда служб инфраструктуры Azure Stack Hub. В аварийной ситуации можно восстановить данные в процессе повторного развертывания. |
 | Сжатие и шифрование экспортированных данных резервного копирования | Резервные копии данных сжимаются и шифруются в системе перед экспортом во внешнее расположение хранения, предоставленное администратором.                |

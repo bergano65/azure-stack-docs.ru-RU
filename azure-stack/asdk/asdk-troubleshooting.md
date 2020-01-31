@@ -1,27 +1,18 @@
 ---
-title: Устранение неполадок ASDK | Документация Майкрософт
+title: Устранение неполадок ASDK
 description: Узнайте, как устранять неполадки Пакета средств разработки Azure Stack (ASDK).
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: c8db19ff7bf8d7ccdb406617cbcf75dce3770522
-ms.sourcegitcommit: c583f19d15d81baa25dd49738d53d8fc01463bef
+ms.openlocfilehash: d02b500fce65464ecc27e8fbbd6edbbf7c6882b3
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73659220"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76873317"
 ---
 # <a name="troubleshoot-the-asdk"></a>Устранение неполадок ASDK
 В этой статье приведены общие сведения об устранении неполадок Пакета средств разработки Azure Stack (ASDK). Справочную информацию по интегрированным системам Azure Stack см. в статье [Устранение неполадок, связанных с Microsoft Azure Stack](../operator/azure-stack-troubleshooting.md). 
@@ -31,7 +22,7 @@ ms.locfileid: "73659220"
 
 ## <a name="deployment"></a>Развертывание
 ### <a name="deployment-failure"></a>Сбой развертывания
-Если во время установки возникнет сбой, можно использовать параметр -rerun для скрипта развертывания, чтобы перезапустить развертывание с этапа, завершившегося ошибкой. Например:
+Если во время установки возникнет сбой, можно использовать параметр -rerun для скрипта развертывания, чтобы перезапустить развертывание с этапа, завершившегося ошибкой. Пример:
 
   ```powershell
   cd C:\CloudDeployment\Setup
@@ -46,7 +37,7 @@ ms.locfileid: "73659220"
 Если при проверке шаблона появляется ошибка с сообщением о том, что параметр "osProfile" не разрешен, убедитесь, что вы используете правильные версии API для следующих компонентов:
 
 - [Среда выполнения приложений](https://docs.microsoft.com/azure-stack/user/azure-stack-profiles-azure-resource-manager-versions#microsoftcompute)
-- [Сеть](https://docs.microsoft.com/azure-stack/user/azure-stack-profiles-azure-resource-manager-versions#microsoftnetwork)
+- [Network](https://docs.microsoft.com/azure-stack/user/azure-stack-profiles-azure-resource-manager-versions#microsoftnetwork)
 
 Чтобы скопировать виртуальный жесткий диск из Azure в Azure Stack, используйте [AzCopy 7.3.0](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-transfer#download-and-install-azcopy). Обратитесь к поставщику, чтобы устранить проблемы с самим образом. Дополнительные сведения о требованиях WALinuxAgent для Azure Stack см. в статье [об агенте Azure LinuX](../operator/azure-stack-linux.md#azure-linux-agent).
 
@@ -98,9 +89,9 @@ An error occurred while trying to test identity provider endpoints: System.Net.W
 
 Вы можете больше узнать о настройке порогового значения периода удержания и освобождении по запросу в статье об [управлении учетными записями хранения](../operator/azure-stack-manage-storage-accounts.md).
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Память
 ### <a name="storage-reclamation"></a>Освобождение хранилища
 Для отображения освобожденной емкости на портале может понадобиться до 14 часов. Освобождение пространства зависит от различных факторов, включая процент использования файлов внутреннего контейнера в хранилище блочных BLOB-объектов. Поэтому, в зависимости от того, какое количество данных удалено, нет гарантий относительно того, сколько пространства можно освободить, запустив сборщик мусора.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Посетите форум технической поддержки Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack)

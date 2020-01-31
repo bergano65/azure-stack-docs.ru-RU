@@ -2,27 +2,18 @@
 title: Устранение неполадок в Azure Stack Hub
 titleSuffix: Azure Stack
 description: Узнайте, как устранять неполадки с Azure Stack Hub, в том числе проблемы с виртуальными машинами, хранилищем и Службой приложений.
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: a20bea32-3705-45e8-9168-f198cfac51af
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 72f5643f58e369ab341628bebc7195f2056cd8b8
-ms.sourcegitcommit: c4368652f0dd68c432aa1dabddbabf161a4a6399
+ms.openlocfilehash: bacffec0b3bda76eab27097c2d090df371d51fcf
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75914659"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76880851"
 ---
 # <a name="troubleshoot-issues-in-azure-stack-hub"></a>Устранение неполадок в Azure Stack Hub
 

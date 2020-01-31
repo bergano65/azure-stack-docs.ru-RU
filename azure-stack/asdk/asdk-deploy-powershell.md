@@ -1,34 +1,24 @@
 ---
-title: Развертывание ASDK из командной строки с помощью PowerShell | Документация Майкрософт
+title: Развертывание ASDK из командной строки с помощью PowerShell
 description: Узнайте, как развернуть ASDK из командной строки с помощью PowerShell.
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.custom: ''
 ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: 0bced4d75b70b05eea42de763066f1d5b05e1976
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: b31792ce210cfc7fc5c2d1ee4ba1b496b2d340f6
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022914"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76873810"
 ---
 # <a name="deploy-asdk-from-the-command-line-using-powershell"></a>Развертывание ASDK из командной строки с помощью PowerShell
 
 Пакет средств разработки Azure Stack (ASDK) — это среда тестирования и разработки, которую можно развернуть для оценки и демонстрации функций и служб Azure Stack. Для ее установки и запуска необходимо подготовить аппаратное обеспечение среды и выполнить ряд сценариев. Выполнение сценариев занимает несколько часов. После этого вы сможете войти на портал администратора и портал пользователя, чтобы приступить к работе с Azure Stack.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Подготовьте главный компьютер ASDK. Составьте план относительно структуры оборудования, программного обеспечения и сети. Компьютер, на котором размещается ASDK, должен соответствовать требованиям к оборудованию, программному обеспечению и сети. Выберите, что будете использовать: Azure Active Directory (Azure AD) или службы федерации Active Directory (AD FS). Прежде чем начинать развертывание, убедитесь в том, что выполнены предварительные требования, чтобы процесс установки прошел без проблем.
 
@@ -141,7 +131,7 @@ $aadcred = Get-Credential "<Azure AD global administrator account name>" #Exampl
 
 ### <a name="asdk-installazurestackpocps1-optional-parameters"></a>Необязательные параметры ASDK InstallAzureStackPOC.ps1
 
-|Параметр|Обязательный/необязательный|Description|
+|Параметр|Обязательный/необязательный|Описание|
 |-----|-----|-----|
 |AdminPassword|Обязательно|Задает учетную запись локального администратора и другие учетные записи пользователей на всех виртуальных машинах, созданных в процессе развертывания ASDK. Этот пароль должен совпадать с текущим паролем локального администратора на узле.|
 |InfraAzureDirectoryTenantName|Обязательно|Задает каталог клиента. Используйте этот параметр, чтобы указать конкретный каталог, где у учетной записи Azure AD есть разрешения на управление несколькими каталогами. Полное имя клиента Azure AD в формате .onmicrosoft.com или имя проверенного личного домена Azure AD.|

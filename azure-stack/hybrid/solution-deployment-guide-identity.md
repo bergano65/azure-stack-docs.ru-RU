@@ -2,18 +2,17 @@
 title: Настройка идентификатора гибридного облака для приложений Azure и Azure Stack Hub
 description: Узнайте, как настроить идентификатор гибридного облака для приложений Azure и Azure Stack Hub.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 813dbe66b2b2c1850430dbe167f0a14227856aee
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: a0e9c00aeca18b8f5ed435d39bfb5cf9d4e56067
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881490"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76875493"
 ---
 # <a name="configure-hybrid-cloud-identity-for-azure-and-azure-stack-hub-applications"></a>Настройка идентификатора гибридного облака для приложений Azure и Azure Stack Hub
 
@@ -57,7 +56,7 @@ ms.locfileid: "75881490"
 
 Краткое руководство [Установка PowerShell для Azure Stack](../operator/azure-stack-powershell-install.md) поможет выполнить действия, необходимые для установки Azure PowerShell, и подключиться к установке Azure Stack Hub.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 Установленная среда Azure Stack Hub с подключением к Azure Active Directory и доступной подпиской. Если вы не установили Azure Stack Hub, воспользуйтесь инструкциями по установке [Пакета средств разработки Azure Stack Hub](../asdk/asdk-install.md).
 

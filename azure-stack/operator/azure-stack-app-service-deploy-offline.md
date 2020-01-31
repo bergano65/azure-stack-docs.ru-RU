@@ -1,27 +1,18 @@
 ---
-title: Развертывание Службы приложений Azure в автономной среде Azure Stack Hub | Документация Майкрософт
+title: Развертывание Службы приложений Azure в автономной среде Azure Stack Hub
 description: Узнайте, как развернуть Службу приложений Azure в автономной среде Azure Stack Hub, защищенной с помощью AD FS.
-services: azure-stack
-documentationcenter: ''
 author: BryanLa
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: app-service
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: 147759d9c885d796195a3c581953f8b115587eb1
-ms.sourcegitcommit: e47dc5fe9e59010ea3dbb9cb31abe15cfb821262
+ms.openlocfilehash: fe20a682041e3e23e2a67957ecdce85f922fbf20
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76124860"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76876377"
 ---
 # <a name="deploy-azure-app-service-in-an-offline-environment-in-azure-stack-hub"></a>Развертывание Службы приложений Azure в автономной среде Azure Stack Hub
 

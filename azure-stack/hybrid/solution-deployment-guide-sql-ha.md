@@ -2,18 +2,17 @@
 title: Развертывание группы доступности SQL Server 2016 в Azure и Azure Stack Hub
 description: Из этой статьи вы узнаете, как развернуть группу доступности SQL Server 2016 в Azure и Azure Stack Hub.
 author: BryanLa
-ms.service: azure-stack
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 7c530d537bb5c102091a9f4c68b35dd5a0a91275
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: b1de7de0c81af80c30620b85bd19b4806877190a
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881422"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76876717"
 ---
 # <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>Развертывание группы доступности SQL Server 2016 в Azure и Azure Stack Hub
 

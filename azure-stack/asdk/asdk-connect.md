@@ -1,27 +1,18 @@
 ---
-title: Подключение к ASDK | Документация Майкрософт
+title: Подключение к пакету ASDK
 description: Узнайте, как подключиться к Пакету средств разработки Azure Stack (ASDK).
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: 3cebbfa6-819a-41e3-9f1b-14ca0a2aaba3
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: knithinc
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 8a9fae5324e20ecd808df1f73dc90555b4802da5
-ms.sourcegitcommit: 245a4054a52e54d5989d6148fbbe386e1b2aa49c
+ms.openlocfilehash: df4b6c770ef1dd93cddbeb748c0845f391305173
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70974606"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76874031"
 ---
 # <a name="connect-to-the-asdk"></a>Подключение к пакету ASDK
 
@@ -131,6 +122,6 @@ Add-AzsVpnConnection `
 
 Войдите с соответствующими учетными данными, чтобы создавать ресурсы и управлять ими.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Устранение неполадок](asdk-troubleshooting.md)

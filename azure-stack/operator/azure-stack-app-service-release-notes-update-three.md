@@ -1,27 +1,19 @@
 ---
-title: Заметки о выпуске обновления 3 для Службы приложений в Azure Stack Hub | Документация Майкрософт
+title: Заметки о выпуске обновления 3 для Службы приложений Azure в Azure Stack Hub
 description: Узнайте об улучшениях, исправлениях и известных проблемах в обновлении 3 для Службы приложений в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: bryanla
 manager: stefsch
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 08/20/2018
-ms.openlocfilehash: b8c888ba0c4821cfd6ff621d565c61359edc757f
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 79fdd8a3d9b026aea21ab04ce85c095e30ee272c
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75880164"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76874388"
 ---
 # <a name="app-service-on-azure-stack-hub-update-3-release-notes"></a>Заметки о выпуске обновления 3 для Службы приложений Azure в Azure Stack Hub
 
@@ -34,7 +26,7 @@ ms.locfileid: "75880164"
 
 Номер сборки обновления 3 для Службы приложений Azure в Azure Stack Hub — **74.0.13698.31**.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 Ознакомьтесь с [предварительными условиями для развертывания Службы приложений в Azure Stack Hub](azure-stack-app-service-before-you-get-started.md) перед началом развертывания.
 

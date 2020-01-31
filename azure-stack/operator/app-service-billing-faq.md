@@ -1,27 +1,19 @@
 ---
-title: Часто задаваемые вопросы и сведения о выставлении счетов для Службы приложений Azure в Azure Stack Hub | Документация Майкрософт
+title: Часто задаваемые вопросы и сведения о выставлении счетов для Службы приложений Azure в Azure Stack Hub
 description: Узнайте, как измеряется объем потребления и выставляются счета за использование Службы приложений Azure в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: apwestgarth
 manager: stefsch
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: app-service
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/10/2019
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: f45cda455f0c13fd2e6c5cb431fb3c60d54dce03
-ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
+ms.openlocfilehash: c22bb6c29082449d7590ad67e0f51c8a7c1b7aca
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256331"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76875289"
 ---
 # <a name="azure-app-service-on-azure-stack-hub-billing-overview-and-faq"></a>Часто задаваемые вопросы и сведения о выставлении счетов для Службы приложений Azure в Azure Stack Hub
 

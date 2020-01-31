@@ -1,28 +1,18 @@
 ---
-title: Повторное развертывание ASDK | Документация Майкрософт
+title: Повторное развертывание ASDK
 description: Узнайте, как повторно развернуть Пакет средств разработки Azure Stack (ASDK).
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.custom: ''
 ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: 5ff77bbe915a506803a1c06f68579c199439ea73
-ms.sourcegitcommit: 7968f9f0946138867323793be9966ee2ef99dcf4
+ms.openlocfilehash: d0fc4539b581474c9db2a2dbb05495c9b1bce695
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025888"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76873521"
 ---
 # <a name="redeploy-the-asdk"></a>Повторное развертывание ASDK
 Из этой статьи вы узнаете, как выполнить повторное развертывание Пакета средств разработки Azure Stack (ASDK) в среде, не являющейся рабочей. Так как обновление ASDK не поддерживается, чтобы перейти на новую версию необходимо его повторное развертывание. Вы можете также повторно развернуть ASDK, когда нужно начать развертывание с нуля.
@@ -98,7 +88,7 @@ ms.locfileid: "70025888"
 3. Сделайте то же, что и при первом [развертывании ASDK с помощью PowerShell](asdk-deploy-powershell.md).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Задачи, выполняемые после развертывания ASDK](asdk-post-deploy.md)
 
 
