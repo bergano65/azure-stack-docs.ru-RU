@@ -1,27 +1,18 @@
 ---
-title: Развертывание Службы приложений в Azure Stack Hub с использованием конфигурации с высоким уровнем доступности | Документация Майкрософт
+title: Развертывание Службы приложений в Azure Stack Hub с использованием конфигурации с высоким уровнем доступности
 description: Сведения о развертывании Службы приложений в Azure Stack Hub с использованием конфигурации с высоким уровнем доступности.
-services: azure-stack
-documentationcenter: ''
 author: BryanLa
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/02/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/02/2020
-ms.openlocfilehash: 0d1912a753ae29eb7a4c0ee8b583c34821962f60
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: 1b72a2d71c2ff5e467486fa9672607cca78a38e9
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76023039"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76876917"
 ---
 # <a name="deploy-app-service-in-a-highly-available-configuration"></a>Развертывание Службы приложений в конфигурации с высоким уровнем доступности
 
@@ -114,7 +105,7 @@ ms.locfileid: "76023039"
 > [!IMPORTANT]
 > Перед запуском установщика поставщика ресурсов обязательно ознакомьтесь с заметками о выпуске, которые прилагаются к каждому выпуску Службы приложений, чтобы узнать о новых функциях, исправлениях и любых известных проблемах, которые могут повлиять на развертывание.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 Перед запуском установщика Службы приложений необходимо выполнить некоторые шаги, указанные в статье [Предварительные условия для развертывания Службы приложений в Azure Stack Hub](azure-stack-app-service-before-you-get-started.md):
 
 > [!TIP]

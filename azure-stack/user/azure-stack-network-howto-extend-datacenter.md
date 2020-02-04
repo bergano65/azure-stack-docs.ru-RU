@@ -1,20 +1,18 @@
 ---
-title: Сведения о расширении центра обработки данных в Azure Stack Hub | Документация Майкрософт
+title: Расширение центра обработки данных в Azure Stack Hub
 description: Узнайте, как расширить центр обработки данных в Azure Stack Hub.
-services: azure-stack
 author: mattbriggs
-ms.service: azure-stack
 ms.topic: how-to
 ms.date: 12/13/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/13/2019
-ms.openlocfilehash: 292f210d8145bdac64e2f50f4c8ef85dc79d1a77
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: fd851b4d25d188c03fe09793986901e28a00a6a5
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883649"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884676"
 ---
 # <a name="extending-storage-to-azure-stack-hub"></a>Расширение хранилища в Azure Stack Hub
 
@@ -58,7 +56,7 @@ ms.locfileid: "75883649"
 
 5.  В колонке **Основы** введите следующие сведения:
 
-    а.  **Name**: VM001
+    а.  **Name** (Имя). VM001
 
     b.  **Username**: localadmin
 

@@ -1,26 +1,19 @@
 ---
-title: Устранение неполадок проверки как услуги Azure Stack | Документация Майкрософт
+title: Устранение неполадок с проверкой как услугой Azure Stack
 description: Устранение неполадок проверки как услуги для Azure Stack.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2dfa55af61627a82f869c7e222dc29997b07a6e3
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 1525ed6ce9005fd8a64acefb44c730e2f172bcdc
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955840"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884980"
 ---
 # <a name="troubleshoot-validation-as-a-service"></a>Проверка как услуга: устранение неполадок
 
@@ -105,11 +98,11 @@ ms.locfileid: "73955840"
 
     | Поле  | Значение  |
     |---------|---------|
-    | ИЗДАТЕЛЬ | MicrosoftWindowsServer |
+    | Издатель | MicrosoftWindowsServer |
     | ПРЕДЛОЖЕНИЕ | WindowsServer |
-    | тип ОС; | Windows |
-    | SKU | 2012-R2-Datacenter |
-    | Version (версия) | 1.0.0 |
+    | Тип ОС | Windows |
+    | номер SKU | 2012-R2-Datacenter |
+    | Версия | 1.0.0 |
     | URI BLOB-объекта для диска ОС | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/WindowsServer2012R2DatacenterBYOL.vhd |
 
 1. Нажмите кнопку **Создать**.
@@ -117,7 +110,7 @@ ms.locfileid: "73955840"
 
 Ниже приведены свойства всех 5 образов виртуальных машин:
 
-| ИЗДАТЕЛЬ  | ПРЕДЛОЖЕНИЕ  | тип ОС; | SKU | Version (версия) | URI BLOB-объекта для диска ОС |
+| Издатель  | ПРЕДЛОЖЕНИЕ  | Тип ОС | номер SKU | Версия | URI BLOB-объекта для диска ОС |
 |---------|---------|---------|---------|---------|---------|
 | MicrosoftWindowsServer| WindowsServer | Windows | 2012-R2-Datacenter | 1.0.0 | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/WindowsServer2012R2DatacenterBYOL.vhd |
 | MicrosoftWindowsServer | WindowsServer | Windows | 2016-Datacenter | 1.0.0 | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/Server2016DatacenterFullBYOL.vhd |
@@ -127,6 +120,6 @@ ms.locfileid: "73955840"
 | OpenLogic | CentOS | Linux | 6.9 | 1.0.0 | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/OpenLogic-CentOS-69-20180105.vhd |
 | credativ | Debian | Linux | 8 | 1.0.0 | https://azurestacktemplate.blob.core.windows.net/azurestacktemplate-public-container/Debian8_latest.vhd |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите [заметки о выпуске для проверки как услуги](azure-stack-vaas-release-notes.md), чтобы узнать об изменениях в последних выпусках.

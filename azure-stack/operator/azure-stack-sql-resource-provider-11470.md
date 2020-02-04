@@ -1,27 +1,18 @@
 ---
-title: Заметки о выпуске поставщика ресурсов SQL версии 1.1.47.0 для Azure Stack Hub | Документация Майкрософт
+title: Заметки о выпуске поставщика ресурсов SQL Azure Stack Hub версии 1.1.47.0
 description: Сведения о новых возможностях в последнем обновлении поставщика ресурсов SQL для Azure Stack Hub, об известных проблемах и о том, где можно скачать обновление.
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/26/2019
 ms.author: justinha
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/26/2019
-ms.openlocfilehash: 758390e9190e75125bad5701b810af08456f2efc
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 1210b537d36d4be5c31f596bde589afa9b3cadfa
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881881"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882851"
 ---
 # <a name="sql-resource-provider-11470-release-notes"></a>Заметки о выпуске для поставщика ресурсов SQL 1.1.47.0
 
@@ -30,7 +21,7 @@ ms.locfileid: "75881881"
 ## <a name="build-reference"></a>Указание сборки
 Загрузите двоичный файл поставщика ресурсов SQL и запустите файл для самостоятельного извлечения содержимого во временный каталог. У поставщика ресурсов есть минимальная соответствующая сборка Azure Stack Hub. Минимальная версия выпуска Azure Stack Hub, необходимая для установки этой версии поставщика ресурсов SQL:
 
-> |минимальная версия Azure Stack Hub|Версия поставщика ресурсов SQL|
+> |Минимальная версия Azure Stack Hub|Версия поставщика ресурсов SQL|
 > |-----|-----|
 > |Версия 1910 (1.1910.0.58)|[Поставщик ресурсов SQL версии 1.1.47.0](https://aka.ms/azurestacksqlrp11470)|  
 > |     |     |

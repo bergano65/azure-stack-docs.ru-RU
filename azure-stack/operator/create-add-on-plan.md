@@ -1,28 +1,18 @@
 ---
-title: Статья по обновлению планов и предложений в Azure Stack Hub | Документация Майкрософт
+title: Статья по обновлению планов и предложений в Azure Stack Hub
 description: В этой статье описывается, как просмотреть и изменить имеющиеся планы и предложения по Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: bryanla
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.custom: mvc
 ms.date: 10/05/2019
 ms.author: bryanla
 ms.reviewer: efemmano
 ms.lastreviewed: 06/11/2019
-ms.openlocfilehash: 4a215edbd9c7b2feed7e82331ae6a0287e35d54d
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: c4c01db560bbcd0f8312d205ad4643d4af48fed5
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75812490"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76880015"
 ---
 # <a name="azure-stack-hub-add-on-plans"></a>Дополнительные планы Azure Stack Hub
 

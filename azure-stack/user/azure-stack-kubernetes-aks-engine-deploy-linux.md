@@ -1,26 +1,18 @@
 ---
-title: Установка обработчика AKS в Azure Stack Hub в Linux | Документация Майкрософт
+title: Установка обработчика AKS в Azure Stack Hub в Linux
 description: Из этой статьи вы узнаете, как разместить обработчик AKS на компьютере под управлением Linux в Azure Stack Hub для развертывания кластера Kubernetes и управления им.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na (Kubernetes)
-ms.devlang: nav
 ms.topic: article
-ms.date: 01/10/2020
+ms.date: 01/28/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: d9f56d8d40d4f4420e073516678017c4904dd7d1
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.lastreviewed: 01/28/2020
+ms.openlocfilehash: 66e340df1d687e9a0c19f43c05c4fcb92e6940c2
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75878957"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883544"
 ---
 # <a name="install-the-aks-engine-on-linux-in-azure-stack-hub"></a>Установка обработчика AKS в Azure Stack Hub в Linux
 
@@ -41,7 +33,7 @@ ms.locfileid: "75878957"
 
 1. Создайте виртуальную машину Linux в Azure Stack Hub. Инструкции см. в статье [Краткое руководство. Создание виртуальной машины с сервером Linux с помощью портала Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-quick-linux-portal).
 2. Подключитесь к виртуальной машине.
-3. Найдите версию обработчика AKS в таблице [поддерживаемых версий Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). Базовый обработчик AKS должен быть доступен в Azure Stack Hub Marketplace. При выполнении этой команды укажите версию `--version v0.43.0`. Если вы ее не укажете, команда попытается установить последнюю версию, для которой может понадобиться образ VHD, недоступный в вашем marketplace.
+3. Найдите версию обработчика AKS в таблице [поддерживаемых версий Kubernetes](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#supported-kubernetes-versions). Базовый образ AKS должен быть доступен в Azure Stack Hub Marketplace. При выполнении этой команды укажите версию `--version v0.43.0`. Если вы ее не укажете, команда попытается установить последнюю версию, для которой может понадобиться образ VHD, недоступный в вашем marketplace.
 4. Выполните следующую команду:
 
     ```bash  

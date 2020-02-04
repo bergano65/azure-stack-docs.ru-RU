@@ -1,27 +1,18 @@
 ---
-title: Настройка автоматического сбора журналов Azure Stack Hub | Документация Майкрософт
+title: Настройка автоматического сбора журналов Azure Stack Hub
 description: Как настроить автоматической сбор журналов в разделе "Справка и поддержка" в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: a20bea32-3705-45e8-9168-f198cfac51af
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/08/2019
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 10/08/2019
-ms.openlocfilehash: 63ee429c37d5ec7bf9258e3e940d9dbfa3786907
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 3dede51916863a79f720f463af2a031e597f844f
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882595"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76878196"
 ---
 # <a name="configure-automatic-azure-stack-hub-diagnostic-log-collection"></a>Настройка автоматического сбора журналов диагностики Azure Stack Hub
 
@@ -31,7 +22,7 @@ ms.locfileid: "75882595"
 
 Прежде чем можно будет настроить автоматический сбор журналов, необходимо получить подписанный URL-адрес (SAS) для контейнера больших двоичных объектов. С помощью SAS можно предоставить доступ к ресурсам в учетной записи хранения, не предоставляя ее ключей. Можно сохранить файлы журнала Azure Stack Hub в контейнере больших двоичных объектов в Azure, а затем указать подписанный URL-адрес, по которому CSS сможет собирать журналы. 
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 Вы можете использовать новый или имеющийся контейнер больших двоичных объектов в Azure. Чтобы создать контейнер больших двоичных объектов в Azure, требуется по крайней мере роль [Участник для данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) или [определенное разрешение](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). У глобальных администраторов также есть необходимое разрешение. 
 

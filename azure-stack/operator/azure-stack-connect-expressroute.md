@@ -1,25 +1,18 @@
 ---
-title: Подключение Azure Stack Hub к Azure с помощью ExpressRoute | Документация Майкрософт
+title: Подключение Azure Stack Hub к Azure с помощью ExpressRoute
 description: Узнайте о том, как подключить виртуальные сети в Azure Stack Hub к виртуальным сетям в Azure с помощью ExpressRoute.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/03/2019
+ms.date: 01/23/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 014ff5a0b4791ac7b939ac3e61a79c89f531aa8d
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: f857fc92c5fec814ebd44aeb8bb12449f777586f
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75877563"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76879437"
 ---
 # <a name="connect-azure-stack-hub-to-azure-using-azure-expressroute"></a>Подключение Azure Stack Hub к Azure с помощью Azure ExpressRoute
 
@@ -41,7 +34,7 @@ Azure ExpressRoute позволяет переносить локальные с
 * у вас есть базовое представление об Azure Stack Hub;
 * у вас есть базовое представление о сетевых подключениях.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 Чтобы подключить Azure Stack Hub к Azure с помощью ExpressRoute, требуются следующие компоненты:
 
@@ -81,7 +74,7 @@ Azure ExpressRoute позволяет переносить локальные с
 
 Прежде чем приступать к настройке Azure Stack Hub, требуется следующее:
 
-* развертывание Azure Stack Hub; 
+* развертывание Azure Stack Hub;
 * предложение Azure Stack Hub, на которое могут подписаться пользователи. Дополнительные сведения см. в статье [Service, plan, offer, subscription overview](service-plan-offer-subscription-overview.md) (Обзор служб, планов, предложений и подписок).
 
 ### <a name="create-network-resources-in-azure-stack-hub"></a>Создание сетевых ресурсов в Azure Stack Hub
@@ -190,7 +183,7 @@ Azure ExpressRoute позволяет переносить локальные с
 
 1. В разделе **Создание виртуальной машины** выберите **Основные сведения**, затем введите **VM01** в качестве **имени**.
 1. Введите допустимое имя пользователя и пароль. Эта учетная запись будет использоваться для входа в виртуальную машину после ее создания.
-1. Укажите **подписку**, **группу ресурсов** и **расположение**. Нажмите кнопку **ОК**.
+1. Укажите **подписку**, **группу ресурсов** и **расположение**. Щелкните **ОК**.
 1. В разделе **выбора размера** выберите размер виртуальной машины для этого экземпляра, а затем щелкните **Выбрать**.
 1. Убедитесь, что в разделе **Параметры** указаны:
 

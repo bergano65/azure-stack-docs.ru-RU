@@ -1,26 +1,19 @@
 ---
-title: Общие сведения о модели "проверка как услуга" для Azure Stack Hub | Документация Майкрософт
+title: Общие сведения о модели "проверка как услуга" для Azure Stack Hub
 description: Общие сведения о модели "проверка как услуга" для Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: dee0be0817c8b614c9961d39330b64f4bd11f85f
-ms.sourcegitcommit: 102ef41963b5d2d91336c84f2d6af3fdf2ce11c4
+ms.openlocfilehash: 95cee26239a4549b87360e62c61a34449f6a0774
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73955863"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884077"
 ---
 # <a name="what-is-validation-as-a-service-for-azure-stack-hub"></a>Что такое проверка как услуга для Azure Stack Hub?
 
@@ -63,11 +56,11 @@ ms.locfileid: "73955863"
 
 | Рабочий процесс проверки | Обязательные тесты |
 |----|------------|
-| [Проверка нового решения](azure-stack-vaas-validate-solution-new.md) | Cloud Simulation Engine (Механизм имитации в облаке);<br>Compute SDK Operational Suite (Операционный набор для пакета SDK для вычислений);<br>Disk Identification Test (Тест на идентификацию диска);<br>KeyVault Extension SDK Operational Suite (Операционный набор для пакета SDK для расширения хранилища ключей);<br>KeyVault SDK Operational Suite (Операционный набор для пакета SDK для хранилища ключей);<br>Network SDK Operational Suite (Операционный набор для пакета SDK для сети);<br>Storage Account SDK Operational Suite (Операционный набор для пакета SDK для учетной записи).<br> |
+| [Проверка нового решения](azure-stack-vaas-validate-solution-new.md) | Cloud Simulation Engine (Механизм имитации в облаке).<br>Compute SDK Operational Suite (Операционный набор для пакета SDK для вычислений);<br>Disk Identification Test (Тест на идентификацию диска);<br>KeyVault Extension SDK Operational Suite (Операционный набор для пакета SDK для расширения хранилища ключей);<br>KeyVault SDK Operational Suite (Операционный набор для пакета SDK для хранилища ключей);<br>Network SDK Operational Suite (Операционный набор для пакета SDK для сети);<br>Storage Account SDK Operational Suite (Операционный набор для пакета SDK для учетной записи).<br> |
 | [Проверка пакетов OEM](azure-stack-vaas-validate-oem-package.md) | OEM Extension Package Verification (Проверка пакетов для расширения OEM);<br>Cloud Simulation Engine (Механизм имитации в облаке). |
 | [Проверка ежемесячных обновлений](azure-stack-vaas-validate-microsoft-updates.md) | Проверка ежемесячных обновлений для Azure Stack Hub<br>Cloud Simulation Engine (Механизм имитации в облаке).<br> |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка ресурсов службы VaaS](azure-stack-vaas-set-up-resources.md)
 - Дополнительные сведения см. в статье [Проверка как услуга: основные понятия](azure-stack-vaas-key-concepts.md)

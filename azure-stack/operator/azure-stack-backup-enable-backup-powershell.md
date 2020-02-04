@@ -1,26 +1,18 @@
 ---
-title: Включение резервного копирования для Azure Stack Hub с помощью PowerShell | Документация Майкрософт
+title: Включение резервного копирования для Azure Stack Hub с помощью PowerShell
 description: Сведения о том, как включить службу резервного копирования инфраструктуры с помощью PowerShell для восстановления Azure Stack Hub в случае сбоя.
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 04/25/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 03/14/2019
-ms.openlocfilehash: 06f20168bb3960eccab5b29b8538382dcd9a0ce3
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 0a4398328df57802b19f20edbe534ba1fe40709d
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75877665"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76878043"
 ---
 # <a name="enable-backup-for-azure-stack-hub-with-powershell"></a>Включение резервного копирования для Azure Stack Hub с помощью PowerShell
 
@@ -42,7 +34,7 @@ ms.locfileid: "75877665"
 
 В том же сеансе PowerShell измените следующий сценарий PowerShell, добавив переменные среды. Выполните обновленный сценарий, чтобы предоставить службе архивации инфраструктуры права на совместное использование учетных данных и ключа шифрования.
 
-| Переменная        | Description   |
+| Переменная        | Описание   |
 |---              |---                                        |
 | `$username`       | Введите **имя пользователя**, указав домен и имя пользователя для расположения общего диска. У этого пользователя должны быть достаточные права на чтение и запись файлов. Например, `Contoso\backupshareuser`. |
 | `$password`       | Введите **пароль** пользователя. |

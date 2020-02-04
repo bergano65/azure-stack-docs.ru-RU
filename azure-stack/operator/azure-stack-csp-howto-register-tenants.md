@@ -1,26 +1,18 @@
 ---
-title: Добавление клиентов для контроля потребления и выставления счетов в Azure Stack Hub | Документация Майкрософт
+title: Добавление клиентов для контроля потребления и выставления счетов в Azure Stack Hub
 description: Узнайте, как добавить клиент для контроля потребления и выставления счетов в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 09/25/2019
+ms.date: 01/24/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: 9bf0e51deb8e30bfeab978e3bdec1f4c4343561d
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: e5bdfa5a190b639ef0537c96f4b0e049817fba21
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882612"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882567"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack-hub"></a>Добавление клиентов для контроля потребления и выставления счетов в Azure Stack Hub
 
@@ -51,7 +43,7 @@ ms.locfileid: "75882612"
 
 ### <a name="create-a-guest-user-in-the-end-customer-directory"></a>Создание гостевого пользователя в каталоге клиента
 
-По умолчанию поставщик облачных служб не имеет доступа к подписке пользователя в Azure Stack Hub. Но если пользователь хочет, чтобы вы управляли его ресурсами, он может добавить в свою подписку Azure Stack Hub вашу учетную запись в качестве владельца или участника. Для этого клиенту нужно добавить вашу учетную запись к своему клиенту Azure AD в качестве гостя. Мы рекомендуем использовать другую учетную запись (отличную от учетной записи поставщика облачных служб Azure) для управления подпиской пользователя в Azure Stack Hub, чтобы вы не потеряли доступ к подписке Azure этого пользователя.
+По умолчанию поставщик облачных служб не имеет доступа к подписке пользователя в Azure Stack Hub. Но если пользователь хочет, чтобы вы управляли его ресурсами, он может добавить в свою подписку Azure Stack Hub вашу учетную запись в качестве владельца или участника. Для этого пользователю нужно добавить вашу учетную запись к своему клиенту Azure AD как гостевую. Мы рекомендуем использовать другую учетную запись (отличную от учетной записи поставщика облачных служб Azure) для управления подпиской пользователя в Azure Stack Hub, чтобы вы не потеряли доступ к подписке Azure этого пользователя.
 
 ### <a name="update-the-registration-with-the-end-customer-subscription"></a>Добавление подписки клиента в регистрацию
 
@@ -77,7 +69,7 @@ ms.locfileid: "75882612"
 
 В следующем разделе описаны параметры командлета **New-AzureRmResource**:
 
-| Параметр | Description |
+| Параметр | Описание |
 | --- | --- |
 |registrationSubscriptionID | Подписка Azure, которая использовалась для первоначальной регистрации Azure Stack Hub.|
 | customerSubscriptionID | Подписка Azure (не Azure Stack Hub), принадлежащая пользователю, для которого выполняется регистрация. Необходимо создать в предложении CSP. На практике это осуществляется через Центр партнеров. Если для пользователя создано несколько клиентов Azure Active Directory, подписку нужно создать в том из них, который будет использоваться для входа в Azure Stack Hub. Идентификатор подписки клиента должен состоять из строчных букв. |

@@ -1,26 +1,18 @@
 ---
-title: Коды ошибок, связанных с регистрацией поставщика облачных решений для контроля потребления и выставления счетов для Azure Stack Hub | Документация Майкрософт
+title: Коды ошибок, связанных с регистрацией поставщика облачных решений для контроля потребления и выставления счетов для Azure Stack Hub
 description: Коды ошибок, связанных с регистрацией для контроля потребления и выставления счетов в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/04/2019
+ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 508a35d0e52f88cba3aa93db6cc965cba7b05de6
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 863f50f0b780c92f776cfcccbd74502ca9c04d35
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75809735"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881440"
 ---
 # <a name="usage-and-billing-registration-error-codes"></a>Коды ошибок, связанных с регистрацией для контроля потребления и выставления счетов
 

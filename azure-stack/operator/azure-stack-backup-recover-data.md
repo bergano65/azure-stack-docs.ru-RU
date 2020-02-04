@@ -1,27 +1,18 @@
 ---
-title: Восстановление после катастрофической потери данных в Azure Stack Hub | Документация Майкрософт
+title: Восстановление после катастрофической потери данных в Azure Stack Hub
 description: Узнайте, как восстановить данные инфраструктуры в Azure Stack Hub после катастрофической потери данных.
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: 2ECE8580-0BDE-4D4A-9120-1F6771F2E815
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: 84ec5659bef23012a8d9ba48879b4b3ebafe29c2
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: ccc4a91fda1bd3c1d3a55ef0bac7df92d6a2e07c
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882969"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76878281"
 ---
 # <a name="recover-from-catastrophic-data-loss"></a>Восстановление после катастрофической потери данных
 

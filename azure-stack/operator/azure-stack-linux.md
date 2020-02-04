@@ -1,28 +1,20 @@
 ---
-title: Добавление образов Linux в Azure Stack Hub Marketplace | Документация Майкрософт
-description: Из этой статьи вы узнаете, как добавлять образы Linux в Azure Stack Hub Marketplace.
-services: azure-stack
-documentationcenter: ''
+title: Добавление образов Linux в Azure Stack Hub Marketplace
+description: Узнайте, как добавлять образы Linux в Azure Stack Hub Marketplace.
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/01/2019
+ms.date: 01/23/2020
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 11/16/2018
-ms.openlocfilehash: d8714901bc8ac8f8c20b9b2649527f8e6f6627fc
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: b5e15568b2943d34dd5456f924db59cfcf48cb7f
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882408"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890261"
 ---
-# <a name="add-linux-images-to-azure-stack-hub-marketplace"></a>Добавление образов Linux в Azure Stack Hub Marketplace
+# <a name="add-linux-images-to-the-azure-stack-hub-marketplace"></a>Добавление образов Linux в Azure Stack Hub Marketplace
 
 Виртуальные машины Linux можно развернуть в Azure Stack Hub, добавив образ на базе Linux в Azure Stack Hub Marketplace. Проще всего добавить образ Linux в Azure Stack Hub с помощью управления Marketplace. Эти образы были подготовлены и протестированы на совместимость с Azure Stack Hub.
 
@@ -38,7 +30,7 @@ ms.locfileid: "75882408"
 
 ### <a name="azure-linux-agent"></a>Агент Linux для Azure
 
-Агент Linux для Azure (обычно называется **WALinuxAgent** или **walinuxagent**) использовать обязательно, при этом не все версии агента будут работать с Azure Stack Hub. Версии с 2.2.21 по 2.2.34 (включительно) не поддерживаются в Azure Stack Hub. Для использования последней версии агента выше 2.2.35 примените исправления 1901 и 1902 или обновите Azure Stack Hub до выпуска 1903 (или последующего). Обратите внимание, что [cloud-init](https://cloud-init.io/) поддерживается в выпусках Azure Stack Hub, более поздних, чем версия 1910.
+Агент Linux для Azure (обычно называется **WALinuxAgent** или **walinuxagent**) использовать обязательно, при этом не все версии агента будут работать с Azure Stack Hub. Azure Stack Hub не поддерживает версии 2.2.21–2.2.34 (включительно). Для использования последней версии агента выше 2.2.35 примените исправления 1901 и 1902 или обновите Azure Stack Hub до выпуска 1903 (или последующего). Обратите внимание, что [cloud-init](https://cloud-init.io/) поддерживается в выпусках Azure Stack Hub, более поздних, чем версия 1910.
 
 | Сборка Azure Stack Hub | Сборка агента Linux для Azure |
 | ------------- | ------------- |
@@ -61,7 +53,7 @@ ms.locfileid: "75882408"
 
 ## <a name="cloud-init"></a>Cloud-init
 
-[Cloud-init](https://cloud-init.io/) поддерживается в выпусках Azure Stack Hub, более поздних, чем версия 1910. Чтобы использовать cloud-init для настройки виртуальной машины Linux, выполните следующие инструкции для PowerShell: 
+[Cloud-init](https://cloud-init.io/) поддерживается в выпусках Azure Stack Hub, более поздних, чем версия 1910. Чтобы настроить виртуальную машину Linux с помощью cloud-init, выполните приведенные ниже инструкции для PowerShell.
 
 ### <a name="step-1-create-a-cloud-inittxt-file-with-your-cloud-config"></a>Шаг 1. Создание файла cloud-init.txt с облачной конфигурацией
 

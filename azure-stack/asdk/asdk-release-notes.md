@@ -1,26 +1,18 @@
 ---
-title: Заметки о выпуске ASDK | Документация Майкрософт
+title: Заметки о выпуске ASDK
 description: Улучшения, исправления и известные проблемы Пакета средств разработки Azure Stack (ASDK).
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/21/2019
 ms.author: sethm
 ms.reviewer: misainat
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 2323f13029d4d356ce54b825bab69da5ca21d6ab
-ms.sourcegitcommit: d619612f54eeba3231ed73ed149ff894f9bf838a
+ms.openlocfilehash: 608374ce5e788a82378aaf9c62414b05d871c983
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993579"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76873487"
 ---
 # <a name="asdk-release-notes"></a>Заметки о выпуске ASDK
 
@@ -89,7 +81,7 @@ ms.locfileid: "74993579"
 
 - Список новых функций для этого выпуска см. в [этом разделе](/azure-stack/operator/release-notes?view=azs-1906#whats-in-this-update-1) заметок к выпуску Azure Stack.
 
-### <a name="changes"></a>изменения
+### <a name="changes"></a>Изменения
 
 - Добавлена поддержка виртуальной машины для вызова **AzS-SRNG01**, в которой размещена служба сбора журналов для Azure Stack. Дополнительные сведения см. в статье [Архитектура ASDK](asdk-architecture.md).
 

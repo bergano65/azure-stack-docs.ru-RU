@@ -1,27 +1,18 @@
 ---
-title: Интеграция пограничных подключений и сетей для интегрированных систем Azure Stack Hub | Документация Майкрософт
+title: Интеграция пограничных подключений и сетей для интегрированных систем Azure Stack Hub
 description: Узнайте, как проектировать подключения пограничной сети центра обработки данных с помощью интегрированных систем Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
-author: mattbriggs
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
+author: ihenkel
 ms.topic: article
 ms.date: 11/15/2019
-ms.author: mabrigg
+ms.author: inhenkel
 ms.reviewer: wamota
 ms.lastreviewed: 11/15/2019
-ms.openlocfilehash: 8a48fe951b9cee3e85317d197448f99c2c9658ff
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 15440c32974aebfed3f3faf86885dd6f0af71ddd
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816791"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76878519"
 ---
 # <a name="border-connectivity"></a>Пограничное подключение 
 Планирование интеграции сети — важное условие для успешного развертывания и работы интегрированных систем Azure Stack Hub, а также для управления ими. Планирование подключений к пограничной сети начинается с решения о том, будет ли использоваться динамическая маршрутизация по протоколу BGP. Для этого требуется назначить 16-разрядный номер автономной системы BGP (общедоступный или частный) или использовать статическую маршрутизацию, при которой пограничным устройствам назначается статический маршрут по умолчанию.

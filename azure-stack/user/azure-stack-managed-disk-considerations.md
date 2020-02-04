@@ -1,31 +1,22 @@
 ---
-title: 'Управляемые диски Azure Stack Hub: отличия и рекомендации | Документация Майкрософт'
+title: Управляемые диски Azure Stack Hub. Различия и рекомендации
 description: Дополнительные сведения о различиях и рекомендациях при работе с управляемыми дисками и управляемыми образами в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/04/2019
+ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: jiahan
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: 2e09f10fc61454cf1b32797e75b5a57fc3f90f8f
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: c1369ada357e8439e39fed4642996af86925522c
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75819885"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76883440"
 ---
 # <a name="azure-stack-hub-managed-disks-differences-and-considerations"></a>Управляемые диски Azure Stack Hub. Различия и рекомендации
 
-В этой статье приведены различия между [управляемыми дисками в Azure Stack Hub](azure-stack-manage-vm-disks.md) и [управляемыми дисками в Azure](/azure/virtual-machines/windows/managed-disks-overview). Чтобы узнать об общих различиях между Azure Stack Hub и Azure, прочитайте [эту статью](azure-stack-considerations.md).
+В этой статье описаны различия между [*управляемыми дисками* в Azure Stack Hub](azure-stack-manage-vm-disks.md) и [управляемыми дисками в Azure](/azure/virtual-machines/windows/managed-disks-overview). Чтобы узнать об общих различиях между Azure Stack Hub и Azure, прочитайте [эту статью](azure-stack-considerations.md).
 
 Управляемые диски упрощают управление дисками виртуальных машин Azure IaaS. Они позволяют управлять [учетными записями хранения](../operator/azure-stack-manage-storage-accounts.md), связанными с этими дисками.
 
@@ -147,7 +138,7 @@ Azure Stack Hub поддерживает *управляемые образы*, 
 Для Windows: см. раздел [Generalize the Windows VM using Sysprep](/azure/virtual-machines/windows/capture-image-resource#generalize-the-windows-vm-using-sysprep) (Подготовка виртуальной машины Windows к использованию с помощью Sysprep). Для Linux: выполните шаг 1, описанный [здесь](/azure/virtual-machines/linux/capture-image#step-1-deprovision-the-vm).
 
 > [!NOTE]
-> Обязательно подготовьте виртуальную машину к использованию. Создание виртуальной машины из образа, не подготовленного должным образом, приведет к возникновению ошибки **VMProvisioningTimeout**.
+> Обязательно подготовьте виртуальную машину к использованию. Если должным образом не подготовить образ для создания виртуальной машины, может произойти ошибка **VMProvisioningTimeout**.
 
 ### <a name="step-2-create-the-managed-image"></a>Шаг 2. Создание управляемого образа
 
@@ -232,4 +223,4 @@ New-AzureRmVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VmC
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сведения о виртуальных машинах Azure Stack Hub](azure-stack-compute-overview.md)
+- Узнайте о [виртуальных машинах Azure Stack Hub](azure-stack-compute-overview.md).

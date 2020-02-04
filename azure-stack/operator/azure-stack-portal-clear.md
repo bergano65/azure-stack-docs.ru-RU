@@ -1,32 +1,23 @@
 ---
-title: Удаление данных пользователя портала из Azure Stack Hub по запросу. | Документы Майкрософт
+title: Удаление данных пользователя портала из Azure Stack Hub по запросу.
 description: Узнайте, как оператор Azure Stack Hub может удалять данные пользователей портала по запросу пользователей Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.custom: mvc
-ms.date: 09/10/2019
+ms.date: 01/27/2020
 ms.author: sethm
 ms.reviewer: troettinger
 ms.lastreviewed: 09/10/2019
 monikerRange: azs-1802
-ms.openlocfilehash: ac28a67f7b1409ebc5a786a88e8b9702df94c2ff
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: c632161c32f6a20b7f9943df191ab0f0c0158720
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022772"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881620"
 ---
 # <a name="clear-portal-user-data-from-azure-stack-hub"></a>Удаление данных пользователя портала из Azure Stack Hub
 
-Операторы Azure Stack Hub могут удалять данные пользователей портала по запросу. Пользователи Azure Stack Hub могут настраивать портал, закрепляя плитки и изменяя макет панели мониторинга. Пользователи также могут изменять тему и выбирать язык по умолчанию. 
+Операторы Azure Stack Hub могут удалять данные пользователей портала по запросу. Пользователи Azure Stack Hub могут настраивать портал, закрепляя плитки и изменяя макет панели мониторинга. Пользователи также могут изменять тему и выбирать язык по умолчанию.
 
 Данные пользователя портала — это элементы из категории "Избранное" и недавно использовавшиеся ресурсы на пользовательском портале Azure Stack Hub. В статье описано, как удалить данные пользователя портала.
 

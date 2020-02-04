@@ -1,26 +1,18 @@
 ---
-title: API использования ресурсов для поставщиков Azure Stack Hub | Документация Майкрософт
+title: Использование API потребления ресурсов поставщиков Azure Stack Hub
 description: Справочные сведения об API использования ресурсов, который получает сведения об использовании Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 01/25/2018
-ms.openlocfilehash: e1d2e350079ab3d58802c8490da30a4c9555885d
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: c6c68b3455e7de78e116b3ef6ede1dde7172fb33
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76023255"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881545"
 ---
 # <a name="provider-resource-usage-api"></a>API использования ресурсов для поставщиков
 
@@ -42,7 +34,7 @@ ms.locfileid: "76023255"
 
 ### <a name="arguments"></a>Аргументы
 
-| Аргумент | Description |
+| Аргумент | Описание |
 | --- | --- |
 | `armendpoint` |Конечная точка Azure Resource Manager среды Azure Stack Hub. В соответствии с соглашением Azure Stack Hub имя конечной точки Azure Resource Manager должно иметь формат `https://adminmanagement.{domain-name}`. Например, если для пакета средств разработки Azure Stack (ASDK) доменное имя — *local.azurestack.external*, то конечная точка Azure Resource Manager — `https://adminmanagement.local.azurestack.external`. |
 | `subId` |Идентификатор подписки пользователя, который выполняет вызов. |
@@ -88,7 +80,7 @@ meterID1",
 
 ### <a name="response-details"></a>Сведения об ответе
 
-| Аргумент | Description |
+| Аргумент | Описание |
 | --- | --- |
 |`id` |Уникальный идентификатор статистического выражения использования. |
 |`name` |Имя статистического выражения использования. |

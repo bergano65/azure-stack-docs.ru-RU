@@ -1,26 +1,18 @@
 ---
-title: Основы администрирования ASDK | Документация Майкрософт
+title: Основы администрирования ASDK
 description: Узнайте, как выполнять основные задачи администрирования для Пакета средств разработки Azure Stack (ASDK).
-services: azure-stack
-documentationcenter: ''
 author: justinha
-editor: ''
-ms.assetid: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 02/19/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 785b787702f173fe3f30b53f29f8770f9f039b1b
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 772fef1539eccfb69fd7d240314ff8f80af1965c
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75881626"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76874184"
 ---
 # <a name="asdk-admin-basics"></a>Основы администрирования ASDK
 Если вы еще не знакомы с администрированием Пакета средств разработки Azure Stack (ASDK), вам необходимо знать несколько моментов. В этом руководстве описаны обязанности оператора Azure Stack в ознакомительной среде. Ознакомившись с этими сведениями, вы сможете как можно быстрее подготовить тестовых пользователей для эффективной работы.

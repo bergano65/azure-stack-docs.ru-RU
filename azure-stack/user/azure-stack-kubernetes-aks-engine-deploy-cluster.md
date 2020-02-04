@@ -1,26 +1,18 @@
 ---
-title: Развертывание кластера Kubernetes с обработчиком AKS в Azure Stack Hub | Документация Майкрософт
+title: Развертывание кластера Kubernetes с обработчиком AKS в Azure Stack Hub
 description: Узнайте, как развернуть кластер Kubernetes в Azure Stack Hub из клиентской виртуальной машины, на которой выполняется обработчик AKS.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na (Kubernetes)
-ms.devlang: nav
 ms.topic: article
 ms.date: 01/10/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 34fc30c13cf365560fbd30234a60af4cc4f9a594
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: bc56a45bc1312488d00570e4a44436bcdfe14834
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883578"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884807"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Развертывание кластера Kubernetes с обработчиком AKS в Azure Stack Hub
 
@@ -76,7 +68,7 @@ ms.locfileid: "75883578"
 
 7.  В массиве `masterProfile` заполните следующие поля:
 
-    | Поле | Description |
+    | Поле | Описание |
     | --- | --- |
     | dnsPrefix | Введите уникальную строку, которая будет определять имя узла для виртуальных машин. Например, можно создать имя на основе имени группы ресурсов. |
     | count |  Введите число главных серверов для развертывания. Минимальное значение для развертывания высокого уровня доступности — 3, а для развертываний без высокого уровня доступности — 1. |
@@ -85,7 +77,7 @@ ms.locfileid: "75883578"
 
 8.  В массиве `agentPoolProfiles` измените следующие данные:
 
-    | Поле | Description |
+    | Поле | Описание |
     | --- | --- |
     | count | Введите число агентов для развертывания. |
     | vmSize | Введите [размер, поддерживаемый Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-vm-sizes), например `Standard_D2_v2`. |
@@ -93,7 +85,7 @@ ms.locfileid: "75883578"
 
 9.  В массиве `linuxProfile` измените следующие данные:
 
-    | Поле | Description |
+    | Поле | Описание |
     | --- | --- |
     | adminUsername | Имя пользователя для администратора виртуальной машины. |
     | ssh | Введите открытый ключ, который будет использоваться для аутентификации SSH-соединений с виртуальными машинами. При использовании Putty откройте генератор ключей PuTTY, чтобы загрузить закрытый ключ Putty и открытый ключ, который начинается с ssh-rsa, как показано в следующем примере. Вы можете использовать ключ, сгенерированный при создании клиента Linux, но **вам необходимо скопировать открытый ключ, чтобы он представлял собой однострочный текст, как показано в примере**.|
@@ -119,7 +111,7 @@ ms.locfileid: "75883578"
 
 1.  Проверьте доступные параметры для [флагов CLI](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#cli-flags) обработчика AKS в Azure Stack Hub.
 
-    | Параметр | Пример | Description |
+    | Параметр | Пример | Описание |
     | --- | --- | --- |
     | azure-env | AzureStackCloud | Используйте `AzureStackCloud`, чтобы сообщить обработчику AKS, что целевой платформой является Azure Stack Hub. |
     | identity-system | adfs | Необязательный параметр. Укажите решение по управлению удостоверениями, если используются службы федерации Active Directory (AD FS). |
@@ -166,31 +158,71 @@ ms.locfileid: "75883578"
 
 3. В качестве имени пользователя SSH укажите "azureuser" и предоставьте файл закрытого ключа из той пары ключей, которую вы указали для развертывания кластера.
 
-4.  Выполните следующие команды:
+4. Выполните приведенные ниже команды, чтобы создать пример развертывания главного узла Redis (только для подключенных меток).
+
+   ```bash
+   kubectl apply -f https://k8s.io/examples/application/guestbook/redis-master-deployment.yaml
+   ```
+
+    1. Запросите список объектов pod:
+
+       ```bash
+       kubectl get pods
+       ```
+
+    2. Ответ должен быть примерно таким:
+
+       ```shell
+       NAME                            READY     STATUS    RESTARTS   AGE
+       redis-master-1068406935-3lswp   1/1       Running   0          28s
+       ```
+
+    3. Просмотрите журналы развертывания:
+
+       ```shell
+       kubectl logs -f <pod name>
+       ```
+
+    Чтобы полностью развернуть пример приложения PHP, включающего главный узел Redis, выполните [эти инструкции](https://kubernetes.io/docs/tutorials/stateless-application/guestbook/).
+
+5. Для отключенной метки должно быть достаточно следующих команд:
+
+    1. Сначала убедитесь, что конечные точки кластера работают:
+
+       ```bash
+       kubectl cluster-info
+       ```
+
+       Результат должен выглядеть следующим образом.
+
+       ```shell
+       Kubernetes master is running at https://democluster01.location.domain.com
+       CoreDNS is running at https://democluster01.location.domain.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+       kubernetes-dashboard is running at https://democluster01.location.domain.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy
+       Metrics-server is running at https://democluster01.location.domain.com/api/v1/namespaces/kube-system/services/https:metrics-server:/proxy
+       ```
+
+    2. Затем просмотрите сведения о состоянии узлов:
+
+       ```bash
+       kubectl get nodes
+       ```
+
+       Результат выполнения должен быть аналогичен следующему:
+
+       ```shell
+       k8s-linuxpool-29969128-0   Ready      agent    9d    v1.15.5
+       k8s-linuxpool-29969128-1   Ready      agent    9d    v1.15.5
+       k8s-linuxpool-29969128-2   Ready      agent    9d    v1.15.5
+       k8s-master-29969128-0      Ready      master   9d    v1.15.5
+       k8s-master-29969128-1      Ready      master   9d    v1.15.5
+       k8s-master-29969128-2      Ready      master   9d    v1.15.5
+       ```
+
+6. Чтобы очистить развертывание pod Redis, созданное на предыдущем этапе, выполните следующую команду:
 
     ```bash
-    sudo snap install helm --classic
-    kubectl -n kube-system create serviceaccount tiller
-    kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller
-    helm init --service-account=tiller
-    helm repo update
-    helm install stable/mysql
-    ```
-
-5.  Чтобы очистить тест, найдите имя для развертывания MySQL. В следующем примере используется имя `wintering-rodent`. Удалите его. 
-
-    Выполните следующие команды:
-
-    ```bash
-    helm ls
-    NAME REVISION UPDATED STATUS CHART APP VERSION NAMESPACE
-    wintering-rodent 1 Thu Oct 18 15:06:58 2018 DEPLOYED mysql-0.10.1 5.7.14 default
-    helm delete wintering-rodent
-    ```
-
-    Интерфейс командной строки отобразит следующее:
-    ```bash
-    release "wintering-rodent" deleted
+    kubectl delete deployment -l app=redis
     ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

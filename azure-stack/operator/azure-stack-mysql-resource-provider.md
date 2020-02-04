@@ -1,33 +1,25 @@
 ---
-title: Использование баз данных MySQL как PaaS в Azure Stack Hub | Документация Майкрософт
+title: Использование баз данных MySQL как PaaS в Azure Stack Hub
 description: Узнайте, как развернуть поставщик ресурсов MySQL и предоставить базы данных MySQL как услугу в Azure Stack Hub.
-services: azure-stack
-documentationCenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 9351ce5b2dde1fc7e2dfeddc2d3520a4f5d1fe2b
-ms.sourcegitcommit: a1abc27a31f04b703666de02ab39ffdc79a632f6
+ms.openlocfilehash: f7ff0e3b3ea21dc6545a6c69b1a9cdbf8dbed607
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76534623"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881743"
 ---
 # <a name="use-mysql-databases-on-microsoft-azure-stack-hub"></a>Использование баз данных MySQL в Microsoft Azure Stack Hub
 
-Чтобы предоставлять базы данных MySQL как услуги в [Azure Stack Hub](azure-stack-overview.md), используйте поставщик ресурсов MySQL. Когда вы развернете поставщик ресурсов и подключите его к одному или нескольким экземплярам сервера MySQL, вы сможете:
+Предоставлять базы данных MySQL в [Azure Stack Hub](azure-stack-overview.md) можно с помощью поставщика ресурсов MySQL. Когда вы развернете поставщик ресурсов и подключите его к одному или нескольким экземплярам сервера MySQL, вы сможете создать:
 
-* создавать базы данных MySQL, используя шаблоны развертывания Azure Resource Manager;
-* предоставлять базы данных MySQL как службу.  
+* базы данных MySQL для приложений, созданных для облака;
+* базы данных MySQL для веб-приложений.  
 
 Перед установкой поставщика ресурсов MySQL необходимо учесть несколько приведенных ниже ограничений.
 

@@ -1,27 +1,18 @@
 ---
-title: Сбор журналов диагностики Azure Stack Hub по запросу | Документация Майкрософт
+title: Сбор журналов диагностики Azure Stack Hub по запросу
 description: Сведения о том, как выполнять сбор журналов диагностики по запросу в Azure Stack Hub с помощью функции справки и поддержки или привилегированной конечной точки (PEP).
-services: azure-stack
-documentationcenter: ''
 author: justinha
-manager: femila
-editor: ''
-ms.assetid: a20bea32-3705-45e8-9168-f198cfac51af
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/16/2020
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 01/16/2020
-ms.openlocfilehash: bb7fc0488ea264a83cc93e071b044e6443e97630
-ms.sourcegitcommit: ba2fd47e74adebe1fcbb489d059a2c27d59b179c
+ms.openlocfilehash: 759edb6cf4f106e59a1b847cb4dcafd4450665da
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256348"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890091"
 ---
 # <a name="collect-azure-stack-hub-diagnostic-logs-on-demand"></a>Сбор журналов диагностики Azure Stack Hub по запросу
 
@@ -108,7 +99,7 @@ if ($session) {
   Get-AzureStackLog -OutputSharePath "<path>" -OutputShareCredential $cred -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8) -ToDate (Get-Date).AddHours(-2)
   ```
 
-* Соберите журналы из развертываний клиентов, выполняющих самостоятельно управляемые кластеры Kubernetes (обработчик AKS) на Azure Stack. Журналы Kubernetes должны храниться в учетной записи хранения клиента в формате, который позволяет применять к ним диапазон времени сбора. 
+* Соберите журналы из развертываний клиентов, в которых выполняются самостоятельно управляемые кластеры Kubernetes (обработчик AKS) в Azure Stack. Журналы Kubernetes должны храниться в учетной записи хранения клиента в формате, который позволяет применять к ним диапазон времени сбора. 
 
   ```powershell
   Get-AzureStackLog -OutputPath <Path> -InputSasUri "<Blob Service Sas URI>" -FromDate "<Beginning of the time range>" -ToDate "<End of the time range>"

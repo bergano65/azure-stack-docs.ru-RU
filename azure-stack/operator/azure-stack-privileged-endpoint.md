@@ -1,26 +1,18 @@
 ---
-title: Использование привилегированной конечной точки в Azure Stack Hub | Документация Майкрософт
+title: Использование привилегированной конечной точки в Azure Stack Hub
 description: Из этой статьи вы узнаете, как использовать привилегированную конечную точку (PEP) в Azure Stack Hub для задач оператора.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 1/8/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 1/8/2020
-ms.openlocfilehash: 665e0a32abfbdce3953423135600eed98cbc2eef
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 74d21915b7df5161817c0cf48ec7db6f06cbd904
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882136"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881524"
 ---
 # <a name="use-the-privileged-endpoint-in-azure-stack-hub"></a>Использование привилегированной конечной точки в Azure Stack Hub
 
@@ -191,7 +183,7 @@ ms.locfileid: "75882136"
 
    Этот командлет использует параметры, описанные в следующей таблице.
 
-   | Параметр | Description | Тип | Обязательно |
+   | Параметр | Описание | Тип | Обязательно |
    |---------|---------|---------|---------|
    | *TranscriptsPathDestination* | Путь к внешней общей папке, который определен как "IP-адрес_общей_папки\имя_общей_папки" | String | Да|
    | *Учетные данные* | Учетные данные для доступа к общей папке. | SecureString |   Да |

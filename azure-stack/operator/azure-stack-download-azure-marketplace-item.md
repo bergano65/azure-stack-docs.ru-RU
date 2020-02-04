@@ -1,26 +1,18 @@
 ---
-title: Скачивание элементов Marketplace из Azure и публикация в Azure Stack Hub | Документация Майкрософт
+title: Скачивание элементов marketplace из Azure и их публикация в Azure Stack Hub
 description: Из этой статьи вы узнаете, как скачать элементы Marketplace из Azure и опубликовать их в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/23/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 12/23/2018
-ms.openlocfilehash: 80cf9d192be07f951ee959c7a83419bb16bd2bbb
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: 0df8b4e85aea2a194061da523e66385389b38bb1
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022947"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890329"
 ---
 # <a name="download-marketplace-items-to-azure-stack-hub"></a>Скачивание элементов Marketplace в Azure Stack Hub 
 
@@ -40,7 +32,7 @@ ms.locfileid: "76022947"
 
 Если в среде Azure Stack Hub есть подключение к Интернету, для скачивания элементов Marketplace можно использовать портал администрирования.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 Экземпляр развертывания Azure Stack Hub должен быть подключен к Интернету и зарегистрирован в Azure.
 
@@ -81,7 +73,7 @@ ms.locfileid: "76022947"
 - **Часть 1**. Скачайте элементы из Marketplace. На компьютере с доступом к Интернету настройте PowerShell, скачайте инструмент синдикации, а затем скачайте элементы из Azure Marketplace.
 - **Часть 2**. Передайте их в Azure Stack Hub Marketplace и опубликуйте. Переместите файлы, скачанные в среду Azure Stack Hub, импортируйте их в Azure Stack Hub и опубликуйте в Azure Stack Hub Marketplace.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 - Подключенная к Интернету среда (не обязательно Azure Stack Hub). Вам потребуется подключение, чтобы получить из Azure список продуктов со сведениями о них и скачать все необходимое в локальную среду. После выполнения этих операций вам не потребуется подключение к Интернету для остальной части процедуры. При этом создается каталог элементов, которые были скачаны ранее, чтобы использовать их в отключенной среде.
 

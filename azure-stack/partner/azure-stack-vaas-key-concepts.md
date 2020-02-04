@@ -1,26 +1,19 @@
 ---
-title: Основные понятия проверки как услуги Azure Stack | Документация Майкрософт
+title: Основные сведения о проверке как услуге Azure Stack
 description: Описывает основные понятия проверки как услуги Azure Stack.
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/28/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: a79b6e6f34c8293febf30a9cb48ddbfae9c99816
-ms.sourcegitcommit: cc3534e09ad916bb693215d21ac13aed1d8a0dde
+ms.openlocfilehash: 25feb0b51d8b202f72b297c2badc5c152144de1f
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73167327"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885012"
 ---
 # <a name="validation-as-a-service-key-concepts"></a>Проверка как услуга: основные понятия
 
@@ -54,7 +47,7 @@ ms.locfileid: "73167327"
 
 1. На панели мониторинга решения создайте новое или выберите существующее решение. При этом обновляются и активируются плитки рабочего процесса.
 2. Чтобы создать рабочий процесс, выберите **Запустить** для любой плитки. Конкретные сведения о каждом рабочем процессе см. в следующих статьях:
-    - Тестовый проход: [Краткое руководство Планирование первого теста](azure-stack-vaas-schedule-test-pass.md);
+    - Тестовый проход: [Краткое руководство. Планирование первого теста](azure-stack-vaas-schedule-test-pass.md);
     - Проверка решения: [Проверка нового решения Azure Stack](azure-stack-vaas-validate-solution-new.md)
     - Проверка пакета (ежемесячное обновление): [Проверка обновлений программного обеспечения от корпорации Майкрософт](azure-stack-vaas-validate-microsoft-updates.md)
     - Проверка пакета (подписание пакета): [Проверка пакетов OEM](azure-stack-vaas-validate-oem-package.md)
@@ -82,6 +75,6 @@ ms.locfileid: "73167327"
 
 Инструкции по добавлению локального агента см. в разделе [Развертывание локального агента](azure-stack-vaas-local-agent.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Рекомендации для проверки как услуги](azure-stack-vaas-best-practice.md)

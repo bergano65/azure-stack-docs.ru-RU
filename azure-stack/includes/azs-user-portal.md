@@ -1,16 +1,16 @@
 ---
 author: mattbriggs
-ms.service: azure-stack
 ms.topic: include
-ms.date: 10/10/2019
+ms.date: 1/22/2020
 ms.author: mabrigg
-ms.openlocfilehash: 593eafb8924a7195f4739a7a3b293b29c6ab8846
-ms.sourcegitcommit: a6d47164c13f651c54ea0986d825e637e1f77018
+ms.openlocfilehash: b4f964f7c888d1a06572328432ff6ef20127b70c
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72283344"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76881088"
 ---
-Войдите на пользовательский портал.
-    - Для интегрированного развертывания системы адрес портала может отличаться в зависимости от региона, в котором находится решение, и имени внешнего домена. У него будет формат https://portal.&lt.*регион*&gt;.&lt;*полное доменное имя*&gt;.
-    - Если вы используете Пакет средств разработки Azure Stack, то адрес портала — [https://portal.local.azurestack.external](https://portal.local.azurestack.external).
+Войдите на пользовательский портал. 
+
+* Для интегрированного развертывания системы адрес портала может отличаться в зависимости от региона, в котором находится решение, и имени внешнего домена. Он должен быть в формате `https://adminportal.<region>.<FQDN>`.
+* Если вы используете Пакет средств разработки Azure Stack, то адрес портала — [https://portal.local.azurestack.external](https://portal.local.azurestack.external).

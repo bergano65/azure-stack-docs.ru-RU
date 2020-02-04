@@ -1,26 +1,18 @@
 ---
-title: Вопросы и ответы по Windows Server для Azure Stack Hub | Документация Майкрософт
+title: Вопросы и ответы об использовании Windows Server с Azure Stack Hub
 description: Список статей в Azure Stack Hub Marketplace с вопросами и ответами по Windows Server
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 12/27/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 08/29/2019
-ms.openlocfilehash: ae3a1d602347a4cb4dcb6199075cd1e3dce9cb29
-ms.sourcegitcommit: d62400454b583249ba5074a5fc375ace0999c412
+ms.openlocfilehash: 5a0c02737610a663448286b16afbf1504102a8a6
+ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76023224"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890142"
 ---
 # <a name="windows-server-in-azure-stack-hub-marketplace-faq"></a>Windows Server в Azure Stack Hub Marketplace: вопросы и ответы
 

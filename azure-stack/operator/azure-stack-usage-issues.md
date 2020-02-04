@@ -1,30 +1,22 @@
 ---
-title: Проблемы и ошибки подключения к службе контроля использования в Azure Stack Hub | Документация Майкрософт
+title: Проблемы и ошибки подключения к службе контроля использования в Azure Stack Hub
 description: Сведения об устранении неполадок и ошибок использования Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/04/2019
+ms.date: 01/22/2019
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 5ad2f6b3b66e2c01cbae91a42a2b2a1bb0b59a26
-ms.sourcegitcommit: 1185b66f69f28e44481ce96a315ea285ed404b66
+ms.openlocfilehash: 4a4b34c6aeaac3bd484c0a954af0f3a456cbfe85
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75813017"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882685"
 ---
 # <a name="usage-connectivity-errors"></a>Использование. Неполадки с подключением
 
-Данные об использовании Azure Stack Hub отправляются в Azure с помощью [компонента *Мост Azure*](azure-stack-usage-reporting.md). Если мост в Azure Stack Hub не может подключиться к службе контроля использования Azure, появится следующая ошибка:
+Данные об использовании Azure Stack Hub отправляются в Azure с помощью компонента [*Мост Azure*](azure-stack-usage-reporting.md). Если мост в Azure Stack Hub не может подключиться к службе контроля использования Azure, появится следующая ошибка:
 
 ![Ошибка моста контроля использования](media/azure-stack-usage-issues/usageerror2.png)
 

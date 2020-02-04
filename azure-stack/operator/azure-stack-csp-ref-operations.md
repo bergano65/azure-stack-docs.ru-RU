@@ -1,26 +1,18 @@
 ---
-title: Регистрация клиентов для отслеживания использования Azure Stack Hub | Документация Майкрософт
+title: Регистрация клиентов для отслеживания использования в Azure Stack Hub
 description: Сведения о регистрации клиентов и отслеживании использования клиентов в Azure Stack Hub.
-services: azure-stack
-documentationcenter: ''
 author: sethmanheim
-manager: femila
-editor: ''
-ms.service: azure-stack
-ms.workload: na
-pms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/14/2019
+ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: alfredop
 ms.lastreviewed: 10/14/2019
-ms.openlocfilehash: 981a80692e087cfcb733e73ec43d70fe67516e69
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 1f5f3011c1546970a1b94773b171e6419757c461
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75882578"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76882494"
 ---
 # <a name="register-tenants-for-usage-tracking-in-azure-stack-hub"></a>Регистрация клиентов для отслеживания использования в Azure Stack Hub
 
@@ -33,7 +25,7 @@ ms.locfileid: "75882578"
 
 Вы можете использовать эту операцию, чтобы добавить новый клиент в регистрацию. Данные об использовании клиента передаются в подписку Azure, связанную с клиентом Azure Active Directory (Azure AD).
 
-Кроме того, эта операция позволяет изменить подписку, связанную с клиентом. Вызовите PUT или **New-AzureRMResource**, чтобы перезаписать предыдущее сопоставление.
+Кроме того, эта операция позволяет изменить подписку, связанную с клиентом. Вызовите PUT или командлет PowerShell **New-AzureRMResource**, чтобы перезаписать предыдущее сопоставление.
 
 Вы можете связать одну подписку Azure с клиентом. При попытке добавить вторую подписку в существующий клиент первая подписка перезаписывается.
 
@@ -45,7 +37,7 @@ ms.locfileid: "75882578"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр                  | Description |
+| Параметр                  | Описание |
 |---                         | --- |
 | registrationSubscriptionID | Подписка Azure, которая использовалась для первоначальной регистрации. |
 | customerSubscriptionID     | Подписка Azure (не Azure Stack Hub), принадлежащая клиенту, для которого выполняется регистрация. Ее нужно создать в предложении поставщика облачных решений через Центр партнеров. Если у пользователя имеется несколько клиентов, подписку нужно создать в клиенте, который будет использоваться для входа в Azure Stack Hub. |
@@ -79,7 +71,7 @@ New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/reso
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр                  | Description          |
+| Параметр                  | Описание          |
 |---                         | ---                  |
 | registrationSubscriptionId | Подписка Azure, которая использовалась для первоначальной регистрации.   |
 | resourceGroup              | Группа ресурсов Azure, в которой хранятся данные об этой регистрации.    |
@@ -127,7 +119,7 @@ Get-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/reso
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр                  | Description          |
+| Параметр                  | Описание          |
 |---                         | ---                  |
 | registrationSubscriptionId | Идентификатор подписки для регистрации.   |
 | resourceGroup              | Группа ресурсов для регистрации.   |

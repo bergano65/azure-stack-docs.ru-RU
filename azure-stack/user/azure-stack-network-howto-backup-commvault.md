@@ -1,20 +1,18 @@
 ---
-title: Резервное копирование виртуальной машины в Azure Stack Hub с помощью Commvault | Документация Майкрософт
+title: Как выполнять резервное копирование виртуальной машины в Azure Stack Hub с помощью Commvault
 description: Узнайте как выполнять резервное копирование виртуальной машины в Azure Stack Hub с помощью Commvault.
-services: azure-stack
 author: mattbriggs
-ms.service: azure-stack
 ms.topic: how-to
 ms.date: 10/30/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 10/30/2019
-ms.openlocfilehash: b2e9871d48352d2e6a5f6d312a4d98cc3ace37ce
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: aa4e5d10534f2ffe4c9b6cc948fcb7968213aab0
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75878702"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884656"
 ---
 # <a name="back-up-your-vm-on-azure-stack-hub-with-commvault"></a>Резервное копирование виртуальной машины в Azure Stack Hub с помощью Commvault
 
@@ -71,7 +69,7 @@ ms.locfileid: "75878702"
     
     h. Выберите **расположение** Azure Stack Hub. Если вы используете ASDK, выберите **локальный**.
     
-    i. Нажмите кнопку **ОК**.
+    i. Щелкните **ОК**.
 
     ![](./media/azure-stack-network-howto-backup-commvault/commvault-create-vm-02.png)
 
@@ -103,15 +101,15 @@ ms.locfileid: "75878702"
     
     k. Оставьте **учетную запись для хранения диагностических данных** по умолчанию.
     
-    l. Нажмите кнопку **ОК**.
+    l. Щелкните **ОК**.
 
-6. Проверьте сводку виртуальной машины Commvault после выполнения проверки. Нажмите кнопку **ОК**.
+6. Проверьте сводку виртуальной машины Commvault после выполнения проверки. Щелкните **ОК**.
 
 ## <a name="get-your-service-principal"></a>Получение субъекта-службы
 
 Необходимо знать, является ли ваш менеджер идентификатора Azure AD или AD DFS. В следующей таблице содержатся сведения, необходимые для настройки Commvault в Azure Stack Hub.
 
-| Элемент | Description | Источник |
+| Элемент | Описание | Источник |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | URL-адрес Azure Resource Manager | Конечная точка Resource Manager для Azure Stack Hub. | https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles-ruby?view=azs-1908#the-azure-stack-hub-resource-manager-endpoint |
 | имя приложения; |  |  |

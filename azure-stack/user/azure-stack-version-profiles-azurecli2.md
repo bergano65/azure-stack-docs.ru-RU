@@ -1,25 +1,18 @@
 ---
-title: Управление Azure Stack Hub с помощью Azure CLI | Документация Майкрософт
+title: Управление Azure Stack Hub с помощью Azure CLI
 description: Узнайте, как развертывать и администрировать ресурсы в Azure Stack Hub с помощью кроссплатформенного интерфейса командной строки (CLI).
-services: azure-stack
-documentationcenter: ''
 author: mattbriggs
-manager: femila
-ms.service: azure-stack
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 12/10/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/10/2019
-ms.openlocfilehash: d35e254a17c1b79347e7d13f866e1163bf049a08
-ms.sourcegitcommit: d450dcf5ab9e2b22b8145319dca7098065af563b
+ms.openlocfilehash: 72f0e04d03a4304c4ed74f54dcd96f16e247f2a3
+ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883377"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76884258"
 ---
 # <a name="manage-and-deploy-resources-to-azure-stack-hub-with-azure-cli"></a>Развертывание и администрирование ресурсов в Azure Stack Hub с помощью Azure CLI
 
@@ -163,7 +156,7 @@ ms.locfileid: "75883377"
 
 2. Зарегистрируйте среду. При выполнении команды `az cloud register` используйте следующие параметры:
 
-    | Значение | Пример | Description |
+    | Значение | Пример | Описание |
     | --- | --- | --- |
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
     | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
@@ -276,7 +269,7 @@ az group create -n MyResourceGroup -l local
 
 2. Зарегистрируйте среду. При выполнении команды `az cloud register` используйте следующие параметры:
 
-    | Значение | Пример | Description |
+    | Значение | Пример | Описание |
     | --- | --- | --- |
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
     | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
@@ -387,7 +380,7 @@ az group create -n MyResourceGroup -l local
 
 2. Зарегистрируйте среду. При выполнении команды `az cloud register` используйте следующие параметры:
 
-    | Значение | Пример | Description |
+    | Значение | Пример | Описание |
     | --- | --- | --- |
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
     | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
@@ -493,7 +486,7 @@ az group create -n MyResourceGroup -l local
 
 2. Зарегистрируйте среду. При выполнении команды `az cloud register` используйте следующие параметры.
 
-    | Значение | Пример | Description |
+    | Значение | Пример | Описание |
     | --- | --- | --- |
     | Имя среды | AzureStackUser | Используйте `AzureStackUser` для среды пользователя. Если вы оператор, укажите `AzureStackAdmin`. |
     | Конечная точка Resource Manager | https://management.local.azurestack.external | **ResourceManagerUrl** в ASDK имеет следующее значение: `https://management.local.azurestack.external/`. **ResourceManagerUrl** в интегрированных системах: `https://management.<region>.<fqdn>/`. Если у вас есть вопрос о конечной точке интегрированной системы, обратитесь к оператору облака. |
