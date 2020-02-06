@@ -7,12 +7,12 @@ ms.date: 09/23/2019
 ms.author: mabrigg
 ms.lastreviewed: 09/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: b944e598080df3551764c7978ab205a9fffd666b
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 927877867b0ec8cb2601b50e7f084f86964a5342
+ms.sourcegitcommit: 74ce7c12a93d47315d70427b02bcacbd3b44f854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882642"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77037222"
 ---
 # <a name="best-practices-for-troubleshooting-azure-stack-hub-patch-and-update-issues"></a>Рекомендации по устранению неполадок с исправлением и обновлением в Azure Stack Hub
 
@@ -23,7 +23,7 @@ ms.locfileid: "76882642"
 
 0. **Предварительные требования**: Убедитесь, что вы выполнили [контрольный список действий по обновлению](release-notes-checklist.md) и [настроили автоматический сбор журналов](azure-stack-configure-automatic-diagnostic-log-collection.md).
 1. Следуйте инструкциям по исправлению, которые будут включены в оповещение об ошибке, которая произошла при обновлении.
-2. Изучите [распространенные проблемы с исправлением и обновлением в Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-updates-troubleshoot#Common-azure-stack-hub-patch-and-update-issues) и выполните рекомендуемые действия, если ваша проблема описана.
+2. Изучите [распространенные проблемы с исправлением и обновлением в Azure Stack Hub](#common-azure-stack-hub-patch-and-update-issues) и выполните рекомендуемые действия, если ваша проблема описана.
 3. Если указанные действия не помогают решить проблему, создайте [запрос в службу поддержки Azure Stack Hub](azure-stack-help-and-support-overview.md). Убедитесь, что у вас есть [собранные журналы](https://docs.microsoft.com/azure-stack/operator/azure-stack-configure-on-demand-diagnostic-log-collection) за тот период времени, в который возникла проблема.
 
 ## <a name="common-azure-stack-hub-patch-and-update-issues"></a>Типичные проблемы с исправлением и обновлением в Azure Stack Hub

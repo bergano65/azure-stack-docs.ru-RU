@@ -7,16 +7,16 @@ ms.date: 10/23/2019
 ms.author: inhenkel
 ms.reviewer: wamota
 ms.lastreviewed: 06/04/2019
-ms.openlocfilehash: 42529e5757100ed2ad1334b62bf4e58e1266f561
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: cd1e5e66b5cdb893591fc4116b335ff399ace736
+ms.sourcegitcommit: bcd2c6cd08526723f4b770b149c5e9a4fd5ef0ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881701"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76922633"
 ---
 # <a name="network-integration-planning-for-azure-stack-hub"></a>Планирование интеграции сети для Azure Stack Hub
 
-В этой статье приводятся сведения об инфраструктуре сети Azure Stack Hub, которые помогут решить, как лучше всего интегрировать Azure Stack Hub с существующей сетевой средой. 
+В этой статье приводятся сведения об инфраструктуре сети Azure Stack Hub, которые помогут решить, как лучше всего интегрировать Azure Stack Hub с существующей сетевой средой.
 
 > [!NOTE]
 > Чтобы разрешать внешние имена DNS (например, www\.bing.com) из Azure Stack Hub, необходимо предоставить DNS-серверы для переадресации DNS-запросов. Дополнительные сведения о требованиях к DNS для Azure Stack Hub см. в статье [Интеграция DNS центра обработки данных Azure Stack](azure-stack-integrate-dns.md).

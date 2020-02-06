@@ -8,12 +8,12 @@ ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/06/2019
-ms.openlocfilehash: 5171b52bc3c85dd5dbcc2c83cf307274ef92d558
-ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
+ms.openlocfilehash: c590aed504df1549e3c4a43ae282a304e579195a
+ms.sourcegitcommit: 74ce7c12a93d47315d70427b02bcacbd3b44f854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76890210"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77037205"
 ---
 # <a name="guest-operating-systems-supported-on-azure-stack-hub"></a>Поддерживаемые гостевые операционные системы для Azure Stack Hub
 
@@ -33,7 +33,7 @@ Azure Stack Hub поддерживает гостевые операционны
 | Windows 10 *(см. примечание 1)* | 64-разрядная версия, Pro и Корпоративная | Использование собственного образа |
 
 > [!NOTE]
-> Чтобы развернуть клиентские операционные системы Windows 10 в Azure Stack Hub требуются [лицензии Windows для каждого пользователя](https://www.microsoft.com/licensing/product-licensing/windows10.aspx). Лицензии также можно приобрести у уполномоченного поставщика услуг мультитенантного размещения ([QMTH](https://www.microsoft.com/CloudandHosting/licensing_sca.aspx)).
+> Чтобы развернуть клиентские операционные системы Windows 10 в Azure Stack Hub требуются [лицензии Windows для каждого пользователя](https://www.microsoft.com/licensing/product-licensing/windows10.aspx). Лицензии также можно приобрести у уполномоченного поставщика услуг мультитенантного размещения ([QMTH](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx)).
 
 Образы из Marketplace доступны для лицензирования по схеме "оплата по мере использования" или BYOL (EA или SPLA). Использование обеих схем в одном экземпляре Azure Stack Hub не поддерживается. Во время развертывания Azure Stack Hub внедряет в образ подходящую версию гостевого агента.
 
