@@ -8,12 +8,12 @@ ms.date: 11/05/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: bacffec0b3bda76eab27097c2d090df371d51fcf
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: f5c223e08207518bde315725fd69ddb3fb97a578
+ms.sourcegitcommit: 74ce7c12a93d47315d70427b02bcacbd3b44f854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76880851"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77037273"
 ---
 # <a name="troubleshoot-issues-in-azure-stack-hub"></a>Устранение неполадок в Azure Stack Hub
 
@@ -114,7 +114,7 @@ ms.locfileid: "76880851"
 
 ### <a name="azure-storage-explorer-not-working-with-azure-stack-hub"></a>Обозреватель службы хранилища Azure не работает с Azure Stack Hub
 
-При работе с интегрированной системой в сценарии без подключения рекомендуется использовать центр сертификации (ЦС) предприятия. Экспортируйте корневой сертификат в формате Base-64, а затем импортируйте его в Обозреватель службы хранилища Azure. Обязательно удалите косую черту (`/`) в конце конечной точки Resource Manager. Дополнительные сведения см. в разделе [Подготовка к подключению к Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-storage-connect-se#prepare-for-connecting-to-azure-stack).
+При работе с интегрированной системой в сценарии без подключения рекомендуется использовать центр сертификации (ЦС) предприятия. Экспортируйте корневой сертификат в формате Base-64, а затем импортируйте его в Обозреватель службы хранилища Azure. Обязательно удалите косую черту (`/`) в конце конечной точки Resource Manager. Дополнительные сведения см. в разделе [Подготовка к подключению к Azure Stack Hub](/azure-stack/user/azure-stack-storage-connect-se).
 
 ## <a name="troubleshooting-app-service"></a>Устранение неполадок в Службе приложений
 
