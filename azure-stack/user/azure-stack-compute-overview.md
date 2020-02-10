@@ -3,16 +3,16 @@ title: Общие сведения о виртуальных машинах Azur
 description: Из этой статьи вы узнаете о виртуальных машинах Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 01/22/2020
+ms.date: 02/03/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/05/2019
-ms.openlocfilehash: c961716a64d3ccc4efcbf2eb36091e611db39be9
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: abb5e6d50b9ec99366578fd84e2d720fb52722a3
+ms.sourcegitcommit: 4178443d84cf6d3fbaba11425beff703568c1a2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883945"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977909"
 ---
 # <a name="introduction-to-azure-stack-hub-vms"></a>Общие сведения о виртуальных машинах Azure Stack Hub
 
@@ -57,7 +57,7 @@ Azure Stack Hub предлагает виртуальные машины как 
 
 ### <a name="operating-system-disks-and-images"></a>Диски и образы операционной системы
 
-Для хранения операционной системы и данных виртуальные машины используют виртуальные жесткие диски. Они также используются для образов, которые доступны для установки операционной системы. Azure Stack Hub предоставляет образы Marketplace различных версий и типов операционных систем. Образы из Marketplace определяются по издателю, предложению, SKU и версии (актуальная версия обычно указывается **последней**).
+Для виртуальных машин в Azure Stack Hub можно использовать только виртуальный жесткий диск (VHD/VHDX) 1-го поколения. Виртуальные жесткие диски можно использовать для хранения операционной системы компьютера (ОС) и данных. Они также используются для образов, которые доступны для установки операционной системы. Azure Stack Hub предоставляет образы Marketplace различных версий и типов операционных систем. Образы из Marketplace определяются по издателю, предложению, SKU и версии (актуальная версия обычно указывается **последней**).
 
 В таблице ниже указано, как найти сведения об образе.
 

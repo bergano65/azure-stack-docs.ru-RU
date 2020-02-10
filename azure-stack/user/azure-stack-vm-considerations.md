@@ -3,16 +3,16 @@ title: Возможности виртуальных машин Azure Stack Hub
 description: Узнайте о возможностях виртуальных машин и рекомендациях по работе с ними в Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 1/22/2020
+ms.date: 2/3/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/09/2019
-ms.openlocfilehash: 94889f2d5d1223d1f5c1da1eaf5289f968cc5efa
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 76ecac957ab7680032c31cd46db4b717a2f029e5
+ms.sourcegitcommit: 4178443d84cf6d3fbaba11425beff703568c1a2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883029"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977892"
 ---
 # <a name="azure-stack-hub-vm-features"></a>Возможности виртуальных машин Azure Stack Hub
 
@@ -23,6 +23,7 @@ ms.locfileid: "76883029"
 | Компонент | Azure (глобальная) | Azure Stack Hub |
 | --- | --- | --- |
 | Образы виртуальных машин | Azure Marketplace содержит образы, на основе которых можно создать виртуальную машину. На странице [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/compute?subcategories=virtual-machine-images&page=1) представлен список образов, доступных в Azure Marketplace. | По умолчанию Azure Stack Hub Marketplace не содержит образов. Чтобы пользователи могли использовать образы, администратору облака Azure Stack Hub нужно опубликовать или скачать их в Azure Stack Hub Marketplace. |
+| Поколение VHD | Виртуальные машины 2-го поколения поддерживают ключевые функции, которые не поддерживаются в 1-м поколении. Эти функции включают увеличенную память, Intel Software Guard Extensions и виртуализированную постоянную память (vPMEM). Виртуальные машины 2-го поколения, работающие в локальной среде, поддерживают некоторые функции, которые еще не поддерживаются в Azure. См. сведения о [поддержке виртуальных машин 2-го поколения в Azure.](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2)  | В Azure Stack Hub поддерживается только виртуальные машины 1-го поколения. Виртуальную машину 1-го поколения можно преобразовать из формата VHDX в формат VHD, а также переключить с динамически расширяемого диска на диск фиксированного размера. Вы не можете изменить поколение виртуальной машины. См. сведения о [поддержке 2-го поколения виртуальных машин в Azure.](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) |
 | Размер виртуальных машин | Azure поддерживает разные размеры виртуальных машин. См. дополнительные сведения о размерах виртуальных машин [Windows](/azure/virtual-machines/virtual-machines-windows-sizes) и [Linux](/azure/virtual-machines/linux/sizes). | Azure Stack Hub поддерживает различные размеры виртуальных машин, доступных в Azure. См. [список поддерживаемых размеров виртуальных машин](#vm-sizes), приведенный в этой статье. |
 | Квоты для виртуальных машин | [Ограничения квот](/azure/azure-subscription-service-limits#service-specific-limits) устанавливаются корпорацией Майкрософт. | Администратору облака Azure Stack Hub нужно назначить квоты, прежде чем предлагать виртуальные машины пользователям. |
 | Расширения виртуальных машин |Azure поддерживает разные расширения виртуальных машин. См. дополнительные сведения о [расширениях и компонентах виртуальных машин](/azure/virtual-machines/windows/extensions-features).| Azure Stack Hub поддерживает различные расширения, доступные в Azure, каждое из которых представлено в конкретных версиях. Администратор облака Azure Stack Hub может выбрать, какие расширения будут доступны его пользователям. См. список поддерживаемых расширений в разделе [Расширения виртуальных машин](#vm-extensions) в этой статье. |

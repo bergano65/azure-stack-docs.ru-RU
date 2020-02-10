@@ -1,29 +1,32 @@
 ---
-title: Проверка сертификатов инфраструктуры открытых ключей Azure Stack Hub для развертывания интегрированных систем Azure Stack Hub
-description: Сведения о проверке сертификатов PKI Azure Stack Hub для интегрированных систем Azure Stack Hub. В этой статье описывается использование средства проверки сертификатов Azure Stack Hub.
+title: Проверка сертификатов PKI Azure Stack Hub
+titleSuffix: Azure Stack Hub
+description: Узнайте, как проверить сертификаты PKI для интегрированных систем Azure Stack Hub с помощью средства проверки готовности Azure Stack Hub.
+services: azure-stack
+documentationcenter: ''
 author: ihenkel
 ms.topic: article
 ms.date: 07/23/2019
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: 8ade18f01f9d0636e3a5903307ee9513c44470f7
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 4ec3732df372e0b768b3f52c082cae5db932a36c
+ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882602"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76972544"
 ---
 # <a name="validate-azure-stack-hub-pki-certificates"></a>Проверка сертификатов PKI Azure Stack Hub
 
-Инструмент проверки готовности Azure Stack Hub, описанный в этой статье, доступен в [коллекции PowerShell](https://aka.ms/AzsReadinessChecker). Вы можете использовать этот инструмент, чтобы проверить, что [сгенерированные сертификаты PKI](azure-stack-get-pki-certs.md) подходят для предварительного развертывания. Проверьте сертификаты, оставив достаточно времени для проверки и повторной выдачи сертификатов при необходимости.
+Инструмент проверки готовности Azure Stack Hub, описанный в этой статье, доступен в [коллекции PowerShell](https://aka.ms/AzsReadinessChecker). С помощью этого средства вы можете проверить, подходят ли [сгенерированные сертификаты инфраструктуры открытых ключей (PKI)](azure-stack-get-pki-certs.md) для предварительного развертывания. Проверьте сертификаты, оставив достаточно времени для проверки и повторной выдачи сертификатов при необходимости.
 
 Средство проверки готовности выполняет следующие проверки сертификата:
 
 - **Анализ PFX**  
-    Проверяет наличие допустимого PFX-файла, правильность пароля и наличие защиты паролем для общедоступной информации. 
+    Проверяет наличие допустимого PFX-файла, правильность пароля и наличие защиты паролем для общедоступной информации.
 - **Дата окончания срока действия**  
-    Проверяет наличие минимального срока действия в 7 дней. 
+    Проверяет наличие минимального срока действия в семь дней.
 - **Алгоритм подписи**.  
     Проверяет, не используется ли алгоритм подписи SHA1.
 - **Закрытый ключ**.  
@@ -33,7 +36,7 @@ ms.locfileid: "76882602"
 - **DNS-имена**.  
     Проверяет, имеются ли в сети хранения данных соответствующие DNS-имена для каждой конечной точки или присутствует ли вспомогательный подстановочный знак.
 - **Использование ключа**.  
-    Проверяет, применяется ли цифровая подпись и шифрование при использовании ключа, а при расширенном использовании ключа проверяется аутентификация сервера и клиента.
+    Проверяет, применяется ли цифровая подпись и шифрование при использовании ключа, а при расширенном использовании ключа также проверяет выполнение аутентификации сервера и клиента.
 - **Размер ключа**.  
     Проверяет, достигает ли размер ключа значения 2048.
 - **Порядок в цепочке**.  
@@ -48,16 +51,16 @@ ms.locfileid: "76882602"
 
 Прежде чем начать проверку сертификатов PKI для развертывания Azure Stack Hub, необходимо убедиться, что в системе присутствуют следующие компоненты и установлена нужная ОС.
 
-- Инструмент проверки готовности Microsoft Azure Stack Hub
+- Средство проверки готовности Microsoft Azure Stack Hub.
 - Сертификаты SSL, экспортированные в соответствии с [инструкциями по подготовке](azure-stack-prepare-pki-certs.md).
-- Файл DeploymentData.json.
-- Windows 10 или Windows Server 2016;
+- DeploymentData.json.
+- Windows 10 или Windows Server 2016.
 
 ## <a name="perform-core-services-certificate-validation"></a>Выполнение проверки сертификата основных служб
 
 Чтобы подготовить и проверить сертификаты PKI Azure Stack Hub для развертывания и смены секретов, выполните следующие действия:
 
-1. Установите **AzsReadinessChecker** из командной строки PowerShell (версии 5.1 или более поздней), выполнив следующий командлет:
+1. Установите **AzsReadinessChecker** с помощью командной строки PowerShell (версии 5.1 и выше), выполнив следующий командлет:
 
     ```powershell  
         Install-Module Microsoft.AzureStack.ReadinessChecker -force 
@@ -75,7 +78,7 @@ ms.locfileid: "76882602"
     ```
     
     > [!Note]  
-    > Службы федерации Active Directory (AD FS) и Graph необходимы, если вы используете AD FS как свою систему идентификации. Пример:
+    > AD FS и Graph требуются, если вы используете AD FS как свою систему идентификации. Пример:
     >
     > ```powershell  
     > $directories = 'ACSBlob', 'ACSQueue', 'ACSTable', 'ADFS', 'Admin Extension Host', 'Admin Portal', 'ARM Admin', 'ARM Public', 'Graph', 'KeyVault', 'KeyVaultInternal', 'Public Extension Host', 'Public Portal'
@@ -86,7 +89,7 @@ ms.locfileid: "76882602"
         - `C:\Certificates\Deployment\Admin Portal\CustomerCertificate.pfx`
         - `C:\Certificates\Deployment\ARM Admin\CustomerCertificate.pfx`
 
-3. В окне PowerShell измените значения **RegionName** и **FQDN** в соответствии со средой Azure Stack Hub и выполните команду ниже:
+3. В окне PowerShell измените значения `RegionName` и `FQDN` в соответствии с используемой средой Azure Stack Hub и выполните следующий командлет:
 
     ```powershell  
     $pfxPassword = Read-Host -Prompt "Enter PFX Password" -AsSecureString 
@@ -140,7 +143,7 @@ ms.locfileid: "76882602"
     Invoke-AzsCertificateValidation Completed
     ```
 
-    Чтобы проверить сертификаты для других служб Azure Stack Hub, измените значение ```-CertificateType```. Пример:
+    Чтобы проверить сертификаты для других служб Azure Stack Hub, измените значение для ```-CertificateType```. Пример:
 
     ```powershell  
     # App Services
@@ -155,7 +158,7 @@ ms.locfileid: "76882602"
     # IoTHub
     Invoke-AzsCertificateValidation -CertificateType IoTHub -CertificatePath C:\Certificates\IoTHub -pfxPassword $pfxPassword -RegionName east -FQDN azurestack.contoso.com
     ```
-Каждая папка должна содержать один PFX-файл для каждого типа сертификата. Если тип сертификата поддерживает несколько сертификатов, то нужны вложенные папки для каждого отдельного сертификата с учетом имени.  В следующем примере кода показана структура папок и сертификатов для всех типов сертификатов, а также соответствующее значение для ```-CertificateType``` и ```-CertificatePath```.
+    Каждая папка должна содержать один PFX-файл для каждого типа сертификата. Если тип сертификата поддерживает несколько сертификатов, требуются вложенные папки для каждого отдельного сертификата с учетом имени. В следующем примере кода показана структура папок и сертификатов для всех типов сертификатов, а также соответствующее значение для ```-CertificateType``` и ```-CertificatePath```.
     
     ```powershell  
     C:\>tree c:\SecretStore /A /F
@@ -200,6 +203,7 @@ ms.locfileid: "76882602"
                         iothub.pfx      #   -CertificateType IoTHub `
                                         #   -CertificatePath C:\Certificates\IoTHub
     ```
+
 ### <a name="known-issues"></a>Известные проблемы
 
 **Признак**. Проверки пропускаются.
@@ -234,21 +238,21 @@ ms.locfileid: "76882602"
 
 | Каталог | Сертификат |
 | ---    | ----        |
-| acsBlob | wildcard_blob_\<регион>_\<внешнее_полное_доменное_имя> |
-| ACSQueue  |  wildcard_queue_\<регион>_\<внешнее_полное_доменное_имя> |
-| ACSTable  |  wildcard_table_\<регион>_\<внешнее_полное_доменное_имя> |
-| Хост-процесс для расширений администратора  |  wildcard_adminhosting_\<регион>_\<внешнее_полное_доменное_имя> |
-| Портал администрирования  |  adminportal_\<регион>_\<внешнее_полное_доменное_имя> |
-| ARM Admin  |  adminmanagement_\<регион>_\<внешнее_полное_доменное_имя> |
-| ARM Public  |  management_\<регион>_\<внешнее_полное_доменное_имя> |
-| Хранилище ключей  |  wildcard_vault_\<регион>_\<внешнее_полное_доменное_имя> |
-| Внутреннее хранилище Key Vault  |  wildcard_adminvault_\<регион>_\<внешнее_полное_доменное_имя> |
-| Общедоступный хост-процесс для расширений  |  wildcard_hosting_\<регион>_\<внешнее_полное_доменное_имя> |
-| Общедоступный портал  |  portal_\<регион>_\<внешнее_полное_доменное_имя> |
+| acsBlob | `wildcard_blob_<region>_<externalFQDN>` |
+| ACSQueue  |  `wildcard_queue_<region>_<externalFQDN>` |
+| ACSTable  |  `wildcard_table_<region>_<externalFQDN>` |
+| Хост-процесс для расширений администратора  |  `wildcard_adminhosting_<region>_<externalFQDN>` |
+| Портал администрирования  |  `adminportal_<region>_<externalFQDN>` |
+| ARM Admin  |  `adminmanagement_<region>_<externalFQDN>` |
+| ARM Public  |  `management_<region>_<externalFQDN>` |
+| Хранилище ключей  |  `wildcard_vault_<region>_<externalFQDN>` |
+| Внутреннее хранилище Key Vault  |  `wildcard_adminvault_<region>_<externalFQDN>` |
+| Общедоступный хост-процесс для расширений  |  `wildcard_hosting_<region>_<externalFQDN>` |
+| Общедоступный портал  |  `portal_<region>_<externalFQDN>` |
 
 ## <a name="using-validated-certificates"></a>Использование проверенных сертификатов
 
-Как только ваши сертификаты будут проверены с помощью AzsReadinessChecker, их можно использовать в развертывании Azure Stack Hub или для смены секретов Azure Stack Hub. 
+Как только ваши сертификаты будут проверены с помощью AzsReadinessChecker, их можно использовать в развертывании Azure Stack Hub или для смены секретов Azure Stack Hub.
 
  - В целях развертывания безопасно передайте свои сертификаты специалистам по развертыванию, чтобы они могли скопировать их на узел развертывания, как указано в [документации по требованиям PKI для Azure Stack Hub](azure-stack-pki-certs.md).
  - В целях смены секретов вы можете использовать сертификаты, чтобы обновить старые сертификаты для общедоступных конечных точек инфраструктуры среды Azure Stack Hub, следуя инструкциям, приведенным в [документации по смене секретов в Azure Stack Hub](azure-stack-rotate-secrets.md).

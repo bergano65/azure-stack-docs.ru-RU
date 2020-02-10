@@ -3,16 +3,16 @@ title: Заметки о выпуске Azure Stack Hub
 description: Заметки о выпуске для интегрированных систем Azure Stack Hub, включая обновления и исправления ошибок.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/16/2020
+ms.date: 02/03/2020
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 11/22/2019
-ms.openlocfilehash: 9f2dee0503f5b3210fa8bb8e81f23c326b3b360b
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 40c727c97035b0f843ce84b0eafad47c77560938
+ms.sourcegitcommit: 3974fc544986a5eccfac0ba7c4441b05279ae226
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885148"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001647"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Заметки о выпуске Azure Stack Hub
 
@@ -200,7 +200,7 @@ ms.locfileid: "76885148"
 Выпуск Azure Stack Hub 1910 должен устанавливаться поверх выпуска 1908 со следующими установленными исправлениями:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Исправление 1.1908.11.47 для Azure Stack Hub](https://support.microsoft.com/help/4535000).
+- [Исправление 1.1908.14.53 для Azure Stack Hub](https://support.microsoft.com/help/4537661)
 
 ### <a name="after-successfully-applying-the-1910-update"></a>После успешного применения обновления 1910
 
@@ -284,7 +284,7 @@ ms.locfileid: "76885148"
 После установки этого обновления установите все применимые исправления. Подробные сведения см. в статье [Политика обслуживания Azure Stack](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Исправление 1.1908.11.47 для Azure Stack Hub](https://support.microsoft.com/help/4535000).
+- [Исправление 1.1908.14.53 для Azure Stack Hub](https://support.microsoft.com/help/4537661)
 ::: moniker-end
 
 ::: moniker range="azs-1907"

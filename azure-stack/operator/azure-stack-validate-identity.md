@@ -1,5 +1,6 @@
 ---
-title: Проверка удостоверений Azure для Azure Stack Hub
+title: Проверка удостоверения Azure
+titleSuffix: Azure Stack Hub
 description: Проверки удостоверений Azure с помощью средства проверки готовности Azure Stack Hub.
 author: ihenkel
 ms.topic: conceptual
@@ -7,12 +8,12 @@ ms.date: 06/24/2019
 ms.author: inhenkel
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: a6646f6c96faa15dd8ddd2ada24ef1eafe4d94f5
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 5c20e951e2a34c800611c8417d3b8504ed84c346
+ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882607"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76972472"
 ---
 # <a name="validate-azure-identity"></a>Проверка удостоверения Azure
 
@@ -20,8 +21,8 @@ ms.locfileid: "76882607"
 
 Средство проверки готовности позволяет определить:
 
-- является ли Azure Active Directory (Azure AD) поставщиком удостоверений для Azure Stack Hub;
-- предоставляет ли учетная запись Azure AD, которую вы намерены использовать, права глобального администратора в службе Azure Active Directory.
+- является ли Azure AD поставщиком удостоверений для Azure Stack Hub;
+- предоставляет ли учетная запись Azure AD, которую вы хотите использовать, права глобального администратора в Azure AD.
 
 Проверка гарантирует, что настроенное окружение обеспечивает все необходимое для того, чтобы инфраструктура Azure Stack Hub сохраняла в Azure AD сведения о пользователях, приложениях, группах и субъектах-службах.
 
@@ -35,20 +36,18 @@ ms.locfileid: "76882607"
 
 **Компьютер, на котором запускается это средство:**
 
-- Необходимо установить Windows 10 или Windows Server 2016 и обеспечить подключение к Интернету.
+- Необходимо установить Windows 10 или Windows Server 2016 и обеспечить подключение к Интернету.
 - Необходимо установить PowerShell 5.1 или более поздней версии. Чтобы проверить используемую версию, выполните приведенную ниже команду PowerShell и проверьте значения **Major** (основной номер версии) и **Minor** (дополнительный номер версии).  
-
   ```powershell
   $PSVersionTable.PSVersion
   ```
-
 - [Среда PowerShell, настроенная для Azure Stack Hub](azure-stack-powershell-install.md).
 - Необходимо установить последнюю версию средства [проверки готовности Microsoft Azure Stack Hub](https://aka.ms/AzsReadinessChecker).
 
-**В среде Azure Active Directory:**
+**Среда Azure AD.**
 
-- Определите учетную запись Azure AD, которую вы намерены использовать для Azure Stack Hub, и убедитесь, что она предоставляет права глобального администратора Azure Active Directory.
-- Определите имя клиента Azure AD. Это имя должно совпадать с основным доменным именем в Azure Active Directory (например, **contoso.onmicrosoft.com**).
+- Определите учетную запись Azure AD, которую вы хотите использовать для Azure Stack Hub, и убедитесь, что она предоставляет права глобального администратора Azure AD.
+- Определите имя клиента Azure AD. Это имя должно совпадать с основным доменным именем в Azure AD. Например, **contoso.onmicrosoft.com**.
 - Укажите среду Azure, которая будет использоваться. Поддерживаемые значения для параметра имени среды: **AzureCloud**, **AzureChinaCloud** или **AzureUSGovernment** (в зависимости от используемой подписки Azure).
 
 ## <a name="steps-to-validate-azure-identity"></a>Действия по проверке удостоверения Azure
@@ -59,7 +58,7 @@ ms.locfileid: "76882607"
    Install-Module Microsoft.AzureStack.ReadinessChecker -Force
    ```
 
-2. В командной строке PowerShell выполните приведенную ниже команду, чтобы назначить **$serviceAdminCredential** администратором службы для клиента Azure AD.  Укажите вместо **serviceadmin\@contoso.onmicrosoft.com** свою учетную запись и имя клиента.
+2. В командной строке PowerShell выполните следующую команду, чтобы назначить `$serviceAdminCredential` администратором службы для клиента Azure AD.  Замените `serviceadmin\@contoso.onmicrosoft.com` именами учетной записи и клиента:
 
    ```powershell
    $serviceAdminCredential = Get-Credential serviceadmin@contoso.onmicrosoft.com -Message "Enter credentials for service administrator of Azure Active Directory tenant"
@@ -68,7 +67,7 @@ ms.locfileid: "76882607"
 3. В командной строке PowerShell выполните приведенную ниже команду, чтобы начать проверку Azure AD.
 
    - Укажите значение имени среды в параметре **AzureEnvironment**. Поддерживаемые значения для параметра имени среды: **AzureCloud**, **AzureChinaCloud** или **AzureUSGovernment** (в зависимости от используемой подписки Azure).
-   - Укажите имя клиента Azure Active Directory вместо **contoso.onmicrosoft.com**.
+   - Замените `contoso.onmicrosoft.com` именем своего клиента Azure AD.
 
    ```powershell
    Invoke-AzsAzureIdentityValidation -AADServiceAdministrator $serviceAdminCredential -AzureEnvironment <environment name> -AADDirectoryTenantName contoso.onmicrosoft.com
@@ -95,10 +94,10 @@ ms.locfileid: "76882607"
 
 Эти файлы помогут передать сведения о состоянии проверки другим заинтересованным лицам перед развертыванием Azure Stack Hub или для исследования проблем, обнаруженных при проверке. В обоих файлах сохраняются результаты каждой очередной проверки. В отчете содержатся подтверждения команды развертывания по конфигурации удостоверений. Файл журнала поможет командам развертывания или поддержки диагностировать проблемы с проверкой.
 
-По умолчанию оба файла сохраняются в расположении **C:\Users\<имя_пользователя>\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
+По умолчанию оба файла записываются в `C:\Users\<username>\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json`.  
 
-- Чтобы задать другое расположение отчетов, при запуске проверки можно указать в конце командной строки параметр **-OutputPath** ***&lt;путь&gt;***.
-- Укажите параметр **-CleanReport** в конце команды, чтобы удалить из файла **AzsReadinessCheckerReport.json** сведения о предыдущих запусках средства.
+- Используйте параметр `-OutputPath <path>` в конце командной строки, чтобы задать другое расположение для отчетов.
+- Используйте параметр `-CleanReport` в конце команды, чтобы удалить из файла **AzsReadinessCheckerReport.json** сведения о предыдущих запусках средства.
 
 Дополнительные сведения об отчетах проверки Azure Stack Hub можно найти [здесь](azure-stack-validation-report.md).
 
@@ -128,7 +127,7 @@ Invoke-AzsAzureIdentityValidation Completed
 
 **Причина.** Вход с помощью этой учетной записи невозможен, так как истек срок действия пароля или используется временный пароль.
 
-**Решение.** Выполните в PowerShell приведенную ниже команду и следуйте инструкциям на экране, чтобы сбросить пароль.
+**Решение.** Выполните в PowerShell следующую команду и следуйте инструкциям на экране, чтобы сбросить пароль.
 
 ```powershell
 Login-AzureRMAccount
@@ -154,7 +153,7 @@ Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadines
 Invoke-AzsAzureIdentityValidation Completed
 ```
 
-**Причина.** Вход в указанный каталог Azure Active Directory (**AADDirectoryTenantName**) с помощью этой учетной записи невозможен. В нашем примере параметр **AzureChinaCloud** имеет значение **AzureEnvironment**.
+**Причина.** Вход в указанный каталог Azure AD (**AADDirectoryTenantName**) с помощью этой учетной записи невозможен. В нашем примере параметр **AzureChinaCloud** имеет значение **AzureEnvironment**.
 
 **Решение.** Убедитесь, что эта учетная запись существует в указанной среде Azure. Выполните в PowerShell следующую команду, чтобы проверить допустимость учетной записи для указанной среды:
 
@@ -180,9 +179,9 @@ Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadines
 Invoke-AzsAzureIdentityValidation Completed
 ```
 
-**Причина.** Учетная запись позволяет успешно войти в систему, но не предоставляет права администратора в Azure Active Directory (**AADDirectoryTenantName**).  
+**Причина.** Учетная запись позволяет успешно войти в систему, но не предоставляет права администратора в Azure AD (**AADDirectoryTenantName**).  
 
-**Решение**. Войдите на [портал Azure](https://portal.azure.com) с этой учетной записью от имени владельца учетной записи, поочередно выберите элементы **Azure Active Directory**, **Пользователи**, **Select the User** (Выбор пользователя), **Роль каталога**. Пользователь здесь должен быть обозначен как **глобальный администратор**. Если учетная запись предоставляет права **пользователя**, последовательно выберите **Azure Active Directory** > **Имена личных доменов** и убедитесь, что указанное в качестве значения **AADDirectoryTenantName** имя домена здесь отмечено как основное имя домена для каталога. В нашем примере это **contoso.onmicrosoft.com**.
+**Решение**. Войдите на [портал Azure](https://portal.azure.com) от имени владельца учетной записи и щелкните **Azure Active Directory**, **Пользователи**, **Выбрать пользователя**. Затем выберите **Роль каталога** и убедитесь, что пользователь является **глобальным администратором**. Если учетная запись предоставляет права **пользователя**, щелкните **Azure Active Directory** > **Имена личных доменов** и убедитесь, что указанное в качестве значения **AADDirectoryTenantName** имя домена является основным доменным именем для каталога. В нашем примере это **contoso.onmicrosoft.com**.
 
 В Azure Stack Hub требуется, чтобы доменное имя являлось основным.
 

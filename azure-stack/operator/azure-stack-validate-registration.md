@@ -1,18 +1,19 @@
 ---
-title: Проверка регистрации Azure для Azure Stack Hub
-description: Применение средства проверки готовности Azure Stack Hub для проверки регистрации Azure.
+title: Проверка регистрации в Azure
+titleSuffix: Azure Stack Hub
+description: Узнайте, как проверить регистрацию Azure с помощью средства проверки готовности Azure Stack Hub.
 author: ihenkel
 ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: inhenkel
 ms.reviewer: unknown
 ms.lastreviewed: 03/23/2019
-ms.openlocfilehash: f9d5ff2a4ef02bb8d8b738cf20de2dae3bfafd02
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 58f65be2ac4ba352b17b9b0bba079b286a9609fa
+ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882573"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76972567"
 ---
 # <a name="validate-azure-registration"></a>Проверка регистрации в Azure
 
@@ -35,19 +36,17 @@ ms.locfileid: "76882573"
 
 - Необходимо установить Windows 10 или Windows Server 2016 и обеспечить подключение к Интернету.
 - Необходимо установить PowerShell 5.1 или более поздней версии. Чтобы проверить используемую версию, выполните следующий командлет PowerShell и проверьте значения **Major** (основной номер версии) и **Minor** (дополнительный номер версии):  
-
   ```powershell
   $PSVersionTable.PSVersion
   ```
-
 - [Среда PowerShell, настроенная для Azure Stack Hub](azure-stack-powershell-install.md).
 - Необходимо установить последнюю версию средства [проверки готовности Microsoft Azure Stack Hub](https://aka.ms/AzsReadinessChecker).  
 
-### <a name="azure-active-directory-environment"></a>Среда Azure Active Directory
+### <a name="azure-active-directory-aad-environment"></a>Среда Azure Active Directory (AAD)
 
 - Определите имя пользователя и пароль для учетной записи, которая является владельцем подписки Azure, которую вы будете использовать с Azure Stack Hub.  
 - Определите идентификатор подписки Azure, которая будет использоваться.
-- Задайте параметр **AzureEnvironment**, который будет использоваться. Поддерживаемые значения для параметра имени среды: **AzureCloud**, **AzureChinaCloud** или **AzureUSGovernment** (в зависимости от используемой подписки Azure).
+- Определите параметр **AzureEnvironment**, который будет использоваться. Поддерживаемые значения для параметра имени среды: **AzureCloud**, **AzureChinaCloud** или **AzureUSGovernment** (в зависимости от используемой подписки Azure).
 
 ## <a name="steps-to-validate-the-azure-registration"></a>Этапы проверки регистрации в Azure
 
@@ -57,7 +56,7 @@ ms.locfileid: "76882573"
    Install-Module Microsoft.AzureStack.ReadinessChecker -Force
    ```
 
-2. В командной строке PowerShell выполните команду ниже, чтобы задать `$registrationCredential` в качестве учетной записи с правами владельца подписки. Замените `subscriptionowner@contoso.onmicrosoft.com` именами учетной записи и клиента:
+2. В командной строке PowerShell выполните следующую команду, чтобы задать `$registrationCredential` в качестве учетной записи с правами владельца подписки. Замените `subscriptionowner@contoso.onmicrosoft.com` именами учетной записи и клиента:
 
    ```powershell
    $registrationCredential = Get-Credential subscriptionowner@contoso.onmicrosoft.com -Message "Enter Credentials for Subscription Owner"
@@ -66,7 +65,7 @@ ms.locfileid: "76882573"
    > [!NOTE]
    > Как поставщик служб шифрования при использовании общих служб или подписки IUR вы должны указать учетные данные пользователя из этого соответствующего клиента Azure AD. Как правило, имя будет выглядеть примерно так: `subscriptionowner@iurcontoso.onmicrosoft.com`. Этот пользователь должен иметь соответствующие учетные данные, как описано выше.
 
-3. В командной строке PowerShell выполните команду ниже, чтобы задать `$subscriptionID` в качестве используемой подписки Azure. Замените `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` фактическим идентификатором подписки:
+3. В командной строке PowerShell выполните следующую команду, чтобы задать `$subscriptionID` в качестве используемой подписки Azure. Замените `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` фактическим идентификатором подписки:
 
    ```powershell
    $subscriptionID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
@@ -75,8 +74,7 @@ ms.locfileid: "76882573"
 4. В командной строке PowerShell выполните приведенную ниже команду, чтобы начать проверку подписки:
 
    - Укажите для `AzureEnvironment` значение **AzureCloud**, **AzureGermanCloud** или **AzureChinaCloud**.  
-   - Укажите имя администратора Azure Active Directory и имя клиента Azure Active Directory.
-
+   - Укажите имя администратора Azure AD и имя клиента Azure AD.
       ```powershell
       Invoke-AzsRegistrationValidation -RegistrationAccount $registrationCredential -AzureEnvironment AzureCloud -RegistrationSubscriptionID $subscriptionID
       ```
@@ -97,7 +95,7 @@ ms.locfileid: "76882573"
 
 Эти файлы помогут передать сведения о состоянии проверки другим заинтересованным лицам перед развертыванием Azure Stack Hub или для исследования проблем, обнаруженных при проверке. В обоих файлах сохраняются результаты каждой очередной проверки. В отчете содержатся подтверждения команды развертывания по конфигурации удостоверений. Файл журнала поможет командам развертывания или поддержки диагностировать проблемы с проверкой.
 
-По умолчанию оба файла сохраняются в расположении **C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
+По умолчанию оба файла записываются в `C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json`.  
 
 - Используйте параметр `-OutputPath <path>` в конце командной строки, чтобы задать другое расположение для отчетов.
 - Используйте параметр `-CleanReport` в конце команды, чтобы удалить из файла **AzsReadinessCheckerReport.json** сведения о предыдущих запусках средства.
@@ -144,7 +142,7 @@ Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadines
 Invoke-AzsRegistrationValidation Completed
 ```
 
-**Причина** — вход с этой учетной записью невозможен, так как истек срок действия пароля или используется временный пароль.
+**Причина.** Вход с помощью этой учетной записи невозможен, так как истек срок действия пароля или используется временный пароль.
 
 **Решение** — выполните в PowerShell приведенную ниже команду и следуйте инструкциям на экране, чтобы сбросить пароль.
 
@@ -167,7 +165,7 @@ Report location (contains PII): C:\Users\username\AppData\Local\Temp\AzsReadines
 Invoke-AzsRegistrationValidation Completed
 ```
 
-**Причина** — вход с этой учетной записью в указанную среду Azure Active Directory невозможен. В нашем примере параметр **AzureChinaCloud** имеет значение **AzureEnvironment**.  
+**Причина.** Вход в указанный каталог Azure AD с помощью этой учетной записи невозможен. В нашем примере параметр **AzureChinaCloud** имеет значение **AzureEnvironment**.  
 
 **Решение.** Убедитесь, что эта учетная запись существует в указанной среде Azure. Выполните в PowerShell следующую команду, чтобы проверить допустимость учетной записи для указанной среды:
 

@@ -1,18 +1,21 @@
 ---
-title: Проверка интеграции AD FS с Azure Stack Hub
-description: Применение средства проверки готовности Azure Stack Hub для проверки интеграции AD FS с Azure Stack Hub.
+title: Проверка интеграции AD FS
+titleSuffix: Azure Stack Hub
+description: Узнайте о том, как использовать средство проверки готовности Azure Stack Hub для проверки интеграции AD FS с Azure Stack Hub.
+services: azure-stack
+documentationcenter: ''
 author: ihenkel
 ms.topic: article
 ms.date: 06/10/2019
 ms.author: inhenkel
 ms.reviewer: jerskine
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: a98a5384b8590f494e6e9d6acdeb05e90fce3a20
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 786ee290aba91c855211d3f470f439c3e9b2c01a
+ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76880645"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76972588"
 ---
 # <a name="validate-ad-fs-integration-for-azure-stack-hub"></a>Проверка интеграции AD FS с Azure Stack Hub
 
@@ -21,7 +24,7 @@ ms.locfileid: "76880645"
 Средство проверки готовности позволяет определить:
 
 * *Метаданные федерации* содержат допустимые элементы XML для федерации.
-* Можно получить *SSL-сертификат ADF S* и создать цепочку доверия. В метке службы AD FS должны доверять цепочке SSL-сертификатов. Сертификат должен быть подписан тем же *центром сертификации*, что и сертификаты развертывания Azure Stack Hub, или доверенным партнером корневого центра. Полный список доверенных партнеров корневых центров приведен на сайте [TechNet](https://gallery.technet.microsoft.com/Trusted-Root-Certificate-123665ca).
+* Можно получить *SSL-сертификат AD FS* и создать цепочку доверия. При использовании метки службы AD FS должны доверять цепочке SSL-сертификатов. Сертификат должен быть подписан тем же *центром сертификации*, что и сертификаты развертывания Azure Stack Hub, или доверенным партнером корневого центра. Полный список доверенных партнеров корневых центров приведен на сайте [TechNet](https://gallery.technet.microsoft.com/Trusted-Root-Certificate-123665ca).
 * *Сертификат для подписи AD FS* является доверенным и не истекает.
 
 Дополнительные сведения о требованиях к интеграции центра обработки данных Azure Stack Hub см. в статье [Интеграция удостоверения AD FS с центром обработки данных Azure Stack Hub](azure-stack-integrate-identity.md).
@@ -36,31 +39,37 @@ ms.locfileid: "76880645"
 
 **На компьютере, где запускается это средство:**
 
-* Необходимо установить Windows 10 или Windows Server 2016 и обеспечить подключение к домену.
+* Необходимо установить Windows 10 или Windows Server 2016 и обеспечить подключение к домену.
 * Необходимо установить PowerShell 5.1 или более поздней версии. Чтобы проверить используемую версию, выполните приведенную команду PowerShell и проверьте значения *Major* (основной номер версии) и *Minor* (дополнительный номер версии).  
-   > `$PSVersionTable.PSVersion`
+    ```powershell
+    $PSVersionTable.PSVersion
+    ```
 * Необходимо установить последнюю версию средства [проверки готовности Microsoft Azure Stack Hub](https://aka.ms/AzsReadinessChecker).
 
 **Среда служб федерации Active Directory:**
 
 Вам потребуется по крайней мере одна из следующих форм метаданных:
 
-* URL-адрес метаданных федерации AD FS. Например, `https://adfs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`.
-* XML-файл метаданных федерации. Например, FederationMetadata.xml
+- URL-адрес метаданных федерации AD FS. Например: `https://adfs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`.
+* XML-файл метаданных федерации. Пример: FederationMetadata.xml.
 
 ## <a name="validate-ad-fs-integration"></a>Проверка интеграции AD FS
 
 1. На компьютере, который соответствует всем предварительным требованиям, откройте командную строку PowerShell с правами администратора и выполните следующую команду, чтобы установить AzsReadinessChecker.
 
-     `Install-Module Microsoft.AzureStack.ReadinessChecker -Force`
+    ```powershell
+    Install-Module Microsoft.AzureStack.ReadinessChecker -Force
+    ```
 
 1. В командной строке PowerShell выполните приведенную ниже команду, чтобы начать проверку. Укажите в качестве значения **-CustomADFSFederationMetadataEndpointUri** универсальный код ресурса (URI) для метаданных федерации.
 
-     `Invoke-AzsADFSValidation -CustomADFSFederationMetadataEndpointUri https://adfs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`
+     ```powershell
+     Invoke-AzsADFSValidation -CustomADFSFederationMetadataEndpointUri https://adfs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml
+     ```
 
 1. Когда средство завершит работу, просмотрите выходные данные. Убедитесь, что требования к интеграции AD FS выполнены. При успешном завершении проверки отобразится примерно следующий результат.
 
-    ```
+    ```powershell
     Invoke-AzsADFSValidation v1.1809.1001.1 started.
 
     Testing ADFS Endpoint https://sts.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml
@@ -93,8 +102,8 @@ ms.locfileid: "76880645"
 
 Используйте следующую команду:
 
-* **-OutputPath**. Параметр *path* в конце командной строки позволяет задать другое расположение отчетов.
-* **-CleanReport**. В конце команды, чтобы удалить из файла AzsReadinessCheckerReport.json сведения о предыдущем отчете. Дополнительные сведения об отчетах проверки Azure Stack Hub можно найти [здесь](azure-stack-validation-report.md).
+* `-OutputPath`: Параметр *path* в конце командной строки позволяет задать другое расположение отчетов.
+* `-CleanReport`: В конце команды, чтобы удалить из файла AzsReadinessCheckerReport.json сведения о предыдущем отчете. Дополнительные сведения об отчетах проверки Azure Stack Hub можно найти [здесь](azure-stack-validation-report.md).
 
 ## <a name="validation-failures"></a>Ошибки при проверке
 
@@ -104,13 +113,17 @@ ms.locfileid: "76880645"
 
 ### <a name="command-not-found"></a>Команда не найдена
 
-`Invoke-AzsADFSValidation : The term 'Invoke-AzsADFSValidation' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.`
+```powershell
+Invoke-AzsADFSValidation : The term 'Invoke-AzsADFSValidation' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+```
 
 **Причина.** При автозагрузке PowerShell не удалось правильно загрузить модуль проверки готовности.
 
-**Решение**. Импортируйте модуль проверки готовности явным образом. Скопируйте и вставьте приведенный ниже код в PowerShell и укажите в параметре \<version\> номер текущей установленной версии.
+**Решение**. Импортируйте модуль проверки готовности явным образом. Скопируйте и вставьте следующий код в PowerShell и укажите в параметре `<version>` номер текущей установленной версии.
 
-`Import-Module "c:\Program Files\WindowsPowerShell\Modules\Microsoft.AzureStack.ReadinessChecker\<version>\Microsoft.AzureStack.ReadinessChecker.psd1" -Force`
+```powershell
+Import-Module "c:\Program Files\WindowsPowerShell\Modules\Microsoft.AzureStack.ReadinessChecker\<version>\Microsoft.AzureStack.ReadinessChecker.psd1" -Force
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

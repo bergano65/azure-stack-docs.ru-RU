@@ -1,5 +1,6 @@
 ---
-title: Проверка интеграции Azure Graph с Azure Stack Hub
+title: Проверка интеграции с Azure Graph
+titleSuffix: Azure Stack Hub
 description: Применение средства проверки готовности Azure Stack Hub для проверки интеграции Graph с Azure Stack Hub.
 author: ihenkel
 ms.topic: article
@@ -7,12 +8,12 @@ ms.date: 06/10/2019
 ms.author: inhenkel
 ms.reviewer: jerskine
 ms.lastreviewed: 06/10/2019
-ms.openlocfilehash: 29cc035e66039d09e761410808098d57f0b1927f
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: ff9763edbd96dda39f3de8e8a764ce4f4acd7200
+ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882629"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76972496"
 ---
 # <a name="validate-graph-integration-for-azure-stack-hub"></a>Проверка интеграции Azure Graph для Azure Stack Hub
 
@@ -37,9 +38,11 @@ ms.locfileid: "76882629"
 
 **На компьютере, где запускается это средство:**
 
-* Необходимо установить Windows 10 или Windows Server 2016 и обеспечить подключение к домену.
-* Необходимо установить PowerShell 5.1 или более поздней версии. Чтобы проверить используемую версию, выполните приведенную команду PowerShell и проверьте значения *Major* (основной номер версии) и *Minor* (дополнительный номер версии).  
-   > `$PSVersionTable.PSVersion`
+* Необходимо установить Windows 10 или Windows Server 2016 и обеспечить подключение к домену.
+* Необходимо установить PowerShell 5.1 или более поздней версии. Чтобы проверить используемую версию, выполните приведенную команду PowerShell и проверьте значения *Major* (основной номер версии) и *Minor* (дополнительный номер версии).
+    ```powershell
+    $PSVersionTable.PSVersion
+    ```
 * Необходимо установить модуль PowerShell для Active Directory.
 * Необходимо установить последнюю версию средства [проверки готовности Microsoft Azure Stack Hub](https://aka.ms/AzsReadinessChecker).
 
@@ -52,19 +55,25 @@ ms.locfileid: "76882629"
 
 1. На компьютере, который соответствует всем предварительным требованиям, откройте командную строку PowerShell с правами администратора и выполните следующую команду, чтобы установить AzsReadinessChecker:
 
-     `Install-Module Microsoft.AzureStack.ReadinessChecker -Force`
+    ```powershell
+    Install-Module Microsoft.AzureStack.ReadinessChecker -Force
+    ```
 
 1. В командной строке PowerShell выполните следующую команду, чтобы задать переменную *$graphCredential* для учетной записи Graph. Замените `contoso\graphservice` нужной учетной записью, используя формат `domain\username`.
 
-    `$graphCredential = Get-Credential contoso\graphservice -Message "Enter Credentials for the Graph Service Account"`
+    ```powershell
+    $graphCredential = Get-Credential contoso\graphservice -Message "Enter Credentials for the Graph Service Account"
+    ```
 
-1. В командной строке PowerShell выполните приведенную ниже команду, чтобы начать проверку службы Graph. В качестве значения параметра **-ForestFQDN** укажите полное доменное имя корня леса.
+1. В командной строке PowerShell выполните приведенную ниже команду, чтобы начать проверку службы Graph. В качестве значения параметра `-ForestFQDN` укажите полное доменное имя корня леса.
 
-     `Invoke-AzsGraphValidation -ForestFQDN contoso.com -Credential $graphCredential`
+    ```powershell
+    Invoke-AzsGraphValidation -ForestFQDN contoso.com -Credential $graphCredential
+    ```
 
 1. Когда средство завершит работу, просмотрите выходные данные. Убедитесь, что требованиям к интеграции Graph выполнены. При успешном завершении проверки отобразится примерно следующий результат.
 
-    ```
+    ```powershell
     Testing Graph Integration (v1.0)
             Test Forest Root:            OK
             Test Graph Credential:       OK
@@ -98,8 +107,8 @@ ms.locfileid: "76882629"
 
 Используйте следующую команду:
 
-* **-OutputPath**. Параметр *path* в конце командной строки позволяет задать другое расположение отчетов.
-* **-CleanReport**. В конце команды, чтобы удалить из файла *AzsReadinessCheckerReport.json* сведения о предыдущем отчете. Дополнительные сведения об отчетах проверки Azure Stack Hub можно найти [здесь](azure-stack-validation-report.md).
+* `-OutputPath`: Параметр *path* в конце командной строки позволяет задать другое расположение отчетов.
+* `-CleanReport`: В конце команды, чтобы удалить из файла *AzsReadinessCheckerReport.json* сведения о предыдущем отчете. Дополнительные сведения об отчетах проверки Azure Stack Hub можно найти [здесь](azure-stack-validation-report.md).
 
 ## <a name="validation-failures"></a>Ошибки при проверке
 
