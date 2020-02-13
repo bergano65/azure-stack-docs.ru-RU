@@ -8,12 +8,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: jiahan
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 0d6551f7db2ef8b7266d45223c9b20587610b169
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: ed76e3611fe0b7b57386a7b688f08ddbdc3c36d7
+ms.sourcegitcommit: b7b86e875cf04cb0fd9d48a2b830588d3ff99b6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881257"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125823"
 ---
 # <a name="sql-resource-provider-maintenance-operations"></a>Операции поддержки для поставщиков ресурсов SQL
 
@@ -33,7 +33,7 @@ ms.locfileid: "76881257"
 
 Чтобы изменить параметры, выберите **Обзор** &gt; **Ресурсы администрирования** &gt; **Серверы размещения SQL** &gt; **Имена входа SQL** и выберите имя пользователя. Сначала нужно внести изменения в экземпляр SQL (и любые реплики, если необходимо). В разделе **Параметры** выберите **Пароль**.
 
-![Обновление пароля администратора SQL](./media/azure-stack-sql-rp-deploy/sqlrp-update-password.PNG)
+![Обновление пароля администратора SQL](./media/azure-stack-sql-rp-deploy/sql-rp-update-password.png)
 
 ## <a name="secrets-rotation"></a>Смена секретов
 

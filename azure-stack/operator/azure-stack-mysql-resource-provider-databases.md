@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 5955dcf6c211f9f431d84227548496af7782a0d7
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 23c823fcbfa76d34a471ac404b18dab13b737315
+ms.sourcegitcommit: b7b86e875cf04cb0fd9d48a2b830588d3ff99b6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881843"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125785"
 ---
 # <a name="create-mysql-databases-in-azure-stack-hub"></a>Создание баз данных MySQL в Azure Stack Hub
 Пользователь Azure Stack Hub с подпиской на предложение, включающее службу базы данных MySQL, может самостоятельно создавать обслуживаемые базы данных MySQL и управлять ими на портале для пользователей.
@@ -23,7 +23,7 @@ ms.locfileid: "76881843"
 2. Выберите **+ Создать ресурс** > **Данные + хранилище** > **База данных SQL** > **Добавить**.
 3. В разделе **Создание базы данных MySQL** введите имя базы данных и другие параметры в соответствии с условиями своей среды.
 
-    ![Создание тестовой базы данных MySQL](./media/azure-stack-mysql-rp-deploy/mysql-create-db.png)
+    ![Создание тестовой базы данных MySQL](./media/azure-stack-mysql-rp-deploy/mysql-create-db-a.png)
 
 4. В разделе **Создание базы данных** выберите **Номер SKU**. В разделе **Выбор номера SKU для MySQL** выберите нужный номер SKU для базы данных.
 
@@ -44,7 +44,7 @@ ms.locfileid: "76881843"
 
 Развернув базу данных, запишите **строку подключения** в разделе **Основные компоненты**. Эту строку можно применить в любом приложении, которому потребуется доступ к базе данных MySQL.
 
-![Получение строки подключения для базы данных MySQL](./media/azure-stack-mysql-rp-deploy/mysql-db-created.png)
+![Получение строки подключения для базы данных MySQL](./media/azure-stack-mysql-rp-deploy/mysql-db-created-a.png)
 
 ## <a name="update-the-administrative-password"></a>Обновление пароля администратора
 

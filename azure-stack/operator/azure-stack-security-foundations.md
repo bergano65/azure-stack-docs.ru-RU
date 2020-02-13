@@ -8,12 +8,12 @@ ms.date: 06/10/2019
 ms.author: justinha
 ms.reviewer: fiseraci
 ms.lastreviewed: 1/16/2020
-ms.openlocfilehash: 396db14d269ee9443d38f8220e5dd0384d04a479
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 7b83fa18f8a550a718023c97ccab8d46b5b86564
+ms.sourcegitcommit: 23861d659c89c2d36390085fe9532b2bcba2100d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881303"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075205"
 ---
 # <a name="azure-stack-hub-infrastructure-security-controls"></a>Элементы управления безопасностью для инфраструктуры Azure Stack Hub
 
@@ -105,7 +105,7 @@ Azure Stack Hub прошла официальную оценку возможн�
 - [CSA Cloud Control Matrix](https://cloudsecurityalliance.org/group/cloud-controls-matrix/#_overview) — это комплексное сопоставление по нескольким стандартам, включая FedRAMP Moderate, ISO27001, HIPAA, HITRUST, ITAR, NIST SP800-53 и другие;
 - [FedRAMP High](https://www.fedramp.gov/fedramp-releases-high-baseline/) для государственных организаций.
 
-Документация по соответствию можно найти на [портале служб защиты данных (Майкрософт)](https://servicetrust.microsoft.com/ViewPage/Blueprint). Руководства по соблюдению являются защищенным ресурсом и требуют, чтобы вы вошли в систему с вашими учетными данными облачной службы Azure.
+Документация по соответствию можно найти на [портале служб защиты данных (Майкрософт)](https://servicetrust.microsoft.com/ViewPage/AzureStack). Руководства по соблюдению являются защищенным ресурсом и требуют, чтобы вы вошли в систему с вашими учетными данными облачной службы Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

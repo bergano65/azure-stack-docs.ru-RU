@@ -3,16 +3,16 @@ title: Проблемы и ошибки подключения к службе �
 description: Сведения об устранении неполадок и ошибок использования Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 01/22/2019
+ms.date: 01/22/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 06/27/2019
-ms.openlocfilehash: 4a4b34c6aeaac3bd484c0a954af0f3a456cbfe85
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 79f34d685998a6719bc580504d4d26a8e4be093f
+ms.sourcegitcommit: 2377c6947cf846fd2a4a0274c41326293a2a239c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882685"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075995"
 ---
 # <a name="usage-connectivity-errors"></a>Использование. Неполадки с подключением
 

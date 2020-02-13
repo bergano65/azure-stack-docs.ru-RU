@@ -8,12 +8,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: 4269cce339ee606fd8efb4cb08677079c0f2e477
-ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
+ms.openlocfilehash: b0ea11c3245d8a3ddbf9eeaf85481f830c67dc7f
+ms.sourcegitcommit: b7b86e875cf04cb0fd9d48a2b830588d3ff99b6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76972636"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125624"
 ---
 # <a name="create-sql-databases"></a>Создание баз данных SQL
 
@@ -32,7 +32,7 @@ ms.locfileid: "76972636"
 
 4. В разделе **Создание базы данных** выберите **Номер SKU**. В разделе **Выбор номера SKU** выберите нужный номер SKU для базы данных.
 
-   ![Создайте базу данных на портале пользователя Azure Stack Hub.](./media/azure-stack-sql-rp-deploy/newsqldb.png)
+   ![Создайте базу данных на портале пользователя Azure Stack Hub.](./media/azure-stack-sql-rp-deploy/newsqldba.png)
 
    >[!NOTE]
    >По мере добавления серверов размещения в Azure Stack Hub им назначаются номера SKU. Базы данных создаются в пуле серверов размещения, который относится к соответствующему номеру SKU.
@@ -46,13 +46,13 @@ ms.locfileid: "76972636"
    >[!NOTE]
    >Эти параметры представляют собой учетные данные проверки подлинности SQL, которые создаются для вашего доступа только к этой базе данных. Имя входа должно быть глобально уникальным. Параметры входа можно использовать повторно для других баз данных с тем же номером SKU.
 
-   ![Создание данных для входа в базу данных на портале пользователя Azure Stack Hub](./media/azure-stack-sql-rp-deploy/create-new-login.png)
+   ![Создание данных для входа в базу данных на портале пользователя Azure Stack Hub](./media/azure-stack-sql-rp-deploy/create-new-login-a.png)
 
 8. Выберите **OK**, чтобы завершить развертывание базы данных.
 
 Запишите **строку подключения** из раздела **Основные компоненты**, который откроется после развертывания базы данных. Эту строку можно применить в любом приложении, которому потребуется доступ к базе данных SQL Server.
 
-![Получение строки подключения к базе данных SQL Server](./media/azure-stack-sql-rp-deploy/sql-db-settings.png)
+![Получение строки подключения к базе данных SQL Server](./media/azure-stack-sql-rp-deploy/sql-db-settings-a.png)
 
 ## <a name="sql-always-on-databases"></a>Базы данных SQL AlwaysOn
 
@@ -62,7 +62,7 @@ ms.locfileid: "76972636"
 
 Следующий снимок экрана демонстрирует, как с помощью SQL Server Management Studio узнать состояние баз данных в SQL AlwaysOn.
 
-![Состояние базы данных AlwaysOn в SQL Server Management Studio](./media/azure-stack-sql-rp-deploy/verifyalwayson.png)
+![Состояние базы данных AlwaysOn в SQL Server Management Studio](./media/azure-stack-sql-rp-deploy/verify-always-on.png)
 
 Базы данных AlwaysOn должны отображаться как **синхронизированные**. Они также должны быть доступными во всех экземплярах SQL и **группах доступности**. На предыдущем снимке экрана представлена база данных newdb1, для которой отображается состояние **newdb1 (Синхронизировано)** .
 

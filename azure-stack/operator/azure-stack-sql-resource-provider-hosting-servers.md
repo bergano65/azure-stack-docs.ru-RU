@@ -8,12 +8,12 @@ ms.date: 10/02/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: c7b3d1ef979e69a72904e03b49cb5ee4b75c182e
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: d46837540e8b4bd22fb114062266a5be86862921
+ms.sourcegitcommit: b7b86e875cf04cb0fd9d48a2b830588d3ff99b6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882815"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125727"
 ---
 # <a name="add-hosting-servers-for-the-sql-resource-provider"></a>Добавление серверов размещения для поставщика ресурсов SQL
 
@@ -84,11 +84,11 @@ ms.locfileid: "76882815"
 
    В разделе **SQL Hosting Servers** (Серверы размещения SQL) можно подключить поставщик ресурсов SQL к экземплярам SQL Server, которые выступят в качестве серверной части поставщика ресурсов.
 
-   ![Панель мониторинга адаптера SQL на портале администрирования Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sqlrp-hostingserver.png)
+   ![Панель мониторинга адаптера SQL на портале администрирования Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sql-rp-hosting-server.png)
 
 3. Щелкните**Добавить**, а затем предоставьте сведения о подключении для экземпляра SQL Server в колонку **Добавление сервера размещения SQL**.
 
-   ![Добавление сервера размещения SQL на портале администрирования Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sqlrp-newhostingserver.png)
+   ![Добавление сервера размещения SQL на портале администрирования Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sql-rp-new-hosting-server.png)
 
     Необязательно дополнительно включать имя экземпляра, а также предоставлять номер порта, если экземпляр не назначен порту 1433 по умолчанию.
 
@@ -100,7 +100,7 @@ ms.locfileid: "76882815"
    * Чтобы использовать существующий номер SKU, выберите доступный номер SKU, а затем выберите **Создать**.
    * Чтобы создать номер SKU, выберите **+ Создание номера SKU**. Введите требуемые данные в поле **Создание номера SKU** и щелкните **ОК**.
 
-     ![Создание номера SKU на портале администрирования Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sqlrp-newsku.png)
+     ![Создание номера SKU на портале администрирования Azure Stack Hub](./media/azure-stack-sql-rp-deploy/sqlrp-new-sku.png)
 
 ## <a name="provide-high-availability-using-sql-always-on-availability-groups"></a>Предоставление высокого уровня доступности с помощью группы доступности SQL Always On
 
