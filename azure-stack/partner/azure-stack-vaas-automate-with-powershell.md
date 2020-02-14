@@ -1,6 +1,7 @@
 ---
 title: Автоматическая проверка Azure Stack с помощью PowerShell
-description: Проверку Azure Stack можно автоматизировать с помощью PowerShell.
+titleSuffix: Azure Stack Hub
+description: Узнайте, как автоматизировать проверку Azure Stack с помощью PowerShell.
 author: mattbriggs
 ms.topic: tutorial
 ms.date: 11/26/2019
@@ -8,14 +9,14 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/26/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: d37c1f9027017446c31b0877496c28928d22f92a
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: a85f43096cffa900bfefb801bdd28b26358e6219
+ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884995"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77147763"
 ---
-# <a name="automate-azure-stack-validation-with-powershell"></a>Автоматическая проверка Azure Stack с помощью PowerShell
+# <a name="automate-azure-stack-hub-validation-with-powershell"></a>Автоматическая проверка Azure Stack Hub с помощью PowerShell
 
 Проверка как услуга (VaaS) предоставляет возможность автоматизировать запуск тестов с помощью скрипта **RunVaaSAutomation.ps1**.
 
@@ -29,7 +30,7 @@ ms.locfileid: "76884995"
 
 Ниже приведены ссылки на сведения о запуске тестов на портале VaaS. Прежде чем использовать скрипт, необходимо ознакомиться с необходимыми параметрами и их значениями:
 
-* Рабочий процесс SolutionValidation: [Проверка нового решения Azure Stack](azure-stack-vaas-validate-solution-new.md)
+* Рабочий процесс SolutionValidation: [Проверка нового решения Azure Stack Hub](azure-stack-vaas-validate-solution-new.md)
 * Рабочий процесс PackageValidation: [Проверка пакетов OEM](azure-stack-vaas-validate-oem-package.md)
 * Рабочий процесс TestPass: [планирование теста](azure-stack-vaas-schedule-test-pass.md).
 
@@ -258,8 +259,8 @@ $scriptParameters = @{
 | VaaSAccountUserName | Имя пользователя на портале VaaS. |
 | VaaSAccountPassword | Пароль пользователя на портале VaaS. |
 | VaaSAccountTenantId | GUID клиента VaaS. |
-| ServiceAdminUserName | Учетная запись администратора службы Azure Stack.  |
-| ServiceAdminPassword | Пароль службы Azure Stack.  |
+| ServiceAdminUserName | Учетная запись администратора службы Azure Stack Hub.  |
+| ServiceAdminPassword | Пароль службы Azure Stack Hub.  |
 | TenantAdminUserName | Администратор основного клиента.  |
 | TenantAdminPassword | Пароль основного клиента.  |
 | CloudAdminUserName | Имя пользователя администратора облака.  |
@@ -276,6 +277,6 @@ $scriptParameters = @{
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы узнать больше о PowerShell в Azure Stack, ознакомьтесь с последними версиями модулей.
+Чтобы узнать больше о PowerShell в Azure Stack Hub, ознакомьтесь с последними версиями модулей.
 
-- [Модуль Azure Stack](/powershell/azure/azure-stack/overview?view=azurestackps-1.6.0)
+- [Модуль Azure Stack Hub](/powershell/azure/azure-stack/overview?view=azurestackps-1.6.0)
