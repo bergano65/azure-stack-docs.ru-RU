@@ -253,6 +253,7 @@
             - name: Развертывание веб-приложения NodeJS
               href: azure-stack-dev-start-howto-vm-nodejs.md
     - name: Развертывание базовых моделей
+      href: deploy-foundational-patterns.md
       items:
         - name: Шаблоны сети
           items:
@@ -282,7 +283,6 @@
               href: azure-stack-network-howto-iscsi-storage.md
             - name: Расширение центра обработки данных
               href: azure-stack-network-howto-extend-datacenter.md
-        - name: Пиринг виртуальных сетей
         - name: Резервное копирование и восстановление
           items:
             - name: Резервное копирование виртуальной машины в Azure Stack Hub с помощью Commvault
