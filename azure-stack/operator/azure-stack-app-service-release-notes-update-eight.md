@@ -4,15 +4,15 @@ description: Узнайте о том, что находится в пакете
 author: apwestgarth
 manager: stefsch
 ms.topic: article
-ms.date: 01/13/2020
+ms.date: 02/10/2020
 ms.author: anwestg
 ms.reviewer: ''
-ms.openlocfilehash: 639c9267a9d42b20a15bc30ab6b72706816bf7ee
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: daa4cb85ca58a6e638d6d8a1f14ad5e9232f3d72
+ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76874490"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77143669"
 ---
 # <a name="app-service-on-azure-stack-hub-update-8-release-notes"></a>Заметки о выпуске обновления 8 для Службы приложений Azure в Azure Stack Hub
 
@@ -20,7 +20,6 @@ ms.locfileid: "76874490"
 
 > [!IMPORTANT]
 > Прежде чем развертывать Службу приложений Azure 1.8, примените обновление 1910 к интегрированной системе Azure Stack или разверните последний Пакет средств разработки Azure Stack.
-
 
 ## <a name="build-reference"></a>Указание сборки
 
@@ -82,6 +81,20 @@ ms.locfileid: "76874490"
 
 Начиная с этого обновления **TLS 1.2** будет применяться ко всем приложениям.
 
+### <a name="known-issues-upgrade"></a>Известные проблемы (обновление)
+
+- Обновление завершится ошибкой, если выполнена отработка отказа кластера SQL Server Always On на дополнительный узел
+
+Во время обновления выполняется вызов для проверки существования базы данных с помощью строки подключения к базе данных master, который завершится ошибкой, так как имя входа было на предыдущем главном узле.
+
+Выполните одно из следующих действий и нажмите кнопку "Повторить" в установщике.
+
+- Скопируйте имя для входа appservice_hostingAdmin с дополнительного узла SQL.
+
+**OR**
+
+- Выполните отработку отказа кластера SQL на предыдущий активный узел.
+
 ### <a name="post-deployment-steps"></a>Действия, выполняемые после развертывания
 
 > [!IMPORTANT]
@@ -91,16 +104,159 @@ ms.locfileid: "76874490"
 
 - Рабочим ролям не удается связаться с файловым сервером, если Служба приложений развернута в существующей виртуальной сети и файловый сервер доступен только в частной сети, как это описано в документации по развертыванию Службы приложений Azure в Azure Stack.
 
-Если вы решили выполнить развертывание в существующей виртуальной сети с использованием внутреннего IP-адреса для подключения к файловому серверу, необходимо добавить правило безопасности для исходящего трафика, разрешающее передачу трафика SMB между подсетью рабочей роли и файловым сервером. Для этого перейдите к группе безопасности сети WorkersNsg на портале администрирования и добавьте правило безопасности для исходящего трафика со следующими свойствами.
- * Источник: Любой
- * Диапазон исходных портов: *.
- * Назначение: IP-адреса
- * Диапазон конечных IP-адресов: диапазон IP-адресов для файлового сервера
- * Диапазон конечных портов: 445
- * Протокол: TCP
- * Действие: Allow
- * Приоритет: 700
- * Имя: Outbound_Allow_SMB445
+  Если вы решили выполнить развертывание в существующей виртуальной сети с использованием внутреннего IP-адреса для подключения к файловому серверу, необходимо добавить правило безопасности для исходящего трафика, разрешающее передачу трафика SMB между подсетью рабочей роли и файловым сервером. Для этого перейдите к группе безопасности сети WorkersNsg на портале администрирования и добавьте правило безопасности для исходящего трафика со следующими свойствами.
+  - Источник: Любой
+  - Диапазон исходных портов: *.
+  - Назначение: IP-адреса
+  - Диапазон конечных IP-адресов: диапазон IP-адресов для файлового сервера
+  - Диапазон конечных портов: 445
+  - Протокол: TCP
+  - Действие: Allow
+  - Приоритет: 700
+  - Имя: Outbound_Allow_SMB445
+
+- Для новых развертываний Службы приложений Azure в Azure Stack Hub 1.8 требуется, чтобы базы данных были преобразованы в автономные базы данных.
+
+Ввиду регрессии в этом выпуске базы данных Службы приложений (appservice_hosting и appservice_metering) должны быть преобразованы в автономные базы данных при развертывании **новых** служб.  Эта **не** влияет на **обновленные** развертывания.
+
+> [!IMPORTANT]
+> Эта процедура занимает примерно 5–10 минут. Эта процедура включает в себя завершение существующих сеансов входа в базу данных. Спланируйте время простоя, чтобы перенести Службу приложений Azure и проверить ее на основе Azure Stack Hub после миграции
+>
+>
+
+1. Добавьте [базы данных Службы приложений (appservice_hosting и appservice_metering) в группу доступности](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database).
+
+1. Включите автономную базу данных.
+
+    ```sql
+
+        sp_configure 'contained database authentication', 1;
+        GO
+        RECONFIGURE;
+            GO
+    ```
+
+1. Преобразуйте базу данных в частично автономную. Этот шаг приведет к простою, так как все активные сеансы будут завершены.
+
+    ```sql
+        /******** [appservice_metering] Migration Start********/
+            USE [master];
+
+            -- kill all active sessions
+            DECLARE @kill varchar(8000) = '';  
+            SELECT @kill = @kill + 'kill ' + CONVERT(varchar(5), session_id) + ';'  
+            FROM sys.dm_exec_sessions
+            WHERE database_id  = db_id('appservice_metering')
+
+            EXEC(@kill);
+
+            USE [master]  
+            GO  
+            ALTER DATABASE [appservice_metering] SET CONTAINMENT = PARTIAL  
+            GO  
+
+        /********[appservice_metering] Migration End********/
+
+        /********[appservice_hosting] Migration Start********/
+
+            -- kill all active sessions
+            USE [master];
+
+            DECLARE @kill varchar(8000) = '';  
+            SELECT @kill = @kill + 'kill ' + CONVERT(varchar(5), session_id) + ';'  
+            FROM sys.dm_exec_sessions
+            WHERE database_id  = db_id('appservice_hosting')
+
+            EXEC(@kill);
+
+            -- Convert database to contained
+            USE [master]  
+            GO  
+            ALTER DATABASE [appservice_hosting] SET CONTAINMENT = PARTIAL  
+            GO  
+
+            /********[appservice_hosting] Migration End********/
+    '''
+
+1. Migrate logins to contained database users.
+
+    ```sql
+        IF EXISTS(SELECT * FROM sys.databases WHERE Name=DB_NAME() AND containment = 1)
+        BEGIN
+        DECLARE @username sysname ;  
+        DECLARE user_cursor CURSOR  
+        FOR
+            SELECT dp.name
+            FROM sys.database_principals AS dp  
+            JOIN sys.server_principals AS sp
+                ON dp.sid = sp.sid  
+                WHERE dp.authentication_type = 1 AND dp.name NOT IN ('dbo','sys','guest','INFORMATION_SCHEMA');
+            OPEN user_cursor  
+            FETCH NEXT FROM user_cursor INTO @username  
+                WHILE @@FETCH_STATUS = 0  
+                BEGIN  
+                    EXECUTE sp_migrate_user_to_contained
+                    @username = @username,  
+                    @rename = N'copy_login_name',  
+                    @disablelogin = N'do_not_disable_login';  
+                FETCH NEXT FROM user_cursor INTO @username  
+            END  
+            CLOSE user_cursor ;  
+            DEALLOCATE user_cursor ;
+            END
+        GO
+    ```
+
+    **Проверка**
+
+1. Проверьте, включен ли для SQL Server автономный режим.
+
+    ```sql
+        sp_configure  @configname='contained database authentication'
+    ```
+
+1. Проверьте текущий автономный режим работы.
+
+    ```sql
+        SELECT containment FROM sys.databases WHERE NAME LIKE (SELECT DB_NAME())
+    ```
+
+- Не удается расширить рабочие роли
+
+  Новым рабочим ролям не удается получить необходимую строку подключения к базе данных.  Чтобы исправить эту ситуацию, подключитесь к одному из экземпляров контроллера, например CN0-VM, и выполните следующий сценарий PowerShell.
+
+  ```powershell
+ 
+    [System.Reflection.Assembly]::LoadWithPartialName("Microsoft.Web.Hosting")
+    $siteManager = New-Object Microsoft.Web.Hosting.SiteManager
+    $builder = New-Object System.Data.SqlClient.SqlConnectionStringBuilder -ArgumentList (Get-AppServiceConnectionString -Type Hosting)
+    $conn = New-Object System.Data.SqlClient.SqlConnection -ArgumentList $builder.ToString()
+
+    $siteManager.Workers | ForEach-Object {
+        $worker = $_
+        $dbUserName = "WebWorker_" + $worker.Name
+
+        if (!$siteManager.ConnectionContexts[$dbUserName]) {
+            $dbUserPassword = [Microsoft.Web.Hosting.Common.Security.PasswordHelper]::GenerateDatabasePassword()
+            $conn.Open()
+            $command = $conn.CreateCommand()
+            $command.CommandText = "CREATE USER [$dbUserName] WITH PASSWORD = '$dbUserPassword'"
+            $command.ExecuteNonQuery()
+            $conn.Close()
+            $conn.Open()
+
+            $command = $conn.CreateCommand()
+            $command.CommandText = "ALTER ROLE [WebWorkerRole] ADD MEMBER [$dbUserName]"
+            $command.ExecuteNonQuery()
+            $conn.Close()
+
+            $builder.Password = $dbUserPassword
+            $builder["User ID"] = $dbUserName
+            $siteManager.ConnectionContexts.Add($dbUserName, $builder.ToString())
+        }
+    }
+    $siteManager.CommitChanges()
+    ```
 
 ### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack"></a>Известные проблемы для облачных администраторов, работающих со службой приложений Azure в Azure Stack
 

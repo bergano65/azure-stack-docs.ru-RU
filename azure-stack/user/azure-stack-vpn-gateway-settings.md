@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: sethm
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: b230c78811e79e7a04114b77a2fcacd1b2a2fc9c
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 2f0b520b4c615e56fea7575422b306c226188eb0
+ms.sourcegitcommit: 23861d659c89c2d36390085fe9532b2bcba2100d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884121"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075222"
 ---
 # <a name="configure-vpn-gateway-settings-for-azure-stack-hub"></a>Настройка параметров VPN-шлюза для Azure Stack Hub
 
@@ -160,9 +160,9 @@ New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 | Свойство              | Значение|
 |-|-|
 | Версия IKE           | IKEv2 |
-|Группа Диффи — Хелмана   | ECP384 |
+|Группа Диффи-Хелмана*   | ECP384 |
 | Метод проверки подлинности | Общий ключ |
-|Алгоритмы шифрования и хэширования | AES256, SHA384 |
+|Алгоритмы шифрования и хэширования* | AES256, SHA384 |
 |Срок действия SA (время)     | 28 800 сек|
 
 ### <a name="ike-phase-2-quick-mode-parameters"></a>Параметры этапа 2 IKE (быстрый режим)
@@ -174,8 +174,19 @@ New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 |Алгоритмы шифрования и хэширования (аутентификация) | GCMAES256|
 |Срок действия SA (время)  | 27 000 секунд  |
 |Срок действия SA (килобайты) | 33 553 408     |
-|Полная безопасность пересылки (PFS) | ECP384 |
-|Обнаружение неиспользуемых одноранговых узлов | Поддерживается|  
+|Полная безопасность пересылки (PFS)* | ECP384 |
+|Обнаружение неиспользуемых одноранговых узлов | Поддерживается| 
+
+>[!NOTE]
+>Значения по умолчанию для группы Диффи-Хелмана, алгоритма хеширования и полной безопасности пересылки были изменены для сборки 1910 и более поздних версий. Если в Azure Stack Hub используется версия сборки ниже 1910, укажите приведенные ниже значения для описанных выше параметров.
+
+>| Свойство| Значение|
+>|-|-|
+>|Группа Диффи — Хелмана   | DHGroup2 |
+>|Алгоритмы хеширования | SHA256 |
+>|Полная безопасность пересылки (PFS) | None |
+
+\* Новый или измененный параметр.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

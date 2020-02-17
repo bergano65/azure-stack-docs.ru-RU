@@ -3,16 +3,16 @@ title: Добавление пользовательского образа ви
 description: Сведения о добавлении и удалении пользовательского образа виртуальной машины в Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 10/16/2019
+ms.date: 02/07/2020
 ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: 359adfbe9083bd21368934426a54c887af2f9f2a
-ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
+ms.openlocfilehash: ae446d053c008fc2433f44ba8e7ffa7324972362
+ms.sourcegitcommit: 2377c6947cf846fd2a4a0274c41326293a2a239c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76889972"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075978"
 ---
 # <a name="add-a-custom-vm-image-to-azure-stack-hub"></a>Добавление пользовательского образа виртуальной машины в Azure Stack Hub
 
@@ -22,18 +22,20 @@ Azure Stack Hub позволяет добавить пользовательск
 
 ### <a name="windows"></a>Windows
 
-Создайте обобщенный пользовательский VHD. 
+Создайте обобщенный пользовательский VHD.
 
 **Если этот виртуальный жесткий диск находится не в Azure**, выполните действия из статьи [Отправка универсального диска VHD и создание виртуальных машин с его помощью в Azure](/azure/virtual-machines/windows/upload-generalized-managed), чтобы правильно подготовить VHD с помощью **Sysprep** и сделать его обобщенным.
 
-**Если виртуальный жесткий диск находится в Azure**, перед обобщением виртуальной машины сделайте следующее:
-1) При подготовке виртуальной машины в Azure используйте PowerShell и не указывайте флаг `-ProvisionVMAgent`. 
-2) Прежде чем выполнять обобщение виртуальной машины в Azure, удалите все ее расширения, выполнив командлет **Remove-AzureRmVMExtension** на этой виртуальной машине. Чтобы узнать, какие расширения виртуальной машины установлены, перейдите по пути "Windows (C:) > WindowsAzure > Журналы > Подключаемые модули".
+**Если виртуальный жесткий диск находится в Azure**, перед универсализацией виртуальной машины сделайте следующее.
 
-```Powershell
+- При подготовке виртуальной машины в Azure используйте PowerShell и не указывайте флаг `-ProvisionVMAgent`.
+- Прежде чем выполнять обобщение виртуальной машины в Azure, удалите все ее расширения, выполнив командлет **Remove-AzureRmVMExtension** на этой виртуальной машине. Чтобы узнать, какие расширения виртуальной машины установлены, выберите `Windows (C:) > WindowsAzure > Logs > Plugins`.
+
+```powershell
 Remove-AzureRmVMExtension -ResourceGroupName winvmrg1 -VMName windowsvm -Name "CustomScriptExtension"
-```                       
-Выполните вышеуказанное, выполните инструкции из [этого документа](/azure/virtual-machines/windows/download-vhd), чтобы подготовить и скачать виртуальный жесткий диск перед его переносом в Azure Stack Hub.
+```
+
+Выполните инструкции из [этой статьи](/azure/virtual-machines/windows/download-vhd), чтобы универсализировать и скачать виртуальный жесткий диск перед его переносом в Azure Stack Hub.
 
 ### <a name="linux"></a>Linux
 
@@ -72,7 +74,7 @@ Remove-AzureRmVMExtension -ResourceGroupName winvmrg1 -VMName windowsvm -Name "C
    1. Щелкните **Создать URL-адрес**.
 
    1. Создайте URL-адрес.
-   
+
    1. Под созданным URL-адресом щелкните ссылку **Скачать VHD-файл**.
 
    1. Чтобы начать скачивание, возможно, потребуется нажать кнопку **Сохранить** в браузере. По умолчанию VHD-файлу присваивается имя _abcd_.
@@ -83,7 +85,7 @@ Remove-AzureRmVMExtension -ResourceGroupName winvmrg1 -VMName windowsvm -Name "C
 
 - Azure Stack Hub поддерживает только виртуальные машины первого поколения на дисках фиксированного размера в формате VHD. Фиксированный формат структурирует логический диск в файле линейно, то есть смещение *X* на диске соответствует смещению *X* в BLOB-объекте. Небольшой колонтитул в конце BLOB-объекта описывает свойства VHD-файла. Чтобы убедиться, что вы используете диск фиксированного размера, выполните командлет PowerShell **Get-VHD**.
 
-- Azure Stack Hub не поддерживает динамические диски VHD. 
+- Azure Stack Hub не поддерживает динамические диски VHD.
 
 ## <a name="step-2-upload-the-vm-image-to-a-storage-account"></a>Шаг 2. Отправка образа виртуальной машины в учетную запись хранения
 
@@ -100,19 +102,18 @@ Remove-AzureRmVMExtension -ResourceGroupName winvmrg1 -VMName windowsvm -Name "C
      Например, виртуальный жесткий диск в учетную запись хранения можно передать с помощью команды Add-AzureRmVHD на портале администрирования Azure Stack.  
 
      ```powershell
-     Add-AzureRmVhd -Destination "https://bash.blob.redmond.azurestack.com/sample/vhdtestingmgd.vhd" -LocalFilePath "C:\vhd\vhdtestingmgd.vhd" 
+     Add-AzureRmVhd -Destination "https://bash.blob.redmond.azurestack.com/sample/vhdtestingmgd.vhd" -LocalFilePath "C:\vhd\vhdtestingmgd.vhd"
      ```
 
-3. При передаче образа в хранилище BLOB-объектов запишите созданный для него URI. URI в хранилище BLOB-объектов имеет следующий формат: *&lt;учетная_запись_хранения&gt;/&lt;контейнер_BLOB-объектов&gt;/&lt;имя_целевого_виртуального_диска&gt;* .vhd.
+4. При передаче образа в хранилище BLOB-объектов запишите созданный для него URI. URI в хранилище BLOB-объектов имеет следующий формат: *&lt;учетная_запись_хранения&gt;/&lt;контейнер_BLOB-объектов&gt;/&lt;имя_целевого_виртуального_диска&gt;* .vhd.
 
-4. Чтобы настроить для большого двоичного объекта анонимный доступ, перейдите в контейнер больших двоичных объектов учетной записи хранения, в который был отправлен VHD образа виртуальной машины. Выберите **Большой двоичный объект**, а затем — **Политика доступа**. Если требуется, можно создать подписанный URL-адрес для контейнера и включить его как часть URI большого двоичного объекта. Это сделает большой двоичный объект доступным для использования. Если для большого двоичного объекта не включен анонимный доступ, образ виртуальной машины будет создан с состоянием сбоя.
+5. Чтобы настроить для большого двоичного объекта анонимный доступ, перейдите в контейнер больших двоичных объектов учетной записи хранения, в который был отправлен VHD образа виртуальной машины. Выберите **Большой двоичный объект**, а затем — **Политика доступа**. Если требуется, можно создать подписанный URL-адрес для контейнера и включить его как часть URI большого двоичного объекта. Это сделает большой двоичный объект доступным для использования. Если для большого двоичного объекта не включен анонимный доступ, образ виртуальной машины будет создан с состоянием сбоя.
 
    ![Переход к большим двоичным объектам учетной записи хранения](./media/azure-stack-add-vm-image/tca1.png)
 
    ![Установка общего доступа к большим двоичным объектам](./media/azure-stack-add-vm-image/tca2.png)
 
    ![Установка общего доступа к большим двоичным объектам](./media/azure-stack-add-vm-image/tca3.png)
-   
 
 ## <a name="step-3-option-1-add-the-vm-image-as-an-azure-stack-hub-operator-using-the-portal"></a>Шаг 3, вариант 1. Добавление образа виртуальной машины от имени оператора Azure Stack Hub с помощью портала
 
@@ -121,11 +122,11 @@ Remove-AzureRmVMExtension -ResourceGroupName winvmrg1 -VMName windowsvm -Name "C
    ![Пользовательский интерфейс для загрузки неопубликованных пользовательских образов](./media/azure-stack-add-vm-image/tca4.png)
 
 2. В разделе **Создание образа** введите сведения об издателе, предложении, номере SKU, версии и URI BLOB-объекта c диском ОС. Затем щелкните **Создать**, чтобы создать образ виртуальной машины.
-   
+
    ![Пользовательский интерфейс для загрузки неопубликованных пользовательских образов](./media/azure-stack-add-vm-image/tca5.png)
 
    При успешном создании образа состояние образа виртуальной машины изменяется на **Успешно**.
-   
+
 3. Добавленный образ будет доступен только для шаблонов на базе Azure Resource Manager и развертываний PowerShell. Чтобы обеспечить пользователям доступ к образу в Marketplace, опубликуйте его в качестве элемента Marketplace, как описывается в статье [Создание и публикация элемента Marketplace](azure-stack-create-and-publish-marketplace-item.md) Запишите значения **Издатель**, **Предложение**, **Номер SKU** и **Версия**. Они понадобятся при редактировании шаблона Resource Manager и Manifest.json в пользовательском AZPKG-файле.
 
 ## <a name="step-3-option-2-add-a-vm-image-as-an-azure-stack-hub-operator-using-powershell"></a>Шаг 3, вариант 2. Добавление образа виртуальной машины от имени оператора Azure Stack Hub с помощью PowerShell
@@ -166,7 +167,7 @@ Remove-AzureRmVMExtension -ResourceGroupName winvmrg1 -VMName windowsvm -Name "C
      В качестве значения `osDisk` вы можете указать URI хранилища BLOB-объектов.  
 
      Дополнительные сведения см. в справочнике PowerShell в разделе о командлете [Add-AzsPlatformimage](/powershell/module/azs.compute.admin/add-azsplatformimage).
-     
+
 4. Добавленный образ будет доступен только для шаблонов на базе Azure Resource Manager и развертываний PowerShell. Чтобы обеспечить пользователям доступ к образу в Marketplace, опубликуйте его в качестве элемента Marketplace, как описывается в статье [Создание и публикация элемента Marketplace](azure-stack-create-and-publish-marketplace-item.md) Запишите значения **Издатель**, **Предложение**, **Номер SKU** и **Версия**. Они понадобятся при редактировании шаблона Resource Manager и Manifest.json в пользовательском AZPKG-файле.
 
 ## <a name="remove-the-vm-image-as-an-azure-stack-hub-operator-using-the-portal"></a>Удаление образа виртуальной машины от имени оператора Azure Stack Hub с помощью портала

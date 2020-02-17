@@ -1,41 +1,42 @@
 ---
 title: Отчет о проверке Azure Stack Hub
-description: Узнайте результаты проверки готовности Azure Stack Hub с помощью отчета.
+titleSuffix: Azure Stack Hub
+description: Создайте отчет о проверке с помощью инструмента проверки готовности Azure Stack Hub.
 author: ihenkel
 ms.topic: conceptual
 ms.date: 01/07/2020
 ms.author: inhenkel
 ms.reviewer: unknown
 ms.lastreviewed: 10/23/2018
-ms.openlocfilehash: 21c19a368b62a35e3b2daeef2a0e36f84eb4e527
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: a2264608c295a29fecc5335ce4970499dd10c895
+ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76880570"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77147727"
 ---
 # <a name="azure-stack-hub-validation-report"></a>Отчет о проверке Azure Stack Hub
 
-Используйте *средство проверки готовности Azure Stack Hub*, чтобы определить, выполнены ли условия, необходимые для поддержки развертывания и обслуживания окружения Azure Stack Hub. Результаты сохраняются в JSON-файле отчета. В отчете отображаются подробные и сводные данные о состоянии компонентов, необходимых для развертывания Azure Stack Hub. Этот отчет также содержит сведения о смене секретов для существующих развертываний Azure Stack Hub.  
+Используйте [инструмент проверки готовности Azure Stack Hub](https://www.powershellgallery.com/packages/Microsoft.AzureStack.ReadinessChecker/1.2002.1111.69), чтобы определить, выполнены ли условия, необходимые для поддержки развертывания и обслуживания окружения Azure Stack Hub. Результаты сохраняются в JSON-файле отчета. В отчете отображаются подробные и сводные данные о состоянии компонентов, необходимых для развертывания Azure Stack Hub. Этот отчет также содержит сведения о смене секретов для существующих развертываний Azure Stack Hub.  
 
 ## <a name="where-to-find-the-report"></a>Где найти отчет
 
 При работе средства результаты сохраняются в файле **AzsReadinessCheckerReport.json**. Также создается файл журнала с именем **AzsReadinessChecker.log**. Расположение этих файлов указывается в PowerShell вместе с результатами проверки.
 
-![Запуск проверки](./media/azure-stack-validation-report/validation.png)
+![Результаты run-validation для инструмента проверки готовности Azure Stack Hub](./media/azure-stack-validation-report/validation.png)
 
 В обоих файлах сохраняются результаты всех последовательных проверок на этом компьютере. Например, вы можете запустить средство только для проверки сертификатов, затем снова запустить его для проверки удостоверений Azure, а в третий раз — для проверки регистрации. Результаты всех трех проверок будут доступны в JSON-файле отчета.  
 
-По умолчанию оба файла сохраняются в расположении **C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json**.  
+По умолчанию оба файла записываются в `C:\Users\username\AppData\Local\Temp\AzsReadinessChecker\AzsReadinessCheckerReport.json`.  
 
 - Используйте параметр `-OutputPath <path>` в конце командной строки, чтобы задать другое расположение для отчетов.
 - Используйте параметр `-CleanReport` в конце команды, чтобы удалить из файла **AzsReadinessCheckerReport.json** сведения о предыдущих запусках средства.
 
 ## <a name="view-the-report"></a>Просмотр отчета
 
-Чтобы просмотреть отчет в PowerShell, укажите путь к отчету в параметре `-ReportPath`. С помощью этой команды выводится содержимое отчета и перечисляются проверки, для которых еще нет доступных результатов.
+Чтобы просмотреть отчет в PowerShell, укажите путь к отчету в параметре `-ReportPath`. Эта команда выводит содержимое отчета и указывает проверки, для которых еще нет результатов.
 
-Например, следующая команда позволяет просмотреть из командной строки PowerShell отчет, расположенный в текущем каталоге:
+Например, следующая команда позволяет просмотреть из командной строки PowerShell отчет, расположенный в текущем каталоге.
 
 ```powershell
 Read-AzsReadinessReport -ReportPath .\AzsReadinessReport.json
@@ -121,7 +122,7 @@ Azure Stack Hub ADFS Validation results not available.
 
 ## <a name="view-a-filtered-report"></a>Просмотр отчета с фильтром
 
-Чтобы просмотреть отчет, отфильтрованный проверкам определенного типа, укажите параметр **-ReportSections** с одним из следующих значений:
+Чтобы просмотреть отчет, отфильтрованный проверкам определенного типа, укажите параметр `-ReportSections` с одним из следующих значений.
 
 - Сертификат
 - AzureRegistration;

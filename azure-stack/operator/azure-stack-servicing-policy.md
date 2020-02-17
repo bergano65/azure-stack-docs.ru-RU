@@ -4,16 +4,16 @@ titleSuffix: Azure Stack Hub
 description: Информация о политике обслуживания Azure Stack Hub и рекомендации по сохранению поддерживаемого состояния для интегрированной системы.
 author: sethmanheim
 ms.topic: article
-ms.date: 10/30/2019
+ms.date: 02/07/2020
 ms.author: sethm
 ms.reviewer: harik
 ms.lastreviewed: 01/11/2019
-ms.openlocfilehash: 280509c989a10b11884e93947d20569b3c128426
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: be2da63bcb2eb986a14ebae417810ee4b585714d
+ms.sourcegitcommit: 2377c6947cf846fd2a4a0274c41326293a2a239c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882922"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075961"
 ---
 # <a name="azure-stack-hub-servicing-policy"></a>Политика обслуживания Azure Stack Hub
 
@@ -77,6 +77,9 @@ ms.locfileid: "76882922"
 
 Azure Stack Hub использует тот же процесс поддержки, что и Azure. Клиенты уровня "Корпоративный" могут следовать процессу, описанному в разделе [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Если вы являетесь клиентом поставщика облачных решений (CSP), обратитесь к своему CSP для получения поддержки. Дополнительные сведения см. на странице [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq/).
 
+Рекомендации по устранению неполадок с обновлением: [Рекомендации по устранению неполадок с исправлением и обновлением в Azure Stack Hub](azure-stack-updates-troubleshoot.md).
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения об управлении обновлениями в Azure Stack Hub](azure-stack-updates.md)
+- [Рекомендации по устранению неполадок с исправлением и обновлением в Azure Stack Hub](azure-stack-updates-troubleshoot.md)

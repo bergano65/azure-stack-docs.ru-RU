@@ -1,5 +1,5 @@
 ---
-title: Рекомендации по выполнению проверки Azure Stack
+title: Рекомендации по выполнению проверки Azure Stack Hub
 description: В этой статье описываются рекомендации по использованию проверки как услуги (VaaS).
 author: mattbriggs
 ms.topic: article
@@ -8,18 +8,18 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 19446113fc2e167d83b578fbad15964b21001ef4
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 647e724b179d994819032859c325bf711cb9d2ee
+ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885058"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77143829"
 ---
 # <a name="create-an-oem-package"></a>Создание пакета OEM
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
-Пакет расширения Azure Stack OEM — это механизм, с помощью которого содержимое OEM добавляется в инфраструктуру Azure Stack для использования при развертывании, а также в рабочих процессах, таких как обновление, расширение и замена на месте.
+Пакет расширения Azure Stack Hub OEM — это механизм, с помощью которого содержимое от изготовителя оборудования добавляется в инфраструктуру Azure Stack Hub для использования при развертывании, а также в рабочих процессах, таких как обновление, расширение и замена на месте.
 
 ## <a name="creating-the-package"></a>Создание пакета
 
