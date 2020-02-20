@@ -1,18 +1,18 @@
 ---
 title: Развертывание поставщика ресурсов MySQL в Azure Stack Hub
 description: Узнайте, как развернуть адаптер поставщика ресурсов MySQL и базы данных MySQL в качестве службы в Azure Stack Hub.
-author: mattbriggs
+author: bryanla
 ms.topic: article
 ms.date: 1/22/2020
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 03/18/2019
-ms.openlocfilehash: 52ee1953098f861cca572e08269dff56da31f3aa
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 60a5df4b54165ab86ac8c836254baabaab4f7ca6
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881829"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77492687"
 ---
 # <a name="deploy-the-mysql-resource-provider-on-azure-stack-hub"></a>Развертывание поставщика ресурсов MySQL в Azure Stack Hub
 

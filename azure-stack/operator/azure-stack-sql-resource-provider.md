@@ -2,18 +2,18 @@
 title: Использование баз данных SQL
 titleSuffix: Azure Stack Hub
 description: Узнайте как предоставлять базы данных SQL как услуги в Azure Stack Hub, используя поставщик ресурсов SQL Server.
-author: mattbriggs
+author: bryanla
 ms.topic: article
 ms.date: 10/02/2019
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 30ca5673bb337342eba57d127acf2f3e657bb8df
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 5f09af556a9541ac0d081a986ac4c2befb26b203
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882780"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77491770"
 ---
 # <a name="use-sql-databases-on-azure-stack-hub"></a>Использование баз данных SQL в Azure Stack Hub
 

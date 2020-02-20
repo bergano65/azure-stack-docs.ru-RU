@@ -2,18 +2,18 @@
 title: Заметки о выпуске поставщика ресурсов SQL версии 1.1.33.0 для Azure Stack Hub
 titleSuffix: Azure Stack Hub
 description: Просмотрите заметки о выпуске для обновления поставщика ресурсов SQL версии 1.1.33.0 для Azure Stack Hub.
-author: mattbriggs
+author: bryanla
 ms.topic: article
 ms.date: 1/22/2020
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: jiahan
 ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: 024632c7dd80a7c028271ded7aea6a2b4ef46be0
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 208f0556b125eed30063dc768d9b88875176d344
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882883"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77491872"
 ---
 # <a name="sql-resource-provider-11330-release-notes"></a>Заметки о выпуске для поставщика ресурсов SQL 1.1.33.0
 

@@ -2,18 +2,18 @@
 title: Добавление серверов размещения для поставщика ресурсов SQL
 titleSuffix: Azure Stack Hub
 description: Узнайте, как добавить серверы размещения для подготовки через адаптер поставщика ресурсов SQL.
-author: mattbriggs
+author: bryanla
 ms.topic: article
 ms.date: 10/02/2019
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 10/16/2018
-ms.openlocfilehash: d46837540e8b4bd22fb114062266a5be86862921
-ms.sourcegitcommit: b7b86e875cf04cb0fd9d48a2b830588d3ff99b6d
+ms.openlocfilehash: 919b0ed28e6214f8854a3a19012bb7f8cd952b6e
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125727"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77491821"
 ---
 # <a name="add-hosting-servers-for-the-sql-resource-provider"></a>Добавление серверов размещения для поставщика ресурсов SQL
 

@@ -2,18 +2,18 @@
 title: Регистрация Azure Stack Hub в Azure
 titleSuffix: Azure Stack Hub
 description: Узнайте, как регистрировать интегрированные системы Azure Stack Hub в Azure, чтобы скачивать элементы Azure Marketplace и настраивать отчеты по данным.
-author: mattbriggs
+author: ihenkel
 ms.topic: article
 ms.date: 2/02/2020
-ms.author: mabrigg
+ms.author: inhenkel
 ms.reviewer: avishwan
 ms.lastreviewed: 03/04/2019
-ms.openlocfilehash: 568bcc7b04da397dff343662a8e80b86e27d2618
-ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
+ms.openlocfilehash: 6a56c6381cc1a88729b31c5d020460100d29ca39
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76972573"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77491923"
 ---
 # <a name="register-azure-stack-hub-with-azure"></a>Регистрация Azure Stack Hub в Azure
 
@@ -471,15 +471,15 @@ Set-AzsRegistration [-PrivilegedEndpointCredential] <PSCredential> [-PrivilegedE
 | Параметр | Тип | Описание |
 |-------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | PrivilegedEndpointCredential | PSCredential | Учетные данные, которые используются для [получения доступа к привилегированной конечной точке](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). Имя пользователя вводится в формате **AzureStackDomain\CloudAdmin**. |
-| PrivilegedEndpoint | String | Предварительно настроенная удаленная консоль PowerShell, которая позволяет собирать журналы и выполнять другие задачи после развертывания. Дополнительные сведения см. в разделе [Доступ к привилегированной конечной точке](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). |
+| PrivilegedEndpoint | Строка | Предварительно настроенная удаленная консоль PowerShell, которая позволяет собирать журналы и выполнять другие задачи после развертывания. Дополнительные сведения см. в разделе [Доступ к привилегированной конечной точке](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). |
 | AzureContext | PSObject |  |
-| ResourceGroupName | String |  |
-| ResourceGroupLocation | String |  |
-| BillingModel | String | Модель выставления счетов, которая используется в подписке. Допустимые значения для этого параметра: Capacity, PayAsYouUse и Development. |
+| ResourceGroupName | Строка |  |
+| ResourceGroupLocation | Строка |  |
+| BillingModel | Строка | Модель выставления счетов, которая используется в подписке. Допустимые значения для этого параметра: Capacity, PayAsYouUse и Development. |
 | MarketplaceSyndicationEnabled | True или False | Определяет, доступна ли функция управления Marketplace на портале. Имеет значение true, если регистрация осуществляется с подключением к Интернету. Имеет значение false, если регистрация осуществляется в среде без подключения к Интернету. При регистрации в среде без подключения к Интернету можно использовать [инструмент автономной синдикации](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario) для скачивания элементов Marketplace. |
 | UsageReportingEnabled | True или False | Azure Stack Hub передает метрики использования по умолчанию. Операторам, использующим оплату за емкость или поддерживающим отключенную среду, необходимо отключить отчеты о потреблении. Допустимые значения для этого параметра: True, False. |
-| AgreementNumber | String | Номер соглашения EA, в соответствии с которым заказан номер SKU емкости для Azure Stack. |
-| RegistrationName | String | Задайте уникальное имя регистрации, если сценарий регистрации выполняется в нескольких экземплярах Azure Stack Hub с использованием одного идентификатора подписки Azure. Этот параметр имеет значение по умолчанию **AzureStackRegistration**. Но если вы укажете одно имя для нескольких экземпляров Azure Stack Hub, выполнение скрипта завершится ошибкой. |
+| AgreementNumber | Строка | Номер соглашения EA, в соответствии с которым заказан номер SKU емкости для Azure Stack. |
+| RegistrationName | Строка | Задайте уникальное имя регистрации, если сценарий регистрации выполняется в нескольких экземплярах Azure Stack Hub с использованием одного идентификатора подписки Azure. Этот параметр имеет значение по умолчанию **AzureStackRegistration**. Но если вы укажете одно имя для нескольких экземпляров Azure Stack Hub, выполнение скрипта завершится ошибкой. |
 
 ### <a name="get-azsregistrationtoken"></a>Get-AzsRegistrationToken
 
@@ -493,14 +493,14 @@ Get-AzsRegistrationToken [-PrivilegedEndpointCredential] <PSCredential> [-Privil
 | Параметр | Тип | Описание |
 |-------------------------------|--------------|-------------|
 | PrivilegedEndpointCredential | PSCredential | Учетные данные, которые используются для [получения доступа к привилегированной конечной точке](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). Имя пользователя вводится в формате **AzureStackDomain\CloudAdmin**. |
-| PrivilegedEndpoint | String |  Предварительно настроенная удаленная консоль PowerShell, которая позволяет собирать журналы и выполнять другие задачи после развертывания. Дополнительные сведения см. в разделе [Доступ к привилегированной конечной точке](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). |
+| PrivilegedEndpoint | Строка |  Предварительно настроенная удаленная консоль PowerShell, которая позволяет собирать журналы и выполнять другие задачи после развертывания. Дополнительные сведения см. в разделе [Доступ к привилегированной конечной точке](azure-stack-privileged-endpoint.md#access-the-privileged-endpoint). |
 | AzureContext | PSObject |  |
-| ResourceGroupName | String |  |
-| ResourceGroupLocation | String |  |
-| BillingModel | String | Модель выставления счетов, которая используется в подписке. Допустимые значения для этого параметра: Capacity, PayAsYouUse и Development. |
+| ResourceGroupName | Строка |  |
+| ResourceGroupLocation | Строка |  |
+| BillingModel | Строка | Модель выставления счетов, которая используется в подписке. Допустимые значения для этого параметра: Capacity, PayAsYouUse и Development. |
 | MarketplaceSyndicationEnabled | True или False |  |
 | UsageReportingEnabled | True или False | Azure Stack Hub передает метрики использования по умолчанию. Операторам, использующим оплату за емкость или поддерживающим отключенную среду, необходимо отключить отчеты о потреблении. Допустимые значения для этого параметра: True, False. |
-| AgreementNumber | String |  |
+| AgreementNumber | Строка |  |
 
 ## <a name="registration-failures"></a>Ошибки регистрации
 
