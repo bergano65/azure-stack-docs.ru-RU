@@ -153,7 +153,7 @@ ms.locfileid: "76972533"
 **Имя единицы измерения**. ActualPremiumDiskSize **Единица измерения:** : ГБ\*месяц. **Примечания.** Фактический размер управляемого диска (цен. категория "Премиум").
 
 **Идентификатор единицы измерения**. 108fa95b-be0d-4cd9-96e8-5b0d59505df1  
-**Имя единицы измерения**. ActualStandardSnapshotSize. **Единица измерения**: ГБ**месяц. **Примечания.** Моментальный снимок фактического размера Стандартного управляемого диска.  
+**Имя единицы измерения**. ActualStandardSnapshotSize. **Единица измерения**: ГБ\*месяц. **Примечания.** Моментальный снимок фактического размера Стандартного управляемого диска.  
 
 **Идентификатор единицы измерения**. 578ae51d-4ef9-42f9-85ae-42b52d3d83ac **Имя единицы измерения:** ActualPremiumSnapshotSize. **Единица измерения**: ГБ\*месяц. **Примечания.** Фактический размер управляемого моментального снимка диска (цен. категория "Премиум").
 
@@ -285,7 +285,7 @@ ms.locfileid: "76972533"
 **Единица измерения**: ГБ  
 **Примечания** Общее количество байт ответа на входящий запрос + общее количество байт ответа на исходящий запрос + общее количество байт ответа на входящий запрос FTP + общее количество байт ответа на запросы веб-развертывания  
   
-## <a name="how-do-the-azure-stack-hub-usage-apis-compare-to-the-azure-usage-apihttpsdocsmicrosoftcomazurebillingbilling-usage-rate-card-overviewazure-resource-usage-api-preview-currently-in-public-preview"></a>Какие различия между API использования в Azure Stack Hub и [API использования в Azure](https://docs.microsoft.com/azure/billing/billing-usage-rate-card-overview#azure-resource-usage-api-preview) (в настоящее время в общедоступной предварительной версии)?
+## <a name="how-do-the-azure-stack-hub-usage-apis-compare-to-the-azure-usage-api-currently-in-public-preview"></a>Какие различия между API использования в Azure Stack Hub и [API использования в Azure](https://docs.microsoft.com/azure/billing/billing-usage-rate-card-overview#azure-resource-usage-api-preview) (в настоящее время в общедоступной предварительной версии)?
 
 * API использования для клиента полностью совпадает с аналогичным API в Azure, но есть одно исключение — сейчас флаг *showDetails* в Azure Stack Hub не поддерживается.
 * API использования для поставщика относится только к Azure Stack Hub.
