@@ -4,8 +4,6 @@
   items:
     - name: Что такое Azure Stack Hub?
       href: azure-stack-overview.md
-    - name: Что такое Azure Stack HCI?
-      href: azure-stack-hci-overview.md
     - name: 'Сравнение возможностей, предоставляемых в экосистеме Azure'
       href: compare-azure-azure-stack.md
     - name: Заметки о выпуске
@@ -208,7 +206,7 @@
           href: azure-stack-security-foundations.md
         - name: Настройка безопасности
           href: azure-stack-security-configuration.md
-        - name: Удостоверение
+        - name: Идентификация
           items:
             - name: Общие сведения об удостоверениях
               href: azure-stack-identity-overview.md
