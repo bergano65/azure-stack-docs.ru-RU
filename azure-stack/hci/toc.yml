@@ -1,0 +1,28 @@
+- name: Документация по Azure Stack HCI
+  href: overview.md
+- name: Обзор
+  items:
+    - name: Что такое Azure Stack HCI?
+      href: overview.md
+- name: Справочник
+  items:
+    - name: Команды PowerShell для Hyper-V
+      href: /powershell/module/hyper-v
+    - name: Команды PowerShell для службы хранилища
+      href: /powershell/module/storage
+- name: Сопутствующие материалы
+  items:
+    - name: Семейство Azure Stack
+      href: ../index.yml
+    - name: Windows Admin Center;
+      href: /windows-server/manage/windows-admin-center/understand/windows-admin-center
+    - name: Гибридные службы Azure
+      href: /windows-server/manage/windows-admin-center/azure
+    - name: Локальные дисковые пространства
+      href: /windows-server/storage/storage-spaces/storage-spaces-direct-overview
+    - name: Отказоустойчивая кластеризация
+      href: /windows-server/failover-clustering/failover-clustering-overview
+    - name: Hyper-V
+      href: /windows-server/virtualization/hyper-v/hyper-v-on-windows-server
+    - name: Программно-конфигурируемая сеть
+      href: /windows-server/networking/sdn
