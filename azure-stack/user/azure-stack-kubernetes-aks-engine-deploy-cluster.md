@@ -8,11 +8,11 @@ ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
 ms.openlocfilehash: f7d9b735a3b4936a5bb97e60e4c84f4b35b29baa
-ms.sourcegitcommit: 40c7b3dad98eede5e2b2d19d9c24b805d0395e63
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77479399"
+ms.locfileid: "77492297"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Развертывание кластера Kubernetes с обработчиком AKS в Azure Stack Hub
 
