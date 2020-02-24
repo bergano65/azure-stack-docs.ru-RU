@@ -7,12 +7,12 @@ ms.date: 01/10/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: bc56a45bc1312488d00570e4a44436bcdfe14834
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: f7d9b735a3b4936a5bb97e60e4c84f4b35b29baa
+ms.sourcegitcommit: 40c7b3dad98eede5e2b2d19d9c24b805d0395e63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884807"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77479399"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Развертывание кластера Kubernetes с обработчиком AKS в Azure Stack Hub
 
@@ -62,7 +62,7 @@ ms.locfileid: "76884807"
     ```
 
     > [!Note]  
-    > Если вы используете Azure AD для системы удостоверений, добавлять поле **identitySystem** не нужно.
+    > Если вы используете Azure AD для системы удостоверений, добавлять поле **identitySystem** не нужно.
 
 6. Найдите `portalURL` и укажите URL-адрес для портала клиента. Например, `https://portal.local.azurestack.external`.
 

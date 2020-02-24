@@ -3,16 +3,16 @@ title: Настройка сервера времени для Azure Stack Hub
 description: Узнайте, как настроить сервер времени для Azure Stack Hub.
 author: ihenkel
 ms.topic: article
-ms.date: 1/22/2020
+ms.date: 2/19/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 10/10/2019
-ms.openlocfilehash: d2dbc9ea7968ed3ad1911dd908966b6ac1e2a9c9
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 891e034f691f5e8e1e087015aff36107c649198c
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76879199"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77492195"
 ---
 # <a name="configure-the-time-server-for-azure-stack-hub"></a>Настройка сервера времени для Azure Stack Hub
 
@@ -40,10 +40,16 @@ Azure Stack Hub использует протокол NTP для подключ
 3. Чтобы изменить NTP-сервер, используемый в Azure Stack Hub и немедленно синхронизировать время, выполните следующую команду.
 
     > [!Note]  
-    > Эта процедура не обновляет сервер времени на физических коммутаторах.
+    > При этом сервер времени на физических коммутаторах не обновляется. Если сервер времени не является NTP-сервером под управлением Windows, нужно добавить флаг `0x8`.
 
     ```PowerShell
     Set-AzsTimeSource -TimeServer NEWTIMESERVERIP -resync
+    ```
+
+    Для серверов времени не на основе Windows:
+
+    ```PowerShell
+    Set-AzsTimeSource -TimeServer "NEWTIMESERVERIP,0x8" -resync
     ```
 
 4. Проверьте отсутствие ошибок в выходных данных команды.

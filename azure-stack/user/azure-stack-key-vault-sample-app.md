@@ -3,15 +3,15 @@ title: Разрешение приложениям получать доступ
 description: Из этой статьи вы узнаете, как запустить пример приложения, которое извлекает ключи и секреты из хранилища ключей в Azure Stack Hub.
 author: sethmanheim
 ms.topic: conceptual
-ms.date: 01/06/2020
+ms.date: 02/19/2020
 ms.author: sethm
 ms.lastreviewed: 04/08/2019
-ms.openlocfilehash: 11b26d5e079ce16c7450bea0424aa4902c0ff8b3
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 4db38de1586096cfeeb2e7f2b806430d0ca1344f
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883583"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77492314"
 ---
 # <a name="allow-apps-to-access-azure-stack-hub-key-vault-secrets"></a>Разрешение приложениям получать доступ к секретам из хранилища ключей Azure Stack Hub
 
@@ -142,9 +142,17 @@ Write-Host
 В Visual Studio:
 
 1. Откройте файл HelloKeyVault\App.config и найдите элемент `<appSettings>`.
-2. Обновите ключи **VaultUrl**, **AuthClientId** и **AuthClientSecret** с помощью значений, которые были возвращены при создании хранилища ключей. По умолчанию файл App.config содержит заполнитель для `AuthCertThumbprint`. Замените его на `AuthClientSecret`.
+2. Обновите ключи **VaultUrl**, **AuthClientId** и **AuthCertThumbprint** с помощью значений, которые были возвращены при создании хранилища ключей. По умолчанию файл App.config содержит заполнитель для `AuthCertThumbprint`. Замените его на `AuthClientSecret`.
 
-   ![Параметры приложения](media/azure-stack-key-vault-sample-app/appconfig.png)
+   ```xml
+   <appSettings>
+    <!-- Update these settings for your test environment -->
+    <add key="VaultUrl" value="URL to your Vault" />
+    <add key="AuthClientId" value="Client Id of your Service Principal" />
+    <add key="AuthCertThumbprint" value="Thumbprint of the certificate used for authentication" />
+    <add key="TracingEnabled" value="false" />
+   </appSettings>
+   ```
 
 3. Повторно создайте решение.
 

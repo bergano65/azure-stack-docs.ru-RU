@@ -1,18 +1,18 @@
 ---
 title: Удаление поставщика ресурсов MySQL в Azure Stack Hub
 description: Сведения об удалении поставщика ресурсов MySQL из развертывания Azure Stack Hub.
-author: mattbriggs
+author: bryanla
 ms.topic: article
 ms.date: 1/22/2020
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2018
-ms.openlocfilehash: 89d0a55797b6182b7490778db10914a09977e105
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: e432e0a37dbcea7bf441594ba6669ee15578b3e4
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881779"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77492059"
 ---
 # <a name="remove-the-mysql-resource-provider-in-azure-stack-hub"></a>Удаление поставщика ресурсов MySQL в Azure Stack Hub
 
@@ -21,16 +21,7 @@ ms.locfileid: "76881779"
 > [!NOTE]
 > Скачать установщики поставщика ресурсов можно с помощью ссылок, приведенных в разделе [предварительных требований для развертывания поставщика ресурсов](./azure-stack-mysql-resource-provider-deploy.md#prerequisites).
 
-При удалении поставщика ресурсов MySQL базы данных клиента не удаляются с серверов размещения.
-
-## <a name="dependency-cleanup"></a>Очистка зависимостей
-
-Есть несколько задач очистки, которые нужно запустить перед выполнением скрипта DeployMySqlProvider.ps1 для удаления поставщика ресурсов.
-
-Эти задачи очистки выполняет оператор Azure Stack Hub:
-
-* Удаление всех планов, которые ссылаются на этот адаптер MySQL.
-* Удаление всех квот, которые связаны с этим адаптером MySQL.
+Если удалить поставщик ресурсов MySQL, также будут удалены связанные с ним планы и квоты, которыми управляет оператор. Но при этом базы данных клиента не удаляются с серверов размещения.
 
 ## <a name="to-remove-the-mysql-resource-provider"></a>Удаление поставщика ресурсов MySQL
 

@@ -1,18 +1,18 @@
 ---
 title: Добавление серверов размещения MySQL в Azure Stack Hub
 description: Узнайте, как добавить серверы размещения MySQL для подготовки через поставщик ресурсов адаптера MySQL.
-author: mattbriggs
+author: bryanla
 ms.topic: article
 ms.date: 11/06/2019
-ms.author: mabrigg
+ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: 6cd5d09dcfc2467bd596b94597d001c4803e1655
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: f8c998675f3446941a00da9d9a444f1f9186e60e
+ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76881806"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77492093"
 ---
 # <a name="add-mysql-hosting-servers-in-azure-stack-hub"></a>Добавление серверов размещения MySQL в Azure Stack Hub
 
@@ -22,6 +22,39 @@ ms.locfileid: "76881806"
 > Поставщик ресурсов MySQL необходимо создать в подписке поставщика по умолчанию, а серверы размещения MySQL — в оплачиваемых пользовательских подписках. Сервер поставщика ресурсов не следует использовать для размещения баз данных пользователя.
 
 Для серверов размещения можно использовать версии MySQL 5.6, 5.7 и 8.0. Поставщик ресурсов MySQL не поддерживает проверку подлинности caching_sha2_password. Она будет добавлена в следующем выпуске. Серверы MySQL 8.0 должны быть настроены для использования mysql_native_password. Также поддерживается MariaDB.
+
+## <a name="configure-external-access-to-the-mysql-hosting-server"></a>Настройка внешнего доступа к серверу размещения MySQL
+
+Прежде чем добавлять сервер MySQL в качестве узла размещения сервера MySQL для Azure Stack Hub, необходимо включить внешний доступ. Рассмотрим это на примере BitNami MySQL из Azure Stack Hub Marketplace. Внешний доступ можно настроить, выполнив описанные ниже действия.
+
+1. Войдите на сервер MySQL с компьютера, который имеет доступ к общедоступному IP-адресу, используя любой SSH-клиент (в нашем примере это [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)).
+
+    По общедоступному IP-адресу войдите на виртуальную машину с именем пользователя **bitnami** и созданным ранее паролем приложения без специальных символов.
+
+   ![LinuxLogin](media/azure-stack-tutorial-mysqlrp/bitnami1.png)
+
+2. Используйте следующую команду в окне клиента SSH, чтобы убедиться, что служба bitnami включена и запущена. При появлении запроса введите пароль bitnami снова:
+
+   `sudo service bitnami status`
+
+   ![Проверка службы bitnami](media/azure-stack-tutorial-mysqlrp/bitnami2.png)
+
+3. Создайте учетную запись удаленного доступа, которая будет использоваться сервером размещения MySQL Azure Stack Hub для подключения к MySQL, затем выйдите из клиента SSH.
+
+    Выполните приведенные ниже команды, чтобы войти в MySQL с правами привилегированного пользователя, используя созданный ранее пароль. Создайте нового пользователя с правами администратора и укажите для него *\<имя_пользователя\>* и *\<пароль\>* , соответствующие требованиям для вашей среды. В нашем примере создается пользователь с именем **sqlsa** и паролем высокой надежности:
+
+   ```mysql
+   mysql -u root -p
+   create user <username>@'%' identified by '<password>';
+   grant all privileges on *.* to <username>@'%' with grant option;
+   flush privileges;
+   ```
+
+   ![Создание пользователя-администратора](media/azure-stack-tutorial-mysqlrp/bitnami3.png)
+
+4. Запишите новые сведения о пользователе MySQL.
+
+Эти имя пользователя и пароль оператор Azure Stack Hub будет использовать при создании сервера размещения MySQL с помощью этого сервера MySQL.
 
 ## <a name="connect-to-a-mysql-hosting-server"></a>Подключение к серверу размещения MySQL
 
