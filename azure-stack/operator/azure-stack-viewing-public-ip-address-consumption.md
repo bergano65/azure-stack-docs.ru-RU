@@ -2,18 +2,18 @@
 title: Управление сетевыми ресурсами
 titleSuffix: Azure Stack Hub
 description: Узнайте, как управлять сетевыми ресурсами, включая пул MAC-адресов и потребление общедоступных IP-адресов в регионе.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: conceptual
 ms.date: 1/22/2020
 ms.author: inhenkel
 ms.reviewer: scottnap
 ms.lastreviewed: 09/17/2019
-ms.openlocfilehash: 10f949791a38a7c4c9e21fa910df166b56cc1330
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 8f52158e53bbb48b25b9b3a898c0ece33ab3c1be
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77490954"
+ms.locfileid: "77508027"
 ---
 # <a name="manage-network-resources-in-azure-stack-hub"></a>Управление сетевыми ресурсами в Azure Stack Hub
 

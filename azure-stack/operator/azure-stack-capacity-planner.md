@@ -1,18 +1,18 @@
 ---
 title: Планировщик ресурсов Azure Stack Hub
 description: Узнайте, как использовать электронную таблицу планировщика ресурсов Azure Stack Hub для развертываний.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: inhenkel
 ms.reviewer: prchint
 ms.lastreviewed: 05/31/2019
-ms.openlocfilehash: b1c71d472ef3b03108f86660d0707f596e440138
-ms.sourcegitcommit: 0a3c8b0bf9c116a5caaeca453a2bbc6e7f7cbfb9
+ms.openlocfilehash: 8d703e1c8efb04573951ef68e7318f32c7deb64f
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77147844"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77509200"
 ---
 # <a name="azure-stack-hub-capacity-planner"></a>Планировщик ресурсов Azure Stack Hub
 

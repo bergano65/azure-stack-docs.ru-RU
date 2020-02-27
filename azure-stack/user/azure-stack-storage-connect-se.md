@@ -7,12 +7,12 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: 2776443fac5e30b14154e96618a49bd89d16a7c0
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: c9940e110d86ca1ebeb4739a6beb375381786be2
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76884393"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568727"
 ---
 # <a name="connect-storage-explorer-to-an-azure-stack-hub-subscription-or-a-storage-account"></a>Подключение Обозревателя службы хранилища к учетной записи хранения или подписке Azure Stack Hub
 
@@ -62,7 +62,7 @@ ms.locfileid: "76884393"
 
 8. Перезапустив Обозреватель службы хранилища, откройте меню **Изменить** и проверьте, выбран ли параметр **Целевые API Azure Stack Hub**. Если он не выбран, установите флажок **Целевые API Azure Stack Hub** и перезапустите Обозреватель службы хранилища, чтобы изменения вступили в силу. Это необходимо для обеспечения совместимости со средой Azure Stack Hub.
 
-    ![Проверка параметра "Целевые API Azure Stack Hub"](./media/azure-stack-storage-connect-se/target-azure-stack.png)
+    ![Проверка параметра "Целевые API Azure Stack Hub"](./media/azure-stack-storage-connect-se/target-azure-stack-new.png)
 
 ## <a name="connect-to-an-azure-stack-hub-subscription-with-azure-ad"></a>Подключение к подписке Azure Stack Hub с использованием Azure AD
 

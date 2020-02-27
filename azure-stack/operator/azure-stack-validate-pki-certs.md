@@ -4,18 +4,18 @@ titleSuffix: Azure Stack Hub
 description: Узнайте, как проверить сертификаты PKI для интегрированных систем Azure Stack Hub с помощью средства проверки готовности Azure Stack Hub.
 services: azure-stack
 documentationcenter: ''
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 07/23/2019
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 01/08/2019
-ms.openlocfilehash: 4ec3732df372e0b768b3f52c082cae5db932a36c
-ms.sourcegitcommit: 5f53810d3c5917a3a7b816bffd1729a1c6b16d7f
+ms.openlocfilehash: 40539890c6adc431ffba95358855db0e7d9f17d8
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76972544"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77508095"
 ---
 # <a name="validate-azure-stack-hub-pki-certificates"></a>Проверка сертификатов PKI Azure Stack Hub
 
@@ -93,7 +93,7 @@ ms.locfileid: "76972544"
 
     ```powershell  
     $pfxPassword = Read-Host -Prompt "Enter PFX Password" -AsSecureString 
-    Invoke-AzsCertificateValidation -CertificateType Deployment -CertificatePath C:\Certificates\Deployment -pfxPassword $pfxPassword -RegionName east -FQDN azurestack.contoso.com -IdentitySystem AAD  
+    Invoke-AzsCertificateValidation -CertificateType Deployment -CertificatePath C:\Certificates\Deployment -pfxPassword $pfxPassword -RegionName east -FQDN azurestack.contoso.com  
     ```
 
 4. Проверьте выходные данные. Все сертификаты должны пройти все проверки. Пример:
@@ -238,7 +238,7 @@ ms.locfileid: "76972544"
 
 | Каталог | Сертификат |
 | ---    | ----        |
-| acsBlob | `wildcard_blob_<region>_<externalFQDN>` |
+| ACSBlob | `wildcard_blob_<region>_<externalFQDN>` |
 | ACSQueue  |  `wildcard_queue_<region>_<externalFQDN>` |
 | ACSTable  |  `wildcard_table_<region>_<externalFQDN>` |
 | Хост-процесс для расширений администратора  |  `wildcard_adminhosting_<region>_<externalFQDN>` |

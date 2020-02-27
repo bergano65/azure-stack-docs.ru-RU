@@ -7,12 +7,12 @@ ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: rtiberiu
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: e3595179c4efc5503f8e4315fbe5a419049b2db4
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 0a105730f36aa9ce14e967bcdcefdb93ece0f26b
+ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885228"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77636290"
 ---
 # <a name="vm-update-and-management-automation-in-azure-stack-hub"></a>Автоматизация обновления виртуальной машины и управления ею в Azure Stack Hub
 Для управления виртуальными машинами Windows и Linux, развернутыми с помощью Azure Stack Hub, можно использовать следующие функции решения службы автоматизации Azure.

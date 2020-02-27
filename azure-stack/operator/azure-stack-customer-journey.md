@@ -1,24 +1,24 @@
 ---
 title: Руководство. Интеграция центра обработки данных в Azure Stack Hub
 description: Из этой статьи вы узнаете, что требуется для успешного развертывания Azure Stack Hub в центре обработки данных, начиная с этапа планирования и заканчивая операциями после развертывания.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 11/07/2019
 ms.author: inhenkel
 ms.reviewer: asganesh
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: 6711483384ba9985ced7396d19e025e0ed3240c6
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: ba68a3045876e8dd6e23f430cd23edc429cb4e31
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882507"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77510067"
 ---
 # <a name="azure-stack-hub-datacenter-integration-walkthrough"></a>Руководство. Интеграция центра обработки данных в Azure Stack Hub
 
 В этой статье описывается комплексный процесс интеграции центра обработки данных Azure Stack Hub — от приобретения до поддержки после развертывания. Интеграция представляет собой совместный проект между клиентом, поставщиком решений и корпорацией Майкрософт. Перейдите на следующие вкладки, чтобы просмотреть конкретные шаги для каждого участника проекта, и ознакомьтесь с приведенными ниже разделами, в которых приводится сводка различных этапов реализации проекта. 
 
-# <a name="customertabcustomer"></a>[Клиент](#tab/customer)
+# <a name="customer"></a>[Клиент](#tab/customer)
 
 1. Описание вариантов использования и требований.
 1. Определение модели выставления счетов.
@@ -29,7 +29,7 @@ ms.locfileid: "76882507"
 1. Указание сведений о подписке во время развертывания.
 1. Разрешение вопросов о предоставленных данных.
 
-# <a name="partnertabpartner"></a>[Партнер](#tab/partner)
+# <a name="partner"></a>[Партнер](#tab/partner)
 
 1. Рекомендованные варианты решений на основе требований клиента.
 1. Предложение подтверждения концепции (POC). 
@@ -48,7 +48,7 @@ ms.locfileid: "76882507"
 1. Развертывание Azure Stack Hub
 1. Сдача клиенту.
 
-# <a name="microsofttabmicro"></a>[Майкрософт](#tab/micro)
+# <a name="microsoft"></a>[Майкрософт](#tab/micro)
 
 1. Привлечение партнера для предпродажной поддержки.
 2. Подготовка лицензирования программного обеспечения и контрактов.

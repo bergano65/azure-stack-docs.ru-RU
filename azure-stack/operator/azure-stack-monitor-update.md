@@ -1,18 +1,18 @@
 ---
 title: Мониторинг обновлений в Azure Stack Hub с помощью привилегированной конечной точки
 description: Узнайте, как использовать привилегированную конечную точку для мониторинга состояния обновления интегрированных систем Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: f320973cfd5b7e9117eeeeb1463ee9b45cb5448f
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 170bb21a8facd66fc5f581729a19f436fbd16fc1
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77492178"
+ms.locfileid: "77508010"
 ---
 # <a name="monitor-updates-in-azure-stack-hub-using-the-privileged-endpoint"></a>Мониторинг обновлений в Azure Stack Hub с помощью привилегированной конечной точки
 

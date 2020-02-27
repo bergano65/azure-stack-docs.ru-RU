@@ -1,18 +1,18 @@
 ---
 title: Решения о развертывании с подключением к Azure для интегрированных систем Azure Stack Hub
 description: Принятие решений по планированию развертываний с подключением к Azure для интегрированных систем Azure Stack Hub, включая вопросы выставления счетов и идентификации.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 11/05/2018
-ms.openlocfilehash: 82fad799b4c2b24ac3899c376e53bfd07c6d3d07
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: a4ab00ff732bcffd66d984757a279a3ad030b33d
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76879335"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77510135"
 ---
 # <a name="azure-connected-deployment-planning-decisions-for-azure-stack-hub-integrated-systems"></a>Планирование развертываний с подключением к Azure для интегрированных систем Azure Stack Hub
 Когда вы решите, [как интегрировать Azure Stack Hub в свою среду гибридного облака](azure-stack-connection-models.md), вы сможете спланировать развертывание Azure Stack Hub.

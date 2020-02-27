@@ -1,18 +1,18 @@
 ---
 title: Интеграция брандмауэра Azure Stack Hub для интегрированных систем Azure Stack Hub
 description: Сведения об интеграции брандмауэра Azure Stack Hub для интегрированных систем Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 11/15/2019
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 11/15/2019
-ms.openlocfilehash: 752fd1f7887b8de6e9d7808e5c887200da8d6b10
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: f0074bedfbcd0e55bea84080e33e14738fccb896
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882309"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77509982"
 ---
 # <a name="azure-stack-hub-firewall-integration"></a>Интеграция брандмауэра Azure Stack Hub
 Мы рекомендуем использовать для защиты Azure Stack Hub аппаратный брандмауэр. Брандмауэры могут помочь в защите от распределенных атак, например отказ в обслуживании (DDOS), обнаружение вторжений и проверка содержимого. Тем не менее они могут ограничивать пропускную способность для служб хранилища Azure, например для больших двоичных объектов, таблиц и очередей.

@@ -1,18 +1,18 @@
 ---
 title: Устранение неполадок с обновлением в Azure Stack Hub
 description: Узнайте, как оператор Azure Stack Hub может устранять проблемы с обновлением, чтобы как можно скорее вернуть Azure Stack Hub в эксплуатацию.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 09/23/2019
 ms.author: inhenkel
 ms.lastreviewed: 09/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: 8524850d2f93fdf4d7a14c6b6b00a6d989a46a74
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 1c481538183098b6a1a88143dac339a919a248f3
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77491115"
+ms.locfileid: "77508690"
 ---
 # <a name="best-practices-for-troubleshooting-azure-stack-hub-patch-and-update-issues"></a>Рекомендации по устранению неполадок с исправлением и обновлением в Azure Stack Hub
 

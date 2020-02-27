@@ -1,18 +1,18 @@
 ---
 title: Действия с узлами единицы масштабирования в Azure Stack Hub
 description: Сведения о действиях узла единицы масштабирования, в том числе включение, выключение питания, отключение, возобновление и просмотр состояния узла в интегрированных системах Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 11/11/2019
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: d633aacdc95f273a275f45b7525cfb4f75eecd2a
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 5941fb3d433512bad69c36a0620d6ec32988d44a
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77491974"
+ms.locfileid: "77509744"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack-hub"></a>Действия с узлами единицы масштабирования в Azure Stack Hub
 

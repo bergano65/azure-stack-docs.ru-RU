@@ -1,18 +1,18 @@
 ---
 title: Интеграция внешнего решения для мониторинга с Azure Stack Hub
 description: Узнайте, как интегрировать Azure Stack Hub с внешним решением для мониторинга в центре обработки данных.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 06/05/2019
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 06/05/2019
-ms.openlocfilehash: 3e50471201c7207aa68b725daf202d323b836a99
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: a38c6f8aca4ad8203b576550dd01873cdeb9b7a8
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882119"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77509863"
 ---
 # <a name="integrate-external-monitoring-solution-with-azure-stack-hub"></a>Интеграция внешнего решения для мониторинга с Azure Stack Hub
 

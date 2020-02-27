@@ -1,18 +1,18 @@
 ---
 title: Интеграция DNS центра обработки данных в Azure Stack Hub
 description: Узнайте о том, как интегрировать DNS Azure Stack Hub с DNS в центре обработки данных.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 1/22/2020
 ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 08/21/2019
-ms.openlocfilehash: 3d92504080e754db08d76cf7ec2a2c7e010ee394
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 50553f15d394b5640bb63cb2e675da9a9684469d
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882177"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77509897"
 ---
 # <a name="azure-stack-hub-datacenter-dns-integration"></a>Интеграция DNS центра обработки данных в Azure Stack Hub
 

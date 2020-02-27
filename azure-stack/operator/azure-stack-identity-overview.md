@@ -1,18 +1,18 @@
 ---
 title: Общие сведения о поставщиках удостоверений для Azure Stack Hub
 description: Сведения о поставщиках удостоверений, которые можно использовать с Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: b6db553b2c129b1179adde2f53b98dc705077294
-ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
+ms.openlocfilehash: 018a9a3b672f603a0b41e948f376855b0c686806
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76890295"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77509914"
 ---
 # <a name="overview-of-identity-providers-for-azure-stack-hub"></a>Общие сведения о поставщиках удостоверений для Azure Stack Hub
 

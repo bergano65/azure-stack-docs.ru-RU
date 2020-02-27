@@ -1,18 +1,18 @@
 ---
 title: Интеграция удостоверения AD FS с центром обработки данных Azure Stack Hub
 description: Сведения об интеграции поставщика удостоверений AD FS Azure Stack Hub с системой AD FS в центре обработки данных.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 05/10/2019
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: 1e55ae573d67775389e1e8e8ebac1b9ba094e5a7
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: b4f48c8fe4138b74b735615777b16630c0fe7060
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76882137"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77509846"
 ---
 # <a name="integrate-ad-fs-identity-with-your-azure-stack-hub-datacenter"></a>Интеграция удостоверения AD FS с центром обработки данных Azure Stack Hub
 

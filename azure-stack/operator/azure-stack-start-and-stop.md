@@ -2,18 +2,18 @@
 title: Запуск и остановка
 titleSuffix: Azure Stack Hub
 description: Сведения о том, как запустить и остановить Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 10/02/2019
 ms.author: inhenkel
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2018
-ms.openlocfilehash: 0bda5660edd58fb3222fa6bb1fdf790013efae22
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 524c951717075b293b7829a31ac093a9061f46e8
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77491702"
+ms.locfileid: "77509506"
 ---
 # <a name="start-and-stop-azure-stack-hub"></a>Запуск и остановка Azure Stack Hub
 

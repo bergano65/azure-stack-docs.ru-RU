@@ -1,18 +1,18 @@
 ---
 title: Управление емкостью физической памяти в Azure Stack Hub
 description: Узнайте, как отслеживать емкость и физическую память и управлять ими в Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: conceptual
 ms.date: 1/22/2020
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 87c6bcc7e82ebc7d0f5a017200cccc2e702d6aa7
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 15800fa8476640b95f08848c9ffc63ff89df6d0a
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77492212"
+ms.locfileid: "77509761"
 ---
 # <a name="manage-physical-memory-capacity-in-azure-stack-hub"></a>Управление емкостью физической памяти в Azure Stack Hub
 

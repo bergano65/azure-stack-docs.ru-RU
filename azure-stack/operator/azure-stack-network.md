@@ -1,18 +1,18 @@
 ---
 title: Планирование интеграции сети для Azure Stack Hub
 description: Из этой статьи вы узнаете, как спланировать интеграцию сети центра обработки данных с интегрированными системами Azure Stack Hub.
-author: ihenkel
+author: IngridAtMicrosoft
 ms.topic: article
 ms.date: 02/18/2020
 ms.author: inhenkel
 ms.reviewer: wamota
 ms.lastreviewed: 06/04/2019
-ms.openlocfilehash: aea4ccc0bff79acaace4f37fbe34f08fbb7a3048
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: e77edd87f09f4e620c4388b8e5a277d49276bff2
+ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/20/2020
-ms.locfileid: "77492021"
+ms.locfileid: "77509438"
 ---
 # <a name="network-integration-planning-for-azure-stack"></a>Планирование интеграции сети для Azure Stack
 
