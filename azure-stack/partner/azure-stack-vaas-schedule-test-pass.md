@@ -1,24 +1,25 @@
 ---
-title: Использование проверки как услуги на портале Azure Stack Hub для планирования первого теста
-description: Использование проверки как услуги на портале Azure Stack Hub для планирования первого теста.
+title: Планирование тестов на портале проверки Azure Stack Hub
+titleSuffix: Azure Stack Hub
+description: Сведения о планировании тестов на портале проверки Azure Stack Hub.
 author: mattbriggs
 ms.topic: conceptual
 ms.date: 11/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 11/11/2019
-ms.openlocfilehash: f69629fea796d43e756ccf5436635d282a07b17e
-ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
+ms.openlocfilehash: ccaae2e6d7625687f7739cba4fa77eda3ab91520
+ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77143725"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625464"
 ---
-# <a name="scheduling-a-test"></a>Планирование теста
+# <a name="schedule-a-test-in-azure-stack-validation-portal"></a>Планирование тестов на портале проверки Azure Stack
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
-Запланируйте тест на портале проверки как услуги (VaaS) для решения Azure Stack Hub. Решение VaaS представляет решение Azure Stack Hub с определенными спецификациями оборудования. Вы можете запланировать тест, чтобы убедиться, что на оборудовании можно запустить Azure Stack Hub.
+Запланируйте тест на портале проверки Microsoft Azure Stack для решения Azure Stack Hub. Решение "проверка как услуга" (VaaS) — это решение Azure Stack Hub с определенными спецификациями оборудования (BoM). Вы можете запланировать тест, чтобы убедиться, что на оборудовании можно запустить Azure Stack Hub.
 
 Чтобы проверить решение, создайте рабочий процесс для теста. Рабочий процесс VaaS работает в контексте решения VaaS. Он представляет набор тестов, проверяющих функциональность развертывания Azure Stack Hub на вашем оборудовании. Добавьте параметры среды решения и выберите один или несколько тестов для выполнения в своем решении.
 
@@ -26,9 +27,9 @@ ms.locfileid: "77143725"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем приступить к этому краткому руководству, ознакомьтесь со следующими разделами:
+Прежде чем приступить к этому краткому руководству, выполните приведенные ниже задачи:
 
-- [Настройка ресурсов службы VaaS](azure-stack-vaas-set-up-resources.md)
+- [Настройка ресурсов Azure AD и хранилища для службы "Проверка как услуга"](azure-stack-vaas-set-up-resources.md)
 - [Развертывание локального агента](azure-stack-vaas-local-agent.md) (обязательно)
 - [Проверка как услуга: основные понятия](azure-stack-vaas-key-concepts.md) (обязательно)
 
@@ -39,12 +40,12 @@ ms.locfileid: "77143725"
 Войдите на портал, выберите решение или создайте и выберите решение.
 
 1. Войдите на [портал VaaS](https://azurestackvalidation.com).
-2. Введите имя существующего решения или выберите **Создать решение**, чтобы создать новое решение. Инструкции см. в разделе [Создание решения на портале VaaS](azure-stack-vaas-key-concepts.md#create-a-solution-in-the-vaas-portal).
+2. Введите имя существующего решения или выберите **Создать решение**, чтобы создать новое решение. Инструкции см. в разделе [Создание решения на портале VaaS](azure-stack-vaas-key-concepts.md#create-a-solution-in-the-azure-stack-hub-validation-portal).
 3. Нажмите **Запустить** на плитке **Прохождение теста**.
 
 ## <a name="specify-parameters"></a>Указание параметров
 
-![Альтернативный текст](media/vaas_test_pass_parameters.png)
+![Указание параметров на портале VaaS](media/vaas_test_pass_parameters.png)
 
 Укажите параметры, которые применяются ко всем тестам в рамках рабочего процесса.
 
@@ -60,7 +61,7 @@ ms.locfileid: "77143725"
 
 1. Выберите тесты, которые будут выполняться в рабочем процессе.
 
-    Если вы хотите переопределить общие параметры (то есть параметры, предоставленные в предыдущем разделе) для любого теста, нажмите на ссылку **Изменить** и укажите новые значения.
+    Если вы хотите переопределить общие параметры (параметры, предоставленные в предыдущем разделе) для любого теста, нажмите на ссылку **Изменить** и укажите новые значения.
 
 1. [!INCLUDE [azure-stack-vaas-workflow-step_select-agent](includes/azure-stack-vaas-workflow-step_select-agent.md)]
 

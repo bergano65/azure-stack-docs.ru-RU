@@ -7,19 +7,19 @@ ms.date: 01/13/2020
 ms.author: bryanla
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: 1d11e9572decd7bd135fe62806c284e43657febf
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 9f27013f36b3542e10640b6526eb396aa556e946
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77491175"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568679"
 ---
 # <a name="deploy-app-service-in-azure-stack-hub"></a>Развертывание Службы приложений в Azure Stack Hub
 
 В этой статье описано, как развернуть Службу приложений в Azure Stack Hub.
 
 > [!IMPORTANT]
-> Прежде чем развертывать Службу приложений Azure 1.8, примените обновление 1910 к интегрированной системе Azure Stack Hub или разверните последнюю версию Пакета средств разработки Azure Stack Hub (ASDK).
+> Прежде чем развертывать Службу приложений Azure 1.8, примените обновление 1910 к интегрированной системе Azure Stack Hub или разверните последнюю версию Пакета средств разработки Azure Stack (ASDK).
 
 Вы можете предоставить пользователям возможность создавать веб-приложения и приложения API. Чтобы разрешить пользователям создавать эти приложения, сделайте следующее:
 

@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: dc615786a23295468e173c3ce13b46cb308b8215
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 10ad85a306b225241822cb2b8531515dc9bb1719
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76875629"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568594"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Развертывание приложения, которое выполняет масштабирование в нескольких облаках с помощью Azure и Azure Stack Hub
 
@@ -39,8 +39,8 @@ ms.locfileid: "76875629"
 
 -   Подписка Azure. При необходимости для начала создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-- Используйте систему с Azure Stack Hub или разверните Пакет средств разработки Azure Stack Hub.
-    - Подробные сведения см. в статье с [инструкциями по установке Пакета средств разработки Azure Stack Hub](../asdk/asdk-install.md).
+- Используйте систему с Azure Stack Hub или разверните Пакет средств разработки Azure Stack.
+    - Подробные сведения см. в статье с [инструкциями по установке Пакета средств разработки Azure Stack](../asdk/asdk-install.md).
     - Скрипт автоматизации, используемый после развертывания ASDK, можно найти по адресу [https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1](https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1) 
     - Выполнение этой установки может занять несколько часов.
 

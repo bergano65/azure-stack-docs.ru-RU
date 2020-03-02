@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: b1de7de0c81af80c30620b85bd19b4806877190a
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: f1cb202a30e381abc498ba950820d5fbefca9e2a
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76876717"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568475"
 ---
 # <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>Развертывание группы доступности SQL Server 2016 в Azure и Azure Stack Hub
 
@@ -37,7 +37,7 @@ ms.locfileid: "76876717"
 
 ## <a name="prerequisites-for-sql-server-2016"></a>Предварительные требования для SQL Server 2016
 
-  - Две подключенные интегрированные системы Azure Stack Hub (это развертывание не поддерживает комплекты SDK Azure Stack Hub (ASDK)). Сведения об Azure Stack Hub см. [здесь](https://azure.microsoft.com/overview/azure-stack/).
+  - Две подключенные интегрированные системы Azure Stack Hub (это развертывание не поддерживает пакеты средств разработки Azure Stack (ASDK)). Сведения об Azure Stack Hub см. [здесь](https://azure.microsoft.com/overview/azure-stack/).
   - Подписка клиента в каждом экземпляре Azure Stack Hub.    
       - **Запомните или запишите идентификатор каждой подписки и конечной точки Azure Resource Manager для каждого экземпляра Azure Stack Hub.**
   - Субъект-служба Azure Active Directory (Azure AD) с разрешениями для подписки клиента в каждом экземпляре Azure Stack Hub. Вам может потребоваться создать два субъекта-службы, если экземпляры Azure Stack Hub развертываются в разных клиентах Azure AD. См. сведения о создании субъекта-службы для Azure Stack Hub в руководстве по [предоставлению приложениям доступа к Azure Stack Hub](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).

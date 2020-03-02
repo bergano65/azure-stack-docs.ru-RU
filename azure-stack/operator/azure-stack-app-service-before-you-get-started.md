@@ -7,19 +7,19 @@ ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: eb2b3431fa7c9e9aada4e4df3f43715d48d1d72e
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 8d995550ead87f31a9024cc9c87ba45f0800a78d
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76874762"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568458"
 ---
 # <a name="prerequisites-for-deploying-app-service-on-azure-stack-hub"></a>Предварительные требования для развертывания Службы приложений в Azure Stack Hub
 
 Перед развертыванием Службы приложений Azure в Azure Stack Hub необходимо выполнить предварительные действия, описанные в этой статье.
 
 > [!IMPORTANT]
-> Прежде чем развертывать Службу приложений Azure 1.8, примените обновление 1910 к интегрированной системе Azure Stack Hub или разверните последнюю версию Пакета средств разработки Azure Stack Hub (ASDK).
+> Прежде чем развертывать Службу приложений Azure 1.8, примените обновление 1910 к интегрированной системе Azure Stack Hub или разверните последнюю версию Пакета средств разработки Azure Stack (ASDK).
 
 ## <a name="download-the-installer-and-helper-scripts"></a>Скачивание установочного и вспомогательного скриптов
 

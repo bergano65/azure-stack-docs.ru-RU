@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: a0e9c00aeca18b8f5ed435d39bfb5cf9d4e56067
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: dc3096888138400007c4091ec9f7f40e289340ed
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76875493"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568424"
 ---
 # <a name="configure-hybrid-cloud-identity-for-azure-and-azure-stack-hub-applications"></a>Настройка идентификатора гибридного облака для приложений Azure и Azure Stack Hub
 
@@ -58,7 +58,7 @@ ms.locfileid: "76875493"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-Установленная среда Azure Stack Hub с подключением к Azure Active Directory и доступной подпиской. Если вы не установили Azure Stack Hub, воспользуйтесь инструкциями по установке [Пакета средств разработки Azure Stack Hub](../asdk/asdk-install.md).
+Установленная среда Azure Stack Hub с подключением к Azure Active Directory и доступной подпиской. Если вы не установили Azure Stack Hub, воспользуйтесь инструкциями по установке [Пакета средств разработки Azure Stack](../asdk/asdk-install.md).
 
 #### <a name="connect-to-azure-stack-hub-using-code"></a>Подключение к Azure Stack Hub с помощью кода
 

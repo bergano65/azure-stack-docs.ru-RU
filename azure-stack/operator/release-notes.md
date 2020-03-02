@@ -3,16 +3,16 @@ title: Заметки о выпуске Azure Stack Hub
 description: Заметки о выпуске для интегрированных систем Azure Stack Hub, включая обновления и исправления ошибок.
 author: sethmanheim
 ms.topic: article
-ms.date: 02/03/2020
+ms.date: 02/25/2020
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 11/22/2019
-ms.openlocfilehash: 40c727c97035b0f843ce84b0eafad47c77560938
-ms.sourcegitcommit: 3974fc544986a5eccfac0ba7c4441b05279ae226
+ms.openlocfilehash: 3225dce7a767dd973be62844c219dea5135bd91d
+ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001647"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625226"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Заметки о выпуске Azure Stack Hub
 
@@ -200,14 +200,14 @@ ms.locfileid: "77001647"
 Выпуск Azure Stack Hub 1910 должен устанавливаться поверх выпуска 1908 со следующими установленными исправлениями:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Исправление 1.1908.14.53 для Azure Stack Hub](https://support.microsoft.com/help/4537661)
+- [Исправление 1.1908.19.62 для Azure Stack Hub](https://support.microsoft.com/help/4541349)
 
 ### <a name="after-successfully-applying-the-1910-update"></a>После успешного применения обновления 1910
 
 После установки этого обновления установите все применимые исправления. Подробные сведения см. в статье [Политика обслуживания Azure Stack](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Исправление 1.1910.17.95 для Azure Stack Hub](https://support.microsoft.com/help/4537833)
+- [Исправление 1.1910.24.108 для Azure Stack Hub](https://support.microsoft.com/help/4541350)
 ::: moniker-end
 
 ::: moniker range="azs-1908"
@@ -275,7 +275,7 @@ ms.locfileid: "77001647"
 Выпуск Azure Stack Hub 1908 должен устанавливаться поверх выпуска 1907 со следующими установленными исправлениями:
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Исправление 1.1907.18.56 для Azure Stack Hub](https://support.microsoft.com/help/4528552).
+- [Исправление 1.1907.26.70 для Azure Stack Hub](https://support.microsoft.com/help/4541348)
 
 Для обновления 1908 для Azure Stack требуется **Azure Stack OEM версии 2.1 и выше** от поставщика оборудования для вашей системы. Обновления OEM включают обновления драйверов и встроенного ПО для оборудования вашей системы Azure Stack Hub. См. сведения о [применении обновлений изготовителя оборудования для Azure Stack Hub](azure-stack-update-oem.md).
 
@@ -284,7 +284,7 @@ ms.locfileid: "77001647"
 После установки этого обновления установите все применимые исправления. Подробные сведения см. в статье [Политика обслуживания Azure Stack](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Исправление 1.1908.14.53 для Azure Stack Hub](https://support.microsoft.com/help/4537661)
+- [Исправление 1.1908.19.62 для Azure Stack Hub](https://support.microsoft.com/help/4541349)
 ::: moniker-end
 
 ::: moniker range="azs-1907"
@@ -408,7 +408,7 @@ ms.locfileid: "77001647"
 После установки этого обновления установите все применимые исправления. Подробные сведения см. в статье [Политика обслуживания Azure Stack](azure-stack-servicing-policy.md).
 
 <!-- One of these. Either no updates at all, nothing is required, or the LATEST hotfix that is required-->
-- [Исправление 1.1907.18.56 для Azure Stack Hub](https://support.microsoft.com/help/4528552).
+- [Исправление 1.1907.26.70 для Azure Stack Hub](https://support.microsoft.com/help/4541348)
 ::: moniker-end
 
 ::: moniker range="azs-1906"

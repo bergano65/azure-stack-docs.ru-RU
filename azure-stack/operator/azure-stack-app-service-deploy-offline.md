@@ -7,17 +7,17 @@ ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
 ms.lastreviewed: 01/13/2020
-ms.openlocfilehash: bf9ce157e927b2fc43b64746d53d74e8cb82524c
-ms.sourcegitcommit: b5541815abfab3f8750fa419fdd1f93a8844731a
+ms.openlocfilehash: 7fa4ac0f63b3f5243a6473c921012614bb01bfb2
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77012892"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568628"
 ---
 # <a name="deploy-azure-app-service-in-an-offline-environment-in-azure-stack-hub"></a>Развертывание Службы приложений Azure в автономной среде Azure Stack Hub
 
 > [!IMPORTANT]
-> Прежде чем развертывать Службу приложений Azure 1.8, примените обновление 1910 к интегрированной системе Azure Stack Hub или разверните последнюю версию Пакета средств разработки Azure Stack Hub (ASDK).
+> Прежде чем развертывать Службу приложений Azure 1.8, примените обновление 1910 к интегрированной системе Azure Stack Hub или разверните последнюю версию Пакета средств разработки Azure Stack (ASDK).
 
 В статье описано, как установить [поставщик ресурсов Службы приложений Azure](azure-stack-app-service-overview.md) в среде Azure Stack Hub с такими характеристиками:
 - без подключения к Интернету;

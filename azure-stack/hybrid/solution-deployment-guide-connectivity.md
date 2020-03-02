@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4b65ce6d03ee345b308cd5c5dd594e4dcf56cfec
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 5ed6869b4c03c9e360cd12a98e206941a3842bfc
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76875510"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568492"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Настройка подключения к гибридному облаку с помощью Azure и Azure Stack Hub
 
@@ -37,7 +37,7 @@ ms.locfileid: "76875510"
 
 **Azure Stack Hub**
 
-Партнер-поставщик OEM или оборудования может развернуть рабочую среду Azure Stack Hub, а все пользователи могут развернуть Пакет средств разработки Azure Stack Hub (ASDK).
+Партнер-поставщик OEM или оборудования может развернуть рабочую среду Azure Stack Hub, а все пользователи могут развернуть Пакет средств разработки Azure Stack (ASDK).
 
 **Компоненты Azure Stack Hub**
 
@@ -55,7 +55,7 @@ ms.locfileid: "76875510"
 
 ### <a name="azure-stack-hub"></a>Azure Stack Hub
 
- - Используйте рабочую среду Azure Stack Hub или разверните пакет средств разработки Azure Stack Hub отсюда: https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1.
+ - Используйте рабочую среду Azure Stack Hub или разверните Пакет средств разработки Azure Stack отсюда: https://github.com/mattmcspirit/azurestack/blob/master/deployment/ConfigASDK.ps1.
    >[!Note]
    >Развертывание ASDK может занять 7 часов. Учитывайте это при планировании.
 

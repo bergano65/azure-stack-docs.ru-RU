@@ -1,6 +1,7 @@
 ---
-title: Основные понятия проверки как услуги Azure Stack Hub
-description: Описываются основные понятия проверки как услуги Azure Stack Hub.
+title: 'Проверка как услуга: основные понятия'
+titleSuffix: Azure Stack Hub
+description: Узнайте основные понятия проверки как услуги Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
 ms.date: 10/28/2019
@@ -8,12 +9,12 @@ ms.author: mabrigg
 ms.reviewer: johnhas
 ms.lastreviewed: 10/28/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 972b0be328f80a82ed3c12076a1f540c52b53ea7
-ms.sourcegitcommit: a76301a8bb54c7f00b8981ec3b8ff0182dc606d7
+ms.openlocfilehash: 211a2bf18643ff0c873969520f9bfae20d2ed89d
+ms.sourcegitcommit: 4e1c948ae4a498bd730543b0704bbc2b0d88e1ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77143758"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625413"
 ---
 # <a name="validation-as-a-service-key-concepts"></a>Проверка как услуга: основные понятия
 
@@ -23,9 +24,9 @@ ms.locfileid: "77143758"
 
 Решение VaaS представляет решение Azure Stack Hub с определенными спецификациями оборудования. Решение VaaS выступает в качестве контейнера для рабочих процессов, которые выполняются в решении Azure Stack Hub.
 
-### <a name="create-a-solution-in-the-vaas-portal"></a>Создание решения на портале VaaS
+### <a name="create-a-solution-in-the-azure-stack-hub-validation-portal"></a>Создание решения на портале проверки Azure Stack Hub
 
-1. Войдите на [портал VaaS](https://azurestackvalidation.com).
+1. Войдите на [портал проверки Azure Stack Hub](https://azurestackvalidation.com).
 2. На панели мониторинга решения выберите **Создать решение**.
 3. Введите имя для решения. Рекомендации по именованию см. в разделе, посвященном [соглашениям об именовании решений VaaS](azure-stack-vaas-best-practice.md#naming-convention-for-vaas-solutions).
 4. Нажмите кнопку **Сохранить**, чтобы создать решение.
@@ -41,28 +42,28 @@ ms.locfileid: "77143758"
 > [!NOTE]
 > Рабочий процесс **Проверка пакета** сейчас поддерживает два сценария: [Проверка пакетов OEM](azure-stack-vaas-validate-oem-package.md) и [Проверка обновлений программного обеспечения от корпорации Майкрософт](azure-stack-vaas-validate-microsoft-updates.md).
 
-Дополнительные сведения о типах рабочих процессов см. в статье [Что такое проверка как услуга для Azure Stack Hub?](azure-stack-vaas-overview.md)
+Дополнительные сведения о типах рабочих процессов см. в статье [What is validation as a service for Azure Stack Hub?](azure-stack-vaas-overview.md) (Что такое проверка как услуга для Azure Stack Hub?).
 
 ### <a name="getting-started-with-vaas-workflows"></a>Приступая к работе с рабочими процессами VaaS
 
 1. На панели мониторинга решения создайте новое или выберите существующее решение. При этом обновляются и активируются плитки рабочего процесса.
 2. Чтобы создать рабочий процесс, выберите **Запустить** для любой плитки. Конкретные сведения о каждом рабочем процессе см. в следующих статьях:
-    - Тестовый проход: [Краткое руководство. Планирование первого теста](azure-stack-vaas-schedule-test-pass.md);
+    - Тестовый проход: [Краткое руководство. Использование портала проверки Azure Stack Hub для планирования первого теста](azure-stack-vaas-schedule-test-pass.md)
     - Проверка решения: [Проверка нового решения Azure Stack Hub](azure-stack-vaas-validate-solution-new.md)
     - Проверка пакета (ежемесячное обновление): [Проверка обновлений программного обеспечения от корпорации Майкрософт](azure-stack-vaas-validate-microsoft-updates.md)
     - Проверка пакета (подписание пакета): [Проверка пакетов OEM](azure-stack-vaas-validate-oem-package.md)
 
 3. Для управления существующим рабочим процессом и его отслеживания выберите **Управление** на плитке рабочего процесса. Выберите имя рабочего процесса и используйте кнопку **Изменить**, чтобы просмотреть свойства или изменить общие параметры тестирования.
 
-Дополнительные сведения о свойствах и параметрах рабочего процесса см. в статье [Распространенные параметры рабочего процесса для проверки как услуги Azure Stack Hub](azure-stack-vaas-parameters.md).
+Дополнительные сведения о свойствах и параметрах рабочего процесса см. в статье [Workflow common parameters for Azure Stack Hub validation as a service](azure-stack-vaas-parameters.md) (Распространенные параметры рабочего процесса для проверки как услуги Azure Stack Hub).
 
 ## <a name="tests"></a>Тесты
 
 Тест в VaaS состоит из набора операций, которые выполняются в решении Azure Stack Hub. Тесты имеют различные цели, определяемые категорией (например, функциональный тест или тест надежности), и выполняются для одной или нескольких служб Azure Stack Hub. Каждый тест определяет собственный набор параметров, некоторые из которых задаются общими параметрами родительского рабочего процесса.
 
-Дополнительные сведения об управлении и мониторинге тестов см. в разделе [Мониторинг и администрирование тестов на портале VaaS](azure-stack-vaas-monitor-test.md).
+Дополнительные сведения об управлении и мониторинге тестов см. в статье [Monitor and manage tests in the Azure Stack Hub Validation portal](azure-stack-vaas-monitor-test.md) (Мониторинг и администрирование тестов на портале проверки Azure Stack Hub).
 
-Дополнительные сведения о параметрах тестирования см. в статье [Распространенные параметры рабочего процесса для проверки как услуги Azure Stack Hub](azure-stack-vaas-parameters.md).
+Дополнительные сведения о параметрах тестирования см. в статье [Workflow common parameters for Azure Stack Hub validation as a service](azure-stack-vaas-parameters.md) (Распространенные параметры рабочего процесса для проверки как услуги Azure Stack Hub).
 
 ## <a name="agents"></a>Агенты
 
@@ -77,4 +78,4 @@ ms.locfileid: "77143758"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Рекомендации для проверки как услуги](azure-stack-vaas-best-practice.md)
+- [Azure Stack validation best practices](azure-stack-vaas-best-practice.md) (Рекомендации по использованию проверки как услуги)

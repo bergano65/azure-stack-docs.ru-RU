@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: d81fdf315e9bc834c46161d901d6ac10d736f7ab
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 66f6e316c83e25651dc0e0b1be95d6a8467f7f47
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76875306"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568390"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Развертывание решения определения посещаемости на основе искусственного интеллекта с использованием Azure и Azure Stack Hub
 
@@ -36,7 +36,7 @@ ms.locfileid: "76875306"
 Прежде чем приступить к работе с этим руководством по развертыванию, не забудьте выполнить следующие действия:
 
 - Ознакомьтесь с решением для определения посещаемости [здесь](pattern-retail-footfall-detection.md). 
-- Получите пользовательский доступ к Пакету средств разработки Azure Stack Hub (ASDK) или экземпляру интегрированной системы Azure Stack Hub, используя:
+- Получите пользовательский доступ к Пакету средств разработки Azure Stack (ASDK) или экземпляру интегрированной системы Azure Stack Hub, используя:
   - [Службу приложений Azure в установленном поставщике ресурсов Azure Stack Hub](../operator/azure-stack-app-service-overview.md). Для доступа к экземпляру Azure Stack Hub требуется доступ оператора. Можно также обратиться к администратору для установки.
   - Подписка на предложение, которое предоставляет квоту на Службу приложений и службу хранилища. Для создания предложения необходим доступ оператора.
 - Получите доступ к подписке Azure.

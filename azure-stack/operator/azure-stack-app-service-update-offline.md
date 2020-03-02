@@ -6,17 +6,17 @@ ms.topic: article
 ms.date: 01/13/2020
 ms.author: anwestg
 ms.reviewer: anwestg
-ms.openlocfilehash: a617483b849b02576f1349e3b79620c47c7a5705
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: c259504e1c4b70ccc5e6be6fc9b88f5e683bc5c9
+ms.sourcegitcommit: a7db4594de43c31fe0c51e60e84fdaf4d41ef1bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76874440"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77568560"
 ---
 # <a name="offline-update-of-azure-app-service-on-azure-stack-hub"></a>Автономное обновление Службы приложений Azure в Azure Stack Hub
 
 > [!IMPORTANT]
-> Прежде чем развертывать Службу приложений Azure 1.8, примените обновление версии 1910 и выше к интегрированной системе Azure Stack Hub или разверните последний пакет средств разработки Azure Stack Hub.
+> Прежде чем развертывать Службу приложений Azure 1.8, примените обновление версии 1910 и выше к интегрированной системе Azure Stack Hub или разверните последнюю версию Пакета средств разработки Azure Stack.
 
 Выполнив инструкции из этой статьи, вы обновите [поставщик ресурсов Службы приложений Azure](azure-stack-app-service-overview.md), развернутый в среде Azure Stack Hub со следующими характеристиками:
 
@@ -77,7 +77,7 @@ ms.locfileid: "76874440"
 
 5. Просмотрите и примите условия лицензии сторонних поставщиков и нажмите кнопку **Далее**.
 
-6. Убедитесь, что конечная точка Azure Resource Manager инфраструктуры Azure Stack Hub и сведения о клиенте Active Directory указаны правильно. Если во время развертывания Пакета средств разработки Azure Stack Hub использовались значения по умолчанию, здесь также можно принять эти значения. Но если вы указали другие значения при развертывании Azure Stack Hub, в этом окне необходимо изменить значения соответствующим образом. Например, если используется суффикс домена *mycloud.com*, для конечной точки Azure Resource Manager инфраструктуры Azure Stack Hub нужно указать значение *management.region.mycloud.com*. Проверьте сведения и нажмите кнопку **Далее**.
+6. Убедитесь, что конечная точка Azure Resource Manager инфраструктуры Azure Stack Hub и сведения о клиенте Active Directory указаны правильно. Если во время развертывания Пакета средств разработки Azure Stack использовались значения по умолчанию, здесь также можно принять значения по умолчанию. Но если вы указали другие значения при развертывании Azure Stack Hub, в этом окне необходимо изменить значения соответствующим образом. Например, если используется суффикс домена *mycloud.com*, для конечной точки Azure Resource Manager инфраструктуры Azure Stack Hub нужно указать значение *management.region.mycloud.com*. Проверьте сведения и нажмите кнопку **Далее**.
 
     ![Сведения об облаке Azure Stack Hub][3]
 
