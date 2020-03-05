@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 1/22/2020
 ms.author: inhenkel
 ms.reviewer: wfayed
-ms.lastreviewed: 09/12/2018
-ms.openlocfilehash: 5c91ddd19ad384cc2a029dfac21d482470d37bc8
-ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
+ms.lastreviewed: 09/12/2019
+ms.openlocfilehash: 76b1469da122e707bd2748929ce3d5013c6c7f9f
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77510050"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77700227"
 ---
 # <a name="datacenter-integration-planning-considerations-for-azure-stack-hub-integrated-systems"></a>Планирование интеграции центра обработки данных для интегрированных систем Azure Stack Hub
 

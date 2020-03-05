@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: bryanla
 ms.reviewer: jiahan
 ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: d8d545935762d1706a22e3d90b37fa9aeac500b4
-ms.sourcegitcommit: b2173b4597057e67de1c9066d8ed550b9056a97b
+ms.openlocfilehash: 4cab915bc4b824c1a178d94aaa571ca71c9c948b
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77492144"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77698918"
 ---
 # <a name="mysql-resource-provider-11330--release-notes"></a>Заметки о выпуске для поставщика ресурсов MySQL 1.1.33.0
 

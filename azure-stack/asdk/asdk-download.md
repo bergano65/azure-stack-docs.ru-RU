@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: misainat
-ms.lastreviewed: 08/10/2018
-ms.openlocfilehash: 99c43848af1d140c6698e1f4d1ae992665c0389a
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 08/10/2019
+ms.openlocfilehash: f582f6061ebc2bbce7a3605ed7795b9ab5562738
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76873844"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77695909"
 ---
 # <a name="download-and-extract-the-asdk"></a>Скачивание ASDK и извлечение его содержимого
 Удостоверившись, что главный компьютер комплекта SDK соответствует базовым требованиям для установки Пакета средств разработки Azure Stack (ASDK), скачайте установочный пакет ASDK, чтобы получить файл Cloudbuilder.vhdx.

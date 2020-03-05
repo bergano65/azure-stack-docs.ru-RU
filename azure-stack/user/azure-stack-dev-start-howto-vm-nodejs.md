@@ -6,13 +6,13 @@ ms.topic: overview
 ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.lastreviewed: 10/02/2019
-ms.openlocfilehash: ab6d3e378c4a6f40e597367f06d9e5c4e31eb0c3
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.lastreviewed: 10/02/20
+ms.openlocfilehash: 3166982098c68760f4f20f4094038f2ab275b73f
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883758"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703066"
 ---
 # <a name="deploy-a-nodejs-web-app-to-a-vm-in-azure-stack-hub"></a>Развертывание веб-приложения Node.js на виртуальной машине в Azure Stack Hub
 

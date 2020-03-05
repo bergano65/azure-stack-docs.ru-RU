@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 2fac02fc6bae0d8bfedebcbb059e376d616a5b87
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 144163b415a5d5aaa914b2c36ab036b587acd999
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76875544"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77688820"
 ---
 # <a name="out-of-stock-detection-at-the-edge-pattern"></a>Шаблон обнаружения отсутствия товаров на пограничных устройствах
 
@@ -68,7 +68,7 @@ ms.locfileid: "76875544"
 
 Это решение может масштабироваться на множество устройств и расположений, что может оказаться неудобным. Службы Интернета вещей Azure могут автоматически переводить новые расположения и устройства в оперативный режим и обновлять их. Необходимо также соблюдать надлежащие процедуры управления данными.
 
-### <a name="security"></a>безопасность
+### <a name="security"></a>Безопасность
 
 Этот шаблон подразумевает обработку потенциально конфиденциальных данных. Убедитесь, что ключи регулярно сменяются, а также правильно заданы разрешения для учетной записи хранения Azure и локальных общих папок. 
 

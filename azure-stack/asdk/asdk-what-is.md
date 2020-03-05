@@ -7,12 +7,12 @@ ms.date: 11/27/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 11/27/2019
-ms.openlocfilehash: 7d3b4115ea34a185c5535c77cecdddf060ed84eb
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: a37547a7c2e5a737685e370307a1ae8f37d5d363
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76873300"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77690554"
 ---
 # <a name="what-is-the-azure-stack-development-kit-asdk"></a>Общие сведения о Пакете средств разработки Azure Stack (ASDK)
 [Интегрированные системы Microsoft Azure Stack Hub](../operator/azure-stack-overview.md) размером от 4 до 16 узлов, которые совместно поддерживаются партнером по оборудованию и корпорацией Майкрософт. Использование интегрированных систем Azure Stack Hub позволяет реализовать новые сценарии в производственных рабочих нагрузках. Если вы оператор Azure Stack Hub, который управляет инфраструктурой интегрированных систем и предлагает службы, ознакомьтесь с нашей [документацией для операторов](/azure-stack/operator).

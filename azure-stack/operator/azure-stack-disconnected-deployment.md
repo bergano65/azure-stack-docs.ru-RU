@@ -7,12 +7,12 @@ ms.date: 11/01/2019
 ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: b03d00d4f90a16bbb1a299902097e23607e488b8
-ms.sourcegitcommit: 97806b43314d306e0ddb15847c86be2c92ae001e
+ms.openlocfilehash: 4b2cdd9f663f95ddd1fc3b3a23f7fce06da2c2c9
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77510016"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77699989"
 ---
 # <a name="azure-disconnected-deployment-planning-decisions-for-azure-stack-hub-integrated-systems"></a>Планирование развертываний без подключения к Azure для интегрированных систем Azure Stack Hub
 Когда вы решите, [как интегрировать Azure Stack Hub в свою среду гибридного облака](azure-stack-connection-models.md), вы сможете завершить планирование развертывания Azure Stack Hub.
