@@ -7,12 +7,12 @@ ms.date: 06/03/2019
 ms.topic: tutorial
 ms.reviewer: seyadava
 ms.lastreviewed: 06/03/2019
-ms.openlocfilehash: c981fb453389c4e088db94474dd757f7881dfc6b
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: a0a13af01fc539788d76377f357ca28db9b05234
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76883700"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703083"
 ---
 # <a name="deploy-an-ethereum-blockchain-network-on-azure-stack-hub"></a>Развертывание блокчейн-сети Ethereum в Azure Stack Hub
 

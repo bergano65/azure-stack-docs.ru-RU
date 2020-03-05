@@ -7,12 +7,12 @@ ms.date: 05/06/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 02/08/2019
-ms.openlocfilehash: b31792ce210cfc7fc5c2d1ee4ba1b496b2d340f6
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 3c9c4fca443af34422d76bd30af4efe5de685936
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76873810"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77695671"
 ---
 # <a name="deploy-asdk-from-the-command-line-using-powershell"></a>Развертывание ASDK из командной строки с помощью PowerShell
 

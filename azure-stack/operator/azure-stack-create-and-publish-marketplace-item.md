@@ -7,12 +7,12 @@ ms.date: 01/03/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 05/07/2019
-ms.openlocfilehash: fdb31f29faa5fa1890be0fa12050a1cd8b1c56a8
-ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
+ms.openlocfilehash: bb407a03b2a5887b75b8b5d729fa5cc2cc636755
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76890125"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77704460"
 ---
 # <a name="create-and-publish-a-custom-azure-stack-hub-marketplace-item"></a>Создание и публикация пользовательского элемента Azure Stack Hub Marketplace
 
@@ -208,19 +208,19 @@ ms.locfileid: "76890125"
 
 | Имя | Обязательно | Тип | Ограничения | Описание |
 | --- | --- | --- | --- | --- |
-| Имя |X |String |[A–Z, a–z, 0–9] + | |
-| Издатель |X |String |[A–Z, a–z, 0–9] + | |
-| Версия |X |String |[SemVer v2](https://semver.org/) | |
+| Имя |X |Строка |[A–Z, a–z, 0–9] + | |
+| Издатель |X |Строка |[A–Z, a–z, 0–9] + | |
+| Версия |X |Строка |[SemVer v2](https://semver.org/) | |
 
 ### <a name="metadata"></a>Метаданные
 
 | Имя | Обязательно | Тип | Ограничения | Описание |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |String |Рекомендуется использовать 80 символов. |Портал может неправильно отображать имя элемента, если его длина превышает 80 символов. |
-| PublisherDisplayName |X |String |Рекомендуется использовать 30 символов. |Портал может неправильно отображать имя издателя, если его длина превышает 30 символов. |
-| PublisherLegalName |X |String |Не более 256 символов | |
-| Сводка |X |String |60–100 знаков. | |
-| LongSummary |X |String |140–256 знаков. |Пока не применяется в Azure Stack Hub. |
+| DisplayName |X |Строка |Рекомендуется использовать 80 символов. |Портал может неправильно отображать имя элемента, если его длина превышает 80 символов. |
+| PublisherDisplayName |X |Строка |Рекомендуется использовать 30 символов. |Портал может неправильно отображать имя издателя, если его длина превышает 30 символов. |
+| PublisherLegalName |X |Строка |Не более 256 символов | |
+| Сводка |X |Строка |60–100 знаков. | |
+| LongSummary |X |Строка |140–256 знаков. |Пока не применяется в Azure Stack Hub. |
 | Описание |X |[HTML](https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md#gallery-item-metadata-html-sanitization) |От 500 до 5000 символов. | |
 
 ### <a name="images"></a>Изображения
@@ -245,7 +245,7 @@ ms.locfileid: "76890125"
 
 | Имя | Обязательно | Тип | Ограничения | Описание |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |String |Длина не должна превышать 64 символов. | |
+| DisplayName |X |Строка |Длина не должна превышать 64 символов. | |
 | URI |X |URI | | |
 
 ### <a name="additional-properties"></a>Дополнительные свойства
@@ -254,8 +254,8 @@ ms.locfileid: "76890125"
 
 | Имя | Обязательно | Тип | Ограничения | Описание |
 | --- | --- | --- | --- | --- |
-| DisplayName |X |String |Длина не должна превышать 25 символов. | |
-| Значение |X |String |Длина не должна превышать 30 символов. | |
+| DisplayName |X |Строка |Длина не должна превышать 25 символов. | |
+| Значение |X |Строка |Длина не должна превышать 30 символов. | |
 
 ### <a name="html-sanitization"></a>Очистка HTML
 

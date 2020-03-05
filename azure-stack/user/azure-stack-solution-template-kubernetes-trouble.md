@@ -7,12 +7,12 @@ ms.author: mabrigg
 ms.date: 11/14/2019
 ms.reviewer: waltero
 ms.lastreviewed: 11/14/2019
-ms.openlocfilehash: 5e98ed511fab30e7ece3ebca282c79ef6a5bed97
-ms.sourcegitcommit: 959513ec9cbf9d41e757d6ab706939415bd10c38
+ms.openlocfilehash: 80222728bca3aa65fd211ccc5ef5700d0a15f397
+ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76889547"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77703627"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack-hub"></a>Устранение неполадок с развертыванием Kubernetes в Azure Stack Hub
 
