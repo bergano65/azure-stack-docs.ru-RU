@@ -3,20 +3,20 @@ title: Добавление необходимых компонентов для
 description: Узнайте, как добавить необходимые компоненты обработчика AKS в Azure Stack Hub Marketplace.
 author: mattbriggs
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 2/27/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 59f49e3d59fa077f4308a62b567ee3dd147ba4f4
-ms.sourcegitcommit: fd5d217d3a8adeec2f04b74d4728e709a4a95790
+ms.openlocfilehash: 9c728b17913379edb13683ed4b5f1615d391b922
+ms.sourcegitcommit: bbc4023c9a673c146de4a9e242311d429f7781eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76874796"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77782751"
 ---
 # <a name="add-the-azure-kubernetes-services-aks-engine-prerequisites-to-the-azure-stack-hub-marketplace"></a>Добавление необходимых компонентов для обработчика Службы Azure Kubernetes (AKS) в Azure Stack Hub Marketplace
 
-Вы можете разрешить пользователям настраивать обработчик Службы Azure Kubernetes (AKS), добавив в Azure Stack Hub элементы, описанные в этой статье. Затем пользователи смогут развернуть кластер Kubernetes с помощью одной согласованной операции. В этой статье описано, как обеспечить доступность обработчика AKS для пользователей в подключенных и отключенных средах. Обработчик AKS зависит от удостоверения субъекта-службы, а в Marketplace — от пользовательского расширения скриптов и базового образа AKS.
+Вы можете разрешить пользователям настраивать обработчик Службы Azure Kubernetes (AKS), добавив в Azure Stack Hub элементы, описанные в этой статье. Затем пользователи смогут развернуть кластер Kubernetes с помощью одной согласованной операции. В этой статье описано, как обеспечить доступность обработчика AKS для пользователей в подключенных и отключенных средах. Обработчик AKS зависит от удостоверения субъекта-службы, а в Marketplace — от пользовательского расширения скриптов и базового образа AKS. Для подсистемы AKS требуется использовать [Azure Stack Hub 1910](release-notes.md?view=azs-1910) или более поздней версии.
 
 ## <a name="check-your-users-service-offering"></a>Проверка предложения службы для пользователей
 
