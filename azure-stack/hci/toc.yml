@@ -8,6 +8,20 @@
   items:
     - name: Создание томов
       href: manage/create-volumes.md
+    - name: Расширение томов
+      href: manage/extend-volumes.md
+    - name: удаление томов;
+      href: manage/delete-volumes.md
+    - name: Замена дисков
+      href: manage/replace-drives.md
+- name: Основные понятия
+  items:
+    - name: Общие сведения о кэше
+      href: concepts/cache.md
+    - name: Отказоустойчивость и эффективность хранилища
+      href: concepts/fault-tolerance.md
+    - name: Кворум кластера и пула носителей
+      href: concepts/quorum.md
 - name: Справочник
   items:
     - name: Команды PowerShell для Hyper-V
