@@ -8,12 +8,12 @@ ms.date: 05/03/2019
 ms.author: justinha
 ms.reviewer: unknown
 ms.lastreviewed: 03/29/2019
-ms.openlocfilehash: b6186a836ac38d94c3b15aa7de45ebc80a8accd1
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: df143d08f3d5e4445020f4932a47de657805fa7c
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77696198"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78366421"
 ---
 # <a name="differences-between-global-azure-azure-stack-hub-and-azure-stack-hci"></a>Различия между глобальной средой Azure, Azure Stack Hub и Azure Stack HCI
 
@@ -29,7 +29,7 @@ Microsoft Azure — это постоянно расширяющийся наб
 
 Глобальная среда Azure предлагает более чем 100 служб в 54 регионах по всему миру. Актуальный список служб Azure см. в таблице [*доступности продуктов по регионам*](https://azure.microsoft.com/regions/services). Службы, предоставляемые в Azure, группируются по категориям, а также по общедоступным или предварительным версиям.
 
-Дополнительные сведения о глобальных службах Azure см. в руководстве по [началу работы с Azure](https://docs.microsoft.com/azure/#pivot=get-started&panel=get-started1).
+Дополнительные сведения о глобальных службах Azure см. в руководстве по [началу работы с Azure](https://docs.microsoft.com/azure/?pivot=get-started&panel=get-started1).
 
 ## <a name="azure-stack-hub"></a>Azure Stack Hub
 
