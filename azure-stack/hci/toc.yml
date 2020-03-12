@@ -16,6 +16,10 @@
       href: manage/replace-drives.md
 - name: Основные понятия
   items:
+    - name: Выбор дисков
+      href: concepts/choose-drives.md
+    - name: Планирование томов
+      href: concepts/plan-volumes.md
     - name: Общие сведения о кэше
       href: concepts/cache.md
     - name: Отказоустойчивость и эффективность хранилища
