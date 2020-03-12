@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 2dbff36dba8739661b88b58ef27eec49597646bc
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: cc17789485bc4c1d0676d54751f4d5bc820c3a5e
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77701009"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78366285"
 ---
 # <a name="create-a-geo-distributed-app-solution-to-direct-traffic-with-azure-and-azure-stack-hub"></a>Создание географически распределенного приложения для перенаправления трафика с использованием Azure и Azure Stack Hub
 
@@ -113,7 +113,7 @@ ms.locfileid: "77701009"
 
 ### <a name="create-web-app-deployment-in-both-clouds"></a>Создание развертывания веб-приложений в обоих облаках
 
-1.  Измените файл **WebApplication.csproj**. Выберите `Runtimeidentifier` и добавьте `win10-x64`. (См. документацию по [автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd)).
+1.  Измените файл **WebApplication.csproj**. Выберите `Runtimeidentifier` и добавьте `win10-x64`. (См. документацию по [автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf)).
 
     ![Изменение файла проекта веб-приложения в Visual Studio](media/solution-deployment-guide-geo-distributed/image3.png)
 
@@ -129,7 +129,7 @@ ms.locfileid: "77701009"
 
     ![Добавление кода в определение сборки](media/solution-deployment-guide-geo-distributed/image4.png)
 
-3. **Запустите сборку**. Процесс [сборки автономного развертывания](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd) будет публиковать артефакты, которые могут выполняться в Azure и Azure Stack Hub.
+3. **Запустите сборку**. Процесс [сборки автономного развертывания](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) будет публиковать артефакты, которые могут выполняться в Azure и Azure Stack Hub.
 
 **Использование агента, размещенного в Azure**
 

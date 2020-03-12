@@ -2,17 +2,17 @@
 title: Настройка элементов управления безопасностью в Azure Stack Hub
 description: Узнайте, как настроить элементы управления безопасностью в Azure Stack Hub
 author: IngridAtMicrosoft
-ms.topic: article
-ms.date: 06/17/2019
+ms.topic: how-to
+ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: fiseraci
 ms.lastreviewed: 06/17/2019
-ms.openlocfilehash: 72757c67a10e11eabd88d55fb4dee7adcb2fe558
-ms.sourcegitcommit: 390eac7abc94cea1405178e8d6a9358f6488f5d9
+ms.openlocfilehash: 4cfc5ee7f9e2284b3f7f5c632980235b24d2e956
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78231576"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78367511"
 ---
 # <a name="configure-azure-stack-hub-security-controls"></a>Настройка элементов управления безопасностью в Azure Stack Hub
 

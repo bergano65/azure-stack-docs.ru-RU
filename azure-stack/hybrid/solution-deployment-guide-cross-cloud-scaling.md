@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 9788c875e5d2f40f2ed6e644537f4d13ffa80f5a
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 41c6b4e5adf7b659bf9db30eb8a3906c257f5473
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77701162"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78366251"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Развертывание приложения, которое выполняет масштабирование в нескольких облаках с помощью Azure и Azure Stack Hub
 
@@ -107,7 +107,7 @@ Azure Repos
 
 ### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Создание автономного развертывания веб-приложения для служб приложений в обоих облаках
 
-1.  Измените файл **WebApplication.csproj**. Выберите `Runtimeidentifier` и добавьте `win10-x64`. (См. документацию по [автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd)). 
+1.  Измените файл **WebApplication.csproj**. Выберите `Runtimeidentifier` и добавьте `win10-x64`. (См. документацию по [автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf)). 
 
     ![Изменение файла проекта веб-приложения](media/solution-deployment-guide-cross-cloud-scaling/image3.png)
 
@@ -123,7 +123,7 @@ Azure Repos
 
     ![Добавление кода в веб-приложение](media/solution-deployment-guide-cross-cloud-scaling/image4.png)
 
-3. Запустите сборку. Процесс [сборки автономного развертывания](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd) будет публиковать артефакты, которые выполняются в Azure и Azure Stack Hub.
+3. Запустите сборку. Процесс [сборки автономного развертывания](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) будет публиковать артефакты, которые выполняются в Azure и Azure Stack Hub.
 
 ## <a name="use-an-azure-hosted-agent"></a>Использование агента, размещенного в Azure
 
@@ -266,7 +266,7 @@ Azure Pipelines и Azure DevOps Services предоставляют конвей
 
 #### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Создание автономного развертывания веб-приложения для служб приложений в обоих облаках
 
-1.  Измените файл **WebApplication.csproj**. Выберите `Runtimeidentifier` и добавьте `win10-x64`. Дополнительные сведения см. в документации [по автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd).
+1.  Измените файл **WebApplication.csproj**. Выберите `Runtimeidentifier` и добавьте `win10-x64`. Дополнительные сведения см. в документации [по автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf).
 
 2.  Добавьте код в Azure Repos с помощью Team Explorer.
 
@@ -280,7 +280,7 @@ Azure Pipelines и Azure DevOps Services предоставляют конвей
 
 3.  Добавьте код **-r win10-x64** в поле **Аргумент**. Это необходимо, чтобы активировать автономное развертывание с использованием .NET Core.
 
-4.  Запустите сборку. Процесс [сборки автономного развертывания](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd) будет публиковать артефакты, которые могут выполняться в Azure и Azure Stack Hub.
+4.  Запустите сборку. Процесс [сборки автономного развертывания](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) будет публиковать артефакты, которые могут выполняться в Azure и Azure Stack Hub.
 
 #### <a name="use-an-azure-hosted-build-agent"></a>Использование агента сборки, размещенного в Azure
 

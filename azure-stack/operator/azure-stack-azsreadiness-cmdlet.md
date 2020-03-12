@@ -2,17 +2,17 @@
 title: Справочник по командлету Start-AzsReadinessChecker
 description: Справка по командлету PowerShell для модуля средства проверки готовности Azure Stack Hub.
 author: IngridAtMicrosoft
-ms.topic: conceptual
-ms.date: 01/07/2020
+ms.topic: reference
+ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: unknown
 ms.lastreviewed: 05/09/2019
-ms.openlocfilehash: 588808f93ae23af3aaed37686474490bc402c566
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 0b81915cd7a95bede1edcbfa0f84ea8a5f38513d
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77695484"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78366066"
 ---
 # <a name="start-azsreadinesschecker-cmdlet-reference"></a>Справочник по командлету Start-AzsReadinessChecker
 

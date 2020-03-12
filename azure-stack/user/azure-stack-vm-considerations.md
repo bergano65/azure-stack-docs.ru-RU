@@ -7,12 +7,12 @@ ms.date: 2/3/2020
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 10/09/2019
-ms.openlocfilehash: ba6e4483475b97b6803781f5b7c5d29d94cbe896
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 611fec639fbcec478b79d44975b24f2d806df5bc
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77705140"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78364808"
 ---
 # <a name="azure-stack-hub-vm-features"></a>Возможности виртуальных машин Azure Stack Hub
 
@@ -25,7 +25,7 @@ ms.locfileid: "77705140"
 | Образы виртуальных машин | Azure Marketplace содержит образы, на основе которых можно создать виртуальную машину. На странице [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/compute?subcategories=virtual-machine-images&page=1) представлен список образов, доступных в Azure Marketplace. | По умолчанию Azure Stack Hub Marketplace не содержит образов. Чтобы пользователи могли использовать образы, администратору облака Azure Stack Hub нужно опубликовать или скачать их в Azure Stack Hub Marketplace. |
 | Поколение VHD | Виртуальные машины 2-го поколения поддерживают ключевые функции, которые не поддерживаются в 1-м поколении. Эти функции включают увеличенную память, Intel Software Guard Extensions и виртуализированную постоянную память (vPMEM). Виртуальные машины 2-го поколения, работающие в локальной среде, поддерживают некоторые функции, которые еще не поддерживаются в Azure. См. сведения о [поддержке виртуальных машин 2-го поколения в Azure.](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2)  | В Azure Stack Hub поддерживается только виртуальные машины 1-го поколения. Виртуальную машину 1-го поколения можно преобразовать из формата VHDX в формат VHD, а также переключить с динамически расширяемого диска на диск фиксированного размера. Вы не можете изменить поколение виртуальной машины. См. сведения о [поддержке 2-го поколения виртуальных машин в Azure.](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) |
 | Размер виртуальных машин | Azure поддерживает разные размеры виртуальных машин. См. дополнительные сведения о размерах виртуальных машин [Windows](/azure/virtual-machines/virtual-machines-windows-sizes) и [Linux](/azure/virtual-machines/linux/sizes). | Azure Stack Hub поддерживает различные размеры виртуальных машин, доступных в Azure. См. [список поддерживаемых размеров виртуальных машин](#vm-sizes), приведенный в этой статье. |
-| Квоты для виртуальных машин | [Ограничения квот](/azure/azure-subscription-service-limits#service-specific-limits) устанавливаются корпорацией Майкрософт. | Администратору облака Azure Stack Hub нужно назначить квоты, прежде чем предлагать виртуальные машины пользователям. |
+| Квоты для виртуальных машин | [Ограничения квот](/azure/azure-resource-manager/management/azure-subscription-service-limits#managing-limits) устанавливаются корпорацией Майкрософт. | Администратору облака Azure Stack Hub нужно назначить квоты, прежде чем предлагать виртуальные машины пользователям. |
 | Расширения виртуальных машин |Azure поддерживает разные расширения виртуальных машин. См. дополнительные сведения о [расширениях и компонентах виртуальных машин](/azure/virtual-machines/windows/extensions-features).| Azure Stack Hub поддерживает различные расширения, доступные в Azure, каждое из которых представлено в конкретных версиях. Администратор облака Azure Stack Hub может выбрать, какие расширения будут доступны его пользователям. См. список поддерживаемых расширений в разделе [Расширения виртуальных машин](#vm-extensions) в этой статье. |
 | Сетевые ресурсы виртуальных машин | Общедоступные IP-адреса, назначенные для виртуальной машины арендатора, доступны через Интернет.<br><br><br>Виртуальные машины Azure имеют фиксированное DNS-имя. | Общедоступные IP-адреса, назначенные виртуальной машине арендатора, доступны только в пределах среды Пакета средств разработки Azure Stack. Пользователь должен иметь доступ к Пакету средств разработки Azure Stack через [RDP](../asdk/asdk-connect.md#connect-to-azure-stack-using-rdp) или [VPN](../asdk/asdk-connect.md#connect-to-azure-stack-using-vpn), чтобы подключиться к виртуальной машине, созданной в Azure Stack Hub.<br><br>Виртуальные машины, созданные в определенном экземпляре Azure Stack Hub, получают DNS-имя в соответствии со значениями, заданными администратором облака. |
 | Хранилище для виртуальных машин | Поддерживаются [управляемые диски.](/azure/virtual-machines/windows/managed-disks-overview) | Управляемые диски поддерживаются в Azure Stack Hub версии 1808 и выше. |

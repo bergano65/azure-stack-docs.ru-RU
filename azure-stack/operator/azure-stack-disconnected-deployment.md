@@ -2,17 +2,17 @@
 title: Решения о развертывании без подключения к Azure для интегрированных систем Azure Stack Hub
 description: Сведения о развертывании интегрированных систем Azure Stack Hub без подключения к Azure и необходимых решениях при планировании.
 author: IngridAtMicrosoft
-ms.topic: article
-ms.date: 11/01/2019
+ms.topic: conceptual
+ms.date: 03/04/2020
 ms.author: inhenkel
 ms.reviewer: wfayed
 ms.lastreviewed: 11/01/2019
-ms.openlocfilehash: 4b2cdd9f663f95ddd1fc3b3a23f7fce06da2c2c9
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 9f7ca860de1dd801ae35134683583a4ce8053dde
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77699989"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78368708"
 ---
 # <a name="azure-disconnected-deployment-planning-decisions-for-azure-stack-hub-integrated-systems"></a>Планирование развертываний без подключения к Azure для интегрированных систем Azure Stack Hub
 Когда вы решите, [как интегрировать Azure Stack Hub в свою среду гибридного облака](azure-stack-connection-models.md), вы сможете завершить планирование развертывания Azure Stack Hub.
