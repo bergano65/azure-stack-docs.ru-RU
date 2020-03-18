@@ -63,6 +63,8 @@
               href: azure-stack-install-visual-studio.md
             - name: Использование Secure Shell
               href: azure-stack-dev-start-howto-ssh-public-key.md
+            - name: Создание ключа с помощью ssh-keygen
+              href: create-ssh-key-on-windows.md
             - name: Использование клиента REST с API
               href: azure-stack-rest-api-use.md
         - name: Использование шаблонов Resource Manager для Azure Stack Hub
@@ -210,6 +212,8 @@
                       href: azure-stack-kubernetes-aks-engine-deploy-windows.md
                     - name: Развертывание кластера
                       href: azure-stack-kubernetes-aks-engine-deploy-cluster.md
+                    - name: Развертывание в пользовательской виртуальной сети
+                      href: kubernetes-aks-engine-custom-vnet.md
                     - name: Масштабировать кластер
                       href: azure-stack-kubernetes-aks-engine-scale.md
                     - name: Обновление кластера
