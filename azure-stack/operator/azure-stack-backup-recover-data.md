@@ -7,12 +7,12 @@ ms.date: 02/12/2019
 ms.author: justinha
 ms.reviewer: hectorl
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 00eba2158fcb4e5a2e18f88d0493e1bb2e7c3b3d
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 245951e86128fb71e6820f3b57bdf2723506d4bc
+ms.sourcegitcommit: 8198753ebafd69d0dbfc6b3548defbd70f4c79c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77703593"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935062"
 ---
 # <a name="recover-from-catastrophic-data-loss"></a>Восстановление после катастрофической потери данных
 
@@ -28,7 +28,7 @@ Azure Stack Hub выполняет службы Azure в вашем центре
 
 ## <a name="workflows"></a>Рабочие процессы
 
-Защита Azure Stack начинается с раздельного резервного копирования данных инфраструктуры и данных приложения или клиента. Из этой статьи вы узнаете, как защитить инфраструктуру. 
+Защита Azure Stack Hub начинается с раздельного резервного копирования данных инфраструктуры и данных приложения или клиента. Из этой статьи вы узнаете, как защитить инфраструктуру. 
 
 ![Рабочий процесс восстановления данных Azure Stack Hub — развертывание](media/azure-stack-backup/azure-stack-backup-workflow1.png)
 

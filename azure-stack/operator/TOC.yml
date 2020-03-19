@@ -134,8 +134,12 @@
           href: azure-stack-cli-admin.md
         - name: Настройка среды управления
           items:
-            - name: Установка PowerShell для Azure Stack Hub
+            - name: Установка RM PowerShell
               href: azure-stack-powershell-install.md
+            - name: Установка PowerShell Az
+              href: powershell-install-az-module.md
+            - name: Миграция с PowerShell AzureRM в Az
+              href: migrate-azurerm-az.md
             - name: Загрузка средств
               href: azure-stack-powershell-download.md
             - name: Подключение с помощью PowerShell
@@ -437,19 +441,23 @@
         - name: Портал справки и поддержки
           items:
             - name: Обзор
-              href: azure-stack-help-and-support-overview.md
+              href: azure-stack-help-and-support-overview-tzl.md
+            - name: Поиск идентификатора облака
+              href: azure-stack-find-cloud-id.md
             - name: Сбор журналов диагностики
               items:
                 - name: Обзор
-                  href: azure-stack-diagnostic-log-collection-overview.md
-                - name: Автоматический сбор
+                  href: azure-stack-diagnostic-log-collection-overview-tzl.md
+                - name: Заблаговременная отправка журналов
+                  href: azure-stack-configure-automatic-diagnostic-log-collection-tzl.md
+                - name: Немедленная отправка журналов
                   items:
-                    - name: Настройка автоматического сбора
-                      href: azure-stack-configure-automatic-diagnostic-log-collection.md
-                    - name: Рекомендации
-                      href: azure-stack-best-practices-automatic-diagnostic-log-collection.md
-                - name: Сбор по запросу
-                  href: azure-stack-configure-on-demand-diagnostic-log-collection.md
+                    - name: Использование портала администрирования
+                      href: azure-stack-configure-on-demand-diagnostic-log-collection-portal-tzl.md
+                    - name: Использование PowerShell
+                      href: azure-stack-configure-on-demand-diagnostic-log-collection-powershell-tzl.md
+                - name: Get-AzureStackLog (PEP)
+                  href: azure-stack-get-azurestacklog.md
         - name: Проверка для Azure Stack Hub
           href: azure-stack-diagnostic-test.md
         - name: Устранение неполадок

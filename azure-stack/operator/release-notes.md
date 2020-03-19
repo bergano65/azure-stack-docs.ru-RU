@@ -3,16 +3,16 @@ title: Заметки о выпуске Azure Stack Hub
 description: Заметки о выпуске для интегрированных систем Azure Stack Hub, включая обновления и исправления ошибок.
 author: sethmanheim
 ms.topic: article
-ms.date: 02/25/2020
+ms.date: 03/05/2020
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 11/22/2019
-ms.openlocfilehash: 81cf8806b5aa24d7da78a6243d2806b732160314
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: d2d1eec85faaedaf35ba6461867c58670e917298
+ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77694464"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78366568"
 ---
 # <a name="azure-stack-hub-release-notes"></a>Заметки о выпуске Azure Stack Hub
 
@@ -193,7 +193,10 @@ ms.locfileid: "77694464"
 
 Для Azure Stack Hub регулярно выпускаются исправления. Перед обновлением Azure Stack Hub до версии 1910 обязательно установите последнее исправление Azure Stack Hub для выпуска 1908.
 
-Исправления Azure Stack Hub применимы только к интегрированным системам Azure Stack Hub. Не пытайтесь установить эти исправления в пакете ASDK.
+> [!NOTE]
+> Выпуски исправлений Azure Stack Hub являются накопительными. Достаточно установить последнее исправление, чтобы получить все исправления, включенные в предыдущие выпуски исправлений для этой версии.
+
+Исправления Azure Stack Hub применимы только к интегрированным системам Azure Stack Hub. Не устанавливайте исправления в пакете ASDK.
 
 ### <a name="prerequisites-before-applying-the-1910-update"></a>Предварительные требования: Перед применением обновления 1910
 
@@ -260,7 +263,7 @@ ms.locfileid: "77694464"
 
 Подробные сведения об улучшениях для системы безопасности в этом обновлении Azure Stack Hub см. в [этой статье](release-notes-security-updates.md).
 
-## <a name="download-the-update-1908"></a>Скачивание обновления
+## <a name="download-the-update"></a><a name="download-the-update-1908"></a>Скачивание обновления
 
 Теперь вы можете скачать пакет обновления 1908 для Azure Stack Hub на [странице скачивания](https://aka.ms/azurestackupdatedownload).
 
