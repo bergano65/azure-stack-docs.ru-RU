@@ -7,12 +7,12 @@ ms.date: 07/25/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 07/25/2019
-ms.openlocfilehash: c14c2cf0d65c29ea7b2968558e89a20b504d8f53
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: a99519d12109716c296e58b4525748229513a747
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77700482"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79511969"
 ---
 # <a name="best-practices-for-automatic-azure-stack-hub-log-collection"></a>Рекомендации по автоматическому сбору журналов Azure Stack Hub 
 
@@ -20,7 +20,7 @@ ms.locfileid: "77700482"
 
 ## <a name="collecting-logs-from-multiple-azure-stack-hub-systems"></a>Сбор журналов из нескольких систем Azure Stack Hub
 
-Настройте один контейнер больших двоичных объектов для каждой единицы масштабирования Azure Stack Hub, из которой вы хотите получать журналы. Дополнительные сведения о том, как настроить контейнер больших двоичных объектов, см. в разделе [Настройка автоматического сбора журналов диагностики Azure Stack Hub](azure-stack-configure-automatic-diagnostic-log-collection.md). Рекомендуется сохранять в одном контейнере больших двоичных объектов только журналы диагностики из одной единицы масштабирования Azure Stack Hub. 
+Настройте один контейнер больших двоичных объектов для каждой единицы масштабирования Azure Stack Hub, из которой вы хотите получать журналы. Дополнительные сведения о том, как настроить контейнер больших двоичных объектов, см. в разделе [Настройка автоматического сбора журналов диагностики Azure Stack Hub](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md). Рекомендуется сохранять в одном контейнере больших двоичных объектов только журналы диагностики из одной единицы масштабирования Azure Stack Hub. 
 
 ## <a name="retention-policy"></a>Политика хранения
 
@@ -58,9 +58,9 @@ ms.locfileid: "77700482"
 
 ## <a name="managing-costs"></a>Управление затратами
 
-[Плата за хранилище BLOB-объектов](https://azure.microsoft.com/pricing/details/storage/blobs/) Azure зависит от объема данных, сохраняемых каждый месяц, и других факторов, таких как избыточность данных. Если у вас нет учетной записи хранения, вы можете войти на портал Azure, щелкнуть **Учетные записи хранения** и [создать подписанный URL-адрес контейнера больших двоичных объектов Azure](azure-stack-configure-automatic-diagnostic-log-collection.md).
+[Плата за хранилище BLOB-объектов](https://azure.microsoft.com/pricing/details/storage/blobs/) Azure зависит от объема данных, сохраняемых каждый месяц, и других факторов, таких как избыточность данных. Если у вас нет учетной записи хранения, вы можете войти на портал Azure, щелкнуть **Учетные записи хранения** и [создать подписанный URL-адрес контейнера больших двоичных объектов Azure](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md).
 
-Рекомендуется создать [политику управления жизненным циклом](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts) хранилища BLOB-объектов Azure, чтобы сократить текущие затраты на хранилище. Дополнительные сведения о том, как настроить учетную запись хранения, см. в разделе [Настройка автоматического сбора журналов диагностики Azure Stack Hub](azure-stack-configure-automatic-diagnostic-log-collection.md).
+Рекомендуется создать [политику управления жизненным циклом](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts) хранилища BLOB-объектов Azure, чтобы сократить текущие затраты на хранилище. Дополнительные сведения о том, как настроить учетную запись хранения, см. в разделе [Настройка автоматического сбора журналов диагностики Azure Stack Hub](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md).
 
 ## <a name="see-also"></a>См. также раздел
 

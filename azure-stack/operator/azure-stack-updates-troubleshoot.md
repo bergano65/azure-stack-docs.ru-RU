@@ -7,12 +7,12 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.lastreviewed: 09/23/2019
 ms.reviewer: ppacent
-ms.openlocfilehash: aaedd7f4985ae96c051ef2be427002592134e00b
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.openlocfilehash: 6cf5d83b9fdf71ba68506c760112635910d26eb3
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78367320"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512321"
 ---
 # <a name="best-practices-for-troubleshooting-azure-stack-hub-patch-and-update-issues"></a>Рекомендации по устранению неполадок с исправлением и обновлением в Azure Stack Hub
 
@@ -21,10 +21,10 @@ ms.locfileid: "78367320"
 
 Процесс исправления и обновления Azure Stack Hub позволяет операторам единообразно и стабильно применять пакеты обновления. В редких случаях в ходе исправления и процесса обновления могут возникать проблемы. Мы рекомендуем выполнить следующие действия, если вы столкнетесь с проблемой при исправлении или обновлении.
 
-0. **Предварительные требования**: Убедитесь, что вы выполнили [контрольный список действий по обновлению](release-notes-checklist.md) и [настроили автоматический сбор журналов](azure-stack-configure-automatic-diagnostic-log-collection.md).
+0. **Предварительные требования**: Убедитесь, что вы выполнили [контрольный список действий по обновлению](release-notes-checklist.md) и [настроили автоматический сбор журналов](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md).
 1. Следуйте инструкциям по исправлению, которые будут включены в оповещение об ошибке, которая произошла при обновлении.
 2. Изучите [распространенные проблемы с исправлением и обновлением в Azure Stack Hub](#common-azure-stack-hub-patch-and-update-issues) и выполните рекомендуемые действия, если ваша проблема описана.
-3. Если указанные действия не помогают решить проблему, создайте [запрос в службу поддержки Azure Stack Hub](azure-stack-help-and-support-overview.md). Убедитесь, что у вас есть [собранные журналы](https://docs.microsoft.com/azure-stack/operator/azure-stack-configure-on-demand-diagnostic-log-collection) за тот период времени, в который возникла проблема.
+3. Если указанные действия не помогают решить проблему, создайте [запрос в службу поддержки Azure Stack Hub](azure-stack-help-and-support-overview-tzl.md). Убедитесь, что у вас есть [собранные журналы](https://docs.microsoft.com/azure-stack/operator/azure-stack-configure-on-demand-diagnostic-log-collection) за тот период времени, в который возникла проблема.
 
 ## <a name="common-azure-stack-hub-patch-and-update-issues"></a>Типичные проблемы с исправлением и обновлением в Azure Stack Hub
 
@@ -43,4 +43,4 @@ ms.locfileid: "78367320"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обновление Azure Stack Hub](azure-stack-updates.md)  
-- [Справка и поддержка по Microsoft Azure Stack Hub](azure-stack-help-and-support-overview.md)
+- [Справка и поддержка по Microsoft Azure Stack Hub](azure-stack-help-and-support-overview-tzl.md)

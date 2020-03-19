@@ -8,11 +8,11 @@ ms.author: sethm
 ms.reviewer: kivenkat
 ms.lastreviewed: 01/05/2020
 ms.openlocfilehash: 576580732440cabd8ae1c140d13130b81b212d16
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77704409"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295577"
 ---
 # <a name="introduction-to-azure-stack-hub-vms"></a>Общие сведения о виртуальных машинах Azure Stack Hub
 
@@ -28,7 +28,7 @@ Azure Stack Hub предлагает виртуальные машины как 
 
 - **Расширенный центр обработки данных**. Виртуальные машины в виртуальной сети Azure Stack Hub можно подключить к корпоративной сети или Azure.
 
-При необходимости вы можете изменить масштаб виртуальных машин, используемых приложением.
+При необходимости вы можете горизонтально или вертикально увеличить масштаб виртуальных машин в соответствии со своими потребностями.
 
 ## <a name="before-creating-a-vm"></a>Перед созданием виртуальной машины
 

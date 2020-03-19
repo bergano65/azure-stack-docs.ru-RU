@@ -8,12 +8,12 @@ ms.date: 11/05/2019
 ms.author: justinha
 ms.reviewer: prchint
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ef90476685a786549ed239429a222fbd561f6d15
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: fec8ac1797ef3fb6ce17b7173d813aff74ba3712
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77696759"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512338"
 ---
 # <a name="troubleshoot-issues-in-azure-stack-hub"></a>Устранение неполадок в Azure Stack Hub
 
@@ -87,7 +87,7 @@ ms.locfileid: "77696759"
 4. Выполните `get-azurestacklog -filterbyrole seedring`, вызвав invoke-command.
 5. Извлеките файл seedring.zip. Вы сможете получить отчет о проверке из папки ERCS, из которой вы выполнили `test-azurestack`.
 
-См. сведения о [диагностике в Azure Stack Hub](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
+См. сведения о [диагностике в Azure Stack Hub](azure-stack-get-azurestacklog.md).
 
 ## <a name="troubleshoot-virtual-machines-vms"></a>Устранение неполадок с виртуальными машинами
 

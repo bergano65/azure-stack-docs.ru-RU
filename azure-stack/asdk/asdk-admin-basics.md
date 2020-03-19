@@ -8,11 +8,11 @@ ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 10/15/2019
 ms.openlocfilehash: ab0f54d94b96a7bdd75d13f04fd9146146d42740
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77695467"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295205"
 ---
 # <a name="asdk-admin-basics"></a>Основы администрирования ASDK
 Если вы еще не знакомы с администрированием Пакета средств разработки Azure Stack (ASDK), вам необходимо знать несколько моментов. В этом руководстве описаны обязанности оператора Azure Stack в ознакомительной среде. Ознакомившись с этими сведениями, вы сможете как можно быстрее подготовить тестовых пользователей для эффективной работы.

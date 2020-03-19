@@ -7,12 +7,12 @@ ms.author: mabrigg
 ms.date: 11/14/2019
 ms.reviewer: waltero
 ms.lastreviewed: 11/14/2019
-ms.openlocfilehash: 80222728bca3aa65fd211ccc5ef5700d0a15f397
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 0d9e1512cab3ad33bba5cfa2d4f57128edf51cf2
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77703627"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512598"
 ---
 # <a name="troubleshoot-kubernetes-deployment-to-azure-stack-hub"></a>Устранение неполадок с развертыванием Kubernetes в Azure Stack Hub
 
@@ -85,7 +85,7 @@ ms.locfileid: "77703627"
     - Убедитесь, что полное доменное имя виртуальной машины начинается с повторяющегося префикса.
 5.  Если состояние виртуальной машины — **ОК**, оцените DVM. Если DVM содержит сообщение об ошибке:
     - Открытый ключ может быть недопустимым. Проверьте ключ, который вы создали.  
-    - Обратитесь к администратору Azure Stack Hub, чтобы получить журналы Azure Stack Hub с помощью привилегированных конечных точек. Дополнительные сведения см. в разделе [Сбор журналов диагностики с помощью привилегированной конечной точки (PEP)](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
+    - Обратитесь к администратору Azure Stack Hub, чтобы получить журналы Azure Stack Hub с помощью привилегированных конечных точек. Дополнительные сведения см. в разделе [Сбор журналов диагностики с помощью привилегированной конечной точки (PEP)](../operator/azure-stack-get-azurestacklog.md).
 5. Если у вас есть вопрос о развертывании, вы можете разместить его или поискать ответы на вопрос на [форуме Azure Stack Hub](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack). 
 
 

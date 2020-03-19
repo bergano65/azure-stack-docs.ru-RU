@@ -2,17 +2,17 @@
 title: Требования к сертификатам инфраструктуры открытых ключей Azure Stack Hub
 description: В этой статье описываются требования к развертыванию сертификатов PKI Azure Stack Hub для интегрированных систем Azure Stack Hub.
 author: IngridAtMicrosoft
-ms.topic: article
-ms.date: 12/16/2019
+ms.topic: conceptual
+ms.date: 3/04/2020
 ms.author: inhenkel
 ms.reviewer: ppacent
 ms.lastreviewed: 12/16/2019
-ms.openlocfilehash: 99bec3441d7b6671024f5e1689c6f8504a2f57c1
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: a63fcbb13defc0d7e679c0be7fb931c0e2570b37
+ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77698391"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295187"
 ---
 # <a name="azure-stack-hub-public-key-infrastructure-certificate-requirements"></a>Требования к сертификатам инфраструктуры открытых ключей Azure Stack Hub
 

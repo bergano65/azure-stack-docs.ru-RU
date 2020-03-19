@@ -7,12 +7,12 @@ ms.date: 10/08/2019
 ms.author: justinha
 ms.reviewer: shisab
 ms.lastreviewed: 10/08/2019
-ms.openlocfilehash: 19482e235690cae10411dde72587b0e4b95518f3
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 3464738aef30a44b6c50c05b06116641235ab96e
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77695229"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512275"
 ---
 # <a name="configure-automatic-azure-stack-hub-diagnostic-log-collection"></a>Настройка автоматического сбора журналов диагностики Azure Stack Hub
 
@@ -68,7 +68,7 @@ ms.locfileid: "77695229"
 
 1. Нажмите кнопку **Создать**.  
 
-Скопируйте этот URL-адрес и введите его при [настройке автоматического сбора журналов](azure-stack-configure-automatic-diagnostic-log-collection.md). Дополнительные сведения о подписанных URL-адресах см. в разделе [Использование подписанных URL-адресов (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1). 
+Скопируйте этот URL-адрес и введите его при [настройке автоматического сбора журналов](azure-stack-configure-automatic-diagnostic-log-collection-tzl.md). Дополнительные сведения о подписанных URL-адресах см. в разделе [Использование подписанных URL-адресов (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1). 
 
 
 ## <a name="steps-to-configure-automatic-log-collection"></a>Настройка автоматического сбора журналов

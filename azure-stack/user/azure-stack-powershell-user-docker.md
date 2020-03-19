@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 07/09/2019
-ms.openlocfilehash: ef847871569a96a889a37c0f74e581cda5cc8712
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 2a23469b36bd05aaef1c6597fc0be6e0c1bab783
+ms.sourcegitcommit: 4301e8dee16b4db32b392f5979dfec01ab6566c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77701995"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79312978"
 ---
 # <a name="use-docker-to-run-powershell-in-azure-stack-hub"></a>Использование Docker для запуска PowerShell в Azure Stack Hub
 
@@ -44,7 +44,7 @@ ms.locfileid: "77701995"
 
 Dockerfile открывает образ Microsoft *microsoft/windowsservercore*, в котором установлен Windows PowerShell 5.1. Файл затем загружает NuGet, модули PowerShell для Azure Stack Hub и инструменты из средства Azure Stack Hub Tools.
 
-1. Скачайте репозиторий [azure-stack-powershell](https://github.com/mattbriggs/azure-stack-powershell) в формате ZIP или клонируйте его.
+1. Скачайте репозиторий [azure-stack-powershell](https://github.com/Azure-Samples/azure-stack-hub-powershell-in-docker.git) в формате ZIP или клонируйте его.
 
 2. Откройте папку репозитория из терминала.
 

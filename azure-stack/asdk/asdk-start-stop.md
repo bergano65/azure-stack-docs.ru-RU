@@ -7,12 +7,12 @@ ms.date: 07/18/2019
 ms.author: justinha
 ms.reviewer: misainat
 ms.lastreviewed: 07/18/2019
-ms.openlocfilehash: 1801174977ef0370e8433e6c41e2d8c13b497ae8
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 6798481e7645c4a1a49c6370b00b1851c32ff478
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77694039"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79511986"
 ---
 # <a name="start-and-stop-the-asdk"></a>Запуск и остановка ASDK
 Не рекомендуется просто перезапускать главный компьютер ASDK. Следуйте инструкциям по корректному завершению работы и перезапуску служб ASDK, приведенным в этой статье.
@@ -81,4 +81,4 @@ ms.locfileid: "77694039"
 Если запуск командлета **Start-AzureStack** завершается сбоем, посетите [форум технической поддержки Azure Stack](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurestack), чтобы получить помощь по устранению неполадок с ASDK. 
 
 ## <a name="next-steps"></a>Дальнейшие действия 
-Дополнительные сведения о средстве диагностики Azure Stack и регистрации проблем см. в статье [Средства диагностики Azure Stack](../operator/azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
+Дополнительные сведения о средстве диагностики Azure Stack и регистрации проблем см. в статье [Средства диагностики Azure Stack](../operator/azure-stack-get-azurestacklog.md).

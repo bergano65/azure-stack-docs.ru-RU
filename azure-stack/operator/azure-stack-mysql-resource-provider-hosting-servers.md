@@ -7,12 +7,12 @@ ms.date: 11/06/2019
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/06/2019
-ms.openlocfilehash: a0b0e654ac2698c1b9611924cca853bd1ff525de
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: b02ea9e241faea3aeaad76b85dbde9616e1edea5
+ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77698765"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295547"
 ---
 # <a name="add-mysql-hosting-servers-in-azure-stack-hub"></a>Добавление серверов размещения MySQL в Azure Stack Hub
 
@@ -21,7 +21,7 @@ ms.locfileid: "77698765"
 > [!NOTE]
 > Поставщик ресурсов MySQL необходимо создать в подписке поставщика по умолчанию, а серверы размещения MySQL — в оплачиваемых пользовательских подписках. Сервер поставщика ресурсов не следует использовать для размещения баз данных пользователя.
 
-Для серверов размещения можно использовать версии MySQL 5.6, 5.7 и 8.0. Поставщик ресурсов MySQL не поддерживает проверку подлинности caching_sha2_password. Она будет добавлена в следующем выпуске. Серверы MySQL 8.0 должны быть настроены для использования mysql_native_password. Также поддерживается MariaDB.
+Для серверов размещения можно использовать версии MySQL 5.6, 5.7 и 8.0. Поставщик ресурсов MySQL не поддерживает проверку подлинности caching_sha2_password. Серверы MySQL 8.0 должны быть настроены для использования mysql_native_password.
 
 ## <a name="configure-external-access-to-the-mysql-hosting-server"></a>Настройка внешнего доступа к серверу размещения MySQL
 

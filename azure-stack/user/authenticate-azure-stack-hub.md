@@ -7,12 +7,12 @@ ms.date: 12/13/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 12/13/2019
-ms.openlocfilehash: 21cd92626a5ddb4e86e5f0dd7568dc1a875bd3c1
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 845be919279107e88a922dfd180e3fc8794e1a89
+ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77687450"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79293897"
 ---
 # <a name="get-authentication-information-for-azure-stack-hub"></a>Получение сведений о проверке подлинности для Azure Stack Hub
 
@@ -68,7 +68,7 @@ ms.locfileid: "77687450"
 
 Конечная точка Azure Resource Manager — это конечная точка метаданных для службы развертывания и управления Azure Stack Hub. Она обеспечивает уровень управления, позволяющий создавать, обновлять и удалять ресурсы в подписке Azure.
 
-Для интегрированной системы URL-адрес конечной точки Azure Resource Manager следующий:<br>`https://management.<location>.<fqdn>.com`
+Для интегрированной системы URL-адрес конечной точки Azure Resource Manager следующий:<br>`https://management.<location>.<fqdn>`
 
 Для получения конечной точки метаданных, указывающей на такие свойства, как конечная точка коллекции, конечная точка графа, конечная точка портала, конечная точка входа и аудитории, URL-адрес будет следующим: `<ResourceManager>/metadata/endpoints?api-version=1.0`
 

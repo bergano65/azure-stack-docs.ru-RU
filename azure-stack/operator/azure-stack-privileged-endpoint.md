@@ -7,12 +7,12 @@ ms.date: 1/8/2020
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 1/8/2020
-ms.openlocfilehash: 7dc570ede3f953b4886971ea827fe69b881b5b89
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 335afce7423872156c84c655d9c94ed59a9592d2
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77698153"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512445"
 ---
 # <a name="use-the-privileged-endpoint-in-azure-stack-hub"></a>Использование привилегированной конечной точки в Azure Stack Hub
 
@@ -20,7 +20,7 @@ ms.locfileid: "77698153"
 
 Привилегированную конечную точку можно использовать для следующих задач:
 
-- задачи низкого уровня, такие как [сбор журналов диагностики](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs);
+- задачи низкого уровня, такие как [сбор журналов диагностики](azure-stack-get-azurestacklog.md);
 - различные задачи по интеграции центра обработки данных после развертывания для интегрированных систем, например добавление DNS-серверов перенаправления после развертывания, настройка интеграции Microsoft Graph, интеграции служб федерации Active Directory (AD FS), смена сертификатов и т. д.;
 - взаимодействие со службой поддержки для получения временного доступа высокого уровня, например для глубокой диагностики интегрированной системы.
 
@@ -197,4 +197,4 @@ ms.locfileid: "77698153"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Средства диагностики Azure Stack Hub](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs)
+[Средства диагностики Azure Stack Hub](azure-stack-diagnostic-log-collection-overview-tzl.md)
