@@ -106,7 +106,7 @@ Azure Stack Hub использует Azure Resource Manager в качестве 
 4. Проверка работоспособности системы Isilon и событий в OneFS.
 5. Проверка емкости Isilon.
 
-# <a name="weekly"></a>[Еженедельно](#tab/weekly);
+# <a name="weekly"></a>[Еженедельно](#tab/weekly)
 
 1. Проверка емкости.
 2. Выполнение `isi status –verbose` при подключении Avocent.
