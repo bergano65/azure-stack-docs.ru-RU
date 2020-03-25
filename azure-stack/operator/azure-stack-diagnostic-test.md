@@ -7,12 +7,12 @@ ms.date: 01/10/2020
 ms.author: justinha
 ms.reviewer: adshar
 ms.lastreviewed: 01/10/2020
-ms.openlocfilehash: 1cfae74381121534fea8a49dca4d048e749bc1e6
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 9b082876dca1e39f99ac0b98a7e438aa1231b3c2
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77700006"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512547"
 ---
 # <a name="validate-azure-stack-hub-system-state"></a>Проверка состояния системы Azure Stack Hub
 
@@ -47,7 +47,7 @@ ms.locfileid: "77700006"
 
    Подробные сведения см. в разделах [Рекомендации по настройке параметров](azure-stack-diagnostic-test.md#parameter-considerations) и [Примеры использования](azure-stack-diagnostic-test.md#use-case-examples).
 
-1. Если любой из тестов вернет состояние **FAIL** (Сбой), выполните команду `Get-AzureStackLog`. Инструкции для интегрированной системы см. в статье о [запуске Get-AzureStackLog в интегрированных системах Azure Stack Hub](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs), а инструкции для ASDK — в статье о [запуске Get-AzureStackLog в системе с ASDK](azure-stack-configure-on-demand-diagnostic-log-collection.md#run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system).
+1. Если любой из тестов вернет состояние **FAIL** (Сбой), выполните команду `Get-AzureStackLog`. Инструкции для интегрированной системы см. в статье о [выполнении Get-AzureStackLog в интегрированных системах Azure Stack Hub](azure-stack-get-azurestacklog.md).
 
    Этот командлет собирает журналы, созданные командлетом Test-AzureStack. Если тест возвратит результат **WARN** (Предупреждение), мы рекомендуем не собирать журналы, а сразу связаться со службой поддержки.
 
@@ -234,6 +234,6 @@ Test-AzureStack -Include AzsNetworkInfra -Debug
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о средствах диагностики Azure Stack Hub и ведении журналов проблем см. в разделе [Сбор журналов диагностики с помощью привилегированной конечной точки (PEP)](azure-stack-configure-on-demand-diagnostic-log-collection.md#use-the-privileged-endpoint-pep-to-collect-diagnostic-logs).
+Дополнительные сведения о средствах диагностики Azure Stack Hub и ведении журналов проблем см. в разделе [Сбор журналов диагностики с помощью привилегированной конечной точки (PEP)](azure-stack-diagnostic-log-collection-overview-tzl.md).
 
 Дополнительные сведения об устранении неполадок с Microsoft Azure Stack Hub см. в [этой статье](azure-stack-troubleshooting.md).

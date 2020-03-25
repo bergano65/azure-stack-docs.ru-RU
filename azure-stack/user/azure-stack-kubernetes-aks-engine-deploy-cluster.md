@@ -7,12 +7,12 @@ ms.date: 01/10/2020
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: b8826fc929c571e39d36139bf724861ae9cc7fbd
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: fc53a0b1e4273436e9e06e10feccbe577ea2e488
+ms.sourcegitcommit: 4301e8dee16b4db32b392f5979dfec01ab6566c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77702709"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79312961"
 ---
 # <a name="deploy-a-kubernetes-cluster-with-the-aks-engine-on-azure-stack-hub"></a>Развертывание кластера Kubernetes с обработчиком AKS в Azure Stack Hub
 
@@ -35,7 +35,7 @@ ms.locfileid: "77702709"
     > [!Note]  
     > Если на нем нет подключения к Интернету, вы можете скачать файл и вручную скопировать его на отключенный от сети компьютер, где будете изменять его. Вы можете скопировать файл на компьютер Linux с помощью таких средств, как [PuTTY или WinSCP](https://www.suse.com/documentation/opensuse103/opensuse103_startup/data/sec_filetrans_winssh.html).
 
-2.  Чтобы открыть файл, можно использовать редактор nano:
+2.  Чтобы открыть модель API, можно использовать редактор nano:
 
     ```bash
     nano ./kubernetes-azurestack.json
@@ -88,9 +88,9 @@ ms.locfileid: "77702709"
     | Поле | Описание |
     | --- | --- |
     | adminUsername | Имя пользователя для администратора виртуальной машины. |
-    | ssh | Введите открытый ключ, который будет использоваться для аутентификации SSH-соединений с виртуальными машинами. При использовании Putty откройте генератор ключей PuTTY, чтобы загрузить закрытый ключ Putty и открытый ключ, который начинается с ssh-rsa, как показано в следующем примере. Вы можете использовать ключ, сгенерированный при создании клиента Linux, но **вам необходимо скопировать открытый ключ, чтобы он представлял собой однострочный текст, как показано в примере**.|
+    | ssh | Введите открытый ключ, который будет использоваться для аутентификации SSH-соединений с виртуальными машинами. Введите `ssh-rsa`, а затем укажите ключ. Инструкции по созданию открытого ключа см. в статье [Создание ключа SSH для Linux](create-ssh-key-on-windows.md). |
 
-    ![Генератор ключей PuTTY](media/azure-stack-kubernetes-aks-engine-deploy-cluster/putty-key-generator.png)
+    Если вы выполняете развертывание в пользовательской виртуальной сети, инструкции по поиску и добавлению необходимых ключей и значений в соответствующие массивы в модели API см. в статье [Развертывание кластера Kubernetes в пользовательской виртуальной сети](kubernetes-aks-engine-custom-vnet.md).
 
 ### <a name="more-information-about-the-api-model"></a>Дополнительные сведения о модели API
 
@@ -120,7 +120,7 @@ ms.locfileid: "77702709"
     | api-model | ./kubernetes-azurestack.json | Путь к файлу конфигурации кластера или модели API. |
     | output-directory | kube-rg | Введите имя каталога, в котором будет содержаться выходной файл `apimodel.json` и другие созданные файлы. |
     | client-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Введите GUID субъекта-службы. Идентификатор клиента определяется как идентификатор приложения, когда администратор Azure Stack Hub создает субъект-службу. |
-    | client-secret | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Введите секрет субъекта-службы. Это секрет клиента, который вы настроили при создании службы. |
+    | client-secret | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Введите секрет субъекта-службы. Секрет клиента настраивается при создании службы. |
     | subscription-id | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Введите идентификатор подписки. Дополнительные сведения см. в разделе [Подписка на предложение](https://docs.microsoft.com/azure-stack/user/azure-stack-subscribe-services#subscribe-to-an-offer). |
 
     Например:

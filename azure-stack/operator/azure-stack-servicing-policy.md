@@ -7,13 +7,13 @@ ms.topic: article
 ms.date: 02/07/2020
 ms.author: sethm
 ms.reviewer: harik
-ms.lastreviewed: 01/11/2020
-ms.openlocfilehash: f81ca3e48387f806e591deea08c4b0c9c518cebd
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.lastreviewed: 03/18/2020
+ms.openlocfilehash: 9b1459fbb5e484e3fc0588e8c9717f8e09b6e309
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77697541"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79512407"
 ---
 # <a name="azure-stack-hub-servicing-policy"></a>Политика обслуживания Azure Stack Hub
 
@@ -45,10 +45,10 @@ ms.locfileid: "77697541"
 
 Дополнительные сведения об определенном обновлении и инструкции по его скачиванию можно получить из заметок о выпуске этого обновления:
 
+- [Обновление Azure Stack Hub версии 2002](/azure-stack/operator/release-notes?view=azs-2002)
 - [Обновление Azure Stack Hub версии 1910](/azure-stack/operator/release-notes?view=azs-1910)
 - [Обновление Azure Stack Hub версии 1908](/azure-stack/operator/release-notes?view=azs-1908)
 - [Обновление Azure Stack Hub версии 1907](/azure-stack/operator/release-notes?view=azs-1907)
-- [Обновление Azure Stack Hub версии 1906](/azure-stack/operator/release-notes?view=azs-1906)
 
 ## <a name="hotfixes"></a>Исправления
 
@@ -58,12 +58,19 @@ ms.locfileid: "77697541"
 
 Сведения о доступных исправлениях см. в заметках о выпуске для этого обновления:
 
-- [Исправление Azure Stack Hub 1910](/azure-stack/operator/release-notes?view=azs-1910#hotfixes)
-- [Исправление Azure Stack Hub 1908](/azure-stack/operator/release-notes?view=azs-1908#hotfixes-1)
-- [Исправление Azure Stack Hub 1907](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-2)
-- [Исправление Azure Stack Hub 1906](/azure-stack/operator/release-notes?view=azs-1906#hotfixes-3)
+- [Исправление Azure Stack Hub 2002](/azure-stack/operator/release-notes?view=azs-2002#hotfixes)
+- [Исправление Azure Stack Hub 1910](/azure-stack/operator/release-notes?view=azs-1910#hotfixes-1)
+- [Исправление Azure Stack Hub 1908](/azure-stack/operator/release-notes?view=azs-1908#hotfixes-2)
+- [Исправление Azure Stack Hub 1907](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-3)
 
 ## <a name="keep-your-system-under-support"></a>Сохранение поддержки для вашей системы
+
+::: moniker range="azs-2002"
+
+> [!IMPORTANT]  
+> С выходом обновления 2002 для Azure Stack Hub корпорация Майкрософт временно расширяет заявления о политике поддержки для Azure Stack Hub. Мы сотрудничаем по всему миру с клиентами, которые ведут борьбу с COVID-19 и могут принимать важные решения о существующих системах Azure Stack Hub, об их обновлении и управлении ими, в конечном итоге стараясь сохранить нормальную работу бизнес-операций центра обработки данных. Чтобы поддержать наших клиентов, корпорация Майкрософт предоставляет временное расширение политики поддержки, включая в эту политику три предыдущих версии обновлений. Это означает, что сейчас будут поддерживаться не только свежее обновление 2002, но и любая из трех предыдущих версий обновления (то есть 1910, 1908 и 1907).
+
+::: moniker-end
 
 Чтобы поддержка вашего экземпляра Azure Stack Hub сохранялась, он должен использовать последнюю выпущенную версию обновления или одну из двух предыдущих основных версий обновления.
 

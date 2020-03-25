@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: sethm
 ms.lastreviewed: 12/27/2019
-ms.openlocfilehash: b762dfa9897ac732df7c09858ef3a5d25357f1d7
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: b8f7be7885bd4565a13983d858c1f10b30df20b3
+ms.sourcegitcommit: 20d10ace7844170ccf7570db52e30f0424f20164
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77705055"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295571"
 ---
 # <a name="configure-vpn-gateway-settings-for-azure-stack-hub"></a>Настройка параметров VPN-шлюза для Azure Stack Hub
 
@@ -154,6 +154,10 @@ New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 При настройке VPN-подключения в Azure Stack Hub оно должно быть настроено на обеих сторонах. Возможно, при настройке VPN-подключения между Azure Stack Hub и устройством, например коммутатором или маршрутизатором, выполняющем функции VPN-шлюза, вам потребуется настроить дополнительные параметры для устройства.
 
 В отличие от Azure, где поддерживается несколько предложений (как инициатора, так и отвечающего устройства), Azure Stack Hub по умолчанию поддерживает только одно предложение. Если вам нужно использовать разные параметры IPSec/IKE для работы с VPN-устройством, доступны дополнительные параметры для настройки подключения вручную. См. сведения о [настройке политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"](azure-stack-vpn-s2s.md).
+
+> [!IMPORTANT] 
+> Если вы используете туннель для подключения "сеть — сеть", пакеты инкапсулируются с дополнительными заголовками, что увеличивает общий размер пакета. В таких случаях необходимо установить для TCP **MSS** значение **1350**. Если же VPN-устройства не поддерживают фиксацию MSS, в качестве альтернативы в интерфейсе туннеля можно указать для **MTU** **1400** байт. Дополнительные сведения см. в статье [Настройка производительности TCP/IP для виртуальной сети] (virtual-network-tcpip-performance-tuning.md). 
+>
 
 ### <a name="ike-phase-1-main-mode-parameters"></a>Параметры этапа 1 IKE (главный режим)
 

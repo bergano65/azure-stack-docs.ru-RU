@@ -3,22 +3,36 @@ title: Заметки о выпуске ASDK
 description: Улучшения, исправления и известные проблемы Пакета средств разработки Azure Stack (ASDK).
 author: sethmanheim
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 03/18/2020
 ms.author: sethm
 ms.reviewer: misainat
-ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: c73e7bc20b1eb1e2538f211d2aaa84dafbfa103b
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.lastreviewed: 03/18/2020
+ms.openlocfilehash: 6f7bec082564c9f7cb3a0c70cec7e8e7e48fbd35
+ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77694124"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79511816"
 ---
 # <a name="asdk-release-notes"></a>Заметки о выпуске ASDK
 
-Эта статья содержит сведения об изменениях, исправлениях и известных проблемах в Пакете средств разработки Azure Stack (ASDK). Если вы не знаете, какую версию используете, [проверьте ее с помощью портала](../operator/azure-stack-updates.md).
+Эта статья содержит сведения об изменениях, исправлениях ошибок и известных проблемах в Пакете средств разработки Azure Stack (ASDK). Если вы не знаете, какую версию используете, [проверьте ее с помощью портала](../operator/azure-stack-updates.md).
 
 Будьте в курсе новых возможностей ASDK, подписавшись на [![RSS](./media/asdk-release-notes/feed-icon-14x14.png)](https://docs.microsoft.com/api/search/rss?search=Azure+Stack+Development+Kit+release+notes&locale=en-us#) [веб-канал RSS](https://docs.microsoft.com/api/search/rss?search=Azure+Stack+Development+Kit+release+notes&locale=en-us#).
+
+::: moniker range="azs-2002"
+## <a name="build-12002035"></a>Сборка 1.2002.0.35
+
+### <a name="new-features"></a>новые функции;
+
+- Список исправленных проблем, изменений и новых функций в этом выпуске см. в соответствующих разделах статьи [Обновления Azure Stack: заметки о выпуске](../operator/release-notes.md).
+
+### <a name="fixed-and-known-issues"></a>Исправленные и известные проблемы
+
+- Пароль расшифровки сертификата — это новый параметр, который позволяет указать пароль для самозаверяющего сертификата (PFX), содержащего закрытый ключ, необходимый для расшифровки данных резервного копирования. Такой пароль требуется, только если резервная копия зашифрована с помощью сертификата.
+- Список известных проблем Azure Stack в этом выпуске см. в [этой статье](../operator/known-issues.md).
+- Обратите внимание, что доступные исправления Azure Stack неприменимы к ASDK.
+::: moniker-end
 
 ::: moniker range="azs-1910"
 ## <a name="build-11910058"></a>Сборка 1.1910.0.58
@@ -72,23 +86,4 @@ ms.locfileid: "77694124"
 - Список проблем Azure Stack, которые были исправлены в этом выпуске, см. в [этом разделе](/azure-stack/operator/release-notes?view=azs-1907#fixes-2) заметок о выпуске Azure Stack.
 - Список известных проблем см. в [этой статье](/azure-stack/operator/known-issues?view=azs-1907).
 - Обратите внимание, что [доступные исправления Azure Stack](/azure-stack/operator/release-notes?view=azs-1907#hotfixes-2) нельзя применять к Azure Stack ASDK.
-::: moniker-end
-
-::: moniker range="azs-1906"
-## <a name="build-11906030"></a>Сборка 1.1906.0.30
-
-### <a name="new-features"></a>новые функции;
-
-- Список новых функций для этого выпуска см. в [этом разделе](/azure-stack/operator/release-notes?view=azs-1906#whats-in-this-update-1) заметок к выпуску Azure Stack.
-
-### <a name="changes"></a>Изменения
-
-- Добавлена поддержка виртуальной машины для вызова **AzS-SRNG01**, в которой размещена служба сбора журналов для Azure Stack. Дополнительные сведения см. в статье [Архитектура ASDK](asdk-architecture.md).
-
-### <a name="fixed-and-known-issues"></a>Исправленные и известные проблемы
-
-- При создании ресурсов виртуальной машины с помощью некоторых образов marketplace развертывание могло не завершиться корректно. В качестве временного решения этой проблемы вы можете щелкнуть ссылку **Скачать шаблон и параметры** на странице **Сводка** и щелкнуть кнопку **Развернуть** в колонке **Шаблон**.
-- Список проблем Azure Stack, которые были исправлены в этом выпуске, см. в [этом разделе](/azure-stack/operator/release-notes?view=azs-1906#fixes-3) заметок о выпуске Azure Stack.
-- Список известных проблем см. в [этой статье](/azure-stack/operator/known-issues?view=azs-1906).
-- Обратите внимание, что [доступные исправления Azure Stack](/azure-stack/operator/release-notes?view=azs-1906#hotfixes-3) нельзя применять к Azure Stack ASDK.
 ::: moniker-end
