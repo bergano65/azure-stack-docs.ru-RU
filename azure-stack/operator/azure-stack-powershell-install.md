@@ -7,20 +7,19 @@ ms.date: 1/22/2020
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 09/19/2019
-ms.openlocfilehash: df0a87180e1e8ed4b2506d0f2b21406474ee93c1
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.openlocfilehash: b362ab1e4c555ae4de5be0feecd19d8cc8e6654a
+ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79512462"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80069440"
 ---
 # <a name="install-powershell-azurerm-module-for-azure-stack-hub"></a>Установка модуля PowerShell AzureRM для Azure Stack Hub
 
 В Azure PowerShell AzureRM доступен набор командлетов, которые используют модель Azure Resource Manager для управления ресурсами Azure Stack Hub.
 
-Для работы с облаком необходимо установить модули PowerShell, совместимые с Azure Stack Hub. В Azure Stack Hub можно использовать модуль **AzureRM** вместо [нового **модуля AzureAZ**](powershell-install-az-module.md). 
-
 Кроме того, необходимо использовать *профили API*, чтобы указать совместимые конечные точки для поставщиков ресурсов Azure Stack Hub.
+
 Профили API позволяют управлять различиями между версиями Azure и Azure Stack Hub. Профиль версии API — это набор модулей Azure Resource Manager PowerShell с определенными версиями API. Каждая облачная платформа имеет набор поддерживаемых профилей версий API. К примеру, Azure Stack Hub поддерживает определенную версию профиля, например **2019-03-01-hybrid**. При установке профиля устанавливается набор модулей Azure Resource Manager PowerShell, которые соответствуют выбранному профилю.
 
 Вы можете установить совместимые модули PowerShell для Azure Stack Hub в сценарии с полноценным, частичным и отсутствующим подключением к Интернету. В этой статье рассматриваются подробные инструкции для этих сценариев.

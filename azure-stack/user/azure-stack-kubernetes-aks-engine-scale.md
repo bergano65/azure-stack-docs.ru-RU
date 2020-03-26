@@ -3,16 +3,16 @@ title: Масштабирование кластера Kubernetes в Azure Stack
 description: Сведения о том, как масштабировать кластер Kubernetes в Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 3/19/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: cf436526a4c8cb9c549c8ee29036983ed398e97b
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.lastreviewed: 3/19/2020
+ms.openlocfilehash: e5a9c44d91137d8f9868a9a9c6a809a54ca09026
+ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77704001"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80069115"
 ---
 # <a name="scale-a-kubernetes-cluster-on-azure-stack-hub"></a>Масштабирование кластера Kubernetes в Azure Stack Hub
 
