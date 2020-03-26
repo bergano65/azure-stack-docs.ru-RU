@@ -3,16 +3,16 @@ title: Устранение неполадок с обработчиком AKS �
 description: В этой статье описано, как устранять неполадки с обработчиком AKS в Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 3/19/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: aa41ddde0986716e49073d571e967a050ef660f6
-ms.sourcegitcommit: 4301e8dee16b4db32b392f5979dfec01ab6566c9
+ms.lastreviewed: 3/19/2020
+ms.openlocfilehash: d362eb0bf418cf292953afc50fe993dc4867253c
+ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79313028"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80069291"
 ---
 # <a name="troubleshoot-the-aks-engine-on-azure-stack-hub"></a>Устранение неполадок с обработчиком AKS в Azure Stack Hub
 

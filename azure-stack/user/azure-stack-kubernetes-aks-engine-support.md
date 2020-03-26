@@ -3,16 +3,16 @@ title: Политики поддержки для обработчика AKS в 
 description: В этой статье описаны политики поддержки для обработчика AKS в Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 3/19/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 50474e9c05f55abc1bfb8213d051393714a9b5cc
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.lastreviewed: 3/19/2020
+ms.openlocfilehash: 8080f6c5ce8461e9d228dc4c77252b0fd236758e
+ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77702505"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80069330"
 ---
 # <a name="support-policies-for-aks-engine-on-azure-stack-hub"></a>Политики поддержки для обработчика AKS в Azure Stack Hub
 
