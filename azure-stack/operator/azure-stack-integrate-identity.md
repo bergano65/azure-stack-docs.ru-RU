@@ -7,12 +7,12 @@ ms.date: 05/10/2019
 ms.author: inhenkel
 ms.reviewer: thoroet
 ms.lastreviewed: 05/10/2019
-ms.openlocfilehash: cf0e3f35c6aec650f07d926157c2b73cef965126
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 288ece49e873da5820f6cb7dab70643418636704
+ms.sourcegitcommit: 961e3b1fae32d7f9567359fa3f7cb13cdc37e28e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77699564"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80152315"
 ---
 # <a name="integrate-ad-fs-identity-with-your-azure-stack-hub-datacenter"></a>Интеграция удостоверения AD FS с центром обработки данных Azure Stack Hub
 
@@ -43,8 +43,8 @@ Azure Stack Hub можно развернуть, используя в каче�
 
 |Компонент|Требование|
 |---------|---------|
-|График|Microsoft Active Directory 2012, Microsoft Active Directory 2012 R2 или Microsoft Active Directory 2016|
-|AD FS|Windows Server 2012, Windows Server 2012 R2 или Windows Server 2016|
+|График|Microsoft Active Directory 2012, 2012 R2, 2016 и 2019|
+|AD FS|Windows Server 2012, 2012 R2, 2016 и 2019|
 
 ## <a name="setting-up-graph-integration"></a>Настройка интеграции Graph
 
@@ -264,7 +264,7 @@ Graph поддерживает только интеграцию с отдель
 
 3. Чтобы добавить отношения доверия с проверяющей стороной, выполните следующую команду Windows PowerShell на экземпляре AD FS или элементе фермы. Обязательно обновите конечную точку AD FS и укажите файл, созданный на шаге 1.
 
-   **Для AD FS 2016**
+   **Для AD FS 2016 и 2019**
 
    ```powershell  
    Add-ADFSRelyingPartyTrust -Name AzureStack -MetadataUrl "https://YourAzureStackADFSEndpoint/FederationMetadata/2007-06/FederationMetadata.xml" -IssuanceTransformRulesFile "C:\ClaimIssuanceRules.txt" -AutoUpdateEnabled:$true -MonitoringEnabled:$true -enabled:$true -AccessControlPolicyName "Permit everyone" -TokenLifeTime 1440

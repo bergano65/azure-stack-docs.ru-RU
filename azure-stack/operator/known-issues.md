@@ -3,16 +3,16 @@ title: Известные проблемы с Azure Stack Hub
 description: Узнайте об известных проблемах в выпусках Azure Stack Hub.
 author: sethmanheim
 ms.topic: article
-ms.date: 03/18/2020
+ms.date: 03/20/2020
 ms.author: sethm
 ms.reviewer: prchint
 ms.lastreviewed: 03/18/2020
-ms.openlocfilehash: a2f86835a9b1008417e427bc62229e94d6b00595
-ms.sourcegitcommit: 53efd12bf453378b6a4224949b60d6e90003063b
+ms.openlocfilehash: d06514242069e20957e15e1503b513ece366fba1
+ms.sourcegitcommit: 961e3b1fae32d7f9567359fa3f7cb13cdc37e28e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79512241"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80152155"
 ---
 # <a name="azure-stack-hub-known-issues"></a>Известные проблемы с Azure Stack Hub
 
@@ -67,6 +67,12 @@ ms.locfileid: "79512241"
 - Исправление. Выберите тип учетной записи в раскрывающемся списке **Тип учетной записи**, и только после этого создавайте моментальный снимок.
 - Периодичность. Распространенные
 
+### <a name="alert-for-network-interface-disconnected"></a>Оповещение "Сетевой интерфейс отключен"
+
+- Применимо. Эта проблема относится к выпуску 1908 и более поздним.
+- Причина. Оповещение об отключении кабеля от сетевого адаптера не отображается на портале администрирования. Эта проблема вызвана тем, что оповещение об этой ошибке отключено по умолчанию в Windows Server 2019.
+- Периодичность. Распространенные
+
 ## <a name="networking"></a>Сеть
 
 ### <a name="network-security-groups"></a>группы сетевой безопасности;
@@ -104,6 +110,12 @@ ms.locfileid: "79512241"
   - [Укажите настраиваемые политики IPsec/IKE](../user/azure-stack-vpn-gateway-settings.md#ipsecike-parameters)
 
 ## <a name="compute"></a>Службы вычислений
+
+### <a name="nvv4-vm-size-on-portal"></a>Размер виртуальной машины NVv4 на портале
+
+- Применимо. Эта проблема относится к выпуску 2002 и более поздним версиям.
+- Причина. При создании виртуальной машины отобразится размер виртуальной машины NV4as_v4. Клиенты, у которых есть оборудование, необходимое для предварительной версии GPU Azure Stack Hub на основе AMD Mi25, могут успешно развернуть виртуальную машину. Всем остальным клиентам не удастся развернуть виртуальную машину с этим размером.
+- Исправление. Готовится к реализации в рамках предварительной версии GPU Azure Stack Hub.
 
 ### <a name="vm-boot-diagnostics"></a>Диагностика загрузки виртуальной машины
 

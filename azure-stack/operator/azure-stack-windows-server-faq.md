@@ -1,25 +1,29 @@
 ---
-title: 'Windows Server в Azure Stack Hub Marketplace: вопросы и ответы'
+title: Azure Stack Hub Marketplace — часто задаваемые вопросы
 titleSuffix: Azure Stack Hub
 description: Список статей в Azure Stack Hub Marketplace с вопросами и ответами по Windows Server.
 author: sethmanheim
 ms.topic: article
-ms.date: 12/27/2019
+ms.date: 03/19/2020
 ms.author: sethm
 ms.reviewer: avishwan
 ms.lastreviewed: 08/29/2019
-ms.openlocfilehash: 72b21675e97a436499f53f00e4c7d25dfc1beb54
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 95719c6b0651932ab41cef5321db06b77eb4fc63
+ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77696079"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80069451"
 ---
-# <a name="windows-server-in-azure-stack-hub-marketplace-faq"></a>Windows Server в Azure Stack Hub Marketplace: вопросы и ответы
+# <a name="azure-stack-hub-marketplace-faq"></a>Azure Stack Hub Marketplace — часто задаваемые вопросы
 
-В этой статье даются ответы на распространенные вопросы об образах Windows Server в [Azure Stack Hub Marketplace](azure-stack-marketplace.md).
+В этой статье вы найдете ответы на распространенные вопросы об элементах Marketplace в [Azure Stack Hub Marketplace](azure-stack-marketplace.md).
 
 ## <a name="marketplace-items"></a>Элементы Marketplace
+
+### <a name="who-should-i-contact-for-support-issues-with-azure-stack-hub-marketplace-items"></a>К кому обращаться при возникновении проблем, связанных с элементами Marketplace в Azure Stack Hub?
+
+Рекомендации по поддержке Azure Marketplace также распространяются на элементы Azure Stack Hub Marketplace. Издатели несут ответственность за предоставление технической поддержки для своих продуктов в Azure Stack Hub Marketplace. Дополнительные сведения о рекомендациях по поддержке для элементов Azure Marketplace см. в [этом разделе](/azure/marketplace/marketplace-faq-publisher-guide#customer-support) статьи с вопросами и ответами об Azure Marketplace.
 
 ### <a name="how-do-i-update-to-a-newer-windows-image"></a>Как обновить систему до нового образа Windows?
 

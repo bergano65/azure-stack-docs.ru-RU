@@ -3,16 +3,16 @@ title: Перемещение кластера элементов Marketplace в
 description: Узнайте, как переместить кластер элементов Marketplace в обработчик AKS в Azure Stack Hub.
 author: mattbriggs
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 3/19/2020
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.lastreviewed: 11/21/2019
-ms.openlocfilehash: 67e194a91ccf27c5c823938000ab5dda478cc6d9
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.lastreviewed: 3/19/2020
+ms.openlocfilehash: f15c870a1b256ffa546672a3abde2fc68f9baa4f
+ms.sourcegitcommit: 17be49181c8ec55e01d7a55c441afe169627d268
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77704018"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80069009"
 ---
 # <a name="move-your-marketplace-item-cluster-to-the-aks-engine-on-azure-stack-hub"></a>Перемещение кластера элементов Marketplace в обработчик AKS в Azure Stack Hub
 
@@ -28,7 +28,7 @@ ms.locfileid: "77704018"
 4.  В сеансе на виртуальной машине развертывания обработчик AKS можно найти по пути `./var/lib/waagent/custom-script/download/0/bin/aks-engine`.
 5.  Укажите файл `.json`, описывающий кластеры, используемые в качестве входных данных в AKS Engine. Файл по состоянию на `/var/lib/waagent/custom-script/download/0/bin/azurestack.json`. Обратите внимание, что файл содержит учетные данные субъекта-службы, используемые для развертывания кластера. Если вы решили сохранить файл, постарайтесь переместить его в защищенное хранилище.
 6.  Выходной каталог, созданный обработчиком AKS, можно найти по пути `/var/lib/waagent/custom-script/download/0/_output/<resource group name>`. В этом каталоге найдите выходной `apimodel.json` по пути `/var/lib/waagent/custom-script/download/0/bin/apimodel.json`. В каталоге и файле `apimodel.json` содержатся все созданные сертификаты, ключи и учетные данные, необходимые для развертывания кластера Kubernetes. Храните эти ресурсы в безопасном месте.
-7.  Выберите файл конфигурации Kubernetes, который часто называют файлом **kubeconfig**, по пути:  , где  соответствует идентификатору расположения Azure Stack Hub. Этот файл полезен, если вы планируете настроить **kubectl** для доступа к кластеру Kubernetes.
+7.  Выберите файл конфигурации Kubernetes, который часто называют файлом **kubeconfig**, по пути `$HOME/<output dir>/kubeconfig/kubeconfing.<location>.json`, где **\<location>** соответствует идентификатору расположения Azure Stack Hub. Этот файл полезен, если вы планируете настроить **kubectl** для доступа к кластеру Kubernetes.
 
 ## <a name="use-the-aks-engine-with-your-newly-created-cluster"></a>Использование обработчика AKS с созданным кластером
 
