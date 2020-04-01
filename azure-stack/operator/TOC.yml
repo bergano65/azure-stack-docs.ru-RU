@@ -332,6 +332,34 @@
                   href: azure-stack-app-service-release-notes-update-seven.md
                 - name: "Заметки о выпуске обновления\_8 для Службы приложений Azure в Azure Stack Hub"
                   href: azure-stack-app-service-release-notes-update-eight.md
+        - name: Центры событий в Azure Stack Hub
+          items:
+            - name: Обзор
+              href: event-hubs-rp-overview.md
+            - name: Планирование ресурсов
+              href: event-hubs-rp-capacity-planning.md
+            - name: Предварительные требования
+              href: event-hubs-rp-prerequisites.md
+            - name: Установка
+              href: event-hubs-rp-install.md
+            - name: Управление жизненным циклом
+              items:
+                - name: Применение обновлений
+                  href: resource-provider-apply-updates.md
+                - name: Резервное копирование и восстановление
+                  href: azure-stack-backup-infrastructure-backup.md
+                - name: Сбор журналов
+                  href: azure-stack-diagnostic-log-collection-overview.md
+                - name: Оповещения о работоспособности
+                  href: azure-stack-monitor-health.md
+                - name: Управление
+                  href: event-hubs-rp-manage.md
+                - name: Смена секретов
+                  href: azure-stack-rotate-secrets.md
+                - name: Объявления об обновлении службы
+                  href: 'https://techcommunity.microsoft.com/t5/Event-Hubs-Blog/bg-p/EventHubs'
+            - name: Удалить
+              href: event-hubs-rp-remove.md
         - name: Использование MySQL в Azure Stack Hub
           items:
             - name: Обзор
