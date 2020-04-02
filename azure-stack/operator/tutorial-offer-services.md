@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/16/2019
 ms.reviewer: shriramnat
 ms.lastreviewed: 10/16/2019
-ms.openlocfilehash: 3d05ff70909508701db2f4770ecb3efb9d860a6d
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 772871cffa3d5394d1d8b939fa22ae91bc90d4ac
+ms.sourcegitcommit: dd53af1b0fc2390de162d41e3d59545d1baad1a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77694549"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80423901"
 ---
 # <a name="create-a-service-offering-for-users-in-azure-stack-hub"></a>Создание предложения услуги для пользователей в Azure Stack Hub
 
@@ -65,6 +65,7 @@ ms.locfileid: "77694549"
 | Microsoft.Web | Приложения-функции Службы приложений, веб-приложения, приложения API | 
 | Microsoft.MySqlAdapter | Сервер размещения MySQL, база данных MySQL | 
 | Microsoft.SqlAdapter | Сервер размещения SQL Server, база данных SQL Server |
+| Microsoft.EventHub | Центры событий |
 
 ::: moniker range=">=azs-1902"
 
