@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: cc17789485bc4c1d0676d54751f4d5bc820c3a5e
-ms.sourcegitcommit: 1fa0140481a483e5c27f602386fe1fae77ad29f7
+ms.openlocfilehash: 22919a17f58cf83857dc24d154fcfd1ab3760e59
+ms.sourcegitcommit: 19e9b6d6ce24d74ff396a5dc48208671aeda432a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78366285"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362202"
 ---
 # <a name="create-a-geo-distributed-app-solution-to-direct-traffic-with-azure-and-azure-stack-hub"></a>Создание географически распределенного приложения для перенаправления трафика с использованием Azure и Azure Stack Hub
 
@@ -538,7 +538,7 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 По завершении операции перейдите по любому из URL-адресов HTTP, которые указывают на ваше приложение. Пример:
 
 -   https://<app_name>.azurewebsites.net
--   https://northwindcloud.com
+-   `https://northwindcloud.com`
 -   <https://www.northwindcloud.com>
 
 #### <a name="enforce-tls-1112"></a>Принудительное применение TLS 1.1/1.2

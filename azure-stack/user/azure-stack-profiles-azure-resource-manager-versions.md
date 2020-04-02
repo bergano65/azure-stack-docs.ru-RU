@@ -7,12 +7,12 @@ ms.date: 01/07/2020
 ms.author: sethm
 ms.reviewer: sijuman
 ms.lastreviewed: 05/08/2019
-ms.openlocfilehash: 3b3ea77dcbb59f2a0471225000aa48624bcb1a15
-ms.sourcegitcommit: 390eac7abc94cea1405178e8d6a9358f6488f5d9
+ms.openlocfilehash: 883a39ac7c0d3f11d3f9242a7efaa8549e41f4cf
+ms.sourcegitcommit: 1969a13d378cc3b8c58fea11dca8cf8c06136acd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78231678"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80302799"
 ---
 # <a name="resource-provider-api-versions-supported-by-profiles-in-azure-stack-hub"></a>Версии API поставщика ресурсов, поддерживаемые профилями в Azure Stack Hub
 

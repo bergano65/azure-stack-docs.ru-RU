@@ -7,12 +7,12 @@ ms.date: 1/22/2020
 ms.author: bryanla
 ms.reviewer: xiaofmao
 ms.lastreviewed: 11/20/2
-ms.openlocfilehash: 78dbba26d13914fe54111b315a0f01c48d53a26a
-ms.sourcegitcommit: 4ac711ec37c6653c71b126d09c1f93ec4215a489
+ms.openlocfilehash: 60f8ab926bb868517c7b9feeb1c5c4325212607c
+ms.sourcegitcommit: 1969a13d378cc3b8c58fea11dca8cf8c06136acd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77698680"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80302821"
 ---
 # <a name="remove-the-mysql-resource-provider-in-azure-stack-hub"></a>Удаление поставщика ресурсов MySQL в Azure Stack Hub
 
@@ -37,7 +37,6 @@ ms.locfileid: "77698680"
     - **PrivilegedEndpoint**: IP-адрес или DNS-имя привилегированной конечной точки.
     - **AzureEnvironment**: Среда Azure, используемая для развертывания Azure Stack Hub. Требуется только для развертываний Azure AD.
     - **CloudAdminCredential**: Учетные данные администратора облака, необходимые для доступа к привилегированной конечной точке.
-    - **DirectoryTenantID**
     - **AzCredential**: Учетные данные администратора службы Azure Stack Hub. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack Hub.
 
 ## <a name="next-steps"></a>Дальнейшие действия
